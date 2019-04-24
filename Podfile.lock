@@ -1,0 +1,20 @@
+PODS:
+  - Hero (1.4.0)
+  - PanModal (1.2.2)
+
+DEPENDENCIES:
+  - Hero
+  - PanModal
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Hero
+    - PanModal
+
+SPEC CHECKSUMS:
+  Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
+  PanModal: db200380a267634f746f8dea550dc3d1df017fc0
+
+PODFILE CHECKSUM: 21261ade07924fe81b2e2243872b001fc5a9cfb5
+
+COCOAPODS: 1.6.1
