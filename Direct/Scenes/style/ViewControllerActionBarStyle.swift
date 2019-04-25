@@ -19,6 +19,10 @@ extension StyledActionBar where Self:UIViewController{
         switch style {
         case .withTitle(let title):
              self.navigationController?.title =  title
+        case .withTitleAndX(let title):
+            self.navigationController?.title =  title
+        case .withTitleAndBack(let title):
+            self.navigationController?.title =  title
         default:
             print("TODO")
         }

@@ -29,6 +29,21 @@
 		6CF3E1802271F303007488BA /* ViewControllerActionBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E17F2271F303007488BA /* ViewControllerActionBarStyle.swift */; };
 		6CF3E1842271F4B9007488BA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1822271F4B9007488BA /* HomeViewController.swift */; };
 		6CF3E1852271F4B9007488BA /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF3E1832271F4B9007488BA /* HomeViewController.xib */; };
+		6CF3E19422724D0C007488BA /* HomeCollectionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E19322724D0C007488BA /* HomeCollectionSection.swift */; };
+		6CF3E19922724E23007488BA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E19822724E23007488BA /* HomeViewModel.swift */; };
+		6CF3E19C22725430007488BA /* VisaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E19A22725430007488BA /* VisaCollectionViewCell.swift */; };
+		6CF3E19D22725430007488BA /* VisaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF3E19B22725430007488BA /* VisaCollectionViewCell.xib */; };
+		6CF3E1A022725478007488BA /* OfferCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E19E22725478007488BA /* OfferCollectionViewCell.swift */; };
+		6CF3E1A122725478007488BA /* OfferCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF3E19F22725478007488BA /* OfferCollectionViewCell.xib */; };
+		6CF3E1A4227254A1007488BA /* InstituteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1A2227254A1007488BA /* InstituteCollectionViewCell.swift */; };
+		6CF3E1A5227254A1007488BA /* InstituteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF3E1A3227254A1007488BA /* InstituteCollectionViewCell.xib */; };
+		6CF3E1A8227254B7007488BA /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1A6227254B7007488BA /* NewsCollectionViewCell.swift */; };
+		6CF3E1A9227254B7007488BA /* NewsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF3E1A7227254B7007488BA /* NewsCollectionViewCell.xib */; };
+		6CF3E1AB227254DB007488BA /* NewsSectionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1AA227254DB007488BA /* NewsSectionVM.swift */; };
+		6CF3E1AD2272551E007488BA /* VisaRequirementsSectionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1AC2272551E007488BA /* VisaRequirementsSectionVM.swift */; };
+		6CF3E1AF2272558A007488BA /* InstitutesSectionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1AE2272558A007488BA /* InstitutesSectionVM.swift */; };
+		6CF3E1B1227255DC007488BA /* OffersSectionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1B0227255DC007488BA /* OffersSectionVM.swift */; };
+		6CF3E1B322725799007488BA /* Binder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1B222725799007488BA /* Binder.swift */; };
 		8B1377D46A1E5F719D9E5A12 /* Pods_DirectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A2B8F6171281AB2F94BE3F /* Pods_DirectTests.framework */; };
 		EBD586B3E64D029BAC2A9DC2 /* Pods_Direct.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D320B700B1358D94E681A70 /* Pods_Direct.framework */; };
 /* End PBXBuildFile section */
@@ -97,6 +112,21 @@
 		6CF3E17F2271F303007488BA /* ViewControllerActionBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerActionBarStyle.swift; sourceTree = "<group>"; };
 		6CF3E1822271F4B9007488BA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6CF3E1832271F4B9007488BA /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		6CF3E19322724D0C007488BA /* HomeCollectionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionSection.swift; sourceTree = "<group>"; };
+		6CF3E19822724E23007488BA /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		6CF3E19A22725430007488BA /* VisaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaCollectionViewCell.swift; sourceTree = "<group>"; };
+		6CF3E19B22725430007488BA /* VisaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisaCollectionViewCell.xib; sourceTree = "<group>"; };
+		6CF3E19E22725478007488BA /* OfferCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCollectionViewCell.swift; sourceTree = "<group>"; };
+		6CF3E19F22725478007488BA /* OfferCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfferCollectionViewCell.xib; sourceTree = "<group>"; };
+		6CF3E1A2227254A1007488BA /* InstituteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstituteCollectionViewCell.swift; sourceTree = "<group>"; };
+		6CF3E1A3227254A1007488BA /* InstituteCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstituteCollectionViewCell.xib; sourceTree = "<group>"; };
+		6CF3E1A6227254B7007488BA /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
+		6CF3E1A7227254B7007488BA /* NewsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCollectionViewCell.xib; sourceTree = "<group>"; };
+		6CF3E1AA227254DB007488BA /* NewsSectionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSectionVM.swift; sourceTree = "<group>"; };
+		6CF3E1AC2272551E007488BA /* VisaRequirementsSectionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaRequirementsSectionVM.swift; sourceTree = "<group>"; };
+		6CF3E1AE2272558A007488BA /* InstitutesSectionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutesSectionVM.swift; sourceTree = "<group>"; };
+		6CF3E1B0227255DC007488BA /* OffersSectionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersSectionVM.swift; sourceTree = "<group>"; };
+		6CF3E1B222725799007488BA /* Binder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binder.swift; sourceTree = "<group>"; };
 		6D320B700B1358D94E681A70 /* Pods_Direct.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Direct.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFE1A8BA236C07146CC7481 /* Pods-Direct.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Direct.debug.xcconfig"; path = "Target Support Files/Pods-Direct/Pods-Direct.debug.xcconfig"; sourceTree = "<group>"; };
 		D32B7AB6EBFAB4A13A20BC57 /* Pods-Direct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Direct.release.xcconfig"; path = "Target Support Files/Pods-Direct/Pods-Direct.release.xcconfig"; sourceTree = "<group>"; };
@@ -264,6 +294,7 @@
 			children = (
 				6CF3E1712271E451007488BA /* Navigator.swift */,
 				6CF3E1752271E598007488BA /* RootNavigationViewController.swift */,
+				6CF3E1B222725799007488BA /* Binder.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -271,10 +302,40 @@
 		6CF3E1812271F49F007488BA /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				6CF3E1822271F4B9007488BA /* HomeViewController.swift */,
-				6CF3E1832271F4B9007488BA /* HomeViewController.xib */,
+				6CF3E19722724E0E007488BA /* view model */,
+				6CF3E19022724663007488BA /* UI */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		6CF3E19022724663007488BA /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6CF3E19E22725478007488BA /* OfferCollectionViewCell.swift */,
+				6CF3E19F22725478007488BA /* OfferCollectionViewCell.xib */,
+				6CF3E1822271F4B9007488BA /* HomeViewController.swift */,
+				6CF3E1832271F4B9007488BA /* HomeViewController.xib */,
+				6CF3E19A22725430007488BA /* VisaCollectionViewCell.swift */,
+				6CF3E19B22725430007488BA /* VisaCollectionViewCell.xib */,
+				6CF3E1A2227254A1007488BA /* InstituteCollectionViewCell.swift */,
+				6CF3E1A3227254A1007488BA /* InstituteCollectionViewCell.xib */,
+				6CF3E1A6227254B7007488BA /* NewsCollectionViewCell.swift */,
+				6CF3E1A7227254B7007488BA /* NewsCollectionViewCell.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		6CF3E19722724E0E007488BA /* view model */ = {
+			isa = PBXGroup;
+			children = (
+				6CF3E19322724D0C007488BA /* HomeCollectionSection.swift */,
+				6CF3E19822724E23007488BA /* HomeViewModel.swift */,
+				6CF3E1AA227254DB007488BA /* NewsSectionVM.swift */,
+				6CF3E1AC2272551E007488BA /* VisaRequirementsSectionVM.swift */,
+				6CF3E1AE2272558A007488BA /* InstitutesSectionVM.swift */,
+				6CF3E1B0227255DC007488BA /* OffersSectionVM.swift */,
+			);
+			path = "view model";
 			sourceTree = "<group>";
 		};
 		C51928CC1ED281BFEEFBB1BB /* Frameworks */ = {
@@ -420,11 +481,15 @@
 			files = (
 				6C87FAE52270C75F00AFE485 /* SignupViewController.xib in Resources */,
 				6C87FAE12270C75100AFE485 /* LoginViewController.xib in Resources */,
+				6CF3E1A5227254A1007488BA /* InstituteCollectionViewCell.xib in Resources */,
+				6CF3E1A122725478007488BA /* OfferCollectionViewCell.xib in Resources */,
 				6C5FDA572270816C00ABA39B /* LaunchScreen.storyboard in Resources */,
 				6C5FDA542270816C00ABA39B /* Assets.xcassets in Resources */,
 				6C5FDA522270816B00ABA39B /* Main.storyboard in Resources */,
+				6CF3E19D22725430007488BA /* VisaCollectionViewCell.xib in Resources */,
 				6CF3E1852271F4B9007488BA /* HomeViewController.xib in Resources */,
 				6C87FADD2270C74000AFE485 /* UserAuthViewController.xib in Resources */,
+				6CF3E1A9227254B7007488BA /* NewsCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +521,8 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Direct/Pods-Direct-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/PanModal/PanModal.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -463,6 +530,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PanModal.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -542,14 +611,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CF3E1AF2272558A007488BA /* InstitutesSectionVM.swift in Sources */,
 				6CF3E1762271E598007488BA /* RootNavigationViewController.swift in Sources */,
+				6CF3E19C22725430007488BA /* VisaCollectionViewCell.swift in Sources */,
 				6CF3E1722271E451007488BA /* Navigator.swift in Sources */,
 				6CF3E1802271F303007488BA /* ViewControllerActionBarStyle.swift in Sources */,
+				6CF3E1A8227254B7007488BA /* NewsCollectionViewCell.swift in Sources */,
+				6CF3E1A4227254A1007488BA /* InstituteCollectionViewCell.swift in Sources */,
 				6C87FAE42270C75F00AFE485 /* SignupViewController.swift in Sources */,
 				6C5FDA4F2270816B00ABA39B /* ViewController.swift in Sources */,
+				6CF3E1B322725799007488BA /* Binder.swift in Sources */,
 				6C5FDA4D2270816B00ABA39B /* AppDelegate.swift in Sources */,
 				6CF3E17E2271E702007488BA /* User.swift in Sources */,
+				6CF3E19422724D0C007488BA /* HomeCollectionSection.swift in Sources */,
+				6CF3E19922724E23007488BA /* HomeViewModel.swift in Sources */,
+				6CF3E1B1227255DC007488BA /* OffersSectionVM.swift in Sources */,
+				6CF3E1A022725478007488BA /* OfferCollectionViewCell.swift in Sources */,
+				6CF3E1AB227254DB007488BA /* NewsSectionVM.swift in Sources */,
 				6CF3E1842271F4B9007488BA /* HomeViewController.swift in Sources */,
+				6CF3E1AD2272551E007488BA /* VisaRequirementsSectionVM.swift in Sources */,
 				6C87FAD92270C6D800AFE485 /* UIColor+Additions.swift in Sources */,
 				6C87FAE02270C75100AFE485 /* LoginViewController.swift in Sources */,
 				6C87FADC2270C74000AFE485 /* UserAuthViewController.swift in Sources */,
