@@ -7,8 +7,10 @@
 //
 
 import UIKit
+
+/*if any contoller need any dependencies, it should passed in the destination item*/
 enum Destination{
-    case loginView, signupView
+    case loginView, signupView,homeScreen
 }
 
 protocol Navigator {
@@ -23,6 +25,7 @@ final class AppNavigator:Navigator{
     }
     func show(_ destination: Destination) {
         let vc  = controller(of: destination)
+        
         self.rootController.pushViewController(vc, animated: true)
     }
     func controller(of dest: Destination)->UIViewController{
@@ -35,6 +38,9 @@ final class AppNavigator:Navigator{
             let auth = UserAuthViewController()
             auth.showView(.signup)
             return auth
+        case .homeScreen:
+            let home  = HomeViewController()
+            return home
         }
     }
 }

@@ -26,6 +26,9 @@
 		6CF3E1722271E451007488BA /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1712271E451007488BA /* Navigator.swift */; };
 		6CF3E1762271E598007488BA /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1752271E598007488BA /* RootNavigationViewController.swift */; };
 		6CF3E17E2271E702007488BA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E17D2271E702007488BA /* User.swift */; };
+		6CF3E1802271F303007488BA /* ViewControllerActionBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E17F2271F303007488BA /* ViewControllerActionBarStyle.swift */; };
+		6CF3E1842271F4B9007488BA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1822271F4B9007488BA /* HomeViewController.swift */; };
+		6CF3E1852271F4B9007488BA /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF3E1832271F4B9007488BA /* HomeViewController.xib */; };
 		8B1377D46A1E5F719D9E5A12 /* Pods_DirectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A2B8F6171281AB2F94BE3F /* Pods_DirectTests.framework */; };
 		EBD586B3E64D029BAC2A9DC2 /* Pods_Direct.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D320B700B1358D94E681A70 /* Pods_Direct.framework */; };
 /* End PBXBuildFile section */
@@ -91,6 +94,9 @@
 		6CF3E1712271E451007488BA /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		6CF3E1752271E598007488BA /* RootNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationViewController.swift; sourceTree = "<group>"; };
 		6CF3E17D2271E702007488BA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6CF3E17F2271F303007488BA /* ViewControllerActionBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerActionBarStyle.swift; sourceTree = "<group>"; };
+		6CF3E1822271F4B9007488BA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		6CF3E1832271F4B9007488BA /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		6D320B700B1358D94E681A70 /* Pods_Direct.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Direct.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFE1A8BA236C07146CC7481 /* Pods-Direct.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Direct.debug.xcconfig"; path = "Target Support Files/Pods-Direct/Pods-Direct.debug.xcconfig"; sourceTree = "<group>"; };
 		D32B7AB6EBFAB4A13A20BC57 /* Pods-Direct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Direct.release.xcconfig"; path = "Target Support Files/Pods-Direct/Pods-Direct.release.xcconfig"; sourceTree = "<group>"; };
@@ -209,6 +215,7 @@
 				6CF3E17B2271E6D4007488BA /* base */,
 				6C87FAD52270C6B700AFE485 /* style */,
 				6C87FAD22270C1E300AFE485 /* user */,
+				6CF3E1812271F49F007488BA /* Home */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -232,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				6C87FAD82270C6D800AFE485 /* UIColor+Additions.swift */,
+				6CF3E17F2271F303007488BA /* ViewControllerActionBarStyle.swift */,
 			);
 			path = style;
 			sourceTree = "<group>";
@@ -258,6 +266,15 @@
 				6CF3E1752271E598007488BA /* RootNavigationViewController.swift */,
 			);
 			path = base;
+			sourceTree = "<group>";
+		};
+		6CF3E1812271F49F007488BA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				6CF3E1822271F4B9007488BA /* HomeViewController.swift */,
+				6CF3E1832271F4B9007488BA /* HomeViewController.xib */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		C51928CC1ED281BFEEFBB1BB /* Frameworks */ = {
@@ -406,6 +423,7 @@
 				6C5FDA572270816C00ABA39B /* LaunchScreen.storyboard in Resources */,
 				6C5FDA542270816C00ABA39B /* Assets.xcassets in Resources */,
 				6C5FDA522270816B00ABA39B /* Main.storyboard in Resources */,
+				6CF3E1852271F4B9007488BA /* HomeViewController.xib in Resources */,
 				6C87FADD2270C74000AFE485 /* UserAuthViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,10 +544,12 @@
 			files = (
 				6CF3E1762271E598007488BA /* RootNavigationViewController.swift in Sources */,
 				6CF3E1722271E451007488BA /* Navigator.swift in Sources */,
+				6CF3E1802271F303007488BA /* ViewControllerActionBarStyle.swift in Sources */,
 				6C87FAE42270C75F00AFE485 /* SignupViewController.swift in Sources */,
 				6C5FDA4F2270816B00ABA39B /* ViewController.swift in Sources */,
 				6C5FDA4D2270816B00ABA39B /* AppDelegate.swift in Sources */,
 				6CF3E17E2271E702007488BA /* User.swift in Sources */,
+				6CF3E1842271F4B9007488BA /* HomeViewController.swift in Sources */,
 				6C87FAD92270C6D800AFE485 /* UIColor+Additions.swift in Sources */,
 				6C87FAE02270C75100AFE485 /* LoginViewController.swift in Sources */,
 				6C87FADC2270C74000AFE485 /* UserAuthViewController.swift in Sources */,
