@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import RxSwift
+
 final class VisaRequirementViewModel: HomeCollectionViewSection{
      var sectionTitle: String = "Visa"
     typealias Entity = String

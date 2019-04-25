@@ -6,14 +6,18 @@
 //
 
 import Foundation
+import RxSwift
+
 class HomeViewModel {
     var itemsCount:Int = 4
-    var collectionSecions = [HomeCollectionViewSection]()
+    var collectionSecions: PublishSubject<[HomeCollectionViewSection]> = PublishSubject<[HomeCollectionViewSection]>()
     func getAllData(){
-        self.collectionSecions.append(VisaRequirementViewModel(data: ["Test","blaaaa"]))
-         self.collectionSecions.append(InstitutesSectionViewModel(data: ["Test","blaaaa"]))
-        self.collectionSecions.append(OffersSectionViewModel(data: ["Test","blaaaa"]))
+       var items = [HomeCollectionViewSection]()
+        items.append(VisaRequirementViewModel(data: ["Test","blaaaa"]))
+         items.append(InstitutesSectionViewModel(data: ["Test","blaaaa"]))
+        items.append(OffersSectionViewModel(data: ["Test","blaaaa","Test","blaaaa","Test","blaaaa","Test","blaaaa"]))
 
-         self.collectionSecions.append(NewsSectionViewModel(data: ["Test","blaaaa"]))
+         items.append(NewsSectionViewModel(data: ["Test","blaaaa"]))
+         self.collectionSecions.onNext(items)
     }
 }

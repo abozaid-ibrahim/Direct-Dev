@@ -7,49 +7,61 @@
 //
 
 import UIKit
+import RxSwift
 
 class HomeViewController: UIViewController,StyledActionBar {
     private let homeViewModel = HomeViewModel()
-    @IBOutlet weak var collectionView: UICollectionView!
+    private let disposeBag = DisposeBag()
+    private var collectionSecions: [HomeCollectionViewSection] = []
     
+    @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.registerCollectionNibs()
         self.setupActionBar(.withTitle("Direct Visa"))
+        homeViewModel.collectionSecions.asObservable()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext:{[weak self] data  in
+                self?.collectionSecions.append(contentsOf: data)
+                self?.collectionView.reloadData()
+                } , onError: nil, onCompleted: nil, onDisposed: {
+                    self.collectionSecions.removeAll()
+            }).disposed(by: disposeBag)
+        homeViewModel.getAllData()
+        
     }
     
-    
+    private func registerCollectionNibs(){
+        ["OfferCollectionViewCell","InstituteCollectionViewCell","VisaCollectionViewCell","NewsCollectionViewCell"]
+            .forEach{
+                collectionView.register(UINib(nibName: $0, bundle: nil), forCellWithReuseIdentifier: $0)
+        }
+        collectionView.register(UINib(nibName: "HomeCollectionSectionHeader", bundle: nil), forSupplementaryViewOfKind:"UICollectionElementKindSectionHeader", withReuseIdentifier: "HomeCollectionSectionHeader")
+    }
     
 }
-extension HomeViewController:UICollectionViewDataSource{
+extension HomeViewController:UICollectionViewDataSource,UICollectionViewDelegate{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return homeViewModel.collectionSecions.count
+        return collectionSecions.count
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return homeViewModel.collectionSecions[section].itemsCount
+        return collectionSecions[section].itemsCount
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        if let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SectionHeader", for: indexPath) as? SectionHeader{
-//            sectionHeader.sectionHeaderlabel.text = "Section \(indexPath.section)"
-            return sectionHeader
-        }
-        return UICollectionReusableView()
+        let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HomeCollectionSectionHeader", for: indexPath) //as! HomeCollectionSectionHeader
+        
+//        sectionHeader.textLbl.text = "Section \(indexPath.section)"
+        return sectionHeader
+        
     }
-
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: homeViewModel.collectionSecions[indexPath.section].cellIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionSecions[indexPath.section].cellIdentifier, for: indexPath)
+        
         return cell
     }
     
-    
-}
-class SectionHeader: UICollectionReusableView {
-     var sectionHeaderlabel: UILabel!{
-        let lbl = UILabel()
-        lbl.backgroundColor = .red
-        lbl.text = "adfasdf"
-        return lbl
-    }
     
 }
