@@ -23,6 +23,8 @@
 		6C87FAE12270C75100AFE485 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C87FADF2270C75100AFE485 /* LoginViewController.xib */; };
 		6C87FAE42270C75F00AFE485 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C87FAE22270C75F00AFE485 /* SignupViewController.swift */; };
 		6C87FAE52270C75F00AFE485 /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C87FAE32270C75F00AFE485 /* SignupViewController.xib */; };
+		6CE722ED2274FA1B00E095DC /* VisaRequirementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */; };
+		6CE722EE2274FA1B00E095DC /* VisaRequirementController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CE722EC2274FA1B00E095DC /* VisaRequirementController.xib */; };
 		6CF3E1722271E451007488BA /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1712271E451007488BA /* Navigator.swift */; };
 		6CF3E1762271E598007488BA /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1752271E598007488BA /* RootNavigationViewController.swift */; };
 		6CF3E17E2271E702007488BA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E17D2271E702007488BA /* User.swift */; };
@@ -111,6 +113,8 @@
 		6C87FADF2270C75100AFE485 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		6C87FAE22270C75F00AFE485 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		6C87FAE32270C75F00AFE485 /* SignupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
+		6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaRequirementController.swift; sourceTree = "<group>"; };
+		6CE722EC2274FA1B00E095DC /* VisaRequirementController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisaRequirementController.xib; sourceTree = "<group>"; };
 		6CF3E1712271E451007488BA /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		6CF3E1752271E598007488BA /* RootNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationViewController.swift; sourceTree = "<group>"; };
 		6CF3E17D2271E702007488BA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -252,6 +256,7 @@
 		6C87FACF2270C1D500AFE485 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				6CE722E82274F9F700E095DC /* visa */,
 				6CF3E1BF2274B8CA007488BA /* fake data */,
 				6CF3E17B2271E6D4007488BA /* base */,
 				6C87FAD52270C6B700AFE485 /* style */,
@@ -283,6 +288,15 @@
 				6CF3E17F2271F303007488BA /* ViewControllerActionBarStyle.swift */,
 			);
 			path = style;
+			sourceTree = "<group>";
+		};
+		6CE722E82274F9F700E095DC /* visa */ = {
+			isa = PBXGroup;
+			children = (
+				6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */,
+				6CE722EC2274FA1B00E095DC /* VisaRequirementController.xib */,
+			);
+			path = visa;
 			sourceTree = "<group>";
 		};
 		6CF3E1782271E6A1007488BA /* model */ = {
@@ -323,7 +337,6 @@
 			isa = PBXGroup;
 			children = (
 				6CF3E1C52274B980007488BA /* cells */,
-				6CF3E1C42274B940007488BA /* sections */,
 				6CF3E1822271F4B9007488BA /* HomeViewController.swift */,
 				6CF3E1832271F4B9007488BA /* HomeViewController.xib */,
 				6CF3E1CA2274BBE5007488BA /* HomeCollectionSectionWrapper.swift */,
@@ -351,13 +364,6 @@
 				6CF3E1C22274B8DB007488BA /* FakeData.swift */,
 			);
 			path = "fake data";
-			sourceTree = "<group>";
-		};
-		6CF3E1C42274B940007488BA /* sections */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = sections;
 			sourceTree = "<group>";
 		};
 		6CF3E1C52274B980007488BA /* cells */ = {
@@ -530,6 +536,7 @@
 				6CF3E19D22725430007488BA /* VisaCollectionViewCell.xib in Resources */,
 				6CF3E1852271F4B9007488BA /* HomeViewController.xib in Resources */,
 				6C87FADD2270C74000AFE485 /* UserAuthViewController.xib in Resources */,
+				6CE722EE2274FA1B00E095DC /* VisaRequirementController.xib in Resources */,
 				6CF3E1A9227254B7007488BA /* NewsCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -662,6 +669,7 @@
 				6CF3E1A4227254A1007488BA /* InstituteCollectionViewCell.swift in Sources */,
 				6C87FAE42270C75F00AFE485 /* SignupViewController.swift in Sources */,
 				6C5FDA4F2270816B00ABA39B /* ViewController.swift in Sources */,
+				6CE722ED2274FA1B00E095DC /* VisaRequirementController.swift in Sources */,
 				6CF3E1B322725799007488BA /* Binder.swift in Sources */,
 				6C5FDA4D2270816B00ABA39B /* AppDelegate.swift in Sources */,
 				6CF3E17E2271E702007488BA /* User.swift in Sources */,

@@ -8,17 +8,19 @@
 
 import UIKit
 import RxSwift
-
+private typealias HeaderObject = (UIImage,String)
 class HomeViewController: UIViewController,StyledActionBar {
     private let homeViewModel = HomeViewModel()
     private let disposeBag = DisposeBag()
+    private let sectionsHeaderData :[HeaderObject] = [(#imageLiteral(resourceName: "p"), "Visa"),(#imageLiteral(resourceName: "p"), "Visa"),(#imageLiteral(resourceName: "p"), "Visa"),(#imageLiteral(resourceName: "p"), "Visa"),(#imageLiteral(resourceName: "p"), "Visa")]
     private var collectionSecions: [HomeCollectionViewSection] = []
+    private let sectionsCellSize : [CGSize] = [CGSize(width: 147,height: 113),CGSize(width: 292,height: 171),CGSize(width: 292,height: 226),CGSize(width: 292,height: 171)]
     
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.collectionView.delegate = self
         self.registerCollectionNibs()
-        cellSize()
         self.setupActionBar(.withTitle("Direct Visa"))
         homeViewModel.collectionSecions.asObservable()
             .observeOn(MainScheduler.instance)
@@ -31,34 +33,14 @@ class HomeViewController: UIViewController,StyledActionBar {
         homeViewModel.getAllData()
         
     }
-    private func cellSize(){
-        let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.scrollDirection = .vertical
-        
-        //Provide Width and Height According to your need
-        let cellWidth = UIScreen.main.bounds.width
-        let cellHeight = UIScreen.main.bounds.height / 4
-        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
-        
-        //You can also provide estimated Height and Width
-        layout.estimatedItemSize = CGSize(width: cellWidth, height: cellHeight)
-        
-        //For Setting the Spacing between cells
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
-self.collectionView.collectionViewLayout = layout
-    }
     
     private func registerCollectionNibs(){
-//        ["OfferCollectionViewCell","InstituteCollectionViewCell","VisaCollectionViewCell","NewsCollectionViewCell"]
-//            .forEach{
-                collectionView.register(UINib(nibName: HomeCollectionSectionWrapper.cellId , bundle: nil), forCellWithReuseIdentifier: HomeCollectionSectionWrapper.cellId)
-//        }
+        collectionView.register(UINib(nibName: HomeCollectionSectionWrapper.cellId , bundle: nil), forCellWithReuseIdentifier: HomeCollectionSectionWrapper.cellId)
         collectionView.register(UINib(nibName: "HomeCollectionSectionHeader", bundle: nil), forSupplementaryViewOfKind:"UICollectionElementKindSectionHeader", withReuseIdentifier: "HomeCollectionSectionHeader")
     }
     
 }
-extension HomeViewController:UICollectionViewDataSource,UICollectionViewDelegate{
+extension HomeViewController:UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return collectionSecions.count
     }
@@ -67,19 +49,22 @@ extension HomeViewController:UICollectionViewDataSource,UICollectionViewDelegate
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HomeCollectionSectionHeader", for: indexPath) //as! HomeCollectionSectionHeader
+        let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HomeCollectionSectionHeader", for: indexPath)
         
-//        sectionHeader.textLbl.text = "Section \(indexPath.section)"
+//                sectionHeader.textLbl.text = sectionsHeaderData[indexPath.section].1
         return sectionHeader
         
     }
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: self.collectionView.bounds.width, height: CGFloat(sectionsCellSize[indexPath.section].height))
+    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellID = collectionSecions[indexPath.section].cellIdentifier
-       
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionSectionWrapper.cellId, for: indexPath) as! HomeCollectionSectionWrapper
-      
         
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionSectionWrapper.cellId, for: indexPath) as! HomeCollectionSectionWrapper
+        
+        cell.cellWidth = sectionsCellSize[indexPath.section].width
         
         cell.cellId = cellID
         return cell

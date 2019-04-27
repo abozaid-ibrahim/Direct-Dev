@@ -11,7 +11,7 @@ import UIKit
 class HomeCollectionSectionWrapper: UICollectionViewCell {
     static let cellId = "HomeCollectionSectionWrapper"
     @IBOutlet weak var collectionView: UICollectionView!
-
+    var cellWidth:CGFloat!
     var cellId:String!{
         didSet{
             self.collectionView.register(UINib(nibName: cellId, bundle: nil), forCellWithReuseIdentifier: cellId)
@@ -27,7 +27,7 @@ class HomeCollectionSectionWrapper: UICollectionViewCell {
 }
 extension HomeCollectionSectionWrapper:UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.bounds.width - 50, height: self.bounds.height - 4)
+        return CGSize(width: self.cellWidth, height: self.bounds.height - 4)
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -35,7 +35,9 @@ extension HomeCollectionSectionWrapper:UICollectionViewDataSource,UICollectionVi
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataList.count
     }
-   
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        Navigator.show
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
