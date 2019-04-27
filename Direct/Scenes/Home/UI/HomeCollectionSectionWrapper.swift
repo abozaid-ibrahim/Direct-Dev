@@ -17,36 +17,18 @@ class HomeCollectionSectionWrapper: UICollectionViewCell {
             self.collectionView.register(UINib(nibName: cellId, bundle: nil), forCellWithReuseIdentifier: cellId)
         }
     }
-//    init(_ cellIdentifier: String) {
-//        cellId  = cellIdentifier
-//
-//    }
     override func awakeFromNib() {
         super.awakeFromNib()
         collectionView.dataSource = self
-        cellSize()
+        collectionView.delegate = self
+
     }
-    
-    private func cellSize(){
-        let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.scrollDirection = .horizontal
-        
-        //Provide Width and Height According to your need
-        let cellWidth =  300
-        let cellHeight = 200
-        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
-        
-        //You can also provide estimated Height and Width
-        layout.estimatedItemSize = CGSize(width: cellWidth, height: cellHeight)
-        
-        //For Setting the Spacing between cells
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
-        self.collectionView.collectionViewLayout = layout
-    }
-    
+
 }
-extension HomeCollectionSectionWrapper:UICollectionViewDataSource,UICollectionViewDelegate{
+extension HomeCollectionSectionWrapper:UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.bounds.width - 50, height: self.bounds.height - 4)
+    }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }

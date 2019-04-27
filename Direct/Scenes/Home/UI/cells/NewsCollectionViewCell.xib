@@ -18,11 +18,25 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="180" height="94"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p" translatesAutoresizingMaskIntoConstraints="NO" id="hET-FI-jLX">
+                        <rect key="frame" x="0.0" y="0.0" width="180" height="94"/>
+                    </imageView>
+                </subviews>
             </view>
             <color key="backgroundColor" red="1" green="0.61840477920000003" blue="0.48581759619999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="hET-FI-jLX" secondAttribute="bottom" id="6wi-li-dHr"/>
+                <constraint firstAttribute="trailing" secondItem="hET-FI-jLX" secondAttribute="trailing" id="FLS-Fe-vnt"/>
+                <constraint firstItem="hET-FI-jLX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="FuS-nY-rtH"/>
+                <constraint firstItem="hET-FI-jLX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Xxy-qw-Wae"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="180" height="94"/>
             <point key="canvasLocation" x="156.80000000000001" y="68.365817091454275"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="p" width="304" height="175"/>
+    </resources>
 </document>
