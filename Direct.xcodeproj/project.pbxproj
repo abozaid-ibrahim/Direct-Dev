@@ -46,6 +46,9 @@
 		6CF3E1B322725799007488BA /* Binder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1B222725799007488BA /* Binder.swift */; };
 		6CF3E1B8227268CF007488BA /* HomeCollectionSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1B6227268CF007488BA /* HomeCollectionSectionHeader.swift */; };
 		6CF3E1B9227268CF007488BA /* HomeCollectionSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF3E1B7227268CF007488BA /* HomeCollectionSectionHeader.xib */; };
+		6CF3E1C32274B8DB007488BA /* FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1C22274B8DB007488BA /* FakeData.swift */; };
+		6CF3E1CC2274BBE5007488BA /* HomeCollectionSectionWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1CA2274BBE5007488BA /* HomeCollectionSectionWrapper.swift */; };
+		6CF3E1CD2274BBE5007488BA /* HomeCollectionSectionWrapper.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF3E1CB2274BBE5007488BA /* HomeCollectionSectionWrapper.xib */; };
 		8B1377D46A1E5F719D9E5A12 /* Pods_DirectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A2B8F6171281AB2F94BE3F /* Pods_DirectTests.framework */; };
 		EBD586B3E64D029BAC2A9DC2 /* Pods_Direct.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D320B700B1358D94E681A70 /* Pods_Direct.framework */; };
 /* End PBXBuildFile section */
@@ -131,6 +134,9 @@
 		6CF3E1B222725799007488BA /* Binder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binder.swift; sourceTree = "<group>"; };
 		6CF3E1B6227268CF007488BA /* HomeCollectionSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionSectionHeader.swift; sourceTree = "<group>"; };
 		6CF3E1B7227268CF007488BA /* HomeCollectionSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionSectionHeader.xib; sourceTree = "<group>"; };
+		6CF3E1C22274B8DB007488BA /* FakeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeData.swift; sourceTree = "<group>"; };
+		6CF3E1CA2274BBE5007488BA /* HomeCollectionSectionWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionSectionWrapper.swift; sourceTree = "<group>"; };
+		6CF3E1CB2274BBE5007488BA /* HomeCollectionSectionWrapper.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionSectionWrapper.xib; sourceTree = "<group>"; };
 		6D320B700B1358D94E681A70 /* Pods_Direct.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Direct.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFE1A8BA236C07146CC7481 /* Pods-Direct.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Direct.debug.xcconfig"; path = "Target Support Files/Pods-Direct/Pods-Direct.debug.xcconfig"; sourceTree = "<group>"; };
 		D32B7AB6EBFAB4A13A20BC57 /* Pods-Direct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Direct.release.xcconfig"; path = "Target Support Files/Pods-Direct/Pods-Direct.release.xcconfig"; sourceTree = "<group>"; };
@@ -246,6 +252,7 @@
 		6C87FACF2270C1D500AFE485 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				6CF3E1BF2274B8CA007488BA /* fake data */,
 				6CF3E17B2271E6D4007488BA /* base */,
 				6C87FAD52270C6B700AFE485 /* style */,
 				6C87FAD22270C1E300AFE485 /* user */,
@@ -315,18 +322,12 @@
 		6CF3E19022724663007488BA /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				6CF3E1C52274B980007488BA /* cells */,
+				6CF3E1C42274B940007488BA /* sections */,
 				6CF3E1822271F4B9007488BA /* HomeViewController.swift */,
 				6CF3E1832271F4B9007488BA /* HomeViewController.xib */,
-				6CF3E19E22725478007488BA /* OfferCollectionViewCell.swift */,
-				6CF3E19F22725478007488BA /* OfferCollectionViewCell.xib */,
-				6CF3E19A22725430007488BA /* VisaCollectionViewCell.swift */,
-				6CF3E19B22725430007488BA /* VisaCollectionViewCell.xib */,
-				6CF3E1A2227254A1007488BA /* InstituteCollectionViewCell.swift */,
-				6CF3E1A3227254A1007488BA /* InstituteCollectionViewCell.xib */,
-				6CF3E1A6227254B7007488BA /* NewsCollectionViewCell.swift */,
-				6CF3E1A7227254B7007488BA /* NewsCollectionViewCell.xib */,
-				6CF3E1B6227268CF007488BA /* HomeCollectionSectionHeader.swift */,
-				6CF3E1B7227268CF007488BA /* HomeCollectionSectionHeader.xib */,
+				6CF3E1CA2274BBE5007488BA /* HomeCollectionSectionWrapper.swift */,
+				6CF3E1CB2274BBE5007488BA /* HomeCollectionSectionWrapper.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -342,6 +343,38 @@
 				6CF3E1B0227255DC007488BA /* OffersSectionVM.swift */,
 			);
 			path = "view model";
+			sourceTree = "<group>";
+		};
+		6CF3E1BF2274B8CA007488BA /* fake data */ = {
+			isa = PBXGroup;
+			children = (
+				6CF3E1C22274B8DB007488BA /* FakeData.swift */,
+			);
+			path = "fake data";
+			sourceTree = "<group>";
+		};
+		6CF3E1C42274B940007488BA /* sections */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = sections;
+			sourceTree = "<group>";
+		};
+		6CF3E1C52274B980007488BA /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				6CF3E19E22725478007488BA /* OfferCollectionViewCell.swift */,
+				6CF3E19F22725478007488BA /* OfferCollectionViewCell.xib */,
+				6CF3E19A22725430007488BA /* VisaCollectionViewCell.swift */,
+				6CF3E19B22725430007488BA /* VisaCollectionViewCell.xib */,
+				6CF3E1A2227254A1007488BA /* InstituteCollectionViewCell.swift */,
+				6CF3E1A3227254A1007488BA /* InstituteCollectionViewCell.xib */,
+				6CF3E1A6227254B7007488BA /* NewsCollectionViewCell.swift */,
+				6CF3E1A7227254B7007488BA /* NewsCollectionViewCell.xib */,
+				6CF3E1B6227268CF007488BA /* HomeCollectionSectionHeader.swift */,
+				6CF3E1B7227268CF007488BA /* HomeCollectionSectionHeader.xib */,
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 		C51928CC1ED281BFEEFBB1BB /* Frameworks */ = {
@@ -488,6 +521,7 @@
 				6C87FAE52270C75F00AFE485 /* SignupViewController.xib in Resources */,
 				6C87FAE12270C75100AFE485 /* LoginViewController.xib in Resources */,
 				6CF3E1A5227254A1007488BA /* InstituteCollectionViewCell.xib in Resources */,
+				6CF3E1CD2274BBE5007488BA /* HomeCollectionSectionWrapper.xib in Resources */,
 				6CF3E1A122725478007488BA /* OfferCollectionViewCell.xib in Resources */,
 				6C5FDA572270816C00ABA39B /* LaunchScreen.storyboard in Resources */,
 				6C5FDA542270816C00ABA39B /* Assets.xcassets in Resources */,
@@ -636,6 +670,8 @@
 				6CF3E1B1227255DC007488BA /* OffersSectionVM.swift in Sources */,
 				6CF3E1A022725478007488BA /* OfferCollectionViewCell.swift in Sources */,
 				6CF3E1AB227254DB007488BA /* NewsSectionVM.swift in Sources */,
+				6CF3E1C32274B8DB007488BA /* FakeData.swift in Sources */,
+				6CF3E1CC2274BBE5007488BA /* HomeCollectionSectionWrapper.swift in Sources */,
 				6CF3E1842271F4B9007488BA /* HomeViewController.swift in Sources */,
 				6CF3E1AD2272551E007488BA /* VisaRequirementsSectionVM.swift in Sources */,
 				6C87FAD92270C6D800AFE485 /* UIColor+Additions.swift in Sources */,
