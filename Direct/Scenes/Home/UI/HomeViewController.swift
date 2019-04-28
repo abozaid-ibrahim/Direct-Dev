@@ -8,7 +8,7 @@
 
 import UIKit
 import RxSwift
-import UIExtensions
+
 private typealias HeaderObject = (UIImage,String)
 
 final class HomeViewController: UIViewController, StyledActionBar {
@@ -28,9 +28,7 @@ final class HomeViewController: UIViewController, StyledActionBar {
         self.setupActionBar(.withTitle("Direct Visa"))
        getDataFromViewModel()
         homeViewModel.getAllData()
-        headerView.layer.cornerRadius = 36
-        headerView.layer.masksToBounds = true
-        
+
     }
     private func getDataFromViewModel(){
         homeViewModel.collectionSecions.asObservable()
