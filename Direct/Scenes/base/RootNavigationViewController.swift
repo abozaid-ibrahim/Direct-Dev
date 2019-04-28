@@ -12,7 +12,7 @@ class RootNavigationViewController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        AppNavigator(root: self).show(.homeScreen)
+//        AppNavigator(root: self).show(.homeScreen)
     }
     
     

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		26A9B974FAE8C6E3C5BE0795 /* Pods_DirectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121B9A8C3675B423D5D78B5B /* Pods_DirectUITests.framework */; };
+		6C5DE75A2275C763001A9FB6 /* MyOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE7592275C763001A9FB6 /* MyOrdersViewController.swift */; };
 		6C5FDA4D2270816B00ABA39B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5FDA4C2270816B00ABA39B /* AppDelegate.swift */; };
 		6C5FDA4F2270816B00ABA39B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5FDA4E2270816B00ABA39B /* ViewController.swift */; };
 		6C5FDA522270816B00ABA39B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C5FDA502270816B00ABA39B /* Main.storyboard */; };
@@ -56,6 +57,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6C5DE7522275BDAA001A9FB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C5DE74B2275BDAA001A9FB6 /* UIExtensions.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6C5DE72C2275BB3F001A9FB6;
+			remoteInfo = UIExtensions;
+		};
+		6C5DE7542275BDAA001A9FB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C5DE74B2275BDAA001A9FB6 /* UIExtensions.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6C5DE7352275BB3F001A9FB6;
+			remoteInfo = UIExtensionsTests;
+		};
 		6C5FDA5E2270816D00ABA39B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6C5FDA412270816A00ABA39B /* Project object */;
@@ -92,6 +107,8 @@
 		29A2B8F6171281AB2F94BE3F /* Pods_DirectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DirectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32AD91C3FA31B9C68158A139 /* Pods-DirectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DirectTests.release.xcconfig"; path = "Target Support Files/Pods-DirectTests/Pods-DirectTests.release.xcconfig"; sourceTree = "<group>"; };
 		6B30160045018A20D10805B6 /* Pods-DirectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DirectTests.debug.xcconfig"; path = "Target Support Files/Pods-DirectTests/Pods-DirectTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6C5DE74B2275BDAA001A9FB6 /* UIExtensions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIExtensions.xcodeproj; path = ../UIExtensions/UIExtensions.xcodeproj; sourceTree = "<group>"; };
+		6C5DE7592275C763001A9FB6 /* MyOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersViewController.swift; sourceTree = "<group>"; };
 		6C5FDA492270816B00ABA39B /* Direct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Direct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C5FDA4C2270816B00ABA39B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C5FDA4E2270816B00ABA39B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -189,9 +206,27 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		6C5DE74C2275BDAA001A9FB6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6C5DE7532275BDAA001A9FB6 /* UIExtensions.framework */,
+				6C5DE7552275BDAA001A9FB6 /* UIExtensionsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6C5DE7582275C742001A9FB6 /* orders */ = {
+			isa = PBXGroup;
+			children = (
+				6C5DE7592275C763001A9FB6 /* MyOrdersViewController.swift */,
+			);
+			path = orders;
+			sourceTree = "<group>";
+		};
 		6C5FDA402270816A00ABA39B = {
 			isa = PBXGroup;
 			children = (
+				6C5DE74B2275BDAA001A9FB6 /* UIExtensions.xcodeproj */,
 				6C87FAB42270B5D600AFE485 /* NetworkModule.xcodeproj */,
 				6C5FDA4B2270816B00ABA39B /* Direct */,
 				6C5FDA602270816D00ABA39B /* DirectTests */,
@@ -256,6 +291,7 @@
 		6C87FACF2270C1D500AFE485 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				6C5DE7582275C742001A9FB6 /* orders */,
 				6CE722E82274F9F700E095DC /* visa */,
 				6CF3E1BF2274B8CA007488BA /* fake data */,
 				6CF3E17B2271E6D4007488BA /* base */,
@@ -492,6 +528,10 @@
 					ProductGroup = 6C87FAB52270B5D600AFE485 /* Products */;
 					ProjectRef = 6C87FAB42270B5D600AFE485 /* NetworkModule.xcodeproj */;
 				},
+				{
+					ProductGroup = 6C5DE74C2275BDAA001A9FB6 /* Products */;
+					ProjectRef = 6C5DE74B2275BDAA001A9FB6 /* UIExtensions.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -503,6 +543,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		6C5DE7532275BDAA001A9FB6 /* UIExtensions.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = UIExtensions.framework;
+			remoteRef = 6C5DE7522275BDAA001A9FB6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6C5DE7552275BDAA001A9FB6 /* UIExtensionsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UIExtensionsTests.xctest;
+			remoteRef = 6C5DE7542275BDAA001A9FB6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		6C87FABA2270B5D600AFE485 /* NetworkModule.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -660,6 +714,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CF3E1AF2272558A007488BA /* InstitutesSectionVM.swift in Sources */,
+				6C5DE75A2275C763001A9FB6 /* MyOrdersViewController.swift in Sources */,
 				6CF3E1762271E598007488BA /* RootNavigationViewController.swift in Sources */,
 				6CF3E19C22725430007488BA /* VisaCollectionViewCell.swift in Sources */,
 				6CF3E1B8227268CF007488BA /* HomeCollectionSectionHeader.swift in Sources */,

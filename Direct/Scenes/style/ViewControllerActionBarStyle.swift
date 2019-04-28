@@ -15,14 +15,19 @@ protocol StyledActionBar {
 }
 extension StyledActionBar where Self:UIViewController{
     func setupActionBar(_ style:ActionBarStyles){
-        self.navigationController?.navigationBar.backgroundColor = UIColor.yellow
+        navigationController?.navigationBar.barTintColor = UIColor.appPumpkinOrange
+//        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.shadowImage = UIImage()
+//        navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        navigationController?.navigationBar.titleTextAttributes = [.font:UIFont.boldSystemFont(ofSize: 24), .foregroundColor: UIColor.white]
         switch style {
         case .withTitle(let title):
-             self.navigationController?.title =  title
+            self.navigationController?.navigationBar.topItem?.title = title
+
         case .withTitleAndX(let title):
-            self.navigationController?.title =  title
+            self.title =  title
         case .withTitleAndBack(let title):
-            self.navigationController?.title =  title
+            self.title =  title
         default:
             print("TODO")
         }

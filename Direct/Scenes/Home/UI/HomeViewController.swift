@@ -8,8 +8,10 @@
 
 import UIKit
 import RxSwift
+import UIExtensions
 private typealias HeaderObject = (UIImage,String)
-class HomeViewController: UIViewController,StyledActionBar {
+
+final class HomeViewController: UIViewController, StyledActionBar {
     private let homeViewModel = HomeViewModel()
     private let disposeBag = DisposeBag()
     private let sectionsHeaderData :[HeaderObject] = [(#imageLiteral(resourceName: "p"), "Visa"),(#imageLiteral(resourceName: "p"), "Visa"),(#imageLiteral(resourceName: "p"), "Visa"),(#imageLiteral(resourceName: "p"), "Visa"),(#imageLiteral(resourceName: "p"), "Visa")]
@@ -17,11 +19,20 @@ class HomeViewController: UIViewController,StyledActionBar {
     private let sectionsCellSize : [CGSize] = [CGSize(width: 147,height: 113),CGSize(width: 292,height: 171),CGSize(width: 292,height: 226),CGSize(width: 292,height: 171)]
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var headerView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.appVeryLightPink
         self.collectionView.delegate = self
         self.registerCollectionNibs()
         self.setupActionBar(.withTitle("Direct Visa"))
+       getDataFromViewModel()
+        homeViewModel.getAllData()
+        headerView.layer.cornerRadius = 36
+        headerView.layer.masksToBounds = true
+        
+    }
+    private func getDataFromViewModel(){
         homeViewModel.collectionSecions.asObservable()
             .observeOn(MainScheduler.instance)
             .subscribe(onNext:{[weak self] data  in
@@ -30,10 +41,7 @@ class HomeViewController: UIViewController,StyledActionBar {
                 } , onError: nil, onCompleted: nil, onDisposed: {
                     self.collectionSecions.removeAll()
             }).disposed(by: disposeBag)
-        homeViewModel.getAllData()
-        
     }
-    
     private func registerCollectionNibs(){
         collectionView.register(UINib(nibName: HomeCollectionSectionWrapper.cellId , bundle: nil), forCellWithReuseIdentifier: HomeCollectionSectionWrapper.cellId)
         collectionView.register(UINib(nibName: "HomeCollectionSectionHeader", bundle: nil), forSupplementaryViewOfKind:"UICollectionElementKindSectionHeader", withReuseIdentifier: "HomeCollectionSectionHeader")
@@ -49,9 +57,8 @@ extension HomeViewController:UICollectionViewDataSource,UICollectionViewDelegate
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HomeCollectionSectionHeader", for: indexPath)
-        
-//                sectionHeader.textLbl.text = sectionsHeaderData[indexPath.section].1
+        let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HomeCollectionSectionHeader", for: indexPath)        
+        //                sectionHeader.textLbl.text = sectionsHeaderData[indexPath.section].1
         return sectionHeader
         
     }
