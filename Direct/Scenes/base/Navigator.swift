@@ -7,29 +7,12 @@
 //
 
 import UIKit
-
+import PanModal
 /*if any contoller need any dependencies, it should passed in the destination item*/
 enum Destination{
-    case loginView, signupView,homeScreen
-}
-
-protocol Navigator {
-    func show(_ destination:Destination)
-}
-
-final class AppNavigator:Navigator{
-    
-    var rootController:RootNavigationViewController
-    init(root:RootNavigationViewController) {
-        self.rootController  = root
-    }
-    func show(_ destination: Destination) {
-        let vc  = controller(of: destination)
-        
-        self.rootController.pushViewController(vc, animated: true)
-    }
-    func controller(of dest: Destination)->UIViewController{
-        switch dest {
+    case loginView, signupView,homeScreen,visaRequirement
+    func controller()->UIViewController{
+        switch self {
         case .loginView:
             let auth = UserAuthViewController()
             auth.showView(.login)
@@ -41,14 +24,47 @@ final class AppNavigator:Navigator{
         case .homeScreen:
             let home  = HomeViewController.instance("HomeViewController")
             return home
+        case .visaRequirement:
+            let controller  = VisaRequirementController()
+            return controller
         }
     }
+}
+
+protocol Navigator {
+    func show(_ destination:Destination)
+    static func present(_ dest:Destination)
+}
+
+final class AppNavigator:Navigator{
+    private static var rootController:RootNavigationViewController{
+        let appDelegate  = UIApplication.shared.delegate as! AppDelegate
+        return  appDelegate.window!.rootViewController as! RootNavigationViewController
+        
+    }
+    static func present(_ dest: Destination) {
+        
+        //           rootController.presentPanModal(dest.controller() as! UIViewController & PanModalPresentable)
+//        rootController.present( dest.controller(), animated: true, completion: nil)
+        rootController.pushViewController(dest.controller(), animated: true)
+    }
+    
+    
+    var rootController:RootNavigationViewController
+    init(root:RootNavigationViewController) {
+        self.rootController  = root
+    }
+    func show(_ destination: Destination) {
+        let vc  = destination.controller()
+        self.rootController.pushViewController(vc, animated: true)
+    }
+    
 }
 
 
 extension UIViewController{
     static func instance(_ mainStoryboardId:String)->UIViewController{
-     return UIStoryboard.main.instantiateViewController(withIdentifier: mainStoryboardId)
+        return UIStoryboard.main.instantiateViewController(withIdentifier: mainStoryboardId)
     }
 }
 extension UIStoryboard{

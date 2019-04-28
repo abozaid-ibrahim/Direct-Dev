@@ -1,29 +1,39 @@
 PODS:
+  - Differentiator (3.1.0)
   - Hero (1.4.0)
   - PanModal (1.2.2)
   - RxCocoa (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxDataSources (3.1.0):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
   - RxSwift (4.5.0)
 
 DEPENDENCIES:
   - Hero
   - PanModal
   - RxCocoa (~> 4.0)
+  - RxDataSources
   - RxSwift (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Differentiator
     - Hero
     - PanModal
     - RxCocoa
+    - RxDataSources
     - RxSwift
 
 SPEC CHECKSUMS:
+  Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   PanModal: db200380a267634f746f8dea550dc3d1df017fc0
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
 
-PODFILE CHECKSUM: c95130949f7e3c258c92f467330009021151bf01
+PODFILE CHECKSUM: 86c67fb2cac8915059601156e4e6137379082052
 
 COCOAPODS: 1.6.1

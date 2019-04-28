@@ -5,7 +5,8 @@ target 'Direct' do
   pod 'Hero'
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
-  
+  pod 'RxDataSources'
+
   
   target 'DirectTests' do
     inherit! :search_paths

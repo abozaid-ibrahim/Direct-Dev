@@ -36,7 +36,9 @@ extension HomeCollectionSectionWrapper:UICollectionViewDataSource,UICollectionVi
         return dataList.count
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        Navigator.show
+        AppNavigator.present(Destination.visaRequirement)
+        
+        
     }
     
     
