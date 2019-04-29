@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		26A9B974FAE8C6E3C5BE0795 /* Pods_DirectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121B9A8C3675B423D5D78B5B /* Pods_DirectUITests.framework */; };
 		6C2CFB84227734E700D23CF4 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CFB83227734E700D23CF4 /* TableCell.swift */; };
+		6C2CFB882277419A00D23CF4 /* SelectableTableSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CFB862277419A00D23CF4 /* SelectableTableSheet.swift */; };
+		6C2CFB892277419A00D23CF4 /* SelectableTableSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C2CFB872277419A00D23CF4 /* SelectableTableSheet.xib */; };
+		6C2CFB8C2277422900D23CF4 /* PackagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CFB8B2277422900D23CF4 /* PackagesViewController.swift */; };
+		6C2CFB8F2277446600D23CF4 /* SingleRowTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CFB8D2277446600D23CF4 /* SingleRowTableCell.swift */; };
+		6C2CFB902277446600D23CF4 /* SingleRowTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C2CFB8E2277446600D23CF4 /* SingleRowTableCell.xib */; };
 		6C5DE75A2275C763001A9FB6 /* MyOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE7592275C763001A9FB6 /* MyOrdersViewController.swift */; };
 		6C5DE7652275DA99001A9FB6 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE7642275DA99001A9FB6 /* UIView.swift */; };
 		6C5DE7682275EC49001A9FB6 /* VisaRequirementTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE7662275EC49001A9FB6 /* VisaRequirementTableCell.swift */; };
@@ -104,6 +109,11 @@
 		32AD91C3FA31B9C68158A139 /* Pods-DirectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DirectTests.release.xcconfig"; path = "Target Support Files/Pods-DirectTests/Pods-DirectTests.release.xcconfig"; sourceTree = "<group>"; };
 		6B30160045018A20D10805B6 /* Pods-DirectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DirectTests.debug.xcconfig"; path = "Target Support Files/Pods-DirectTests/Pods-DirectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6C2CFB83227734E700D23CF4 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
+		6C2CFB862277419A00D23CF4 /* SelectableTableSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableTableSheet.swift; sourceTree = "<group>"; };
+		6C2CFB872277419A00D23CF4 /* SelectableTableSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectableTableSheet.xib; sourceTree = "<group>"; };
+		6C2CFB8B2277422900D23CF4 /* PackagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesViewController.swift; sourceTree = "<group>"; };
+		6C2CFB8D2277446600D23CF4 /* SingleRowTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRowTableCell.swift; sourceTree = "<group>"; };
+		6C2CFB8E2277446600D23CF4 /* SingleRowTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleRowTableCell.xib; sourceTree = "<group>"; };
 		6C5DE7592275C763001A9FB6 /* MyOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersViewController.swift; sourceTree = "<group>"; };
 		6C5DE7642275DA99001A9FB6 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		6C5DE7662275EC49001A9FB6 /* VisaRequirementTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaRequirementTableCell.swift; sourceTree = "<group>"; };
@@ -211,6 +221,25 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		6C2CFB852277411700D23CF4 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				6C2CFB8D2277446600D23CF4 /* SingleRowTableCell.swift */,
+				6C2CFB8E2277446600D23CF4 /* SingleRowTableCell.xib */,
+				6C2CFB862277419A00D23CF4 /* SelectableTableSheet.swift */,
+				6C2CFB872277419A00D23CF4 /* SelectableTableSheet.xib */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		6C2CFB8A2277421B00D23CF4 /* packages */ = {
+			isa = PBXGroup;
+			children = (
+				6C2CFB8B2277422900D23CF4 /* PackagesViewController.swift */,
+			);
+			path = packages;
+			sourceTree = "<group>";
+		};
 		6C5DE7582275C742001A9FB6 /* orders */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +326,8 @@
 		6C87FACF2270C1D500AFE485 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				6C2CFB8A2277421B00D23CF4 /* packages */,
+				6C2CFB852277411700D23CF4 /* common */,
 				6C5DE771227732D4001A9FB6 /* search */,
 				6C5DE7582275C742001A9FB6 /* orders */,
 				6CE722E82274F9F700E095DC /* visa */,
@@ -573,6 +604,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C2CFB892277419A00D23CF4 /* SelectableTableSheet.xib in Resources */,
 				6C87FAE52270C75F00AFE485 /* SignupViewController.xib in Resources */,
 				6C87FAE12270C75100AFE485 /* LoginViewController.xib in Resources */,
 				6CF3E1A5227254A1007488BA /* InstituteCollectionViewCell.xib in Resources */,
@@ -589,6 +621,7 @@
 				6CF3E1852271F4B9007488BA /* HomeViewController.xib in Resources */,
 				6C87FADD2270C74000AFE485 /* UserAuthViewController.xib in Resources */,
 				6CE722EE2274FA1B00E095DC /* VisaRequirementController.xib in Resources */,
+				6C2CFB902277446600D23CF4 /* SingleRowTableCell.xib in Resources */,
 				6C5DE775227732EF001A9FB6 /* SearchViewController.xib in Resources */,
 				6CF3E1A9227254B7007488BA /* NewsCollectionViewCell.xib in Resources */,
 			);
@@ -722,6 +755,7 @@
 				6CF3E19C22725430007488BA /* VisaCollectionViewCell.swift in Sources */,
 				6CF3E1B8227268CF007488BA /* HomeCollectionSectionHeader.swift in Sources */,
 				6CF3E1722271E451007488BA /* Navigator.swift in Sources */,
+				6C2CFB882277419A00D23CF4 /* SelectableTableSheet.swift in Sources */,
 				6CF3E1802271F303007488BA /* ViewControllerActionBarStyle.swift in Sources */,
 				6C5DE774227732EF001A9FB6 /* SearchViewController.swift in Sources */,
 				6CF3E1A8227254B7007488BA /* NewsCollectionViewCell.swift in Sources */,
@@ -748,6 +782,8 @@
 				6C5DE7652275DA99001A9FB6 /* UIView.swift in Sources */,
 				6C87FAD92270C6D800AFE485 /* UIColor+Additions.swift in Sources */,
 				6C87FAE02270C75100AFE485 /* LoginViewController.swift in Sources */,
+				6C2CFB8F2277446600D23CF4 /* SingleRowTableCell.swift in Sources */,
+				6C2CFB8C2277422900D23CF4 /* PackagesViewController.swift in Sources */,
 				6C87FADC2270C74000AFE485 /* UserAuthViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

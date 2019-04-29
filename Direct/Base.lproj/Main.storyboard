@@ -64,7 +64,7 @@
         <!--packages-->
         <scene sceneID="5wZ-wa-HQh">
             <objects>
-                <viewController storyboardIdentifier="MyOrdersViewController" id="XfK-Hb-2tX" customClass="MyOrdersViewController" customModule="Direct" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PackagesViewController" id="XfK-Hb-2tX" customClass="PackagesViewController" customModule="Direct" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I5b-FP-H9F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

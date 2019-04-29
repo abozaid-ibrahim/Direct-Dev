@@ -10,7 +10,7 @@ import UIKit
 import PanModal
 /*if any contoller need any dependencies, it should passed in the destination item*/
 enum Destination{
-    case loginView, signupView,homeScreen,visaRequirement
+    case loginView, signupView,homeScreen,visaRequirement,selectableSheet(data:Any)
     func controller()->UIViewController{
         switch self {
         case .loginView:
@@ -27,6 +27,9 @@ enum Destination{
         case .visaRequirement:
             let controller  = VisaRequirementController()
             return controller
+        case .selectableSheet(let data):
+            let vc = SelectableTableSheet()
+            return vc
         }
     }
 }
@@ -43,12 +46,13 @@ final class AppNavigator:Navigator{
         
     }
     static func present(_ dest: Destination) {
-        
-        //           rootController.presentPanModal(dest.controller() as! UIViewController & PanModalPresentable)
-//        rootController.present( dest.controller(), animated: true, completion: nil)
         rootController.pushViewController(dest.controller(), animated: true)
     }
-    
+    static func presentModally(_ dest:Destination){
+        
+                   rootController.presentPanModal(dest.controller() as! UIViewController & PanModalPresentable)
+
+    }
     
     var rootController:RootNavigationViewController
     init(root:RootNavigationViewController) {

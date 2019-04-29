@@ -22,18 +22,26 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ajj-HC-rdf">
-                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <rect key="frame" x="0.0" y="76" width="375" height="591"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="P0E-kw-GyN">
+                    <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="P0E-kw-GyN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="5zM-pr-bGe"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ajj-HC-rdf" secondAttribute="bottom" id="6zF-jx-O7F"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ajj-HC-rdf" secondAttribute="trailing" id="Kwm-7E-vhH"/>
-                <constraint firstItem="ajj-HC-rdf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="pmh-SR-wtv"/>
+                <constraint firstItem="ajj-HC-rdf" firstAttribute="top" secondItem="P0E-kw-GyN" secondAttribute="bottom" id="YBM-rM-5cS"/>
+                <constraint firstItem="P0E-kw-GyN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bdX-jS-O16"/>
+                <constraint firstItem="P0E-kw-GyN" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="qep-SY-J1B"/>
                 <constraint firstItem="ajj-HC-rdf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vhU-wM-a1A"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
         </view>
     </objects>
 </document>
