@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		26A9B974FAE8C6E3C5BE0795 /* Pods_DirectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121B9A8C3675B423D5D78B5B /* Pods_DirectUITests.framework */; };
+		6C2CFB84227734E700D23CF4 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CFB83227734E700D23CF4 /* TableCell.swift */; };
 		6C5DE75A2275C763001A9FB6 /* MyOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE7592275C763001A9FB6 /* MyOrdersViewController.swift */; };
 		6C5DE7652275DA99001A9FB6 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE7642275DA99001A9FB6 /* UIView.swift */; };
 		6C5DE7682275EC49001A9FB6 /* VisaRequirementTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE7662275EC49001A9FB6 /* VisaRequirementTableCell.swift */; };
 		6C5DE7692275EC49001A9FB6 /* VisaRequirementTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C5DE7672275EC49001A9FB6 /* VisaRequirementTableCell.xib */; };
 		6C5DE76C22762013001A9FB6 /* RequireVisaSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE76B22762013001A9FB6 /* RequireVisaSectionHeader.swift */; };
 		6C5DE77022762020001A9FB6 /* RequireVisaSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C5DE76F22762020001A9FB6 /* RequireVisaSectionHeader.xib */; };
+		6C5DE774227732EF001A9FB6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE772227732EF001A9FB6 /* SearchViewController.swift */; };
+		6C5DE775227732EF001A9FB6 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C5DE773227732EF001A9FB6 /* SearchViewController.xib */; };
+		6C5DE7782277330D001A9FB6 /* CountryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE7762277330D001A9FB6 /* CountryTableCell.swift */; };
+		6C5DE7792277330D001A9FB6 /* CountryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C5DE7772277330D001A9FB6 /* CountryTableCell.xib */; };
 		6C5FDA4D2270816B00ABA39B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5FDA4C2270816B00ABA39B /* AppDelegate.swift */; };
 		6C5FDA4F2270816B00ABA39B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5FDA4E2270816B00ABA39B /* ViewController.swift */; };
 		6C5FDA522270816B00ABA39B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C5FDA502270816B00ABA39B /* Main.storyboard */; };
@@ -98,12 +103,17 @@
 		29A2B8F6171281AB2F94BE3F /* Pods_DirectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DirectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32AD91C3FA31B9C68158A139 /* Pods-DirectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DirectTests.release.xcconfig"; path = "Target Support Files/Pods-DirectTests/Pods-DirectTests.release.xcconfig"; sourceTree = "<group>"; };
 		6B30160045018A20D10805B6 /* Pods-DirectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DirectTests.debug.xcconfig"; path = "Target Support Files/Pods-DirectTests/Pods-DirectTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6C2CFB83227734E700D23CF4 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		6C5DE7592275C763001A9FB6 /* MyOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersViewController.swift; sourceTree = "<group>"; };
 		6C5DE7642275DA99001A9FB6 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		6C5DE7662275EC49001A9FB6 /* VisaRequirementTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaRequirementTableCell.swift; sourceTree = "<group>"; };
 		6C5DE7672275EC49001A9FB6 /* VisaRequirementTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisaRequirementTableCell.xib; sourceTree = "<group>"; };
 		6C5DE76B22762013001A9FB6 /* RequireVisaSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequireVisaSectionHeader.swift; sourceTree = "<group>"; };
 		6C5DE76F22762020001A9FB6 /* RequireVisaSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequireVisaSectionHeader.xib; sourceTree = "<group>"; };
+		6C5DE772227732EF001A9FB6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		6C5DE773227732EF001A9FB6 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		6C5DE7762277330D001A9FB6 /* CountryTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableCell.swift; sourceTree = "<group>"; };
+		6C5DE7772277330D001A9FB6 /* CountryTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableCell.xib; sourceTree = "<group>"; };
 		6C5FDA492270816B00ABA39B /* Direct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Direct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C5FDA4C2270816B00ABA39B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C5FDA4E2270816B00ABA39B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +219,17 @@
 			path = orders;
 			sourceTree = "<group>";
 		};
+		6C5DE771227732D4001A9FB6 /* search */ = {
+			isa = PBXGroup;
+			children = (
+				6C5DE772227732EF001A9FB6 /* SearchViewController.swift */,
+				6C5DE773227732EF001A9FB6 /* SearchViewController.xib */,
+				6C5DE7762277330D001A9FB6 /* CountryTableCell.swift */,
+				6C5DE7772277330D001A9FB6 /* CountryTableCell.xib */,
+			);
+			path = search;
+			sourceTree = "<group>";
+		};
 		6C5FDA402270816A00ABA39B = {
 			isa = PBXGroup;
 			children = (
@@ -276,7 +297,7 @@
 		6C87FACF2270C1D500AFE485 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				6C5DE7642275DA99001A9FB6 /* UIView.swift */,
+				6C5DE771227732D4001A9FB6 /* search */,
 				6C5DE7582275C742001A9FB6 /* orders */,
 				6CE722E82274F9F700E095DC /* visa */,
 				6CF3E1BF2274B8CA007488BA /* fake data */,
@@ -343,9 +364,11 @@
 		6CF3E17B2271E6D4007488BA /* base */ = {
 			isa = PBXGroup;
 			children = (
+				6C5DE7642275DA99001A9FB6 /* UIView.swift */,
 				6CF3E1712271E451007488BA /* Navigator.swift */,
 				6CF3E1752271E598007488BA /* RootNavigationViewController.swift */,
 				6CF3E1B222725799007488BA /* Binder.swift */,
+				6C2CFB83227734E700D23CF4 /* TableCell.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -555,6 +578,7 @@
 				6CF3E1A5227254A1007488BA /* InstituteCollectionViewCell.xib in Resources */,
 				6C5DE7692275EC49001A9FB6 /* VisaRequirementTableCell.xib in Resources */,
 				6CF3E1CD2274BBE5007488BA /* HomeCollectionSectionWrapper.xib in Resources */,
+				6C5DE7792277330D001A9FB6 /* CountryTableCell.xib in Resources */,
 				6CF3E1A122725478007488BA /* OfferCollectionViewCell.xib in Resources */,
 				6C5FDA572270816C00ABA39B /* LaunchScreen.storyboard in Resources */,
 				6C5FDA542270816C00ABA39B /* Assets.xcassets in Resources */,
@@ -565,6 +589,7 @@
 				6CF3E1852271F4B9007488BA /* HomeViewController.xib in Resources */,
 				6C87FADD2270C74000AFE485 /* UserAuthViewController.xib in Resources */,
 				6CE722EE2274FA1B00E095DC /* VisaRequirementController.xib in Resources */,
+				6C5DE775227732EF001A9FB6 /* SearchViewController.xib in Resources */,
 				6CF3E1A9227254B7007488BA /* NewsCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -698,15 +723,18 @@
 				6CF3E1B8227268CF007488BA /* HomeCollectionSectionHeader.swift in Sources */,
 				6CF3E1722271E451007488BA /* Navigator.swift in Sources */,
 				6CF3E1802271F303007488BA /* ViewControllerActionBarStyle.swift in Sources */,
+				6C5DE774227732EF001A9FB6 /* SearchViewController.swift in Sources */,
 				6CF3E1A8227254B7007488BA /* NewsCollectionViewCell.swift in Sources */,
 				6CF3E1A4227254A1007488BA /* InstituteCollectionViewCell.swift in Sources */,
 				6C87FAE42270C75F00AFE485 /* SignupViewController.swift in Sources */,
 				6C5FDA4F2270816B00ABA39B /* ViewController.swift in Sources */,
 				6CE722ED2274FA1B00E095DC /* VisaRequirementController.swift in Sources */,
+				6C5DE7782277330D001A9FB6 /* CountryTableCell.swift in Sources */,
 				6CF3E1B322725799007488BA /* Binder.swift in Sources */,
 				6C5FDA4D2270816B00ABA39B /* AppDelegate.swift in Sources */,
 				6CF3E17E2271E702007488BA /* User.swift in Sources */,
 				6CF3E19422724D0C007488BA /* HomeCollectionSection.swift in Sources */,
+				6C2CFB84227734E700D23CF4 /* TableCell.swift in Sources */,
 				6C5DE7682275EC49001A9FB6 /* VisaRequirementTableCell.swift in Sources */,
 				6CF3E19922724E23007488BA /* HomeViewModel.swift in Sources */,
 				6CF3E1B1227255DC007488BA /* OffersSectionVM.swift in Sources */,

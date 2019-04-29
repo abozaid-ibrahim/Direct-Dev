@@ -120,7 +120,7 @@ extension VisaRequirementController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         print("\(tableView.numberOfSections) - \(section)")
         let header  = Bundle.main.loadNibNamed("RequireVisaSectionHeader", owner: nil)!.first as! RequireVisaSectionHeader
-header.setData(text: "Fuck", img: #imageLiteral(resourceName: "p"))
+        header.setData(text: "Fuck", img: #imageLiteral(resourceName: "p"))
         return header
     }
 }
