@@ -138,3 +138,12 @@ public extension UIView {
         layer.mask = maskLayer1
     }
 }
+extension UIView {
+    func sameBoundsTo(parentView: UIView, l:CGFloat = 0,tr:CGFloat = 0,tp:CGFloat = 0,b:CGFloat = 0) {
+        translatesAutoresizingMaskIntoConstraints = false
+        leadingAnchor.constraint(equalTo: parentView.leadingAnchor, constant: l).isActive = true
+        trailingAnchor.constraint(equalTo: parentView.trailingAnchor, constant: -tr).isActive = true
+        topAnchor.constraint(equalTo: parentView.topAnchor, constant: tp).isActive = true
+        bottomAnchor.constraint(equalTo: parentView.bottomAnchor, constant: b).isActive = true
+    }
+}

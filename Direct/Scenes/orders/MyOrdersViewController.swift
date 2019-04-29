@@ -15,4 +15,7 @@ class MyOrdersViewController: UIViewController,StyledActionBar {
         setupActionBar(.withTitle("My Orders"))
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.present(NewVisaViewController(), animated: true, completion: nil)
+    }
 }
