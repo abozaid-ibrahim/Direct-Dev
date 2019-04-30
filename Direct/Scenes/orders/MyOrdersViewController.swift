@@ -16,6 +16,6 @@ class MyOrdersViewController: UIViewController,StyledActionBar {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.present(NewVisaViewController(), animated: true, completion: nil)
+        self.present(NewDirectVisaController(), animated: true, completion: nil)
     }
 }

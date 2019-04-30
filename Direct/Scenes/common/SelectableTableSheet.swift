@@ -22,7 +22,7 @@ final class SelectableTableSheet: UIViewController,PanModalPresentable {
         super.viewDidLoad()
         tableView.register(UINib(nibName: SingleRowTableCell.cellId, bundle: nil), forCellReuseIdentifier: SingleRowTableCell.cellId)
 
-        Observable<[String]>.just(dataList)
+        Observable<[String]>.just(Array(dataList[0...3]))
             .bind(to: tableView.rx.items(cellIdentifier: SingleRowTableCell.cellId)) { row, model, cell  in
                 let mycell = (cell as! SingleRowTableCell)
                 mycell.setCellData(model)

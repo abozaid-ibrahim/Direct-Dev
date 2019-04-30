@@ -1,0 +1,45 @@
+//
+//  PaymentViewController.swift
+//  Direct
+//
+//  Created by abuzeid on 4/30/19.
+//  Copyright © 2019 abuzeid. All rights reserved.
+//
+
+import UIKit
+import RxSwift
+import PanModal
+
+final class PaymentViewController: UIViewController,PanModalPresentable {
+    @IBOutlet weak var checkoutFooter: CheckoutFooter!
+    var panScrollable: UIScrollView?{
+        return  branchsTable
+    }
+    @IBOutlet weak var branchsTable: UITableView!
+    @IBOutlet weak var paymentMethodTable: UITableView!
+    
+    private let disposeBag = DisposeBag()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        paymentMethodTable.registerNib(PaymentMethodTableCell.cellId)
+        branchsTable.registerNib(PaymentBranchTableCell.cellId)
+        Observable<[String]>.just(Array(dataList[0...2]))
+            .bind(to: paymentMethodTable.rx.items(cellIdentifier: PaymentMethodTableCell.cellId)) { row, model, cell  in
+                let mycell = (cell as! PaymentMethodTableCell)
+//                mycell.setCellData((model,UIImage()))
+            }.disposed(by: disposeBag)
+        
+        Observable<[String]>.just(dataList)
+            .bind(to: branchsTable.rx.items(cellIdentifier: PaymentBranchTableCell.cellId)) { row, model, cell  in
+                let mycell = (cell as! PaymentBranchTableCell)
+//                mycell.setCellData((model,UIImage()))
+            }.disposed(by: disposeBag)
+        
+    }
+}
+
+extension UITableView {
+    func registerNib(_ id:String){
+        register(UINib(nibName: id, bundle: nil), forCellReuseIdentifier: id)
+    }
+}

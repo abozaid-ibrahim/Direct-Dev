@@ -14,10 +14,16 @@
 		6C2CFB8C2277422900D23CF4 /* PackagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CFB8B2277422900D23CF4 /* PackagesViewController.swift */; };
 		6C2CFB8F2277446600D23CF4 /* SingleRowTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CFB8D2277446600D23CF4 /* SingleRowTableCell.swift */; };
 		6C2CFB902277446600D23CF4 /* SingleRowTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C2CFB8E2277446600D23CF4 /* SingleRowTableCell.xib */; };
-		6C2CFB932277902400D23CF4 /* NewVisaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CFB912277902400D23CF4 /* NewVisaViewController.swift */; };
-		6C2CFB942277902400D23CF4 /* NewVisaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C2CFB922277902400D23CF4 /* NewVisaViewController.xib */; };
+		6C2CFB932277902400D23CF4 /* NewDirectVisaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CFB912277902400D23CF4 /* NewDirectVisaController.swift */; };
+		6C2CFB942277902400D23CF4 /* NewDirectVisaController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C2CFB922277902400D23CF4 /* NewDirectVisaController.xib */; };
 		6C2CFB962277996500D23CF4 /* SpinnerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CFB952277996500D23CF4 /* SpinnerTextField.swift */; };
 		6C2CFB9822779AFD00D23CF4 /* UIButton+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CFB9722779AFD00D23CF4 /* UIButton+App.swift */; };
+		6C2CFB9F22789E0200D23CF4 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CFB9D22789E0200D23CF4 /* PaymentViewController.swift */; };
+		6C2CFBA022789E0200D23CF4 /* PaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C2CFB9E22789E0200D23CF4 /* PaymentViewController.xib */; };
+		6C2CFBA322789F6100D23CF4 /* PaymentMethodTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CFBA122789F6100D23CF4 /* PaymentMethodTableCell.swift */; };
+		6C2CFBA422789F6100D23CF4 /* PaymentMethodTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C2CFBA222789F6100D23CF4 /* PaymentMethodTableCell.xib */; };
+		6C2CFBA72278A1C600D23CF4 /* PaymentBranchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CFBA52278A1C600D23CF4 /* PaymentBranchTableCell.swift */; };
+		6C2CFBA82278A1C600D23CF4 /* PaymentBranchTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C2CFBA62278A1C600D23CF4 /* PaymentBranchTableCell.xib */; };
 		6C5DE75A2275C763001A9FB6 /* MyOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE7592275C763001A9FB6 /* MyOrdersViewController.swift */; };
 		6C5DE7652275DA99001A9FB6 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE7642275DA99001A9FB6 /* UIView.swift */; };
 		6C5DE7682275EC49001A9FB6 /* VisaRequirementTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE7662275EC49001A9FB6 /* VisaRequirementTableCell.swift */; };
@@ -35,6 +41,9 @@
 		6C5FDA572270816C00ABA39B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C5FDA552270816C00ABA39B /* LaunchScreen.storyboard */; };
 		6C5FDA622270816D00ABA39B /* DirectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5FDA612270816D00ABA39B /* DirectTests.swift */; };
 		6C5FDA6D2270816D00ABA39B /* DirectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5FDA6C2270816D00ABA39B /* DirectUITests.swift */; };
+		6C7782472278A54A001926B2 /* CheckoutFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7782462278A54A001926B2 /* CheckoutFooter.swift */; };
+		6C77824D2278ABB7001926B2 /* CheckoutBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C77824C2278ABB7001926B2 /* CheckoutBottomView.xib */; };
+		6C77824F2278ABDC001926B2 /* CheckoutBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C77824E2278ABDC001926B2 /* CheckoutBottomView.swift */; };
 		6C87FABD2270B5F400AFE485 /* NetworkModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C87FABA2270B5D600AFE485 /* NetworkModule.framework */; };
 		6C87FAD92270C6D800AFE485 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C87FAD82270C6D800AFE485 /* UIColor+Additions.swift */; };
 		6C87FADC2270C74000AFE485 /* UserAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C87FADA2270C74000AFE485 /* UserAuthViewController.swift */; };
@@ -118,10 +127,16 @@
 		6C2CFB8B2277422900D23CF4 /* PackagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesViewController.swift; sourceTree = "<group>"; };
 		6C2CFB8D2277446600D23CF4 /* SingleRowTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRowTableCell.swift; sourceTree = "<group>"; };
 		6C2CFB8E2277446600D23CF4 /* SingleRowTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleRowTableCell.xib; sourceTree = "<group>"; };
-		6C2CFB912277902400D23CF4 /* NewVisaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVisaViewController.swift; sourceTree = "<group>"; };
-		6C2CFB922277902400D23CF4 /* NewVisaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewVisaViewController.xib; sourceTree = "<group>"; };
+		6C2CFB912277902400D23CF4 /* NewDirectVisaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDirectVisaController.swift; sourceTree = "<group>"; };
+		6C2CFB922277902400D23CF4 /* NewDirectVisaController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewDirectVisaController.xib; sourceTree = "<group>"; };
 		6C2CFB952277996500D23CF4 /* SpinnerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerTextField.swift; sourceTree = "<group>"; };
 		6C2CFB9722779AFD00D23CF4 /* UIButton+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+App.swift"; sourceTree = "<group>"; };
+		6C2CFB9D22789E0200D23CF4 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		6C2CFB9E22789E0200D23CF4 /* PaymentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentViewController.xib; sourceTree = "<group>"; };
+		6C2CFBA122789F6100D23CF4 /* PaymentMethodTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodTableCell.swift; sourceTree = "<group>"; };
+		6C2CFBA222789F6100D23CF4 /* PaymentMethodTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentMethodTableCell.xib; sourceTree = "<group>"; };
+		6C2CFBA52278A1C600D23CF4 /* PaymentBranchTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentBranchTableCell.swift; sourceTree = "<group>"; };
+		6C2CFBA62278A1C600D23CF4 /* PaymentBranchTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentBranchTableCell.xib; sourceTree = "<group>"; };
 		6C5DE7592275C763001A9FB6 /* MyOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersViewController.swift; sourceTree = "<group>"; };
 		6C5DE7642275DA99001A9FB6 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		6C5DE7662275EC49001A9FB6 /* VisaRequirementTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaRequirementTableCell.swift; sourceTree = "<group>"; };
@@ -145,6 +160,9 @@
 		6C5FDA682270816D00ABA39B /* DirectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DirectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C5FDA6C2270816D00ABA39B /* DirectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectUITests.swift; sourceTree = "<group>"; };
 		6C5FDA6E2270816D00ABA39B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C7782462278A54A001926B2 /* CheckoutFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutFooter.swift; sourceTree = "<group>"; };
+		6C77824C2278ABB7001926B2 /* CheckoutBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckoutBottomView.xib; sourceTree = "<group>"; };
+		6C77824E2278ABDC001926B2 /* CheckoutBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutBottomView.swift; sourceTree = "<group>"; };
 		6C87FAB42270B5D600AFE485 /* NetworkModule.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkModule.xcodeproj; path = ../NetworkModule/NetworkModule.xcodeproj; sourceTree = "<group>"; };
 		6C87FAD82270C6D800AFE485 /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		6C87FADA2270C74000AFE485 /* UserAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthViewController.swift; sourceTree = "<group>"; };
@@ -237,6 +255,9 @@
 				6C2CFB862277419A00D23CF4 /* SelectableTableSheet.swift */,
 				6C2CFB872277419A00D23CF4 /* SelectableTableSheet.xib */,
 				6C2CFB952277996500D23CF4 /* SpinnerTextField.swift */,
+				6C7782462278A54A001926B2 /* CheckoutFooter.swift */,
+				6C77824C2278ABB7001926B2 /* CheckoutBottomView.xib */,
+				6C77824E2278ABDC001926B2 /* CheckoutBottomView.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -247,6 +268,19 @@
 				6C2CFB8B2277422900D23CF4 /* PackagesViewController.swift */,
 			);
 			path = packages;
+			sourceTree = "<group>";
+		};
+		6C2CFB9C22789DEA00D23CF4 /* payment */ = {
+			isa = PBXGroup;
+			children = (
+				6C2CFB9D22789E0200D23CF4 /* PaymentViewController.swift */,
+				6C2CFB9E22789E0200D23CF4 /* PaymentViewController.xib */,
+				6C2CFBA122789F6100D23CF4 /* PaymentMethodTableCell.swift */,
+				6C2CFBA222789F6100D23CF4 /* PaymentMethodTableCell.xib */,
+				6C2CFBA52278A1C600D23CF4 /* PaymentBranchTableCell.swift */,
+				6C2CFBA62278A1C600D23CF4 /* PaymentBranchTableCell.xib */,
+			);
+			path = payment;
 			sourceTree = "<group>";
 		};
 		6C5DE7582275C742001A9FB6 /* orders */ = {
@@ -335,6 +369,7 @@
 		6C87FACF2270C1D500AFE485 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				6C2CFB9C22789DEA00D23CF4 /* payment */,
 				6C2CFB8A2277421B00D23CF4 /* packages */,
 				6C2CFB852277411700D23CF4 /* common */,
 				6C5DE771227732D4001A9FB6 /* search */,
@@ -383,8 +418,8 @@
 				6C5DE7672275EC49001A9FB6 /* VisaRequirementTableCell.xib */,
 				6C5DE76B22762013001A9FB6 /* RequireVisaSectionHeader.swift */,
 				6C5DE76F22762020001A9FB6 /* RequireVisaSectionHeader.xib */,
-				6C2CFB912277902400D23CF4 /* NewVisaViewController.swift */,
-				6C2CFB922277902400D23CF4 /* NewVisaViewController.xib */,
+				6C2CFB912277902400D23CF4 /* NewDirectVisaController.swift */,
+				6C2CFB922277902400D23CF4 /* NewDirectVisaController.xib */,
 			);
 			path = visa;
 			sourceTree = "<group>";
@@ -619,12 +654,16 @@
 				6C2CFB892277419A00D23CF4 /* SelectableTableSheet.xib in Resources */,
 				6C87FAE52270C75F00AFE485 /* SignupViewController.xib in Resources */,
 				6C87FAE12270C75100AFE485 /* LoginViewController.xib in Resources */,
+				6C77824D2278ABB7001926B2 /* CheckoutBottomView.xib in Resources */,
 				6CF3E1A5227254A1007488BA /* InstituteCollectionViewCell.xib in Resources */,
+				6C2CFBA422789F6100D23CF4 /* PaymentMethodTableCell.xib in Resources */,
 				6C5DE7692275EC49001A9FB6 /* VisaRequirementTableCell.xib in Resources */,
 				6CF3E1CD2274BBE5007488BA /* HomeCollectionSectionWrapper.xib in Resources */,
-				6C2CFB942277902400D23CF4 /* NewVisaViewController.xib in Resources */,
+				6C2CFBA82278A1C600D23CF4 /* PaymentBranchTableCell.xib in Resources */,
+				6C2CFB942277902400D23CF4 /* NewDirectVisaController.xib in Resources */,
 				6C5DE7792277330D001A9FB6 /* CountryTableCell.xib in Resources */,
 				6CF3E1A122725478007488BA /* OfferCollectionViewCell.xib in Resources */,
+				6C2CFBA022789E0200D23CF4 /* PaymentViewController.xib in Resources */,
 				6C5FDA572270816C00ABA39B /* LaunchScreen.storyboard in Resources */,
 				6C5FDA542270816C00ABA39B /* Assets.xcassets in Resources */,
 				6C5FDA522270816B00ABA39B /* Main.storyboard in Resources */,
@@ -765,7 +804,9 @@
 				6CF3E1AF2272558A007488BA /* InstitutesSectionVM.swift in Sources */,
 				6C5DE75A2275C763001A9FB6 /* MyOrdersViewController.swift in Sources */,
 				6CF3E1762271E598007488BA /* RootNavigationViewController.swift in Sources */,
+				6C7782472278A54A001926B2 /* CheckoutFooter.swift in Sources */,
 				6CF3E19C22725430007488BA /* VisaCollectionViewCell.swift in Sources */,
+				6C2CFBA322789F6100D23CF4 /* PaymentMethodTableCell.swift in Sources */,
 				6CF3E1B8227268CF007488BA /* HomeCollectionSectionHeader.swift in Sources */,
 				6CF3E1722271E451007488BA /* Navigator.swift in Sources */,
 				6C2CFB882277419A00D23CF4 /* SelectableTableSheet.swift in Sources */,
@@ -773,7 +814,8 @@
 				6C5DE774227732EF001A9FB6 /* SearchViewController.swift in Sources */,
 				6CF3E1A8227254B7007488BA /* NewsCollectionViewCell.swift in Sources */,
 				6CF3E1A4227254A1007488BA /* InstituteCollectionViewCell.swift in Sources */,
-				6C2CFB932277902400D23CF4 /* NewVisaViewController.swift in Sources */,
+				6C77824F2278ABDC001926B2 /* CheckoutBottomView.swift in Sources */,
+				6C2CFB932277902400D23CF4 /* NewDirectVisaController.swift in Sources */,
 				6C87FAE42270C75F00AFE485 /* SignupViewController.swift in Sources */,
 				6C5FDA4F2270816B00ABA39B /* ViewController.swift in Sources */,
 				6CE722ED2274FA1B00E095DC /* VisaRequirementController.swift in Sources */,
@@ -789,6 +831,7 @@
 				6CF3E1A022725478007488BA /* OfferCollectionViewCell.swift in Sources */,
 				6CF3E1AB227254DB007488BA /* NewsSectionVM.swift in Sources */,
 				6C5DE76C22762013001A9FB6 /* RequireVisaSectionHeader.swift in Sources */,
+				6C2CFB9F22789E0200D23CF4 /* PaymentViewController.swift in Sources */,
 				6CF3E1C32274B8DB007488BA /* FakeData.swift in Sources */,
 				6CF3E1CC2274BBE5007488BA /* HomeCollectionSectionWrapper.swift in Sources */,
 				6C2CFB962277996500D23CF4 /* SpinnerTextField.swift in Sources */,
@@ -799,6 +842,7 @@
 				6C87FAE02270C75100AFE485 /* LoginViewController.swift in Sources */,
 				6C2CFB8F2277446600D23CF4 /* SingleRowTableCell.swift in Sources */,
 				6C2CFB9822779AFD00D23CF4 /* UIButton+App.swift in Sources */,
+				6C2CFBA72278A1C600D23CF4 /* PaymentBranchTableCell.swift in Sources */,
 				6C2CFB8C2277422900D23CF4 /* PackagesViewController.swift in Sources */,
 				6C87FADC2270C74000AFE485 /* UserAuthViewController.swift in Sources */,
 			);

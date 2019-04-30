@@ -32,7 +32,7 @@ extension UIButton{
         case .primary:
             self.backgroundColor = UIColor.appMango
             self.cornerRadiusV = 10
-            self.titleLabel?.textColor = UIColor.white
+            self.setTitleColor(.white, for: .normal)
        
         }
     }

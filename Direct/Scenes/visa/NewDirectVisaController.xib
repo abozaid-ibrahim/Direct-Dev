@@ -10,8 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewVisaViewController" customModule="Direct" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewDirectVisaController" customModule="Direct" customModuleProvider="target">
             <connections>
+                <outlet property="checkoutFooter" destination="72P-rO-dCS" id="Ujh-EQ-CWg"/>
+                <outlet property="countryField" destination="BhQ-iz-jOu" id="prw-RT-zrV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -96,50 +98,10 @@
                                 <constraint firstAttribute="height" constant="240" id="jQW-Iq-Ibn"/>
                             </constraints>
                         </stackView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72P-rO-dCS">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72P-rO-dCS" customClass="CheckoutFooter" customModule="Direct" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="287.5" width="355" height="80"/>
-                            <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="pGs-nw-hSX">
-                                    <rect key="frame" x="8" y="8" width="339" height="64"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKF-bn-SBp">
-                                            <rect key="frame" x="0.0" y="17" width="220" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="220" id="vof-zh-l2M"/>
-                                            </constraints>
-                                            <state key="normal" title="Request"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">
-                                                    <integer key="value" value="1"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </button>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="kB2-TH-0OC">
-                                            <rect key="frame" x="235" y="9.5" width="104" height="45"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgg-FS-42g">
-                                                    <rect key="frame" x="31" y="0.0" width="42" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhc-uS-92S">
-                                                    <rect key="frame" x="31" y="24.5" width="42" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </stackView>
-                                    </subviews>
-                                </stackView>
-                            </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="pGs-nw-hSX" secondAttribute="bottom" constant="8" id="5Tb-gF-Eus"/>
-                                <constraint firstItem="pGs-nw-hSX" firstAttribute="top" secondItem="72P-rO-dCS" secondAttribute="top" constant="8" id="N2p-GN-s0Y"/>
-                                <constraint firstItem="pGs-nw-hSX" firstAttribute="leading" secondItem="72P-rO-dCS" secondAttribute="leading" constant="8" id="TRz-I3-YwI"/>
-                                <constraint firstAttribute="trailing" secondItem="pGs-nw-hSX" secondAttribute="trailing" constant="8" id="gg1-uV-EIs"/>
                                 <constraint firstAttribute="height" constant="80" id="jQs-K3-fTn"/>
                             </constraints>
                         </view>
