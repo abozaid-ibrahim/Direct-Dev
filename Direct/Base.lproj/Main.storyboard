@@ -32,14 +32,29 @@
         <!--help-->
         <scene sceneID="zJh-OH-16J">
             <objects>
-                <viewController id="De0-aQ-EfP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HelpViewController" id="De0-aQ-EfP" customClass="HelpViewController" customModule="Direct" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SUH-xD-SIh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EZD-3Q-xMd">
+                                <rect key="frame" x="4" y="68" width="367" height="546"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cMs-lq-j8J" firstAttribute="bottom" secondItem="EZD-3Q-xMd" secondAttribute="bottom" constant="4" id="OD0-P3-iqW"/>
+                            <constraint firstItem="EZD-3Q-xMd" firstAttribute="top" secondItem="cMs-lq-j8J" secondAttribute="top" constant="4" id="Quw-3g-PkE"/>
+                            <constraint firstItem="EZD-3Q-xMd" firstAttribute="leading" secondItem="cMs-lq-j8J" secondAttribute="leading" constant="4" id="lwP-AB-mRn"/>
+                            <constraint firstItem="cMs-lq-j8J" firstAttribute="trailing" secondItem="EZD-3Q-xMd" secondAttribute="trailing" constant="4" id="wEz-zh-t8w"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cMs-lq-j8J"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="help" id="QVa-gB-goh"/>
+                    <connections>
+                        <outlet property="tableView" destination="EZD-3Q-xMd" id="fnz-nd-plQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5bn-9s-L7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

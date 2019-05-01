@@ -44,6 +44,7 @@
 		6C7782472278A54A001926B2 /* CheckoutFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7782462278A54A001926B2 /* CheckoutFooter.swift */; };
 		6C77824D2278ABB7001926B2 /* CheckoutBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C77824C2278ABB7001926B2 /* CheckoutBottomView.xib */; };
 		6C77824F2278ABDC001926B2 /* CheckoutBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C77824E2278ABDC001926B2 /* CheckoutBottomView.swift */; };
+		6C778257227A36F7001926B2 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C778256227A36F7001926B2 /* HelpViewController.swift */; };
 		6C87FABD2270B5F400AFE485 /* NetworkModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C87FABA2270B5D600AFE485 /* NetworkModule.framework */; };
 		6C87FAD92270C6D800AFE485 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C87FAD82270C6D800AFE485 /* UIColor+Additions.swift */; };
 		6C87FADC2270C74000AFE485 /* UserAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C87FADA2270C74000AFE485 /* UserAuthViewController.swift */; };
@@ -163,6 +164,7 @@
 		6C7782462278A54A001926B2 /* CheckoutFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutFooter.swift; sourceTree = "<group>"; };
 		6C77824C2278ABB7001926B2 /* CheckoutBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckoutBottomView.xib; sourceTree = "<group>"; };
 		6C77824E2278ABDC001926B2 /* CheckoutBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutBottomView.swift; sourceTree = "<group>"; };
+		6C778256227A36F7001926B2 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		6C87FAB42270B5D600AFE485 /* NetworkModule.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkModule.xcodeproj; path = ../NetworkModule/NetworkModule.xcodeproj; sourceTree = "<group>"; };
 		6C87FAD82270C6D800AFE485 /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		6C87FADA2270C74000AFE485 /* UserAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthViewController.swift; sourceTree = "<group>"; };
@@ -357,6 +359,14 @@
 			path = DirectUITests;
 			sourceTree = "<group>";
 		};
+		6C778253227A36E4001926B2 /* help */ = {
+			isa = PBXGroup;
+			children = (
+				6C778256227A36F7001926B2 /* HelpViewController.swift */,
+			);
+			path = help;
+			sourceTree = "<group>";
+		};
 		6C87FAB52270B5D600AFE485 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +379,7 @@
 		6C87FACF2270C1D500AFE485 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				6C778253227A36E4001926B2 /* help */,
 				6C2CFB9C22789DEA00D23CF4 /* payment */,
 				6C2CFB8A2277421B00D23CF4 /* packages */,
 				6C2CFB852277411700D23CF4 /* common */,
@@ -805,6 +816,7 @@
 				6C5DE75A2275C763001A9FB6 /* MyOrdersViewController.swift in Sources */,
 				6CF3E1762271E598007488BA /* RootNavigationViewController.swift in Sources */,
 				6C7782472278A54A001926B2 /* CheckoutFooter.swift in Sources */,
+				6C778257227A36F7001926B2 /* HelpViewController.swift in Sources */,
 				6CF3E19C22725430007488BA /* VisaCollectionViewCell.swift in Sources */,
 				6C2CFBA322789F6100D23CF4 /* PaymentMethodTableCell.swift in Sources */,
 				6CF3E1B8227268CF007488BA /* HomeCollectionSectionHeader.swift in Sources */,
