@@ -45,6 +45,13 @@
 		6C77824D2278ABB7001926B2 /* CheckoutBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C77824C2278ABB7001926B2 /* CheckoutBottomView.xib */; };
 		6C77824F2278ABDC001926B2 /* CheckoutBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C77824E2278ABDC001926B2 /* CheckoutBottomView.swift */; };
 		6C778257227A36F7001926B2 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C778256227A36F7001926B2 /* HelpViewController.swift */; };
+		6C77825A227A3AFF001926B2 /* MyAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C778259227A3AFF001926B2 /* MyAccountController.swift */; };
+		6C77825D227A3E23001926B2 /* BanksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C77825B227A3E23001926B2 /* BanksViewController.swift */; };
+		6C77825E227A3E23001926B2 /* BanksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C77825C227A3E23001926B2 /* BanksViewController.xib */; };
+		6C778261227A3E3D001926B2 /* BankTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C77825F227A3E3D001926B2 /* BankTableCell.swift */; };
+		6C778262227A3E3D001926B2 /* BankTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C778260227A3E3D001926B2 /* BankTableCell.xib */; };
+		6C778264227A9902001926B2 /* StoryBoardIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C778263227A9902001926B2 /* StoryBoardIDs.swift */; };
+		6C778266227A9B97001926B2 /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C778265227A9B97001926B2 /* UIViewController+Helpers.swift */; };
 		6C87FABD2270B5F400AFE485 /* NetworkModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C87FABA2270B5D600AFE485 /* NetworkModule.framework */; };
 		6C87FAD92270C6D800AFE485 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C87FAD82270C6D800AFE485 /* UIColor+Additions.swift */; };
 		6C87FADC2270C74000AFE485 /* UserAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C87FADA2270C74000AFE485 /* UserAuthViewController.swift */; };
@@ -165,6 +172,13 @@
 		6C77824C2278ABB7001926B2 /* CheckoutBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckoutBottomView.xib; sourceTree = "<group>"; };
 		6C77824E2278ABDC001926B2 /* CheckoutBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutBottomView.swift; sourceTree = "<group>"; };
 		6C778256227A36F7001926B2 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		6C778259227A3AFF001926B2 /* MyAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountController.swift; sourceTree = "<group>"; };
+		6C77825B227A3E23001926B2 /* BanksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanksViewController.swift; sourceTree = "<group>"; };
+		6C77825C227A3E23001926B2 /* BanksViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BanksViewController.xib; sourceTree = "<group>"; };
+		6C77825F227A3E3D001926B2 /* BankTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankTableCell.swift; sourceTree = "<group>"; };
+		6C778260227A3E3D001926B2 /* BankTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankTableCell.xib; sourceTree = "<group>"; };
+		6C778263227A9902001926B2 /* StoryBoardIDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoardIDs.swift; sourceTree = "<group>"; };
+		6C778265227A9B97001926B2 /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
 		6C87FAB42270B5D600AFE485 /* NetworkModule.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkModule.xcodeproj; path = ../NetworkModule/NetworkModule.xcodeproj; sourceTree = "<group>"; };
 		6C87FAD82270C6D800AFE485 /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		6C87FADA2270C74000AFE485 /* UserAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthViewController.swift; sourceTree = "<group>"; };
@@ -281,6 +295,10 @@
 				6C2CFBA222789F6100D23CF4 /* PaymentMethodTableCell.xib */,
 				6C2CFBA52278A1C600D23CF4 /* PaymentBranchTableCell.swift */,
 				6C2CFBA62278A1C600D23CF4 /* PaymentBranchTableCell.xib */,
+				6C77825B227A3E23001926B2 /* BanksViewController.swift */,
+				6C77825C227A3E23001926B2 /* BanksViewController.xib */,
+				6C77825F227A3E3D001926B2 /* BankTableCell.swift */,
+				6C778260227A3E3D001926B2 /* BankTableCell.xib */,
 			);
 			path = payment;
 			sourceTree = "<group>";
@@ -367,6 +385,14 @@
 			path = help;
 			sourceTree = "<group>";
 		};
+		6C778258227A3AE4001926B2 /* my account */ = {
+			isa = PBXGroup;
+			children = (
+				6C778259227A3AFF001926B2 /* MyAccountController.swift */,
+			);
+			path = "my account";
+			sourceTree = "<group>";
+		};
 		6C87FAB52270B5D600AFE485 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,6 +424,7 @@
 		6C87FAD22270C1E300AFE485 /* user */ = {
 			isa = PBXGroup;
 			children = (
+				6C778258227A3AE4001926B2 /* my account */,
 				6CF3E17A2271E6B6007488BA /* ui */,
 				6CF3E1782271E6A1007488BA /* model */,
 				6C87FADA2270C74000AFE485 /* UserAuthViewController.swift */,
@@ -458,6 +485,8 @@
 				6CF3E1752271E598007488BA /* RootNavigationViewController.swift */,
 				6CF3E1B222725799007488BA /* Binder.swift */,
 				6C2CFB83227734E700D23CF4 /* TableCell.swift */,
+				6C778263227A9902001926B2 /* StoryBoardIDs.swift */,
+				6C778265227A9B97001926B2 /* UIViewController+Helpers.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -680,12 +709,14 @@
 				6C5FDA522270816B00ABA39B /* Main.storyboard in Resources */,
 				6CF3E1B9227268CF007488BA /* HomeCollectionSectionHeader.xib in Resources */,
 				6CF3E19D22725430007488BA /* VisaCollectionViewCell.xib in Resources */,
+				6C778262227A3E3D001926B2 /* BankTableCell.xib in Resources */,
 				6C5DE77022762020001A9FB6 /* RequireVisaSectionHeader.xib in Resources */,
 				6CF3E1852271F4B9007488BA /* HomeViewController.xib in Resources */,
 				6C87FADD2270C74000AFE485 /* UserAuthViewController.xib in Resources */,
 				6CE722EE2274FA1B00E095DC /* VisaRequirementController.xib in Resources */,
 				6C2CFB902277446600D23CF4 /* SingleRowTableCell.xib in Resources */,
 				6C5DE775227732EF001A9FB6 /* SearchViewController.xib in Resources */,
+				6C77825E227A3E23001926B2 /* BanksViewController.xib in Resources */,
 				6CF3E1A9227254B7007488BA /* NewsCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -814,7 +845,9 @@
 			files = (
 				6CF3E1AF2272558A007488BA /* InstitutesSectionVM.swift in Sources */,
 				6C5DE75A2275C763001A9FB6 /* MyOrdersViewController.swift in Sources */,
+				6C778261227A3E3D001926B2 /* BankTableCell.swift in Sources */,
 				6CF3E1762271E598007488BA /* RootNavigationViewController.swift in Sources */,
+				6C77825A227A3AFF001926B2 /* MyAccountController.swift in Sources */,
 				6C7782472278A54A001926B2 /* CheckoutFooter.swift in Sources */,
 				6C778257227A36F7001926B2 /* HelpViewController.swift in Sources */,
 				6CF3E19C22725430007488BA /* VisaCollectionViewCell.swift in Sources */,
@@ -846,6 +879,9 @@
 				6C2CFB9F22789E0200D23CF4 /* PaymentViewController.swift in Sources */,
 				6CF3E1C32274B8DB007488BA /* FakeData.swift in Sources */,
 				6CF3E1CC2274BBE5007488BA /* HomeCollectionSectionWrapper.swift in Sources */,
+				6C77825D227A3E23001926B2 /* BanksViewController.swift in Sources */,
+				6C778264227A9902001926B2 /* StoryBoardIDs.swift in Sources */,
+				6C778266227A9B97001926B2 /* UIViewController+Helpers.swift in Sources */,
 				6C2CFB962277996500D23CF4 /* SpinnerTextField.swift in Sources */,
 				6CF3E1842271F4B9007488BA /* HomeViewController.swift in Sources */,
 				6CF3E1AD2272551E007488BA /* VisaRequirementsSectionVM.swift in Sources */,

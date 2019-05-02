@@ -37,44 +37,47 @@ enum Destination{
 }
 
 protocol Navigator {
-    func show(_ destination:Destination)
-    static func present(_ dest:Destination)
+    func present(_ dest:Destination)
+    func push(_ dest:Destination)
+    func startNewRoot(root:UINavigationController, _ dest:Destination)
+    func presentModally(_ dest:Destination)
+    
 }
-
+// once app navigator is intialized, it have a root controller to do all navigation on till it recieve new root,
 final class AppNavigator:Navigator{
-    private static var rootController:RootNavigationViewController{
-        let appDelegate  = UIApplication.shared.delegate as! AppDelegate
-        return  appDelegate.window!.rootViewController as! RootNavigationViewController
-        
-    }
-    static func present(_ dest: Destination) {
-        rootController.pushViewController(dest.controller(), animated: true)
-    }
-    static func presentModally(_ dest:Destination){
-        
-                   rootController.presentPanModal(dest.controller() as! UIViewController & PanModalPresentable)
-
+    
+    func present(_ dest: Destination) {
+        AppNavigator.rootController.present(dest.controller(), animated: true, completion: nil)
     }
     
-    var rootController:RootNavigationViewController
-    init(root:RootNavigationViewController) {
-        self.rootController  = root
+    func presentModally(_ dest: Destination) {
+        AppNavigator.rootController.presentPanModal(dest.controller() as! UIViewController & PanModalPresentable)
+        
     }
-    func show(_ destination: Destination) {
-        let vc  = destination.controller()
-        self.rootController.pushViewController(vc, animated: true)
+    
+    func push(_ dest: Destination) {
+        AppNavigator.rootController.pushViewController(dest.controller(), animated: true)
+        
+    }
+    
+    func startNewRoot(root: UINavigationController, _ dest: Destination) {
+        AppNavigator.rootController  = root
+        
+    }
+    
+    private static var rootController:UINavigationController!
+    init(root:UINavigationController) {
+        AppNavigator.rootController  = root
+    }
+    init() throws {
+        if  AppNavigator.rootController == nil {
+            throw NavigatorError.noRoot
+        }
     }
     
 }
 
 
-extension UIViewController{
-    static func instance(_ mainStoryboardId:String)->UIViewController{
-        return UIStoryboard.main.instantiateViewController(withIdentifier: mainStoryboardId)
-    }
-}
-extension UIStoryboard{
-    static var main:UIStoryboard{
-        return UIStoryboard(name: "Main", bundle: nil)
-    }
+enum NavigatorError:Error{
+    case noRoot
 }

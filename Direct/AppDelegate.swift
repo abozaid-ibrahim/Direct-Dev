@@ -12,19 +12,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
     var navigator:Navigator!
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-//        setRootController()
+        setRootController()
         return true
     }
     private func setRootController(){
-        let root  = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RootNavigationViewController") as! RootNavigationViewController
-     
+        let root  = UIStoryboard.main.instantiateViewController(withIdentifier: StoryBoardIds.rootController.id) as! RootNavigationViewController
         self.window?.rootViewController = root
         self.window?.makeKeyAndVisible()
-        
         self.navigator = AppNavigator(root: root )
     }
     

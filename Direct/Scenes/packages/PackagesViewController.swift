@@ -17,6 +17,6 @@ class PackagesViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        AppNavigator.presentModally(.selectableSheet(data: ""))
+       try! AppNavigator().presentModally(.selectableSheet(data: ""))
     }
 }
