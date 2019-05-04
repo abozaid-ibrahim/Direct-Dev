@@ -33,7 +33,7 @@ final class HomeViewController: UIViewController, StyledActionBar {
         getDataFromViewModel()
         homeViewModel.getAllData()
         let gest = UITapGestureRecognizer(target: self, action: #selector(visaDidSelected(_:)))
-        instituteView.addGestureRecognizer(gest)
+//        instituteView.addGestureRecognizer(gest)
     }
 
     private func getDataFromViewModel() {

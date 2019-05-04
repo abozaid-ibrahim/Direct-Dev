@@ -6,6 +6,9 @@ target 'Direct' do
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
   pod 'RxDataSources'
+#  pod 'ZYThumbnailTableView', '~> 1.0.5'
+  pod 'SkyFloatingLabelTextField', '~> 3.0'
+#  pod 'M13Checkbox'
 
   
   target 'DirectTests' do

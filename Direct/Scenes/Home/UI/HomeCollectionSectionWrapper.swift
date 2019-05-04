@@ -39,7 +39,7 @@ extension HomeCollectionSectionWrapper: UICollectionViewDataSource, UICollection
     }
 
     func collectionView(_: UICollectionView, didSelectItemAt _: IndexPath) {
-        try! AppNavigator().present(Destination.visaRequirement)
+        try! AppNavigator().push(Destination.visaRequirement)
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
