@@ -13,7 +13,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Direct" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="K5m-f9-X8X" id="104-ba-Drm"/>
+                <outlet property="contentLayout" destination="QcQ-jb-PUv" id="vHl-mw-Qp6"/>
+                <outlet property="headerView" destination="BA4-b9-d3Q" id="TBr-iw-WZs"/>
+                <outlet property="instituteView" destination="dDW-hQ-Moe" id="Fxr-7C-dVF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="visaView" destination="NYL-r3-1fc" id="mUf-Tr-mNB"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -40,10 +44,10 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="NYL-r3-1fc">
                                                     <rect key="frame" x="0.0" y="0.0" width="43" height="70"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GQk-35-Vjg">
+                                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GQk-35-Vjg">
                                                             <rect key="frame" x="0.0" y="0.0" width="43" height="42"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tC0-pZ-a5o">
+                                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tC0-pZ-a5o">
                                                             <rect key="frame" x="0.0" y="48" width="43" height="22"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="22" id="frq-oi-2mh"/>
@@ -53,12 +57,13 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <gestureRecognizers/>
                                                 </stackView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yHJ-ql-M38">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yHJ-ql-M38" userLabel="sep">
                                                     <rect key="frame" x="43" y="0.0" width="43" height="70"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="0O1-A5-b0d">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="0O1-A5-b0d" userLabel="institutes">
                                                     <rect key="frame" x="86" y="0.0" width="43" height="70"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dDW-hQ-Moe">
@@ -74,12 +79,13 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <gestureRecognizers/>
                                                 </stackView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aIO-py-7HE">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aIO-py-7HE" userLabel="sep">
                                                     <rect key="frame" x="129" y="0.0" width="43" height="70"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="xYP-tB-AKs">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="xYP-tB-AKs" userLabel="packages">
                                                     <rect key="frame" x="172" y="0.0" width="43" height="70"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dTW-Dh-aD9">
@@ -95,6 +101,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <gestureRecognizers/>
                                                 </stackView>
                                             </subviews>
                                         </stackView>
@@ -122,20 +129,32 @@
                                 <constraint firstItem="qxo-dL-dgc" firstAttribute="height" secondItem="BPx-fb-C7D" secondAttribute="height" multiplier="0.5" id="pyG-eN-fYs"/>
                             </constraints>
                         </view>
-                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="K5m-f9-X8X">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QcQ-jb-PUv">
                             <rect key="frame" x="0.0" y="110" width="375" height="557"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="k7Q-sd-3Qk">
-                                <size key="itemSize" width="50" height="50"/>
-                                <size key="headerReferenceSize" width="50" height="50"/>
-                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            </collectionViewFlowLayout>
-                            <connections>
-                                <outlet property="dataSource" destination="-1" id="rec-Xe-8fs"/>
-                                <outlet property="delegate" destination="-1" id="T5X-bT-o2r"/>
-                            </connections>
-                        </collectionView>
+                            <subviews>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="K5m-f9-X8X">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="557"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="k7Q-sd-3Qk">
+                                        <size key="itemSize" width="50" height="50"/>
+                                        <size key="headerReferenceSize" width="50" height="50"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="rec-Xe-8fs"/>
+                                        <outlet property="delegate" destination="-1" id="T5X-bT-o2r"/>
+                                    </connections>
+                                </collectionView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="K5m-f9-X8X" secondAttribute="trailing" id="40M-I3-R5n"/>
+                                <constraint firstAttribute="bottom" secondItem="K5m-f9-X8X" secondAttribute="bottom" id="Mhe-BA-jE2"/>
+                                <constraint firstItem="K5m-f9-X8X" firstAttribute="leading" secondItem="QcQ-jb-PUv" secondAttribute="leading" id="cCW-ON-A8r"/>
+                                <constraint firstItem="K5m-f9-X8X" firstAttribute="top" secondItem="QcQ-jb-PUv" secondAttribute="top" id="jkb-SF-fBA"/>
+                            </constraints>
+                        </view>
                     </subviews>
                 </stackView>
             </subviews>

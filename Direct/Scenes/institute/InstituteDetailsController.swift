@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InstituteDetailsController: UIViewController {
+final class InstituteDetailsController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
