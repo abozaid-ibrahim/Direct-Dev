@@ -8,17 +8,16 @@
 
 import UIKit
 
-class CountryTableCell: UITableViewCell,TableCell {
+class CountryTableCell: UITableViewCell, TableCell {
     func setCellData(_ model: (String, UIImage)) {
         logoView.image = model.1
         textLbl.text = model.0
     }
-    
-    typealias CellDataModel = (String,UIImage)
-    
 
-    @IBOutlet private weak var logoView: UIImageView!
-    @IBOutlet private weak var textLbl: UILabel!
+    typealias CellDataModel = (String, UIImage)
+
+    @IBOutlet private var logoView: UIImageView!
+    @IBOutlet private var textLbl: UILabel!
     static let cellId = "CountryTableCell"
 
     override func awakeFromNib() {
@@ -31,5 +30,4 @@ class CountryTableCell: UITableViewCell,TableCell {
 
         // Configure the view for the selected state
     }
-    
 }

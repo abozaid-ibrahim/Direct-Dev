@@ -6,15 +6,12 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
-import UIKit
 import NetworkModule
+import UIKit
 
 class ViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         print(Connectivity.isConnected)
     }
-
 }
-

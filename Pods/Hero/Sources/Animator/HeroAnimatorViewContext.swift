@@ -23,49 +23,47 @@
 import UIKit
 
 internal class HeroAnimatorViewContext {
-  weak var animator: HeroAnimator?
-  let snapshot: UIView
-  let appearing: Bool
-  var targetState: HeroTargetState
-  var duration: TimeInterval = 0
+    weak var animator: HeroAnimator?
+    let snapshot: UIView
+    let appearing: Bool
+    var targetState: HeroTargetState
+    var duration: TimeInterval = 0
 
-  // computed
-  var currentTime: TimeInterval {
-    return snapshot.layer.convertTime(CACurrentMediaTime(), from: nil)
-  }
-  var container: UIView? {
-    return animator?.hero.context.container
-  }
+    // computed
+    var currentTime: TimeInterval {
+        return snapshot.layer.convertTime(CACurrentMediaTime(), from: nil)
+    }
 
-  class func canAnimate(view: UIView, state: HeroTargetState, appearing: Bool) -> Bool {
-    return false
-  }
+    var container: UIView? {
+        return animator?.hero.context.container
+    }
 
-  func apply(state: HeroTargetState) {
-  }
+    class func canAnimate(view _: UIView, state _: HeroTargetState, appearing _: Bool) -> Bool {
+        return false
+    }
 
-  func changeTarget(state: HeroTargetState, isDestination: Bool) {
-  }
+    func apply(state _: HeroTargetState) {}
 
-  func resume(timePassed: TimeInterval, reverse: Bool) -> TimeInterval {
-    return 0
-  }
+    func changeTarget(state _: HeroTargetState, isDestination _: Bool) {}
 
-  func seek(timePassed: TimeInterval) {
-  }
+    func resume(timePassed _: TimeInterval, reverse _: Bool) -> TimeInterval {
+        return 0
+    }
 
-  func clean() {
-    animator = nil
-  }
+    func seek(timePassed _: TimeInterval) {}
 
-  func startAnimations() -> TimeInterval {
-    return 0
-  }
+    func clean() {
+        animator = nil
+    }
 
-  required init(animator: HeroAnimator, snapshot: UIView, targetState: HeroTargetState, appearing: Bool) {
-    self.animator = animator
-    self.snapshot = snapshot
-    self.targetState = targetState
-    self.appearing = appearing
-  }
+    func startAnimations() -> TimeInterval {
+        return 0
+    }
+
+    required init(animator: HeroAnimator, snapshot: UIView, targetState: HeroTargetState, appearing: Bool) {
+        self.animator = animator
+        self.snapshot = snapshot
+        self.targetState = targetState
+        self.appearing = appearing
+    }
 }

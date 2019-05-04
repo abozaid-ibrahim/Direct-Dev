@@ -23,58 +23,60 @@
 import UIKit
 
 extension HeroTransition: UIViewControllerTransitioningDelegate {
-  var interactiveTransitioning: UIViewControllerInteractiveTransitioning? {
-    return forceNotInteractive ? nil : self
-  }
+    var interactiveTransitioning: UIViewControllerInteractiveTransitioning? {
+        return forceNotInteractive ? nil : self
+    }
 
-  public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    guard !isTransitioning else { return nil }
-    self.state = .notified
-    self.isPresenting = true
-    self.fromViewController = fromViewController ?? presenting
-    self.toViewController = toViewController ?? presented
-    return self
-  }
+    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source _: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard !isTransitioning else { return nil }
+        state = .notified
+        isPresenting = true
+        fromViewController = fromViewController ?? presenting
+        toViewController = toViewController ?? presented
+        return self
+    }
 
-  public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    guard !isTransitioning else { return nil }
-    self.state = .notified
-    self.isPresenting = false
-    self.fromViewController = fromViewController ?? dismissed
-    return self
-  }
+    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard !isTransitioning else { return nil }
+        state = .notified
+        isPresenting = false
+        fromViewController = fromViewController ?? dismissed
+        return self
+    }
 
-  public func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-    return interactiveTransitioning
-  }
+    public func interactionControllerForDismissal(using _: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return interactiveTransitioning
+    }
 
-  public func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-    return interactiveTransitioning
-  }
+    public func interactionControllerForPresentation(using _: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return interactiveTransitioning
+    }
 }
 
 extension HeroTransition: UIViewControllerAnimatedTransitioning {
-  public func animateTransition(using context: UIViewControllerContextTransitioning) {
-    transitionContext = context
-    fromViewController = fromViewController ?? context.viewController(forKey: .from)
-    toViewController = toViewController ?? context.viewController(forKey: .to)
-    transitionContainer = context.containerView
-    start()
-  }
-  public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-    return 0.375 // doesn't matter, real duration will be calculated later
-  }
+    public func animateTransition(using context: UIViewControllerContextTransitioning) {
+        transitionContext = context
+        fromViewController = fromViewController ?? context.viewController(forKey: .from)
+        toViewController = toViewController ?? context.viewController(forKey: .to)
+        transitionContainer = context.containerView
+        start()
+    }
 
-  public func animationEnded(_ transitionCompleted: Bool) {
-    self.state = .possible
-  }
+    public func transitionDuration(using _: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return 0.375 // doesn't matter, real duration will be calculated later
+    }
+
+    public func animationEnded(_: Bool) {
+        state = .possible
+    }
 }
 
 extension HeroTransition: UIViewControllerInteractiveTransitioning {
-  public var wantsInteractiveStart: Bool {
-    return true
-  }
-  public func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning) {
-    animateTransition(using: transitionContext)
-  }
+    public var wantsInteractiveStart: Bool {
+        return true
+    }
+
+    public func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning) {
+        animateTransition(using: transitionContext)
+    }
 }

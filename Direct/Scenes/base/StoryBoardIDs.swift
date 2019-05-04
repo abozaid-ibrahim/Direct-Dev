@@ -7,9 +7,9 @@
 //
 
 import Foundation
-enum StoryBoardIds:String {
+enum StoryBoardIds: String {
     case rootController = "RootNavigationViewController"
-    var id:String{
-        return self.rawValue
+    var id: String {
+        return rawValue
     }
 }

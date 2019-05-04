@@ -9,14 +9,13 @@
 import UIKit
 
 class PackagesViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-       try! AppNavigator().presentModally(.selectableSheet(data: ""))
+
+    override func viewDidAppear(_: Bool) {
+        try! AppNavigator().presentModally(.selectableSheet(data: ""))
     }
 }

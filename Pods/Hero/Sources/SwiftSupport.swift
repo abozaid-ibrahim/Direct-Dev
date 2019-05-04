@@ -7,46 +7,43 @@
 //
 
 #if !(swift(>=4.2))
-import Foundation
-import CoreMedia
-import CoreGraphics
-import UIKit
+    import CoreGraphics
+    import CoreMedia
+    import Foundation
+    import UIKit
 
-extension CMTime {
-  static let zero = kCMTimeZero
-}
+    extension CMTime {
+        static let zero = kCMTimeZero
+    }
 
-enum CAMediaTimingFillMode {
-  static let both = kCAFillModeBoth
-}
+    enum CAMediaTimingFillMode {
+        static let both = kCAFillModeBoth
+    }
 
-enum CAMediaTimingFunctionName {
-  static let linear = kCAMediaTimingFunctionLinear
-  static let easeIn = kCAMediaTimingFunctionEaseIn
-  static let easeOut = kCAMediaTimingFunctionEaseOut
-  static let easeInEaseOut = kCAMediaTimingFunctionEaseInEaseOut
-}
+    enum CAMediaTimingFunctionName {
+        static let linear = kCAMediaTimingFunctionLinear
+        static let easeIn = kCAMediaTimingFunctionEaseIn
+        static let easeOut = kCAMediaTimingFunctionEaseOut
+        static let easeInEaseOut = kCAMediaTimingFunctionEaseInEaseOut
+    }
 
-extension UIControl {
-  typealias State = UIControlState
-}
+    extension UIControl {
+        typealias State = UIControlState
+    }
 
-public extension UINavigationController {
-  typealias Operation = UINavigationControllerOperation
-}
+    public extension UINavigationController {
+        typealias Operation = UINavigationControllerOperation
+    }
 
-extension UIViewController {
-  var children: [UIViewController] {
-    return childViewControllers
-  }
-}
+    extension UIViewController {
+        var children: [UIViewController] {
+            return childViewControllers
+        }
+    }
 
-extension RunLoop {
-  enum Mode {
-    static let common = RunLoopMode.commonModes
-  }
-}
+    extension RunLoop {
+        enum Mode {
+            static let common = RunLoopMode.commonModes
+        }
+    }
 #endif
-
-
-

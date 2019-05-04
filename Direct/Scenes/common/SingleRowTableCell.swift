@@ -8,17 +8,16 @@
 
 import UIKit
 
-class SingleRowTableCell: UITableViewCell,TableCell {
+class SingleRowTableCell: UITableViewCell, TableCell {
     static var cellId: String = "SingleRowTableCell"
-    
+
     func setCellData(_ model: String) {
         txtLbl.text = model
     }
-    
-    typealias CellDataModel = String
-    
 
-    @IBOutlet private weak var txtLbl: UILabel!
+    typealias CellDataModel = String
+
+    @IBOutlet private var txtLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,5 +28,4 @@ class SingleRowTableCell: UITableViewCell,TableCell {
 
         // Configure the view for the selected state
     }
-    
 }

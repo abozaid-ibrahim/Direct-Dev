@@ -8,15 +8,12 @@
 
 import UIKit
 
-class BankTableCell: UITableViewCell ,TableCell{
+class BankTableCell: UITableViewCell, TableCell {
     static var cellId: String = "BankTableCell"
-    
-    func setCellData(_ model: String) {
-        
-    }
-    
+
+    func setCellData(_: String) {}
+
     typealias CellDataModel = String
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,5 +25,4 @@ class BankTableCell: UITableViewCell ,TableCell{
 
         // Configure the view for the selected state
     }
-    
 }

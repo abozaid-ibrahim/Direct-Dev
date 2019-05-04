@@ -10,8 +10,7 @@ import Foundation
 import RxSwift
 
 protocol HomeCollectionViewSection {
-    
-    var  itemsCount:Int {get set}
-    var cellIdentifier:String {get}
-    var sectionTitle:String {get}
+    var itemsCount: Int { get set }
+    var cellIdentifier: String { get }
+    var sectionTitle: String { get }
 }

@@ -14,20 +14,17 @@ import UIKit
  having to do those changes directly on the view
  */
 class PanContainerView: UIView {
-
     init(presentedView: UIView, frame: CGRect) {
         super.init(frame: frame)
         addSubview(presentedView)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError()
     }
-
 }
 
 extension UIView {
-
     /**
      Convenience property for retrieving a PanContainerView instance
      from the view hierachy
@@ -35,5 +32,4 @@ extension UIView {
     var panContainerView: PanContainerView? {
         return subviews.compactMap({ $0 as? PanContainerView }).first
     }
-
 }

@@ -13,6 +13,7 @@ public extension UIView {
     private struct AssociatedKey {
         static var rounded = "UIView.rounded"
     }
+
     @IBInspectable public var cornerRadiusV: CGFloat {
         get {
             return layer.cornerRadius
@@ -22,7 +23,7 @@ public extension UIView {
             layer.masksToBounds = newValue > 0
         }
     }
-    
+
     @IBInspectable public var borderWidthV: CGFloat {
         get {
             return layer.borderWidth
@@ -31,7 +32,7 @@ public extension UIView {
             layer.borderWidth = newValue
         }
     }
-    
+
     @IBInspectable public var borderColorV: UIColor? {
         get {
             return UIColor(cgColor: layer.borderColor!)
@@ -40,8 +41,8 @@ public extension UIView {
             layer.borderColor = newValue?.cgColor
         }
     }
-    
-    @IBInspectable public  var rounded: Bool {
+
+    @IBInspectable public var rounded: Bool {
         get {
             if let rounded = objc_getAssociatedObject(self, &AssociatedKey.rounded) as? Bool {
                 return rounded
@@ -54,8 +55,8 @@ public extension UIView {
             layer.cornerRadius = CGFloat(newValue ? 1.0 : 0.0) * min(bounds.width, bounds.height) / 2
         }
     }
-    
-    public func roundedTopLeft(){
+
+    public func roundedTopLeft() {
         let maskPath1 = UIBezierPath(roundedRect: bounds,
                                      byRoundingCorners: [.topLeft],
                                      cornerRadii: CGSize(width: 15, height: 15))
@@ -64,8 +65,8 @@ public extension UIView {
         maskLayer1.path = maskPath1.cgPath
         layer.mask = maskLayer1
     }
-    
-    public func roundedTopRight(){
+
+    public func roundedTopRight() {
         let maskPath1 = UIBezierPath(roundedRect: bounds,
                                      byRoundingCorners: [.topRight],
                                      cornerRadii: CGSize(width: 15, height: 15))
@@ -74,7 +75,8 @@ public extension UIView {
         maskLayer1.path = maskPath1.cgPath
         layer.mask = maskLayer1
     }
-    public func roundedBottomLeft(){
+
+    public func roundedBottomLeft() {
         let maskPath1 = UIBezierPath(roundedRect: bounds,
                                      byRoundingCorners: [.bottomLeft],
                                      cornerRadii: CGSize(width: 15, height: 15))
@@ -83,7 +85,8 @@ public extension UIView {
         maskLayer1.path = maskPath1.cgPath
         layer.mask = maskLayer1
     }
-    public func roundedBottomRight(){
+
+    public func roundedBottomRight() {
         let maskPath1 = UIBezierPath(roundedRect: bounds,
                                      byRoundingCorners: [.bottomRight],
                                      cornerRadii: CGSize(width: 15, height: 15))
@@ -92,45 +95,50 @@ public extension UIView {
         maskLayer1.path = maskPath1.cgPath
         layer.mask = maskLayer1
     }
-    public  func roundedBottom(){
+
+    public func roundedBottom() {
         let maskPath1 = UIBezierPath(roundedRect: bounds,
-                                     byRoundingCorners: [.bottomRight , .bottomLeft],
+                                     byRoundingCorners: [.bottomRight, .bottomLeft],
                                      cornerRadii: CGSize(width: 15, height: 15))
         let maskLayer1 = CAShapeLayer()
         maskLayer1.frame = bounds
         maskLayer1.path = maskPath1.cgPath
         layer.mask = maskLayer1
     }
-    public func roundedTop(){
+
+    public func roundedTop() {
         let maskPath1 = UIBezierPath(roundedRect: bounds,
-                                     byRoundingCorners: [.topRight , .topLeft],
+                                     byRoundingCorners: [.topRight, .topLeft],
                                      cornerRadii: CGSize(width: 15, height: 15))
         let maskLayer1 = CAShapeLayer()
         maskLayer1.frame = bounds
         maskLayer1.path = maskPath1.cgPath
         layer.mask = maskLayer1
     }
-    public func roundedLeft(){
+
+    public func roundedLeft() {
         let maskPath1 = UIBezierPath(roundedRect: bounds,
-                                     byRoundingCorners: [.topLeft , .bottomLeft],
+                                     byRoundingCorners: [.topLeft, .bottomLeft],
                                      cornerRadii: CGSize(width: 15, height: 15))
         let maskLayer1 = CAShapeLayer()
         maskLayer1.frame = bounds
         maskLayer1.path = maskPath1.cgPath
         layer.mask = maskLayer1
     }
-    public func roundedRight(){
+
+    public func roundedRight() {
         let maskPath1 = UIBezierPath(roundedRect: bounds,
-                                     byRoundingCorners: [.topRight , .bottomRight],
+                                     byRoundingCorners: [.topRight, .bottomRight],
                                      cornerRadii: CGSize(width: 15, height: 15))
         let maskLayer1 = CAShapeLayer()
         maskLayer1.frame = bounds
         maskLayer1.path = maskPath1.cgPath
         layer.mask = maskLayer1
     }
-    public func roundedAllCorner(){
+
+    public func roundedAllCorner() {
         let maskPath1 = UIBezierPath(roundedRect: bounds,
-                                     byRoundingCorners: [.topRight , .bottomRight , .topLeft , .bottomLeft],
+                                     byRoundingCorners: [.topRight, .bottomRight, .topLeft, .bottomLeft],
                                      cornerRadii: CGSize(width: 15, height: 15))
         let maskLayer1 = CAShapeLayer()
         maskLayer1.frame = bounds
@@ -138,8 +146,9 @@ public extension UIView {
         layer.mask = maskLayer1
     }
 }
+
 extension UIView {
-    func sameBoundsTo(parentView: UIView, l:CGFloat = 0,tr:CGFloat = 0,tp:CGFloat = 0,b:CGFloat = 0) {
+    func sameBoundsTo(parentView: UIView, l: CGFloat = 0, tr: CGFloat = 0, tp: CGFloat = 0, b: CGFloat = 0) {
         translatesAutoresizingMaskIntoConstraints = false
         leadingAnchor.constraint(equalTo: parentView.leadingAnchor, constant: l).isActive = true
         trailingAnchor.constraint(equalTo: parentView.trailingAnchor, constant: -tr).isActive = true
@@ -147,6 +156,7 @@ extension UIView {
         bottomAnchor.constraint(equalTo: parentView.bottomAnchor, constant: b).isActive = true
     }
 }
+
 extension UIView {
     /** Loads instance from nib with the same name. */
     func loadNib() -> UIView {
@@ -155,10 +165,10 @@ extension UIView {
         let nib = UINib(nibName: nibName, bundle: bundle)
         return nib.instantiate(withOwner: self, options: nil).first as! UIView
     }
-    func loadNib(name:String) -> UIView {
+
+    func loadNib(name: String) -> UIView {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: name, bundle: bundle)
         return nib.instantiate(withOwner: self, options: nil).first as! UIView
     }
-    
 }

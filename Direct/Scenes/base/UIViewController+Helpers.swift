@@ -7,13 +7,14 @@
 //
 
 import UIKit
-extension UIViewController{
-    static func instance(_ mainStoryboardId:String)->UIViewController{
+extension UIViewController {
+    static func instance(_ mainStoryboardId: String) -> UIViewController {
         return UIStoryboard.main.instantiateViewController(withIdentifier: mainStoryboardId)
     }
 }
-extension UIStoryboard{
-    static var main:UIStoryboard{
+
+extension UIStoryboard {
+    static var main: UIStoryboard {
         return UIStoryboard(name: "Main", bundle: nil)
     }
 }

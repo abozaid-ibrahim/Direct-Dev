@@ -6,24 +6,23 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
-import UIKit
-import RxSwift
 import PanModal
-final class MyAccountController: UIViewController,PanModalPresentable {
-    var panScrollable: UIScrollView?{
-        return  tableView
+import RxSwift
+import UIKit
+final class MyAccountController: UIViewController, PanModalPresentable {
+    var panScrollable: UIScrollView? {
+        return tableView
     }
-    @IBOutlet weak var tableView: UITableView!
+
+    @IBOutlet var tableView: UITableView!
     private let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerNib(SingleRowTableCell.cellId)
         Observable<[String]>.just(dataList)
-            .bind(to: tableView.rx.items(cellIdentifier: SingleRowTableCell.cellId)) { row, model, cell  in
+            .bind(to: tableView.rx.items(cellIdentifier: SingleRowTableCell.cellId)) { _, model, cell in
                 let mycell = (cell as! SingleRowTableCell)
                 mycell.setCellData(model)
             }.disposed(by: disposeBag)
-        
     }
 }
-

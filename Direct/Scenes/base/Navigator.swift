@@ -6,12 +6,12 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
-import UIKit
 import PanModal
-/*if any contoller need any dependencies, it should passed in the destination item*/
-enum Destination{
-    case loginView, signupView,homeScreen,visaRequirement,selectableSheet(data:Any),paymentMethod
-    func controller()->UIViewController{
+import UIKit
+/* if any contoller need any dependencies, it should passed in the destination item */
+enum Destination {
+    case loginView, signupView, homeScreen, visaRequirement, selectableSheet(data: Any), paymentMethod
+    func controller() -> UIViewController {
         switch self {
         case .loginView:
             let auth = UserAuthViewController()
@@ -22,12 +22,12 @@ enum Destination{
             auth.showView(.signup)
             return auth
         case .homeScreen:
-            let home  = HomeViewController.instance("HomeViewController")
+            let home = HomeViewController.instance("HomeViewController")
             return home
         case .visaRequirement:
-            let controller  = VisaRequirementController()
+            let controller = VisaRequirementController()
             return controller
-        case .selectableSheet(let data):
+        case let .selectableSheet(data):
             let vc = SelectableTableSheet()
             return vc
         case .paymentMethod:
@@ -37,47 +37,42 @@ enum Destination{
 }
 
 protocol Navigator {
-    func present(_ dest:Destination)
-    func push(_ dest:Destination)
-    func startNewRoot(root:UINavigationController, _ dest:Destination)
-    func presentModally(_ dest:Destination)
-    
+    func present(_ dest: Destination)
+    func push(_ dest: Destination)
+    func startNewRoot(root: UINavigationController, _ dest: Destination)
+    func presentModally(_ dest: Destination)
 }
+
 // once app navigator is intialized, it have a root controller to do all navigation on till it recieve new root,
-final class AppNavigator:Navigator{
-    
+final class AppNavigator: Navigator {
     func present(_ dest: Destination) {
         AppNavigator.rootController.present(dest.controller(), animated: true, completion: nil)
     }
-    
+
     func presentModally(_ dest: Destination) {
         AppNavigator.rootController.presentPanModal(dest.controller() as! UIViewController & PanModalPresentable)
-        
     }
-    
+
     func push(_ dest: Destination) {
         AppNavigator.rootController.pushViewController(dest.controller(), animated: true)
-        
     }
-    
-    func startNewRoot(root: UINavigationController, _ dest: Destination) {
-        AppNavigator.rootController  = root
-        
+
+    func startNewRoot(root: UINavigationController, _: Destination) {
+        AppNavigator.rootController = root
     }
-    
-    private static var rootController:UINavigationController!
-    init(root:UINavigationController) {
-        AppNavigator.rootController  = root
+
+    private static var rootController: UINavigationController!
+    init(root: UINavigationController) {
+        AppNavigator.rootController = root
     }
+
     init() throws {
-        if  AppNavigator.rootController == nil {
+        if AppNavigator.rootController == nil {
             throw NavigatorError.noRoot
         }
     }
-    
 }
 
-
-enum NavigatorError:Error{
+enum NavigatorError: Error {
     case noRoot
 }

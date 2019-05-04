@@ -9,8 +9,7 @@
 import UIKit
 
 class VisaRequirementTableCell: UITableViewCell {
-
-    @IBOutlet weak var textlbl: UILabel!
+    @IBOutlet var textlbl: UILabel!
     static let cellId = "VisaRequirementTableCell"
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,5 +21,4 @@ class VisaRequirementTableCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }

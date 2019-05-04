@@ -7,4 +7,4 @@
 //
 //this file do as arepo, until we find real data
 import Foundation
- let dataList = ["Abuzeid","Ali","YOusef","Medo","Seif","Abuzeid","Ali","YOusef","Medo","Seif","Abuzeid","Ali","YOusef","Medo","Seif"]
+let dataList = ["Abuzeid", "Ali", "YOusef", "Medo", "Seif", "Abuzeid", "Ali", "YOusef", "Medo", "Seif", "Abuzeid", "Ali", "YOusef", "Medo", "Seif"]

@@ -23,22 +23,22 @@
 import Foundation
 
 public protocol HeroCompatible {
-  associatedtype CompatibleType
+    associatedtype CompatibleType
 
-  var hero: HeroExtension<CompatibleType> { get set }
+    var hero: HeroExtension<CompatibleType> { get set }
 }
 
 public extension HeroCompatible {
-  public var hero: HeroExtension<Self> {
-    get { return HeroExtension(self) }
-    set { }
-  }
+    public var hero: HeroExtension<Self> {
+        get { return HeroExtension(self) }
+        set {}
+    }
 }
 
 public class HeroExtension<Base> {
-  public let base: Base
+    public let base: Base
 
-  init(_ base: Base) {
-    self.base = base
-  }
+    init(_ base: Base) {
+        self.base = base
+    }
 }

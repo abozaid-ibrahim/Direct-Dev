@@ -9,72 +9,74 @@
 import UIKit
 @IBDesignable
 class SpinnerTextField: UIView {
-    let txtField  = UITextField()
-    private let leftLogo  = UIImageView()
-    private let rightLogo  = UIImageView()
+    let txtField = UITextField()
+    private let leftLogo = UIImageView()
+    private let rightLogo = UIImageView()
 
-    @IBInspectable var leftImage:UIImage?{
-        didSet{
+    @IBInspectable var leftImage: UIImage? {
+        didSet {
             leftLogo.image = leftImage
         }
     }
-    @IBInspectable var rightImage:UIImage?{
-        didSet{
+
+    @IBInspectable var rightImage: UIImage? {
+        didSet {
             rightLogo.image = rightImage
         }
     }
-    @IBInspectable var hint:String?{
-        didSet{
+
+    @IBInspectable var hint: String? {
+        didSet {
             txtField.placeholder = hint ?? ""
         }
     }
-    typealias Action = ()->()
+
+    typealias Action = () -> Void
     var action: Action?
-    func setOnclick(ac: @escaping Action){
-        self.action = ac
-        let tap = UITapGestureRecognizer(target: self, action: #selector(clicked(sender: )))
-        self.addGestureRecognizer(tap)
-        
+    func setOnclick(ac: @escaping Action) {
+        action = ac
+        let tap = UITapGestureRecognizer(target: self, action: #selector(clicked(sender:)))
+        addGestureRecognizer(tap)
     }
-    @objc private func clicked(sender:Any){
-        self.action?()
+
+    @objc private func clicked(sender _: Any) {
+        action?()
     }
-   private func createUI(){
-        let stack  = UIStackView()
+
+    private func createUI() {
+        let stack = UIStackView()
         stack.alignment = .center
         stack.axis = .horizontal
-        stack.spacing  = 10
-        leftLogo.translatesAutoresizingMaskIntoConstraints  = false
+        stack.spacing = 10
+        leftLogo.translatesAutoresizingMaskIntoConstraints = false
         leftLogo.widthAnchor.constraint(equalToConstant: 25).isActive = true
         leftLogo.contentMode = .scaleAspectFit
-        
-        rightLogo.translatesAutoresizingMaskIntoConstraints  = false
+
+        rightLogo.translatesAutoresizingMaskIntoConstraints = false
         rightLogo.widthAnchor.constraint(equalToConstant: 25).isActive = true
         rightLogo.contentMode = .scaleAspectFit
-        
+
         stack.addArrangedSubview(leftLogo)
         stack.addArrangedSubview(txtField)
         stack.addArrangedSubview(rightLogo)
-        
-        self.addSubview(stack)
-        stack.sameBoundsTo(parentView: self,l: 10,tr: 10)
+
+        addSubview(stack)
+        stack.sameBoundsTo(parentView: self, l: 10, tr: 10)
     }
-    
-    
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
-    
+
     private func commonInit() {
         createUI()
-        self.backgroundColor = UIColor.appOffWhite
-        self.cornerRadiusV = 8
+        backgroundColor = UIColor.appOffWhite
+        cornerRadiusV = 8
     }
 }

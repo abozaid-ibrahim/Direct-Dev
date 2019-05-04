@@ -9,19 +9,15 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func submitLogin(_ sender: Any) {
-        //TODO:
+    @IBAction func submitLogin(_: Any) {
+        // TODO:
         // you should recieve the depencey from out side
         try! AppNavigator().present(.homeScreen)
     }
-    
-   
-
 }

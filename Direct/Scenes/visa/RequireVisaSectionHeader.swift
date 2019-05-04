@@ -9,11 +9,10 @@
 import UIKit
 
 class RequireVisaSectionHeader: UIView {
+    @IBOutlet private var iconView: UIImageView!
 
-    @IBOutlet private weak var iconView: UIImageView!
-  
-    @IBOutlet private weak var textLbl: UILabel!
-    func setData(text:String,img:UIImage){
+    @IBOutlet private var textLbl: UILabel!
+    func setData(text: String, img: UIImage) {
         iconView.image = img
         textLbl.text = text
     }

@@ -14,12 +14,11 @@ import UIKit
  Usage:
  ```
  extension YourViewController: PanModalPresentable {
-    func shouldRoundTopCorners: Bool { return false }
+ func shouldRoundTopCorners: Bool { return false }
  }
  ```
  */
 public protocol PanModalPresentable {
-
     /**
      The scroll view embedded in the view controller.
      Setting this value allows for seamless transition scrolling between the embedded scroll view
@@ -47,7 +46,7 @@ public protocol PanModalPresentable {
     /**
      The height of the pan modal container view
      when in the longForm presentation state.
-     
+
      This value is capped to .max, if provided value exceeds the space available.
 
      Default value is .max.
@@ -117,7 +116,7 @@ public protocol PanModalPresentable {
      - Note: Return false to forward touches to the presentingViewController.
 
      Default is true.
-    */
+     */
     var isUserInteractionEnabled: Bool { get }
 
     /**
@@ -144,7 +143,7 @@ public protocol PanModalPresentable {
 
     /**
      Asks the delegate if the pan modal should respond to the pan modal gesture recognizer.
-     
+
      Return false to disable movement on the pan modal but maintain gestures on the presented view.
 
      Default value is true.
@@ -195,5 +194,4 @@ public protocol PanModalPresentable {
      Default value is an empty implementation.
      */
     func panModalWillDismiss()
-
 }

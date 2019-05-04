@@ -11,7 +11,6 @@ import UIKit
  Helper animation function to keep animations consistent.
  */
 struct PanModalAnimator {
-
     /**
      Constant Animation Properties
      */
@@ -22,7 +21,6 @@ struct PanModalAnimator {
     static func animate(_ animations: @escaping PanModalPresentable.AnimationBlockType,
                         config: PanModalPresentable?,
                         _ completion: PanModalPresentable.AnimationCompletionType? = nil) {
-
         UIView.animate(withDuration: Constants.transitionDuration,
                        delay: 0,
                        usingSpringWithDamping: config?.springDamping ?? 1.0,

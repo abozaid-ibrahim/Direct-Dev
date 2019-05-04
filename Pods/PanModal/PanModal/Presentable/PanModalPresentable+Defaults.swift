@@ -11,7 +11,6 @@ import UIKit
  Default values for the PanModalPresentable.
  */
 public extension PanModalPresentable where Self: UIViewController {
-
     var topOffset: CGFloat {
         return topLayoutOffset + 21.0
     }
@@ -21,9 +20,8 @@ public extension PanModalPresentable where Self: UIViewController {
     }
 
     var longFormHeight: PanModalHeight {
-
         guard let scrollView = panScrollable
-            else { return .maxHeight }
+        else { return .maxHeight }
 
         // called once during presentation and stored
         scrollView.layoutIfNeeded()
@@ -52,9 +50,8 @@ public extension PanModalPresentable where Self: UIViewController {
     }
 
     var allowsExtendedPanScrolling: Bool {
-
         guard let scrollView = panScrollable
-            else { return false }
+        else { return false }
 
         scrollView.layoutIfNeeded()
         return scrollView.contentSize.height > (scrollView.frame.height - bottomLayoutOffset)
@@ -80,28 +77,21 @@ public extension PanModalPresentable where Self: UIViewController {
         return shouldRoundTopCorners
     }
 
-    func shouldRespond(to panModalGestureRecognizer: UIPanGestureRecognizer) -> Bool {
+    func shouldRespond(to _: UIPanGestureRecognizer) -> Bool {
         return true
     }
 
-    func willRespond(to panModalGestureRecognizer: UIPanGestureRecognizer) {
+    func willRespond(to _: UIPanGestureRecognizer) {}
 
-    }
-
-    func shouldTransition(to state: PanModalPresentationController.PresentationState) -> Bool {
+    func shouldTransition(to _: PanModalPresentationController.PresentationState) -> Bool {
         return true
     }
 
-    func shouldPrioritize(panModalGestureRecognizer: UIPanGestureRecognizer) -> Bool {
+    func shouldPrioritize(panModalGestureRecognizer _: UIPanGestureRecognizer) -> Bool {
         return false
     }
 
-    func willTransition(to state: PanModalPresentationController.PresentationState) {
+    func willTransition(to _: PanModalPresentationController.PresentationState) {}
 
-    }
-
-    func panModalWillDismiss() {
-
-    }
-
+    func panModalWillDismiss() {}
 }

@@ -9,10 +9,7 @@
 import UIKit
 
 final class InstituteDetailsController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-
 }

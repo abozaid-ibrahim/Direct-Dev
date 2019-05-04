@@ -6,27 +6,21 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
-import UIKit
 import PanModal
+import UIKit
 
 class NewDirectVisaController: UIViewController {
-    
-    @IBOutlet weak var checkoutFooter: CheckoutFooter!
-    @IBOutlet weak var countryField: SpinnerTextField!
+    @IBOutlet var checkoutFooter: CheckoutFooter!
+    @IBOutlet var countryField: SpinnerTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
         countryField.setOnclick {
             self.presentPanModal(Destination.selectableSheet(data: "").controller() as! UIViewController & PanModalPresentable)
-
         }
-        checkoutFooter.action = {[weak self] in
+        checkoutFooter.action = { [weak self] in
             self?.present(PaymentViewController(), animated: true, completion: nil)
-
         }
     }
-    
-    
-   
 }

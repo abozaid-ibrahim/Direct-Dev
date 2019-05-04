@@ -23,26 +23,26 @@
 import UIKit
 
 public protocol HeroPreprocessor: class {
-  var hero: HeroTransition! { get set }
-  func process(fromViews: [UIView], toViews: [UIView])
+    var hero: HeroTransition! { get set }
+    func process(fromViews: [UIView], toViews: [UIView])
 }
 
 public protocol HeroAnimator: class {
-  var hero: HeroTransition! { get set }
-  func canAnimate(view: UIView, appearing: Bool) -> Bool
-  func animate(fromViews: [UIView], toViews: [UIView]) -> TimeInterval
-  func clean()
+    var hero: HeroTransition! { get set }
+    func canAnimate(view: UIView, appearing: Bool) -> Bool
+    func animate(fromViews: [UIView], toViews: [UIView]) -> TimeInterval
+    func clean()
 
-  func seekTo(timePassed: TimeInterval)
-  func resume(timePassed: TimeInterval, reverse: Bool) -> TimeInterval
-  func apply(state: HeroTargetState, to view: UIView)
-  func changeTarget(state: HeroTargetState, isDestination: Bool, to view: UIView)
+    func seekTo(timePassed: TimeInterval)
+    func resume(timePassed: TimeInterval, reverse: Bool) -> TimeInterval
+    func apply(state: HeroTargetState, to view: UIView)
+    func changeTarget(state: HeroTargetState, isDestination: Bool, to view: UIView)
 }
 
 public protocol HeroProgressUpdateObserver: class {
-  func heroDidUpdateProgress(progress: Double)
+    func heroDidUpdateProgress(progress: Double)
 }
 
 public enum HeroViewOrderingStrategy {
-  case auto, sourceViewOnTop, destinationViewOnTop
+    case auto, sourceViewOnTop, destinationViewOnTop
 }

@@ -8,20 +8,20 @@
 
 import UIKit
 
-class PaymentBranchTableCell: UITableViewCell ,TableCell {
+class PaymentBranchTableCell: UITableViewCell, TableCell {
     static var cellId: String = "PaymentBranchTableCell"
-    
+
     func setCellData(_ model: (String, String)) {
         titleLbl.text = model.0
         descLbl.text = model.1
     }
-    
-    typealias CellDataModel = (String,String)
-    
-    @IBOutlet weak var containerLayout: UIView!
-    
-    @IBOutlet private weak var descLbl: UILabel!
-    @IBOutlet private weak var titleLbl: UILabel!
+
+    typealias CellDataModel = (String, String)
+
+    @IBOutlet var containerLayout: UIView!
+
+    @IBOutlet private var descLbl: UILabel!
+    @IBOutlet private var titleLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -30,6 +30,5 @@ class PaymentBranchTableCell: UITableViewCell ,TableCell {
         super.setSelected(selected, animated: animated)
 
         containerLayout.borderColorV = UIColor.appMango
-        containerLayout.backgroundColor = UIColor.appMango    }
-    
+        containerLayout.backgroundColor = UIColor.appMango }
 }

@@ -9,12 +9,10 @@
 import Foundation
 //this is the ui model
 protocol User {
-    var isLoggedIN:Bool{get set}
+    var isLoggedIN: Bool { get set }
 }
+
 //this is the business Model
-class UserEntity:User{
+class UserEntity: User {
     var isLoggedIN: Bool = false
-    
-    
-    
 }

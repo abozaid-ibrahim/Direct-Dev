@@ -24,17 +24,17 @@ import UIKit
 
 // custom transition helper, used in hero_replaceViewController
 public extension HeroTransition {
-  public func transition(from: UIViewController, to: UIViewController, in view: UIView, completion: ((Bool) -> Void)? = nil) {
-    guard !isTransitioning else { return }
-    self.state = .notified
-    isPresenting = true
-    transitionContainer = view
-    fromViewController = from
-    toViewController = to
-    completionCallback = {
-      completion?($0)
-      self.state = .possible
+    public func transition(from: UIViewController, to: UIViewController, in view: UIView, completion: ((Bool) -> Void)? = nil) {
+        guard !isTransitioning else { return }
+        state = .notified
+        isPresenting = true
+        transitionContainer = view
+        fromViewController = from
+        toViewController = to
+        completionCallback = {
+            completion?($0)
+            self.state = .possible
+        }
+        start()
     }
-    start()
-  }
 }

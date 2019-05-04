@@ -8,16 +8,15 @@
 
 import Foundation
 
-final class NewsSectionViewModel: HomeCollectionViewSection{
+final class NewsSectionViewModel: HomeCollectionViewSection {
     var sectionTitle: String = "NEWS"
-    
+
     typealias Entity = String
     var itemsCount: Int = 0
     var cellIdentifier: String = "NewsCollectionViewCell"
-    let items:[Entity]
-    init(data:[Entity]) {
-        self.items = data
-        self.itemsCount = data.count
+    let items: [Entity]
+    init(data: [Entity]) {
+        items = data
+        itemsCount = data.count
     }
-    
 }

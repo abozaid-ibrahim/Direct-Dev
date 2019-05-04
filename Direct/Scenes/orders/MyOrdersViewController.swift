@@ -8,14 +8,13 @@
 
 import UIKit
 
-class MyOrdersViewController: UIViewController,StyledActionBar {
-    
+class MyOrdersViewController: UIViewController, StyledActionBar {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupActionBar(.withTitle("My Orders"))
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
+
+    override func viewDidAppear(_: Bool) {
 //        self.present(NewDirectVisaController(), animated: true, completion: nil)
     }
 }

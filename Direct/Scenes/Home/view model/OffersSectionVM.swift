@@ -8,13 +8,13 @@
 
 import Foundation
 class OffersSectionViewModel: HomeCollectionViewSection {
-     var sectionTitle: String = "Offers And Packages"
+    var sectionTitle: String = "Offers And Packages"
     typealias Entity = String
     var itemsCount: Int = 0
     var cellIdentifier: String = "OfferCollectionViewCell"
-    let items:[Entity]
-    init(data:[Entity]) {
-        self.items = data
-        self.itemsCount = data.count
+    let items: [Entity]
+    init(data: [Entity]) {
+        items = data
+        itemsCount = data.count
     }
 }

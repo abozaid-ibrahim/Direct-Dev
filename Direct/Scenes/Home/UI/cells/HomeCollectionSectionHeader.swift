@@ -10,12 +10,11 @@ import UIKit
 
 class HomeCollectionSectionHeader: UICollectionReusableView {
     static let id = "HomeCollectionSectionHeader"
-    @IBOutlet weak var textLbl:UILabel!
-    @IBOutlet weak var iconView:UIImageView!
+    @IBOutlet var textLbl: UILabel!
+    @IBOutlet var iconView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
 }

@@ -18,29 +18,26 @@ import UIKit
  ```
  */
 public class PanModalPresentationDelegate: NSObject {
-
     /**
      Returns an instance of the delegate, retained for the duration of presentation
      */
     public static var `default`: PanModalPresentationDelegate = {
-        return PanModalPresentationDelegate()
+        PanModalPresentationDelegate()
     }()
-
 }
 
 extension PanModalPresentationDelegate: UIViewControllerTransitioningDelegate {
-
     /**
      Returns a modal presentation animator configured for the presenting state
      */
-    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func animationController(forPresented _: UIViewController, presenting _: UIViewController, source _: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return PanModalPresentationAnimator(transitionStyle: .presentation)
     }
 
     /**
      Returns a modal presentation animator configured for the dismissing state
      */
-    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func animationController(forDismissed _: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return PanModalPresentationAnimator(transitionStyle: .dismissal)
     }
 
@@ -50,16 +47,14 @@ extension PanModalPresentationDelegate: UIViewControllerTransitioningDelegate {
 
      Changes in size class during presentation are handled via the adaptive presentation delegate
      */
-    public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+    public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source _: UIViewController) -> UIPresentationController? {
         let controller = PanModalPresentationController(presentedViewController: presented, presenting: presenting)
         controller.delegate = self
         return controller
     }
-
 }
 
 extension PanModalPresentationDelegate: UIAdaptivePresentationControllerDelegate, UIPopoverPresentationControllerDelegate {
-
     /**
      - Note: We do not adapt to size classes due to the introduction of the UIPresentationController
      & deprecation of UIPopoverController (iOS 9), there is no way to have more than one
@@ -72,9 +67,8 @@ extension PanModalPresentationDelegate: UIAdaptivePresentationControllerDelegate
     /**
      Dismisses the presented view controller
      */
-    public func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+    public func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection _: UITraitCollection) -> UIModalPresentationStyle {
         controller.presentedViewController.dismiss(animated: false, completion: nil)
         return .none
     }
-
 }

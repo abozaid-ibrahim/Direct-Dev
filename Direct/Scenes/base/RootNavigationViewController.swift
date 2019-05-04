@@ -7,14 +7,9 @@
 //
 
 import UIKit
-//MVC Architected
+// MVC Architected
 class RootNavigationViewController: UINavigationController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    
-    
-    
 }

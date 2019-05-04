@@ -22,7 +22,6 @@ import UIKit
  */
 
 public class PanModalPresentationAnimator: NSObject {
-
     /**
      Enum representing the possible transition styles
      */
@@ -45,7 +44,7 @@ public class PanModalPresentationAnimator: NSObject {
 
     // MARK: - Initializers
 
-    required public init(transitionStyle: TransitionStyle) {
+    public required init(transitionStyle: TransitionStyle) {
         self.transitionStyle = transitionStyle
         super.init()
 
@@ -62,9 +61,8 @@ public class PanModalPresentationAnimator: NSObject {
      Animate presented view controller presentation
      */
     private func animatePresentation(transitionContext: UIViewControllerContextTransitioning) {
-
         guard let toVC = transitionContext.viewController(forKey: .to)
-            else { return }
+        else { return }
 
         let presentable = toVC as? PanModalPresentable.LayoutType
 
@@ -95,9 +93,8 @@ public class PanModalPresentationAnimator: NSObject {
      Animate presented view controller dismissal
      */
     private func animateDismissal(transitionContext: UIViewControllerContextTransitioning) {
-
         guard let fromVC = transitionContext.viewController(forKey: .from)
-            else { return }
+        else { return }
 
         let presentable = fromVC as? PanModalPresentable.LayoutType
         let panView: UIView = transitionContext.containerView.panContainerView ?? fromVC.view
@@ -109,17 +106,15 @@ public class PanModalPresentationAnimator: NSObject {
             transitionContext.completeTransition(didComplete)
         }
     }
-
 }
 
 // MARK: - UIViewControllerAnimatedTransitioning Delegate
 
 extension PanModalPresentationAnimator: UIViewControllerAnimatedTransitioning {
-
     /**
      Returns the transition duration
      */
-    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    public func transitionDuration(using _: UIViewControllerContextTransitioning?) -> TimeInterval {
         return PanModalAnimator.Constants.transitionDuration
     }
 
@@ -134,5 +129,4 @@ extension PanModalPresentationAnimator: UIViewControllerAnimatedTransitioning {
             animateDismissal(transitionContext: transitionContext)
         }
     }
-
 }

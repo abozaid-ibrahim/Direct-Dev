@@ -9,9 +9,7 @@
 import UIKit
 
 class NewInstituteRequestController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 }

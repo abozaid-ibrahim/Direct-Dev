@@ -12,7 +12,6 @@ import UIKit
  for a given presentation state (shortForm, longForm)
  */
 public enum PanModalHeight: Equatable {
-
     /**
      Sets the height to be the maximum height (+ topOffset)
      */

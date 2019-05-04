@@ -8,11 +8,9 @@
 
 import UIKit
 class CheckoutBottomView: UIView {
-    @IBOutlet  weak var hintLbl: UILabel!
-    @IBOutlet  weak var valueLbl: UILabel!
-    
-    @IBOutlet weak var actionBtn: UIButton!
-    @IBAction func onClick(_ sender: Any) {
-    }
-    
+    @IBOutlet var hintLbl: UILabel!
+    @IBOutlet var valueLbl: UILabel!
+
+    @IBOutlet var actionBtn: UIButton!
+    @IBAction func onClick(_: Any) {}
 }

@@ -9,12 +9,12 @@
 import Foundation
 class InstitutesSectionViewModel: HomeCollectionViewSection {
     typealias Entity = String
-     var sectionTitle: String = "Institutes"
+    var sectionTitle: String = "Institutes"
     var itemsCount: Int = 0
     var cellIdentifier: String = "InstituteCollectionViewCell"
-    let items:[Entity]
-    init(data:[Entity]) {
-        self.items = data
-        self.itemsCount = data.count
+    let items: [Entity]
+    init(data: [Entity]) {
+        items = data
+        itemsCount = data.count
     }
 }
