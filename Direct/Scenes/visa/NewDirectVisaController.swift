@@ -71,8 +71,9 @@ class NewDirectVisaController: UIViewController,SwipeUpDismissable {
                 
             }, completion: { [weak self] _ in
              guard let self = self else {return}
-              self.removeFromParent()
+            
                 self.dismessed.onNext(true)
+                  self.removeFromParent()
             })
         } else {
             UIView.animate(withDuration: 0.3, animations: {[weak self] in

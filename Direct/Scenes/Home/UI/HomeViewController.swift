@@ -24,7 +24,7 @@ final class HomeViewController: UIViewController, StyledActionBar {
     @IBOutlet weak var temp: UIView!
     @IBOutlet private var visaView: UIStackView!
     @IBOutlet private var contentLayout: UIView!
-    
+    @IBOutlet weak var headerWidthConstrain: NSLayoutConstraint!
     @IBOutlet var instituteView: UIImageView!
     
     
@@ -54,20 +54,46 @@ final class HomeViewController: UIViewController, StyledActionBar {
         collectionView.register(UINib(nibName: HomeCollectionSectionWrapper.cellId, bundle: nil), forCellWithReuseIdentifier: HomeCollectionSectionWrapper.cellId)
         collectionView.register(UINib(nibName: "HomeCollectionSectionHeader", bundle: nil), forSupplementaryViewOfKind: "UICollectionElementKindSectionHeader", withReuseIdentifier: "HomeCollectionSectionHeader")
     }
-    
+    let vc = NewDirectVisaController()
+
     @IBAction func visaDidSelected(_: Any) {
-        let vc = NewDirectVisaController()
         addChild(vc)
         containerView.addSubview(vc.view)
-        vc.dismessed.asSingle().subscribe(onSuccess: {dismessed in
-                self.collectionView.isHidden = !dismessed
-            }, onError: nil).disposed(by: disposeBag)
+        vc.dismessed.asObservable().subscribe(onNext: {[weak self] dismessed in
+            guard let self = self else {return}
+            self.collectionView.isHidden = !dismessed
+            self.updateHeaderFrame(fullWidth: !dismessed)
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
+        self.startViewsAnim(vc)
+        
+        
+        
+    }
+    private func startViewsAnim(_ vc:NewDirectVisaController){
         let childFrame = containerView.frame
         vc.view.frame = CGRect(x: childFrame.minX, y: -childFrame.height, width: childFrame.width, height: childFrame.height)
         UIView.animate(withDuration: 0.3, animations: {
             vc.view.frame = self.containerView.bounds
         }, completion: nil)
+        self.updateHeaderFrame(fullWidth: true)
+    }
+
+    private func updateHeaderFrame(fullWidth:Bool){
+       
+        UIView.animate(withDuration: 0.3, animations: {[weak self] in
+            guard let self = self else {return}
+            if fullWidth{
+                self.headerView.layer.cornerRadius = 0
+                self.headerWidthConstrain.constant = self.headerView.superview!.bounds.width
+            }else{
+                self.headerView.layer.cornerRadius = 30
+                self.headerView.clipsToBounds  = true
+                self.headerWidthConstrain.constant = 300
+            }
+            }, completion: nil)
+        
+        
     }
     
     @IBAction func institutesDidSelected(_: Any) {}
