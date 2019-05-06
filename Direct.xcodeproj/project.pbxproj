@@ -86,7 +86,6 @@
 		6CF3E17E2271E702007488BA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E17D2271E702007488BA /* User.swift */; };
 		6CF3E1802271F303007488BA /* ViewControllerActionBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E17F2271F303007488BA /* ViewControllerActionBarStyle.swift */; };
 		6CF3E1842271F4B9007488BA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1822271F4B9007488BA /* HomeViewController.swift */; };
-		6CF3E1852271F4B9007488BA /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF3E1832271F4B9007488BA /* HomeViewController.xib */; };
 		6CF3E19422724D0C007488BA /* HomeCollectionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E19322724D0C007488BA /* HomeCollectionSection.swift */; };
 		6CF3E19922724E23007488BA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E19822724E23007488BA /* HomeViewModel.swift */; };
 		6CF3E19C22725430007488BA /* VisaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E19A22725430007488BA /* VisaCollectionViewCell.swift */; };
@@ -232,7 +231,6 @@
 		6CF3E17D2271E702007488BA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6CF3E17F2271F303007488BA /* ViewControllerActionBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerActionBarStyle.swift; sourceTree = "<group>"; };
 		6CF3E1822271F4B9007488BA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		6CF3E1832271F4B9007488BA /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		6CF3E19322724D0C007488BA /* HomeCollectionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionSection.swift; sourceTree = "<group>"; };
 		6CF3E19822724E23007488BA /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		6CF3E19A22725430007488BA /* VisaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -602,7 +600,6 @@
 			children = (
 				6CF3E1C52274B980007488BA /* cells */,
 				6CF3E1822271F4B9007488BA /* HomeViewController.swift */,
-				6CF3E1832271F4B9007488BA /* HomeViewController.xib */,
 				6CF3E1CA2274BBE5007488BA /* HomeCollectionSectionWrapper.swift */,
 				6CF3E1CB2274BBE5007488BA /* HomeCollectionSectionWrapper.xib */,
 			);
@@ -817,7 +814,6 @@
 				6C778281227AA2EC001926B2 /* InstitutesListController.xib in Resources */,
 				6C778262227A3E3D001926B2 /* BankTableCell.xib in Resources */,
 				6C5DE77022762020001A9FB6 /* RequireVisaSectionHeader.xib in Resources */,
-				6CF3E1852271F4B9007488BA /* HomeViewController.xib in Resources */,
 				6C87FADD2270C74000AFE485 /* UserAuthViewController.xib in Resources */,
 				6CE722EE2274FA1B00E095DC /* VisaRequirementController.xib in Resources */,
 				6C2CFB902277446600D23CF4 /* SingleRowTableCell.xib in Resources */,

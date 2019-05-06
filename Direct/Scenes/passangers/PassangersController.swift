@@ -7,11 +7,18 @@
 //
 
 import UIKit
+import SkyFloatingLabelTextField
 
 class PassangersController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+}
+
+extension SkyFloatingLabelTextField{
+    func setAppStyle(){
+        
     }
 }
