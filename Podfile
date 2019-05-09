@@ -9,7 +9,7 @@ target 'Direct' do
 #  pod 'ZYThumbnailTableView', '~> 1.0.5'
   pod 'SkyFloatingLabelTextField', '~> 3.0'
 #  pod 'M13Checkbox'
-
+pod 'IBAnalyzer'
   
   target 'DirectTests' do
     inherit! :search_paths
