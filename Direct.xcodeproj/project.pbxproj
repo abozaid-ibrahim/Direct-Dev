@@ -81,6 +81,8 @@
 		6CC514A3227DC43B00634B5D /* PassangersController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CC514A1227DC43B00634B5D /* PassangersController.xib */; };
 		6CDEBBE62284C55800EC3E6F /* PassangersCountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEBBE42284C55800EC3E6F /* PassangersCountController.swift */; };
 		6CDEBBE72284C55800EC3E6F /* PassangersCountController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CDEBBE52284C55800EC3E6F /* PassangersCountController.xib */; };
+		6CDEBBEC2284FDA000EC3E6F /* PackagesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEBBEA2284FDA000EC3E6F /* PackagesTableCell.swift */; };
+		6CDEBBED2284FDA000EC3E6F /* PackagesTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CDEBBEB2284FDA000EC3E6F /* PackagesTableCell.xib */; };
 		6CE722ED2274FA1B00E095DC /* VisaRequirementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */; };
 		6CE722EE2274FA1B00E095DC /* VisaRequirementController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CE722EC2274FA1B00E095DC /* VisaRequirementController.xib */; };
 		6CF3E1722271E451007488BA /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1712271E451007488BA /* Navigator.swift */; };
@@ -228,6 +230,8 @@
 		6CC514A1227DC43B00634B5D /* PassangersController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PassangersController.xib; sourceTree = "<group>"; };
 		6CDEBBE42284C55800EC3E6F /* PassangersCountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangersCountController.swift; sourceTree = "<group>"; };
 		6CDEBBE52284C55800EC3E6F /* PassangersCountController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PassangersCountController.xib; sourceTree = "<group>"; };
+		6CDEBBEA2284FDA000EC3E6F /* PackagesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesTableCell.swift; sourceTree = "<group>"; };
+		6CDEBBEB2284FDA000EC3E6F /* PackagesTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackagesTableCell.xib; sourceTree = "<group>"; };
 		6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaRequirementController.swift; sourceTree = "<group>"; };
 		6CE722EC2274FA1B00E095DC /* VisaRequirementController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisaRequirementController.xib; sourceTree = "<group>"; };
 		6CF3E1712271E451007488BA /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
@@ -323,6 +327,8 @@
 			isa = PBXGroup;
 			children = (
 				6C2CFB8B2277422900D23CF4 /* PackagesViewController.swift */,
+				6CDEBBEA2284FDA000EC3E6F /* PackagesTableCell.swift */,
+				6CDEBBEB2284FDA000EC3E6F /* PackagesTableCell.xib */,
 			);
 			path = packages;
 			sourceTree = "<group>";
@@ -460,13 +466,6 @@
 			path = institute;
 			sourceTree = "<group>";
 		};
-		6C778271227AA17B001926B2 /* package */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = package;
-			sourceTree = "<group>";
-		};
 		6C778286227C6EC9001926B2 /* contact us */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,7 +489,6 @@
 			children = (
 				6CC5149D227DC02900634B5D /* passangers */,
 				6C778286227C6EC9001926B2 /* contact us */,
-				6C778271227AA17B001926B2 /* package */,
 				6C778270227AA173001926B2 /* institute */,
 				6C778267227A9F4C001926B2 /* sponsers */,
 				6C778253227A36E4001926B2 /* help */,
@@ -797,6 +795,7 @@
 				6C87FAE12270C75100AFE485 /* LoginViewController.xib in Resources */,
 				6C77826B227A9F64001926B2 /* SponsersViewController.xib in Resources */,
 				6C77824D2278ABB7001926B2 /* CheckoutBottomView.xib in Resources */,
+				6CDEBBED2284FDA000EC3E6F /* PackagesTableCell.xib in Resources */,
 				6C77827D227AA2C1001926B2 /* SuccessRequestInstituteController.xib in Resources */,
 				6C778285227AA33D001926B2 /* InstituteTableCell.xib in Resources */,
 				6CF3E1A5227254A1007488BA /* InstituteCollectionViewCell.xib in Resources */,
@@ -982,6 +981,7 @@
 				6C778280227AA2EC001926B2 /* InstitutesListController.swift in Sources */,
 				6CF3E1762271E598007488BA /* RootNavigationViewController.swift in Sources */,
 				6C77825A227A3AFF001926B2 /* MyAccountController.swift in Sources */,
+				6CDEBBEC2284FDA000EC3E6F /* PackagesTableCell.swift in Sources */,
 				6C7782472278A54A001926B2 /* CheckoutFooter.swift in Sources */,
 				6C778257227A36F7001926B2 /* HelpViewController.swift in Sources */,
 				6CF3E19C22725430007488BA /* VisaCollectionViewCell.swift in Sources */,

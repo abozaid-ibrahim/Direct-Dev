@@ -18,10 +18,22 @@ class PackagesViewController: UIViewController,SwipeUpDismissable {
             self.view.frame = defaultFrame ?? CGRect.zero
         }
     }
+    @IBOutlet weak var tableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         enableSwipeUpToDismiss()
+        setupTableDataSource()
+        
+    }
+    private func setupTableDataSource(){
+        tableView.registerNib(PackagesTableCell.cellId)
+        Observable<[String]>.just(dataList)
+            .bind(to: tableView.rx.items(cellIdentifier: PackagesTableCell.cellId)) { row, model, cell  in
+                let mycell = (cell as! PackagesTableCell)
+            }.disposed(by: disposeBag)
     }
     
 }
+
