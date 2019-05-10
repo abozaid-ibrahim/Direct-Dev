@@ -48,7 +48,9 @@ final class HomeViewController: UIViewController, StyledActionBar {
         tabbarSelected(vc: newInstitue)
     }
     @IBAction func packagesDidSelect(_ sender: Any) {
-        tabbarSelected(vc: packagesVC as! SwipeUpDismissable)
+        let vc = packagesVC as! PackagesViewController
+        vc.dismissable = true
+        tabbarSelected(vc: vc)
         
     }
     private func getDataFromViewModel() {

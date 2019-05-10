@@ -83,6 +83,8 @@
 		6CDEBBE72284C55800EC3E6F /* PassangersCountController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CDEBBE52284C55800EC3E6F /* PassangersCountController.xib */; };
 		6CDEBBEC2284FDA000EC3E6F /* PackagesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEBBEA2284FDA000EC3E6F /* PackagesTableCell.swift */; };
 		6CDEBBED2284FDA000EC3E6F /* PackagesTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CDEBBEB2284FDA000EC3E6F /* PackagesTableCell.xib */; };
+		6CDEBBF02285012400EC3E6F /* PackageDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEBBEE2285012400EC3E6F /* PackageDetailsController.swift */; };
+		6CDEBBF12285012400EC3E6F /* PackageDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CDEBBEF2285012400EC3E6F /* PackageDetailsController.xib */; };
 		6CE722ED2274FA1B00E095DC /* VisaRequirementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */; };
 		6CE722EE2274FA1B00E095DC /* VisaRequirementController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CE722EC2274FA1B00E095DC /* VisaRequirementController.xib */; };
 		6CF3E1722271E451007488BA /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1712271E451007488BA /* Navigator.swift */; };
@@ -232,6 +234,8 @@
 		6CDEBBE52284C55800EC3E6F /* PassangersCountController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PassangersCountController.xib; sourceTree = "<group>"; };
 		6CDEBBEA2284FDA000EC3E6F /* PackagesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesTableCell.swift; sourceTree = "<group>"; };
 		6CDEBBEB2284FDA000EC3E6F /* PackagesTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackagesTableCell.xib; sourceTree = "<group>"; };
+		6CDEBBEE2285012400EC3E6F /* PackageDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailsController.swift; sourceTree = "<group>"; };
+		6CDEBBEF2285012400EC3E6F /* PackageDetailsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackageDetailsController.xib; sourceTree = "<group>"; };
 		6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaRequirementController.swift; sourceTree = "<group>"; };
 		6CE722EC2274FA1B00E095DC /* VisaRequirementController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisaRequirementController.xib; sourceTree = "<group>"; };
 		6CF3E1712271E451007488BA /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
@@ -329,6 +333,8 @@
 				6C2CFB8B2277422900D23CF4 /* PackagesViewController.swift */,
 				6CDEBBEA2284FDA000EC3E6F /* PackagesTableCell.swift */,
 				6CDEBBEB2284FDA000EC3E6F /* PackagesTableCell.xib */,
+				6CDEBBEE2285012400EC3E6F /* PackageDetailsController.swift */,
+				6CDEBBEF2285012400EC3E6F /* PackageDetailsController.xib */,
 			);
 			path = packages;
 			sourceTree = "<group>";
@@ -822,6 +828,7 @@
 				6C778262227A3E3D001926B2 /* BankTableCell.xib in Resources */,
 				6C5DE77022762020001A9FB6 /* RequireVisaSectionHeader.xib in Resources */,
 				6C87FADD2270C74000AFE485 /* UserAuthViewController.xib in Resources */,
+				6CDEBBF12285012400EC3E6F /* PackageDetailsController.xib in Resources */,
 				6CE722EE2274FA1B00E095DC /* VisaRequirementController.xib in Resources */,
 				6C2CFB902277446600D23CF4 /* SingleRowTableCell.xib in Resources */,
 				6C77825E227A3E23001926B2 /* BanksViewController.xib in Resources */,
@@ -988,6 +995,7 @@
 				6C2CFBA322789F6100D23CF4 /* PaymentMethodTableCell.swift in Sources */,
 				6C778274227AA196001926B2 /* NewInstituteRequestController.swift in Sources */,
 				6CF3E1B8227268CF007488BA /* HomeCollectionSectionHeader.swift in Sources */,
+				6CDEBBF02285012400EC3E6F /* PackageDetailsController.swift in Sources */,
 				6CF3E1722271E451007488BA /* Navigator.swift in Sources */,
 				6C2CFB882277419A00D23CF4 /* SelectableTableSheet.swift in Sources */,
 				6CF3E1802271F303007488BA /* ViewControllerActionBarStyle.swift in Sources */,

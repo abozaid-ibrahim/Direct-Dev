@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class PackagesViewController: UIViewController,SwipeUpDismissable {
+final class PackagesViewController: UIViewController,SwipeUpDismissable {
     private let disposeBag = DisposeBag()
     var dismessed: PublishSubject<Bool> = PublishSubject()
     var initialTouchPoint: CGPoint = CGPoint(x: 0, y: 0)
@@ -19,11 +19,14 @@ class PackagesViewController: UIViewController,SwipeUpDismissable {
         }
     }
     @IBOutlet weak var tableView: UITableView!
-    
+    var dismissable:Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        enableSwipeUpToDismiss()
+        if dismissable ?? false{
+            enableSwipeUpToDismiss()
+            
+        }
         setupTableDataSource()
         
     }
