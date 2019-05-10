@@ -16,7 +16,9 @@
                 <outlet property="countryField" destination="BhQ-iz-jOu" id="prw-RT-zrV"/>
                 <outlet property="dateField" destination="M6J-mY-pnS" id="qzf-3Z-dAR"/>
                 <outlet property="passangersCountField" destination="Ozc-3k-HT9" id="Ygm-oh-ZaQ"/>
+                <outlet property="relationsField" destination="ch3-mS-msl" id="Tsw-PM-79V"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="visaField" destination="dik-0S-Omr" id="ZVI-bM-Fq2"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

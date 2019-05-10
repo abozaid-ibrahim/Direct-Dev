@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RxSwift
+import RxGesture
+
 @IBDesignable
 class SpinnerTextField: UIView {
     let txtField = UITextField()
@@ -30,13 +33,16 @@ class SpinnerTextField: UIView {
             txtField.placeholder = hint ?? ""
         }
     }
-
+let disposeBag = DisposeBag()
     typealias Action = () -> Void
     var action: Action?
     func setOnclick(ac: @escaping Action) {
-        action = ac
-        let tap = UITapGestureRecognizer(target: self, action: #selector(clicked(sender:)))
-        addGestureRecognizer(tap)
+//        action = ac
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(clicked(sender:)))
+//        addGestureRecognizer(tap)
+//        self.rx.tapGesture().subscribe{
+//            ac()
+//            }.disposed(by: disposeBag)
     }
 
     @objc private func clicked(sender _: Any) {

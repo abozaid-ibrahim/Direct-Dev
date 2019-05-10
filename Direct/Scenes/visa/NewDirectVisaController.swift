@@ -13,43 +13,57 @@ import RxCocoa
 import RxGesture
 
 class NewDirectVisaController: UIViewController,SwipeUpDismissable {
-     let disposeBag = DisposeBag()
+    let disposeBag = DisposeBag()
     var dismessed: PublishSubject<Bool> = PublishSubject()
     @IBOutlet var checkoutFooter: CheckoutFooter!
     @IBOutlet var countryField: SpinnerTextField!
     
-     var initialTouchPoint: CGPoint = CGPoint(x: 0, y: 0)
+    var initialTouchPoint: CGPoint = CGPoint(x: 0, y: 0)
     var defaultFrame:CGRect?{
         didSet{
             self.view.frame = defaultFrame ?? CGRect.zero
         }
     }
+    @IBOutlet weak var visaField: SpinnerTextField!
     @IBOutlet weak var passangersCountField: SpinnerTextField!
+    @IBOutlet weak var relationsField: SpinnerTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         enableSwipeUpToDismiss()
-        // Do any additional setup after loading the view.
-        countryField.setOnclick {
-            self.presentPanModal(Destination.selectableSheet(data: "").controller() as! UIViewController & PanModalPresentable)
-        }
+        
         checkoutFooter.action = { [weak self] in
             self?.present(PaymentViewController(), animated: true, completion: nil)
         }
         
+        setONClickViews()
         
+    }
+    
+    private func setONClickViews(){
+        countryField.rx.tapGesture().when(.recognized)
+            .subscribe(onNext: { _ in
+            self.presentPanModal(Destination.selectableSheet(data: "").controller() as! UIViewController & PanModalPresentable)
+            }).disposed(by: disposeBag)
         
-       
-        
-        
-        passangersCountField.rx.tapGesture().subscribe({[weak self] _ in
-            guard let self = self else {return}
+        passangersCountField.rx.tapGesture().when(.recognized)
+            .subscribe(onNext: { _ in
             try! AppNavigator().presentModally(.passangersCount)
-        }).disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
         
-        dateField.rx.tapGesture().subscribe({[weak self] _ in
-            guard let self = self else {return}
+        dateField.rx.tapGesture().when(.recognized)
+            .subscribe(onNext: { _ in
             try! AppNavigator().presentModally(.datePicker)
-        }).disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
+        
+        visaField.rx.tapGesture().when(.recognized)
+            .subscribe(onNext: { _ in
+            try! AppNavigator().presentModally(.datePicker)
+            }).disposed(by: disposeBag)
+        relationsField.rx.tapGesture().when(.recognized)
+            .subscribe(onNext: { _ in
+            try! AppNavigator().presentModally(.datePicker)
+            }).disposed(by: disposeBag)
+        
         
     }
     
@@ -58,7 +72,4 @@ class NewDirectVisaController: UIViewController,SwipeUpDismissable {
     @IBOutlet weak var dateField: SpinnerTextField!
     
     
-//    @objc private func panGestureRecognizerHandler(_ sender: UIPanGestureRecognizer) {
-//        swipeUpToDismiss(sender: sender, initialTouchPoint: &initialTouchPoint, defaultFrame: defaultFrame)
-//    }
 }
