@@ -27,7 +27,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rll-J1-dFK">
-                    <rect key="frame" x="10" y="20" width="355" height="367.5"/>
+                    <rect key="frame" x="10" y="20" width="355" height="407.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCo-e0-D7e">
                             <rect key="frame" x="0.0" y="0.0" width="355" height="27.5"/>
@@ -36,10 +36,10 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QfQ-DK-Kxs" userLabel="tfs">
-                            <rect key="frame" x="0.0" y="37.5" width="355" height="240"/>
+                            <rect key="frame" x="0.0" y="37.5" width="355" height="280"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BhQ-iz-jOu" customClass="SpinnerTextField" customModule="Direct" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="355" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="355" height="48"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="p"/>
@@ -48,7 +48,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dik-0S-Omr" customClass="SpinnerTextField" customModule="Direct" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="50" width="355" height="40"/>
+                                    <rect key="frame" x="0.0" y="58" width="355" height="48"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="p"/>
@@ -57,7 +57,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fnp-rV-BGk" customClass="SpinnerTextField" customModule="Direct" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="100" width="355" height="40"/>
+                                    <rect key="frame" x="0.0" y="116" width="355" height="48"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="p"/>
@@ -66,10 +66,10 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="E04-gK-AFm">
-                                    <rect key="frame" x="0.0" y="150" width="355" height="40"/>
+                                    <rect key="frame" x="0.0" y="174" width="355" height="48"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M6J-mY-pnS" customClass="SpinnerTextField" customModule="Direct" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="172.5" height="40"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="172.5" height="48"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="p"/>
@@ -78,7 +78,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ozc-3k-HT9" customClass="SpinnerTextField" customModule="Direct" customModuleProvider="target">
-                                            <rect key="frame" x="182.5" y="0.0" width="172.5" height="40"/>
+                                            <rect key="frame" x="182.5" y="0.0" width="172.5" height="48"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="p"/>
@@ -89,7 +89,7 @@
                                     </subviews>
                                 </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ch3-mS-msl" customClass="SpinnerTextField" customModule="Direct" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="200" width="355" height="40"/>
+                                    <rect key="frame" x="0.0" y="232" width="355" height="48"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="p"/>
@@ -99,15 +99,20 @@
                                 </view>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="height" constant="240" id="jQW-Iq-Ibn"/>
+                                <constraint firstAttribute="height" constant="280" id="jQW-Iq-Ibn"/>
                             </constraints>
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72P-rO-dCS" customClass="CheckoutFooter" customModule="Direct" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="287.5" width="355" height="80"/>
+                            <rect key="frame" x="0.0" y="327.5" width="355" height="80"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="80" id="jQs-K3-fTn"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                    <real key="value" value="6"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
                 </stackView>

@@ -32,7 +32,7 @@ class NewDirectVisaController: UIViewController,SwipeUpDismissable {
         enableSwipeUpToDismiss()
         
         checkoutFooter.action = { [weak self] in
-            self?.present(PaymentViewController(), animated: true, completion: nil)
+            try! AppNavigator().push(.paymentMethod)
         }
         
         setONClickViews()

@@ -10,7 +10,7 @@ import PanModal
 import UIKit
 /* if any contoller need any dependencies, it should passed in the destination item */
 enum Destination {
-    case loginView, signupView, homeScreen, visaRequirement, selectableSheet(data: Any), paymentMethod,passangersCount,newInstitueVisa,datePicker
+    case loginView, signupView, homeScreen, visaRequirement, selectableSheet(data: Any), paymentMethod,passangersCount,newInstitueVisa,datePicker,hostsInfoScreen,passangersInfoScreen,successVisaReqScreen,MyOrders,orderDetails
     func controller() -> UIViewController {
         switch self {
         case .loginView:
@@ -38,6 +38,18 @@ enum Destination {
             return NewInstituteRequestController()
         case .datePicker:
             return DatePickerController()
+        
+        case .hostsInfoScreen:
+            return SponsersViewController()
+        case .passangersInfoScreen:
+           return  PassangersController()
+        case .successVisaReqScreen:
+            return SuccessVisaRequestController()
+        case .MyOrders:
+            return OrdersHistoryController()
+        case .orderDetails:
+            return OrderDetailsController()
+            
         }
     }
 }

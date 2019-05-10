@@ -15,6 +15,10 @@ class PassangersController: UIViewController {
         super.viewDidLoad()
 
     }
+    @IBAction func followAction(_ sender: Any) {
+        try! AppNavigator().push(.successVisaReqScreen)
+
+    }
 }
 
 extension SkyFloatingLabelTextField{
