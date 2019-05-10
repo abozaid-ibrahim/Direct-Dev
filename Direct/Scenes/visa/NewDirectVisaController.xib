@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="checkoutFooter" destination="72P-rO-dCS" id="Ujh-EQ-CWg"/>
                 <outlet property="countryField" destination="BhQ-iz-jOu" id="prw-RT-zrV"/>
+                <outlet property="dateField" destination="M6J-mY-pnS" id="qzf-3Z-dAR"/>
                 <outlet property="passangersCountField" destination="Ozc-3k-HT9" id="Ygm-oh-ZaQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

@@ -88,6 +88,8 @@
 		6CE722ED2274FA1B00E095DC /* VisaRequirementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */; };
 		6CE722EE2274FA1B00E095DC /* VisaRequirementController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CE722EC2274FA1B00E095DC /* VisaRequirementController.xib */; };
 		6CF0E3672285BB1000149910 /* SwipeUpToDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0E3662285BB1000149910 /* SwipeUpToDismiss.swift */; };
+		6CF0E36C2285BE6800149910 /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0E36A2285BE6800149910 /* DatePickerController.swift */; };
+		6CF0E36D2285BE6800149910 /* DatePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF0E36B2285BE6800149910 /* DatePickerController.xib */; };
 		6CF3E1722271E451007488BA /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1712271E451007488BA /* Navigator.swift */; };
 		6CF3E1762271E598007488BA /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1752271E598007488BA /* RootNavigationViewController.swift */; };
 		6CF3E17E2271E702007488BA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E17D2271E702007488BA /* User.swift */; };
@@ -240,6 +242,8 @@
 		6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaRequirementController.swift; sourceTree = "<group>"; };
 		6CE722EC2274FA1B00E095DC /* VisaRequirementController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisaRequirementController.xib; sourceTree = "<group>"; };
 		6CF0E3662285BB1000149910 /* SwipeUpToDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeUpToDismiss.swift; sourceTree = "<group>"; };
+		6CF0E36A2285BE6800149910 /* DatePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
+		6CF0E36B2285BE6800149910 /* DatePickerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerController.xib; sourceTree = "<group>"; };
 		6CF3E1712271E451007488BA /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		6CF3E1752271E598007488BA /* RootNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationViewController.swift; sourceTree = "<group>"; };
 		6CF3E17D2271E702007488BA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -565,6 +569,8 @@
 				6C77826D227A9FB2001926B2 /* SuccessVisaRequestController.xib */,
 				6CDEBBE42284C55800EC3E6F /* PassangersCountController.swift */,
 				6CDEBBE52284C55800EC3E6F /* PassangersCountController.xib */,
+				6CF0E36A2285BE6800149910 /* DatePickerController.swift */,
+				6CF0E36B2285BE6800149910 /* DatePickerController.xib */,
 			);
 			path = visa;
 			sourceTree = "<group>";
@@ -834,6 +840,7 @@
 				6CDEBBF12285012400EC3E6F /* PackageDetailsController.xib in Resources */,
 				6CE722EE2274FA1B00E095DC /* VisaRequirementController.xib in Resources */,
 				6C2CFB902277446600D23CF4 /* SingleRowTableCell.xib in Resources */,
+				6CF0E36D2285BE6800149910 /* DatePickerController.xib in Resources */,
 				6C77825E227A3E23001926B2 /* BanksViewController.xib in Resources */,
 				6CF3E1A9227254B7007488BA /* NewsCollectionViewCell.xib in Resources */,
 			);
@@ -1028,6 +1035,7 @@
 				6CF3E1AB227254DB007488BA /* NewsSectionVM.swift in Sources */,
 				6C5DE76C22762013001A9FB6 /* RequireVisaSectionHeader.swift in Sources */,
 				6C2CFB9F22789E0200D23CF4 /* PaymentViewController.swift in Sources */,
+				6CF0E36C2285BE6800149910 /* DatePickerController.swift in Sources */,
 				6CF3E1C32274B8DB007488BA /* FakeData.swift in Sources */,
 				6CF3E1CC2274BBE5007488BA /* HomeCollectionSectionWrapper.swift in Sources */,
 				6C77825D227A3E23001926B2 /* BanksViewController.swift in Sources */,

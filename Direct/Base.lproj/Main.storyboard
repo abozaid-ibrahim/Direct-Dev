@@ -37,7 +37,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EZD-3Q-xMd">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EZD-3Q-xMd">
                                 <rect key="frame" x="4" y="68" width="367" height="546"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
@@ -74,22 +74,29 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4IP-Jd-N7J">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="offers" translatesAutoresizingMaskIntoConstraints="NO" id="0wN-HD-X89">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="0wN-HD-X89">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z95-fp-EAL">
                                                 <rect key="frame" x="37.5" y="55" width="300" height="30"/>
-                                                <state key="normal" title="Login"/>
+                                                <state key="normal" title="سجل الدخول / انشئ حساب"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">
                                                         <integer key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اهلاً بك" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHZ-pe-Ztw">
+                                                <rect key="frame" x="163" y="26.5" width="49" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="z95-fp-EAL" firstAttribute="centerY" secondItem="0wN-HD-X89" secondAttribute="centerY" id="Aok-pE-DFA"/>
+                                            <constraint firstItem="kHZ-pe-Ztw" firstAttribute="centerX" secondItem="0wN-HD-X89" secondAttribute="centerX" id="EvP-kh-8BR"/>
                                             <constraint firstItem="z95-fp-EAL" firstAttribute="width" secondItem="0wN-HD-X89" secondAttribute="width" multiplier="4:5" id="NgR-i0-9Af"/>
                                             <constraint firstItem="z95-fp-EAL" firstAttribute="centerX" secondItem="0wN-HD-X89" secondAttribute="centerX" id="Pbr-oO-tZd"/>
                                             <constraint firstAttribute="bottom" secondItem="0wN-HD-X89" secondAttribute="bottom" id="Ui7-HW-S9c"/>
@@ -97,9 +104,10 @@
                                             <constraint firstItem="0wN-HD-X89" firstAttribute="top" secondItem="4IP-Jd-N7J" secondAttribute="top" id="gOa-Eh-XQR"/>
                                             <constraint firstAttribute="trailing" secondItem="0wN-HD-X89" secondAttribute="trailing" id="nY5-7y-01y"/>
                                             <constraint firstItem="0wN-HD-X89" firstAttribute="leading" secondItem="4IP-Jd-N7J" secondAttribute="leading" id="r3t-7a-ghE"/>
+                                            <constraint firstItem="z95-fp-EAL" firstAttribute="top" secondItem="kHZ-pe-Ztw" secondAttribute="bottom" constant="8" id="s10-H1-xgb"/>
                                         </constraints>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KDM-kw-Swc">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KDM-kw-Swc">
                                         <rect key="frame" x="0.0" y="143" width="375" height="460"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
@@ -549,7 +557,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="offers" width="602" height="474"/>
+        <image name="download" width="259" height="194"/>
         <image name="p" width="608" height="350"/>
     </resources>
 </document>

@@ -45,10 +45,17 @@ class NewDirectVisaController: UIViewController,SwipeUpDismissable {
             guard let self = self else {return}
             try! AppNavigator().presentModally(.passangersCount)
         }).disposed(by: disposeBag)
+        
+        dateField.rx.tapGesture().subscribe({[weak self] _ in
+            guard let self = self else {return}
+            try! AppNavigator().presentModally(.datePicker)
+        }).disposed(by: disposeBag)
+        
     }
     
     
     
+    @IBOutlet weak var dateField: SpinnerTextField!
     
     
 //    @objc private func panGestureRecognizerHandler(_ sender: UIPanGestureRecognizer) {
