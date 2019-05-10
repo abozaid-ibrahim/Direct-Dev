@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 final class PackagesViewController: UIViewController,SwipeUpDismissable {
-    private let disposeBag = DisposeBag()
+     let disposeBag = DisposeBag()
     var dismessed: PublishSubject<Bool> = PublishSubject()
     var initialTouchPoint: CGPoint = CGPoint(x: 0, y: 0)
     var defaultFrame:CGRect?{
