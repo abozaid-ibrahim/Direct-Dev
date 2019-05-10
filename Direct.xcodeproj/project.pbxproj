@@ -93,6 +93,8 @@
 		6CF0E3722285D70900149910 /* OrdersHistoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF0E3702285D70900149910 /* OrdersHistoryController.xib */; };
 		6CF0E3772285D78900149910 /* OrderDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0E3752285D78900149910 /* OrderDetailsController.swift */; };
 		6CF0E3782285D78900149910 /* OrderDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF0E3762285D78900149910 /* OrderDetailsController.xib */; };
+		6CF0E37B2285DA8900149910 /* OrderTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0E3792285DA8900149910 /* OrderTableCell.swift */; };
+		6CF0E37C2285DA8900149910 /* OrderTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF0E37A2285DA8900149910 /* OrderTableCell.xib */; };
 		6CF3E1722271E451007488BA /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1712271E451007488BA /* Navigator.swift */; };
 		6CF3E1762271E598007488BA /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1752271E598007488BA /* RootNavigationViewController.swift */; };
 		6CF3E17E2271E702007488BA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E17D2271E702007488BA /* User.swift */; };
@@ -250,6 +252,8 @@
 		6CF0E3702285D70900149910 /* OrdersHistoryController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrdersHistoryController.xib; sourceTree = "<group>"; };
 		6CF0E3752285D78900149910 /* OrderDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsController.swift; sourceTree = "<group>"; };
 		6CF0E3762285D78900149910 /* OrderDetailsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailsController.xib; sourceTree = "<group>"; };
+		6CF0E3792285DA8900149910 /* OrderTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableCell.swift; sourceTree = "<group>"; };
+		6CF0E37A2285DA8900149910 /* OrderTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTableCell.xib; sourceTree = "<group>"; };
 		6CF3E1712271E451007488BA /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		6CF3E1752271E598007488BA /* RootNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationViewController.swift; sourceTree = "<group>"; };
 		6CF3E17D2271E702007488BA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -375,6 +379,8 @@
 				6CF0E3702285D70900149910 /* OrdersHistoryController.xib */,
 				6CF0E3752285D78900149910 /* OrderDetailsController.swift */,
 				6CF0E3762285D78900149910 /* OrderDetailsController.xib */,
+				6CF0E3792285DA8900149910 /* OrderTableCell.swift */,
+				6CF0E37A2285DA8900149910 /* OrderTableCell.xib */,
 			);
 			path = orders;
 			sourceTree = "<group>";
@@ -845,6 +851,7 @@
 				6CF3E1B9227268CF007488BA /* HomeCollectionSectionHeader.xib in Resources */,
 				6CF3E19D22725430007488BA /* VisaCollectionViewCell.xib in Resources */,
 				6C778281227AA2EC001926B2 /* InstitutesListController.xib in Resources */,
+				6CF0E37C2285DA8900149910 /* OrderTableCell.xib in Resources */,
 				6C778262227A3E3D001926B2 /* BankTableCell.xib in Resources */,
 				6C5DE77022762020001A9FB6 /* RequireVisaSectionHeader.xib in Resources */,
 				6C87FADD2270C74000AFE485 /* UserAuthViewController.xib in Resources */,
@@ -1068,6 +1075,7 @@
 				6C2CFBA72278A1C600D23CF4 /* PaymentBranchTableCell.swift in Sources */,
 				6C2CFB8C2277422900D23CF4 /* PackagesViewController.swift in Sources */,
 				6C87FADC2270C74000AFE485 /* UserAuthViewController.swift in Sources */,
+				6CF0E37B2285DA8900149910 /* OrderTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

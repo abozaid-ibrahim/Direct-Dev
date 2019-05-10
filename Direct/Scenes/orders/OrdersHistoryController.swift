@@ -22,9 +22,9 @@ final class OrdersHistoryController: UIViewController {
 
     }
     private func setupTableData(){
-        tableView.registerNib(SingleRowTableCell.cellId)
+        tableView.registerNib(OrderTableCell.cellId)
         Observable<[String]>.just(dataList)
-            .bind(to: tableView.rx.items(cellIdentifier: SingleRowTableCell.cellId)) { row, model, cell  in
+            .bind(to: tableView.rx.items(cellIdentifier: OrderTableCell.cellId)) { row, model, cell  in
                 let mycell = (cell as! SingleRowTableCell)
                 mycell.setCellData(model)
             }.disposed(by: disposeBag)

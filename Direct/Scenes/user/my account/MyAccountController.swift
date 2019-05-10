@@ -25,4 +25,8 @@ final class MyAccountController: UIViewController, PanModalPresentable {
                 mycell.setCellData(model)
             }.disposed(by: disposeBag)
     }
+    @IBAction func login(_ sender: Any) {
+        try! AppNavigator().push(.loginView)
+
+    }
 }

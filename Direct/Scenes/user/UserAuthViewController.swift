@@ -9,8 +9,8 @@
 import UIKit
 
 class UserAuthViewController: UIViewController {
-    private var signupController = SignupViewController()
-    private var loginController = LoginViewController()
+    private lazy var signupController = SignupViewController()
+    private lazy var loginController = LoginViewController()
 
     enum Views {
         case login, signup
