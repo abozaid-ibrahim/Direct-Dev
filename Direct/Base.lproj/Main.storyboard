@@ -277,6 +277,10 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
+                                                        <gestureRecognizers/>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="A8i-dj-4Qn" appends="YES" id="Ll4-KD-PUW"/>
+                                                        </connections>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H6d-a6-5XX">
                                                         <rect key="frame" x="156" y="0.0" width="52" height="46"/>
@@ -298,6 +302,10 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
+                                                        <gestureRecognizers/>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="6Vi-1d-aps" appends="YES" id="Vqu-jp-3lU"/>
+                                                        </connections>
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
@@ -349,6 +357,8 @@
                         <outlet property="containerView" destination="T3u-i3-Zv4" id="8lz-Z5-IM1"/>
                         <outlet property="headerView" destination="5c4-qd-HDW" id="t2G-M4-2vs"/>
                         <outlet property="headerWidthConstrain" destination="yEH-bg-wf9" id="lKc-LQ-m1g"/>
+                        <outlet property="institueView" destination="LAE-3u-ndD" id="k9a-sX-Fsc"/>
+                        <outlet property="packageView" destination="4kF-6q-dR8" id="RE8-rb-U1f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A5q-RY-2Jh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -479,9 +489,19 @@
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="ei7-cr-R1G"/>
                 </view>
-                <tapGestureRecognizer id="IPp-Ea-e8W">
+                <tapGestureRecognizer id="IPp-Ea-e8W" userLabel="visa">
                     <connections>
                         <action selector="visaDidSelected:" destination="mUF-MA-QtB" id="jWh-DR-Zj4"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="A8i-dj-4Qn" userLabel="institues">
+                    <connections>
+                        <action selector="institureAction:" destination="mUF-MA-QtB" id="gHD-nf-VBu"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="6Vi-1d-aps" userLabel="packages">
+                    <connections>
+                        <action selector="packagesDidSelect:" destination="mUF-MA-QtB" id="FCU-yD-hvv"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

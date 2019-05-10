@@ -79,6 +79,8 @@
 		6CA040B62281BE0300619B6F /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA040B52281BE0300619B6F /* FloatingTextField.swift */; };
 		6CC514A2227DC43B00634B5D /* PassangersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC514A0227DC43B00634B5D /* PassangersController.swift */; };
 		6CC514A3227DC43B00634B5D /* PassangersController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CC514A1227DC43B00634B5D /* PassangersController.xib */; };
+		6CDEBBE62284C55800EC3E6F /* PassangersCountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEBBE42284C55800EC3E6F /* PassangersCountController.swift */; };
+		6CDEBBE72284C55800EC3E6F /* PassangersCountController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CDEBBE52284C55800EC3E6F /* PassangersCountController.xib */; };
 		6CE722ED2274FA1B00E095DC /* VisaRequirementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */; };
 		6CE722EE2274FA1B00E095DC /* VisaRequirementController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CE722EC2274FA1B00E095DC /* VisaRequirementController.xib */; };
 		6CF3E1722271E451007488BA /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1712271E451007488BA /* Navigator.swift */; };
@@ -224,6 +226,8 @@
 		6CA040B52281BE0300619B6F /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
 		6CC514A0227DC43B00634B5D /* PassangersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangersController.swift; sourceTree = "<group>"; };
 		6CC514A1227DC43B00634B5D /* PassangersController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PassangersController.xib; sourceTree = "<group>"; };
+		6CDEBBE42284C55800EC3E6F /* PassangersCountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangersCountController.swift; sourceTree = "<group>"; };
+		6CDEBBE52284C55800EC3E6F /* PassangersCountController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PassangersCountController.xib; sourceTree = "<group>"; };
 		6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaRequirementController.swift; sourceTree = "<group>"; };
 		6CE722EC2274FA1B00E095DC /* VisaRequirementController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisaRequirementController.xib; sourceTree = "<group>"; };
 		6CF3E1712271E451007488BA /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
@@ -553,6 +557,8 @@
 				6C2CFB922277902400D23CF4 /* NewDirectVisaController.xib */,
 				6C77826C227A9FB2001926B2 /* SuccessVisaRequestController.swift */,
 				6C77826D227A9FB2001926B2 /* SuccessVisaRequestController.xib */,
+				6CDEBBE42284C55800EC3E6F /* PassangersCountController.swift */,
+				6CDEBBE52284C55800EC3E6F /* PassangersCountController.xib */,
 			);
 			path = visa;
 			sourceTree = "<group>";
@@ -796,6 +802,7 @@
 				6CF3E1A5227254A1007488BA /* InstituteCollectionViewCell.xib in Resources */,
 				6C2CFBA422789F6100D23CF4 /* PaymentMethodTableCell.xib in Resources */,
 				6C5DE7692275EC49001A9FB6 /* VisaRequirementTableCell.xib in Resources */,
+				6CDEBBE72284C55800EC3E6F /* PassangersCountController.xib in Resources */,
 				6C778275227AA196001926B2 /* NewInstituteRequestController.xib in Resources */,
 				6CF3E1CD2274BBE5007488BA /* HomeCollectionSectionWrapper.xib in Resources */,
 				6C778279227AA26F001926B2 /* InstituteDetailsController.xib in Resources */,
@@ -854,6 +861,7 @@
 				"${BUILT_PRODUCTS_DIR}/PanModal/PanModal.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 			);
@@ -866,6 +874,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PanModal.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 			);
@@ -1015,6 +1024,7 @@
 				6C2CFB962277996500D23CF4 /* SpinnerTextField.swift in Sources */,
 				6C77828C227C715A001926B2 /* ImageLabel.swift in Sources */,
 				6CF3E1842271F4B9007488BA /* HomeViewController.swift in Sources */,
+				6CDEBBE62284C55800EC3E6F /* PassangersCountController.swift in Sources */,
 				6CF3E1AD2272551E007488BA /* VisaRequirementsSectionVM.swift in Sources */,
 				6C5DE7652275DA99001A9FB6 /* UIView.swift in Sources */,
 				6C87FAD92270C6D800AFE485 /* UIColor+Additions.swift in Sources */,

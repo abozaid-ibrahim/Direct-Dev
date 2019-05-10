@@ -9,6 +9,9 @@ PODS:
     - Differentiator (~> 3.0)
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
+  - RxGesture (2.2.0):
+    - RxCocoa (~> 4.5)
+    - RxSwift (~> 4.5)
   - RxSwift (4.5.0)
   - SkyFloatingLabelTextField (3.6.0)
 
@@ -18,6 +21,7 @@ DEPENDENCIES:
   - PanModal
   - RxCocoa (~> 4.0)
   - RxDataSources
+  - RxGesture (~> 2.1)
   - RxSwift (~> 4.0)
   - SkyFloatingLabelTextField (~> 3.0)
 
@@ -29,6 +33,7 @@ SPEC REPOS:
     - PanModal
     - RxCocoa
     - RxDataSources
+    - RxGesture
     - RxSwift
     - SkyFloatingLabelTextField
 
@@ -39,9 +44,10 @@ SPEC CHECKSUMS:
   PanModal: db200380a267634f746f8dea550dc3d1df017fc0
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
+  RxGesture: c1b7bf17166b0ef9d642a9510f8bac5785f18990
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
 
-PODFILE CHECKSUM: a671f8e668b6e5e311cb4ddd9a1f65c74cf4a461
+PODFILE CHECKSUM: 3c1be079342658029bb9788a6328c81f61f88f6a
 
 COCOAPODS: 1.6.1

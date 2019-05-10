@@ -8,10 +8,14 @@
 
 import RxSwift
 import UIKit
+import RxSwift
+import RxGesture
 
 private typealias HeaderObject = (UIImage, String)
 
 final class HomeViewController: UIViewController, StyledActionBar {
+    @IBOutlet weak var packageView: UIStackView!
+    @IBOutlet weak var institueView: UIStackView!
     private let homeViewModel = HomeViewModel()
     private let disposeBag = DisposeBag()
     private let sectionsHeaderData: [HeaderObject] = [(#imageLiteral(resourceName: "p"), "Visa"), (#imageLiteral(resourceName: "p"), "Visa"), (#imageLiteral(resourceName: "p"), "Visa"), (#imageLiteral(resourceName: "p"), "Visa"), (#imageLiteral(resourceName: "p"), "Visa")]
@@ -21,11 +25,7 @@ final class HomeViewController: UIViewController, StyledActionBar {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet private var collectionView: UICollectionView!
     @IBOutlet private var headerView: UIView!
-    @IBOutlet weak var temp: UIView!
-    @IBOutlet private var visaView: UIStackView!
-    @IBOutlet private var contentLayout: UIView!
     @IBOutlet weak var headerWidthConstrain: NSLayoutConstraint!
-    @IBOutlet var instituteView: UIImageView!
     
     
     override func viewDidLoad() {
@@ -36,9 +36,21 @@ final class HomeViewController: UIViewController, StyledActionBar {
         setupActionBar(.withTitle("Direct Visa"))
         getDataFromViewModel()
         homeViewModel.getAllData()
-        
+        //        institueView.rx.tapGesture().subscribe{
+        //            self.institutesDidSelected()
+        //        }.disposed(by: disposeBag)
+        //        packageView.rx.tapGesture().subscribe{
+        //            self.packagesDidSelect()
+        //            }.disposed(by: disposeBag)
     }
     
+    @IBAction func institureAction(_ sender: Any) {
+        tabbarSelected(vc: newInstitue)
+    }
+    @IBAction func packagesDidSelect(_ sender: Any) {
+        tabbarSelected(vc: packagesVC as! SwipeUpDismissable)
+        
+    }
     private func getDataFromViewModel() {
         homeViewModel.collectionSecions.asObservable()
             .observeOn(MainScheduler.instance)
@@ -55,22 +67,27 @@ final class HomeViewController: UIViewController, StyledActionBar {
         collectionView.register(UINib(nibName: "HomeCollectionSectionHeader", bundle: nil), forSupplementaryViewOfKind: "UICollectionElementKindSectionHeader", withReuseIdentifier: "HomeCollectionSectionHeader")
     }
     let vc = NewDirectVisaController()
-
+    let newInstitue = NewInstituteRequestController()
+    let packagesVC = UIStoryboard.main.instantiateViewController(withIdentifier: "PackagesViewController")
+    
     @IBAction func visaDidSelected(_: Any) {
+        
+        tabbarSelected(vc: vc)
+        
+        
+    }
+    private func tabbarSelected(vc:SwipeUpDismissable){
         addChild(vc)
         containerView.addSubview(vc.view)
         vc.dismessed.asObservable().subscribe(onNext: {[weak self] dismessed in
             guard let self = self else {return}
             self.collectionView.isHidden = !dismessed
             self.updateHeaderFrame(fullWidth: !dismessed)
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+            }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
         self.startViewsAnim(vc)
-        
-        
-        
     }
-    private func startViewsAnim(_ vc:NewDirectVisaController){
+    private func startViewsAnim(_ vc:UIViewController){
         let childFrame = containerView.frame
         vc.view.frame = CGRect(x: childFrame.minX, y: -childFrame.height, width: childFrame.width, height: childFrame.height)
         UIView.animate(withDuration: 0.3, animations: {
@@ -78,9 +95,9 @@ final class HomeViewController: UIViewController, StyledActionBar {
         }, completion: nil)
         self.updateHeaderFrame(fullWidth: true)
     }
-
+    
     private func updateHeaderFrame(fullWidth:Bool){
-       
+        
         UIView.animate(withDuration: 0.3, animations: {[weak self] in
             guard let self = self else {return}
             if fullWidth{
@@ -96,9 +113,7 @@ final class HomeViewController: UIViewController, StyledActionBar {
         
     }
     
-    @IBAction func institutesDidSelected(_: Any) {}
     
-    @IBAction func packagesDidSelect(_: Any) {}
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {

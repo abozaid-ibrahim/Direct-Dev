@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import RxSwift
 
-class PackagesViewController: UIViewController {
+class PackagesViewController: UIViewController,SwipeUpDismissable {
+    private let disposeBag = DisposeBag()
+    var dismessed: PublishSubject<Bool> = PublishSubject()
+    var initialTouchPoint: CGPoint = CGPoint(x: 0, y: 0)
+    var defaultFrame:CGRect?{
+        didSet{
+            self.view.frame = defaultFrame ?? CGRect.zero
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        enableSwipeUpToDismiss()
     }
-
-    override func viewDidAppear(_: Bool) {
-        try! AppNavigator().presentModally(.selectableSheet(data: ""))
-    }
+    
 }

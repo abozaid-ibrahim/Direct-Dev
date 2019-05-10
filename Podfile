@@ -10,7 +10,8 @@ target 'Direct' do
   pod 'SkyFloatingLabelTextField', '~> 3.0'
 #  pod 'M13Checkbox'
 pod 'IBAnalyzer'
-  
+	pod 'RxGesture', '~> 2.1'
+
   target 'DirectTests' do
     inherit! :search_paths
   end

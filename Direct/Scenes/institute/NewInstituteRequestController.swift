@@ -7,9 +7,23 @@
 //
 
 import UIKit
+import RxSwift
+import PanModal
 
-class NewInstituteRequestController: UIViewController {
+class NewInstituteRequestController: UIViewController,SwipeUpDismissable {
+        private let disposeBag = DisposeBag()
+        var dismessed: PublishSubject<Bool> = PublishSubject()
+        var initialTouchPoint: CGPoint = CGPoint(x: 0, y: 0)
+        var defaultFrame:CGRect?{
+            didSet{
+                self.view.frame = defaultFrame ?? CGRect.zero
+            }
+        }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        enableSwipeUpToDismiss()
     }
+    
+   
 }
