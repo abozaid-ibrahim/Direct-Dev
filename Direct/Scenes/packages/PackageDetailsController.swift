@@ -15,4 +15,7 @@ class PackageDetailsController: UIViewController {
 
     }
 
+    @IBAction func bookNowAction(_ sender: Any) {
+        try? AppNavigator().push(.successPackage)
+    }
 }

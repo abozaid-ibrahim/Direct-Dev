@@ -34,13 +34,13 @@ extension SwipeUpDismissable{
     func addBottomLine(){
         let button = UIView()
         button.backgroundColor = .lightGray
-        button.cornerRadiusV = 7
+        button.cornerRadiusV = 5
         self.view.addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 15).isActive = true
-        button.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 10).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 70).isActive = true
         
     }
 
