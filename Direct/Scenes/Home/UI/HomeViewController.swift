@@ -45,13 +45,21 @@ final class HomeViewController: UIViewController, StyledActionBar {
     }
     
     @IBAction func institureAction(_ sender: Any) {
-        tabbarSelected(vc: newInstitue)
+       
+        if  children.contains(newInstitue){
+            newInstitue.dismissWithAnim()
+        }else{
+            tabbarSelected(vc: newInstitue)
+        }
     }
     @IBAction func packagesDidSelect(_ sender: Any) {
         let vc = packagesVC as! PackagesViewController
-        vc.dismissable = true
-        tabbarSelected(vc: vc)
-        
+        if children.contains(vc){
+            newInstitue.dismissWithAnim()
+        }else{
+            vc.dismissable = true
+            tabbarSelected(vc: vc)
+        }
     }
     private func getDataFromViewModel() {
         homeViewModel.collectionSecions.asObservable()
@@ -73,10 +81,11 @@ final class HomeViewController: UIViewController, StyledActionBar {
     let packagesVC = UIStoryboard.main.instantiateViewController(withIdentifier: "PackagesViewController")
     
     @IBAction func visaDidSelected(_: Any) {
-        
-        tabbarSelected(vc: vc)
-        
-        
+        if children.contains(vc){
+            newInstitue.dismissWithAnim()
+        }else{
+            tabbarSelected(vc: vc)
+        }
     }
     private func tabbarSelected(vc:SwipeUpDismissable){
         addChild(vc)

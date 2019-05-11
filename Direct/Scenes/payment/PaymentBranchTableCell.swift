@@ -24,6 +24,7 @@ class PaymentBranchTableCell: UITableViewCell, TableCell {
     @IBOutlet private var titleLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

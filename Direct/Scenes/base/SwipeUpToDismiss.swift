@@ -21,6 +21,7 @@ protocol SwipeUpDismissable:UIViewController {
     var dismessed: PublishSubject<Bool> {get set}
     func enableSwipeUpToDismiss()
     func swipeUpToDismiss(sender:UIPanGestureRecognizer,initialTouchPoint:inout CGPoint,defaultFrame:CGRect?)
+    func dismissWithAnim()
     
 }
 extension SwipeUpDismissable{
@@ -72,5 +73,17 @@ extension SwipeUpDismissable{
             }
         }
         
+    }
+    func dismissWithAnim(){
+        UIView.animate(withDuration: 0.3, animations: {
+            let tempY = self.view.bounds.height
+            self.view.frame = CGRect(x: 0, y: -tempY, width: self.view.frame.size.width, height: self.view.frame.size.height)
+            
+        }, completion: { [weak self] _ in
+            guard let self = self else {return}
+            
+            self.dismessed.onNext(true)
+            self.removeFromParent()
+        })
     }
 }

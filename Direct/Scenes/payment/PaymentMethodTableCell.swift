@@ -19,6 +19,7 @@ class PaymentMethodTableCell: UITableViewCell, TableCell {
     @IBOutlet private var titleLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .none
         // Initialization code
     }
 

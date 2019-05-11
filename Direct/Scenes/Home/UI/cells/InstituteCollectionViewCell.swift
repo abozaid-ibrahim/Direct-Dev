@@ -11,6 +11,5 @@ import UIKit
 class InstituteCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
+   }
 }

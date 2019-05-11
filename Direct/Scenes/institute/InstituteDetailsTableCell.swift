@@ -19,6 +19,7 @@ class InstituteDetailsTableCell: UITableViewCell ,TableCell{
    
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .none
 radioBox.checkState = .checked
 //        radioBox.isEnabled = false
     }
