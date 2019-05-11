@@ -120,6 +120,10 @@
 		6CF3E1C32274B8DB007488BA /* FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1C22274B8DB007488BA /* FakeData.swift */; };
 		6CF3E1CC2274BBE5007488BA /* HomeCollectionSectionWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1CA2274BBE5007488BA /* HomeCollectionSectionWrapper.swift */; };
 		6CF3E1CD2274BBE5007488BA /* HomeCollectionSectionWrapper.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF3E1CB2274BBE5007488BA /* HomeCollectionSectionWrapper.xib */; };
+		6CF703DD2286F7E800B1C387 /* InstituteDetailsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF703DB2286F7E800B1C387 /* InstituteDetailsTableCell.swift */; };
+		6CF703DE2286F7E800B1C387 /* InstituteDetailsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF703DC2286F7E800B1C387 /* InstituteDetailsTableCell.xib */; };
+		6CF703E22286FBD700B1C387 /* InstituteDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF703E12286FBD700B1C387 /* InstituteDetailsHeaderView.swift */; };
+		6CF703E82286FE5D00B1C387 /* InstituteDetailsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF703E62286FE5D00B1C387 /* InstituteDetailsHeaderView.xib */; };
 		8B1377D46A1E5F719D9E5A12 /* Pods_DirectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A2B8F6171281AB2F94BE3F /* Pods_DirectTests.framework */; };
 		EBD586B3E64D029BAC2A9DC2 /* Pods_Direct.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D320B700B1358D94E681A70 /* Pods_Direct.framework */; };
 /* End PBXBuildFile section */
@@ -279,6 +283,10 @@
 		6CF3E1C22274B8DB007488BA /* FakeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeData.swift; sourceTree = "<group>"; };
 		6CF3E1CA2274BBE5007488BA /* HomeCollectionSectionWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionSectionWrapper.swift; sourceTree = "<group>"; };
 		6CF3E1CB2274BBE5007488BA /* HomeCollectionSectionWrapper.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionSectionWrapper.xib; sourceTree = "<group>"; };
+		6CF703DB2286F7E800B1C387 /* InstituteDetailsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstituteDetailsTableCell.swift; sourceTree = "<group>"; };
+		6CF703DC2286F7E800B1C387 /* InstituteDetailsTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstituteDetailsTableCell.xib; sourceTree = "<group>"; };
+		6CF703E12286FBD700B1C387 /* InstituteDetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstituteDetailsHeaderView.swift; sourceTree = "<group>"; };
+		6CF703E62286FE5D00B1C387 /* InstituteDetailsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstituteDetailsHeaderView.xib; sourceTree = "<group>"; };
 		6D320B700B1358D94E681A70 /* Pods_Direct.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Direct.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFE1A8BA236C07146CC7481 /* Pods-Direct.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Direct.debug.xcconfig"; path = "Target Support Files/Pods-Direct/Pods-Direct.debug.xcconfig"; sourceTree = "<group>"; };
 		D32B7AB6EBFAB4A13A20BC57 /* Pods-Direct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Direct.release.xcconfig"; path = "Target Support Files/Pods-Direct/Pods-Direct.release.xcconfig"; sourceTree = "<group>"; };
@@ -489,6 +497,10 @@
 				6C77827F227AA2EC001926B2 /* InstitutesListController.xib */,
 				6C778282227AA33D001926B2 /* InstituteTableCell.swift */,
 				6C778283227AA33D001926B2 /* InstituteTableCell.xib */,
+				6CF703DB2286F7E800B1C387 /* InstituteDetailsTableCell.swift */,
+				6CF703DC2286F7E800B1C387 /* InstituteDetailsTableCell.xib */,
+				6CF703E12286FBD700B1C387 /* InstituteDetailsHeaderView.swift */,
+				6CF703E62286FE5D00B1C387 /* InstituteDetailsHeaderView.xib */,
 			);
 			path = institute;
 			sourceTree = "<group>";
@@ -821,6 +833,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C2CFB892277419A00D23CF4 /* SelectableTableSheet.xib in Resources */,
+				6CF703E82286FE5D00B1C387 /* InstituteDetailsHeaderView.xib in Resources */,
 				6CF0E3782285D78900149910 /* OrderDetailsController.xib in Resources */,
 				6C87FAE52270C75F00AFE485 /* SignupViewController.xib in Resources */,
 				6C87FAE12270C75100AFE485 /* LoginViewController.xib in Resources */,
@@ -845,6 +858,7 @@
 				6C77828A227C6EE6001926B2 /* ContactUsViewController.xib in Resources */,
 				6C2CFBA022789E0200D23CF4 /* PaymentViewController.xib in Resources */,
 				6CC514A3227DC43B00634B5D /* PassangersController.xib in Resources */,
+				6CF703DE2286F7E800B1C387 /* InstituteDetailsTableCell.xib in Resources */,
 				6C5FDA572270816C00ABA39B /* LaunchScreen.storyboard in Resources */,
 				6C5FDA542270816C00ABA39B /* Assets.xcassets in Resources */,
 				6C5FDA522270816B00ABA39B /* Main.storyboard in Resources */,
@@ -892,6 +906,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Direct/Pods-Direct-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/M13Checkbox/M13Checkbox.framework",
 				"${BUILT_PRODUCTS_DIR}/PanModal/PanModal.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
@@ -905,6 +920,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M13Checkbox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PanModal.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
@@ -1013,8 +1029,10 @@
 				6C77827C227AA2C1001926B2 /* SuccessRequestInstituteController.swift in Sources */,
 				6C778278227AA26F001926B2 /* InstituteDetailsController.swift in Sources */,
 				6C778261227A3E3D001926B2 /* BankTableCell.swift in Sources */,
+				6CF703DD2286F7E800B1C387 /* InstituteDetailsTableCell.swift in Sources */,
 				6C778280227AA2EC001926B2 /* InstitutesListController.swift in Sources */,
 				6CF3E1762271E598007488BA /* RootNavigationViewController.swift in Sources */,
+				6CF703E22286FBD700B1C387 /* InstituteDetailsHeaderView.swift in Sources */,
 				6C77825A227A3AFF001926B2 /* MyAccountController.swift in Sources */,
 				6CDEBBEC2284FDA000EC3E6F /* PackagesTableCell.swift in Sources */,
 				6C7782472278A54A001926B2 /* CheckoutFooter.swift in Sources */,

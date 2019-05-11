@@ -2,6 +2,7 @@ PODS:
   - Differentiator (3.1.0)
   - Hero (1.4.0)
   - IBAnalyzer (0.3.0)
+  - M13Checkbox (3.4.0)
   - PanModal (1.2.2)
   - RxCocoa (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
@@ -18,6 +19,7 @@ PODS:
 DEPENDENCIES:
   - Hero
   - IBAnalyzer
+  - M13Checkbox
   - PanModal
   - RxCocoa (~> 4.0)
   - RxDataSources
@@ -30,6 +32,7 @@ SPEC REPOS:
     - Differentiator
     - Hero
     - IBAnalyzer
+    - M13Checkbox
     - PanModal
     - RxCocoa
     - RxDataSources
@@ -41,6 +44,7 @@ SPEC CHECKSUMS:
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   IBAnalyzer: b126675d57df92f5b2464e836f22bcc83fd4970e
+  M13Checkbox: 6f59404540ac98ba83a3d1afac335895a40c6a5d
   PanModal: db200380a267634f746f8dea550dc3d1df017fc0
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
@@ -48,6 +52,6 @@ SPEC CHECKSUMS:
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
 
-PODFILE CHECKSUM: 3c1be079342658029bb9788a6328c81f61f88f6a
+PODFILE CHECKSUM: e075b6c39db7de039b9224270842b40f4cbed428
 
 COCOAPODS: 1.6.1

@@ -12,6 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewInstituteRequestController" customModule="Direct" customModuleProvider="target">
             <connections>
+                <outlet property="searchBar" destination="Oq2-RC-NDn" id="a4V-Oc-uFI"/>
+                <outlet property="studyPeriod" destination="Iqm-F1-glj" id="7ov-DE-aZw"/>
+                <outlet property="travelDateField" destination="5Oc-Tr-HeW" id="akV-XJ-60n"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,7 +26,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4AL-cH-9wc" userLabel="tfs">
                     <rect key="frame" x="10" y="30" width="355" height="160"/>
                     <subviews>
-                        <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="Oq2-RC-NDn">
+                        <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="المعهد أو المدينة أو الدولة" translatesAutoresizingMaskIntoConstraints="NO" id="Oq2-RC-NDn">
                             <rect key="frame" x="0.0" y="0.0" width="355" height="46.5"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
@@ -36,7 +39,7 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="p"/>
                                         <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="p"/>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="hint" value="afasddf"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="hint" value="مدة الدراسة"/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Oc-Tr-HeW" customClass="SpinnerTextField" customModule="Direct" customModuleProvider="target">
@@ -45,19 +48,22 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="p"/>
                                         <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="p"/>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="hint" value="asdf"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="hint" value="تاريخ السفر "/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                             </subviews>
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vgf-8C-XNK">
                             <rect key="frame" x="0.0" y="113.5" width="355" height="46.5"/>
-                            <state key="normal" title="Button"/>
+                            <state key="normal" title="بحث"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">
                                     <integer key="value" value="1"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="searchAction:" destination="-1" eventType="touchUpInside" id="nYD-oX-KTl"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>

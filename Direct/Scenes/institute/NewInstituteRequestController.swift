@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import PanModal
+import RxGesture
 
 class NewInstituteRequestController: UIViewController,SwipeUpDismissable {
          let disposeBag = DisposeBag()
@@ -20,10 +21,28 @@ class NewInstituteRequestController: UIViewController,SwipeUpDismissable {
             }
         }
         
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var travelDateField: SpinnerTextField!
+    @IBOutlet weak var studyPeriod: SpinnerTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         enableSwipeUpToDismiss()
+        setupFields()
+    }
+    private func setupFields(){
+        travelDateField.rx.tapGesture().when(.recognized)
+            .subscribe(onNext: { _ in
+                 try! AppNavigator().presentModally(.datePicker)
+            }).disposed(by: disposeBag)
+        
+        studyPeriod.rx.tapGesture().when(.recognized)
+            .subscribe(onNext: { _ in
+                try! AppNavigator().presentModally(.datePicker)
+            }).disposed(by: disposeBag)
+        
+    }
+    @IBAction func searchAction(_ sender: Any) {
+        try? AppNavigator().push(.institutesList)
     }
     
-   
 }

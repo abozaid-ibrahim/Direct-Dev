@@ -20,11 +20,28 @@ final class InstitutesListController: UIViewController, PanModalPresentable {
     private let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.registerNib(SingleRowTableCell.cellId)
+      setupTableDataSource()
+        setupTableOnSelect()
+    }
+    private func setupTableDataSource(){
+        tableView.registerNib(InstituteTableCell.cellId)
         Observable<[String]>.just(dataList)
-            .bind(to: tableView.rx.items(cellIdentifier: SingleRowTableCell.cellId)) { _, model, cell in
-                let mycell = (cell as! SingleRowTableCell)
-                mycell.setCellData(model)
+            .bind(to: tableView.rx.items(cellIdentifier: InstituteTableCell.cellId)) { _, model, cell in
+                let mycell = (cell as! InstituteTableCell)
+                //                mycell.setCellData(model)
             }.disposed(by: disposeBag)
+        
+        
+    }
+    private func setupTableOnSelect(){
+        tableView.rx.itemSelected.asObservable().subscribe({[unowned self] event in
+            switch event.event{
+            case .next(let indexPath):
+                try! AppNavigator().push(.instituteDetails)
+            default:
+                break
+                
+            }
+        }).disposed(by: disposeBag)
     }
 }

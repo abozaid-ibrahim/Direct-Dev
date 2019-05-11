@@ -19,8 +19,11 @@ final class SearchViewController: UIViewController, PanModalPresentable,StyledAc
     override func viewDidLoad() {
         super.viewDidLoad()
         setupActionBar(.withTitle("Search"))
+        setupTableView()
+    }
+    private func setupTableView(){
         tableView.register(UINib(nibName: CountryTableCell.cellId, bundle: nil), forCellReuseIdentifier: CountryTableCell.cellId)
-
+        
         Observable<[String]>.just(dataList)
             .bind(to: tableView.rx.items(cellIdentifier: CountryTableCell.cellId)) { _, model, cell in
                 let mycell = (cell as! CountryTableCell)
