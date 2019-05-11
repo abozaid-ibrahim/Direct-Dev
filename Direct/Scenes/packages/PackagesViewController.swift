@@ -28,7 +28,7 @@ final class PackagesViewController: UIViewController,SwipeUpDismissable {
             
         }
         setupTableDataSource()
-        
+        setOnSelect()
     }
     private func setupTableDataSource(){
         tableView.registerNib(PackagesTableCell.cellId)
@@ -36,6 +36,18 @@ final class PackagesViewController: UIViewController,SwipeUpDismissable {
             .bind(to: tableView.rx.items(cellIdentifier: PackagesTableCell.cellId)) { row, model, cell  in
                 let mycell = (cell as! PackagesTableCell)
             }.disposed(by: disposeBag)
+    }
+    
+    private func setOnSelect()  {
+        tableView.rx.itemSelected.asObservable().subscribe({[unowned self] event in
+            switch event.event{
+            case .next(let indexPath):
+                try! AppNavigator().push(.packageDetails)
+            default:
+                break
+                
+            }
+        }).disposed(by: disposeBag)
     }
     
 }
