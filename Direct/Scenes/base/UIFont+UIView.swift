@@ -53,7 +53,7 @@ extension UITextField {
     var substituteFontName: String {
         get { return self.font!.fontName }
         set {
-            self.font = UIFont(name: newValue, size: (self.font?.pointSize) ?? 14)
+            self.font = UIFont(name: newValue, size: (self.font?.pointSize) ?? 13)
         }
     }
 }

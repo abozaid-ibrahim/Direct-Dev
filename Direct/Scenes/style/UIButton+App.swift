@@ -34,7 +34,7 @@ extension UIButton {
             backgroundColor = UIColor.appPumpkinOrange
             cornerRadiusV = 10
             setTitleColor(.white, for: .normal)
-            self.titleLabel?.font = UIFont(name: AppFonts.regularFont, size: 14)
+            self.titleLabel?.font = UIFont(name: AppFonts.regularFont, size: 13)
         }
     }
 }
