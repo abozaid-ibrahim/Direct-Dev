@@ -34,6 +34,8 @@
 		6C5DE7792277330D001A9FB6 /* CountryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C5DE7772277330D001A9FB6 /* CountryTableCell.xib */; };
 		6C5DE87A22872A1E00F900AE /* SuccessPackageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE87822872A1E00F900AE /* SuccessPackageController.swift */; };
 		6C5DE87B22872A1E00F900AE /* SuccessPackageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C5DE87922872A1E00F900AE /* SuccessPackageController.xib */; };
+		6C5DE88022872F0900F900AE /* TextTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE87E22872F0900F900AE /* TextTableCell.swift */; };
+		6C5DE88122872F0900F900AE /* TextTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C5DE87F22872F0900F900AE /* TextTableCell.xib */; };
 		6C5FDA4D2270816B00ABA39B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5FDA4C2270816B00ABA39B /* AppDelegate.swift */; };
 		6C5FDA4F2270816B00ABA39B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5FDA4E2270816B00ABA39B /* ViewController.swift */; };
 		6C5FDA522270816B00ABA39B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C5FDA502270816B00ABA39B /* Main.storyboard */; };
@@ -69,6 +71,7 @@
 		6C778289227C6EE6001926B2 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C778287227C6EE6001926B2 /* ContactUsViewController.swift */; };
 		6C77828A227C6EE6001926B2 /* ContactUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C778288227C6EE6001926B2 /* ContactUsViewController.xib */; };
 		6C77828C227C715A001926B2 /* ImageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C77828B227C715A001926B2 /* ImageLabel.swift */; };
+		6C8286EB228B9C96009FB5FF /* View+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8286EA228B9C96009FB5FF /* View+Colors.swift */; };
 		6C87FABD2270B5F400AFE485 /* NetworkModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C87FABA2270B5D600AFE485 /* NetworkModule.framework */; };
 		6C87FAD92270C6D800AFE485 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C87FAD82270C6D800AFE485 /* UIColor+Additions.swift */; };
 		6C87FADC2270C74000AFE485 /* UserAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C87FADA2270C74000AFE485 /* UserAuthViewController.swift */; };
@@ -193,6 +196,8 @@
 		6C5DE7772277330D001A9FB6 /* CountryTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableCell.xib; sourceTree = "<group>"; };
 		6C5DE87822872A1E00F900AE /* SuccessPackageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPackageController.swift; sourceTree = "<group>"; };
 		6C5DE87922872A1E00F900AE /* SuccessPackageController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuccessPackageController.xib; sourceTree = "<group>"; };
+		6C5DE87E22872F0900F900AE /* TextTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableCell.swift; sourceTree = "<group>"; };
+		6C5DE87F22872F0900F900AE /* TextTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextTableCell.xib; sourceTree = "<group>"; };
 		6C5FDA492270816B00ABA39B /* Direct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Direct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C5FDA4C2270816B00ABA39B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C5FDA4E2270816B00ABA39B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -234,6 +239,7 @@
 		6C778287227C6EE6001926B2 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		6C778288227C6EE6001926B2 /* ContactUsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactUsViewController.xib; sourceTree = "<group>"; };
 		6C77828B227C715A001926B2 /* ImageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLabel.swift; sourceTree = "<group>"; };
+		6C8286EA228B9C96009FB5FF /* View+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Colors.swift"; sourceTree = "<group>"; };
 		6C87FAB42270B5D600AFE485 /* NetworkModule.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkModule.xcodeproj; path = ../NetworkModule/NetworkModule.xcodeproj; sourceTree = "<group>"; };
 		6C87FAD82270C6D800AFE485 /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		6C87FADA2270C74000AFE485 /* UserAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthViewController.swift; sourceTree = "<group>"; };
@@ -351,6 +357,8 @@
 				6C77824C2278ABB7001926B2 /* CheckoutBottomView.xib */,
 				6C77824E2278ABDC001926B2 /* CheckoutBottomView.swift */,
 				6C77828B227C715A001926B2 /* ImageLabel.swift */,
+				6C5DE87E22872F0900F900AE /* TextTableCell.swift */,
+				6C5DE87F22872F0900F900AE /* TextTableCell.xib */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -574,6 +582,7 @@
 				6C87FAD82270C6D800AFE485 /* UIColor+Additions.swift */,
 				6CF3E17F2271F303007488BA /* ViewControllerActionBarStyle.swift */,
 				6C2CFB9722779AFD00D23CF4 /* UIButton+App.swift */,
+				6C8286EA228B9C96009FB5FF /* View+Colors.swift */,
 			);
 			path = style;
 			sourceTree = "<group>";
@@ -878,6 +887,7 @@
 				6C87FADD2270C74000AFE485 /* UserAuthViewController.xib in Resources */,
 				6CDEBBF12285012400EC3E6F /* PackageDetailsController.xib in Resources */,
 				6CE722EE2274FA1B00E095DC /* VisaRequirementController.xib in Resources */,
+				6C5DE88122872F0900F900AE /* TextTableCell.xib in Resources */,
 				6C2CFB902277446600D23CF4 /* SingleRowTableCell.xib in Resources */,
 				6CF0E36D2285BE6800149910 /* DatePickerController.xib in Resources */,
 				6C77825E227A3E23001926B2 /* BanksViewController.xib in Resources */,
@@ -1032,6 +1042,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CF3E1AF2272558A007488BA /* InstitutesSectionVM.swift in Sources */,
+				6C8286EB228B9C96009FB5FF /* View+Colors.swift in Sources */,
 				6CF0E3772285D78900149910 /* OrderDetailsController.swift in Sources */,
 				6C77827C227AA2C1001926B2 /* SuccessRequestInstituteController.swift in Sources */,
 				6C778278227AA26F001926B2 /* InstituteDetailsController.swift in Sources */,
@@ -1050,6 +1061,7 @@
 				6C778274227AA196001926B2 /* NewInstituteRequestController.swift in Sources */,
 				6CF3E1B8227268CF007488BA /* HomeCollectionSectionHeader.swift in Sources */,
 				6CDEBBF02285012400EC3E6F /* PackageDetailsController.swift in Sources */,
+				6C5DE88022872F0900F900AE /* TextTableCell.swift in Sources */,
 				6CF3E1722271E451007488BA /* Navigator.swift in Sources */,
 				6C2CFB882277419A00D23CF4 /* SelectableTableSheet.swift in Sources */,
 				6CF3E1802271F303007488BA /* ViewControllerActionBarStyle.swift in Sources */,

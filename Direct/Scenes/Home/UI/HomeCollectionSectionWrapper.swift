@@ -17,12 +17,19 @@ class HomeCollectionSectionWrapper: UICollectionViewCell {
             self.collectionView.register(UINib(nibName: cellId, bundle: nil), forCellWithReuseIdentifier: cellId)
         }
     }
-
+//
     override func awakeFromNib() {
         super.awakeFromNib()
         collectionView.dataSource = self
-        collectionView.delegate = self
+        collectionView.delegate = self//
+        
+        
+       // getdata//
     }
+    func getData(params:Any){
+        ///exd
+    }
+    
 }
 
 extension HomeCollectionSectionWrapper: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -44,7 +51,6 @@ extension HomeCollectionSectionWrapper: UICollectionViewDataSource, UICollection
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-
         return cell
     }
 }

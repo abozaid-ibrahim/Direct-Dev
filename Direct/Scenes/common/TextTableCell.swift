@@ -1,5 +1,5 @@
 //
-//  InstituteDetailsTableCell.swift
+//  TextTableCell.swift
 //  Direct
 //
 //  Created by abuzeid on 5/11/19.
@@ -7,28 +7,21 @@
 //
 
 import UIKit
-import M13Checkbox
 
-class InstituteDetailsTableCell: UITableViewCell ,TableCell{
+class TextTableCell: UITableViewCell  ,TableCell{
     typealias CellDataModel = String
-    @IBOutlet weak var radioBox: M13Checkbox!
-    static var cellId: String = "InstituteDetailsTableCell"
+    static var cellId: String = "TextTableCell"
     func setCellData(_ model: String) {
-        
-    }
     
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
-        selectionStyle = .none
-        radioBox.checkState = .checked
-        //        radioBox.isEnabled = false
+        // Initialization code
     }
-    
-    @IBAction func checkBox(_ sender: M13Checkbox) {
-    }
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+
         // Configure the view for the selected state
     }
     

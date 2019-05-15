@@ -154,3 +154,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         return cell
     }
 }
+//sectionsCellSize  [(cellID, view model)]
+
+
+//varry me/// dataarray .appen (vaerry , cell id)

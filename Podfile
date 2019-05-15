@@ -11,7 +11,7 @@ target 'Direct' do
   pod 'M13Checkbox'
 pod 'IBAnalyzer'
 	pod 'RxGesture', '~> 2.1'
-
+  pod 'YALField'
   target 'DirectTests' do
     inherit! :search_paths
   end
