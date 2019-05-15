@@ -18,11 +18,11 @@ final class MyAccountController: UIViewController, PanModalPresentable {
     private let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.registerNib(SingleRowTableCell.cellId)
+        tableView.registerNib(AboutUsTableCell.cellId)
         Observable<[String]>.just(dataList)
-            .bind(to: tableView.rx.items(cellIdentifier: SingleRowTableCell.cellId)) { _, model, cell in
-                let mycell = (cell as! SingleRowTableCell)
-                mycell.setCellData(model)
+            .bind(to: tableView.rx.items(cellIdentifier: AboutUsTableCell.cellId)) { _, model, cell in
+                let mycell = (cell as! AboutUsTableCell)
+//                mycell.setCellData(model)
             }.disposed(by: disposeBag)
     }
     @IBAction func login(_ sender: Any) {

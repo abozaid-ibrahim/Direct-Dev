@@ -34,6 +34,7 @@ class ApiClientFacade{
             switch event {
             case .success(let response):
             // do something with the data
+                log("scuccess")
             case .error(let error):
                 log(error)            }
         }
