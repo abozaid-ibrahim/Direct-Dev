@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XXU-hI-pFN" userLabel="logo top">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group23" translatesAutoresizingMaskIntoConstraints="NO" id="XXU-hI-pFN" userLabel="logo top">
                     <rect key="frame" x="37.5" y="95" width="300" height="160"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="XXU-hI-pFN" secondAttribute="height" multiplier="15:8" id="4T2-qe-VdF"/>
@@ -106,4 +106,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
+    <resources>
+        <image name="group23" width="180" height="110"/>
+    </resources>
 </document>
