@@ -15,6 +15,10 @@ PODS:
     - RxSwift (~> 4.5)
   - RxSwift (4.5.0)
   - SkyFloatingLabelTextField (3.6.0)
+  - SwifterSwift/AppKit (5.0.0)
+  - SwifterSwift/Foundation (5.0.0)
+  - SwifterSwift/SwiftStdlib (5.0.0)
+  - YALField (1.0.1)
 
 DEPENDENCIES:
   - Hero
@@ -26,6 +30,10 @@ DEPENDENCIES:
   - RxGesture (~> 2.1)
   - RxSwift (~> 4.0)
   - SkyFloatingLabelTextField (~> 3.0)
+  - SwifterSwift/AppKit
+  - SwifterSwift/Foundation
+  - SwifterSwift/SwiftStdlib
+  - YALField
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -39,6 +47,8 @@ SPEC REPOS:
     - RxGesture
     - RxSwift
     - SkyFloatingLabelTextField
+    - SwifterSwift
+    - YALField
 
 SPEC CHECKSUMS:
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
@@ -51,7 +61,9 @@ SPEC CHECKSUMS:
   RxGesture: c1b7bf17166b0ef9d642a9510f8bac5785f18990
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
+  SwifterSwift: 96f90594b370802f01647c2b1229c74a84ffafee
+  YALField: f80f986de790bb13690264422437fa4e0593af0a
 
-PODFILE CHECKSUM: e075b6c39db7de039b9224270842b40f4cbed428
+PODFILE CHECKSUM: 4a4a2ca5913f29dde3c77369da1a080a96090c69
 
 COCOAPODS: 1.6.1

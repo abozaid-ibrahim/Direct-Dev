@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+
 final class InstituteDetailsController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!

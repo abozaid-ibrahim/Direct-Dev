@@ -82,6 +82,7 @@
 		6C778289227C6EE6001926B2 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C778287227C6EE6001926B2 /* ContactUsViewController.swift */; };
 		6C77828A227C6EE6001926B2 /* ContactUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C778288227C6EE6001926B2 /* ContactUsViewController.xib */; };
 		6C77828C227C715A001926B2 /* ImageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C77828B227C715A001926B2 /* ImageLabel.swift */; };
+		6C797520228BC82D000807D4 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C79751F228BC82D000807D4 /* UILabelExtension.swift */; };
 		6C8286EB228B9C96009FB5FF /* View+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8286EA228B9C96009FB5FF /* View+App.swift */; };
 		6C87FABD2270B5F400AFE485 /* NetworkModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C87FABA2270B5D600AFE485 /* NetworkModule.framework */; };
 		6C87FAD92270C6D800AFE485 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C87FAD82270C6D800AFE485 /* UIColor+Additions.swift */; };
@@ -92,6 +93,7 @@
 		6C87FAE42270C75F00AFE485 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C87FAE22270C75F00AFE485 /* SignupViewController.swift */; };
 		6C87FAE52270C75F00AFE485 /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C87FAE32270C75F00AFE485 /* SignupViewController.xib */; };
 		6CA040B62281BE0300619B6F /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA040B52281BE0300619B6F /* FloatingTextField.swift */; };
+		6CBD17DB228BCB7300144B6C /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD17DA228BCB7300144B6C /* PaddingLabel.swift */; };
 		6CC514A2227DC43B00634B5D /* PassangersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC514A0227DC43B00634B5D /* PassangersController.swift */; };
 		6CC514A3227DC43B00634B5D /* PassangersController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CC514A1227DC43B00634B5D /* PassangersController.xib */; };
 		6CDEBBE62284C55800EC3E6F /* PassangersCountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEBBE42284C55800EC3E6F /* PassangersCountController.swift */; };
@@ -261,6 +263,7 @@
 		6C778287227C6EE6001926B2 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		6C778288227C6EE6001926B2 /* ContactUsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactUsViewController.xib; sourceTree = "<group>"; };
 		6C77828B227C715A001926B2 /* ImageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLabel.swift; sourceTree = "<group>"; };
+		6C79751F228BC82D000807D4 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		6C8286EA228B9C96009FB5FF /* View+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+App.swift"; sourceTree = "<group>"; };
 		6C87FAB42270B5D600AFE485 /* NetworkModule.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkModule.xcodeproj; path = ../NetworkModule/NetworkModule.xcodeproj; sourceTree = "<group>"; };
 		6C87FAD82270C6D800AFE485 /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
@@ -271,6 +274,7 @@
 		6C87FAE22270C75F00AFE485 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		6C87FAE32270C75F00AFE485 /* SignupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
 		6CA040B52281BE0300619B6F /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
+		6CBD17DA228BCB7300144B6C /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		6CC514A0227DC43B00634B5D /* PassangersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangersController.swift; sourceTree = "<group>"; };
 		6CC514A1227DC43B00634B5D /* PassangersController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PassangersController.xib; sourceTree = "<group>"; };
 		6CDEBBE42284C55800EC3E6F /* PassangersCountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangersCountController.swift; sourceTree = "<group>"; };
@@ -489,6 +493,7 @@
 		6C5FDA4B2270816B00ABA39B /* Direct */ = {
 			isa = PBXGroup;
 			children = (
+				6CBD17D7228BCB5A00144B6C /* custom views */,
 				6C55755A228BAC3F00BAE5E2 /* Resources */,
 				6C87FACF2270C1D500AFE485 /* Scenes */,
 				6C5FDA4C2270816B00ABA39B /* AppDelegate.swift */,
@@ -634,6 +639,14 @@
 			path = style;
 			sourceTree = "<group>";
 		};
+		6CBD17D7228BCB5A00144B6C /* custom views */ = {
+			isa = PBXGroup;
+			children = (
+				6CBD17DA228BCB7300144B6C /* PaddingLabel.swift */,
+			);
+			path = "custom views";
+			sourceTree = "<group>";
+		};
 		6CC5149D227DC02900634B5D /* passangers */ = {
 			isa = PBXGroup;
 			children = (
@@ -692,6 +705,7 @@
 				6CF0E3662285BB1000149910 /* SwipeUpToDismiss.swift */,
 				6C557556228BA52900BAE5E2 /* View+Colors.swift */,
 				6C55756E228BAEB700BAE5E2 /* UIFont+UIView.swift */,
+				6C79751F228BC82D000807D4 /* UILabelExtension.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -988,6 +1002,8 @@
 				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/YALField/YALField.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -1002,6 +1018,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YALField.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1142,6 +1160,7 @@
 				6CF3E17E2271E702007488BA /* User.swift in Sources */,
 				6CF3E19422724D0C007488BA /* HomeCollectionSection.swift in Sources */,
 				6C77826E227A9FB2001926B2 /* SuccessVisaRequestController.swift in Sources */,
+				6CBD17DB228BCB7300144B6C /* PaddingLabel.swift in Sources */,
 				6C2CFB84227734E700D23CF4 /* TableCell.swift in Sources */,
 				6C5DE7682275EC49001A9FB6 /* VisaRequirementTableCell.swift in Sources */,
 				6CF3E19922724E23007488BA /* HomeViewModel.swift in Sources */,
@@ -1159,6 +1178,7 @@
 				6C778266227A9B97001926B2 /* UIViewController+Helpers.swift in Sources */,
 				6C2CFB962277996500D23CF4 /* SpinnerTextField.swift in Sources */,
 				6C77828C227C715A001926B2 /* ImageLabel.swift in Sources */,
+				6C797520228BC82D000807D4 /* UILabelExtension.swift in Sources */,
 				6CF3E1842271F4B9007488BA /* HomeViewController.swift in Sources */,
 				6CDEBBE62284C55800EC3E6F /* PassangersCountController.swift in Sources */,
 				6CF0E3712285D70900149910 /* OrdersHistoryController.swift in Sources */,

@@ -13,21 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var navigator: Navigator!
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        window?.tintColor = UIColor.white
+        
         setRootController()
-        for family: String in UIFont.familyNames
-        {
-            print("\(family)")
-            for names: String in UIFont.fontNames(forFamilyName: family)
-            {
-                print("== \(names)")
-            }
-        }
-setupGlobalAppearance()
+        setupGlobalAppearance()
         return true
     }
     func setupGlobalAppearance(){
-        
+        window?.tintColor = UIColor.white
         //global Appearance settings
         let customFont = UIFont.appRegularFontWith(size: 17)
         UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont], for: .normal)

@@ -19,22 +19,79 @@
                 <rect key="frame" x="0.0" y="0.0" width="346" height="359.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instit" translatesAutoresizingMaskIntoConstraints="NO" id="Fo0-XX-h19">
-                        <rect key="frame" x="24" y="19" width="298" height="322"/>
-                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="509-an-Lil">
+                        <rect key="frame" x="8" y="8" width="330" height="343.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NdH-SC-1ZF">
+                                <rect key="frame" x="8" y="8" width="314" height="327.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkb-p9-FI5">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="256.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="Fo0-XX-h19">
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="256.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="united-kingdom" translatesAutoresizingMaskIntoConstraints="NO" id="6kB-VT-LzK">
+                                                <rect key="frame" x="253" y="195.5" width="45" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="6kB-VT-LzK" secondAttribute="height" multiplier="1:1" id="PH2-vV-Lbq"/>
+                                                    <constraint firstAttribute="width" constant="45" id="lFI-1H-2ER"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Fo0-XX-h19" secondAttribute="bottom" id="56A-sR-yqJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="6kB-VT-LzK" secondAttribute="bottom" constant="16" id="5tf-rS-DJj"/>
+                                            <constraint firstAttribute="trailing" secondItem="Fo0-XX-h19" secondAttribute="trailing" id="GLX-fp-WMS"/>
+                                            <constraint firstItem="Fo0-XX-h19" firstAttribute="top" secondItem="lkb-p9-FI5" secondAttribute="top" id="H85-Dj-lXU"/>
+                                            <constraint firstAttribute="trailing" secondItem="6kB-VT-LzK" secondAttribute="trailing" constant="16" id="RqR-35-AE2"/>
+                                            <constraint firstItem="Fo0-XX-h19" firstAttribute="leading" secondItem="lkb-p9-FI5" secondAttribute="leading" id="dAp-hF-KEV"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1n2-cQ-2hm">
+                                        <rect key="frame" x="0.0" y="266.5" width="314" height="61"/>
+                                        <string key="text">معهد إي تي سي بورنموث - ETC BOURNEMOUTH
+</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NdH-SC-1ZF" firstAttribute="leading" secondItem="509-an-Lil" secondAttribute="leading" constant="8" id="Fps-PL-aEy"/>
+                            <constraint firstAttribute="bottom" secondItem="NdH-SC-1ZF" secondAttribute="bottom" constant="8" id="M2P-tc-SMc"/>
+                            <constraint firstItem="NdH-SC-1ZF" firstAttribute="top" secondItem="509-an-Lil" secondAttribute="top" constant="8" id="bdj-4k-287"/>
+                            <constraint firstAttribute="trailing" secondItem="NdH-SC-1ZF" secondAttribute="trailing" constant="8" id="sYC-nv-RLu"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                <real key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="Fo0-XX-h19" secondAttribute="bottom" constant="8" id="IiF-T2-1uu"/>
-                    <constraint firstItem="Fo0-XX-h19" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="VIN-Z6-1jG"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Fo0-XX-h19" secondAttribute="trailing" constant="8" id="bls-y7-c3B"/>
-                    <constraint firstItem="Fo0-XX-h19" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="iRL-P5-3D2"/>
+                    <constraint firstAttribute="trailing" secondItem="509-an-Lil" secondAttribute="trailing" constant="8" id="J0w-lu-ymS"/>
+                    <constraint firstItem="509-an-Lil" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Wt9-XI-FYE"/>
+                    <constraint firstAttribute="bottom" secondItem="509-an-Lil" secondAttribute="bottom" constant="8" id="phv-hF-j4o"/>
+                    <constraint firstItem="509-an-Lil" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="ymy-uX-47M"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <point key="canvasLocation" x="158.40000000000001" y="295.95202398800603"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="instit" width="440" height="242"/>
+        <image name="download" width="259" height="194"/>
+        <image name="united-kingdom" width="64" height="64"/>
     </resources>
 </document>
