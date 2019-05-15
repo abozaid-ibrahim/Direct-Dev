@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,19 +31,19 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="low-JY-Nlq">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8StackOfMoney" translatesAutoresizingMaskIntoConstraints="NO" id="low-JY-Nlq">
                                         <rect key="frame" x="209" y="0.0" width="25" height="27.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="BRU-EU-KZS"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6cV-D4-I1W">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8StackOfMoney" translatesAutoresizingMaskIntoConstraints="NO" id="6cV-D4-I1W">
                                         <rect key="frame" x="244" y="0.0" width="25" height="27.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="jgl-Jy-Uo3"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ayz-ep-DRx">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8StackOfMoney" translatesAutoresizingMaskIntoConstraints="NO" id="ayz-ep-DRx">
                                         <rect key="frame" x="279" y="0.0" width="25" height="27.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="dne-HB-F7H"/>
@@ -87,4 +87,7 @@
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="icons8StackOfMoney" width="26" height="20"/>
+    </resources>
 </document>

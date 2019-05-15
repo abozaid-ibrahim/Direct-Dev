@@ -37,8 +37,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="172.5" height="47"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="p"/>
-                                        <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="p"/>
+                                        <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="icons8DateSpan"/>
+                                        <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="path5"/>
                                         <userDefinedRuntimeAttribute type="string" keyPath="hint" value="مدة الدراسة"/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
@@ -46,8 +46,8 @@
                                     <rect key="frame" x="182.5" y="0.0" width="172.5" height="47"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="p"/>
-                                        <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="p"/>
+                                        <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="icons8Calendar1"/>
+                                        <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="path5"/>
                                         <userDefinedRuntimeAttribute type="string" keyPath="hint" value="تاريخ السفر "/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
@@ -81,6 +81,8 @@
         </view>
     </objects>
     <resources>
-        <image name="p" width="608" height="350"/>
+        <image name="icons8Calendar1" width="17" height="17"/>
+        <image name="icons8DateSpan" width="16" height="17"/>
+        <image name="path5" width="11" height="6"/>
     </resources>
 </document>

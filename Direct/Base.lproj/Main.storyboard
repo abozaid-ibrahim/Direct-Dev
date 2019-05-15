@@ -113,10 +113,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Vr-uk-y9a">
-                                <rect key="frame" x="16" y="244" width="343" height="423"/>
+                                <rect key="frame" x="16" y="254" width="343" height="413"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EeX-g8-RkE">
-                                        <rect key="frame" x="12" y="12" width="319" height="399"/>
+                                        <rect key="frame" x="12" y="12" width="319" height="389"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عن دايركت فيرا" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UiM-DV-m6V">
                                                 <rect key="frame" x="0.0" y="0.0" width="319" height="20.5"/>
@@ -125,7 +125,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KDM-kw-Swc">
-                                                <rect key="frame" x="0.0" y="28.5" width="319" height="370.5"/>
+                                                <rect key="frame" x="0.0" y="28.5" width="319" height="360.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </tableView>
                                         </subviews>
@@ -145,10 +145,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="4IP-Jd-N7J" firstAttribute="leading" secondItem="Qjf-da-Vnd" secondAttribute="leading" id="Cqd-Ch-SR3"/>
-                            <constraint firstItem="0Vr-uk-y9a" firstAttribute="top" secondItem="4IP-Jd-N7J" secondAttribute="bottom" constant="10" id="FiD-at-ajT"/>
+                            <constraint firstItem="0Vr-uk-y9a" firstAttribute="top" secondItem="4IP-Jd-N7J" secondAttribute="bottom" constant="20" id="FiD-at-ajT"/>
                             <constraint firstAttribute="bottom" secondItem="0Vr-uk-y9a" secondAttribute="bottom" id="NOn-bv-lsW"/>
                             <constraint firstItem="4IP-Jd-N7J" firstAttribute="top" secondItem="Qjf-da-Vnd" secondAttribute="top" id="UX5-4L-OoD"/>
                             <constraint firstItem="0Vr-uk-y9a" firstAttribute="trailing" secondItem="Qjf-da-Vnd" secondAttribute="trailing" constant="-16" id="fn9-7i-VMh"/>
@@ -157,7 +157,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qjf-da-Vnd"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="my account" id="C27-47-LS7"/>
+                    <tabBarItem key="tabBarItem" title="my account" image="icons8Person" selectedImage="icons8Person" id="C27-47-LS7"/>
                     <connections>
                         <outlet property="tableView" destination="KDM-kw-Swc" id="scq-Fs-hxF"/>
                     </connections>
@@ -596,6 +596,7 @@
         <image name="icons8Mesh" width="25" height="24"/>
         <image name="icons8Mortarboard" width="29" height="22"/>
         <image name="icons8Passport" width="28" height="35"/>
+        <image name="icons8Person" width="16" height="17"/>
         <image name="icons8Search" width="27" height="27"/>
         <image name="icons8TodoList" width="20" height="19"/>
     </resources>
