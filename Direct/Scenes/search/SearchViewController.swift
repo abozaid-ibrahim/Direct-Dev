@@ -34,7 +34,7 @@ final class SearchViewController: UIViewController, PanModalPresentable,StyledAc
         tableView.rx.itemSelected.asObservable().subscribe({[unowned self] event in
             switch event.event{
             case .next(let indexPath):
-                try! AppNavigator().presentModally(.selectableSheet(data: "\(indexPath)"))
+                try! AppNavigator().push(.visaRequirement)
             default:
                 break
                 

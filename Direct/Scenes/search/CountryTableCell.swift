@@ -22,7 +22,11 @@ class CountryTableCell: UITableViewCell, TableCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-selectionStyle = .none    }
+        selectionStyle = .none
+        print(">>\(textLbl.font)")
+        //Cairo-Regular
+        //Cairo
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

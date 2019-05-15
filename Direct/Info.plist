@@ -34,6 +34,12 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Cairo-SemiBold</string>
+		<string>Cairo</string>
+		<string>Cairo-Regular</string>
+	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

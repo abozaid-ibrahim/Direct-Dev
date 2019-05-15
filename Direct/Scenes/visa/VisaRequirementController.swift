@@ -41,7 +41,9 @@ final class VisaRequirementController: UIViewController, PanModalPresentable, St
         setDatasource()
     }
 
-    @IBAction func requestAction(_: Any) {}
+    @IBAction func requestAction(_: Any) {
+        try! AppNavigator().push(.newDirectVisa)
+    }
 }
 
 struct CustomData {

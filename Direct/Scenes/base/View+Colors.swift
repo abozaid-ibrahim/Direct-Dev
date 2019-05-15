@@ -8,17 +8,11 @@
 
 import Foundation
 import UIKit
-
-extension UIView {
-    func setYellowGradient(){
-       setGradient(colors: UIColor.appMango, UIColor.appPumpkinOrange)
-    }
-    
+extension UIView{
     func setGradient(colors:UIColor...){
         let gl = CAGradientLayer()
         gl.colors = colors
         gl.locations = [0.0, 1.0]
         layer.addSublayer(gl)
     }
-
 }

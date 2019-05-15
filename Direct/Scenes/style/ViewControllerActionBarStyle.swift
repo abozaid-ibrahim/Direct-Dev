@@ -24,6 +24,7 @@ extension StyledActionBar where Self: UIViewController {
         navigationBar.barTintColor = UIColor.appPumpkinOrange
 //        navigationController?.navigationBar.isTranslucent = false
         navigationBar.shadowImage = UIImage()
+        navigationBar.setYellowGradient()
 //        navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         navigationBar.titleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 24),
                                              .foregroundColor: UIColor.white]

@@ -6,9 +6,9 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
-import UIKit
-import RxSwift
 import RxGesture
+import RxSwift
+import UIKit
 
 @IBDesignable
 class SpinnerTextField: UIView {
@@ -33,10 +33,11 @@ class SpinnerTextField: UIView {
             txtField.placeholder = hint ?? ""
         }
     }
-let disposeBag = DisposeBag()
+
+    let disposeBag = DisposeBag()
     typealias Action = () -> Void
     var action: Action?
-    func setOnclick(ac: @escaping Action) {
+    func setOnclick(ac _: @escaping Action) {
 //        action = ac
 //        let tap = UITapGestureRecognizer(target: self, action: #selector(clicked(sender:)))
 //        addGestureRecognizer(tap)
@@ -50,6 +51,7 @@ let disposeBag = DisposeBag()
     }
 
     private func createUI() {
+        txtField.font = UIFont(name: UIFont.familyNames.first!, size: 13)
         let stack = UIStackView()
         stack.alignment = .center
         stack.axis = .horizontal

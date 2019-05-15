@@ -31,9 +31,10 @@ extension UIButton {
     func applyStyle(_ style: ButtonStyles) {
         switch style {
         case .primary:
-            backgroundColor = UIColor.appMango
+            backgroundColor = UIColor.appPumpkinOrange
             cornerRadiusV = 10
             setTitleColor(.white, for: .normal)
+            self.titleLabel?.font = UIFont(name: AppFonts.regularFont, size: 14)
         }
     }
 }
