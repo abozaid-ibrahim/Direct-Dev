@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,16 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sc" translatesAutoresizingMaskIntoConstraints="NO" id="c0w-Ah-4MC">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group23" translatesAutoresizingMaskIntoConstraints="NO" id="c0w-Ah-4MC">
+                                <rect key="frame" x="103.66666666666669" y="349.66666666666669" width="207" height="207.00000000000006"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="c0w-Ah-4MC" secondAttribute="height" id="jmG-xC-qOf"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.9882352941176471" green="0.50196078431372548" blue="0.015686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="c0w-Ah-4MC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9U9-e9-b1U"/>
-                            <constraint firstItem="c0w-Ah-4MC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HJq-kX-7bk"/>
-                            <constraint firstItem="c0w-Ah-4MC" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="aJT-xp-TgK"/>
-                            <constraint firstAttribute="bottom" secondItem="c0w-Ah-4MC" secondAttribute="bottom" id="zew-ae-leH"/>
+                            <constraint firstItem="c0w-Ah-4MC" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="1:2" id="JKR-U6-AKt"/>
+                            <constraint firstItem="c0w-Ah-4MC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pQi-Iq-1ad"/>
+                            <constraint firstItem="c0w-Ah-4MC" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="tvE-20-lUW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="sc" width="411" height="774"/>
+        <image name="group23" width="180" height="110"/>
     </resources>
 </document>

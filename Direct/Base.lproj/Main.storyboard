@@ -270,7 +270,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="zeH-vg-DMe">
                                                         <rect key="frame" x="0.0" y="0.0" width="52" height="46"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p" translatesAutoresizingMaskIntoConstraints="NO" id="kxT-cy-L1w">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8Passport" translatesAutoresizingMaskIntoConstraints="NO" id="kxT-cy-L1w">
                                                                 <rect key="frame" x="0.0" y="0.0" width="52" height="22"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تأشيرات" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiM-uw-bq5">
@@ -295,7 +295,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="LAE-3u-ndD">
                                                         <rect key="frame" x="104" y="0.0" width="52" height="46"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p" translatesAutoresizingMaskIntoConstraints="NO" id="NXf-nk-8P5">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8Mortarboard" translatesAutoresizingMaskIntoConstraints="NO" id="NXf-nk-8P5">
                                                                 <rect key="frame" x="0.0" y="0.0" width="52" height="22"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="معاهد" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtD-K9-o1t">
@@ -320,7 +320,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="4kF-6q-dR8">
                                                         <rect key="frame" x="208" y="0.0" width="52" height="46"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p" translatesAutoresizingMaskIntoConstraints="NO" id="AfP-mg-nio">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8Mesh" translatesAutoresizingMaskIntoConstraints="NO" id="AfP-mg-nio">
                                                                 <rect key="frame" x="0.0" y="0.0" width="52" height="22"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بكجات" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jyh-uK-bTQ">
@@ -566,6 +566,8 @@
     </scenes>
     <resources>
         <image name="download" width="259" height="194"/>
-        <image name="p" width="608" height="350"/>
+        <image name="icons8Mesh" width="25" height="24"/>
+        <image name="icons8Mortarboard" width="29" height="22"/>
+        <image name="icons8Passport" width="28" height="35"/>
     </resources>
 </document>
