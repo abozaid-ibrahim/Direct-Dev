@@ -11,7 +11,7 @@ import PanModal
 
 class PassangersCountController: UIViewController,PanModalPresentable {
     var panScrollable: UIScrollView?
-    var shortFormHeight: PanModalHeight = .contentHeight(400)
+    var shortFormHeight: PanModalHeight = .contentHeight(390)
 
 
     override func viewDidLoad() {

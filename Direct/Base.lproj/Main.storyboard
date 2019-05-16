@@ -34,7 +34,7 @@
             </objects>
             <point key="canvasLocation" x="-1142" y="-170"/>
         </scene>
-        <!--help-->
+        <!--مساعدة-->
         <scene sceneID="zJh-OH-16J">
             <objects>
                 <viewController storyboardIdentifier="HelpViewController" id="De0-aQ-EfP" customClass="HelpViewController" customModule="Direct" customModuleProvider="target" sceneMemberID="viewController">
@@ -56,7 +56,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cMs-lq-j8J"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="help" image="icons8Geography" id="QVa-gB-goh"/>
+                    <tabBarItem key="tabBarItem" title="مساعدة" image="icons8Geography" id="QVa-gB-goh"/>
                     <connections>
                         <outlet property="tableView" destination="EZD-3Q-xMd" id="fnz-nd-plQ"/>
                     </connections>
@@ -65,7 +65,7 @@
             </objects>
             <point key="canvasLocation" x="412" y="766"/>
         </scene>
-        <!--my account-->
+        <!--حسابي-->
         <scene sceneID="Zql-DD-71p">
             <objects>
                 <viewController storyboardIdentifier="MyAccountController" id="iUh-JJ-tAH" customClass="MyAccountController" customModule="Direct" customModuleProvider="target" sceneMemberID="viewController">
@@ -157,7 +157,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qjf-da-Vnd"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="my account" image="icons8Person" selectedImage="icons8Person" id="C27-47-LS7"/>
+                    <tabBarItem key="tabBarItem" title="حسابي" image="icons8Person" selectedImage="icons8Person" id="C27-47-LS7"/>
                     <connections>
                         <outlet property="tableView" destination="KDM-kw-Swc" id="scq-Fs-hxF"/>
                     </connections>
@@ -166,7 +166,7 @@
             </objects>
             <point key="canvasLocation" x="1308" y="765.96701649175418"/>
         </scene>
-        <!--packages-->
+        <!--بكجات-->
         <scene sceneID="5wZ-wa-HQh">
             <objects>
                 <viewController storyboardIdentifier="PackagesViewController" id="XfK-Hb-2tX" customClass="PackagesViewController" customModule="Direct" customModuleProvider="target" sceneMemberID="viewController">
@@ -188,7 +188,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mU3-qE-UHR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="packages" image="icons8Mesh" id="It3-cK-2n6"/>
+                    <tabBarItem key="tabBarItem" title="بكجات" image="icons8Mesh" id="It3-cK-2n6"/>
                     <connections>
                         <outlet property="tableView" destination="gB9-5Y-9eE" id="4kC-XW-jbH"/>
                     </connections>
@@ -197,7 +197,7 @@
             </objects>
             <point key="canvasLocation" x="1308" y="-774"/>
         </scene>
-        <!--Search-->
+        <!--بحث-->
         <scene sceneID="HA0-1n-dWo">
             <objects>
                 <viewController storyboardIdentifier="SearchViewController" id="Hak-gG-dt2" customClass="SearchViewController" customModule="Direct" customModuleProvider="target" sceneMemberID="viewController">
@@ -237,7 +237,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gCV-lQ-ncz"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="icons8Search" selectedImage="icons8Search" id="zDX-zY-UOx"/>
+                    <tabBarItem key="tabBarItem" title="بحث" image="icons8Search" selectedImage="icons8Search" id="zDX-zY-UOx"/>
                     <connections>
                         <outlet property="tableView" destination="0Z3-VT-iRw" id="het-of-GPt"/>
                     </connections>
@@ -246,7 +246,7 @@
             </objects>
             <point key="canvasLocation" x="1308" y="-30.134932533733135"/>
         </scene>
-        <!--Orders-->
+        <!--طلباتي-->
         <scene sceneID="GFv-uH-MDV">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="mUF-MA-QtB" customClass="HomeViewController" customModule="Direct" customModuleProvider="target" sceneMemberID="viewController">
@@ -408,7 +408,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9or-ET-63b"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Orders" image="icons8Passport" selectedImage="icons8TodoList" id="31F-ed-mth"/>
+                    <tabBarItem key="tabBarItem" title="طلباتي" image="icons8Passport" selectedImage="icons8TodoList" id="31F-ed-mth"/>
                     <connections>
                         <outlet property="collectionView" destination="iND-Dx-gCi" id="FtC-E7-u71"/>
                         <outlet property="containerView" destination="T3u-i3-Zv4" id="8lz-Z5-IM1"/>

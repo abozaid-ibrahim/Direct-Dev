@@ -18,7 +18,7 @@ final class SearchViewController: UIViewController, PanModalPresentable,StyledAc
     private let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupActionBar(.withTitle("Search"))
+        setupActionBar(.withTitle("بحث"))
         setupTableView()
     }
     private func setupTableView(){

@@ -18,7 +18,7 @@ final class HomeViewController: UIViewController, StyledActionBar {
     @IBOutlet weak var institueView: UIStackView!
     private let homeViewModel = HomeViewModel()
     private let disposeBag = DisposeBag()
-    private let sectionsHeaderData: [HeaderObject] = [(#imageLiteral(resourceName: "p"), "Visa"), (#imageLiteral(resourceName: "p"), "Visa"), (#imageLiteral(resourceName: "p"), "Visa"), (#imageLiteral(resourceName: "p"), "Visa"), (#imageLiteral(resourceName: "p"), "Visa")]
+    private let sectionsHeaderData: [HeaderObject] = [(#imageLiteral(resourceName: "p"), "متطلبات التأشيرة"), (#imageLiteral(resourceName: "p"), "أفضل المعاهد "), (#imageLiteral(resourceName: "p"), "بكجات وعروض"), (#imageLiteral(resourceName: "p"), "أخبار ومعلومات"), (#imageLiteral(resourceName: "p"), "Visa")]
     private var collectionSecions: [HomeCollectionViewSection] = []
     private let sectionsCellSize: [CGSize] = [CGSize(width: 147, height: 113), CGSize(width: 292, height: 171), CGSize(width: 292, height: 226), CGSize(width: 292, height: 171)]
     
@@ -33,7 +33,7 @@ final class HomeViewController: UIViewController, StyledActionBar {
         view.backgroundColor = UIColor.appVeryLightPink
         collectionView.delegate = self
         registerCollectionNibs()
-        setupActionBar(.withTitle("Direct Visa"))
+        setupActionBar(.withTitle("دايركت فيزا"))
         getDataFromViewModel()
         homeViewModel.getAllData()
         //        institueView.rx.tapGesture().subscribe{

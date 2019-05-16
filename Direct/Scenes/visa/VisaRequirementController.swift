@@ -35,7 +35,7 @@ final class VisaRequirementController: UIViewController, PanModalPresentable, St
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupActionBar(.withTitleAndX("Visa Req"))
+        setupActionBar(.withTitleAndX("متطلبات التأشيرة"))
         tableView.register(UINib(nibName: VisaRequirementTableCell.cellId, bundle: nil), forCellReuseIdentifier: VisaRequirementTableCell.cellId)
 
         setDatasource()
@@ -71,7 +71,7 @@ extension VisaRequirementController: UITableViewDelegate {
         let dataSource = self.dataSource
 
         let items = Observable.just([
-            SectionModel(model: "First section", items: [
+            SectionModel(model: "الأوراق المطلوبة", items: [
                 1.0,
                 2.0,
                 3.0,
