@@ -16,6 +16,7 @@ final class SelectableTableSheet: UIViewController, PanModalPresentable {
         return tableView
     }
 
+    
     @IBOutlet var tableView: UITableView!
 
     private let disposeBag = DisposeBag()
@@ -29,4 +30,12 @@ final class SelectableTableSheet: UIViewController, PanModalPresentable {
                 mycell.setCellData(model)
             }.disposed(by: disposeBag)
     }
+}
+
+
+protocol Selectable {
+    associatedtype DataModel
+    associatedtype TableCell
+    func setTableDataAndCell(data:[DataModel],cell:TableCell)
+    
 }

@@ -11,11 +11,21 @@ import PanModal
 
 class DatePickerController: UIViewController,PanModalPresentable {
     var panScrollable: UIScrollView?
-    var shortFormHeight: PanModalHeight = .contentHeight(360)
-
+    var shortFormHeight: PanModalHeight = .contentHeight(400)
+@IBOutlet private  weak var datepicker: UIDatePicker!
+    @IBOutlet private  weak var dateLbl: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+//    @IBOutlet private weak var view:UILabel!
+    private func setDate(){
+        let attributedString = NSMutableAttributedString(string: "تاريخ السفر : الأربعاء ، 2019/4/6", attributes: [
+            .font: UIFont(name: "Cairo-Bold", size: 14.0)!,
+            .foregroundColor: UIColor(white: 61.0 / 255.0, alpha: 1.0)
+            ])
+        attributedString.addAttribute(.font, value: UIFont(name: "Cairo-Regular", size: 14.0)!, range: NSRange(location: 0, length: 13))
+    }
 
-
+    @IBAction func confirmAction(_ sender: Any) {
+    }
 }

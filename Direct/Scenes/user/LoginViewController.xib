@@ -31,11 +31,11 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uaB-e7-fAi">
                             <rect key="frame" x="0.0" y="5" width="112.5" height="30"/>
-                            <state key="normal" title="Sign up"/>
+                            <state key="normal" title="إنشاء حساب"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Usw-bK-M8b">
                             <rect key="frame" x="187.5" y="5" width="112.5" height="30"/>
-                            <state key="normal" title="Login"/>
+                            <state key="normal" title="تسجيل الدخول"/>
                         </button>
                     </subviews>
                     <constraints>
@@ -45,13 +45,13 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SId-WH-4aE" userLabel="tfs">
                     <rect key="frame" x="37.5" y="315" width="300" height="80"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ixw-Mp-j3T">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="البريد الإلكتروني أو رقم الجوال" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ixw-Mp-j3T">
                             <rect key="frame" x="0.0" y="0.0" width="300" height="36"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qbZ-E4-pyj">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="كلمة المرور" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qbZ-E4-pyj">
                             <rect key="frame" x="0.0" y="44" width="300" height="36"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -65,16 +65,21 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9K-Z7-vnD">
                     <rect key="frame" x="37.5" y="448" width="300" height="40"/>
                     <color key="backgroundColor" red="0.99215686270000003" green="0.52941176469999995" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="login">
+                    <state key="normal" title="تسجيل الدخول">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="submitLogin:" destination="-1" eventType="touchUpInside" id="9ku-aR-FXL"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9c4-Bo-AvE">
-                    <rect key="frame" x="37.5" y="403" width="78" height="40"/>
-                    <state key="normal" title="forget pass"/>
+                    <rect key="frame" x="37.5" y="403" width="138" height="40"/>
+                    <state key="normal" title="هل نسيت كلمة المرور ؟"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ta-sN-GYF">
                     <rect key="frame" x="320" y="45" width="30" height="30"/>

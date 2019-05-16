@@ -11,14 +11,20 @@ import PanModal
 
 class PassangersCountController: UIViewController,PanModalPresentable {
     var panScrollable: UIScrollView?
-    var shortFormHeight: PanModalHeight = .contentHeight(390)
+    var shortFormHeight: PanModalHeight = .contentHeight(350)
 
-
+@IBOutlet private  weak var countLbl: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+setCount()
     }
-
+    func setCount(){
+        let attributedString = NSMutableAttributedString(string: "عدد المسافرين : 3 أطفال ، 2 بالغين", attributes: [
+            .font: UIFont(name: AppFonts.boldFont, size: 14.0)!,
+            .foregroundColor: UIColor(white: 61.0 / 255.0, alpha: 1.0)
+            ])
+        attributedString.addAttribute(.font, value: UIFont(name: AppFonts.regularFont, size: 14.0)!, range: NSRange(location: 0, length: 15))
+    }
 
   
 }

@@ -30,28 +30,28 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fcq-HA-AzD">
-                                            <rect key="frame" x="4" y="4" width="406" height="492"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="emE-1F-QHW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="406" height="211"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="211"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="211" id="OJG-9t-tiJ"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aky-hB-AU2">
-                                                    <rect key="frame" x="0.0" y="221" width="406" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تعليم الإنجليزية في مانشستر" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aky-hB-AU2">
+                                                    <rect key="frame" x="0.0" y="221" width="414" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Tm-0Q-bv4">
-                                                    <rect key="frame" x="0.0" y="251.5" width="406" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SR 938  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Tm-0Q-bv4">
+                                                    <rect key="frame" x="0.0" y="251.5" width="414" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYv-IN-r7Q">
-                                                    <rect key="frame" x="0.0" y="282" width="406" height="61"/>
+                                                    <rect key="frame" x="0.0" y="282" width="414" height="61"/>
                                                     <string key="text">مانشستر من أعرق المدن العالمية .. اخترنا لك أفضل معاهد اللغة فيها .. السعر يشمل لمدة 8 أسابيع :
 </string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -59,15 +59,15 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TcS-Z5-jz0">
-                                                    <rect key="frame" x="0.0" y="353" width="406" height="79"/>
+                                                    <rect key="frame" x="0.0" y="353" width="414" height="87"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="noA-TW-2h7">
-                                                    <rect key="frame" x="0.0" y="442" width="406" height="50"/>
+                                                    <rect key="frame" x="0.0" y="450" width="414" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="YJt-dV-u3e"/>
                                                     </constraints>
-                                                    <state key="normal" title="Button"/>
+                                                    <state key="normal" title="احجز الآن"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">
                                                             <integer key="value" value="1"/>
@@ -79,11 +79,11 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="fcq-HA-AzD" firstAttribute="leading" secondItem="axZ-t3-7dt" secondAttribute="leading" constant="4" id="5gg-XF-YEY"/>
-                                        <constraint firstItem="fcq-HA-AzD" firstAttribute="top" secondItem="axZ-t3-7dt" secondAttribute="top" constant="4" id="Xhz-ku-l7z"/>
+                                        <constraint firstItem="fcq-HA-AzD" firstAttribute="leading" secondItem="axZ-t3-7dt" secondAttribute="leading" id="5gg-XF-YEY"/>
+                                        <constraint firstItem="fcq-HA-AzD" firstAttribute="top" secondItem="axZ-t3-7dt" secondAttribute="top" id="Xhz-ku-l7z"/>
                                         <constraint firstAttribute="height" constant="500" id="mbf-be-RZz"/>
-                                        <constraint firstAttribute="trailing" secondItem="fcq-HA-AzD" secondAttribute="trailing" constant="4" id="nNL-oZ-PWQ"/>
-                                        <constraint firstAttribute="bottom" secondItem="fcq-HA-AzD" secondAttribute="bottom" constant="4" id="zVj-7B-EmQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="fcq-HA-AzD" secondAttribute="trailing" id="nNL-oZ-PWQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="fcq-HA-AzD" secondAttribute="bottom" id="zVj-7B-EmQ"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rlR-gv-zY8" userLabel="p2">
@@ -103,7 +103,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4J-au-abt">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="معهد إي تي سي بورنموث - ETC BOURNEMOUTH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4J-au-abt">
                                                     <rect key="frame" x="0.0" y="120" width="358" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -111,19 +111,19 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PhK-xj-yo1">
                                                     <rect key="frame" x="0.0" y="140.5" width="358" height="284.5"/>
-                                                    <mutableString key="text">يقع معهد كوميونيكيت بمدينة مانشستر الشهيرة ويمتاز بطريقته الرائعة في التعليم حيث يعتمد على تعليم الطالب للغة عن طريق التجربة سواءًا كانت بالمحادثات المستمرة أو بالأنشطة الإجتماعية الخارجية التي يشرك فيها طلابه، حيث يشارك المعهد في يوم الطعام العالمي وغيرها من الأحداث، كما ينظم رحلات مختلفة للمعارض والمتاحف التي تزخر بها مانشستر.
-</mutableString>
+                                                    <string key="text">يقع معهد كوميونيكيت بمدينة مانشستر الشهيرة ويمتاز بطريقته الرائعة في التعليم حيث يعتمد على تعليم الطالب للغة عن طريق التجربة سواءًا كانت بالمحادثات المستمرة أو بالأنشطة الإجتماعية الخارجية التي يشرك فيها طلابه، حيث يشارك المعهد في يوم الطعام العالمي وغيرها من الأحداث، كما ينظم رحلات مختلفة للمعارض والمتاحف التي تزخر بها مانشستر.
+</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdX-uO-uWB">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المميزات" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdX-uO-uWB">
                                                     <rect key="frame" x="0.0" y="425" width="358" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRS-PN-SxK">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الإعتمادات" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRS-PN-SxK">
                                                     <rect key="frame" x="0.0" y="445.5" width="358" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -165,7 +165,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKg-GB-Frk">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="دورة عامة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKg-GB-Frk">
                                                     <rect key="frame" x="0.0" y="20.5" width="358" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -173,8 +173,8 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dai-Ie-67i">
                                                     <rect key="frame" x="0.0" y="41" width="358" height="176"/>
-                                                    <mutableString key="text">يقع معهد كوميونيكيت بمدينة مانشستر الشهيرة ويمتاز بطريقته الرائعة في التعليم حيث يعتمد على تعليم الطالب للغة عن طريق التجربة سواءًا كانت بالمحادثات المستمرة أو بالأنشطة الإجتماعية الخارجية التي يشرك فيها طلابه، حيث يشارك المعهد في يوم الطعام العالمي وغيرها من الأحداث، كما ينظم رحلات مختلفة للمعارض والمتاحف التي تزخر بها مانشستر.
-</mutableString>
+                                                    <string key="text">يقع معهد كوميونيكيت بمدينة مانشستر الشهيرة ويمتاز بطريقته الرائعة في التعليم حيث يعتمد على تعليم الطالب للغة عن طريق التجربة سواءًا كانت بالمحادثات المستمرة أو بالأنشطة الإجتماعية الخارجية التي يشرك فيها طلابه، حيث يشارك المعهد في يوم الطعام العالمي وغيرها من الأحداث، كما ينظم رحلات مختلفة للمعارض والمتاحف التي تزخر بها مانشستر.
+</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -208,7 +208,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOg-Zs-fHX">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="إقامة مع عائلة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOg-Zs-fHX">
                                                     <rect key="frame" x="0.0" y="20.5" width="358" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -236,22 +236,42 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Pc-sv-Ahq" userLabel="p5">
-                                    <rect key="frame" x="16" y="1499" width="382" height="88"/>
+                                    <rect key="frame" x="16" y="1499" width="382" height="94.5"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zeq-bT-iY8">
-                                            <rect key="frame" x="12" y="12" width="358" height="64"/>
+                                            <rect key="frame" x="12" y="12" width="358" height="70.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نوع السكن" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ncu-rz-oKc">
-                                                    <rect key="frame" x="0.0" y="0.0" width="358" height="19"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الدولة والمدينة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ncu-rz-oKc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="358" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FkI-bW-gda">
-                                                    <rect key="frame" x="0.0" y="19" width="358" height="45"/>
+                                                    <rect key="frame" x="0.0" y="20.5" width="358" height="50"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="united-kingdom" translatesAutoresizingMaskIntoConstraints="NO" id="EWK-Fy-EYO">
+                                                            <rect key="frame" x="12" y="3" width="44" height="44"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="44" id="2u2-Zi-w01"/>
+                                                                <constraint firstAttribute="width" constant="44" id="JBq-9H-35p"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="كامبريدج - بريطانيا" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82V-pT-1ou">
+                                                            <rect key="frame" x="68" y="15" width="278" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="45" id="951-BA-AdU"/>
+                                                        <constraint firstAttribute="trailing" secondItem="82V-pT-1ou" secondAttribute="trailing" constant="12" id="3IE-9m-wix"/>
+                                                        <constraint firstAttribute="height" constant="50" id="951-BA-AdU"/>
+                                                        <constraint firstItem="82V-pT-1ou" firstAttribute="centerY" secondItem="FkI-bW-gda" secondAttribute="centerY" id="TLU-DJ-Woz"/>
+                                                        <constraint firstItem="EWK-Fy-EYO" firstAttribute="leading" secondItem="FkI-bW-gda" secondAttribute="leading" constant="12" id="XAw-au-Z42"/>
+                                                        <constraint firstItem="82V-pT-1ou" firstAttribute="leading" secondItem="EWK-Fy-EYO" secondAttribute="trailing" constant="12" id="pr1-gt-j4a"/>
+                                                        <constraint firstItem="EWK-Fy-EYO" firstAttribute="centerY" secondItem="FkI-bW-gda" secondAttribute="centerY" id="q7t-2f-i3g"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -263,7 +283,6 @@
                                         <constraint firstItem="zeq-bT-iY8" firstAttribute="leading" secondItem="3Pc-sv-Ahq" secondAttribute="leading" constant="12" id="PCa-T9-8j8"/>
                                         <constraint firstItem="zeq-bT-iY8" firstAttribute="top" secondItem="3Pc-sv-Ahq" secondAttribute="top" constant="12" id="chk-fc-2ix"/>
                                         <constraint firstAttribute="trailing" secondItem="zeq-bT-iY8" secondAttribute="trailing" constant="12" id="oJl-Lb-yod"/>
-                                        <constraint firstAttribute="height" constant="88" id="tC1-xk-un6"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
@@ -272,7 +291,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LbE-bC-JgL">
-                                    <rect key="frame" x="16" y="1603" width="382" height="50"/>
+                                    <rect key="frame" x="16" y="1609.5" width="382" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="kzz-9I-sE9"/>
                                     </constraints>
@@ -335,5 +354,6 @@
     </objects>
     <resources>
         <image name="download" width="259" height="194"/>
+        <image name="united-kingdom" width="64" height="64"/>
     </resources>
 </document>

@@ -30,7 +30,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="P5y-XW-2NK">
                                     <rect key="frame" x="66" y="6" width="301" height="48"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kM6-j1-tzZ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text=" بريطانيا" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kM6-j1-tzZ">
                                             <rect key="frame" x="0.0" y="0.0" width="301" height="21.5"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -44,7 +44,7 @@
                                         </label>
                                     </subviews>
                                 </stackView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RN0-T7-eu0">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="united-kingdom" translatesAutoresizingMaskIntoConstraints="NO" id="RN0-T7-eu0">
                                     <rect key="frame" x="10" y="6" width="48" height="48"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="RN0-T7-eu0" secondAttribute="height" id="WCT-FJ-cZh"/>
@@ -63,7 +63,7 @@
                                 <constraint firstItem="RN0-T7-eu0" firstAttribute="centerY" secondItem="fiy-N5-sUO" secondAttribute="centerY" id="nSf-B2-Lxb"/>
                             </constraints>
                         </view>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FC7-Wg-iIl">
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FC7-Wg-iIl">
                             <rect key="frame" x="0.0" y="70" width="375" height="497"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </tableView>
@@ -109,4 +109,7 @@
             <point key="canvasLocation" x="138.40000000000001" y="152.47376311844079"/>
         </view>
     </objects>
+    <resources>
+        <image name="united-kingdom" width="64" height="64"/>
+    </resources>
 </document>

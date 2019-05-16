@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,30 +13,60 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VisaCollectionViewCell" id="gTV-IL-0wX" customClass="VisaCollectionViewCell" customModule="Direct" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="168" height="197"/>
+            <rect key="frame" x="0.0" y="0.0" width="168" height="278"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="168" height="197"/>
+                <rect key="frame" x="0.0" y="0.0" width="168" height="278"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visa" translatesAutoresizingMaskIntoConstraints="NO" id="es8-YH-XKX">
-                        <rect key="frame" x="0.0" y="0.0" width="168" height="197"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="pyq-Op-ws7">
+                        <rect key="frame" x="0.0" y="0.0" width="168" height="194"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="السويد" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uu9-gW-EQ6">
+                        <rect key="frame" x="0.0" y="219" width="168" height="59"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="es8-YH-XKX">
+                        <rect key="frame" x="62" y="172" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="es8-YH-XKX" secondAttribute="height" id="JJt-lM-y9u"/>
+                            <constraint firstAttribute="width" constant="44" id="fib-7D-NmV"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColorV">
+                                <color key="value" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                <real key="value" value="21"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                 </subviews>
             </view>
-            <color key="backgroundColor" red="0.58586286799999998" green="1" blue="0.73473703859999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="es8-YH-XKX" secondAttribute="trailing" id="5pA-5i-he8"/>
-                <constraint firstItem="es8-YH-XKX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="6Tz-Mn-a5F"/>
-                <constraint firstAttribute="bottom" secondItem="es8-YH-XKX" secondAttribute="bottom" id="XV1-ql-yEX"/>
-                <constraint firstItem="es8-YH-XKX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="kvQ-iR-J7r"/>
+                <constraint firstItem="Uu9-gW-EQ6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="81a-qN-P5H"/>
+                <constraint firstItem="es8-YH-XKX" firstAttribute="bottom" secondItem="pyq-Op-ws7" secondAttribute="bottom" constant="22" id="SPU-Zt-jcC"/>
+                <constraint firstItem="pyq-Op-ws7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="TgV-1L-xfd"/>
+                <constraint firstAttribute="trailing" secondItem="Uu9-gW-EQ6" secondAttribute="trailing" id="eKN-Mb-vlY"/>
+                <constraint firstItem="pyq-Op-ws7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hXn-ZH-uLn"/>
+                <constraint firstItem="es8-YH-XKX" firstAttribute="centerX" secondItem="pyq-Op-ws7" secondAttribute="centerX" id="lO4-Cp-Awv"/>
+                <constraint firstAttribute="bottom" secondItem="Uu9-gW-EQ6" secondAttribute="bottom" id="nRt-HK-VT1"/>
+                <constraint firstAttribute="trailing" secondItem="pyq-Op-ws7" secondAttribute="trailing" id="ucH-VP-pte"/>
+                <constraint firstItem="Uu9-gW-EQ6" firstAttribute="top" secondItem="pyq-Op-ws7" secondAttribute="bottom" constant="25" id="xp6-0e-bdA"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="168" height="197"/>
-            <point key="canvasLocation" x="232" y="219.94002998500753"/>
+            <size key="customSize" width="168" height="278"/>
+            <point key="canvasLocation" x="232" y="256.37181409295357"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="visa" width="153" height="178"/>
+        <image name="download" width="259" height="194"/>
     </resources>
 </document>

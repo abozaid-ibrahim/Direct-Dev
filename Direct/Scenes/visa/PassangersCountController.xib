@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PassangersCountController" customModule="Direct" customModuleProvider="target">
             <connections>
+                <outlet property="countLbl" destination="4Yv-PW-gI9" id="j2i-Iy-OqU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,16 +25,16 @@
                     <rect key="frame" x="4" y="64" width="406" height="798"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="vST-hH-yJb">
-                            <rect key="frame" x="12" y="12" width="382" height="774"/>
+                            <rect key="frame" x="12" y="12" width="382" height="233"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عدد المسافرين" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eho-MT-Z88">
-                                    <rect key="frame" x="0.0" y="0.0" width="382" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kLW-V3-XCT" userLabel="counts">
-                                    <rect key="frame" x="0.0" y="12" width="382" height="70"/>
+                                    <rect key="frame" x="0.0" y="32.5" width="382" height="70"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5Cs-1I-KuU" userLabel="counts stack">
                                             <rect key="frame" x="0.0" y="0.0" width="382" height="70"/>
@@ -132,22 +133,20 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" verticalHuggingPriority="245" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="bE9-Ii-Awg" userLabel="space">
-                                    <rect key="frame" x="0.0" y="94" width="382" height="633"/>
+                                    <rect key="frame" x="0.0" y="114.5" width="382" height="44"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="xbU-Ec-4z8"/>
+                                    </constraints>
                                 </view>
-                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="OWm-Y4-nmb">
-                                    <rect key="frame" x="0.0" y="739" width="382" height="0.0"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عدد المسافرين : 3 أطفال ، 2 بالغين" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Yv-PW-gI9">
-                                            <rect key="frame" x="0.0" y="0.0" width="382" height="0.0"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عدد المسافرين : 3 أطفال ، 2 بالغين" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Yv-PW-gI9">
+                                    <rect key="frame" x="0.0" y="170.5" width="382" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qb-h2-ia9">
-                                    <rect key="frame" x="0.0" y="751" width="382" height="23"/>
+                                    <rect key="frame" x="0.0" y="203" width="382" height="30"/>
                                     <state key="normal" title="تأكيد"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">
@@ -161,7 +160,6 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="vST-hH-yJb" firstAttribute="leading" secondItem="WKY-FB-hIQ" secondAttribute="leading" constant="12" id="2pr-vu-1up"/>
-                        <constraint firstAttribute="bottom" secondItem="vST-hH-yJb" secondAttribute="bottom" constant="12" id="Ly1-Tx-uI3"/>
                         <constraint firstAttribute="trailing" secondItem="vST-hH-yJb" secondAttribute="trailing" constant="12" id="eu7-ck-XYd"/>
                         <constraint firstItem="vST-hH-yJb" firstAttribute="top" secondItem="WKY-FB-hIQ" secondAttribute="top" constant="12" id="fFN-Wu-fcK"/>
                     </constraints>
