@@ -1052,7 +1052,7 @@
 		};
 		6CA040B12281AFBB00619B6F /* IBAnalyzer */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -1064,7 +1064,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/IBAnalyzer/bin/ibanalyzer\" ./\n";
 		};

@@ -7,26 +7,27 @@
 //
 
 import PanModal
-import UIKit
-import RxSwift
 import RxCocoa
 import RxGesture
+import RxSwift
+import UIKit
 
-class NewDirectVisaController: UIViewController,SwipeUpDismissable {
+class NewDirectVisaController: UIViewController, SwipeUpDismissable {
     let disposeBag = DisposeBag()
     var dismessed: PublishSubject<Bool> = PublishSubject()
     @IBOutlet var checkoutFooter: CheckoutFooter!
     @IBOutlet var countryField: SpinnerTextField!
     
     var initialTouchPoint: CGPoint = CGPoint(x: 0, y: 0)
-    var defaultFrame:CGRect?{
-        didSet{
-            self.view.frame = defaultFrame ?? CGRect.zero
+    var defaultFrame: CGRect? {
+        didSet {
+            view.frame = defaultFrame ?? CGRect.zero
         }
     }
-    @IBOutlet weak var visaField: SpinnerTextField!
-    @IBOutlet weak var passangersCountField: SpinnerTextField!
-    @IBOutlet weak var relationsField: SpinnerTextField!
+    
+    @IBOutlet var visaField: SpinnerTextField!
+    @IBOutlet var passangersCountField: SpinnerTextField!
+    @IBOutlet var relationsField: SpinnerTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         enableSwipeUpToDismiss()
@@ -36,40 +37,64 @@ class NewDirectVisaController: UIViewController,SwipeUpDismissable {
         }
         
         setONClickViews()
-        
     }
     
-    private func setONClickViews(){
+    private func setONClickViews() {
         countryField.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
-            self.presentPanModal(Destination.selectableSheet(data: "").controller() as! UIViewController & PanModalPresentable)
+                let data = ["مصر", "الكويت", "بلغاريا"]
+                let dest = Destination.selectableSheet(data: data)
+                let vc = dest.controller() as! SelectableTableSheet
+                vc.data = data
+                vc.style = .textCenter
+                vc.selectedItem.asObservable().subscribe { event in
+                    switch event.event {
+                    case .next(let value):
+                        self.countryField.txtField.text = event.element ?? ""
+                    default:
+                        break
+                    }
+                    
+                }.disposed(by: self.disposeBag)
+                
+                self.presentPanModal(vc as! UIViewController & PanModalPresentable)
             }).disposed(by: disposeBag)
         
         passangersCountField.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
-            try! AppNavigator().presentModally(.passangersCount)
+                try! AppNavigator().presentModally(.passangersCount)
             }).disposed(by: disposeBag)
         
         dateField.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
-            try! AppNavigator().presentModally(.datePicker)
+                try! AppNavigator().presentModally(.datePicker)
             }).disposed(by: disposeBag)
         
         visaField.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
-            try! AppNavigator().presentModally(.datePicker)
+                try! AppNavigator().presentModally(.datePicker)
             }).disposed(by: disposeBag)
         relationsField.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
-            try! AppNavigator().presentModally(.datePicker)
+                
+                let data = ["مصر", "الكويت", "بلغاريا"]
+                let dest = Destination.selectableSheet(data: data)
+                let vc = dest.controller() as! SelectableTableSheet
+                vc.data = data
+                
+                vc.selectedItem.asObservable().subscribe { event in
+                    switch event.event {
+                    case .next(let value):
+                        self.countryField.txtField.text = event.element ?? ""
+                    default:
+                        break
+                    }
+                    
+                }.disposed(by: self.disposeBag)
+                
+                self.presentPanModal(vc as! UIViewController & PanModalPresentable)
             }).disposed(by: disposeBag)
-        
-        
     }
     
-    
-    
-    @IBOutlet weak var dateField: SpinnerTextField!
-    
-    
+    @IBOutlet var dateField: SpinnerTextField!
 }

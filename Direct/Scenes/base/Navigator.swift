@@ -8,9 +8,15 @@
 
 import PanModal
 import UIKit
+import RxSwift
+
 /* if any contoller need any dependencies, it should passed in the destination item */
+
 enum Destination {
-    case loginView, signupView, homeScreen, visaRequirement, selectableSheet(data: Any), paymentMethod, passangersCount, newInstitueVisa, datePicker, hostsInfoScreen, passangersInfoScreen, successVisaReqScreen, MyOrders, orderDetails, institutesList, instituteDetails, packageDetails, successPackage, banks,newDirectVisa
+    
+    case loginView, signupView, homeScreen, visaRequirement,
+    selectableSheet(data: [Any])   ,
+    paymentMethod, passangersCount, newInstitueVisa, datePicker, hostsInfoScreen, passangersInfoScreen, successVisaReqScreen, MyOrders, orderDetails, institutesList, instituteDetails, packageDetails, successPackage, banks,newDirectVisa
     func controller() -> UIViewController {
         switch self {
         case .loginView:

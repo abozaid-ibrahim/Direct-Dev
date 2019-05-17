@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class SingleRowTableCell: UITableViewCell, TableCell {
     static var cellId: String = "SingleRowTableCell"
 
