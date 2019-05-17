@@ -28,7 +28,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTU-ni-uSD">
-                    <rect key="frame" x="12" y="625" width="351" height="30"/>
+                    <rect key="frame" x="12" y="337" width="351" height="30"/>
                     <state key="normal" title="تأكيد"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">
@@ -37,8 +37,11 @@
                     </userDefinedRuntimeAttributes>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="40" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G4O-YW-AMr">
-                    <rect key="frame" x="0.0" y="65" width="375" height="548"/>
+                    <rect key="frame" x="0.0" y="65" width="375" height="260"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="260" id="e7r-00-G4H"/>
+                    </constraints>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -49,7 +52,6 @@
                 <constraint firstItem="8CR-Nv-RnW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="MjO-p8-8dq"/>
                 <constraint firstItem="G4O-YW-AMr" firstAttribute="top" secondItem="8CR-Nv-RnW" secondAttribute="bottom" constant="12" id="ZVf-Dq-aXb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="G4O-YW-AMr" secondAttribute="trailing" id="fGW-F0-zkI"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="tTU-ni-uSD" secondAttribute="bottom" constant="12" id="ieK-6a-SUn"/>
                 <constraint firstItem="G4O-YW-AMr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kcC-bC-163"/>
                 <constraint firstItem="tTU-ni-uSD" firstAttribute="top" secondItem="G4O-YW-AMr" secondAttribute="bottom" constant="12" id="usV-dB-YWx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8CR-Nv-RnW" secondAttribute="trailing" constant="12" id="zgl-cf-GUh"/>

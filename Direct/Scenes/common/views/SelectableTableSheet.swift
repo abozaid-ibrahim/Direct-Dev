@@ -17,9 +17,9 @@ enum CellStyle {
 
 final class SelectableTableSheet: UIViewController, PanModalPresentable {
     var panScrollable: UIScrollView? {
-        return tableView
+        return nil//tableView
     }
-    var shortFormHeight: PanModalHeight = .contentHeight(350)
+    var shortFormHeight: PanModalHeight = .contentHeight(330)
 
     // set these var from outside
     var data: [String]?
