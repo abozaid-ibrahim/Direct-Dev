@@ -17,24 +17,25 @@ final class PaymentMethodsContainerController: UIViewController {
         tableView.registerNib(PaymentBranchTableCell.cellId)
         tableView.registerNib(BankTableCell.cellId)
         self.setupTableData()
-
-        let tab1 = ("حوالة بنكية", {
-            self.tableView.dataSource =  nil
-             self.tableView.delegate =  nil
-            self.setupTableData()
+setupTabbar()
+       
+    }
+    private func setupTabbar(){
+        let tab1 = ("حوالة بنكية", {[weak self] in
+            self?.tableView.dataSource =  nil
+            self?.tableView.delegate =  nil
+            self?.setupTableData()
         })
-        let tab2 = ("في أحد فروعنا", {
-             self.tableView.dataSource =  nil
-             self.tableView.delegate =  nil
-            self.setupBranchTableData()
+        let tab2 = ("في أحد فروعنا", {[weak self] in
+            self?.tableView.dataSource =  nil
+            self?.tableView.delegate =  nil
+            self?.setupBranchTableData()
         })
         
         let tabbar = TabBar(tabs: [tab1, tab2])
         tabsContainer.addSubview(tabbar)
-        
         tabbar.sameBoundsTo(parentView: tabsContainer)
     }
-    
     @IBOutlet var tableView: UITableView!
     private let disposeBag = DisposeBag()
     

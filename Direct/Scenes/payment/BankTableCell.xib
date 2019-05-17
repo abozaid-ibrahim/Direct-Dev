@@ -28,7 +28,7 @@
                                     <constraint firstAttribute="height" constant="50" id="col-xM-4LZ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L03-sc-eYK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L03-sc-eYK">
                                 <rect key="frame" x="0.0" y="60" width="314" height="50.5"/>
                                 <string key="text">مكتب المسافر المباشر للسفر والسياحة
 رقم الحساب: 6534434465656554

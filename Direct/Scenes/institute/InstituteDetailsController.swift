@@ -12,11 +12,13 @@ import RxSwift
 final class InstituteDetailsController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var contentContainer: UIView!
+    @IBOutlet weak var tabsContainer: UIView!
     private let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableData()
-        
+        setupTabbar()
     }
     private func setupTableData(){
         tableView.registerNib(InstituteDetailsTableCell.cellId)
@@ -24,7 +26,17 @@ final class InstituteDetailsController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
-    
+    private func setupTabbar(){
+        let tab1 = ("حجز دورة", {[weak self] in
+            
+        })
+        let tab2 = ("عن المعهد", {[weak self] in
+        })
+        
+        let tabbar = TabBar(tabs: [tab1, tab2])
+        tabsContainer.addSubview(tabbar)
+        tabbar.sameBoundsTo(parentView: tabsContainer)
+    }
 }
 extension InstituteDetailsController:UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
