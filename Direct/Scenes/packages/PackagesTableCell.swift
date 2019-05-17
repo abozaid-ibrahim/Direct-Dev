@@ -8,24 +8,21 @@
 
 import UIKit
 
-class PackagesTableCell: UITableViewCell,TableCell {
+class PackagesTableCell: UITableViewCell, TableCell {
     static var cellId: String = "PackagesTableCell"
-    
-    func setCellData(_ model: String) {
-        
-    }
-    
+
+    func setCellData(_ model: String) {}
+
     typealias CellDataModel = String
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()
-selectionStyle = .none    }
+        selectionStyle = .none
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-    
 }

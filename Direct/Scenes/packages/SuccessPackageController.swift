@@ -10,9 +10,13 @@ import UIKit
 
 class SuccessPackageController: UIViewController {
 
+    @IBOutlet weak var paymentMethodsContainer: UIView!
+    let vc = PaymentMethodsContainerController()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        addChild(vc)
+        paymentMethodsContainer.addSubview(vc.view)
+        vc.view.sameBoundsTo(parentView: paymentMethodsContainer)
     }
 }
