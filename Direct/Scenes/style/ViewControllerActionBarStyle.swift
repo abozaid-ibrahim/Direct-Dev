@@ -26,7 +26,7 @@ extension StyledActionBar where Self: UIViewController {
         navigationBar.shadowImage = UIImage()
         navigationBar.setYellowGradient()
 //        navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
-        navigationBar.titleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 24),
+        navigationBar.titleTextAttributes = [.font: UIFont(name: AppFonts.boldFont, size: 24)!,
                                              .foregroundColor: UIColor.white]
         switch style {
         case let .withTitle(title):

@@ -22,6 +22,10 @@ class FloatingTextField:  SkyFloatingLabelTextField {
     func CommonInit() {
         selectedLineColor = .lightGray
         selectedTitleColor = .lightGray
+        cornerRadiusV = 8
+        borderWidthV = 1
+        borderColorV = UIColor.lightGray
+        
         
     }
     let padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
