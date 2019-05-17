@@ -20,9 +20,3 @@ class PassangersController: UIViewController {
 
     }
 }
-
-extension SkyFloatingLabelTextField{
-    func setAppStyle(){
-        
-    }
-}

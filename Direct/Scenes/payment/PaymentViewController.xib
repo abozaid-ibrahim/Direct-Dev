@@ -53,7 +53,7 @@
                                 <constraint firstAttribute="height" constant="80" id="H4m-H3-Eq2"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="btnTitle" value="start order"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="btnTitle" value="متابعة للدفع"/>
                                 <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="total value"/>
                                 <userDefinedRuntimeAttribute type="string" keyPath="valueText" value="23$"/>
                             </userDefinedRuntimeAttributes>

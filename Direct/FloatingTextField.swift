@@ -10,9 +10,21 @@ import UIKit
 import SkyFloatingLabelTextField
 
 class FloatingTextField:  SkyFloatingLabelTextField {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        CommonInit()
+    }
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        CommonInit()
+    }
+    func CommonInit() {
+        selectedLineColor = .lightGray
+        selectedTitleColor = .lightGray
+        
+    }
     let padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
-    
     override open func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: padding)
     }

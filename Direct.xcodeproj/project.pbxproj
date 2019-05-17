@@ -392,12 +392,12 @@
 			children = (
 				6C2CFB9D22789E0200D23CF4 /* PaymentViewController.swift */,
 				6C2CFB9E22789E0200D23CF4 /* PaymentViewController.xib */,
+				6C77825B227A3E23001926B2 /* BanksViewController.swift */,
+				6C77825C227A3E23001926B2 /* BanksViewController.xib */,
 				6C2CFBA122789F6100D23CF4 /* PaymentMethodTableCell.swift */,
 				6C2CFBA222789F6100D23CF4 /* PaymentMethodTableCell.xib */,
 				6C2CFBA52278A1C600D23CF4 /* PaymentBranchTableCell.swift */,
 				6C2CFBA62278A1C600D23CF4 /* PaymentBranchTableCell.xib */,
-				6C77825B227A3E23001926B2 /* BanksViewController.swift */,
-				6C77825C227A3E23001926B2 /* BanksViewController.xib */,
 				6C77825F227A3E3D001926B2 /* BankTableCell.swift */,
 				6C778260227A3E3D001926B2 /* BankTableCell.xib */,
 			);

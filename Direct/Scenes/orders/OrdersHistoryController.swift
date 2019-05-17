@@ -15,7 +15,7 @@ final class OrdersHistoryController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableData()
-        
+        title = "طلباتي"
     }
     @IBAction func followStateAction(_ sender: Any) {
         try! AppNavigator().push(.orderDetails)

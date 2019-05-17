@@ -25,47 +25,52 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWo-Py-kSX" userLabel="progress tab">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="537"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="AJW-4a-sJD"/>
+                            </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sQS-R3-gA1" userLabel="content">
-                            <rect key="frame" x="0.0" y="547" width="414" height="181"/>
+                            <rect key="frame" x="0.0" y="54" width="414" height="674"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="cLD-IT-6Hw">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="181"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="cLD-IT-6Hw">
+                                    <rect key="frame" x="12" y="12" width="390" height="650"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اختر الفرع" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2d-zD-wtP">
-                                            <rect key="frame" x="0.0" y="0.0" width="69" height="20.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="20.5" id="3J1-Ng-Uqf"/>
-                                            </constraints>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2d-zD-wtP">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="81"/>
+                                            <string key="text">صاحب كشف الحساب والتعريف بالراتب ليس بالضرورة أن يكون أحد المسافرين
+</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اختر الفرع" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gK-jd-tJP">
-                                            <rect key="frame" x="0.0" y="53.5" width="69" height="20.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="20.5" id="JcR-8w-MZe"/>
-                                            </constraints>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بيانات المتكفل بمصاريف المسافر ( عامر )" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gK-jd-tJP">
+                                            <rect key="frame" x="0.0" y="114" width="390" height="80.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اختر الفرع" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ke-Ob-IOs">
-                                            <rect key="frame" x="0.0" y="107" width="69" height="20.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="20.5" id="rpQ-be-Ozd"/>
-                                            </constraints>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سأقوم بتجهيزه لاحقًا" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ke-Ob-IOs">
+                                            <rect key="frame" x="0.0" y="227.5" width="390" height="81"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اختر الفرع" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pD-d3-7FY">
-                                            <rect key="frame" x="0.0" y="160.5" width="69" height="20.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="20.5" id="Qob-mt-hjo"/>
-                                            </constraints>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="كشف الحساب (اخر صفحة من الكشف)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bOd-vL-dbd">
+                                            <rect key="frame" x="0.0" y="341.5" width="390" height="81"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qDj-tt-V9g">
+                                            <rect key="frame" x="0.0" y="455.5" width="390" height="80.5"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سأقوم بتجهيزه لاحقًا" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pD-d3-7FY">
+                                            <rect key="frame" x="0.0" y="569" width="390" height="81"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -75,20 +80,25 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="cLD-IT-6Hw" secondAttribute="trailing" id="ChR-1I-3bZ"/>
-                                <constraint firstItem="cLD-IT-6Hw" firstAttribute="leading" secondItem="sQS-R3-gA1" secondAttribute="leading" id="Ipm-JH-Z6l"/>
-                                <constraint firstAttribute="bottom" secondItem="cLD-IT-6Hw" secondAttribute="bottom" id="ZZb-Hm-7ty"/>
-                                <constraint firstItem="cLD-IT-6Hw" firstAttribute="top" secondItem="sQS-R3-gA1" secondAttribute="top" id="Zzv-ML-nB6"/>
+                                <constraint firstAttribute="trailing" secondItem="cLD-IT-6Hw" secondAttribute="trailing" constant="12" id="ChR-1I-3bZ"/>
+                                <constraint firstItem="cLD-IT-6Hw" firstAttribute="leading" secondItem="sQS-R3-gA1" secondAttribute="leading" constant="12" id="Ipm-JH-Z6l"/>
+                                <constraint firstAttribute="bottom" secondItem="cLD-IT-6Hw" secondAttribute="bottom" constant="12" id="ZZb-Hm-7ty"/>
+                                <constraint firstItem="cLD-IT-6Hw" firstAttribute="top" secondItem="sQS-R3-gA1" secondAttribute="top" constant="12" id="Zzv-ML-nB6"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5b-JX-fdF" customClass="CheckoutFooter" customModule="Direct" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="738" width="414" height="80"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="80" id="t3r-2R-WjQ"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="btnTitle" value="start order"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="btnTitle" value="تابع للمتكفل الثاني "/>
                                 <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="total value"/>
                                 <userDefinedRuntimeAttribute type="string" keyPath="valueText" value="23$"/>
                             </userDefinedRuntimeAttributes>
@@ -96,7 +106,7 @@
                     </subviews>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="FCI-82-qmg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="CfV-gg-4Iz"/>
                 <constraint firstItem="FCI-82-qmg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Li5-k2-G8a"/>

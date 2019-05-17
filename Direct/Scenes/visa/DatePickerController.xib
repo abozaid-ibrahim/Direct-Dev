@@ -32,7 +32,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Drn-tz-HSm">
-                            <rect key="frame" x="66" y="40.5" width="320" height="216"/>
+                            <rect key="frame" x="66" y="41" width="320" height="216"/>
                             <date key="date" timeIntervalSinceReferenceDate="579190408.09953105">
                                 <!--2019-05-10 14:13:28 +0000-->
                             </date>

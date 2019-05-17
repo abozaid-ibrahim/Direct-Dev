@@ -15,13 +15,13 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
     var panScrollable: UIScrollView? {
         return branchsTable
     }
-
     @IBOutlet var branchsTable: UITableView!
     @IBOutlet var paymentMethodTable: UITableView!
 
     private let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "الدفع"
     setupTables()
         checkoutFooter.action = { [weak self] in
             try! AppNavigator().push(.hostsInfoScreen)
