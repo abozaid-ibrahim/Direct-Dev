@@ -24,10 +24,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ocj-Lo-aRo">
-                    <rect key="frame" x="12" y="217" width="390" height="667"/>
+                    <rect key="frame" x="12" y="275" width="390" height="609"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IgC-T9-dNw">
-                            <rect key="frame" x="0.0" y="0.0" width="390" height="667"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IgC-T9-dNw">
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="609"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </tableView>
                     </subviews>
@@ -54,7 +54,7 @@
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8on-j3-pVY">
-                    <rect key="frame" x="130" y="213" width="276" height="50"/>
+                    <rect key="frame" x="130" y="217" width="276" height="50"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="ZMf-73-oW1"/>
@@ -64,10 +64,9 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="2ud-zc-VxG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="0tN-hW-3qD"/>
-                <constraint firstItem="Ocj-Lo-aRo" firstAttribute="top" secondItem="2ud-zc-VxG" secondAttribute="bottom" constant="12" id="4oO-w7-COf"/>
                 <constraint firstItem="2ud-zc-VxG" firstAttribute="top" secondItem="dxX-eo-Gcm" secondAttribute="bottom" constant="12" id="5Ds-Ro-Foo"/>
                 <constraint firstItem="8on-j3-pVY" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="2:3" id="IE7-Ac-Ueb"/>
-                <constraint firstItem="8on-j3-pVY" firstAttribute="top" secondItem="2ud-zc-VxG" secondAttribute="bottom" constant="8" id="LgN-3G-lHh"/>
+                <constraint firstItem="8on-j3-pVY" firstAttribute="top" secondItem="2ud-zc-VxG" secondAttribute="bottom" constant="12" id="cPP-BJ-j9X"/>
                 <constraint firstItem="dxX-eo-Gcm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="e3X-n8-blJ"/>
                 <constraint firstItem="Ocj-Lo-aRo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12" id="ikN-8n-lH6"/>
                 <constraint firstItem="dxX-eo-Gcm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lJO-yE-292"/>
@@ -76,6 +75,7 @@
                 <constraint firstAttribute="bottom" secondItem="Ocj-Lo-aRo" secondAttribute="bottom" constant="12" id="rgS-FF-lLz"/>
                 <constraint firstAttribute="trailing" secondItem="dxX-eo-Gcm" secondAttribute="trailing" id="tTw-RQ-Ymd"/>
                 <constraint firstAttribute="trailing" secondItem="8on-j3-pVY" secondAttribute="trailing" constant="8" id="wWe-85-S3b"/>
+                <constraint firstItem="Ocj-Lo-aRo" firstAttribute="top" secondItem="8on-j3-pVY" secondAttribute="bottom" constant="8" id="yHV-9l-VzR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="140.625"/>

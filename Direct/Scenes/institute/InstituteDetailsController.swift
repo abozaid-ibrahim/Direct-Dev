@@ -49,7 +49,7 @@ extension InstituteDetailsController:UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_: UITableView, heightForHeaderInSection _: Int) -> CGFloat {
-        return 200
+        return 0
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
