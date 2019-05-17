@@ -18,6 +18,7 @@ final class BanksViewController: UIViewController, PanModalPresentable {
     private let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "البنوك"
         tableView.registerNib(SingleRowTableCell.cellId)
         Observable<[String]>.just(Array(dataList[0 ... 2]))
             .bind(to: tableView.rx.items(cellIdentifier: SingleRowTableCell.cellId)) { _, model, cell in

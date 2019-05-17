@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutUsViewController" customModule="Direct" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="752" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rA-UT-J3M">
+                    <rect key="frame" x="12" y="56" width="390" height="128"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" priority="100" constant="128" id="6TT-mM-XM5"/>
+                    </constraints>
+                    <mutableString key="text">دايركت فيزا أول تطبيق من نوعه يخدم المواطنينِ السعوديين الراغبين باستخراج تأشيرات سفر سياحية ودراسية لأكثر من 20 دولة حول العالم وذلك بتقديم طلب التأشيرة من خلال التطبيق أو الموقع بخطوات سهلة وبسيطة أو من خلال زيارة احد فروعنا المنتشرة حول المملكة. لدى دايركت فيزا 4 فروع واكثر من 60 موظف مؤهل لخدمة عملائها على مدار الساعة وذلك بوضع خبراتهم الطويلة في مجال التأشيرات بين يديك بكل رحابة صدر.
+
+هدفنا هو أن نصبح الرائدين في مجالنا في منطقة الشرق الأوسط وأن نبقى الأفضل من خلال تنويع وتقديم خدمات جديدة وتوفير تجربة عملاء الأفضل من نوعها.</mutableString>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="1rA-UT-J3M" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="5Qm-RY-I9t"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1rA-UT-J3M" secondAttribute="trailing" constant="12" id="8Rr-d2-2Rp"/>
+                <constraint firstItem="1rA-UT-J3M" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="lai-ff-GJt"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>

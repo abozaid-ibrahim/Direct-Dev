@@ -22,14 +22,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dBo-8k-M1w">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="12" y="56" width="390" height="794"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YQg-wT-DBW">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="728"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YQg-wT-DBW">
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="704"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <color key="sectionIndexBackgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </tableView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ALC-6W-urt">
-                            <rect key="frame" x="0.0" y="738" width="414" height="35"/>
+                            <rect key="frame" x="0.0" y="714" width="390" height="35"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="hnX-2a-Niq"/>
                             </constraints>
@@ -53,7 +55,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTQ-br-sLQ">
-                            <rect key="frame" x="0.0" y="783" width="414" height="35"/>
+                            <rect key="frame" x="0.0" y="759" width="390" height="35"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="zUU-Oe-NtP"/>
                             </constraints>
@@ -70,12 +72,12 @@
                     </subviews>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="dBo-8k-M1w" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CK3-3N-pyZ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dBo-8k-M1w" secondAttribute="bottom" id="UCo-p1-luD"/>
-                <constraint firstItem="dBo-8k-M1w" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="cjJ-xe-vxj"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dBo-8k-M1w" secondAttribute="trailing" id="qJ2-om-y47"/>
+                <constraint firstItem="dBo-8k-M1w" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12" id="CK3-3N-pyZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dBo-8k-M1w" secondAttribute="bottom" constant="12" id="UCo-p1-luD"/>
+                <constraint firstItem="dBo-8k-M1w" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="cjJ-xe-vxj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dBo-8k-M1w" secondAttribute="trailing" constant="12" id="qJ2-om-y47"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

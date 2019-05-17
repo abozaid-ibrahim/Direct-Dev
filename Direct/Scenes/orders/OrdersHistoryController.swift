@@ -25,8 +25,8 @@ final class OrdersHistoryController: UIViewController {
         tableView.registerNib(OrderTableCell.cellId)
         Observable<[String]>.just(dataList)
             .bind(to: tableView.rx.items(cellIdentifier: OrderTableCell.cellId)) { row, model, cell  in
-                let mycell = (cell as! SingleRowTableCell)
-                mycell.setCellData(model)
+//                let mycell = (cell as! SingleRowTableCell)
+///                mycell.setCellData(model)
             }.disposed(by: disposeBag)
     }
 }
