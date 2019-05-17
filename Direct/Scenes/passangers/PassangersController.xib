@@ -21,10 +21,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mN2-Fx-UkU">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="954"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="939"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="mds-7q-rFp" userLabel="conent">
-                            <rect key="frame" x="15" y="0.0" width="345" height="954"/>
+                            <rect key="frame" x="15" y="0.0" width="345" height="939"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39P-l9-GAW" userLabel="tabbar">
                                     <rect key="frame" x="0.0" y="0.0" width="345" height="40"/>
@@ -34,22 +34,22 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4p-nI-fOB" userLabel="personal info">
-                                    <rect key="frame" x="0.0" y="55" width="345" height="300"/>
+                                    <rect key="frame" x="0.0" y="55" width="345" height="280"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cF7-uI-mpO" userLabel="p1 stack">
-                                            <rect key="frame" x="10" y="10" width="325" height="280"/>
+                                            <rect key="frame" x="10" y="10" width="325" height="260"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المعلومات الشخصية" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llM-go-j9B">
-                                                    <rect key="frame" x="0.0" y="0.0" width="325" height="38.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="325" height="35"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="1d9-Lw-hzJ">
-                                                    <rect key="frame" x="0.0" y="48.5" width="325" height="38"/>
+                                                    <rect key="frame" x="0.0" y="45" width="325" height="35"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KGV-4r-7Rz" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="160.5" height="38"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="160.5" height="35"/>
                                                             <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -78,7 +78,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </textField>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XDH-dQ-6li" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
-                                                            <rect key="frame" x="164.5" y="0.0" width="160.5" height="38"/>
+                                                            <rect key="frame" x="164.5" y="0.0" width="160.5" height="35"/>
                                                             <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -112,7 +112,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lrR-Wi-FYn" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="96.5" width="325" height="38.5"/>
+                                                    <rect key="frame" x="0.0" y="90" width="325" height="35"/>
                                                     <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -147,7 +147,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ecQ-by-Jw3" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="145" width="325" height="38.5"/>
+                                                    <rect key="frame" x="0.0" y="135" width="325" height="35"/>
                                                     <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -182,7 +182,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6fj-2o-Gen" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="193.5" width="325" height="38"/>
+                                                    <rect key="frame" x="0.0" y="180" width="325" height="35"/>
                                                     <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -217,7 +217,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wVu-qA-0g1" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="241.5" width="325" height="38.5"/>
+                                                    <rect key="frame" x="0.0" y="225" width="325" height="35"/>
                                                     <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -259,7 +259,7 @@
                                         <constraint firstItem="cF7-uI-mpO" firstAttribute="top" secondItem="t4p-nI-fOB" secondAttribute="top" constant="10" id="hmU-e0-xEz"/>
                                         <constraint firstAttribute="bottom" secondItem="cF7-uI-mpO" secondAttribute="bottom" constant="10" id="jEG-at-TvW"/>
                                         <constraint firstAttribute="trailing" secondItem="cF7-uI-mpO" secondAttribute="trailing" constant="10" id="oNf-1F-RoR"/>
-                                        <constraint firstAttribute="height" constant="300" id="uKM-TB-yww"/>
+                                        <constraint firstAttribute="height" constant="280" id="uKM-TB-yww"/>
                                         <constraint firstItem="cF7-uI-mpO" firstAttribute="leading" secondItem="t4p-nI-fOB" secondAttribute="leading" constant="10" id="uWK-3x-rzf"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
@@ -269,22 +269,22 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WG0-nX-EM4" userLabel="mother info">
-                                    <rect key="frame" x="0.0" y="370" width="345" height="120"/>
+                                    <rect key="frame" x="0.0" y="350" width="345" height="136"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="x0b-px-5nP" userLabel="p1 stack">
-                                            <rect key="frame" x="8" y="8" width="329" height="104"/>
+                                            <rect key="frame" x="8" y="8" width="329" height="120"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="معلومات الأم" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWR-Ms-1tq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="329" height="29.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="329" height="34.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="LDY-eW-Lfj">
-                                                    <rect key="frame" x="0.0" y="37.5" width="329" height="29"/>
+                                                    <rect key="frame" x="0.0" y="42.5" width="329" height="35"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rlH-mL-eXA" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="162.5" height="29"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="162.5" height="35"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -303,7 +303,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </textField>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="scy-zE-gNk" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
-                                                            <rect key="frame" x="166.5" y="0.0" width="162.5" height="29"/>
+                                                            <rect key="frame" x="166.5" y="0.0" width="162.5" height="35"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -324,7 +324,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3lR-Wv-gyp" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="74.5" width="329" height="29.5"/>
+                                                    <rect key="frame" x="0.0" y="85.5" width="329" height="34.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -347,7 +347,7 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="120" id="Lz0-cf-JEl"/>
+                                        <constraint firstAttribute="height" constant="136" id="Lz0-cf-JEl"/>
                                         <constraint firstItem="x0b-px-5nP" firstAttribute="leading" secondItem="WG0-nX-EM4" secondAttribute="leading" constant="8" id="WKb-7H-Y7e"/>
                                         <constraint firstItem="x0b-px-5nP" firstAttribute="top" secondItem="WG0-nX-EM4" secondAttribute="top" constant="8" id="e4i-qp-WYn"/>
                                         <constraint firstAttribute="trailing" secondItem="x0b-px-5nP" secondAttribute="trailing" constant="8" id="eQV-OO-yvT"/>
@@ -355,19 +355,19 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ea-jJ-MYb" userLabel="p3">
-                                    <rect key="frame" x="0.0" y="505" width="345" height="130"/>
+                                    <rect key="frame" x="0.0" y="501" width="345" height="117"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="lhE-jS-t0H" userLabel="p1 stack">
-                                            <rect key="frame" x="8" y="8" width="329" height="114"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lhE-jS-t0H" userLabel="p3 stack">
+                                            <rect key="frame" x="8" y="8" width="329" height="101"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="هل سبق وحصلت على تأشيرة لبريطانيا من قبل ؟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvZ-3h-drC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="319.5" height="37"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="هل سبق وحصلت على تأشيرة لبريطانيا من قبل ؟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvZ-3h-drC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="319.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="447-Qt-seR">
-                                                    <rect key="frame" x="0.0" y="41" width="73" height="31"/>
+                                                    <rect key="frame" x="0.0" y="28.5" width="73" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="Uzd-gi-i1l"/>
                                                     </constraints>
@@ -378,7 +378,7 @@
                                                     <color key="tintColor" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </segmentedControl>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8b1-6T-SzG" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="75" width="329" height="39"/>
+                                                    <rect key="frame" x="0.0" y="66.5" width="329" height="34.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -401,7 +401,7 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="130" id="62q-AW-Qe9"/>
+                                        <constraint firstAttribute="height" constant="117" id="62q-AW-Qe9"/>
                                         <constraint firstItem="lhE-jS-t0H" firstAttribute="leading" secondItem="8ea-jJ-MYb" secondAttribute="leading" constant="8" id="Feb-4F-tfS"/>
                                         <constraint firstAttribute="bottom" secondItem="lhE-jS-t0H" secondAttribute="bottom" constant="8" id="SUo-pe-6LS"/>
                                         <constraint firstItem="lhE-jS-t0H" firstAttribute="top" secondItem="8ea-jJ-MYb" secondAttribute="top" constant="8" id="i1e-OX-5RX"/>
@@ -409,10 +409,10 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ha-2b-ygb" userLabel="p4">
-                                    <rect key="frame" x="0.0" y="650" width="345" height="120"/>
+                                    <rect key="frame" x="0.0" y="633" width="345" height="122"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2Nb-Ec-jeW" userLabel="p1 stack">
-                                            <rect key="frame" x="8" y="8" width="329" height="104"/>
+                                            <rect key="frame" x="8" y="8" width="329" height="106"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="هل سافرت الى بريطانيا في العشر سنوات الاخيرة ؟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtG-hg-crn">
                                                     <rect key="frame" x="0.0" y="0.0" width="328" height="20.5"/>
@@ -432,7 +432,7 @@
                                                     <color key="tintColor" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </segmentedControl>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ggA-hv-pdZ" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="70.5" width="329" height="33.5"/>
+                                                    <rect key="frame" x="0.0" y="70.5" width="329" height="35.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -457,13 +457,13 @@
                                     <constraints>
                                         <constraint firstItem="2Nb-Ec-jeW" firstAttribute="top" secondItem="7ha-2b-ygb" secondAttribute="top" constant="8" id="CHb-2j-Qtr"/>
                                         <constraint firstAttribute="bottom" secondItem="2Nb-Ec-jeW" secondAttribute="bottom" constant="8" id="Jc3-mz-Df4"/>
-                                        <constraint firstAttribute="height" constant="120" id="PSt-fw-ZhR"/>
+                                        <constraint firstAttribute="height" constant="122" id="PSt-fw-ZhR"/>
                                         <constraint firstAttribute="trailing" secondItem="2Nb-Ec-jeW" secondAttribute="trailing" constant="8" id="dSs-yY-mt0"/>
                                         <constraint firstItem="2Nb-Ec-jeW" firstAttribute="leading" secondItem="7ha-2b-ygb" secondAttribute="leading" constant="8" id="zGq-AL-QX1"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aaZ-b2-9Bp" userLabel="p5">
-                                    <rect key="frame" x="0.0" y="785" width="345" height="120"/>
+                                    <rect key="frame" x="0.0" y="770" width="345" height="120"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="LdM-Bo-Vvs" userLabel="p1 stack">
                                             <rect key="frame" x="8" y="8" width="329" height="104"/>
@@ -525,7 +525,7 @@
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHw-JG-dWw">
-                                    <rect key="frame" x="0.0" y="920" width="345" height="34"/>
+                                    <rect key="frame" x="0.0" y="905" width="345" height="34"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="34" id="Ecw-9f-syQ"/>
                                     </constraints>

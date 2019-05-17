@@ -8,12 +8,14 @@
 
 import UIKit
 
-class TextTableCell: UITableViewCell  ,TableCell{
+class TextTableCell: UITableViewCell, TableCell {
     typealias CellDataModel = String
     static var cellId: String = "TextTableCell"
+    @IBOutlet private var textLbl: UILabel!
     func setCellData(_ model: String) {
-    
+        textLbl.text = model
     }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,5 +26,4 @@ class TextTableCell: UITableViewCell  ,TableCell{
 
         // Configure the view for the selected state
     }
-    
 }

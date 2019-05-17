@@ -41,6 +41,7 @@ final class SelectableTableSheet: UIViewController, PanModalPresentable {
             switch event.event{
             case .next(let indexPath):
                 self.selectedItem.onNext(self.data?[indexPath.row] ?? "")
+                self.dismiss(animated: true, completion: nil)
             default:
                 break
                 
