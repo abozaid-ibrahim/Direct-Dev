@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SponsersViewController" customModule="Direct" customModuleProvider="target">
             <connections>
                 <outlet property="checkoutFooter" destination="f5b-JX-fdF" id="2hr-sO-QFb"/>
+                <outlet property="tabbar" destination="fWo-Py-kSX" id="Fvf-V2-QqF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -37,40 +38,60 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="cLD-IT-6Hw">
                                     <rect key="frame" x="12" y="12" width="390" height="650"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2d-zD-wtP">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="81"/>
-                                            <string key="text">صاحب كشف الحساب والتعريف بالراتب ليس بالضرورة أن يكون أحد المسافرين
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="tB6-Ee-EHR">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="64.5"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shape" translatesAutoresizingMaskIntoConstraints="NO" id="J1c-X9-gT5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="25" height="64.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="EFY-5S-Pld"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2d-zD-wtP">
+                                                    <rect key="frame" x="37" y="0.0" width="353" height="64.5"/>
+                                                    <string key="text">صاحب كشف الحساب والتعريف بالراتب ليس بالضرورة أن يكون أحد المسافرين
 </string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بيانات المتكفل بمصاريف المسافر ( عامر )" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gK-jd-tJP">
-                                            <rect key="frame" x="0.0" y="114" width="390" height="80.5"/>
+                                            <rect key="frame" x="0.0" y="97.5" width="390" height="64.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOv-hd-N9z" customClass="SpinnerTextField" customModule="Direct" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="195" width="390" height="64.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="hint" value="من صاحب كشف الحساب والتعريف بالراتب ؟"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سأقوم بتجهيزه لاحقًا" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ke-Ob-IOs">
-                                            <rect key="frame" x="0.0" y="227.5" width="390" height="81"/>
+                                            <rect key="frame" x="0.0" y="292.5" width="390" height="65"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="كشف الحساب (اخر صفحة من الكشف)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bOd-vL-dbd">
-                                            <rect key="frame" x="0.0" y="341.5" width="390" height="81"/>
+                                            <rect key="frame" x="0.0" y="390.5" width="390" height="64.5"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qDj-tt-V9g">
-                                            <rect key="frame" x="0.0" y="455.5" width="390" height="80.5"/>
-                                            <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KDv-Rt-XJc" customClass="SpinnerTextField" customModule="Direct" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="488" width="390" height="64.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="hint" value="ارفق صورة التعريف بالراتب"/>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="group8"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سأقوم بتجهيزه لاحقًا" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pD-d3-7FY">
-                                            <rect key="frame" x="0.0" y="569" width="390" height="81"/>
+                                            <rect key="frame" x="0.0" y="585.5" width="390" height="64.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -116,4 +137,8 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
+    <resources>
+        <image name="group8" width="13" height="13"/>
+        <image name="shape" width="14" height="19"/>
+    </resources>
 </document>

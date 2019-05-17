@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EDu-ab-YSd">
-                    <rect key="frame" x="15" y="144" width="384" height="593"/>
+                    <rect key="frame" x="15" y="69" width="384" height="593"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group5" translatesAutoresizingMaskIntoConstraints="NO" id="fda-jY-bwc">
                             <rect key="frame" x="152" y="0.0" width="80" height="80"/>
@@ -37,13 +37,13 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تم تقديم طلب التأشيرة بنجاح" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdu-wv-DLI">
-                            <rect key="frame" x="93.666666666666671" y="120.3333333333333" width="196.66666666666663" height="20.333333333333329"/>
+                            <rect key="frame" x="93.666666666666671" y="120.33333333333333" width="196.66666666666663" height="20.333333333333329"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAg-wa-kZf">
-                            <rect key="frame" x="1" y="150.66666666666669" width="382" height="81.333333333333314"/>
+                            <rect key="frame" x="1" y="150.66666666666666" width="382" height="81.333333333333343"/>
                             <string key="text">حالة الطلب الحالية بانتظار الدفع , نرجو منكم إتمام عملية السداد في أقرب فرع باستخدام رقم الطلب بالأسفل حتى نبدأ في معالجة الطلب.
 </string>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -102,7 +102,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="EDu-ab-YSd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="Pnl-0c-gSp"/>
+                <constraint firstItem="EDu-ab-YSd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="Pnl-0c-gSp"/>
                 <constraint firstItem="EDu-ab-YSd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="lOF-xB-LFe"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EDu-ab-YSd" secondAttribute="trailing" constant="15" id="xHs-0H-DYV"/>
             </constraints>
