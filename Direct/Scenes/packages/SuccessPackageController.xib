@@ -47,9 +47,14 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                    <real key="value" value="12"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="155" id="7gS-OL-Aee"/>
                         <constraint firstItem="kzq-m6-oT7" firstAttribute="top" secondItem="enq-wd-JGw" secondAttribute="top" constant="12" id="KkY-86-Bi8"/>
@@ -119,10 +124,20 @@
                         <constraint firstItem="Zy1-hi-qlf" firstAttribute="leading" secondItem="HEa-r8-nEP" secondAttribute="leading" constant="12" id="sFS-wa-XPd"/>
                         <constraint firstAttribute="trailing" secondItem="Zy1-hi-qlf" secondAttribute="trailing" constant="12" id="tKJ-Fr-F33"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                            <real key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggX-tM-NQl">
                     <rect key="frame" x="16" y="587" width="382" height="263"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                            <real key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

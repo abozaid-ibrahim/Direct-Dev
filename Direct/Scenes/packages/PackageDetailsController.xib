@@ -29,29 +29,29 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="axZ-t3-7dt" userLabel="p1">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
                                     <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="emE-1F-QHW">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="211"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="211" id="OJG-9t-tiJ"/>
+                                            </constraints>
+                                        </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fcq-HA-AzD">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
+                                            <rect key="frame" x="12" y="219" width="390" height="269"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="emE-1F-QHW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="211"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="211" id="OJG-9t-tiJ"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تعليم الإنجليزية في مانشستر" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aky-hB-AU2">
-                                                    <rect key="frame" x="0.0" y="221" width="414" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="390" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SR 938  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Tm-0Q-bv4">
-                                                    <rect key="frame" x="0.0" y="251.5" width="414" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="30.5" width="390" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYv-IN-r7Q">
-                                                    <rect key="frame" x="0.0" y="282" width="414" height="61"/>
+                                                    <rect key="frame" x="0.0" y="61" width="390" height="61"/>
                                                     <string key="text">مانشستر من أعرق المدن العالمية .. اخترنا لك أفضل معاهد اللغة فيها .. السعر يشمل لمدة 8 أسابيع :
 </string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -59,11 +59,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TcS-Z5-jz0">
-                                                    <rect key="frame" x="0.0" y="353" width="414" height="87"/>
+                                                    <rect key="frame" x="0.0" y="132" width="390" height="77"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="noA-TW-2h7">
-                                                    <rect key="frame" x="0.0" y="450" width="414" height="50"/>
+                                                    <rect key="frame" x="0.0" y="219" width="390" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="YJt-dV-u3e"/>
                                                     </constraints>
@@ -79,11 +79,14 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="fcq-HA-AzD" firstAttribute="leading" secondItem="axZ-t3-7dt" secondAttribute="leading" id="5gg-XF-YEY"/>
-                                        <constraint firstItem="fcq-HA-AzD" firstAttribute="top" secondItem="axZ-t3-7dt" secondAttribute="top" id="Xhz-ku-l7z"/>
+                                        <constraint firstAttribute="trailing" secondItem="emE-1F-QHW" secondAttribute="trailing" id="1um-8P-zZv"/>
+                                        <constraint firstItem="emE-1F-QHW" firstAttribute="leading" secondItem="axZ-t3-7dt" secondAttribute="leading" id="5QF-P7-bF6"/>
+                                        <constraint firstItem="fcq-HA-AzD" firstAttribute="leading" secondItem="axZ-t3-7dt" secondAttribute="leading" constant="12" id="5gg-XF-YEY"/>
+                                        <constraint firstItem="emE-1F-QHW" firstAttribute="top" secondItem="axZ-t3-7dt" secondAttribute="top" id="OqU-dj-6Uz"/>
+                                        <constraint firstItem="fcq-HA-AzD" firstAttribute="top" secondItem="emE-1F-QHW" secondAttribute="bottom" constant="8" id="WoD-hf-PpX"/>
                                         <constraint firstAttribute="height" constant="500" id="mbf-be-RZz"/>
-                                        <constraint firstAttribute="trailing" secondItem="fcq-HA-AzD" secondAttribute="trailing" id="nNL-oZ-PWQ"/>
-                                        <constraint firstAttribute="bottom" secondItem="fcq-HA-AzD" secondAttribute="bottom" id="zVj-7B-EmQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="fcq-HA-AzD" secondAttribute="trailing" constant="12" id="nNL-oZ-PWQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="fcq-HA-AzD" secondAttribute="bottom" constant="12" id="zVj-7B-EmQ"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rlR-gv-zY8" userLabel="p2">

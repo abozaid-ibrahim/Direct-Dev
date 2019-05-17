@@ -10,19 +10,27 @@ import RxSwift
 import UIKit
 final class PaymentMethodsContainerController: UIViewController {
     @IBOutlet var tabsContainer: UIView!
-    
+    private let branchsData = Observable<[String]>.just(dataList)
+    private let banksData = Observable<[String]>.just(["aaaa", "bbb"])
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableData()
+        tableView.registerNib(PaymentBranchTableCell.cellId)
+        tableView.registerNib(BankTableCell.cellId)
+        self.setupTableData()
+
         let tab1 = ("حوالة بنكية", {
-             print("selected")
+            self.tableView.dataSource =  nil
+             self.tableView.delegate =  nil
+            self.setupTableData()
         })
-        let tab2 = ("حوالة بنكية", {
-            print("selected")
+        let tab2 = ("في أحد فروعنا", {
+             self.tableView.dataSource =  nil
+             self.tableView.delegate =  nil
+            self.setupBranchTableData()
         })
-       
-    let tabbar = TabBar(tabs: [tab1,tab2])
-    tabsContainer.addSubview(tabbar)
+        
+        let tabbar = TabBar(tabs: [tab1, tab2])
+        tabsContainer.addSubview(tabbar)
         
         tabbar.sameBoundsTo(parentView: tabsContainer)
     }
@@ -31,11 +39,16 @@ final class PaymentMethodsContainerController: UIViewController {
     private let disposeBag = DisposeBag()
     
     private func setupTableData() {
-        tableView.registerNib(SingleRowTableCell.cellId)
-        Observable<[String]>.just(dataList)
-            .bind(to: tableView.rx.items(cellIdentifier: SingleRowTableCell.cellId)) { _, model, cell in
-                let mycell = (cell as! SingleRowTableCell)
-                mycell.setCellData(model)
-            }.disposed(by: disposeBag)
+        banksData.bind(to: tableView.rx.items(cellIdentifier: BankTableCell.cellId)) { _, _, cell in
+            let mycell = (cell as! BankTableCell)
+//                mycell.setCellData(model)
+        }.disposed(by: disposeBag)
+    }
+    
+    private func setupBranchTableData() {
+        branchsData.bind(to: tableView.rx.items(cellIdentifier: PaymentBranchTableCell.cellId)) { _, _, cell in
+            let mycell = (cell as! PaymentBranchTableCell)
+            //                mycell.setCellData(model)
+        }.disposed(by: disposeBag)
     }
 }

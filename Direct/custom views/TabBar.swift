@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RxSwift
+import RxGesture
+
 typealias Action = ()->()
 class TabBar: UIView {
     
@@ -33,16 +36,30 @@ class TabBar: UIView {
         
         return lbl
     }
-    func createUI(tabs:[(String,Action)]){
+    let bag = DisposeBag()
+    private var tabsSep: [UIView] = []
+    typealias TAB = (String,Action)
+    func createUI(tabs:[TAB]){
         for tab in tabs{
             let lbl = UILabel()
             lbl.textAlignment = .center
             lbl.text = tab.0
+            lbl.font = UIFont(name: AppFonts.regularFont, size: 15)
+            
             let sel = selector
             let view = UIStackView(arrangedSubviews: [lbl,sel])
             view.alignment = .fill
             view.axis = .vertical
             view.spacing = 5
+            view.rx.tapGesture().asObservable().skip(1).subscribe({ event in
+                tab.1()
+                for sep in self.tabsSep{
+                    sep.alpha = 0.0
+                }
+                sel.alpha = 1.0
+                
+            }).disposed(by: bag)
+            self.tabsSep.append(sel)
             stackContainer.addArrangedSubview(view)
         }
         addSubview(stackContainer)
