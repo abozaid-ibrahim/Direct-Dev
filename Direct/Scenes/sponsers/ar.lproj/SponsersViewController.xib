@@ -27,32 +27,31 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hog-0X-qPE" userLabel="alert">
                             <rect key="frame" x="12" y="12" width="366" height="85"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="tB6-Ee-EHR">
-                                    <rect key="frame" x="12" y="12" width="342" height="61"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alert" translatesAutoresizingMaskIntoConstraints="NO" id="J1c-X9-gT5">
-                                            <rect key="frame" x="0.0" y="0.0" width="25" height="61"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="25" id="EFY-5S-Pld"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2d-zD-wtP">
-                                            <rect key="frame" x="37" y="0.0" width="305" height="61"/>
-                                            <string key="text">صاحب كشف الحساب والتعريف بالراتب ليس بالضرورة أن يكون أحد المسافرين
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2d-zD-wtP">
+                                    <rect key="frame" x="49" y="12" width="305" height="61"/>
+                                    <string key="text">صاحب كشف الحساب والتعريف بالراتب ليس بالضرورة أن يكون أحد المسافرين
 </string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </stackView>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alert" translatesAutoresizingMaskIntoConstraints="NO" id="J1c-X9-gT5">
+                                    <rect key="frame" x="12" y="30" width="25" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="6a4-g9-rTn"/>
+                                        <constraint firstAttribute="height" constant="25" id="6aN-lt-rzS"/>
+                                        <constraint firstAttribute="width" constant="25" id="EFY-5S-Pld"/>
+                                    </constraints>
+                                </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="tB6-Ee-EHR" firstAttribute="top" secondItem="Hog-0X-qPE" secondAttribute="top" constant="12" id="4XQ-9E-mZe"/>
-                                <constraint firstAttribute="bottom" secondItem="tB6-Ee-EHR" secondAttribute="bottom" constant="12" id="8K1-7R-Exh"/>
-                                <constraint firstItem="tB6-Ee-EHR" firstAttribute="leading" secondItem="Hog-0X-qPE" secondAttribute="leading" constant="12" id="IK5-CR-YJM"/>
-                                <constraint firstAttribute="trailing" secondItem="tB6-Ee-EHR" secondAttribute="trailing" constant="12" id="wcN-kE-iUn"/>
+                                <constraint firstItem="C2d-zD-wtP" firstAttribute="top" secondItem="Hog-0X-qPE" secondAttribute="top" constant="12" id="34S-Fv-Pmj"/>
+                                <constraint firstItem="J1c-X9-gT5" firstAttribute="leading" secondItem="Hog-0X-qPE" secondAttribute="leading" constant="12" id="7oD-Rf-FQu"/>
+                                <constraint firstItem="J1c-X9-gT5" firstAttribute="centerY" secondItem="Hog-0X-qPE" secondAttribute="centerY" id="88i-D6-dee"/>
+                                <constraint firstItem="C2d-zD-wtP" firstAttribute="leading" secondItem="J1c-X9-gT5" secondAttribute="trailing" constant="12" id="KLH-Ey-Pr1"/>
+                                <constraint firstAttribute="trailing" secondItem="C2d-zD-wtP" secondAttribute="trailing" constant="12" id="fdV-yT-Iyh"/>
+                                <constraint firstAttribute="bottom" secondItem="C2d-zD-wtP" secondAttribute="bottom" constant="12" id="vhY-h0-HrX"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
