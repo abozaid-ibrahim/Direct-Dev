@@ -32,13 +32,15 @@ extension StyledActionBar where Self: UIViewController {
 //        navigationController?.navigationBar.isTranslucent = false
         navigationBar.shadowImage = UIImage()
         navigationBar.setYellowGradient()
-        navigationBar.titleTextAttributes = [.font: UIFont(name: AppFonts.boldFont, size: 24)!,
+        navigationBar.titleTextAttributes = [.font: UIFont(name: AppFonts.boldFont, size: 20)!,
                                              .foregroundColor: UIColor.white]
         switch style {
         case let .withTitle(title):
             navigationBar.topItem?.title = title
+            self.title =  title
         case let .withTitleAndX(title):
             navigationBar.topItem?.title = title
+              self.title =  title
         case let .withTitleAndBack(title):
             navigationBar.topItem?.title = title
         case .withX:

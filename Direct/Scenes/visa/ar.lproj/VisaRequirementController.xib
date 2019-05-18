@@ -80,6 +80,9 @@
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
                                             <real key="value" value="10"/>
                                         </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">
+                                            <integer key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
                                         <action selector="requestAction:" destination="-1" eventType="touchUpInside" id="J4S-fG-6L5"/>

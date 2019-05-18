@@ -25,10 +25,10 @@
                     <rect key="frame" x="12" y="108" width="390" height="776"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hog-0X-qPE" userLabel="alert">
-                            <rect key="frame" x="12" y="12" width="366" height="85"/>
+                            <rect key="frame" x="12" y="12" width="366" height="73"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2d-zD-wtP">
-                                    <rect key="frame" x="49" y="12" width="305" height="61"/>
+                                    <rect key="frame" x="49" y="6" width="305" height="61"/>
                                     <string key="text">صاحب كشف الحساب والتعريف بالراتب ليس بالضرورة أن يكون أحد المسافرين
 </string>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -36,7 +36,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alert" translatesAutoresizingMaskIntoConstraints="NO" id="J1c-X9-gT5">
-                                    <rect key="frame" x="12" y="30" width="25" height="25"/>
+                                    <rect key="frame" x="12" y="24" width="25" height="25"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="6a4-g9-rTn"/>
                                         <constraint firstAttribute="height" constant="25" id="6aN-lt-rzS"/>
@@ -44,14 +44,14 @@
                                     </constraints>
                                 </imageView>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" red="0.99607843137254903" green="0.58039215686274503" blue="0.14901960784313725" alpha="0.5" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstItem="C2d-zD-wtP" firstAttribute="top" secondItem="Hog-0X-qPE" secondAttribute="top" constant="12" id="34S-Fv-Pmj"/>
+                                <constraint firstItem="C2d-zD-wtP" firstAttribute="top" secondItem="Hog-0X-qPE" secondAttribute="top" constant="6" id="34S-Fv-Pmj"/>
                                 <constraint firstItem="J1c-X9-gT5" firstAttribute="leading" secondItem="Hog-0X-qPE" secondAttribute="leading" constant="12" id="7oD-Rf-FQu"/>
                                 <constraint firstItem="J1c-X9-gT5" firstAttribute="centerY" secondItem="Hog-0X-qPE" secondAttribute="centerY" id="88i-D6-dee"/>
                                 <constraint firstItem="C2d-zD-wtP" firstAttribute="leading" secondItem="J1c-X9-gT5" secondAttribute="trailing" constant="12" id="KLH-Ey-Pr1"/>
                                 <constraint firstAttribute="trailing" secondItem="C2d-zD-wtP" secondAttribute="trailing" constant="12" id="fdV-yT-Iyh"/>
-                                <constraint firstAttribute="bottom" secondItem="C2d-zD-wtP" secondAttribute="bottom" constant="12" id="vhY-h0-HrX"/>
+                                <constraint firstAttribute="bottom" secondItem="C2d-zD-wtP" secondAttribute="bottom" constant="6" id="vhY-h0-HrX"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
@@ -66,7 +66,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="her-5I-oJ4">
-                            <rect key="frame" x="12" y="117" width="366" height="647"/>
+                            <rect key="frame" x="12" y="105" width="366" height="659"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cLD-IT-6Hw">
                                     <rect key="frame" x="20" y="12" width="326" height="310"/>
@@ -117,7 +117,7 @@
                                     </constraints>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggg-fF-lVs">
-                                    <rect key="frame" x="12" y="605" width="342" height="30"/>
+                                    <rect key="frame" x="12" y="617" width="342" height="30"/>
                                     <state key="normal" title="تابع للمتكفل الثاني "/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">
@@ -138,6 +138,11 @@
                                 <constraint firstAttribute="trailing" secondItem="ggg-fF-lVs" secondAttribute="trailing" constant="12" id="d2q-AD-DOu"/>
                                 <constraint firstAttribute="bottom" secondItem="ggg-fF-lVs" secondAttribute="bottom" constant="12" id="zcv-3e-xPY"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
                     <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -31,6 +31,7 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
     override func viewDidLoad() {
         super.viewDidLoad()
         enableSwipeUpToDismiss()
+        title = "دايركت فيزا"
 
         checkoutFooter.action = { [weak self] in
             try! AppNavigator().push(.paymentMethod)
