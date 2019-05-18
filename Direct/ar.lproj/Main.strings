@@ -1,0 +1,48 @@
+
+/* Class = "UITabBarItem"; title = "طلباتي"; ObjectID = "31F-ed-mth"; */
+"31F-ed-mth.title" = "طلباتي";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "4Qt-uq-KFN"; */
+"4Qt-uq-KFN.title" = "Item";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "68g-c6-7Mg"; */
+"68g-c6-7Mg.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "BmK-0y-5j6"; */
+"BmK-0y-5j6.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "حسابي"; ObjectID = "C27-47-LS7"; */
+"C27-47-LS7.title" = "حسابي";
+
+/* Class = "UITabBarItem"; title = "بكجات"; ObjectID = "It3-cK-2n6"; */
+"It3-cK-2n6.title" = "بكجات";
+
+/* Class = "UILabel"; text = "بكجات"; ObjectID = "Jyh-uK-bTQ"; */
+"Jyh-uK-bTQ.text" = "بكجات";
+
+/* Class = "UITabBarItem"; title = "مساعدة"; ObjectID = "QVa-gB-goh"; */
+"QVa-gB-goh.title" = "مساعدة";
+
+/* Class = "UILabel"; text = "عن دايركت فيرا"; ObjectID = "UiM-DV-m6V"; */
+"UiM-DV-m6V.text" = "عن دايركت فيرا";
+
+/* Class = "UILabel"; text = "الى اين تود السفر"; ObjectID = "Zpc-oo-kAD"; */
+"Zpc-oo-kAD.text" = "الى اين تود السفر";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bOV-L1-szH"; */
+"bOV-L1-szH.text" = "Label";
+
+/* Class = "UILabel"; text = "اهلاً بك"; ObjectID = "kHZ-pe-Ztw"; */
+"kHZ-pe-Ztw.text" = "اهلاً بك";
+
+/* Class = "UILabel"; text = "تأشيرات"; ObjectID = "qiM-uw-bq5"; */
+"qiM-uw-bq5.text" = "تأشيرات";
+
+/* Class = "UILabel"; text = "معاهد"; ObjectID = "vtD-K9-o1t"; */
+"vtD-K9-o1t.text" = "معاهد";
+
+/* Class = "UIButton"; normalTitle = "سجل الدخول / انشئ حساب"; ObjectID = "z95-fp-EAL"; */
+"z95-fp-EAL.normalTitle" = "سجل الدخول / انشئ حساب";
+
+/* Class = "UITabBarItem"; title = "بحث"; ObjectID = "zDX-zY-UOx"; */
+"zDX-zY-UOx.title" = "بحث";

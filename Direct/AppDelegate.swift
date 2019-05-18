@@ -15,9 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setRootController()
         setupGlobalAppearance()
+        setLanguage()
         return true
     }
+    private func setLanguage(){
+        UserDefaults.standard.set(["ar"], forKey: "AppleLanguages")
+        UserDefaults.standard.synchronize()
 
+    }
     func setupGlobalAppearance() {
         window?.tintColor = UIColor.white
         // global Appearance settings

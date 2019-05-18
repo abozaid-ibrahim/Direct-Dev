@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = "اذكر بعض الدول التي سافرت إليها اخر 5 سنوات"; ObjectID = "19F-2U-yUz"; */
+"19F-2U-yUz.text" = "اذكر بعض الدول التي سافرت إليها اخر 5 سنوات";
+
+/* Class = "UISegmentedControl"; 447-Qt-seR.segmentTitles[0] = "لا"; ObjectID = "447-Qt-seR"; */
+"447-Qt-seR.segmentTitles[0]" = "لا";
+
+/* Class = "UISegmentedControl"; 447-Qt-seR.segmentTitles[1] = "نعم "; ObjectID = "447-Qt-seR"; */
+"447-Qt-seR.segmentTitles[1]" = "نعم ";
+
+/* Class = "UILabel"; text = "هل سافرت الى بريطانيا في العشر سنوات الاخيرة ؟"; ObjectID = "HtG-hg-crn"; */
+"HtG-hg-crn.text" = "هل سافرت الى بريطانيا في العشر سنوات الاخيرة ؟";
+
+/* Class = "UILabel"; text = "معلومات الأم"; ObjectID = "SWR-Ms-1tq"; */
+"SWR-Ms-1tq.text" = "معلومات الأم";
+
+/* Class = "UIButton"; normalTitle = "تابع "; ObjectID = "aHw-JG-dWw"; */
+"aHw-JG-dWw.normalTitle" = "تابع ";
+
+/* Class = "UISegmentedControl"; adT-BP-weu.segmentTitles[0] = "لا"; ObjectID = "adT-BP-weu"; */
+"adT-BP-weu.segmentTitles[0]" = "لا";
+
+/* Class = "UISegmentedControl"; adT-BP-weu.segmentTitles[1] = "نعم "; ObjectID = "adT-BP-weu"; */
+"adT-BP-weu.segmentTitles[1]" = "نعم ";
+
+/* Class = "UILabel"; text = "المعلومات الشخصية"; ObjectID = "llM-go-j9B"; */
+"llM-go-j9B.text" = "المعلومات الشخصية";
+
+/* Class = "UILabel"; text = "هل سبق وحصلت على تأشيرة لبريطانيا من قبل ؟"; ObjectID = "tvZ-3h-drC"; */
+"tvZ-3h-drC.text" = "هل سبق وحصلت على تأشيرة لبريطانيا من قبل ؟";
