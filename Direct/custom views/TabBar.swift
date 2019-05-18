@@ -51,19 +51,32 @@ class TabBar: UIView {
             view.alignment = .fill
             view.axis = .vertical
             view.spacing = 5
-            view.rx.tapGesture().asObservable().skip(1).subscribe({ _ in
+            view.rx.tapGesture().asObservable().skip(1).subscribe { _ in
                 tab.1()
                 for sep in self.tabsSep {
                     sep.alpha = 0.0
                 }
                 sel.alpha = 1.0
 
-            }).disposed(by: bag)
+            }.disposed(by: bag)
             tabsSep.append(sel)
             stackContainer.addArrangedSubview(view)
         }
+        // set default selection 1
+        setFirstDefaultSelector()
         addSubview(stackContainer)
         stackContainer.sameBoundsTo(parentView: self)
+    }
+
+    private func setFirstDefaultSelector() {
+        for sep in tabsSep.enumerated() {
+            if sep.offset == 0 {
+                sep.element.alpha = 1.0
+
+            } else {
+                sep.element.alpha = 0.0
+            }
+        }
     }
 
     override init(frame: CGRect) {

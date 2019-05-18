@@ -54,7 +54,7 @@
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8on-j3-pVY">
-                    <rect key="frame" x="130" y="217" width="276" height="50"/>
+                    <rect key="frame" x="8" y="217" width="276" height="50"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="ZMf-73-oW1"/>
@@ -66,6 +66,7 @@
                 <constraint firstItem="2ud-zc-VxG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="0tN-hW-3qD"/>
                 <constraint firstItem="2ud-zc-VxG" firstAttribute="top" secondItem="dxX-eo-Gcm" secondAttribute="bottom" constant="12" id="5Ds-Ro-Foo"/>
                 <constraint firstItem="8on-j3-pVY" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="2:3" id="IE7-Ac-Ueb"/>
+                <constraint firstItem="8on-j3-pVY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="MNK-bo-yil"/>
                 <constraint firstItem="8on-j3-pVY" firstAttribute="top" secondItem="2ud-zc-VxG" secondAttribute="bottom" constant="12" id="cPP-BJ-j9X"/>
                 <constraint firstItem="dxX-eo-Gcm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="e3X-n8-blJ"/>
                 <constraint firstItem="Ocj-Lo-aRo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12" id="ikN-8n-lH6"/>
@@ -74,7 +75,6 @@
                 <constraint firstAttribute="trailing" secondItem="Ocj-Lo-aRo" secondAttribute="trailing" constant="12" id="qmx-mf-xYy"/>
                 <constraint firstAttribute="bottom" secondItem="Ocj-Lo-aRo" secondAttribute="bottom" constant="12" id="rgS-FF-lLz"/>
                 <constraint firstAttribute="trailing" secondItem="dxX-eo-Gcm" secondAttribute="trailing" id="tTw-RQ-Ymd"/>
-                <constraint firstAttribute="trailing" secondItem="8on-j3-pVY" secondAttribute="trailing" constant="8" id="wWe-85-S3b"/>
                 <constraint firstItem="Ocj-Lo-aRo" firstAttribute="top" secondItem="8on-j3-pVY" secondAttribute="bottom" constant="8" id="yHV-9l-VzR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
