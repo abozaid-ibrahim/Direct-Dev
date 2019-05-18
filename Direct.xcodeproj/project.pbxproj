@@ -98,6 +98,7 @@
 		6C87FAE12270C75100AFE485 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C87FADF2270C75100AFE485 /* LoginViewController.xib */; };
 		6C87FAE42270C75F00AFE485 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C87FAE22270C75F00AFE485 /* SignupViewController.swift */; };
 		6C87FAE52270C75F00AFE485 /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C87FAE32270C75F00AFE485 /* SignupViewController.xib */; };
+		6C90276E228F88CC00B41705 /* UploadField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C90276D228F88CC00B41705 /* UploadField.swift */; };
 		6CA040B62281BE0300619B6F /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA040B52281BE0300619B6F /* FloatingTextField.swift */; };
 		6CB2A8BC228CAD8200A78541 /* AboutUsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB2A8BA228CAD8200A78541 /* AboutUsTableCell.swift */; };
 		6CB2A8BD228CAD8200A78541 /* AboutUsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB2A8BB228CAD8200A78541 /* AboutUsTableCell.xib */; };
@@ -276,6 +277,7 @@
 		6C87FADF2270C75100AFE485 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		6C87FAE22270C75F00AFE485 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		6C87FAE32270C75F00AFE485 /* SignupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
+		6C90276D228F88CC00B41705 /* UploadField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadField.swift; sourceTree = "<group>"; };
 		6CA040B52281BE0300619B6F /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
 		6CB2A8BA228CAD8200A78541 /* AboutUsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsTableCell.swift; sourceTree = "<group>"; };
 		6CB2A8BB228CAD8200A78541 /* AboutUsTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutUsTableCell.xib; sourceTree = "<group>"; };
@@ -650,6 +652,7 @@
 				6CBD17DA228BCB7300144B6C /* PaddingLabel.swift */,
 				6CF75E9E228BD8C900009BAB /* Progress.swift */,
 				6C1C6064228E4729006490CB /* TabBar.swift */,
+				6C90276D228F88CC00B41705 /* UploadField.swift */,
 			);
 			path = "custom views";
 			sourceTree = "<group>";
@@ -1184,6 +1187,7 @@
 				6C5DE7782277330D001A9FB6 /* CountryTableCell.swift in Sources */,
 				6CF3E1B322725799007488BA /* Binder.swift in Sources */,
 				6C5FDA4D2270816B00ABA39B /* AppDelegate.swift in Sources */,
+				6C90276E228F88CC00B41705 /* UploadField.swift in Sources */,
 				6CF3E17E2271E702007488BA /* User.swift in Sources */,
 				6CF3E19422724D0C007488BA /* HomeCollectionSection.swift in Sources */,
 				6C77826E227A9FB2001926B2 /* SuccessVisaRequestController.swift in Sources */,

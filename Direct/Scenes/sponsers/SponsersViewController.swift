@@ -32,9 +32,9 @@ class SponsersViewController: UIViewController {
 
         })
 
-        let tabar = TabBar(tabs: [tab1, tab2, tab3])
-        tabar.addSubview(tabbar)
-        tabar.sameBoundsTo(parentView: tabbar)
+        let tabbarView = TabBar(tabs: [tab1, tab2, tab3])
+        tabbar.addSubview(tabbarView)
+        tabbarView.sameBoundsTo(parentView: tabbar)
     }
 
     func setSponserName() {
