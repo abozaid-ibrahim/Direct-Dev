@@ -22,6 +22,7 @@
 		6C2CFB9F22789E0200D23CF4 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CFB9D22789E0200D23CF4 /* PaymentViewController.swift */; };
 		6C2CFBA322789F6100D23CF4 /* PaymentMethodTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CFBA122789F6100D23CF4 /* PaymentMethodTableCell.swift */; };
 		6C2CFBA72278A1C600D23CF4 /* PaymentBranchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CFBA52278A1C600D23CF4 /* PaymentBranchTableCell.swift */; };
+		6C321DDC22907F730013F236 /* TagsView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C321DDB22907F640013F236 /* TagsView.framework */; };
 		6C557557228BA52900BAE5E2 /* View+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C557556228BA52900BAE5E2 /* View+Colors.swift */; };
 		6C557565228BAC6100BAE5E2 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6C55755C228BAC6000BAE5E2 /* OFL.txt */; };
 		6C557566228BAC6100BAE5E2 /* Cairo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C55755D228BAC6100BAE5E2 /* Cairo-Regular.ttf */; };
@@ -159,6 +160,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6C321DDA22907F640013F236 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C321DD622907F640013F236 /* TagsView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6C321DC222907EA50013F236;
+			remoteInfo = TagsView;
+		};
 		6C5FDA5E2270816D00ABA39B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6C5FDA412270816A00ABA39B /* Project object */;
@@ -195,6 +203,7 @@
 		6C2CFB9D22789E0200D23CF4 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		6C2CFBA122789F6100D23CF4 /* PaymentMethodTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodTableCell.swift; sourceTree = "<group>"; };
 		6C2CFBA52278A1C600D23CF4 /* PaymentBranchTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentBranchTableCell.swift; sourceTree = "<group>"; };
+		6C321DD622907F640013F236 /* TagsView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TagsView.xcodeproj; path = ../TagsView/TagsView.xcodeproj; sourceTree = "<group>"; };
 		6C557556228BA52900BAE5E2 /* View+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Colors.swift"; sourceTree = "<group>"; };
 		6C55755C228BAC6000BAE5E2 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		6C55755D228BAC6100BAE5E2 /* Cairo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Regular.ttf"; sourceTree = "<group>"; };
@@ -348,6 +357,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C321DDC22907F730013F236 /* TagsView.framework in Frameworks */,
 				EBD586B3E64D029BAC2A9DC2 /* Pods_Direct.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +445,14 @@
 			path = payment;
 			sourceTree = "<group>";
 		};
+		6C321DD722907F640013F236 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6C321DDB22907F640013F236 /* TagsView.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		6C55755A228BAC3F00BAE5E2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -485,6 +503,7 @@
 		6C5FDA402270816A00ABA39B = {
 			isa = PBXGroup;
 			children = (
+				6C321DD622907F640013F236 /* TagsView.xcodeproj */,
 				6C5FDA4B2270816B00ABA39B /* Direct */,
 				6C5FDA602270816D00ABA39B /* DirectTests */,
 				6C5FDA6B2270816D00ABA39B /* DirectUITests */,
@@ -914,6 +933,12 @@
 			mainGroup = 6C5FDA402270816A00ABA39B;
 			productRefGroup = 6C5FDA4A2270816B00ABA39B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6C321DD722907F640013F236 /* Products */;
+					ProjectRef = 6C321DD622907F640013F236 /* TagsView.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				6C5FDA482270816A00ABA39B /* Direct */,
@@ -922,6 +947,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		6C321DDB22907F640013F236 /* TagsView.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = TagsView.framework;
+			remoteRef = 6C321DDA22907F640013F236 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6C5FDA472270816A00ABA39B /* Resources */ = {
