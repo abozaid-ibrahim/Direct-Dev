@@ -24,21 +24,21 @@ extension StyledActionBar where Self: UIViewController {
             return
         }
         navigationBar.isHidden = false
+        // hide back button ttilel
+        let BarButtonItemAppearance = UIBarButtonItem.appearance()
+        BarButtonItemAppearance.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: .normal)
 
         navigationBar.barTintColor = UIColor.appPumpkinOrange
 //        navigationController?.navigationBar.isTranslucent = false
         navigationBar.shadowImage = UIImage()
         navigationBar.setYellowGradient()
-//        navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         navigationBar.titleTextAttributes = [.font: UIFont(name: AppFonts.boldFont, size: 24)!,
                                              .foregroundColor: UIColor.white]
         switch style {
         case let .withTitle(title):
-            navigationBar.backItem?.title = ""
             navigationBar.topItem?.title = title
         case let .withTitleAndX(title):
             navigationBar.topItem?.title = title
-            navigationBar.backItem?.title = ""
         case let .withTitleAndBack(title):
             navigationBar.topItem?.title = title
         case .withX:
