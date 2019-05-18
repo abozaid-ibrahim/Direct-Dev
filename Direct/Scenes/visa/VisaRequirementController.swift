@@ -16,8 +16,7 @@ final class VisaRequirementController: UIViewController, PanModalPresentable, St
     let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Double>>(
         configureCell: { _, tv, indexPath, element in
             let cell = tv.dequeueReusableCell(withIdentifier: VisaRequirementTableCell.cellId) as! VisaRequirementTableCell
-            //            cell.textLabel?.text = "\(element) @ row \(indexPath.row)"
-            cell.textlbl.text = "\(element) @ row \(indexPath.row)"
+            cell.textlbl.text = "الجواز الأصل"
             return cell
         },
         titleForHeaderInSection: { dataSource, sectionIndex in
@@ -76,7 +75,7 @@ extension VisaRequirementController: UITableViewDelegate {
                 2.0,
                 3.0,
             ]),
-            SectionModel(model: "Second section", items: [
+            SectionModel(model: "تتطلب بصمة", items: [
                 1.0,
                 2.0,
                 3.0,
@@ -117,9 +116,8 @@ extension VisaRequirementController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        print("\(tableView.numberOfSections) - \(section)")
         let header = Bundle.main.loadNibNamed("RequireVisaSectionHeader", owner: nil)!.first as! RequireVisaSectionHeader
-        header.setData(text: "Fuck", img: #imageLiteral(resourceName: "p"))
+        header.setData(text: "المدة المتوقعة لصدور التأشيرة", img: #imageLiteral(resourceName: "icons8Fingerprint"))
         return header
     }
 }

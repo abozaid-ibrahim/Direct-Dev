@@ -23,27 +23,27 @@
                         <rect key="frame" x="10" y="0.0" width="300" height="43.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9d8-WZ-3BI">
-                                <rect key="frame" x="0.0" y="17" width="10" height="10"/>
+                                <rect key="frame" x="0.0" y="19" width="6" height="6"/>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="10" id="Chz-vr-AC4"/>
-                                    <constraint firstAttribute="width" constant="10" id="lyG-ed-Jaf"/>
+                                    <constraint firstAttribute="height" constant="6" id="Chz-vr-AC4"/>
+                                    <constraint firstAttribute="width" constant="6" id="lyG-ed-Jaf"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MyM-BD-vOV">
-                                <rect key="frame" x="20" y="11.5" width="245" height="20.5"/>
+                                <rect key="frame" x="16" y="11.5" width="254" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group19" translatesAutoresizingMaskIntoConstraints="NO" id="W1M-XR-Da2">
-                                <rect key="frame" x="275" y="9.5" width="25" height="25"/>
+                                <rect key="frame" x="280" y="12" width="20" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="UC1-9Y-SLB"/>
-                                    <constraint firstAttribute="width" constant="25" id="isQ-0n-sdv"/>
+                                    <constraint firstAttribute="width" secondItem="W1M-XR-Da2" secondAttribute="height" id="20K-a8-p5d"/>
+                                    <constraint firstAttribute="height" constant="20" id="UC1-9Y-SLB"/>
                                 </constraints>
                             </imageView>
                         </subviews>
