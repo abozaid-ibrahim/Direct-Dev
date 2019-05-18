@@ -20,13 +20,13 @@ final class MyAccountController: UIViewController, PanModalPresentable {
         super.viewDidLoad()
         tableView.registerNib(AboutUsTableCell.cellId)
         Observable<[String]>.just(dataList)
-            .bind(to: tableView.rx.items(cellIdentifier: AboutUsTableCell.cellId)) { _, model, cell in
+            .bind(to: tableView.rx.items(cellIdentifier: AboutUsTableCell.cellId)) { _, _, cell in
                 let mycell = (cell as! AboutUsTableCell)
 //                mycell.setCellData(model)
             }.disposed(by: disposeBag)
     }
-    @IBAction func login(_ sender: Any) {
-        try! AppNavigator().push(.loginView)
 
+    @IBAction func login(_: Any) {
+        try! AppNavigator().push(.loginView)
     }
 }

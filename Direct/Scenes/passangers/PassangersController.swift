@@ -15,7 +15,7 @@ class PassangersController: UIViewController {
         title = "معلومات المسافرين"
     }
 
-    @IBAction func followAction(_ sender: Any) {
+    @IBAction func followAction(_: Any) {
         try! AppNavigator().push(.successVisaReqScreen)
     }
 }

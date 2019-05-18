@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-extension UILabel{
+extension UILabel {
     var padding: CGFloat? {
         set {
             setValue(newValue, forKeyPath: "textColor")

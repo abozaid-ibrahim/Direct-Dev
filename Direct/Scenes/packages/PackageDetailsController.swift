@@ -9,13 +9,11 @@
 import UIKit
 
 class PackageDetailsController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
-    @IBAction func bookNowAction(_ sender: Any) {
+    @IBAction func bookNowAction(_: Any) {
         try? AppNavigator().push(.successPackage)
     }
 }

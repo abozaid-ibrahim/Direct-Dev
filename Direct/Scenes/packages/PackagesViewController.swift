@@ -6,49 +6,47 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
-import UIKit
 import RxSwift
+import UIKit
 
-final class PackagesViewController: UIViewController,SwipeUpDismissable {
-     let disposeBag = DisposeBag()
+final class PackagesViewController: UIViewController, SwipeUpDismissable {
+    let disposeBag = DisposeBag()
     var dismessed: PublishSubject<Bool> = PublishSubject()
     var initialTouchPoint: CGPoint = CGPoint(x: 0, y: 0)
-    var defaultFrame:CGRect?{
-        didSet{
-            self.view.frame = defaultFrame ?? CGRect.zero
+    var defaultFrame: CGRect? {
+        didSet {
+            view.frame = defaultFrame ?? CGRect.zero
         }
     }
-    @IBOutlet weak var tableView: UITableView!
-    var dismissable:Bool?
-    
+
+    @IBOutlet var tableView: UITableView!
+    var dismissable: Bool?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        if dismissable ?? false{
+        if dismissable ?? false {
             enableSwipeUpToDismiss()
-            
         }
         setupTableDataSource()
         setOnSelect()
     }
-    private func setupTableDataSource(){
+
+    private func setupTableDataSource() {
         tableView.registerNib(PackagesTableCell.cellId)
         Observable<[String]>.just(dataList)
-            .bind(to: tableView.rx.items(cellIdentifier: PackagesTableCell.cellId)) { row, model, cell  in
+            .bind(to: tableView.rx.items(cellIdentifier: PackagesTableCell.cellId)) { _, _, cell in
                 let mycell = (cell as! PackagesTableCell)
             }.disposed(by: disposeBag)
     }
-    
-    private func setOnSelect()  {
-        tableView.rx.itemSelected.asObservable().subscribe({[unowned self] event in
-            switch event.event{
-            case .next(let indexPath):
+
+    private func setOnSelect() {
+        tableView.rx.itemSelected.asObservable().subscribe({ [unowned self] event in
+            switch event.event {
+            case let .next(indexPath):
                 try! AppNavigator().push(.packageDetails)
             default:
                 break
-                
             }
         }).disposed(by: disposeBag)
     }
-    
 }
-

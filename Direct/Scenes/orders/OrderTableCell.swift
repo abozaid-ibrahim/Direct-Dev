@@ -8,20 +8,16 @@
 
 import UIKit
 
-class OrderTableCell: UITableViewCell ,TableCell{
+class OrderTableCell: UITableViewCell, TableCell {
     static var cellId: String = "OrderTableCell"
-    
-    func setCellData(_ model: String) {
-        
-    }
-    
+
+    func setCellData(_: String) {}
+
     typealias CellDataModel = String
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()
-selectionStyle = .none
-        
+        selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -29,5 +25,4 @@ selectionStyle = .none
 
         // Configure the view for the selected state
     }
-    
 }

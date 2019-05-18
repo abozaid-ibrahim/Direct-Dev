@@ -37,7 +37,7 @@ final class InstitutesListController: UIViewController, PanModalPresentable {
     private func setupTableOnSelect() {
         tableView.rx.itemSelected.asObservable().subscribe { [unowned self] event in
             switch event.event {
-            case .next(let indexPath):
+            case let .next(indexPath):
                 try! AppNavigator().push(.instituteDetails)
             default:
                 break

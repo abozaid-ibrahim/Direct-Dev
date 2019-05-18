@@ -17,8 +17,9 @@ enum CellStyle {
 
 final class SelectableTableSheet: UIViewController, PanModalPresentable {
     var panScrollable: UIScrollView? {
-        return nil//tableView
+        return nil //tableView
     }
+
     var shortFormHeight: PanModalHeight = .contentHeight(330)
 
     // set these var from outside
@@ -27,35 +28,35 @@ final class SelectableTableSheet: UIViewController, PanModalPresentable {
     // listen to selected
     var selectedItem = PublishSubject<String>()
     @IBOutlet var tableView: UITableView!
-    
+
     private let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setTableDataSource()
         setONSelect()
-        
     }
-    private func setONSelect(){
-        tableView.rx.itemSelected.asObservable().subscribe({[unowned self] event in
-            switch event.event{
-            case .next(let indexPath):
+
+    private func setONSelect() {
+        tableView.rx.itemSelected.asObservable().subscribe({ [unowned self] event in
+            switch event.event {
+            case let .next(indexPath):
                 self.selectedItem.onNext(self.data?[indexPath.row] ?? "")
                 self.dismiss(animated: true, completion: nil)
             default:
                 break
-                
             }
         }).disposed(by: disposeBag)
     }
-    private func setTableDataSource(){
+
+    private func setTableDataSource() {
         guard let datasource = data else {
             return
         }
         switch style {
         case .textCenter:
             tableView.register(UINib(nibName: TextTableCell.cellId, bundle: nil), forCellReuseIdentifier: TextTableCell.cellId)
-            
+
             Observable<[String]>.just(datasource)
                 .bind(to: tableView.rx.items(cellIdentifier: TextTableCell.cellId)) { _, model, cell in
                     let mycell = (cell as! TextTableCell)
@@ -63,7 +64,7 @@ final class SelectableTableSheet: UIViewController, PanModalPresentable {
                 }.disposed(by: disposeBag)
         case .textWithArrow:
             tableView.register(UINib(nibName: SingleRowTableCell.cellId, bundle: nil), forCellReuseIdentifier: SingleRowTableCell.cellId)
-            
+
             Observable<[String]>.just(datasource)
                 .bind(to: tableView.rx.items(cellIdentifier: SingleRowTableCell.cellId)) { _, model, cell in
                     let mycell = (cell as! SingleRowTableCell)

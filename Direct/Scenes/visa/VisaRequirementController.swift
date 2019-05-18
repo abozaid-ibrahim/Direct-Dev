@@ -14,7 +14,7 @@ import UIKit
 
 final class VisaRequirementController: UIViewController, PanModalPresentable, StyledActionBar {
     let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Double>>(
-        configureCell: { _, tv, indexPath, element in
+        configureCell: { _, tv, _, _ in
             let cell = tv.dequeueReusableCell(withIdentifier: VisaRequirementTableCell.cellId) as! VisaRequirementTableCell
             cell.textlbl.text = "الجواز الأصل"
             return cell
@@ -115,7 +115,7 @@ extension VisaRequirementController: UITableViewDelegate {
         return 45
     }
 
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_: UITableView, viewForHeaderInSection _: Int) -> UIView? {
         let header = Bundle.main.loadNibNamed("RequireVisaSectionHeader", owner: nil)!.first as! RequireVisaSectionHeader
         header.setData(text: "المدة المتوقعة لصدور التأشيرة", img: #imageLiteral(resourceName: "icons8Fingerprint"))
         return header

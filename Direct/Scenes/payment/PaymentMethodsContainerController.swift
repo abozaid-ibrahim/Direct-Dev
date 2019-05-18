@@ -16,36 +16,37 @@ final class PaymentMethodsContainerController: UIViewController {
         super.viewDidLoad()
         tableView.registerNib(PaymentBranchTableCell.cellId)
         tableView.registerNib(BankTableCell.cellId)
-        self.setupTableData()
-setupTabbar()
-       
+        setupTableData()
+        setupTabbar()
     }
-    private func setupTabbar(){
-        let tab1 = ("حوالة بنكية", {[weak self] in
-            self?.tableView.dataSource =  nil
-            self?.tableView.delegate =  nil
+
+    private func setupTabbar() {
+        let tab1 = ("حوالة بنكية", { [weak self] in
+            self?.tableView.dataSource = nil
+            self?.tableView.delegate = nil
             self?.setupTableData()
         })
-        let tab2 = ("في أحد فروعنا", {[weak self] in
-            self?.tableView.dataSource =  nil
-            self?.tableView.delegate =  nil
+        let tab2 = ("في أحد فروعنا", { [weak self] in
+            self?.tableView.dataSource = nil
+            self?.tableView.delegate = nil
             self?.setupBranchTableData()
         })
-        
+
         let tabbar = TabBar(tabs: [tab1, tab2])
         tabsContainer.addSubview(tabbar)
         tabbar.sameBoundsTo(parentView: tabsContainer)
     }
+
     @IBOutlet var tableView: UITableView!
     private let disposeBag = DisposeBag()
-    
+
     private func setupTableData() {
         banksData.bind(to: tableView.rx.items(cellIdentifier: BankTableCell.cellId)) { _, _, cell in
             let mycell = (cell as! BankTableCell)
 //                mycell.setCellData(model)
         }.disposed(by: disposeBag)
     }
-    
+
     private func setupBranchTableData() {
         branchsData.bind(to: tableView.rx.items(cellIdentifier: PaymentBranchTableCell.cellId)) { _, _, cell in
             let mycell = (cell as! PaymentBranchTableCell)

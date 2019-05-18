@@ -9,12 +9,7 @@
 import UIKit
 
 class OrderDetailsController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-
-
-
 }

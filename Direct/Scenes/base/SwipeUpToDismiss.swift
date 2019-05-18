@@ -9,42 +9,42 @@
 import Foundation
 
 import PanModal
-import UIKit
-import RxSwift
 import RxCocoa
 import RxGesture
+import RxSwift
+import UIKit
 
-protocol SwipeUpDismissable:UIViewController {
-    var initialTouchPoint: CGPoint {get set}
-    var defaultFrame:CGRect?{get}
-    var disposeBag:DisposeBag{get}
-    var dismessed: PublishSubject<Bool> {get set}
+protocol SwipeUpDismissable: UIViewController {
+    var initialTouchPoint: CGPoint { get set }
+    var defaultFrame: CGRect? { get }
+    var disposeBag: DisposeBag { get }
+    var dismessed: PublishSubject<Bool> { get set }
     func enableSwipeUpToDismiss()
-    func swipeUpToDismiss(sender:UIPanGestureRecognizer,initialTouchPoint:inout CGPoint,defaultFrame:CGRect?)
+    func swipeUpToDismiss(sender: UIPanGestureRecognizer, initialTouchPoint: inout CGPoint, defaultFrame: CGRect?)
     func dismissWithAnim()
-    
 }
-extension SwipeUpDismissable{
-    func enableSwipeUpToDismiss(){
-        view.rx.panGesture().asObservable().subscribe({sender in
+
+extension SwipeUpDismissable {
+    func enableSwipeUpToDismiss() {
+        view.rx.panGesture().asObservable().subscribe({ sender in
             self.swipeUpToDismiss(sender: sender.element!, initialTouchPoint: &self.initialTouchPoint, defaultFrame: self.defaultFrame)
         }).disposed(by: disposeBag)
         addBottomLine()
     }
-    func addBottomLine(){
+
+    func addBottomLine() {
         let button = UIView()
         button.backgroundColor = .lightGray
         button.cornerRadiusV = 5
-        self.view.addSubview(button)
+        view.addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
         button.heightAnchor.constraint(equalToConstant: 10).isActive = true
         button.widthAnchor.constraint(equalToConstant: 70).isActive = true
-        
     }
 
-    func swipeUpToDismiss(sender:UIPanGestureRecognizer,initialTouchPoint:inout CGPoint,defaultFrame:CGRect?){
+    func swipeUpToDismiss(sender: UIPanGestureRecognizer, initialTouchPoint: inout CGPoint, defaultFrame: CGRect?) {
         let touchPoint = sender.location(in: view?.window)
         if sender.state == UIGestureRecognizer.State.began {
             initialTouchPoint = touchPoint
@@ -54,34 +54,34 @@ extension SwipeUpDismissable{
                 view.frame = CGRect(x: 0, y: newY, width: view.frame.size.width, height: view.frame.size.height)
             }
         } else if sender.state == UIGestureRecognizer.State.ended || sender.state == UIGestureRecognizer.State.cancelled {
-            if    initialTouchPoint.y - touchPoint.y > 100 {
+            if initialTouchPoint.y - touchPoint.y > 100 {
                 UIView.animate(withDuration: 0.3, animations: {
                     let tempY = self.view.bounds.height
                     self.view.frame = CGRect(x: 0, y: -tempY, width: self.view.frame.size.width, height: self.view.frame.size.height)
-                    
+
                 }, completion: { [weak self] _ in
-                    guard let self = self else {return}
-                    
+                    guard let self = self else { return }
+
                     self.dismessed.onNext(true)
                     self.removeFromParent()
                 })
             } else {
-                UIView.animate(withDuration: 0.3, animations: {[weak self] in
-                    guard let self = self , let frame = defaultFrame else {return}
+                UIView.animate(withDuration: 0.3, animations: { [weak self] in
+                    guard let self = self, let frame = defaultFrame else { return }
                     self.view.frame = frame
                 })
             }
         }
-        
     }
-    func dismissWithAnim(){
+
+    func dismissWithAnim() {
         UIView.animate(withDuration: 0.3, animations: {
             let tempY = self.view.bounds.height
             self.view.frame = CGRect(x: 0, y: -tempY, width: self.view.frame.size.width, height: self.view.frame.size.height)
-            
+
         }, completion: { [weak self] _ in
-            guard let self = self else {return}
-            
+            guard let self = self else { return }
+
             self.dismessed.onNext(true)
             self.removeFromParent()
         })

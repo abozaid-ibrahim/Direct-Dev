@@ -15,6 +15,7 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
     var panScrollable: UIScrollView? {
         return branchsTable
     }
+
     @IBOutlet var branchsTable: UITableView!
     @IBOutlet var paymentMethodTable: UITableView!
 
@@ -22,12 +23,13 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "الدفع"
-    setupTables()
+        setupTables()
         checkoutFooter.action = { [weak self] in
             try! AppNavigator().push(.hostsInfoScreen)
         }
     }
-    func setupTables(){
+
+    func setupTables() {
         paymentMethodTable.registerNib(PaymentMethodTableCell.cellId)
         branchsTable.registerNib(PaymentBranchTableCell.cellId)
         Observable<[String]>.just(Array(dataList[0 ... 2]))
@@ -35,13 +37,12 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
                 let mycell = (cell as! PaymentMethodTableCell)
                 //                mycell.setCellData((model,UIImage()))
             }.disposed(by: disposeBag)
-        
+
         Observable<[String]>.just(dataList)
             .bind(to: branchsTable.rx.items(cellIdentifier: PaymentBranchTableCell.cellId)) { _, _, cell in
                 let mycell = (cell as! PaymentBranchTableCell)
                 //                mycell.setCellData((model,UIImage()))
             }.disposed(by: disposeBag)
-        
     }
 }
 

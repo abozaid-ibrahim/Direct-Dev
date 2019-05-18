@@ -11,7 +11,7 @@ import UIKit
 class PackagesTableCell: UITableViewCell, TableCell {
     static var cellId: String = "PackagesTableCell"
 
-    func setCellData(_ model: String) {}
+    func setCellData(_: String) {}
 
     typealias CellDataModel = String
 

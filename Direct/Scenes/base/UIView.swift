@@ -171,13 +171,14 @@ extension UIView {
         let nib = UINib(nibName: name, bundle: bundle)
         return nib.instantiate(withOwner: self, options: nil).first as! UIView
     }
+
     func createGradientLayer() {
-       let  gradientLayer = CAGradientLayer()
-        
-        gradientLayer.frame = self.bounds
-        
+        let gradientLayer = CAGradientLayer()
+
+        gradientLayer.frame = bounds
+
         gradientLayer.colors = [UIColor.red.cgColor, UIColor.yellow.cgColor]
-        
-        self.layer.addSublayer(gradientLayer)
+
+        layer.addSublayer(gradientLayer)
     }
 }

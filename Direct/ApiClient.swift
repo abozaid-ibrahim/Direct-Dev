@@ -11,12 +11,11 @@ import Moya
 import RxOptional
 import RxSwift
 
-class ApiClientFacade{
+class ApiClientFacade {
     //    private let provider = MoyaProvider<CommonAPIs>()
-    
+
     private let provider = MoyaProvider<CommonAPIs>(plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: APIDateFromatter().JSONResponseDataFormatter)])
-    
-    
+
     //    func downloadRepositories(_ username: String) {
     //        provider.request(.zen) { result in
     //            do {
@@ -29,25 +28,20 @@ class ApiClientFacade{
     //            }
     //        }
     //    }
-    func get(){
+    func get() {
         provider.rx.request(.zen).subscribe { event in
             switch event {
-            case .success(let response):
-            // do something with the data
+            case let .success(response):
+                // do something with the data
                 log("scuccess")
-            case .error(let error):
-                log(error)            }
+            case let .error(error):
+                log(error) }
         }
-        
-        
     }
-    
-    
-    
 }
 
-func log(_ value:Any){
+func log(_ value: Any) {
     #if DEBUG
-    print("logger:\(value)")
+        print("logger:\(value)")
     #endif
 }

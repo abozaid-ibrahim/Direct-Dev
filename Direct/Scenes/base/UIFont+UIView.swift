@@ -25,25 +25,24 @@ extension UIFont {
 
 extension UILabel {
     var substituteFontName: String {
-        get { return self.font.fontName }
+        get { return font.fontName }
         set {
-            if self.font != nil{
-            if self.font.fontName.range(of: "-Bd") == nil {
-                self.font = UIFont(name: newValue, size: self.font.pointSize)
+            if font != nil {
+                if font.fontName.range(of: "-Bd") == nil {
+                    font = UIFont(name: newValue, size: font.pointSize)
                 }
-                
-            }else{
-                self.font = UIFont(name: newValue, size: 14)
 
+            } else {
+                font = UIFont(name: newValue, size: 14)
             }
         }
     }
 
     var substituteFontNameBold: String {
-        get { return self.font.fontName }
+        get { return font.fontName }
         set {
-            if self.font.fontName.range(of: "-Bd") != nil {
-                self.font = UIFont(name: newValue, size: self.font.pointSize)
+            if font.fontName.range(of: "-Bd") != nil {
+                font = UIFont(name: newValue, size: font.pointSize)
             }
         }
     }
@@ -51,10 +50,9 @@ extension UILabel {
 
 extension UITextField {
     var substituteFontName: String {
-        get { return self.font!.fontName }
+        get { return font!.fontName }
         set {
-            self.font = UIFont(name: newValue, size: (self.font?.pointSize) ?? 13)
+            font = UIFont(name: newValue, size: (font?.pointSize) ?? 13)
         }
     }
 }
-

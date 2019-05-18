@@ -17,19 +17,19 @@ class HomeCollectionSectionWrapper: UICollectionViewCell {
             self.collectionView.register(UINib(nibName: cellId, bundle: nil), forCellWithReuseIdentifier: cellId)
         }
     }
+
 //
     override func awakeFromNib() {
         super.awakeFromNib()
         collectionView.dataSource = self
-        collectionView.delegate = self//
-        
-        
-       // getdata//
+        collectionView.delegate = self //
+
+        // getdata//
     }
-    func getData(params:Any){
-        ///exd
+
+    func getData(params _: Any) {
+        /// exd
     }
-    
 }
 
 extension HomeCollectionSectionWrapper: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {

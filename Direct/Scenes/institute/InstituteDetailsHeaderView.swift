@@ -8,12 +8,8 @@
 
 import UIKit
 
-class InstituteDetailsHeaderView: UITableViewHeaderFooterView    ,TableCell{
+class InstituteDetailsHeaderView: UITableViewHeaderFooterView, TableCell {
     typealias CellDataModel = String
     static var cellId: String = "InstituteDetailsHeaderView"
-    func setCellData(_ model: String) {
-    
-    }
-
-
+    func setCellData(_: String) {}
 }

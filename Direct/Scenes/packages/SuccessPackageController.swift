@@ -9,8 +9,7 @@
 import UIKit
 
 class SuccessPackageController: UIViewController {
-
-    @IBOutlet weak var paymentMethodsContainer: UIView!
+    @IBOutlet var paymentMethodsContainer: UIView!
     let vc = PaymentMethodsContainerController()
 
     override func viewDidLoad() {

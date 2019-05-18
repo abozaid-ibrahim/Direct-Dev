@@ -8,15 +8,12 @@
 
 import UIKit
 
-class AboutUsTableCell: UITableViewCell,TableCell {
+class AboutUsTableCell: UITableViewCell, TableCell {
     static var cellId: String = "AboutUsTableCell"
-    
-    func setCellData(_ model: String) {
-        
-    }
-    
+
+    func setCellData(_: String) {}
+
     typealias CellDataModel = String
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,7 +22,5 @@ class AboutUsTableCell: UITableViewCell,TableCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
-    
 }

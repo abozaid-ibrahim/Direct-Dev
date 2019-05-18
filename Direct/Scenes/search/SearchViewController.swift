@@ -9,7 +9,7 @@
 import PanModal
 import RxSwift
 import UIKit
-final class SearchViewController: UIViewController, PanModalPresentable,StyledActionBar {
+final class SearchViewController: UIViewController, PanModalPresentable, StyledActionBar {
     var panScrollable: UIScrollView? {
         return tableView
     }
@@ -21,23 +21,22 @@ final class SearchViewController: UIViewController, PanModalPresentable,StyledAc
         setupActionBar(.withTitle("بحث"))
         setupTableView()
     }
-    private func setupTableView(){
+
+    private func setupTableView() {
         tableView.register(UINib(nibName: CountryTableCell.cellId, bundle: nil), forCellReuseIdentifier: CountryTableCell.cellId)
-        
+
         Observable<[String]>.just(dataList)
             .bind(to: tableView.rx.items(cellIdentifier: CountryTableCell.cellId)) { _, model, cell in
                 let mycell = (cell as! CountryTableCell)
-                mycell.setCellData((model, #imageLiteral(resourceName: "united-kingdom") ))
+                mycell.setCellData((model, #imageLiteral(resourceName: "united-kingdom")))
             }.disposed(by: disposeBag)
-        
-        
-        tableView.rx.itemSelected.asObservable().subscribe({[unowned self] event in
-            switch event.event{
-            case .next(let indexPath):
+
+        tableView.rx.itemSelected.asObservable().subscribe({ [unowned self] event in
+            switch event.event {
+            case let .next(indexPath):
                 try! AppNavigator().push(.visaRequirement)
             default:
                 break
-                
             }
         }).disposed(by: disposeBag)
     }

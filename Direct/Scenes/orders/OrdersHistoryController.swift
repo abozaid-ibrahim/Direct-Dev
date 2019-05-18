@@ -6,30 +6,27 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
-import UIKit
 import RxSwift
+import UIKit
 final class OrdersHistoryController: UIViewController {
-    
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var tableView: UITableView!
     private let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableData()
         title = "طلباتي"
     }
-    @IBAction func followStateAction(_ sender: Any) {
-        try! AppNavigator().push(.orderDetails)
 
+    @IBAction func followStateAction(_: Any) {
+        try! AppNavigator().push(.orderDetails)
     }
-    private func setupTableData(){
+
+    private func setupTableData() {
         tableView.registerNib(OrderTableCell.cellId)
         Observable<[String]>.just(dataList)
-            .bind(to: tableView.rx.items(cellIdentifier: OrderTableCell.cellId)) { row, model, cell  in
+            .bind(to: tableView.rx.items(cellIdentifier: OrderTableCell.cellId)) { _, _, _ in
 //                let mycell = (cell as! SingleRowTableCell)
-///                mycell.setCellData(model)
+                ///                mycell.setCellData(model)
             }.disposed(by: disposeBag)
     }
 }
-
-
-

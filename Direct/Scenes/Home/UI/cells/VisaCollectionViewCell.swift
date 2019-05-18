@@ -11,5 +11,5 @@ import UIKit
 class VisaCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
-   }
+    }
 }

@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class SingleRowTableCell: UITableViewCell, TableCell {
     static var cellId: String = "SingleRowTableCell"
 
@@ -21,7 +20,7 @@ class SingleRowTableCell: UITableViewCell, TableCell {
     @IBOutlet private var txtLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-selectionStyle = .none    }
+        selectionStyle = .none }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

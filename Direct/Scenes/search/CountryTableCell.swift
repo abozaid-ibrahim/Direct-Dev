@@ -24,8 +24,8 @@ class CountryTableCell: UITableViewCell, TableCell {
         super.awakeFromNib()
         selectionStyle = .none
         print(">>\(textLbl.font)")
-        //Cairo-Regular
-        //Cairo
+        // Cairo-Regular
+        // Cairo
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -10,10 +10,7 @@ import Foundation
 import UIKit
 
 extension UIView {
-    func setYellowGradient(){
-       setGradient(colors: UIColor.appPumpkinOrange, UIColor.appMango)
+    func setYellowGradient() {
+        setGradient(colors: UIColor.appPumpkinOrange, UIColor.appMango)
     }
-    
-   
-
 }

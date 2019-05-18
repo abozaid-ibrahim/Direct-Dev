@@ -14,10 +14,8 @@ class SuccessVisaRequestController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    @IBAction func followMyOrder(_ sender: Any) {
-        try! AppNavigator().push(.MyOrders)
 
+    @IBAction func followMyOrder(_: Any) {
+        try! AppNavigator().push(.MyOrders)
     }
-    
-  
 }

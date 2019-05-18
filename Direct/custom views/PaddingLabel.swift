@@ -9,6 +9,4 @@
 import UIKit
 
 @IBDesignable
-class EdgeInsetLabel: UILabel {
-   
-}
+class EdgeInsetLabel: UILabel {}
