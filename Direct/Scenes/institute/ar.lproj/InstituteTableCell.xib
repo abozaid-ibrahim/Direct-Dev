@@ -19,14 +19,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="346" height="219.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="509-an-Lil">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="509-an-Lil" userLabel="bg">
                         <rect key="frame" x="8" y="8" width="330" height="203.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SEv-we-e5p">
-                                <rect key="frame" x="0.0" y="0.0" width="330" height="131.5"/>
+                                <rect key="frame" x="12" y="12" width="306" height="107.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="7Ys-4s-nVr">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="131.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="107.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="Iru-V8-86j"/>
                                         </constraints>
@@ -37,7 +37,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfv-W2-ePk">
-                                        <rect key="frame" x="128" y="0.0" width="194" height="61"/>
+                                        <rect key="frame" x="128" y="0.0" width="170" height="81.5"/>
                                         <string key="text">معهد إي تي سي بورنموث - ETC BOURNEMOUTH
 </string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -45,7 +45,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y4U-cK-5I4" customClass="TagView" customModule="TagsView">
-                                        <rect key="frame" x="128" y="69" width="202" height="62.5"/>
+                                        <rect key="frame" x="128" y="89.5" width="178" height="18"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="أفضل الخيارات" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSs-3F-okW">
@@ -73,29 +73,29 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQ8-eG-3YS">
-                                <rect key="frame" x="8" y="139.5" width="314" height="1"/>
+                                <rect key="frame" x="12" y="127.5" width="306" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="ZqM-Ps-f8f"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkb-p9-FI5">
-                                <rect key="frame" x="0.0" y="148.5" width="330" height="55"/>
+                                <rect key="frame" x="12" y="136.5" width="306" height="55"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nR2-wE-4au">
-                                        <rect key="frame" x="0.0" y="0.0" width="330" height="55"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="306" height="55"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kb-NR-B2L">
-                                                <rect key="frame" x="0.0" y="0.0" width="330" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="306" height="20.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="دورة عامه" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cI4-hv-UHU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="165" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="153" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SR 938" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1n2-cQ-2hm">
-                                                        <rect key="frame" x="165" y="0.0" width="165" height="20.5"/>
+                                                        <rect key="frame" x="153" y="0.0" width="153" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -103,7 +103,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aqh-EF-Otr">
-                                                <rect key="frame" x="0.0" y="30.5" width="330" height="24.5"/>
+                                                <rect key="frame" x="0.0" y="30.5" width="306" height="24.5"/>
                                                 <string key="text">معهد إي تي سي بورنموث - ETC BOURNEMOUTH
 </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -126,15 +126,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="lkb-p9-FI5" firstAttribute="top" secondItem="aQ8-eG-3YS" secondAttribute="bottom" constant="8" id="9tr-Yg-pF7"/>
-                            <constraint firstAttribute="trailing" secondItem="lkb-p9-FI5" secondAttribute="trailing" id="D5z-3h-Nao"/>
-                            <constraint firstItem="aQ8-eG-3YS" firstAttribute="leading" secondItem="509-an-Lil" secondAttribute="leading" constant="8" id="LoB-tl-a0a"/>
-                            <constraint firstAttribute="bottom" secondItem="lkb-p9-FI5" secondAttribute="bottom" id="OcC-En-3bI"/>
+                            <constraint firstAttribute="trailing" secondItem="lkb-p9-FI5" secondAttribute="trailing" constant="12" id="D5z-3h-Nao"/>
+                            <constraint firstItem="aQ8-eG-3YS" firstAttribute="leading" secondItem="509-an-Lil" secondAttribute="leading" constant="12" id="LoB-tl-a0a"/>
+                            <constraint firstAttribute="bottom" secondItem="lkb-p9-FI5" secondAttribute="bottom" constant="12" id="OcC-En-3bI"/>
                             <constraint firstItem="aQ8-eG-3YS" firstAttribute="top" secondItem="SEv-we-e5p" secondAttribute="bottom" constant="8" id="bYI-pm-Xhm"/>
-                            <constraint firstItem="SEv-we-e5p" firstAttribute="top" secondItem="509-an-Lil" secondAttribute="top" id="cZU-sf-lH5"/>
-                            <constraint firstAttribute="trailing" secondItem="SEv-we-e5p" secondAttribute="trailing" id="dER-zH-tZk"/>
-                            <constraint firstAttribute="trailing" secondItem="aQ8-eG-3YS" secondAttribute="trailing" constant="8" id="jIE-Qx-FDl"/>
-                            <constraint firstItem="SEv-we-e5p" firstAttribute="leading" secondItem="509-an-Lil" secondAttribute="leading" id="r15-EW-J1d"/>
-                            <constraint firstItem="lkb-p9-FI5" firstAttribute="leading" secondItem="509-an-Lil" secondAttribute="leading" id="zVk-Kr-D9R"/>
+                            <constraint firstItem="SEv-we-e5p" firstAttribute="top" secondItem="509-an-Lil" secondAttribute="top" constant="12" id="cZU-sf-lH5"/>
+                            <constraint firstAttribute="trailing" secondItem="SEv-we-e5p" secondAttribute="trailing" constant="12" id="dER-zH-tZk"/>
+                            <constraint firstAttribute="trailing" secondItem="aQ8-eG-3YS" secondAttribute="trailing" constant="12" id="jIE-Qx-FDl"/>
+                            <constraint firstItem="SEv-we-e5p" firstAttribute="leading" secondItem="509-an-Lil" secondAttribute="leading" constant="12" id="r15-EW-J1d"/>
+                            <constraint firstItem="lkb-p9-FI5" firstAttribute="leading" secondItem="509-an-Lil" secondAttribute="leading" constant="12" id="zVk-Kr-D9R"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
