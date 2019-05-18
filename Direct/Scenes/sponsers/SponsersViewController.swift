@@ -9,18 +9,21 @@
 import UIKit
 
 class SponsersViewController: UIViewController {
-    @IBOutlet var checkoutFooter: CheckoutFooter!
     @IBOutlet private var tabbar: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "معلومات المتكفلين"
 
-        checkoutFooter.action = { [weak self] in
-            try! AppNavigator().push(.passangersInfoScreen)
-        }
+        
         setupTabbar()
     }
 
+    @IBAction func checkoutNextAction(_ sender: Any) {
+   
+      try! AppNavigator().push(.passangersInfoScreen)
+        
+    }
+    
     private func setupTabbar() {
         let tab1 = ("المتكفل الأول ", { [weak self] in
 

@@ -34,24 +34,20 @@ extension StyledActionBar where Self: UIViewController {
                                              .foregroundColor: UIColor.white]
         switch style {
         case let .withTitle(title):
+            navigationBar.backItem?.title = ""
             navigationBar.topItem?.title = title
         case let .withTitleAndX(title):
             navigationBar.topItem?.title = title
-//            let button1 = UIBarButtonItem(image: #imageLiteral(resourceName: "inst"), style: .plain, target: nil, action: nil)
-//            self.navigationItem.rightBarButtonItem  = button1
-
+            navigationBar.backItem?.title = ""
         case let .withTitleAndBack(title):
             navigationBar.topItem?.title = title
         case .withX:
-//            navigationBar.barTintColor = UIColor.clear
-//            navigationBar.shadowImage = UIImage()
-//            navigationBar.backgroundColor = .clear
-//            navigationBar.backItem?.title = ""
             navigationBar.isHidden = true
             let xButton = UIImageView(image: #imageLiteral(resourceName: "group10"))
             xButton.rx.tapGesture().when(.recognized)
                 .subscribe(onNext: { _ in
                     self.navigationController?.popViewController(animated: true)
+                    navigationBar.isHidden = false
                 }).disposed(by: disposeBag)
             view.addSubview(xButton)
             xButton.translatesAutoresizingMaskIntoConstraints = false
