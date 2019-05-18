@@ -6,12 +6,14 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
+import RxSwift
 import UIKit
 enum ActionBarStyles {
     case withTitle(String), withTitleAndX(String), withTitleAndBack(String), withX
 }
 
 protocol StyledActionBar {
+    var disposeBag: DisposeBag { get }
     func setupActionBar(_ style: ActionBarStyles)
 }
 
@@ -21,6 +23,8 @@ extension StyledActionBar where Self: UIViewController {
             addCustomNavigationBar(style)
             return
         }
+        navigationBar.isHidden = false
+
         navigationBar.barTintColor = UIColor.appPumpkinOrange
 //        navigationController?.navigationBar.isTranslucent = false
         navigationBar.shadowImage = UIImage()
@@ -38,7 +42,23 @@ extension StyledActionBar where Self: UIViewController {
 
         case let .withTitleAndBack(title):
             navigationBar.topItem?.title = title
-        default:
+        case .withX:
+//            navigationBar.barTintColor = UIColor.clear
+//            navigationBar.shadowImage = UIImage()
+//            navigationBar.backgroundColor = .clear
+//            navigationBar.backItem?.title = ""
+            navigationBar.isHidden = true
+            let xButton = UIImageView(image: #imageLiteral(resourceName: "group10"))
+            xButton.rx.tapGesture().when(.recognized)
+                .subscribe(onNext: { _ in
+                    self.navigationController?.popViewController(animated: true)
+                }).disposed(by: disposeBag)
+            view.addSubview(xButton)
+            xButton.translatesAutoresizingMaskIntoConstraints = false
+            xButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
+            xButton.trailingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
+            xButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
+            xButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
             print("TODO")
         }
     }

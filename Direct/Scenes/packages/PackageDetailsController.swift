@@ -7,10 +7,14 @@
 //
 
 import UIKit
-
-class PackageDetailsController: UIViewController {
+import RxSwift
+class PackageDetailsController: UIViewController,StyledActionBar {
+    var disposeBag = DisposeBag()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupActionBar(.withX)
     }
 
     @IBAction func bookNowAction(_: Any) {

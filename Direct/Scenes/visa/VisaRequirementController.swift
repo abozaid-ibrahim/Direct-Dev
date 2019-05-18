@@ -28,7 +28,7 @@ final class VisaRequirementController: UIViewController, PanModalPresentable, St
         return tableView
     }
 
-    private let disposeBag = DisposeBag()
+    internal let disposeBag = DisposeBag()
     @IBOutlet private var tableView: UITableView!
     private let data: Observable<String> = Observable.from(dataList)
 

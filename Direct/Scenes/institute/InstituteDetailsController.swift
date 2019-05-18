@@ -9,13 +9,14 @@
 import RxSwift
 import UIKit
 
-final class InstituteDetailsController: UIViewController {
+final class InstituteDetailsController: UIViewController,StyledActionBar {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var contentContainer: UIView!
     @IBOutlet var tabsContainer: UIView!
-    private let disposeBag = DisposeBag()
+    internal let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupActionBar(.withX)
         setupTableData()
         setupTabbar()
     }

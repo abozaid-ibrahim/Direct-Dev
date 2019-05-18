@@ -15,7 +15,7 @@ final class HomeViewController: UIViewController, StyledActionBar {
     @IBOutlet var packageView: UIStackView!
     @IBOutlet var institueView: UIStackView!
     private let homeViewModel = HomeViewModel()
-    private let disposeBag = DisposeBag()
+    var disposeBag = DisposeBag()
     private let sectionsHeaderData: [HeaderObject] = [(#imageLiteral(resourceName: "p"), "متطلبات التأشيرة"), (#imageLiteral(resourceName: "p"), "أفضل المعاهد "), (#imageLiteral(resourceName: "p"), "بكجات وعروض"), (#imageLiteral(resourceName: "p"), "أخبار ومعلومات"), (#imageLiteral(resourceName: "p"), "Visa")]
     private var collectionSecions: [HomeCollectionViewSection] = []
     private let sectionsCellSize: [CGSize] = [CGSize(width: 147, height: 113), CGSize(width: 292, height: 171), CGSize(width: 292, height: 226), CGSize(width: 292, height: 171)]
