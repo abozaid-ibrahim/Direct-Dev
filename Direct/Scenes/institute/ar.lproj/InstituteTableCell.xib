@@ -22,8 +22,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="509-an-Lil" userLabel="bg">
                         <rect key="frame" x="8" y="8" width="330" height="203.5"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SEv-we-e5p">
-                                <rect key="frame" x="12" y="12" width="306" height="107.5"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SEv-we-e5p">
+                                <rect key="frame" x="13" y="12" width="306" height="107.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="7Ys-4s-nVr">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="107.5"/>
@@ -36,16 +36,14 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfv-W2-ePk">
-                                        <rect key="frame" x="128" y="0.0" width="170" height="81.5"/>
-                                        <string key="text">معهد إي تي سي بورنموث - ETC BOURNEMOUTH
-</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="معهد إي تي سي بورنموث - ETC BOURNEMOUTH" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfv-W2-ePk">
+                                        <rect key="frame" x="128" y="0.0" width="170" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y4U-cK-5I4" customClass="TagView" customModule="TagsView">
-                                        <rect key="frame" x="128" y="89.5" width="178" height="18"/>
+                                        <rect key="frame" x="120" y="33.5" width="186" height="74"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="أفضل الخيارات" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSs-3F-okW">
@@ -58,11 +56,11 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="y4U-cK-5I4" firstAttribute="top" secondItem="rfv-W2-ePk" secondAttribute="bottom" constant="8" id="1kM-Z4-GcM"/>
+                                    <constraint firstItem="y4U-cK-5I4" firstAttribute="top" secondItem="rfv-W2-ePk" secondAttribute="bottom" id="1kM-Z4-GcM"/>
                                     <constraint firstAttribute="trailing" secondItem="y4U-cK-5I4" secondAttribute="trailing" id="HPR-z0-skj"/>
                                     <constraint firstItem="OSs-3F-okW" firstAttribute="leading" secondItem="SEv-we-e5p" secondAttribute="leading" id="NpX-7L-1PD"/>
                                     <constraint firstItem="rfv-W2-ePk" firstAttribute="top" secondItem="SEv-we-e5p" secondAttribute="top" id="OO1-tv-DT0"/>
-                                    <constraint firstItem="y4U-cK-5I4" firstAttribute="leading" secondItem="7Ys-4s-nVr" secondAttribute="trailing" constant="8" id="Ps2-7C-Krs"/>
+                                    <constraint firstItem="y4U-cK-5I4" firstAttribute="leading" secondItem="7Ys-4s-nVr" secondAttribute="trailing" id="Ps2-7C-Krs"/>
                                     <constraint firstItem="rfv-W2-ePk" firstAttribute="leading" secondItem="7Ys-4s-nVr" secondAttribute="trailing" constant="8" id="Puy-bZ-cum"/>
                                     <constraint firstAttribute="bottom" secondItem="y4U-cK-5I4" secondAttribute="bottom" id="Z9A-CJ-2lS"/>
                                     <constraint firstAttribute="trailing" secondItem="rfv-W2-ePk" secondAttribute="trailing" constant="8" id="jT3-tV-wmP"/>
@@ -74,7 +72,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQ8-eG-3YS">
                                 <rect key="frame" x="12" y="127.5" width="306" height="1"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="ZqM-Ps-f8f"/>
                                 </constraints>
