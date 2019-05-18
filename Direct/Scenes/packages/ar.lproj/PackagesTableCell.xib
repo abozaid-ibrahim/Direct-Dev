@@ -54,34 +54,14 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تعلم اللغة الألمانية في مانشستر" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzs-b8-XYR" userLabel="title">
-                                <rect key="frame" x="0.0" y="138" width="288" height="7"/>
+                                <rect key="frame" x="0.0" y="138" width="288" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RNR-Xp-vwp">
-                                <rect key="frame" x="0.0" y="155" width="288" height="50"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Z3n-3I-334">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="50"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AEo-KE-oPg" customClass="YALField">
-                                                <rect key="frame" x="0.0" y="0.0" width="288" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <accessibility key="accessibilityConfiguration">
-                                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
-                                                </accessibility>
-                                            </view>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RNR-Xp-vwp" customClass="TagView" customModule="TagsView">
+                                <rect key="frame" x="0.0" y="168.5" width="288" height="36.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Z3n-3I-334" secondAttribute="bottom" id="cLi-w1-BOY"/>
-                                    <constraint firstItem="Z3n-3I-334" firstAttribute="top" secondItem="RNR-Xp-vwp" secondAttribute="top" id="gjM-mG-ekC"/>
-                                    <constraint firstItem="Z3n-3I-334" firstAttribute="leading" secondItem="RNR-Xp-vwp" secondAttribute="leading" id="to7-Im-CWr"/>
-                                    <constraint firstAttribute="trailing" secondItem="Z3n-3I-334" secondAttribute="trailing" id="xad-BC-nof"/>
-                                </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Nud-1d-hfp">
                                 <rect key="frame" x="0.0" y="215" width="288" height="20.5"/>
@@ -118,6 +98,9 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="tagView" destination="RNR-Xp-vwp" id="GeC-Re-nem"/>
+            </connections>
             <point key="canvasLocation" x="126.08695652173914" y="214.95535714285714"/>
         </tableViewCell>
     </objects>

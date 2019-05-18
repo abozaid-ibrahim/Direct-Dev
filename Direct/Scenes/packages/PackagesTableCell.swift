@@ -7,17 +7,19 @@
 //
 
 import UIKit
-
+import TagsView
 class PackagesTableCell: UITableViewCell, TableCell {
     static var cellId: String = "PackagesTableCell"
 
     func setCellData(_: String) {}
 
     typealias CellDataModel = String
-
+    @IBOutlet weak var tagView: TagView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
+        tagView.items = [("مطعم",#imageLiteral(resourceName: "icons8Mesh"))]
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
