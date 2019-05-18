@@ -32,10 +32,10 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="198" height="89.5"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="united-kingdom" translatesAutoresizingMaskIntoConstraints="NO" id="y2B-sf-UuP">
-                                                <rect key="frame" x="137" y="28.5" width="45" height="45"/>
+                                                <rect key="frame" x="10" y="44.5" width="35" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="y2B-sf-UuP" secondAttribute="height" multiplier="1:1" id="UU7-o3-aCv"/>
-                                                    <constraint firstAttribute="width" constant="45" id="wGs-zS-emV"/>
+                                                    <constraint firstAttribute="width" constant="35" id="wGs-zS-emV"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
@@ -44,10 +44,10 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="y2B-sf-UuP" secondAttribute="trailing" constant="16" id="3jO-2F-5O3"/>
-                                            <constraint firstAttribute="bottom" secondItem="y2B-sf-UuP" secondAttribute="bottom" constant="16" id="Cb7-XX-HWU"/>
+                                            <constraint firstAttribute="bottom" secondItem="y2B-sf-UuP" secondAttribute="bottom" constant="10" id="Cb7-XX-HWU"/>
                                             <constraint firstItem="Ow1-vl-SBW" firstAttribute="leading" secondItem="j9R-Yd-q9m" secondAttribute="leading" id="Di0-t2-Cyv"/>
                                             <constraint firstAttribute="trailing" secondItem="Ow1-vl-SBW" secondAttribute="trailing" id="Sua-FW-0BH"/>
+                                            <constraint firstItem="y2B-sf-UuP" firstAttribute="leading" secondItem="j9R-Yd-q9m" secondAttribute="leading" constant="10" id="Zj9-Fm-xAd"/>
                                             <constraint firstAttribute="bottom" secondItem="Ow1-vl-SBW" secondAttribute="bottom" id="bgF-Cc-gCL"/>
                                             <constraint firstItem="Ow1-vl-SBW" firstAttribute="top" secondItem="j9R-Yd-q9m" secondAttribute="top" id="yO2-mm-8db"/>
                                         </constraints>

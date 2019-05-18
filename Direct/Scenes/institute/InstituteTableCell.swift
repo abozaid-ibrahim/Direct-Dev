@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
 class InstituteTableCell: UITableViewCell, TableCell {
+//    @IBOutlet weak var tagView: TagView!
     typealias CellDataModel = String
     static var cellId: String = "InstituteTableCell"
     func setCellData(_: String) {}

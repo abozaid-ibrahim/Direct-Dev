@@ -1743,6 +1743,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8CFE1A8BA236C07146CC7481 /* Pods-Direct.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Direct/Info.plist;
@@ -1761,6 +1762,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D32B7AB6EBFAB4A13A20BC57 /* Pods-Direct.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Direct/Info.plist;
