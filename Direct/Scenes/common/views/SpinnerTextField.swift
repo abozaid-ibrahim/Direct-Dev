@@ -70,6 +70,7 @@ class SpinnerTextField: UIView {
 
         addSubview(stack)
         stack.sameBoundsTo(parentView: self, l: 10, tr: 10)
+        txtField.textAlignment = .right
     }
 
     override init(frame: CGRect) {

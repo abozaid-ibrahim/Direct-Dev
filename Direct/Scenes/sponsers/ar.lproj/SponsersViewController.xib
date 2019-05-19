@@ -83,6 +83,8 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="hint" value="من صاحب كشف الحساب والتعريف بالراتب ؟"/>
                                                 <userDefinedRuntimeAttribute type="image" keyPath="image" value="group10"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="من صاحب كشف الحساب والتعريف بالراتب ؟"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="من صاحب كشف الحساب والتعريف بالراتب ؟"/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="كشف الحساب (اخر صفحة من الكشف)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bOd-vL-dbd" customClass="UploadField" customModule="Direct" customModuleProvider="target">
@@ -103,6 +105,8 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="hint" value="ارفق صورة التعريف بالراتب"/>
                                                 <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="group8"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="ارفق صورة التعريف بالراتب"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="ارفق صورة التعريف بالراتب"/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سأقوم بتجهيزه لاحقًا" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pD-d3-7FY">
