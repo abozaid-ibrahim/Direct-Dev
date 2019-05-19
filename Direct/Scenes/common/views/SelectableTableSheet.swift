@@ -24,15 +24,16 @@ final class SelectableTableSheet: UIViewController, PanModalPresentable {
 
     // set these var from outside
     var data: [String]?
+    var titleText:String?
     var style: CellStyle = .textWithArrow
     // listen to selected
     var selectedItem = PublishSubject<String>()
     @IBOutlet var tableView: UITableView!
-
+@IBOutlet private  weak var titleLbl: UILabel!
     private let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.titleLbl.text = titleText ?? "عدد المسافرين"
         setTableDataSource()
         setONSelect()
     }

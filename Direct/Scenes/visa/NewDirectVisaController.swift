@@ -47,6 +47,7 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
                 let dest = Destination.selectableSheet(data: data)
                 let vc = dest.controller() as! SelectableTableSheet
                 vc.data = data
+                vc.titleText = "مكان البصمة"
                 vc.style = .textCenter
                 vc.selectedItem.asObservable().subscribe { event in
                     switch event.event {
@@ -78,11 +79,11 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
         relationsField.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
 
-                let data = ["مصر", "الكويت", "بلغاريا"]
+                let data = ["الزوج", "الابن" ,"الزوجة"]
                 let dest = Destination.selectableSheet(data: data)
                 let vc = dest.controller() as! SelectableTableSheet
                 vc.data = data
-
+vc.titleText = "العلاقة بين المسافرين"
                 vc.selectedItem.asObservable().subscribe { event in
                     switch event.event {
                     case let .next(value):

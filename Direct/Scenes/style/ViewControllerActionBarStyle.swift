@@ -37,28 +37,44 @@ extension StyledActionBar where Self: UIViewController {
         switch style {
         case let .withTitle(title):
             navigationBar.topItem?.title = title
-            self.title =  title
+            self.title = title
         case let .withTitleAndX(title):
             navigationBar.topItem?.title = title
-              self.title =  title
+            self.title = title
         case let .withTitleAndBack(title):
             navigationBar.topItem?.title = title
         case .withX:
             navigationBar.isHidden = true
-            let xButton = UIImageView(image: #imageLiteral(resourceName: "group10"))
-            xButton.rx.tapGesture().when(.recognized)
+            var backView = UIView()
+            backView.backgroundColor = UIColor.black.withAlphaComponent(0.35)
+            var back = UIImageView(image: #imageLiteral(resourceName: "group10"))
+            backView.addSubview(back)
+
+            backView.rx.tapGesture().when(.recognized)
                 .subscribe(onNext: { _ in
                     self.navigationController?.popViewController(animated: true)
                     navigationBar.isHidden = false
                 }).disposed(by: disposeBag)
-            view.addSubview(xButton)
-            xButton.translatesAutoresizingMaskIntoConstraints = false
-            xButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
-            xButton.trailingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
-            xButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
-            xButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
-            print("TODO")
+            view.addSubview(backView)
+            setConstrains(back: &back, backView: &backView, view: &view)
         }
+    }
+
+    private func setConstrains(back: inout UIImageView, backView: inout UIView, view: inout UIView) {
+        back.translatesAutoresizingMaskIntoConstraints = false
+        back.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        back.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        back.centerXAnchor.constraint(equalTo: backView.centerXAnchor).isActive = true
+        back.centerYAnchor.constraint(equalTo: backView.centerYAnchor).isActive = true
+        backView.translatesAutoresizingMaskIntoConstraints = false
+        backView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
+        backView.trailingAnchor.constraint(equalTo: view.leadingAnchor, constant: 55).isActive = true
+        backView.widthAnchor.constraint(equalToConstant: 45).isActive = true
+        backView.heightAnchor.constraint(equalToConstant: 45).isActive = true
+
+        backView.cornerRadiusV = 22
+        backView.clipsToBounds = true
+        
     }
 
     private func addCustomNavigationBar(_ style: ActionBarStyles) {

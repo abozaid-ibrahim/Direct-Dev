@@ -25,26 +25,26 @@
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zAP-DG-0MM">
                                 <rect key="frame" x="4" y="4" width="304" height="27.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCH-6s-nyN">
-                                        <rect key="frame" x="0.0" y="3.5" width="199" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بطاقة  ائتمان بنكية" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCH-6s-nyN">
+                                        <rect key="frame" x="0.0" y="3.5" width="199" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8StackOfMoney" translatesAutoresizingMaskIntoConstraints="NO" id="low-JY-Nlq">
-                                        <rect key="frame" x="209" y="0.0" width="25" height="27.5"/>
+                                        <rect key="frame" x="209" y="4" width="25" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="BRU-EU-KZS"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8StackOfMoney" translatesAutoresizingMaskIntoConstraints="NO" id="6cV-D4-I1W">
-                                        <rect key="frame" x="244" y="0.0" width="25" height="27.5"/>
+                                        <rect key="frame" x="244" y="4" width="25" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="jgl-Jy-Uo3"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8StackOfMoney" translatesAutoresizingMaskIntoConstraints="NO" id="ayz-ep-DRx">
-                                        <rect key="frame" x="279" y="0.0" width="25" height="27.5"/>
+                                        <rect key="frame" x="279" y="4" width="25" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="dne-HB-F7H"/>
                                         </constraints>

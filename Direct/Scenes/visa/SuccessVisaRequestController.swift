@@ -7,12 +7,12 @@
 //
 
 import UIKit
-
-class SuccessVisaRequestController: UIViewController {
+import RxSwift
+class SuccessVisaRequestController: UIViewController,StyledActionBar {
+    internal let disposeBag =  DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+setupActionBar(.withX)
     }
 
     @IBAction func followMyOrder(_: Any) {

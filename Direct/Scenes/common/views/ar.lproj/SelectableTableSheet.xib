@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectableTableSheet" customModule="Direct" customModuleProvider="target">
             <connections>
                 <outlet property="tableView" destination="G4O-YW-AMr" id="rOC-MA-wnY"/>
+                <outlet property="titleLbl" destination="8CR-Nv-RnW" id="5wr-Y4-eav"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
