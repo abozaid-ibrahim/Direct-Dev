@@ -12,6 +12,8 @@
 		6C1C605E228E3D15006490CB /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1C605C228E3D15006490CB /* AboutUsViewController.swift */; };
 		6C1C6062228E46ED006490CB /* PaymentMethodsContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1C6060228E46ED006490CB /* PaymentMethodsContainerController.swift */; };
 		6C1C6065228E4729006490CB /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1C6064228E4729006490CB /* TabBar.swift */; };
+		6C244FCB229212E600B205B9 /* HelpTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C244FC9229212E600B205B9 /* HelpTableCell.swift */; };
+		6C244FCC229212E600B205B9 /* HelpTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C244FCA229212E600B205B9 /* HelpTableCell.xib */; };
 		6C2CFB84227734E700D23CF4 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CFB83227734E700D23CF4 /* TableCell.swift */; };
 		6C2CFB882277419A00D23CF4 /* SelectableTableSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CFB862277419A00D23CF4 /* SelectableTableSheet.swift */; };
 		6C2CFB8C2277422900D23CF4 /* PackagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CFB8B2277422900D23CF4 /* PackagesViewController.swift */; };
@@ -193,6 +195,8 @@
 		6C1C605C228E3D15006490CB /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		6C1C6060228E46ED006490CB /* PaymentMethodsContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodsContainerController.swift; sourceTree = "<group>"; };
 		6C1C6064228E4729006490CB /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		6C244FC9229212E600B205B9 /* HelpTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpTableCell.swift; sourceTree = "<group>"; };
+		6C244FCA229212E600B205B9 /* HelpTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpTableCell.xib; sourceTree = "<group>"; };
 		6C2CFB83227734E700D23CF4 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		6C2CFB862277419A00D23CF4 /* SelectableTableSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableTableSheet.swift; sourceTree = "<group>"; };
 		6C2CFB8B2277422900D23CF4 /* PackagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesViewController.swift; sourceTree = "<group>"; };
@@ -563,6 +567,8 @@
 			isa = PBXGroup;
 			children = (
 				6C778256227A36F7001926B2 /* HelpViewController.swift */,
+				6C244FC9229212E600B205B9 /* HelpTableCell.swift */,
+				6C244FCA229212E600B205B9 /* HelpTableCell.xib */,
 			);
 			path = help;
 			sourceTree = "<group>";
@@ -995,6 +1001,7 @@
 				6C902779228F94CF00B41705 /* ContactUsViewController.xib in Resources */,
 				6C902797228F953A00B41705 /* PaymentViewController.xib in Resources */,
 				6C902776228F94C500B41705 /* PassangersController.xib in Resources */,
+				6C244FCC229212E600B205B9 /* HelpTableCell.xib in Resources */,
 				6C90278B228F951000B41705 /* InstituteDetailsTableCell.xib in Resources */,
 				6C5FDA572270816C00ABA39B /* LaunchScreen.storyboard in Resources */,
 				6C5FDA542270816C00ABA39B /* Assets.xcassets in Resources */,
@@ -1244,6 +1251,7 @@
 				6C2CFB9F22789E0200D23CF4 /* PaymentViewController.swift in Sources */,
 				6CF0E36C2285BE6800149910 /* DatePickerController.swift in Sources */,
 				6CF3E1C32274B8DB007488BA /* FakeData.swift in Sources */,
+				6C244FCB229212E600B205B9 /* HelpTableCell.swift in Sources */,
 				6CC94EDD228BE5BA002F3464 /* CommonAPIs.swift in Sources */,
 				6CF3E1CC2274BBE5007488BA /* HomeCollectionSectionWrapper.swift in Sources */,
 				6C77825D227A3E23001926B2 /* BanksViewController.swift in Sources */,

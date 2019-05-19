@@ -12,7 +12,9 @@ class AboutUsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "من نحن"
-        // Do any additional setup after loading the view.
+
+
+
     }
 
     /*

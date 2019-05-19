@@ -8,20 +8,23 @@ import RxSwift
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 import UIKit
-final class HelpViewController: UIViewController, PanModalPresentable {
+final class HelpViewController: UIViewController, PanModalPresentable,StyledActionBar {
     var panScrollable: UIScrollView? {
         return tableView
     }
 
     @IBOutlet var tableView: UITableView!
-    private let disposeBag = DisposeBag()
+    internal let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.registerNib(SingleRowTableCell.cellId)
+        setupActionBar(.withTitle("مساعدة"))
+        tableView.registerNib(HelpTableCell.cellId)
+        view.backgroundColor = UIColor.appOffWhite
+        tableView.backgroundColor = .appOffWhite
+        
         Observable<[String]>.just(dataList)
-            .bind(to: tableView.rx.items(cellIdentifier: SingleRowTableCell.cellId)) { _, model, cell in
-                let mycell = (cell as! SingleRowTableCell)
-                mycell.setCellData(model)
+            .bind(to: tableView.rx.items(cellIdentifier: HelpTableCell.cellId)) { _, model, cell in
+//                let mycell = (cell as! HelpTableCell)
             }.disposed(by: disposeBag)
     }
 }
