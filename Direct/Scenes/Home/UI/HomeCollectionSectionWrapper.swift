@@ -23,6 +23,8 @@ class HomeCollectionSectionWrapper: UICollectionViewCell {
         super.awakeFromNib()
         collectionView.dataSource = self
         collectionView.delegate = self //
+        collectionView.backgroundColor = UIColor.appVeryLightPink
+        self.backgroundColor = UIColor.appVeryLightPink
 
         // getdata//
     }
@@ -51,6 +53,8 @@ extension HomeCollectionSectionWrapper: UICollectionViewDataSource, UICollection
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        cell.cornerRadiusV = 10
+        cell.clipsToBounds = true
         return cell
     }
 }

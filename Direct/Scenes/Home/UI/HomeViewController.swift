@@ -28,6 +28,8 @@ final class HomeViewController: UIViewController, StyledActionBar {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.appVeryLightPink
+        collectionView.backgroundColor = UIColor.appVeryLightPink
+
         collectionView.delegate = self
         registerCollectionNibs()
         setupActionBar(.withTitle("دايركت فيزا"))

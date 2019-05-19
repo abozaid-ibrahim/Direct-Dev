@@ -22,27 +22,39 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NXR-eY-HSi">
                         <rect key="frame" x="8" y="8" width="279" height="214"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mYP-Hb-RzT">
-                                <rect key="frame" x="8" y="8" width="263" height="198"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mYP-Hb-RzT">
+                                <rect key="frame" x="0.0" y="0.0" width="279" height="214"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="hET-FI-jLX">
-                                        <rect key="frame" x="0.0" y="0.0" width="263" height="167.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="279" height="180.5"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdK-aS-iXw">
-                                        <rect key="frame" x="0.0" y="177.5" width="263" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMP-hO-ekR">
+                                        <rect key="frame" x="0.0" y="185.5" width="279" height="28.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="الآن مكان البصمة في بريدة" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdK-aS-iXw">
+                                                <rect key="frame" x="8" y="4" width="263" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="AdK-aS-iXw" secondAttribute="trailing" constant="8" id="7jg-SM-Jlm"/>
+                                            <constraint firstAttribute="bottom" secondItem="AdK-aS-iXw" secondAttribute="bottom" constant="4" id="Zl8-1d-g21"/>
+                                            <constraint firstItem="AdK-aS-iXw" firstAttribute="leading" secondItem="aMP-hO-ekR" secondAttribute="leading" constant="8" id="fXd-kd-9b9"/>
+                                            <constraint firstItem="AdK-aS-iXw" firstAttribute="top" secondItem="aMP-hO-ekR" secondAttribute="top" constant="4" id="sBt-Lj-yfR"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mYP-Hb-RzT" firstAttribute="leading" secondItem="NXR-eY-HSi" secondAttribute="leading" constant="8" id="A0H-tc-twu"/>
-                            <constraint firstItem="mYP-Hb-RzT" firstAttribute="top" secondItem="NXR-eY-HSi" secondAttribute="top" constant="8" id="GYi-Xv-VIZ"/>
-                            <constraint firstAttribute="trailing" secondItem="mYP-Hb-RzT" secondAttribute="trailing" constant="8" id="HHe-ok-Wsz"/>
-                            <constraint firstAttribute="bottom" secondItem="mYP-Hb-RzT" secondAttribute="bottom" constant="8" id="rfu-QH-rGC"/>
+                            <constraint firstItem="mYP-Hb-RzT" firstAttribute="leading" secondItem="NXR-eY-HSi" secondAttribute="leading" id="A0H-tc-twu"/>
+                            <constraint firstItem="mYP-Hb-RzT" firstAttribute="top" secondItem="NXR-eY-HSi" secondAttribute="top" id="GYi-Xv-VIZ"/>
+                            <constraint firstAttribute="trailing" secondItem="mYP-Hb-RzT" secondAttribute="trailing" id="HHe-ok-Wsz"/>
+                            <constraint firstAttribute="bottom" secondItem="mYP-Hb-RzT" secondAttribute="bottom" id="rfu-QH-rGC"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
