@@ -11,6 +11,7 @@ import RxSwift
 import UIKit
 
 typealias Action = () -> Void
+
 class TabBar: UIView {
     let stackContainer: UIStackView = {
         let stack = UIStackView()
