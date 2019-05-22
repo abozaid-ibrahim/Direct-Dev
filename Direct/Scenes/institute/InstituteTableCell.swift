@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import TagsView
 
 class InstituteTableCell: UITableViewCell, TableCell {
     @IBOutlet weak var tagView: TagView!

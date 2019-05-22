@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import TagsView
 class PackagesTableCell: UITableViewCell, TableCell {
     static var cellId: String = "PackagesTableCell"
 

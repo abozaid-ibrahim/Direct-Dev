@@ -1052,7 +1052,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Direct/Pods-Direct-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Direct/Pods-Direct-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ARSLineProgress/ARSLineProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
@@ -1091,7 +1091,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Direct/Pods-Direct-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Direct/Pods-Direct-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6CA040B12281AFBB00619B6F /* IBAnalyzer */ = {
@@ -1765,7 +1765,7 @@
 		};
 		6C5FDA722270816D00ABA39B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7846FBEADBA7CAB038B3D97D /* Pods-Direct.debug.xcconfig */;
+			baseConfigurationReference = 8CFE1A8BA236C07146CC7481 /* Pods-Direct.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1785,7 +1785,7 @@
 		};
 		6C5FDA732270816D00ABA39B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F256ACD80C2BAE869605D2C /* Pods-Direct.release.xcconfig */;
+			baseConfigurationReference = D32B7AB6EBFAB4A13A20BC57 /* Pods-Direct.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1805,7 +1805,7 @@
 		};
 		6C5FDA752270816D00ABA39B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D701DECA845F2D3A6DEBC1E /* Pods-DirectTests.debug.xcconfig */;
+			baseConfigurationReference = 6B30160045018A20D10805B6 /* Pods-DirectTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1826,7 +1826,7 @@
 		};
 		6C5FDA762270816D00ABA39B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 48FEC79D80B6406A8F1E060B /* Pods-DirectTests.release.xcconfig */;
+			baseConfigurationReference = 32AD91C3FA31B9C68158A139 /* Pods-DirectTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1847,7 +1847,7 @@
 		};
 		6C5FDA782270816D00ABA39B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4FF6EE2074E06657764ACE62 /* Pods-DirectUITests.debug.xcconfig */;
+			baseConfigurationReference = F259F96AAEAF2A59F9A36AE1 /* Pods-DirectUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1867,7 +1867,7 @@
 		};
 		6C5FDA792270816D00ABA39B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CB33D6261B0C00FB3D1B2BDB /* Pods-DirectUITests.release.xcconfig */;
+			baseConfigurationReference = 1E213B895BD777856B962F78 /* Pods-DirectUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
