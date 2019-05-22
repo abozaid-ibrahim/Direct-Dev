@@ -24,6 +24,8 @@ final class PackagesViewController: UIViewController, SwipeUpDismissable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.appOffWhite
+        tableView.backgroundColor = .clear
         if dismissable ?? false {
             enableSwipeUpToDismiss()
         }

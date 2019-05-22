@@ -18,6 +18,6 @@ class LoginViewController: UIViewController {
     @IBAction func submitLogin(_: Any) {
         // TODO:
         // you should recieve the depencey from out side
-        try! AppNavigator().present(.homeScreen)
+//        try! AppNavigator().present(.homeScreen)
     }
 }
