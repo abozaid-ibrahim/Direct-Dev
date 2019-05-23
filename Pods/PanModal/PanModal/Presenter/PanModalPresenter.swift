@@ -13,11 +13,12 @@ import UIKit
  - Usage:
  ```
  viewController.presentPanModal(viewControllerToPresent: presentingVC,
- sourceView: presentingVC.view,
- sourceRect: .zero)
+                                             sourceView: presentingVC.view,
+                                             sourceRect: .zero)
  ```
  */
 public protocol PanModalPresenter {
+
     /**
      A flag that returns true if the current presented view controller
      is using the PanModalPresentationDelegate
@@ -28,4 +29,5 @@ public protocol PanModalPresenter {
      Presents a view controller that conforms to the PanModalPresentable protocol
      */
     func presentPanModal(_ viewControllerToPresent: PanModalPresentable.LayoutType, sourceView: UIView?, sourceRect: CGRect)
+
 }

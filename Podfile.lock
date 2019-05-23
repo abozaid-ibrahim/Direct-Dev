@@ -26,7 +26,7 @@ PODS:
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
   - RxSwift (4.5.0)
-  - SkyFloatingLabelTextField (3.6.0)
+  - SkyFloatingLabelTextField (3.7.0)
   - SwifterSwift/AppKit (5.0.0)
   - YALField (1.0.1)
 
@@ -81,10 +81,10 @@ SPEC CHECKSUMS:
   RxGesture: c1b7bf17166b0ef9d642a9510f8bac5785f18990
   RxOptional: 80426a0ddbd092573e4c482d8cc13302078c4d5e
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
-  SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
+  SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
   SwifterSwift: 96f90594b370802f01647c2b1229c74a84ffafee
   YALField: f80f986de790bb13690264422437fa4e0593af0a
 
-PODFILE CHECKSUM: a26c79370009db889ffba2d15d15ec9044bc9415
+PODFILE CHECKSUM: faa5119af6afcda31e3721c13ca5633898b5f0cb
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.5.2

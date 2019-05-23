@@ -23,19 +23,19 @@
 import Foundation
 
 public enum HeroTransitionState: Int {
-    // Hero is able to start a new transition
-    case possible
+  // Hero is able to start a new transition
+  case possible
 
-    // UIKit has notified Hero about a pending transition.
-    // Hero haven't started preparing.
-    case notified
+  // UIKit has notified Hero about a pending transition.
+  // Hero haven't started preparing.
+  case notified
 
-    // Hero's `start` method has been called. Preparing the animation.
-    case starting
+  // Hero's `start` method has been called. Preparing the animation.
+  case starting
 
-    // Hero's `animate` method has been called. Animation has started.
-    case animating
+  // Hero's `animate` method has been called. Animation has started.
+  case animating
 
-    // Hero's `complete` method has been called. Transition is ended or cancelled. Hero is doing cleanup.
-    case completing
+  // Hero's `complete` method has been called. Transition is ended or cancelled. Hero is doing cleanup.
+  case completing
 }

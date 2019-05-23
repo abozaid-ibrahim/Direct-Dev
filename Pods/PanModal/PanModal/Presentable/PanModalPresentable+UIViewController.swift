@@ -12,6 +12,7 @@ import UIKit
  when the conforming object is a UIViewController
  */
 public extension PanModalPresentable where Self: UIViewController {
+
     typealias AnimationBlockType = () -> Void
     typealias AnimationCompletionType = (Bool) -> Void
 
@@ -56,4 +57,5 @@ public extension PanModalPresentable where Self: UIViewController {
     func panModalAnimate(_ animationBlock: @escaping AnimationBlockType, _ completion: AnimationCompletionType? = nil) {
         PanModalAnimator.animate(animationBlock, config: self, completion)
     }
+
 }

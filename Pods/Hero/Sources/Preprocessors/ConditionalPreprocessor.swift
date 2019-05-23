@@ -23,77 +23,69 @@
 import UIKit
 
 public struct HeroConditionalContext {
-    internal weak var hero: HeroTransition!
-    public weak var view: UIView!
+  internal weak var hero: HeroTransition!
+  public weak var view: UIView!
 
-    public private(set) var isAppearing: Bool
+  public private(set) var isAppearing: Bool
 
-    public var isPresenting: Bool {
-        return hero.isPresenting
+  public var isPresenting: Bool {
+    return hero.isPresenting
+  }
+  public var isInTabbarController: Bool {
+    return hero.inTabBarController
+  }
+  public var isInNavbarController: Bool {
+    return hero.inNavigationController
+  }
+  public var isMatched: Bool {
+    return matchedView != nil
+  }
+  public var isAncestorViewMatched: Bool {
+    return matchedAncestorView != nil
+  }
+
+  public var matchedView: UIView? {
+    return hero.context.pairedView(for: view)
+  }
+  public var matchedAncestorView: (UIView, UIView)? {
+    var current = view.superview
+    while let ancestor = current, ancestor != hero.context.container {
+      if let pairedView = hero.context.pairedView(for: ancestor) {
+        return (ancestor, pairedView)
+      }
+      current = ancestor.superview
     }
+    return nil
+  }
 
-    public var isInTabbarController: Bool {
-        return hero.inTabBarController
-    }
-
-    public var isInNavbarController: Bool {
-        return hero.inNavigationController
-    }
-
-    public var isMatched: Bool {
-        return matchedView != nil
-    }
-
-    public var isAncestorViewMatched: Bool {
-        return matchedAncestorView != nil
-    }
-
-    public var matchedView: UIView? {
-        return hero.context.pairedView(for: view)
-    }
-
-    public var matchedAncestorView: (UIView, UIView)? {
-        var current = view.superview
-        while let ancestor = current, ancestor != hero.context.container {
-            if let pairedView = hero.context.pairedView(for: ancestor) {
-                return (ancestor, pairedView)
-            }
-            current = ancestor.superview
-        }
-        return nil
-    }
-
-    public var fromViewController: UIViewController {
-        return hero.fromViewController!
-    }
-
-    public var toViewController: UIViewController {
-        return hero.toViewController!
-    }
-
-    public var currentViewController: UIViewController {
-        return isAppearing ? toViewController : fromViewController
-    }
-
-    public var otherViewController: UIViewController {
-        return isAppearing ? fromViewController : toViewController
-    }
+  public var fromViewController: UIViewController {
+    return hero.fromViewController!
+  }
+  public var toViewController: UIViewController {
+    return hero.toViewController!
+  }
+  public var currentViewController: UIViewController {
+    return isAppearing ? toViewController : fromViewController
+  }
+  public var otherViewController: UIViewController {
+    return isAppearing ? fromViewController : toViewController
+  }
 }
 
 class ConditionalPreprocessor: BasePreprocessor {
-    override func process(fromViews: [UIView], toViews: [UIView]) {
-        process(views: fromViews, appearing: false)
-        process(views: toViews, appearing: true)
-    }
+  override func process(fromViews: [UIView], toViews: [UIView]) {
+    process(views: fromViews, appearing: false)
+    process(views: toViews, appearing: true)
+  }
 
-    func process(views: [UIView], appearing: Bool) {
-        for view in views {
-            guard let conditionalModifiers = context[view]?.conditionalModifiers else { continue }
-            for (condition, modifiers) in conditionalModifiers {
-                if condition(HeroConditionalContext(hero: hero, view: view, isAppearing: appearing)) {
-                    context[view]!.append(contentsOf: modifiers)
-                }
-            }
+  func process(views: [UIView], appearing: Bool) {
+    for view in views {
+      guard let conditionalModifiers = context[view]?.conditionalModifiers else { continue }
+      for (condition, modifiers) in conditionalModifiers {
+        if condition(HeroConditionalContext(hero: hero, view: view, isAppearing: appearing)) {
+          context[view]!.append(contentsOf: modifiers)
         }
+      }
     }
+  }
 }

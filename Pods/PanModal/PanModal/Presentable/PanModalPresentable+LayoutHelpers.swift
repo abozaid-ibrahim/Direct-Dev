@@ -12,6 +12,7 @@ import UIKit
  Helper extensions that handle layout in the PanModalPresentationController
  */
 extension PanModalPresentable where Self: UIViewController {
+
     /**
      Cast the presentation controller to PanModalPresentationController
      so we can access PanModalPresentationController properties and methods
@@ -43,8 +44,9 @@ extension PanModalPresentable where Self: UIViewController {
      We do not support short form when voiceover is on as it would make it difficult for user to navigate.
      */
     var shortFormYPos: CGFloat {
+
         guard !UIAccessibility.isVoiceOverRunning
-        else { return longFormYPos }
+            else { return longFormYPos }
 
         let shortFormYPos = topMargin(from: shortFormHeight) + topOffset
 
@@ -67,8 +69,9 @@ extension PanModalPresentable where Self: UIViewController {
      is adjusted in PanModalPresentationController
      */
     var bottomYPos: CGFloat {
+
         guard let container = presentedVC?.containerView
-        else { return view.bounds.height }
+            else { return view.bounds.height }
 
         return container.bounds.size.height - topOffset
     }
@@ -81,11 +84,11 @@ extension PanModalPresentable where Self: UIViewController {
         switch from {
         case .maxHeight:
             return 0.0
-        case let .maxHeightWithTopInset(inset):
+        case .maxHeightWithTopInset(let inset):
             return inset
-        case let .contentHeight(height):
+        case .contentHeight(let height):
             return bottomYPos - (height + bottomLayoutOffset)
-        case let .contentHeightIgnoringSafeArea(height):
+        case .contentHeightIgnoringSafeArea(let height):
             return bottomYPos - height
         case .intrinsicHeight:
             view.layoutIfNeeded()
@@ -95,4 +98,5 @@ extension PanModalPresentable where Self: UIViewController {
             return bottomYPos - (intrinsicHeight + bottomLayoutOffset)
         }
     }
+
 }

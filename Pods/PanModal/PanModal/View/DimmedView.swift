@@ -11,6 +11,7 @@ import UIKit
  A dim view for use as an overlay over content you want dimmed.
  */
 public class DimmedView: UIView {
+
     /**
      Represents the possible states of the dimmed view.
      max, off or a percentage of dimAlpha.
@@ -33,7 +34,7 @@ public class DimmedView: UIView {
                 alpha = dimAlpha
             case .off:
                 alpha = 0.0
-            case let .percent(percentage):
+            case .percent(let percentage):
                 let val = max(0.0, min(1.0, percentage))
                 alpha = dimAlpha * val
             }
@@ -49,7 +50,7 @@ public class DimmedView: UIView {
      Tap gesture recognizer
      */
     private lazy var tapGesture: UIGestureRecognizer = {
-        UITapGestureRecognizer(target: self, action: #selector(didTapView))
+        return UITapGestureRecognizer(target: self, action: #selector(didTapView))
     }()
 
     private let dimAlpha: CGFloat
@@ -64,7 +65,7 @@ public class DimmedView: UIView {
         addGestureRecognizer(tapGesture)
     }
 
-    public required init?(coder _: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError()
     }
 
@@ -73,4 +74,5 @@ public class DimmedView: UIView {
     @objc private func didTapView() {
         didTap?(tapGesture)
     }
+
 }

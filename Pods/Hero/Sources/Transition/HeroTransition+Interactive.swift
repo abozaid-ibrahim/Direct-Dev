@@ -23,110 +23,110 @@
 import UIKit
 
 extension HeroTransition {
-    /**
-     Update the progress for the interactive transition.
-     - Parameters:
-     - progress: the current progress, must be between 0...1
-     */
-    public func update(_ percentageComplete: CGFloat) {
-        guard state == .animating else {
-            startingProgress = percentageComplete
-            return
-        }
-        progressRunner.stop()
-        progress = Double(percentageComplete.clamp(0, 1))
+  /**
+   Update the progress for the interactive transition.
+   - Parameters:
+   - progress: the current progress, must be between 0...1
+   */
+  public func update(_ percentageComplete: CGFloat) {
+    guard state == .animating else {
+      startingProgress = percentageComplete
+      return
     }
+    self.progressRunner.stop()
+    self.progress = Double(percentageComplete.clamp(0, 1))
+  }
 
-    /**
-     Finish the interactive transition.
-     Will stop the interactive transition and animate from the
-     current state to the **end** state
-     */
-    public func finish(animate: Bool = true) {
-        guard state == .animating || state == .notified || state == .starting else { return }
-        if !animate {
-            complete(finished: true)
-            return
-        }
-        var maxTime: TimeInterval = 0
-        for animator in animators {
-            maxTime = max(maxTime, animator.resume(timePassed: progress * totalDuration,
-                                                   reverse: false))
-        }
-        complete(after: maxTime, finishing: true)
+  /**
+   Finish the interactive transition.
+   Will stop the interactive transition and animate from the
+   current state to the **end** state
+   */
+  public func finish(animate: Bool = true) {
+    guard state == .animating || state == .notified || state == .starting else { return }
+    if !animate {
+      self.complete(finished: true)
+      return
     }
-
-    /**
-     Cancel the interactive transition.
-     Will stop the interactive transition and animate from the
-     current state to the **beginning** state
-     */
-    public func cancel(animate: Bool = true) {
-        guard state == .animating || state == .notified || state == .starting else { return }
-        if !animate {
-            complete(finished: false)
-            return
-        }
-        var maxTime: TimeInterval = 0
-        for animator in animators {
-            var adjustedProgress = progress
-            if adjustedProgress < 0 {
-                adjustedProgress = -adjustedProgress
-            }
-            maxTime = max(maxTime, animator.resume(timePassed: adjustedProgress * totalDuration,
-                                                   reverse: true))
-        }
-        complete(after: maxTime, finishing: false)
+    var maxTime: TimeInterval = 0
+    for animator in self.animators {
+      maxTime = max(maxTime, animator.resume(timePassed: self.progress * self.totalDuration,
+                                             reverse: false))
     }
+    self.complete(after: maxTime, finishing: true)
+  }
 
-    /**
-     Override modifiers during an interactive animation.
-
-     For example:
-
-     Hero.shared.apply([.position(x:50, y:50)], to:view)
-
-     will set the view's position to 50, 50
-     - Parameters:
-     - modifiers: the modifiers to override
-     - view: the view to override to
-     */
-    public func apply(modifiers: [HeroModifier], to view: UIView) {
-        guard state == .animating else { return }
-        let targetState = HeroTargetState(modifiers: modifiers)
-        if let otherView = self.context.pairedView(for: view) {
-            for animator in animators {
-                animator.apply(state: targetState, to: otherView)
-            }
-        }
-        for animator in animators {
-            animator.apply(state: targetState, to: view)
-        }
+  /**
+   Cancel the interactive transition.
+   Will stop the interactive transition and animate from the
+   current state to the **beginning** state
+   */
+  public func cancel(animate: Bool = true) {
+    guard state == .animating || state == .notified || state == .starting else { return }
+    if !animate {
+      self.complete(finished: false)
+      return
     }
-
-    /**
-     Override target state during an interactive animation.
-
-     For example:
-
-     Hero.shared.changeTarget([.position(x:50, y:50)], to:view)
-
-     will animate the view's position to 50, 50 once `finish(animate:)` is called
-     - Parameters:
-     - modifiers: the modifiers to override
-     - isDestination: if false, it changes the starting state
-     - view: the view to override to
-     */
-    public func changeTarget(modifiers: [HeroModifier], isDestination: Bool = true, to view: UIView) {
-        guard state == .animating else { return }
-        let targetState = HeroTargetState(modifiers: modifiers)
-        if let otherView = self.context.pairedView(for: view) {
-            for animator in animators {
-                animator.changeTarget(state: targetState, isDestination: !isDestination, to: otherView)
-            }
-        }
-        for animator in animators {
-            animator.changeTarget(state: targetState, isDestination: isDestination, to: view)
-        }
+    var maxTime: TimeInterval = 0
+    for animator in self.animators {
+      var adjustedProgress = self.progress
+      if adjustedProgress < 0 {
+        adjustedProgress = -adjustedProgress
+      }
+      maxTime = max(maxTime, animator.resume(timePassed: adjustedProgress * self.totalDuration,
+                                             reverse: true))
     }
+    self.complete(after: maxTime, finishing: false)
+  }
+
+  /**
+   Override modifiers during an interactive animation.
+
+   For example:
+
+   Hero.shared.apply([.position(x:50, y:50)], to:view)
+
+   will set the view's position to 50, 50
+   - Parameters:
+   - modifiers: the modifiers to override
+   - view: the view to override to
+   */
+  public func apply(modifiers: [HeroModifier], to view: UIView) {
+    guard state == .animating else { return }
+    let targetState = HeroTargetState(modifiers: modifiers)
+    if let otherView = self.context.pairedView(for: view) {
+      for animator in self.animators {
+        animator.apply(state: targetState, to: otherView)
+      }
+    }
+    for animator in self.animators {
+      animator.apply(state: targetState, to: view)
+    }
+  }
+
+  /**
+   Override target state during an interactive animation.
+
+   For example:
+
+   Hero.shared.changeTarget([.position(x:50, y:50)], to:view)
+
+   will animate the view's position to 50, 50 once `finish(animate:)` is called
+   - Parameters:
+   - modifiers: the modifiers to override
+   - isDestination: if false, it changes the starting state
+   - view: the view to override to
+   */
+  public func changeTarget(modifiers: [HeroModifier], isDestination: Bool = true, to view: UIView) {
+    guard state == .animating else { return }
+    let targetState = HeroTargetState(modifiers: modifiers)
+    if let otherView = self.context.pairedView(for: view) {
+      for animator in self.animators {
+        animator.changeTarget(state: targetState, isDestination: !isDestination, to: otherView)
+      }
+    }
+    for animator in self.animators {
+      animator.changeTarget(state: targetState, isDestination: isDestination, to: view)
+    }
+  }
 }

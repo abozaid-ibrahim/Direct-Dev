@@ -23,151 +23,149 @@
 import UIKit
 
 open class HeroPlugin: NSObject, HeroPreprocessor, HeroAnimator {
-    public weak var hero: HeroTransition!
 
-    public var context: HeroContext! {
-        return hero.context
-    }
+  weak public var hero: HeroTransition!
 
-    /**
-     Determines whether or not to receive `seekTo` callback on every frame.
+  public var context: HeroContext! {
+    return hero.context
+  }
 
-     Default is false.
+  /**
+    Determines whether or not to receive `seekTo` callback on every frame.
+   
+    Default is false.
+   
+    When **requirePerFrameCallback** is **false**, the plugin needs to start its own animations inside `animate` & `resume`
+    The `seekTo` method is only being called during an interactive transition.
+   
+    When **requirePerFrameCallback** is **true**, the plugin will receive `seekTo` callback on every animation frame. Hence it is possible for the plugin to do per-frame animations without implementing `animate` & `resume`
+   */
+  open var requirePerFrameCallback = false
 
-     When **requirePerFrameCallback** is **false**, the plugin needs to start its own animations inside `animate` & `resume`
-     The `seekTo` method is only being called during an interactive transition.
+  public override required init() {}
 
-     When **requirePerFrameCallback** is **true**, the plugin will receive `seekTo` callback on every animation frame. Hence it is possible for the plugin to do per-frame animations without implementing `animate` & `resume`
-     */
-    open var requirePerFrameCallback = false
+  /**
+   Called before any animation.
+   Override this method when you want to preprocess modifiers for views
+   - Parameters:
+       - context: object holding all parsed and changed modifiers,
+       - fromViews: A flattened list of all views from source ViewController
+       - toViews: A flattened list of all views from destination ViewController
 
-    public required override init() {}
+   To check a view's modifiers:
 
-    /**
-     Called before any animation.
-     Override this method when you want to preprocess modifiers for views
-     - Parameters:
-     - context: object holding all parsed and changed modifiers,
-     - fromViews: A flattened list of all views from source ViewController
-     - toViews: A flattened list of all views from destination ViewController
+       context[view]
+       context[view, "modifierName"]
 
-     To check a view's modifiers:
+   To set a view's modifiers:
 
-     context[view]
-     context[view, "modifierName"]
+       context[view] = [("modifier1", ["parameter1"]), ("modifier2", [])]
+       context[view, "modifier1"] = ["parameter1", "parameter2"]
 
-     To set a view's modifiers:
+  */
+  open func process(fromViews: [UIView], toViews: [UIView]) {}
 
-     context[view] = [("modifier1", ["parameter1"]), ("modifier2", [])]
-     context[view, "modifier1"] = ["parameter1", "parameter2"]
+  /**
+   - Returns: return true if the plugin can handle animating the view.
+   - Parameters:
+       - context: object holding all parsed and changed modifiers,
+       - view: the view to check whether or not the plugin can handle the animation
+       - appearing: true if the view is appearing(i.e. a view in destination ViewController)
+   If return true, Hero won't animate and won't let any other plugins animate this view.
+   The view will also be hidden automatically during the animation.
+   */
+  open func canAnimate(view: UIView, appearing: Bool) -> Bool { return false }
 
-     */
-    open func process(fromViews _: [UIView], toViews _: [UIView]) {}
+  /**
+   Perform the animation.
 
-    /**
-     - Returns: return true if the plugin can handle animating the view.
-     - Parameters:
-     - context: object holding all parsed and changed modifiers,
-     - view: the view to check whether or not the plugin can handle the animation
-     - appearing: true if the view is appearing(i.e. a view in destination ViewController)
-     If return true, Hero won't animate and won't let any other plugins animate this view.
-     The view will also be hidden automatically during the animation.
-     */
-    open func canAnimate(view _: UIView, appearing _: Bool) -> Bool { return false }
+   Note: views in `fromViews` & `toViews` are hidden already. Unhide then if you need to take snapshots.
+   - Parameters:
+       - context: object holding all parsed and changed modifiers,
+       - fromViews: A flattened list of all views from source ViewController (filtered by `canAnimate`)
+       - toViews: A flattened list of all views from destination ViewController (filtered by `canAnimate`)
+   - Returns: The duration needed to complete the animation
+   */
 
-    /**
-     Perform the animation.
+  open func animate(fromViews: [UIView], toViews: [UIView]) -> TimeInterval { return 0 }
 
-     Note: views in `fromViews` & `toViews` are hidden already. Unhide then if you need to take snapshots.
-     - Parameters:
-     - context: object holding all parsed and changed modifiers,
-     - fromViews: A flattened list of all views from source ViewController (filtered by `canAnimate`)
-     - toViews: A flattened list of all views from destination ViewController (filtered by `canAnimate`)
-     - Returns: The duration needed to complete the animation
-     */
+  /**
+   Called when all animations are completed.
 
-    open func animate(fromViews _: [UIView], toViews _: [UIView]) -> TimeInterval { return 0 }
+   Should perform cleanup and release any reference
+   */
+  open func clean() {}
 
-    /**
-     Called when all animations are completed.
+  /**
+   For supporting interactive animation only.
 
-     Should perform cleanup and release any reference
-     */
-    open func clean() {}
-
-    /**
-     For supporting interactive animation only.
-
-     This method is called when an interactive animation is in place
-     The plugin should pause the animation, and seek to the given progress
-     - Parameters:
+   This method is called when an interactive animation is in place
+   The plugin should pause the animation, and seek to the given progress
+   - Parameters:
      - timePassed: time of the animation to seek to.
-     */
-    open func seekTo(timePassed _: TimeInterval) {}
+   */
+  open func seekTo(timePassed: TimeInterval) {}
 
-    /**
-     For supporting interactive animation only.
+  /**
+   For supporting interactive animation only.
 
-     This method is called when an interactive animation is ended
-     The plugin should resume the animation.
-     - Parameters:
-     - timePassed: will be the same value since last `seekTo`
-     - reverse: a boolean value indicating whether or not the animation should reverse
-     */
-    open func resume(timePassed _: TimeInterval, reverse _: Bool) -> TimeInterval { return 0 }
+   This method is called when an interactive animation is ended
+   The plugin should resume the animation.
+   - Parameters:
+   - timePassed: will be the same value since last `seekTo`
+   - reverse: a boolean value indicating whether or not the animation should reverse
+   */
+  open func resume(timePassed: TimeInterval, reverse: Bool) -> TimeInterval { return 0 }
 
-    /**
-     For supporting interactive animation only.
+  /**
+   For supporting interactive animation only.
 
-     This method is called when user wants to override animation modifiers during an interactive animation
+   This method is called when user wants to override animation modifiers during an interactive animation
 
-     - Parameters:
-     - state: the target state to override
-     - view: the view to override
-     */
-    open func apply(state _: HeroTargetState, to _: UIView) {}
-    open func changeTarget(state _: HeroTargetState, isDestination _: Bool, to _: UIView) {}
+   - Parameters:
+       - state: the target state to override
+       - view: the view to override
+   */
+  open func apply(state: HeroTargetState, to view: UIView) {}
+  open func changeTarget(state: HeroTargetState, isDestination: Bool, to view: UIView) {}
 }
 
 // methods for enable/disable the current plugin
 extension HeroPlugin {
-    public static var isEnabled: Bool {
-        get {
-            return HeroTransition.isEnabled(plugin: self)
-        }
-        set {
-            if newValue {
-                enable()
-            } else {
-                disable()
-            }
-        }
+  public static var isEnabled: Bool {
+    get {
+      return HeroTransition.isEnabled(plugin: self)
     }
-
-    public static func enable() {
-        HeroTransition.enable(plugin: self)
+    set {
+      if newValue {
+        enable()
+      } else {
+        disable()
+      }
     }
-
-    public static func disable() {
-        HeroTransition.disable(plugin: self)
-    }
+  }
+  public static func enable() {
+    HeroTransition.enable(plugin: self)
+  }
+  public static func disable() {
+    HeroTransition.disable(plugin: self)
+  }
 }
 
 // MARK: Plugin Support
-
 internal extension HeroTransition {
-    static func isEnabled(plugin: HeroPlugin.Type) -> Bool {
-        return enabledPlugins.index(where: { $0 == plugin }) != nil
-    }
+  static func isEnabled(plugin: HeroPlugin.Type) -> Bool {
+    return enabledPlugins.index(where: { return $0 == plugin}) != nil
+  }
 
-    static func enable(plugin: HeroPlugin.Type) {
-        disable(plugin: plugin)
-        enabledPlugins.append(plugin)
-    }
+  static func enable(plugin: HeroPlugin.Type) {
+    disable(plugin: plugin)
+    enabledPlugins.append(plugin)
+  }
 
-    static func disable(plugin: HeroPlugin.Type) {
-        if let index = enabledPlugins.index(where: { $0 == plugin }) {
-            enabledPlugins.remove(at: index)
-        }
+  static func disable(plugin: HeroPlugin.Type) {
+    if let index = enabledPlugins.index(where: { return $0 == plugin}) {
+      enabledPlugins.remove(at: index)
     }
+  }
 }

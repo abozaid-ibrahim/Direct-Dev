@@ -23,36 +23,36 @@
 import UIKit
 
 @objc public protocol HeroViewControllerDelegate {
-    @objc optional func heroWillStartAnimatingFrom(viewController: UIViewController)
-    @objc optional func heroDidEndAnimatingFrom(viewController: UIViewController)
-    @objc optional func heroDidCancelAnimatingFrom(viewController: UIViewController)
+  @objc optional func heroWillStartAnimatingFrom(viewController: UIViewController)
+  @objc optional func heroDidEndAnimatingFrom(viewController: UIViewController)
+  @objc optional func heroDidCancelAnimatingFrom(viewController: UIViewController)
 
-    @objc optional func heroWillStartTransition()
-    @objc optional func heroDidEndTransition()
-    @objc optional func heroDidCancelTransition()
+  @objc optional func heroWillStartTransition()
+  @objc optional func heroDidEndTransition()
+  @objc optional func heroDidCancelTransition()
 
-    @objc optional func heroWillStartAnimatingTo(viewController: UIViewController)
-    @objc optional func heroDidEndAnimatingTo(viewController: UIViewController)
-    @objc optional func heroDidCancelAnimatingTo(viewController: UIViewController)
+  @objc optional func heroWillStartAnimatingTo(viewController: UIViewController)
+  @objc optional func heroDidEndAnimatingTo(viewController: UIViewController)
+  @objc optional func heroDidCancelAnimatingTo(viewController: UIViewController)
 }
 
 // delegate helper
 internal extension HeroTransition {
-    func closureProcessForHeroDelegate<T: UIViewController>(vc: T, closure: (HeroViewControllerDelegate) -> Void) {
-        if let delegate = vc as? HeroViewControllerDelegate {
-            closure(delegate)
-        }
-
-        if let navigationController = vc as? UINavigationController,
-            let delegate = navigationController.topViewController as? HeroViewControllerDelegate {
-            closure(delegate)
-        } else if let tabBarController = vc as? UITabBarController,
-            let delegate = tabBarController.selectedViewController as? HeroViewControllerDelegate {
-            closure(delegate)
-        } else {
-            for vc in vc.children where vc.isViewLoaded {
-                self.closureProcessForHeroDelegate(vc: vc, closure: closure)
-            }
-        }
+  func closureProcessForHeroDelegate<T: UIViewController>(vc: T, closure: (HeroViewControllerDelegate) -> Void) {
+    if let delegate = vc as? HeroViewControllerDelegate {
+      closure(delegate)
     }
+
+    if let navigationController = vc as? UINavigationController,
+      let delegate = navigationController.topViewController as? HeroViewControllerDelegate {
+      closure(delegate)
+    } else if let tabBarController = vc as? UITabBarController,
+      let delegate = tabBarController.selectedViewController as? HeroViewControllerDelegate {
+      closure(delegate)
+    } else {
+      for vc in vc.children where vc.isViewLoaded {
+        self.closureProcessForHeroDelegate(vc: vc, closure: closure)
+      }
+    }
+  }
 }
