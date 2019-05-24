@@ -6,12 +6,11 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
-import UIKit
 import RxSwift
-class PackageDetailsController: UIViewController,StyledActionBar {
+import UIKit
+class PackageDetailsController: UIViewController, StyledActionBar {
     var disposeBag = DisposeBag()
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupActionBar(.withX)

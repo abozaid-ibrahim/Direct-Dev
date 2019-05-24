@@ -42,13 +42,13 @@ final class PackagesViewController: UIViewController, SwipeUpDismissable {
     }
 
     private func setOnSelect() {
-        tableView.rx.itemSelected.asObservable().subscribe({ [unowned self] event in
+        tableView.rx.itemSelected.asObservable().subscribe { [unowned self] event in
             switch event.event {
             case let .next(indexPath):
                 try! AppNavigator().push(.packageDetails)
             default:
                 break
             }
-        }).disposed(by: disposeBag)
+        }.disposed(by: disposeBag)
     }
 }

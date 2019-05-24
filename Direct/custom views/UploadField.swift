@@ -18,22 +18,22 @@ class UploadField: FloatingTextField {
             self.icon.image = image
         }
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         createUI(image: nil)
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         createUI(image: nil)
     }
-    
+
     init(_ image: UIImage) {
         super.init(frame: CGRect(origin: .zero, size: CGSize(width: 200, height: 40)))
         createUI(image: image)
     }
-    
+
     func createUI(image: UIImage?) {
         guard let img = image else {
             return

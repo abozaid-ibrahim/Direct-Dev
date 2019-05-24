@@ -25,19 +25,20 @@ class PaymentBranchTableCell: UITableViewCell, TableCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-         selectCell(false)
+        selectCell(false)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-      selectCell(selected)
+        selectCell(selected)
     }
-    private func selectCell(_ selected:Bool){
+
+    private func selectCell(_ selected: Bool) {
         containerLayout.borderWidthV = 1
-        if selected{
+        if selected {
             containerLayout.borderColorV = UIColor.appMango
             containerLayout.backgroundColor = UIColor.appMango
-        }else{
+        } else {
             containerLayout.borderColorV = UIColor.lightGray
             containerLayout.backgroundColor = UIColor.white
         }

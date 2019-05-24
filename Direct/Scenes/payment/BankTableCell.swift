@@ -17,7 +17,9 @@ class BankTableCell: UITableViewCell, TableCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        selectionStyle = .none }
+        selectionStyle = .none
+    }
+
     func setText() {
         let attributedString = NSMutableAttributedString(string: "مكتب المسافر المباشر للسفر والسياحة\nرقم الحساب: 6534434465656554\nأيبان: SA18 0004 09888 7744 3333", attributes: [
             .font: UIFont(name: "Cairo-Regular", size: 13.0)!,

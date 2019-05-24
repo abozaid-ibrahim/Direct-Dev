@@ -19,11 +19,11 @@ public typealias TagDataModel = (String, UIImage?)
 public class TagView: UIView, TagsView {
     var aligment: TagViewAligment = .right {
         didSet {
-            switch self.aligment {
+            switch aligment {
             case .left:
-                self.layout.horizontalAlignment = .left
+                layout.horizontalAlignment = .left
             case .right:
-                self.layout.horizontalAlignment = .right
+                layout.horizontalAlignment = .right
             }
         }
     }
@@ -73,38 +73,38 @@ public class TagView: UIView, TagsView {
         super.init(frame: frame)
     }
 
-    init(tags: [TagDataModel]) {
+    init(tags _: [TagDataModel]) {
         super.init(frame: CGRect.zero)
-        self.setup()
+        setup()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.setup()
+        setup()
     }
 
     func setup() {
         backgroundColor = .white
-        self.addCollectionView()
+        addCollectionView()
         let bundle = Bundle(for: type(of: self))
         collectionView.register(UINib(nibName: TagCollectionCell.id, bundle: bundle), forCellWithReuseIdentifier: TagCollectionCell.id)
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
-        self.collectionView.reloadData()
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.reloadData()
     }
 
     private func addCollectionView() {
-        self.addSubview(self.collectionView)
-        self.collectionView.translatesAutoresizingMaskIntoConstraints = false
-        self.topAnchor.constraint(equalTo: self.collectionView.topAnchor).isActive = true
-        self.leadingAnchor.constraint(equalTo: self.collectionView.leadingAnchor).isActive = true
-        self.trailingAnchor.constraint(equalTo: self.collectionView.trailingAnchor).isActive = true
-        self.bottomAnchor.constraint(equalTo: self.collectionView.bottomAnchor).isActive = true
+        addSubview(collectionView)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        topAnchor.constraint(equalTo: collectionView.topAnchor).isActive = true
+        leadingAnchor.constraint(equalTo: collectionView.leadingAnchor).isActive = true
+        trailingAnchor.constraint(equalTo: collectionView.trailingAnchor).isActive = true
+        bottomAnchor.constraint(equalTo: collectionView.bottomAnchor).isActive = true
     }
 }
 
 extension TagView: UICollectionViewDelegate {
-    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {}
+    public func collectionView(_: UICollectionView, didSelectItemAt _: IndexPath) {}
 }
 
 extension TagView: UICollectionViewDelegateFlowLayout {
@@ -114,9 +114,9 @@ extension TagView: UICollectionViewDelegateFlowLayout {
 
     public func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let label = UILabel(frame: CGRect.zero)
-        label.font = self.font
-        label.text = self.items[indexPath.row].0
-        let iconWidth = self.items[indexPath.row].1 == nil ? 8 : CGFloat(25)
+        label.font = font
+        label.text = items[indexPath.row].0
+        let iconWidth = items[indexPath.row].1 == nil ? 8 : CGFloat(25)
         label.sizeToFit()
         let size = label.frame.size
         let padding = CGFloat(12)
@@ -125,14 +125,14 @@ extension TagView: UICollectionViewDelegateFlowLayout {
 }
 
 extension TagView: UICollectionViewDataSource {
-    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.items.count
+    public func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
+        return items.count
     }
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TagCollectionCell.id, for: indexPath) as! TagCollectionCell
-        cell.setCellModel(model: self.items[indexPath.row])
-        cell.setFont(self.font, bgColor: self.bgColor, txtColor: self.textColor)
+        cell.setCellModel(model: items[indexPath.row])
+        cell.setFont(font, bgColor: bgColor, txtColor: textColor)
         return cell
     }
 }

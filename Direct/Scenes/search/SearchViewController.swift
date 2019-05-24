@@ -31,13 +31,13 @@ final class SearchViewController: UIViewController, PanModalPresentable, StyledA
                 mycell.setCellData((model, #imageLiteral(resourceName: "united-kingdom")))
             }.disposed(by: disposeBag)
 
-        tableView.rx.itemSelected.asObservable().subscribe({ [unowned self] event in
+        tableView.rx.itemSelected.asObservable().subscribe { [unowned self] event in
             switch event.event {
             case let .next(indexPath):
                 try! AppNavigator().push(.visaRequirement)
             default:
                 break
             }
-        }).disposed(by: disposeBag)
+        }.disposed(by: disposeBag)
     }
 }

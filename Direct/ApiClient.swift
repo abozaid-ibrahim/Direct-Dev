@@ -35,7 +35,8 @@ class ApiClientFacade {
                 // do something with the data
                 log("scuccess")
             case let .error(error):
-                log(error) }
+                log(error)
+            }
         }
     }
 }

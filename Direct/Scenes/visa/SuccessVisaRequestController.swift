@@ -6,13 +6,13 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
-import UIKit
 import RxSwift
-class SuccessVisaRequestController: UIViewController,StyledActionBar {
-    internal let disposeBag =  DisposeBag()
+import UIKit
+class SuccessVisaRequestController: UIViewController, StyledActionBar {
+    internal let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-setupActionBar(.withX)
+        setupActionBar(.withX)
     }
 
     @IBAction func followMyOrder(_: Any) {

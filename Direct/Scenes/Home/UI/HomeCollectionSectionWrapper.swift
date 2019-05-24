@@ -24,7 +24,7 @@ class HomeCollectionSectionWrapper: UICollectionViewCell {
         collectionView.dataSource = self
         collectionView.delegate = self //
         collectionView.backgroundColor = UIColor.appVeryLightPink
-        self.backgroundColor = UIColor.appVeryLightPink
+        backgroundColor = UIColor.appVeryLightPink
 
         // getdata//
     }

@@ -94,7 +94,7 @@ extension VisaRequirementController: UITableViewDelegate {
         tableView.rx
             .itemSelected
             .map { indexPath in
-                return (indexPath, dataSource[indexPath])
+                (indexPath, dataSource[indexPath])
             }
             .subscribe(onNext: { _ in
                 //                DefaultWireframe.presentAlert("Tapped `\(pair.1)` @ \(pair.0)")

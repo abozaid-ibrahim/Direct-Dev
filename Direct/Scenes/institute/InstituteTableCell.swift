@@ -9,7 +9,7 @@
 import UIKit
 
 class InstituteTableCell: UITableViewCell, TableCell {
-    @IBOutlet weak var tagView: TagView!
+    @IBOutlet var tagView: TagView!
     typealias CellDataModel = String
     static var cellId: String = "InstituteTableCell"
     func setCellData(_: String) {}
@@ -17,7 +17,7 @@ class InstituteTableCell: UITableViewCell, TableCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        tagView.items = [("انترنت مجاني" , #imageLiteral(resourceName: "group15")),("انترنت مجاني" , #imageLiteral(resourceName: "group15")),("انترنت مجاني" , #imageLiteral(resourceName: "group15"))]
+        tagView.items = [("انترنت مجاني", #imageLiteral(resourceName: "group15")), ("انترنت مجاني", #imageLiteral(resourceName: "group15")), ("انترنت مجاني", #imageLiteral(resourceName: "group15"))]
         tagView.font = UIFont(name: AppFonts.regularFont, size: 10)!
     }
 

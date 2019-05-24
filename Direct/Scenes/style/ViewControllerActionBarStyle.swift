@@ -74,7 +74,6 @@ extension StyledActionBar where Self: UIViewController {
 
         backView.cornerRadiusV = 22
         backView.clipsToBounds = true
-        
     }
 
     private func addCustomNavigationBar(_ style: ActionBarStyles) {

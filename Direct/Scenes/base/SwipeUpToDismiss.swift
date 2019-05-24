@@ -26,9 +26,9 @@ protocol SwipeUpDismissable: UIViewController {
 
 extension SwipeUpDismissable {
     func enableSwipeUpToDismiss() {
-        view.rx.panGesture().asObservable().subscribe({ sender in
+        view.rx.panGesture().asObservable().subscribe { sender in
             self.swipeUpToDismiss(sender: sender.element!, initialTouchPoint: &self.initialTouchPoint, defaultFrame: self.defaultFrame)
-        }).disposed(by: disposeBag)
+        }.disposed(by: disposeBag)
         addBottomLine()
     }
 

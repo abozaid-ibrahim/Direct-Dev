@@ -8,7 +8,7 @@ import RxSwift
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 import UIKit
-final class HelpViewController: UIViewController, PanModalPresentable,StyledActionBar {
+final class HelpViewController: UIViewController, PanModalPresentable, StyledActionBar {
     var panScrollable: UIScrollView? {
         return tableView
     }
@@ -21,9 +21,9 @@ final class HelpViewController: UIViewController, PanModalPresentable,StyledActi
         tableView.registerNib(HelpTableCell.cellId)
         view.backgroundColor = UIColor.appOffWhite
         tableView.backgroundColor = .appOffWhite
-        
+
         Observable<[String]>.just(dataList)
-            .bind(to: tableView.rx.items(cellIdentifier: HelpTableCell.cellId)) { _, model, cell in
+            .bind(to: tableView.rx.items(cellIdentifier: HelpTableCell.cellId)) { _, _, _ in
 //                let mycell = (cell as! HelpTableCell)
             }.disposed(by: disposeBag)
     }

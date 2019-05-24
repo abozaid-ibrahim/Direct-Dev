@@ -9,7 +9,7 @@
 import RxSwift
 import UIKit
 
-final class InstituteDetailsController: UIViewController,StyledActionBar {
+final class InstituteDetailsController: UIViewController, StyledActionBar {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var contentContainer: UIView!
     @IBOutlet var tabsContainer: UIView!

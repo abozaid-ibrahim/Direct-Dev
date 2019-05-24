@@ -36,9 +36,11 @@ extension CommonAPIs: TargetType {
             return "get-new-services-by-country"
         }
     }
+
     public var method: Moya.Method {
         return .get
     }
+
     public var task: Task {
         switch self {
         case .userRepositories:
@@ -47,6 +49,7 @@ extension CommonAPIs: TargetType {
             return .requestPlain
         }
     }
+
     public var validationType: ValidationType {
         switch self {
         case .zen:
@@ -55,6 +58,7 @@ extension CommonAPIs: TargetType {
             return .none
         }
     }
+
     public var sampleData: Data {
         switch self {
         case .zen:
@@ -69,6 +73,7 @@ extension CommonAPIs: TargetType {
             return "{no data handled, mock it if you need}".data(using: String.Encoding.utf8)!
         }
     }
+
     public var headers: [String: String]? {
         return nil
     }

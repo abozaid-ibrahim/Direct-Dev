@@ -13,12 +13,12 @@ class PackagesTableCell: UITableViewCell, TableCell {
     func setCellData(_: String) {}
 
     typealias CellDataModel = String
-    @IBOutlet weak var tagView: TagView!
-    
+    @IBOutlet var tagView: TagView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        tagView.items = [("مطعم",#imageLiteral(resourceName: "icons8Mesh"))]
+        tagView.items = [("مطعم", #imageLiteral(resourceName: "icons8Mesh"))]
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

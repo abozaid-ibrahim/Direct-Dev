@@ -16,7 +16,6 @@ class DatePickerController: UIViewController, PanModalPresentable {
     @IBOutlet private var dateLbl: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
 //    @IBOutlet private weak var view:UILabel!

@@ -18,11 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setLanguage()
         return true
     }
-    private func setLanguage(){
+
+    private func setLanguage() {
         UserDefaults.standard.set(["ar"], forKey: "AppleLanguages")
         UserDefaults.standard.synchronize()
-
     }
+
     func setupGlobalAppearance() {
         window?.tintColor = UIColor.white
         // global Appearance settings
@@ -32,7 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UILabel.appearance().substituteFontName = AppFonts.regularFont
         UILabel.appearance().substituteFontNameBold = AppFonts.boldFont
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: AppFonts.regularFont, size: 11)!, NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
-
     }
 
     private func setRootController() {

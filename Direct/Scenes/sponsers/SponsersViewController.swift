@@ -14,16 +14,13 @@ class SponsersViewController: UIViewController {
         super.viewDidLoad()
         title = "معلومات المتكفلين"
 
-        
         setupTabbar()
     }
 
-    @IBAction func checkoutNextAction(_ sender: Any) {
-   
-      try! AppNavigator().push(.passangersInfoScreen)
-        
+    @IBAction func checkoutNextAction(_: Any) {
+        try! AppNavigator().push(.passangersInfoScreen)
     }
-    
+
     private func setupTabbar() {
         let tab1 = ("المتكفل الأول ", { [weak self] in
 

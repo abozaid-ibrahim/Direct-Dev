@@ -31,7 +31,7 @@ final class DynamicValue<T> {
     }
 
     private func notify() {
-        observers.forEach({ $0.value() })
+        observers.forEach { $0.value() }
     }
 
     deinit {

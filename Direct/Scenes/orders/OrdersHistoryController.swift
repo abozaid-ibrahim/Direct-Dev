@@ -8,7 +8,7 @@
 
 import RxSwift
 import UIKit
-final class OrdersHistoryController: UIViewController,StyledActionBar {
+final class OrdersHistoryController: UIViewController, StyledActionBar {
     @IBOutlet var tableView: UITableView!
     internal let disposeBag = DisposeBag()
     override func viewDidLoad() {

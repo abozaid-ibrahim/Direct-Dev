@@ -24,22 +24,22 @@ final class SelectableTableSheet: UIViewController, PanModalPresentable {
 
     // set these var from outside
     var data: [String]?
-    var titleText:String?
+    var titleText: String?
     var style: CellStyle = .textWithArrow
     // listen to selected
     var selectedItem = PublishSubject<String>()
     @IBOutlet var tableView: UITableView!
-@IBOutlet private  weak var titleLbl: UILabel!
+    @IBOutlet private var titleLbl: UILabel!
     private let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.titleLbl.text = titleText ?? "عدد المسافرين"
+        titleLbl.text = titleText ?? "عدد المسافرين"
         setTableDataSource()
         setONSelect()
     }
 
     private func setONSelect() {
-        tableView.rx.itemSelected.asObservable().subscribe({ [unowned self] event in
+        tableView.rx.itemSelected.asObservable().subscribe { [unowned self] event in
             switch event.event {
             case let .next(indexPath):
                 self.selectedItem.onNext(self.data?[indexPath.row] ?? "")
@@ -47,7 +47,7 @@ final class SelectableTableSheet: UIViewController, PanModalPresentable {
             default:
                 break
             }
-        }).disposed(by: disposeBag)
+        }.disposed(by: disposeBag)
     }
 
     private func setTableDataSource() {
