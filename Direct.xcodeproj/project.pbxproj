@@ -403,6 +403,34 @@
 			path = payment;
 			sourceTree = "<group>";
 		};
+		6C3885C2229B1B4100CA168A /* new visa wizard */ = {
+			isa = PBXGroup;
+			children = (
+				6C2CFB912277902400D23CF4 /* NewDirectVisaController.swift */,
+				6C9027D5228F95BD00B41705 /* NewDirectVisaController.xib */,
+				6C77826C227A9FB2001926B2 /* SuccessVisaRequestController.swift */,
+				6C9027D8228F95C300B41705 /* SuccessVisaRequestController.xib */,
+				6CDEBBE42284C55800EC3E6F /* PassangersCountController.swift */,
+				6C9027DB228F95C800B41705 /* PassangersCountController.xib */,
+				6CF0E36A2285BE6800149910 /* DatePickerController.swift */,
+				6C9027DE228F95CD00B41705 /* DatePickerController.xib */,
+			);
+			path = "new visa wizard";
+			sourceTree = "<group>";
+		};
+		6C3885C3229B1B4F00CA168A /* visa requirement */ = {
+			isa = PBXGroup;
+			children = (
+				6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */,
+				6C9027CC228F95AC00B41705 /* VisaRequirementController.xib */,
+				6C5DE76B22762013001A9FB6 /* RequireVisaSectionHeader.swift */,
+				6C9027D2228F95B700B41705 /* RequireVisaSectionHeader.xib */,
+				6C5DE7662275EC49001A9FB6 /* VisaRequirementTableCell.swift */,
+				6C9027CF228F95B100B41705 /* VisaRequirementTableCell.xib */,
+			);
+			path = "visa requirement";
+			sourceTree = "<group>";
+		};
 		6C55755A228BAC3F00BAE5E2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -648,20 +676,8 @@
 		6CE722E82274F9F700E095DC /* visa */ = {
 			isa = PBXGroup;
 			children = (
-				6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */,
-				6C9027CC228F95AC00B41705 /* VisaRequirementController.xib */,
-				6C5DE7662275EC49001A9FB6 /* VisaRequirementTableCell.swift */,
-				6C9027CF228F95B100B41705 /* VisaRequirementTableCell.xib */,
-				6C5DE76B22762013001A9FB6 /* RequireVisaSectionHeader.swift */,
-				6C9027D2228F95B700B41705 /* RequireVisaSectionHeader.xib */,
-				6C2CFB912277902400D23CF4 /* NewDirectVisaController.swift */,
-				6C9027D5228F95BD00B41705 /* NewDirectVisaController.xib */,
-				6C77826C227A9FB2001926B2 /* SuccessVisaRequestController.swift */,
-				6C9027D8228F95C300B41705 /* SuccessVisaRequestController.xib */,
-				6CDEBBE42284C55800EC3E6F /* PassangersCountController.swift */,
-				6C9027DB228F95C800B41705 /* PassangersCountController.xib */,
-				6CF0E36A2285BE6800149910 /* DatePickerController.swift */,
-				6C9027DE228F95CD00B41705 /* DatePickerController.xib */,
+				6C3885C3229B1B4F00CA168A /* visa requirement */,
+				6C3885C2229B1B4100CA168A /* new visa wizard */,
 			);
 			path = visa;
 			sourceTree = "<group>";
@@ -913,7 +929,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Direct/Pods-Direct-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Direct/Pods-Direct-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ARSLineProgress/ARSLineProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
@@ -952,7 +968,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Direct/Pods-Direct-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Direct/Pods-Direct-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FDA22F40912A830360693561 /* [CP] Check Pods Manifest.lock */ = {

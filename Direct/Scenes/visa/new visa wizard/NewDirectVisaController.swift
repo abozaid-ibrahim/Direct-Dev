@@ -15,9 +15,6 @@ import UIKit
 class NewDirectVisaController: UIViewController, SwipeUpDismissable {
     let disposeBag = DisposeBag()
     var dismessed: PublishSubject<Bool> = PublishSubject()
-    @IBOutlet var checkoutFooter: CheckoutFooter!
-    @IBOutlet var countryField: SpinnerTextField!
-
     var initialTouchPoint: CGPoint = CGPoint(x: 0, y: 0)
     var defaultFrame: CGRect? {
         didSet {
@@ -25,9 +22,15 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
         }
     }
 
+    // MARK: IBuilder ====================================>>
+
+    @IBOutlet var checkoutFooter: CheckoutFooter!
+    @IBOutlet var countryField: SpinnerTextField!
     @IBOutlet var visaField: SpinnerTextField!
     @IBOutlet var passangersCountField: SpinnerTextField!
     @IBOutlet var relationsField: SpinnerTextField!
+    //===================================================<<
+
     override func viewDidLoad() {
         super.viewDidLoad()
         enableSwipeUpToDismiss()
