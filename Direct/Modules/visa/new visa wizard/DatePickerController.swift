@@ -23,8 +23,7 @@ class DatePickerController: UIViewController, PanModalPresentable {
     }
 
     private func setDate(date: Date) {
-//         "تاريخ السفر : الأربعاء ، 2019/4/6"
-        let str = "\(date.displayFormat) :تاريخ السفر"
+        let str = "تاريخ السفر" + ": " + date.displayFormat 
         let attributedString = NSMutableAttributedString(string: str, attributes: [
             .font: UIFont(name: AppFonts.regularFont, size: 14.0)!,
             .foregroundColor: UIColor(white: 61.0 / 255.0, alpha: 1.0),

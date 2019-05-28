@@ -82,4 +82,4 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
             }).disposed(by: disposeBag)
         viewModel.selectedRelation.bind(to: relationsField.txtField.rx.text).disposed(by: disposeBag)
     }
-}®
+}
