@@ -57,14 +57,13 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
             .subscribe(onNext: { _ in
                 self.viewModel.showPasangersCountSpinner()
             }).disposed(by: disposeBag)
-        viewModel.passangersCount.subscribe(onNext: { value in
-            self.passangersCountField.txtField.text = "\(value)"
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        viewModel.passangersCount.map { "\($0)" }.bind(to: passangersCountField.txtField.rx.text).disposed(by: disposeBag)
+        
         dateField.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
-                try! AppNavigator().presentModally(.datePicker)
+                self.viewModel.showDatePickerDialog()
             }).disposed(by: disposeBag)
-
+        viewModel.selectedDate.map { "\($0)" }.bind(to: dateField.txtField.rx.text).disposed(by: disposeBag)
         visaField.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
                 self.viewModel.showVisaTypes()

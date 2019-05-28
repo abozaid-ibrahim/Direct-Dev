@@ -15,6 +15,7 @@ class NewDirectVisaViewModel {
     var screenData = PublishSubject<[NewVisaService]>()
     var bioOptions: [BioOption] = []
     var relativesList: [Relative] = []
+    var selectedDate = PublishSubject<Date?>()
 
     private var network: ApiClientFacade?
     var selectedCountry: NewVisaService?
@@ -88,6 +89,21 @@ class NewDirectVisaViewModel {
             }
 
         }.disposed(by: disposeBag)
+        try! AppNavigator().presentModally(vc)
+    }
+    func showDatePickerDialog() {
+    
+        let dest = Destination.datePicker
+        let vc = dest.controller() as! DatePickerController
+        vc.selectedDate.asObservable().subscribe { event in
+            switch event.event {
+            case .next(let value):
+                    self.selectedDate.onNext(value)
+            default:
+                break
+            }
+            
+            }.disposed(by: disposeBag)
         try! AppNavigator().presentModally(vc)
     }
    private let countriesController = Destination.searchCountries.controller() as! SearchViewController

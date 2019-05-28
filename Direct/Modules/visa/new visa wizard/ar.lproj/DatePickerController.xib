@@ -13,7 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DatePickerController" customModule="Direct" customModuleProvider="target">
             <connections>
                 <outlet property="dateLbl" destination="GnT-2P-hab" id="6w3-Gl-8En"/>
-                <outlet property="datepicker" destination="Drn-tz-HSm" id="47X-W1-ymj"/>
+                <outlet property="datePicker" destination="Brd-he-eOY" id="QUR-pe-L2N"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -31,12 +31,6 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Drn-tz-HSm">
-                            <rect key="frame" x="66" y="41" width="320" height="216"/>
-                            <date key="date" timeIntervalSinceReferenceDate="579190408.09953105">
-                                <!--2019-05-10 14:13:28 +0000-->
-                            </date>
-                        </datePicker>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIE-4N-jxb">
                             <rect key="frame" x="12" y="305.5" width="374" height="40"/>
                             <constraints>
@@ -58,19 +52,27 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Brd-he-eOY" customClass="JBDatePickerView" customModule="JBDatePicker">
+                            <rect key="frame" x="6" y="40.5" width="386" height="220"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="220" id="X9D-Tj-xff"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="GnT-2P-hab" secondAttribute="trailing" constant="12" id="1RY-gu-1vE"/>
                         <constraint firstItem="kfu-iw-Q79" firstAttribute="top" secondItem="iR9-ug-CxG" secondAttribute="top" constant="8" id="3kQ-qK-7TA"/>
                         <constraint firstAttribute="trailing" secondItem="BIE-4N-jxb" secondAttribute="trailing" constant="12" id="EcM-fe-nU3"/>
-                        <constraint firstItem="GnT-2P-hab" firstAttribute="top" secondItem="Drn-tz-HSm" secondAttribute="bottom" constant="16" id="Ehb-3d-J0N"/>
+                        <constraint firstItem="Brd-he-eOY" firstAttribute="leading" secondItem="iR9-ug-CxG" secondAttribute="leading" constant="6" id="HNC-WB-F4T"/>
+                        <constraint firstItem="Brd-he-eOY" firstAttribute="top" secondItem="kfu-iw-Q79" secondAttribute="bottom" constant="12" id="PT4-xA-Pr4"/>
                         <constraint firstItem="BIE-4N-jxb" firstAttribute="leading" secondItem="iR9-ug-CxG" secondAttribute="leading" constant="12" id="QMv-d1-tnf"/>
                         <constraint firstAttribute="trailing" secondItem="kfu-iw-Q79" secondAttribute="trailing" constant="8" id="TQp-Ek-GEd"/>
                         <constraint firstItem="BIE-4N-jxb" firstAttribute="top" secondItem="GnT-2P-hab" secondAttribute="bottom" constant="12" id="Y3P-TW-qEn"/>
-                        <constraint firstAttribute="trailing" secondItem="Drn-tz-HSm" secondAttribute="trailing" constant="12" id="aj2-fd-pe5"/>
+                        <constraint firstItem="GnT-2P-hab" firstAttribute="top" secondItem="Brd-he-eOY" secondAttribute="bottom" constant="12" id="fBk-Cs-qUK"/>
                         <constraint firstItem="kfu-iw-Q79" firstAttribute="leading" secondItem="iR9-ug-CxG" secondAttribute="leading" constant="8" id="fT8-Io-gyh"/>
-                        <constraint firstItem="Drn-tz-HSm" firstAttribute="top" secondItem="kfu-iw-Q79" secondAttribute="bottom" constant="12" id="nqD-IA-i6b"/>
+                        <constraint firstAttribute="trailing" secondItem="Brd-he-eOY" secondAttribute="trailing" constant="6" id="lwA-pL-fwn"/>
                         <constraint firstItem="GnT-2P-hab" firstAttribute="leading" secondItem="iR9-ug-CxG" secondAttribute="leading" constant="12" id="rRC-b6-QI9"/>
                     </constraints>
                 </view>
