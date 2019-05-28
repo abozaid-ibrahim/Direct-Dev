@@ -58,12 +58,12 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
                 self.viewModel.showPasangersCountSpinner()
             }).disposed(by: disposeBag)
         viewModel.passangersCount.map { "\($0)" }.bind(to: passangersCountField.txtField.rx.text).disposed(by: disposeBag)
-        
+
         dateField.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
                 self.viewModel.showDatePickerDialog()
             }).disposed(by: disposeBag)
-        viewModel.selectedDate.map { "\($0)" }.bind(to: dateField.txtField.rx.text).disposed(by: disposeBag)
+        viewModel.selectedDate.map { $0?.displayFormat }.bind(to: dateField.txtField.rx.text).disposed(by: disposeBag)
         visaField.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
                 self.viewModel.showVisaTypes()
@@ -82,4 +82,4 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
             }).disposed(by: disposeBag)
         viewModel.selectedRelation.bind(to: relationsField.txtField.rx.text).disposed(by: disposeBag)
     }
-}
+}®

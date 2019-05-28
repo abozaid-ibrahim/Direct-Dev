@@ -8,8 +8,8 @@
 
 import JBDatePicker
 import PanModal
-import UIKit
 import RxSwift
+import UIKit
 
 class DatePickerController: UIViewController, PanModalPresentable {
     @IBOutlet var datePicker: JBDatePickerView!
@@ -19,18 +19,18 @@ class DatePickerController: UIViewController, PanModalPresentable {
     @IBOutlet private var dateLbl: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        datePicker.delegate = self
+        self.datePicker.delegate = self
     }
 
-    private func setDate(date:Date) {
+    private func setDate(date: Date) {
 //         "تاريخ السفر : الأربعاء ، 2019/4/6"
-        let str = "\(date)  تاريخ السفر:"
-        let attributedString = NSMutableAttributedString(string:str, attributes: [
+        let str = "\(date.displayFormat) :تاريخ السفر"
+        let attributedString = NSMutableAttributedString(string: str, attributes: [
             .font: UIFont(name: AppFonts.regularFont, size: 14.0)!,
             .foregroundColor: UIColor(white: 61.0 / 255.0, alpha: 1.0),
         ])
         attributedString.addAttribute(.font, value: UIFont(name: AppFonts.regularFont, size: 14.0)!, range: NSRange(location: 0, length: 13))
-        dateLbl.attributedText  = attributedString
+        self.dateLbl.attributedText = attributedString
     }
 
     var selectedDate = PublishSubject<Date?>()
@@ -44,9 +44,24 @@ extension DatePickerController: JBDatePickerViewDelegate {
     // MARK: - JBDatePickerViewDelegate implementation
 
     func didSelectDay(_ dayView: JBDatePickerDayView) {
-        print("date selected: \(String(describing: dayView.date))")
-        self.selectedDate.onNext(dayView.date)
-        self.setDate(date: dayView.date!)
+        if let date = dayView.date {
+            self.selectedDate.onNext(date)
+            self.setDate(date: date)
+        }
     }
+}
 
+extension Date {
+    var displayFormat: String {
+        let outputFormatter = DateFormatter()
+        outputFormatter.locale = Locale(identifier: "ar")
+        outputFormatter.dateFormat = "E, d MMM yyyy"
+        return outputFormatter.string(from: self)
+    }
+    var apiFormat: String {
+        let outputFormatter = DateFormatter()
+        outputFormatter.locale = Locale(identifier: "ar")
+        outputFormatter.dateFormat = "E, d MMM yyyy"
+        return outputFormatter.string(from: self)
+    }
 }
