@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewDirectVisaController" customModule="Direct" customModuleProvider="target">
             <connections>
+                <outlet property="biometricField" destination="fnp-rV-BGk" id="fdQ-5j-AGq"/>
                 <outlet property="checkoutFooter" destination="72P-rO-dCS" id="Ujh-EQ-CWg"/>
                 <outlet property="countryField" destination="BhQ-iz-jOu" id="prw-RT-zrV"/>
                 <outlet property="dateField" destination="M6J-mY-pnS" id="qzf-3Z-dAR"/>
@@ -51,7 +52,7 @@
                                     <rect key="frame" x="0.0" y="58" width="355" height="48"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="shape"/>
+                                        <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="visaType"/>
                                         <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="path5"/>
                                         <userDefinedRuntimeAttribute type="string" keyPath="hint" value="نوع التأشيرة"/>
                                     </userDefinedRuntimeAttributes>
@@ -137,6 +138,6 @@
         <image name="icons8Marker" width="16" height="19"/>
         <image name="icons8Person" width="16" height="17"/>
         <image name="path5" width="11" height="6"/>
-        <image name="shape" width="14" height="19"/>
+        <image name="visaType" width="14" height="18"/>
     </resources>
 </document>

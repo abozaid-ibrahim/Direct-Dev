@@ -17,7 +17,9 @@ import Moya
 
 public enum CommonAPIs {
     case getAllCountries
-    case zen
+    case biometricChoices
+    case relationsList
+
     case userProfile(String)
     case userRepositories(String)
 }
@@ -26,19 +28,27 @@ extension CommonAPIs: TargetType {
     public var baseURL: URL { return URL(string: "https://dev.visa.directksa.com/backend/api/")! }
     public var path: String {
         switch self {
-        case .zen:
-            return "/zen"
+        case .biometricChoices:
+            return "get-bio-option"
         case let .userProfile(name):
             return "/users/\(name.urlEscaped)"
         case let .userRepositories(name):
             return "/users/\(name.urlEscaped)/repos"
         case .getAllCountries:
             return "get-new-services-by-country"
+        case .relationsList:
+            return "get-sponsor-bank-statement-relation"
         }
     }
 
     public var method: Moya.Method {
-        return .get
+        switch self {
+        case .getAllCountries,.biometricChoices,.relationsList:
+            return .post
+            
+        default:
+            return .get
+        }
     }
 
     public var task: Task {
@@ -46,13 +56,13 @@ extension CommonAPIs: TargetType {
         case .userRepositories:
             return .requestParameters(parameters: ["sort": "pushed"], encoding: URLEncoding.default)
         default:
-            return .requestPlain
+            return .requestParameters(parameters: ["key":"bf930e30-8c28-42d6-bf8e-f4cbd0b83774","lang":"en"], encoding: URLEncoding.default)
         }
     }
 
     public var validationType: ValidationType {
         switch self {
-        case .zen:
+        case .getAllCountries:
             return .successCodes
         default:
             return .none
@@ -61,12 +71,6 @@ extension CommonAPIs: TargetType {
 
     public var sampleData: Data {
         switch self {
-        case .zen:
-            return "Half measures are as bad as nothing at all.".data(using: String.Encoding.utf8)!
-        case let .userProfile(name):
-            return "{\"login\": \"\(name)\", \"id\": 100}".data(using: String.Encoding.utf8)!
-        case let .userRepositories(name):
-            return "[{\"name\": \"\(name)\"}]".data(using: String.Encoding.utf8)!
         case .getAllCountries:
             return "".data(using: String.Encoding.utf8)!
         default:

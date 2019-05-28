@@ -4,6 +4,7 @@ PODS:
   - Differentiator (3.1.0)
   - Hero (1.4.0)
   - IBAnalyzer (0.3.0)
+  - Kingfisher (5.5.0)
   - M13Checkbox (3.4.0)
   - Moya/Core (13.0.1):
     - Alamofire (~> 4.1)
@@ -34,6 +35,7 @@ DEPENDENCIES:
   - ARSLineProgress (~> 3.1)
   - Hero
   - IBAnalyzer
+  - Kingfisher (~> 5.0)
   - M13Checkbox
   - Moya/RxSwift (~> 13.0)
   - PanModal
@@ -53,6 +55,7 @@ SPEC REPOS:
     - Differentiator
     - Hero
     - IBAnalyzer
+    - Kingfisher
     - M13Checkbox
     - Moya
     - PanModal
@@ -72,6 +75,7 @@ SPEC CHECKSUMS:
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   IBAnalyzer: b126675d57df92f5b2464e836f22bcc83fd4970e
+  Kingfisher: 6fe5e67a90fd335e49b0f5c075ff55ac5ebedd94
   M13Checkbox: 6f59404540ac98ba83a3d1afac335895a40c6a5d
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   PanModal: db200380a267634f746f8dea550dc3d1df017fc0
@@ -85,6 +89,6 @@ SPEC CHECKSUMS:
   SwifterSwift: 96f90594b370802f01647c2b1229c74a84ffafee
   YALField: f80f986de790bb13690264422437fa4e0593af0a
 
-PODFILE CHECKSUM: 560642a3bbbfe1693e21ef6742b9bd2600a458ad
+PODFILE CHECKSUM: bab4fd4e3f998fb261ef815be0fc463354aaa00b
 
 COCOAPODS: 1.6.1

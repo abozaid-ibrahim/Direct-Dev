@@ -9,12 +9,12 @@
 import UIKit
 
 class CountryTableCell: UITableViewCell, TableCell {
-    func setCellData(_ model: (String, UIImage)) {
-        logoView.image = model.1
-        textLbl.text = model.0
+    func setCellData(_ model: CellDataModel) {
+        logoView.setImage(url: model.flag)
+        textLbl.text = model.countryName
     }
 
-    typealias CellDataModel = (String, UIImage)
+    typealias CellDataModel = NewVisaService
 
     @IBOutlet private var logoView: UIImageView!
     @IBOutlet private var textLbl: UILabel!
@@ -23,9 +23,6 @@ class CountryTableCell: UITableViewCell, TableCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        print(">>\(textLbl.font)")
-        // Cairo-Regular
-        // Cairo
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

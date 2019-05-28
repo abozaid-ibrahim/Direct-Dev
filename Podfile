@@ -16,6 +16,7 @@ target 'Direct' do
   pod 'YALField'
   pod 'SwifterSwift/AppKit'
   pod 'ARSLineProgress', '~> 3.1'
+  pod 'Kingfisher', '~> 5.0'
 
 
   

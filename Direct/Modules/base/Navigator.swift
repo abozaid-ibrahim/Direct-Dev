@@ -15,8 +15,9 @@ import RxSwift
 enum Destination {
     
     case loginView, signupView, homeScreen, visaRequirement,
-    selectableSheet(data: [Any])   ,
-    paymentMethod, passangersCount, newInstitueVisa, datePicker, hostsInfoScreen, passangersInfoScreen, successVisaReqScreen, MyOrders, orderDetails, institutesList, instituteDetails, packageDetails, successPackage, banks,newDirectVisa
+    selectableSheet(data: [String], titleText: String?
+   ,style: CellStyle),
+    paymentMethod, passangersCount, newInstitueVisa, datePicker, hostsInfoScreen, passangersInfoScreen, successVisaReqScreen, MyOrders, orderDetails, institutesList, instituteDetails, packageDetails, successPackage, banks,newDirectVisa,searchCountries
     func controller() -> UIViewController {
         switch self {
         case .loginView:
@@ -33,8 +34,11 @@ enum Destination {
         case .visaRequirement:
             let controller = VisaRequirementController()
             return controller
-        case let .selectableSheet(data):
+        case  .selectableSheet(let data,let title,let style):
             let vc = SelectableTableSheet()
+            vc.data = data
+            vc.style = style
+            vc.titleText = title
             return vc
         case .paymentMethod:
             return PaymentViewController()
@@ -68,6 +72,8 @@ enum Destination {
             return BanksViewController()
         case .newDirectVisa:
             return NewDirectVisaController()
+        case .searchCountries:
+            return UIStoryboard.main.instantiateViewController(withIdentifier: "SearchViewController")
         }
     }
 }
@@ -87,6 +93,9 @@ final class AppNavigator: Navigator {
 
     func presentModally(_ dest: Destination) {
         AppNavigator.rootController.presentPanModal(dest.controller() as! UIViewController & PanModalPresentable)
+    }
+    func presentModally(_ vc: UIViewController) {
+        AppNavigator.rootController.presentPanModal(vc as! UIViewController & PanModalPresentable)
     }
 
     func push(_ dest: Destination) {

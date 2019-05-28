@@ -24,13 +24,16 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
 
     // MARK: IBuilder ====================================>>
 
+    @IBOutlet var dateField: SpinnerTextField!
     @IBOutlet var checkoutFooter: CheckoutFooter!
     @IBOutlet var countryField: SpinnerTextField!
+    @IBOutlet var biometricField: SpinnerTextField!
     @IBOutlet var visaField: SpinnerTextField!
     @IBOutlet var passangersCountField: SpinnerTextField!
     @IBOutlet var relationsField: SpinnerTextField!
     //===================================================<<
 
+    private let viewModel = NewDirectVisaViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         enableSwipeUpToDismiss()
@@ -41,35 +44,22 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
         }
 
         setONClickViews()
+        viewModel.viewDidLoad()
     }
 
     private func setONClickViews() {
         countryField.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
-                let data = ["مصر", "الكويت", "بلغاريا"]
-                let dest = Destination.selectableSheet(data: data)
-                let vc = dest.controller() as! SelectableTableSheet
-                vc.data = data
-                vc.titleText = "مكان البصمة"
-                vc.style = .textCenter
-                vc.selectedItem.asObservable().subscribe { event in
-                    switch event.event {
-                    case let .next(value):
-                        self.countryField.txtField.text = event.element ?? ""
-                    default:
-                        break
-                    }
-
-                }.disposed(by: self.disposeBag)
-
-                self.presentPanModal(vc as! UIViewController & PanModalPresentable)
+                self.viewModel.showCountriesSpinner()
             }).disposed(by: disposeBag)
-
+        viewModel.selectedCountryName.bind(to: countryField.txtField.rx.text).disposed(by: disposeBag)
         passangersCountField.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
-                try! AppNavigator().presentModally(.passangersCount)
+                self.viewModel.showPasangersCountSpinner()
             }).disposed(by: disposeBag)
-
+        viewModel.passangersCount.subscribe(onNext: { value in
+            self.passangersCountField.txtField.text = "\(value)"
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         dateField.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
                 try! AppNavigator().presentModally(.datePicker)
@@ -77,29 +67,20 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
 
         visaField.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
-                try! AppNavigator().presentModally(.datePicker)
+                self.viewModel.showVisaTypes()
             }).disposed(by: disposeBag)
+        viewModel.selectedVisaType.bind(to: visaField.txtField.rx.text).disposed(by: disposeBag)
+
+        biometricField.rx.tapGesture().when(.recognized)
+            .subscribe(onNext: { _ in
+                self.viewModel.showBiometricSpinner()
+            }).disposed(by: disposeBag)
+        viewModel.selectedBio.bind(to: biometricField.txtField.rx.text).disposed(by: disposeBag)
+
         relationsField.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
-
-                let data = ["الزوج", "الابن", "الزوجة"]
-                let dest = Destination.selectableSheet(data: data)
-                let vc = dest.controller() as! SelectableTableSheet
-                vc.data = data
-                vc.titleText = "العلاقة بين المسافرين"
-                vc.selectedItem.asObservable().subscribe { event in
-                    switch event.event {
-                    case let .next(value):
-                        self.countryField.txtField.text = event.element ?? ""
-                    default:
-                        break
-                    }
-
-                }.disposed(by: self.disposeBag)
-
-                self.presentPanModal(vc as! UIViewController & PanModalPresentable)
+                self.viewModel.showRelationsSpinner()
             }).disposed(by: disposeBag)
+        viewModel.selectedRelation.bind(to: relationsField.txtField.rx.text).disposed(by: disposeBag)
     }
-
-    @IBOutlet var dateField: SpinnerTextField!
 }

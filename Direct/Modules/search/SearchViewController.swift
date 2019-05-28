@@ -11,33 +11,36 @@ import RxSwift
 import UIKit
 final class SearchViewController: UIViewController, PanModalPresentable, StyledActionBar {
     var panScrollable: UIScrollView? {
-        return tableView
+        return nil //tableView
     }
 
+    var shortFormHeight: PanModalHeight = .maxHeightWithTopInset(20)
+
+    var selectedItem = PublishSubject<NewVisaService>()
+    private let viewModel = SearchCountriesViewModel()
     @IBOutlet var tableView: UITableView!
     internal let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupActionBar(.withTitle("بحث"))
         setupTableView()
+        viewModel.viewDidLoad()
     }
 
     private func setupTableView() {
         tableView.register(UINib(nibName: CountryTableCell.cellId, bundle: nil), forCellReuseIdentifier: CountryTableCell.cellId)
 
-        Observable<[String]>.just(dataList)
+        viewModel.countriesList
             .bind(to: tableView.rx.items(cellIdentifier: CountryTableCell.cellId)) { _, model, cell in
                 let mycell = (cell as! CountryTableCell)
-                mycell.setCellData((model, #imageLiteral(resourceName: "united-kingdom")))
+                mycell.setCellData(model)
             }.disposed(by: disposeBag)
 
-        tableView.rx.itemSelected.asObservable().subscribe { [unowned self] event in
-            switch event.event {
-            case let .next(indexPath):
-                try! AppNavigator().push(.visaRequirement)
-            default:
-                break
-            }
-        }.disposed(by: disposeBag)
+        tableView.rx
+            .modelSelected(NewVisaService.self)
+            .subscribe(onNext: { value in
+                self.selectedItem.onNext(value)
+                self.dismiss(animated: true, completion: nil)
+            })
+            .disposed(by: disposeBag)
     }
 }
