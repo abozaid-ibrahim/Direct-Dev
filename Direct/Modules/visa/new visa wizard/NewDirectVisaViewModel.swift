@@ -16,6 +16,7 @@ class NewDirectVisaViewModel {
     var bioOptions: [BioOption] = []
     var relativesList: [Relative] = []
     var selectedDate = PublishSubject<Date?>()
+    var showProgress = PublishSubject<Bool>()
 
     private var network: ApiClientFacade?
     var selectedCountry: NewVisaService?
@@ -31,23 +32,54 @@ class NewDirectVisaViewModel {
     }
 
     func viewDidLoad() {
+        guard let network = network else {
+            return
+        }
+        showProgress.onNext(true)
+
         // get countries
-        network?.getCountries().subscribe(onNext: { [weak self] countries in
+        let countries = network.getCountries()
+        countries.subscribe(onNext: { [weak self] countries in
             self?.screenData.onNext(countries)
         }, onError: { [weak self] err in
             self?.screenData.onError(err)
         }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         // get biou
-        network?.getBiometricChoices().subscribe(onNext: { [weak self] bios in
+        let bios = network.getBiometricChoices()
+        bios.subscribe(onNext: { [weak self] bios in
             self?.bioOptions.append(contentsOf: bios.bioOption)
         }, onError: { [weak self] _ in
 //                self?.bioOptions.onError(err)
         }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
 
         // get relatives
-        network?.getRelationList().subscribe(onNext: { [weak self] bios in
+        let rel = network.getRelationList()
+        rel.subscribe(onNext: { [weak self] bios in
             self?.relativesList.append(contentsOf: bios.relatives)
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        Observable.zip(
+            countries, bios, rel,
+            resultSelector: { _, _, _ in
+                self.showProgress.onNext(false)
+        }).observeOn(MainScheduler.instance)
+            .subscribe()
+            .disposed(by: disposeBag)
+    }
+
+    var params: VisaRequestParams?
+
+    func submitVisaRequest() {
+        guard let prm = params else {
+            validate(msg: "all is well")
+            return
+        }
+        showProgress.onNext(true)
+        network?.sendVisaRequest(params: prm).subscribe(onNext: { _ in
+            self.showProgress.onNext(false)
+
+        }, onError: { _ in
+            self.showProgress.onNext(false)
+        }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 
     func validate(msg: String) {}
@@ -91,25 +123,25 @@ class NewDirectVisaViewModel {
         }.disposed(by: disposeBag)
         try! AppNavigator().presentModally(vc)
     }
+
     func showDatePickerDialog() {
-    
         let dest = Destination.datePicker
         let vc = dest.controller() as! DatePickerController
         vc.selectedDate.asObservable().subscribe { event in
             switch event.event {
             case .next(let value):
-                    self.selectedDate.onNext(value)
+                self.selectedDate.onNext(value)
             default:
                 break
             }
-            
-            }.disposed(by: disposeBag)
+
+        }.disposed(by: disposeBag)
         try! AppNavigator().presentModally(vc)
     }
-   private let countriesController = Destination.searchCountries.controller() as! SearchViewController
+
+    private let countriesController = Destination.searchCountries.controller() as! SearchViewController
 
     func showCountriesSpinner() {
-
         countriesController.selectedItem.asObservable().subscribe { event in
             switch event.event {
             case .next(let value):
@@ -123,22 +155,22 @@ class NewDirectVisaViewModel {
         }.disposed(by: disposeBag)
         try! AppNavigator().presentModally(countriesController)
     }
+
     func showPasangersCountSpinner() {
-        var vc  = Destination.passangersCount.controller() as! PassangersCountController
-        
+        var vc = Destination.passangersCount.controller() as! PassangersCountController
+
         vc.result.asObservable().subscribe { event in
             switch event.event {
             case .next(let value):
                 self.passangersCount.onNext(value)
-                
+
             default:
                 break
             }
-            
-            }.disposed(by: disposeBag)
+
+        }.disposed(by: disposeBag)
         try! AppNavigator().presentModally(vc)
     }
-
 
     func showRelationsSpinner() {
         let bios = relativesList.map { $0.name }

@@ -15,9 +15,10 @@ import RxSwift
 
 class ApiClientFacade {
     private let parser = JsonParser()
-    //    private let provider = MoyaProvider<CommonAPIs>()
     private let disposeBag = DisposeBag()
-    private let provider = MoyaProvider<CommonAPIs>(plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: APIDateFromatter().JSONResponseDataFormatter)])
+    private let commonProvider = MoyaProvider<CommonAPIs>(plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: APIDateFromatter().JSONResponseDataFormatter)])
+
+    private let visaProvider = MoyaProvider<VisaAPIs>(plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: APIDateFromatter().JSONResponseDataFormatter)])
 
     //    func downloadRepositories(_ username: String) {
     //        provider.request(.zen) { result in
@@ -35,7 +36,7 @@ class ApiClientFacade {
     func getCountries() -> Observable<[NewVisaService]> {
         let observable = Observable<[NewVisaService]>.create { (observer) -> Disposable in
 
-            self.provider.rx.request(.getAllCountries).subscribe { event in
+            self.commonProvider.rx.request(.getAllCountries).subscribe { event in
                 switch event {
                 case let .success(response):
                     if let countries = try? JSONDecoder().decode(NewVisaCountriesResponse.self, from: response.data) {
@@ -54,22 +55,30 @@ class ApiClientFacade {
 
     func getBiometricChoices() -> Observable<BioChoicesResponse> {
         return Observable<BioChoicesResponse>.create { (observer) -> Disposable in
-            self.provider.rx.request(.biometricChoices).subscribe { [weak self] event in
+            self.commonProvider.rx.request(.biometricChoices).subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
             }.disposed(by: self.disposeBag)
             return Disposables.create()
         }
     }
-    
+
     func getRelationList() -> Observable<RelativesResponse> {
         return Observable<RelativesResponse>.create { (observer) -> Disposable in
-            self.provider.rx.request(.relationsList).subscribe { [weak self] event in
+            self.commonProvider.rx.request(.relationsList).subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
-                }.disposed(by: self.disposeBag)
+            }.disposed(by: self.disposeBag)
             return Disposables.create()
         }
     }
-    
+
+    func sendVisaRequest(params: VisaRequestParams) -> Observable<VisaRequestResponse> {
+        return Observable<VisaRequestResponse>.create { (observer) -> Disposable in
+            self.visaProvider.rx.request(VisaAPIs.visaRequest(prm: params)).subscribe { [weak self] event in
+                self?.parser.emitDataModelfromResponse(event: event, observer: observer)
+            }.disposed(by: self.disposeBag)
+            return Disposables.create()
+        }
+    }
 }
 
 func log(_ value: Any) {

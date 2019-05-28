@@ -9,12 +9,6 @@
 import Foundation
 import Moya
 
-// curl --location --request POST "/" \
-// --header "Content-Type: application/x-www-form-urlencoded" \
-// --data "key=bf930e30-8c28-42d6-bf8e-f4cbd0b83774&lang=en"
-
-// MARK: - Provider setup
-
 public enum CommonAPIs {
     case getAllCountries
     case biometricChoices
@@ -23,9 +17,12 @@ public enum CommonAPIs {
     case userProfile(String)
     case userRepositories(String)
 }
-
-extension CommonAPIs: TargetType {
+//share base url cross all of the APIs
+extension TargetType{
     public var baseURL: URL { return URL(string: "https://dev.visa.directksa.com/backend/api/")! }
+
+}
+extension CommonAPIs: TargetType {
     public var path: String {
         switch self {
         case .biometricChoices:
@@ -43,9 +40,9 @@ extension CommonAPIs: TargetType {
 
     public var method: Moya.Method {
         switch self {
-        case .getAllCountries,.biometricChoices,.relationsList:
+        case .getAllCountries, .biometricChoices, .relationsList:
             return .post
-            
+
         default:
             return .get
         }
@@ -56,7 +53,7 @@ extension CommonAPIs: TargetType {
         case .userRepositories:
             return .requestParameters(parameters: ["sort": "pushed"], encoding: URLEncoding.default)
         default:
-            return .requestParameters(parameters: ["key":"bf930e30-8c28-42d6-bf8e-f4cbd0b83774","lang":"en"], encoding: URLEncoding.default)
+            return .requestParameters(parameters: ["key": "bf930e30-8c28-42d6-bf8e-f4cbd0b83774", "lang": "en"], encoding: URLEncoding.default)
         }
     }
 

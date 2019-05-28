@@ -76,7 +76,7 @@ class PassangersCountController: UIViewController, PanModalPresentable {
        dismiss(animated: true, completion: nil)
     }
     func setTotalFooterCount(men: Int, child: Int) {
-        let str = "عدد المسافرين" + " : " + " \(child)" + "اطفال" + "," + " \(men) " + "بالغين"
+        let str = "عدد المسافرين" + " : " + " \(child) " + "اطفال" + "," + " \(men) " + "بالغين"
         let attributedString = NSMutableAttributedString(string: str,
                                                          attributes: [
                                                              .font: UIFont(name: AppFonts.boldFont, size: 14.0)!,
@@ -84,5 +84,7 @@ class PassangersCountController: UIViewController, PanModalPresentable {
                                                          ])
         attributedString.addAttribute(.font, value: UIFont(name: AppFonts.regularFont, size: 14.0)!, range: NSRange(location: 0, length: 15))
         countLbl.attributedText = attributedString
+        
+        
     }
 }

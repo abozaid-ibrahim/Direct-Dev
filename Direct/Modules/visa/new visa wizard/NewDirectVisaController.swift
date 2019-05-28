@@ -38,13 +38,28 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
         super.viewDidLoad()
         enableSwipeUpToDismiss()
         title = "دايركت فيزا"
-
+        viewModel.showProgress.subscribe(onNext: { [weak self] value in
+            self?.showProgress = value
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         checkoutFooter.action = { [weak self] in
-            try! AppNavigator().push(.paymentMethod)
+            guard let self = self else { return }
+            let cid = self.viewModel.selectedCountry?.countryID ?? ""
+
+            self.viewModel.submitVisaRequest()
         }
 
         setONClickViews()
         viewModel.viewDidLoad()
+    }
+
+    var showProgress: Bool? {
+        didSet {
+            if showProgress ?? false {
+                Progress.show()
+            } else {
+                Progress.hide()
+            }
+        }
     }
 
     private func setONClickViews() {
