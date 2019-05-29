@@ -8,8 +8,19 @@
 
 import Foundation
 import Moya
-public struct VisaRequestParams {
-    var userid: Int, country_id: String, biometry_loc_id: Int, no_of_adult: Int, no_of_child: Int, no_of_passport: Int, visatype: Int, travel_date: String, relation_with_travelers: Int, request_source: String, request_source_comments: String, promo_code: String
+public class VisaRequestParams {
+    var userid: String!,
+        country_id: String!,
+        biometry_loc_id: String!,
+        no_of_adult: String!,
+        no_of_child: String!,
+        no_of_passport: String!,
+        visatype: String!,
+        travel_date: String!,
+        relation_with_travelers: String!,
+        request_source: String!,
+        request_source_comments: String!,
+        promo_code: String!
 }
 
 public enum VisaAPIs {
@@ -17,7 +28,6 @@ public enum VisaAPIs {
 }
 
 extension VisaAPIs: TargetType {
-    
     public var path: String {
         switch self {
         case .visaRequest:

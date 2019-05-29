@@ -22,7 +22,6 @@ class NewDirectVisaViewModel {
     var selectedCountry: NewVisaService?
     var selectedCountryName = PublishSubject<String?>()
     var passangersCount = PublishSubject<PassangerCount>()
-
     var selectedVisaType = PublishSubject<String?>()
     var selectedBio = PublishSubject<String?>()
     var selectedRelation = PublishSubject<String?>()
@@ -66,15 +65,18 @@ class NewDirectVisaViewModel {
             .disposed(by: disposeBag)
     }
 
-    var params: VisaRequestParams?
+    var params = VisaRequestParams()
 
     func submitVisaRequest() {
-        guard let prm = params else {
+        if params.biometry_loc_id == nil {
             validate(msg: "all is well")
             return
         }
+        
+        
+        
         showProgress.onNext(true)
-        network?.sendVisaRequest(params: prm).subscribe(onNext: { _ in
+        network?.sendVisaRequest(params: params).subscribe(onNext: { _ in
             self.showProgress.onNext(false)
 
         }, onError: { _ in
@@ -89,13 +91,18 @@ class NewDirectVisaViewModel {
             validate(msg: "اختر الدولة اولاً")
             return
         }
-        let str = data.map { "\($0.visaTypeName)" }
+        let str = data.map { $0.visaTypeName.rawValue }
 
         let dest = Destination.selectableSheet(data: str, titleText: "نوع التأشيرة", style: .textCenter)
         let vc = dest.controller() as! SelectableTableSheet
         vc.selectedItem.asObservable().subscribe { event in
             switch event.event {
             case .next(let value):
+
+                let itms = data.filter { $0.visaTypeName.rawValue == value }
+                if let id = itms.first?.visaTypeID {
+                    self.params.visatype = id
+                }
                 self.selectedVisaType.onNext(value)
             default:
                 break
@@ -114,6 +121,7 @@ class NewDirectVisaViewModel {
             case .next(let value):
                 let bio = self.bioOptions.filter { $0.name == value }
                 if let bioObj = bio.first {
+                    self.params.biometry_loc_id = bioObj.id
                     self.selectedBio.onNext(value)
                 }
             default:
@@ -130,6 +138,7 @@ class NewDirectVisaViewModel {
         vc.selectedDate.asObservable().subscribe { event in
             switch event.event {
             case .next(let value):
+                self.params.travel_date = value?.apiFormat
                 self.selectedDate.onNext(value)
             default:
                 break
@@ -146,6 +155,7 @@ class NewDirectVisaViewModel {
             switch event.event {
             case .next(let value):
                 self.selectedCountry = value
+                self.params.country_id = value.countryID
                 self.selectedCountryName.onNext(value.countryName)
 
             default:
@@ -163,6 +173,8 @@ class NewDirectVisaViewModel {
             switch event.event {
             case .next(let value):
                 self.passangersCount.onNext(value)
+                self.params.no_of_adult = "\(value.0)"
+                self.params.no_of_child = "\(value.1)"
 
             default:
                 break
@@ -180,7 +192,10 @@ class NewDirectVisaViewModel {
             switch event.event {
             case .next(let value):
                 let bio = self.relativesList.filter { $0.name == value }
-                if let bioObj = bio.first {}
+                if let bioObj = bio.first {
+                    self.params.relation_with_travelers = bioObj.id
+                }
+
                 self.selectedRelation.onNext(value)
 
             default:
