@@ -133,6 +133,7 @@
 		6CCE0324229C4DA4003523FE /* BioChoicesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCE0323229C4DA4003523FE /* BioChoicesResponse.swift */; };
 		6CCE0326229C4E06003523FE /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCE0325229C4E06003523FE /* JsonParser.swift */; };
 		6CCE032B229CA5A2003523FE /* RelativesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCE032A229CA5A2003523FE /* RelativesResponse.swift */; };
+		6CCF4A05229F6FF60031B648 /* VisaReqForCountryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCF4A04229F6FF60031B648 /* VisaReqForCountryResponse.swift */; };
 		6CDEBBE62284C55800EC3E6F /* PassangersCountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEBBE42284C55800EC3E6F /* PassangersCountController.swift */; };
 		6CDEBBEC2284FDA000EC3E6F /* PackagesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEBBEA2284FDA000EC3E6F /* PackagesTableCell.swift */; };
 		6CDEBBF02285012400EC3E6F /* PackageDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEBBEE2285012400EC3E6F /* PackageDetailsController.swift */; };
@@ -305,6 +306,7 @@
 		6CCE0323229C4DA4003523FE /* BioChoicesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioChoicesResponse.swift; sourceTree = "<group>"; };
 		6CCE0325229C4E06003523FE /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		6CCE032A229CA5A2003523FE /* RelativesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativesResponse.swift; sourceTree = "<group>"; };
+		6CCF4A04229F6FF60031B648 /* VisaReqForCountryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaReqForCountryResponse.swift; sourceTree = "<group>"; };
 		6CDEBBE42284C55800EC3E6F /* PassangersCountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangersCountController.swift; sourceTree = "<group>"; };
 		6CDEBBEA2284FDA000EC3E6F /* PackagesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesTableCell.swift; sourceTree = "<group>"; };
 		6CDEBBEE2285012400EC3E6F /* PackageDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailsController.swift; sourceTree = "<group>"; };
@@ -623,6 +625,7 @@
 			children = (
 				6C8503B0229DDB38004FE346 /* VisaRequestResponse.swift */,
 				6C8503B2229DDB5F004FE346 /* VisaAPIs.swift */,
+				6CCF4A04229F6FF60031B648 /* VisaReqForCountryResponse.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -1106,6 +1109,7 @@
 				6CC94EE2228BE7FC002F3464 /* ApiClient.swift in Sources */,
 				6CF3E1B8227268CF007488BA /* HomeCollectionSectionHeader.swift in Sources */,
 				6CDEBBF02285012400EC3E6F /* PackageDetailsController.swift in Sources */,
+				6CCF4A05229F6FF60031B648 /* VisaReqForCountryResponse.swift in Sources */,
 				6C5DE88022872F0900F900AE /* TextTableCell.swift in Sources */,
 				6CCE0326229C4E06003523FE /* JsonParser.swift in Sources */,
 				6C1C6065228E4729006490CB /* TabBar.swift in Sources */,

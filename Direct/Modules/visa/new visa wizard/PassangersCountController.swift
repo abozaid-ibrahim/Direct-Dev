@@ -71,6 +71,7 @@ class PassangersCountController: UIViewController, PanModalPresentable {
     }
     var result = PublishSubject<PassangerCount>()
 
+    var prices:PriceBasedOn?
     @IBAction func confirmAction(_ sender: Any) {
         result.onNext((menCount,childCount))
        dismiss(animated: true, completion: nil)

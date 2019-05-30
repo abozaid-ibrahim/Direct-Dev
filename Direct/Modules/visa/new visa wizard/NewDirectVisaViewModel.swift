@@ -73,11 +73,13 @@ class NewDirectVisaViewModel {
             return
         }
         
-        
+        params.no_of_passport = "0"
         
         showProgress.onNext(true)
-        network?.sendVisaRequest(params: params).subscribe(onNext: { _ in
+        network?.sendVisaRequest(params: params).subscribe(onNext: { response in
+            print(response)
             self.showProgress.onNext(false)
+            try! AppNavigator().push(.visaRequirement)
 
         }, onError: { _ in
             self.showProgress.onNext(false)
@@ -138,7 +140,8 @@ class NewDirectVisaViewModel {
         vc.selectedDate.asObservable().subscribe { event in
             switch event.event {
             case .next(let value):
-                self.params.travel_date = value?.apiFormat
+                self.params.travel_date = value!.apiFormat
+                print(value!.apiFormat)
                 self.selectedDate.onNext(value)
             default:
                 break

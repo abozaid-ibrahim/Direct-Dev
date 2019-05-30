@@ -59,8 +59,8 @@ extension Date {
     }
     var apiFormat: String {
         let outputFormatter = DateFormatter()
-        outputFormatter.locale = Locale(identifier: "ar")
-        outputFormatter.dateFormat = "E, d MMM yyyy"
+        outputFormatter.locale = Locale(identifier: "en")
+        outputFormatter.dateFormat = "dd-MM-yyyy"
         return outputFormatter.string(from: self)
     }
 }
