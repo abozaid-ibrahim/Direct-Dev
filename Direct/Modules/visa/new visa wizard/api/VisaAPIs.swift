@@ -8,24 +8,11 @@
 
 import Foundation
 import Moya
-public class VisaRequestParams {
-    var userid: String!,
-        country_id: String!,
-        biometry_loc_id: String!,
-        no_of_adult: String!,
-        no_of_child: String!,
-        no_of_passport: String!,
-        visatype: String!,
-        travel_date: String!,
-        relation_with_travelers: String!,
-        request_source: String!,
-        request_source_comments: String!,
-        promo_code: String!
-}
 
-public enum VisaAPIs {
+enum VisaAPIs {
     case visaRequest(prm: VisaRequestParams),
-    visaRequirementForCountry(cid:String)
+        visaRequirementForCountry(cid: String),
+        getVisaPrice(prm: VisaPriceParams)
 }
 
 extension VisaAPIs: TargetType {
@@ -35,12 +22,14 @@ extension VisaAPIs: TargetType {
             return "visa-request"
         case .visaRequirementForCountry:
             return "get-visa-requirement-page"
+        case .getVisaPrice:
+            return "get-visa-price"
         }
     }
     
     public var method: Moya.Method {
         switch self {
-        case .visaRequest,.visaRequirementForCountry:
+        case .visaRequest, .visaRequirementForCountry:
             return .post
         default:
             return .get
@@ -50,8 +39,8 @@ extension VisaAPIs: TargetType {
     public var task: Task {
         switch self {
         case let .visaRequest(prm):
-            let prmDic = ["key": "bf930e30-8c28-42d6-bf8e-f4cbd0b83774",
-                          "lang": "en",
+            let prmDic = ["key": tokenKeyValue,
+                          "lang": appLang,
                           "userid": 703,
                           "country_id": prm.country_id!,
                           "biometry_loc_id": prm.biometry_loc_id!,
@@ -65,14 +54,16 @@ extension VisaAPIs: TargetType {
                           "request_source_comments": "iOS App 2.0 on iPhone 6 – iOS 11.4.0",
                           "promo_code": ""] as [String: Any]
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
-        case .visaRequirementForCountry(let cid):
-            let prmDic = ["key": "bf930e30-8c28-42d6-bf8e-f4cbd0b83774",
-                          "lang": "en",
-                          "cid": cid
-                       ] as [String: Any]
+        case let .visaRequirementForCountry(cid):
+            let prmDic = ["key": tokenKeyValue,
+                          "lang": appLang,
+                          "cid": cid] as [String: Any]
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
+        case let .getVisaPrice(prm):
+            let data = try! self.prmEncoder.encode(prm)
+            return .requestData(data)
         default:
-            return .requestParameters(parameters: ["key": "bf930e30-8c28-42d6-bf8e-f4cbd0b83774", "lang": "en"], encoding: URLEncoding.default)
+            return .requestParameters(parameters: ["key": tokenKeyValue, "lang": appLang], encoding: URLEncoding.default)
         }
     }
     

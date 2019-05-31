@@ -134,6 +134,8 @@
 		6CCE0326229C4E06003523FE /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCE0325229C4E06003523FE /* JsonParser.swift */; };
 		6CCE032B229CA5A2003523FE /* RelativesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCE032A229CA5A2003523FE /* RelativesResponse.swift */; };
 		6CCF4A05229F6FF60031B648 /* VisaReqForCountryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCF4A04229F6FF60031B648 /* VisaReqForCountryResponse.swift */; };
+		6CD2CE5322A0BFBB00FB308A /* CitiesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD2CE5222A0BFBB00FB308A /* CitiesResponse.swift */; };
+		6CD2CE5522A0C32300FB308A /* APIsParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD2CE5422A0C32300FB308A /* APIsParams.swift */; };
 		6CDEBBE62284C55800EC3E6F /* PassangersCountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEBBE42284C55800EC3E6F /* PassangersCountController.swift */; };
 		6CDEBBEC2284FDA000EC3E6F /* PackagesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEBBEA2284FDA000EC3E6F /* PackagesTableCell.swift */; };
 		6CDEBBF02285012400EC3E6F /* PackageDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEBBEE2285012400EC3E6F /* PackageDetailsController.swift */; };
@@ -307,6 +309,8 @@
 		6CCE0325229C4E06003523FE /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		6CCE032A229CA5A2003523FE /* RelativesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativesResponse.swift; sourceTree = "<group>"; };
 		6CCF4A04229F6FF60031B648 /* VisaReqForCountryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaReqForCountryResponse.swift; sourceTree = "<group>"; };
+		6CD2CE5222A0BFBB00FB308A /* CitiesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesResponse.swift; sourceTree = "<group>"; };
+		6CD2CE5422A0C32300FB308A /* APIsParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIsParams.swift; sourceTree = "<group>"; };
 		6CDEBBE42284C55800EC3E6F /* PassangersCountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangersCountController.swift; sourceTree = "<group>"; };
 		6CDEBBEA2284FDA000EC3E6F /* PackagesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesTableCell.swift; sourceTree = "<group>"; };
 		6CDEBBEE2285012400EC3E6F /* PackageDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailsController.swift; sourceTree = "<group>"; };
@@ -626,6 +630,7 @@
 				6C8503B0229DDB38004FE346 /* VisaRequestResponse.swift */,
 				6C8503B2229DDB5F004FE346 /* VisaAPIs.swift */,
 				6CCF4A04229F6FF60031B648 /* VisaReqForCountryResponse.swift */,
+				6CD2CE5422A0C32300FB308A /* APIsParams.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -727,6 +732,7 @@
 				6C3885CC229B2B4900CA168A /* NewVisaCountriesResponse.swift */,
 				6CCE0323229C4DA4003523FE /* BioChoicesResponse.swift */,
 				6CCE032A229CA5A2003523FE /* RelativesResponse.swift */,
+				6CD2CE5222A0BFBB00FB308A /* CitiesResponse.swift */,
 			);
 			path = "api calls";
 			sourceTree = "<group>";
@@ -1096,6 +1102,7 @@
 				6CF3E1762271E598007488BA /* RootNavigationViewController.swift in Sources */,
 				6CF703E22286FBD700B1C387 /* InstituteDetailsHeaderView.swift in Sources */,
 				6C77825A227A3AFF001926B2 /* MyAccountController.swift in Sources */,
+				6CD2CE5322A0BFBB00FB308A /* CitiesResponse.swift in Sources */,
 				6CCE0324229C4DA4003523FE /* BioChoicesResponse.swift in Sources */,
 				6CDEBBEC2284FDA000EC3E6F /* PackagesTableCell.swift in Sources */,
 				6C7782472278A54A001926B2 /* CheckoutFooter.swift in Sources */,
@@ -1151,6 +1158,7 @@
 				6C5DE76C22762013001A9FB6 /* RequireVisaSectionHeader.swift in Sources */,
 				6C3885CF229B672600CA168A /* SearchViewModel.swift in Sources */,
 				6CCE032B229CA5A2003523FE /* RelativesResponse.swift in Sources */,
+				6CD2CE5522A0C32300FB308A /* APIsParams.swift in Sources */,
 				6C2CFB9F22789E0200D23CF4 /* PaymentViewController.swift in Sources */,
 				6CF0E36C2285BE6800149910 /* DatePickerController.swift in Sources */,
 				6CF3E1C32274B8DB007488BA /* FakeData.swift in Sources */,

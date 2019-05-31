@@ -79,6 +79,14 @@ class ApiClientFacade {
             return Disposables.create()
         }
     }
+    func getCities(country: String) -> Observable<CountryCitiesResponse> {
+        return Observable<CountryCitiesResponse>.create { (observer) -> Disposable in
+            self.commonProvider.rx.request(CommonAPIs.getCities(cid: country) ).subscribe { [weak self] event in
+                self?.parser.emitDataModelfromResponse(event: event, observer: observer)
+                }.disposed(by: self.disposeBag)
+            return Disposables.create()
+        }
+    }
 }
 
 func log(_ value: Any) {

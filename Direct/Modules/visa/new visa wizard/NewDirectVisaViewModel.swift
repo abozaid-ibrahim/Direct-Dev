@@ -26,6 +26,7 @@ class NewDirectVisaViewModel {
     var selectedBio = PublishSubject<String?>()
     var selectedRelation = PublishSubject<String?>()
 
+    var embassyLocations: [DTEmbassyLocation]?
     init(network: ApiClientFacade? = ApiClientFacade()) {
         self.network = network
     }
@@ -56,6 +57,7 @@ class NewDirectVisaViewModel {
         rel.subscribe(onNext: { [weak self] bios in
             self?.relativesList.append(contentsOf: bios.relatives)
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+
         Observable.zip(
             countries, bios, rel,
             resultSelector: { _, _, _ in
@@ -72,9 +74,9 @@ class NewDirectVisaViewModel {
             validate(msg: "all is well")
             return
         }
-        
+
         params.no_of_passport = "0"
-        
+
         showProgress.onNext(true)
         network?.sendVisaRequest(params: params).subscribe(onNext: { response in
             print(response)
@@ -115,15 +117,16 @@ class NewDirectVisaViewModel {
     }
 
     func showBiometricSpinner() {
-        let bios = bioOptions.map { $0.name }
-        let dest = Destination.selectableSheet(data: bios, titleText: "مكان البصمة", style: .textCenter)
+        guard  let locations  = embassyLocations else {return}
+        let cities = locations.map { $0.cityName }
+        let dest = Destination.selectableSheet(data: cities, titleText: "مكان البصمة", style: .textCenter)
         let vc = dest.controller() as! SelectableTableSheet
         vc.selectedItem.asObservable().subscribe { event in
             switch event.event {
             case .next(let value):
-                let bio = self.bioOptions.filter { $0.name == value }
-                if let bioObj = bio.first {
-                    self.params.biometry_loc_id = bioObj.id
+                let locations = locations.filter { $0.cityName == value }
+                if let cityObj = locations.first {
+                    self.params.biometry_loc_id = cityObj.cityID
                     self.selectedBio.onNext(value)
                 }
             default:
@@ -160,6 +163,10 @@ class NewDirectVisaViewModel {
                 self.selectedCountry = value
                 self.params.country_id = value.countryID
                 self.selectedCountryName.onNext(value.countryName)
+                let cities = self.network?.getCities(country: value.countryID)
+                cities?.subscribe(onNext: { [weak self] cities in
+                    self?.embassyLocations = cities.dtEmbassyLocations
+                }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: self.disposeBag)
 
             default:
                 break

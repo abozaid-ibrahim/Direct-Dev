@@ -42,10 +42,7 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
             self?.showProgress = value
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         checkoutFooter.action = { [weak self] in
-            guard let self = self else { return }
-            let cid = self.viewModel.selectedCountry?.countryID ?? ""
-
-            self.viewModel.submitVisaRequest()
+            self?.viewModel.submitVisaRequest()
         }
 
         setONClickViews()

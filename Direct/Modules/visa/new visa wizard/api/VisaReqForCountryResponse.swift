@@ -19,6 +19,7 @@ class VisaRequirementForCountryResponse: Codable {
     init(requirementPage: [RequirementPage]) {
         self.requirementPage = requirementPage
     }
+    
 }
 
 // MARK: - RequirementPage
