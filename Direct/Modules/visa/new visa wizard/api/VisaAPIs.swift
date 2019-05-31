@@ -29,10 +29,8 @@ extension VisaAPIs: TargetType {
     
     public var method: Moya.Method {
         switch self {
-        case .visaRequest, .visaRequirementForCountry:
+        case .visaRequest, .visaRequirementForCountry, .getVisaPrice:
             return .post
-        default:
-            return .get
         }
     }
     
@@ -60,10 +58,16 @@ extension VisaAPIs: TargetType {
                           "cid": cid] as [String: Any]
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
         case let .getVisaPrice(prm):
-            let data = try! self.prmEncoder.encode(prm)
-            return .requestData(data)
-        default:
-            return .requestParameters(parameters: ["key": tokenKeyValue, "lang": appLang], encoding: URLEncoding.default)
+            let prmDic = ["key": tokenKeyValue,
+                          "lang": appLang,
+                          "cid": prm.cid,
+                          "cityid": prm.cityid,
+                          "no_of_adult": prm.no_of_adult,
+                          "no_of_child": prm.no_of_child,
+                          "no_of_passport": prm.no_of_passport,
+                          "visatype": prm.visatype,
+                          "promo_code": ""] as [String: Any]
+            return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
         }
     }
     

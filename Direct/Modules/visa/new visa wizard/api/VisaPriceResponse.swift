@@ -26,7 +26,7 @@ class VisaPrice: Codable {
     let price, status, success, adultPrice: String
     let childPrice, passPrice, promoCodePrice: String
     let promoCodePriceStatus: Int
-    let promoCodePriceType: String
+    let promoCodePriceType: Int
     
     enum CodingKeys: String, CodingKey {
         case price, status, success
@@ -38,7 +38,7 @@ class VisaPrice: Codable {
         case promoCodePriceType = "promo_code_price_type"
     }
     
-    init(price: String, status: String, success: String, adultPrice: String, childPrice: String, passPrice: String, promoCodePrice: String, promoCodePriceStatus: Int, promoCodePriceType: String) {
+    init(price: String, status: String, success: String, adultPrice: String, childPrice: String, passPrice: String, promoCodePrice: String, promoCodePriceStatus: Int, promoCodePriceType: Int) {
         self.price = price
         self.status = status
         self.success = success

@@ -9,8 +9,7 @@
 import PanModal
 import RxSwift
 import UIKit
-typealias Price = Double
-typealias PassangerCount = (Int, Int, Price)
+ typealias PassangerCount = (Int, Int, String)
 
 class PassangersCountController: UIViewController, PanModalPresentable {
     var panScrollable: UIScrollView?
@@ -27,7 +26,7 @@ class PassangersCountController: UIViewController, PanModalPresentable {
     //===================================================<<
     private let network = ApiClientFacade()
     var info: VisaPriceParams?
-    private var totolCost: Double = 0
+    private var totolCost: String = "0"
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -39,6 +38,7 @@ class PassangersCountController: UIViewController, PanModalPresentable {
         set {
             childCountLbl.text = "\(newValue)"
             setTotalFooterCount(men: menCount, child: newValue)
+            getPrices()
         }
     }
     
@@ -49,19 +49,20 @@ class PassangersCountController: UIViewController, PanModalPresentable {
         set {
             adultCountLbl.text = "\(newValue)"
             setTotalFooterCount(men: newValue, child: childCount)
+            getPrices()
         }
     }
-    
+
     private func getPrices() {
         guard var params = info else {
             return
         }
         params.no_of_adult = menCount.stringValue
         params.no_of_child = childCount.stringValue
-        
-        network.getVisaPrice(prm: params).subscribe(onNext: { [unowned self] pr in
-            self.childTotalLbl.text = pr.visaPrice.first?.adultPrice.priced
-            self.childTotalLbl.text = pr.visaPrice.first?.adultPrice.priced
+        network.getVisaPrice(prm: params).asObservable().subscribe(onNext: { [weak self] pr in
+            self?.childTotalLbl.text = pr.visaPrice.first?.childPrice.priced
+            self?.adultTotalLbl.text = pr.visaPrice.first?.adultPrice.priced
+            self?.totolCost = pr.visaPrice.first?.price ?? "0"
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
     

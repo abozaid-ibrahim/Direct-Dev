@@ -50,7 +50,8 @@ class In: Codable {
     let updateOn, updateBy, visaCountryID, requestSource: String
     let requestSourceComments, travelDate, biometryLOCID, noOfAdult: String
     let noOfChild, noOfPassport, relationWithTravelers, lang: String
-    let promoPrice, promoCode: String
+    let promoPrice:String?
+    var promoCode: String?
     
     enum CodingKeys: String, CodingKey {
         case updateOn = "update_on"

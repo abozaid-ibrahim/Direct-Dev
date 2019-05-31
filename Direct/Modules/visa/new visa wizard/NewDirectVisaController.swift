@@ -44,7 +44,9 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
         checkoutFooter.action = { [weak self] in
             self?.viewModel.submitVisaRequest()
         }
-
+        viewModel.totalCost.subscribe(onNext: {[unowned self] pr in
+            self.checkoutFooter.valueText = pr
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         setONClickViews()
         viewModel.viewDidLoad()
     }

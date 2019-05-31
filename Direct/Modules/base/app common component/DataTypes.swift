@@ -12,3 +12,8 @@ extension Int{
         return String(self)
     }
 }
+extension Double{
+    var stringValue:String{
+        return String(self)
+    }
+}

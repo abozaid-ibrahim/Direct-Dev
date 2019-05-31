@@ -29,6 +29,7 @@ class CheckoutFooter: UIView {
         }
     }
 
+    
     typealias Action = () -> Void
     var action: Action?
     func setOnclick(ac: @escaping Action) {
