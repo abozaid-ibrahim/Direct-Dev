@@ -1,0 +1,84 @@
+/* 
+  Localizable.strings
+  Direct
+
+  Created by Abdoelrhman Eaita on 5/31/19.
+  Copyright © 2019 abuzeid. All rights reserved.
+*/
+
+// LOGIN
+"login_title_label" = "تسجيل دخول";
+"email_tf_placeHolder" = "البريد الالكتروني";
+"email_phone_tf_placeHolder" = "الايميل او رقم الهاتف مع رمز الدولة";
+"password_tf_placeHolder" = "كلمة المرور";
+"login_btn_label" = "تسجيل الدخول";
+"forget_password_label" = "نسيت كلمة المرور؟";
+"restore_btn_clicable" = " استعادة ";
+"create_new_account_label" = "ليس لديك حساب؟";
+"create_new_clicable" = " حساب جديد ";
+"auth_code_sent" = "سيتم إرسال كود التفعيل خلال دقائق";
+"auth_user_blocked" = "الحساب محظور، الرجاء التواصل مع الدعم الفني لتفعيل رقم الهاتف";
+"login_error_title" = "خطأ بتسجيل الدخول";
+"login_error_message" = "رقم الجوال أو كلمة المرور غير صحيحة";
+"blocked_account_message" = "حسابك محجوب الرجاء التواصل مع الدعم الفني.";
+"login_activation_message" = "استخدم الكود الذي تم إرساله إليك عند التسجيل";
+
+
+
+// Signup
+"signup_title_label" = "إنشاء حساب";
+"fullname_tf_placeholder" = "الاسم الكامل";
+"email_placeholder" = "البريد الإلكتروني";
+"phone_number_placeholder" = "رقم الجوال";
+"password_confirmation" = "تأكيد كلمة المرور";
+"confirm_password_error" = "كلمة السر غير متطابقة";
+"signup_btn_label" = "انشئ حساب";
+"phone_auth_message" = "سيتم إرسال كود تفعيل لرقم الجوال لتأكيد الرقم";
+"login_btn_segue_label" = "لديك حساب مسبقاً؟";
+"login_btn_clickable" = "تسجيل دخول  ";
+"auth_code_sent" = "سيتم إرسال كود التفعيل خلال دقائق";
+"signup_error_subtitle" = "لم نتمكن من تسجيلك كمستخدم جديد ";
+
+
+// ConfirmCode
+"confirm_title_label" = "كود التفعيل";
+"confirm_subtitle_label" = "نرجوا إدخال كود التفعيل الذي استلمته على الرقم المدخل من قبلكم";
+"confirm_tf_placeHolder" = "ex: 2341";
+"confirm_code_btn_label" = "تأكيد";
+
+"unrecived_code_label" = "لم تستلم كود التفعيل؟";
+"resend_code_btn_label" ="إعادة إرسال كود التفعيل";
+
+"confirm_error_title" = "";
+"confirm_error_sub" = "لم نتمكن من تفعيل الرقم";
+
+
+
+// forgetPassword
+"forget_label_title" = "استعادة كلمة المرور";
+"forget_lable_subtitle" = "لاستعادة كلمة المرور نرجوا كتابة البريد الالكتروني، وسوف نرسل كود الاستعادة على البريد";
+"forget_tf_placeholder" = "البريد الالكتروني";
+"forget_btn_label" = "أرسل";
+"back_to_login" = "العودة لتسجيل الدخول";
+
+// NEW password
+"newpass_label_title" = "كلمة مرور جديدة";
+"newpass_label_subtitle" = "ضع كلمة المرور الجديدة وتأكد بأنك لن تنساها";
+"pass_tf_placeholder" = "كلمة المرور";
+"repeat_pass_tf_placeholder" = "تأكيد كلمة المرور";
+"pass_btn_label_confirm" = "تغيير";
+
+// Auth messages
+"success_title" = "تمت العملية بنجاح";
+"error_title" = "حدث خطأ ما";
+"reset_password_failure" = "لم نتمكن من إعادة تعيين كلمة المرور";
+"reset_password_success" = "تم إرسال رابط إعادة تعيين كلمة المرور إلى بريديك الإلكتروني";
+"email_error" = "تأكد من إدخال بريد إلكتروني صحيح";
+"password_error" = "تأكد من إدخال كلمة السر";
+"confirm_password_error" = "كلمة السر غير متطابقة";
+"fullname_error" = "تأكد من الاسم";
+"phonenumber_error" = "تأكد من رقم الهاتف";
+"password_changed_successfully" = "قم الان بتسجيل الدخول بإستخدام كلمة السر الجديدة";
+"mobile_message_sent" = "لقد تم إرسال رقم التفعيل لجوالك مرة أخرى";
+"activate_code_missing" = "تأكد من إدخال كود التفعيل";
+"activate_email_Phone" = "تأكد من إدخال رقم الجوال او البريد الالكتروني";

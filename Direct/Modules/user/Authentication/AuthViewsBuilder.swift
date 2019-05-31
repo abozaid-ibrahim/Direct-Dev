@@ -26,7 +26,7 @@ struct AuthViewsBuilder {
 
     // MARK: - Helpers and static text with style
     fileprivate static func styleText(_ main: String, _ sub: String) -> NSAttributedString {
-        let att = NSMutableAttributedString(string: main, attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.7062214017, green: 0.7028648257, blue: 0.7061424851, alpha: 1), NSAttributedString.Key.font: UIFont.getLocalizedFont(type: .bold(12)), NSAttributedString.Key.writingDirection: [NSWritingDirection.rightToLeft.rawValue]])
+        let att = NSMutableAttributedString(string: main, attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.9874494672, green: 0.5041492581, blue: 0.00973271206, alpha: 1), NSAttributedString.Key.font: UIFont.getLocalizedFont(type: .bold(12)), NSAttributedString.Key.writingDirection: [NSWritingDirection.rightToLeft.rawValue]])
         let subAt = NSAttributedString(string: sub, attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.6871660352, green: 0.4308405519, blue: 0.671536684, alpha: 1), NSAttributedString.Key.font: UIFont.getLocalizedFont(type: .bold(12)), NSAttributedString.Key.writingDirection: [NSWritingDirection.rightToLeft.rawValue]])
         att.append(subAt)
         return NSAttributedString(attributedString: att)
@@ -34,10 +34,7 @@ struct AuthViewsBuilder {
 
     fileprivate static var forgetPassword: NSAttributedString {
         let main = "forget_password_label".localized
-
-        let sub = "restore_btn_clicable".localized
-
-        return styleText(main, sub)
+        return styleText(main, "")
     }
 
     fileprivate static var newAccount: NSAttributedString {
@@ -55,25 +52,20 @@ struct AuthViewsBuilder {
     // MARK: - Views data
     static var loginViewData: [AuthElement] {
         return [
-            .title("login_title_label".localized),
             .textField(TextFieldConfigurator(placeHolder: "email_phone_tf_placeHolder".localized, isSecured: false, type: .email)),
             .textField(TextFieldConfigurator(placeHolder: "password_tf_placeHolder".localized, isSecured: true, type: .password)),
-            .button(ButtonCellConfigurator(title: "login_btn_label".localized, color: .white, background: .black, type: .loginSegue)),
             .textLabel(TextLabelConfigurator(attributedText: forgetPassword, type: .forgetPassSegue)),
-            .textLabel(TextLabelConfigurator(attributedText: newAccount, type: .registerSegue))
+            .button(ButtonCellConfigurator(title: "login_btn_label".localized, color: .white, background: .black, type: .loginSegue))
             ]
     }
 
     static var signupViewData: [AuthElement] {
         return [
-            .title("signup_title_label".localized),
             .textField(TextFieldConfigurator(placeHolder: "fullname_tf_placeholder".localized, isSecured: false, type: .fullname)),
             .textField(TextFieldConfigurator(placeHolder: "email_placeholder".localized, isSecured: false, type: .email)),
             .phoneNumber(TextFieldConfigurator(placeHolder: "phone_number_placeholder".localized, isSecured: false, type: .phonenumber)),
             .textField(TextFieldConfigurator(placeHolder: "password_tf_placeHolder".localized, isSecured: true, type: .password)),
-            .textField(TextFieldConfigurator(placeHolder: "password_confirmation".localized, isSecured: true, type: .confirmPass)),
-            .button(ButtonCellConfigurator(title: "signup_btn_label".localized, color: .white, background: .black, type: .registerSegue)),
-            .textLabel(TextLabelConfigurator(attributedText: login, type: .loginSegue))
+            .button(ButtonCellConfigurator(title: "signup_btn_label".localized, color: .white, background: .black, type: .registerSegue))
         ]
     }
 
@@ -101,18 +93,16 @@ struct AuthViewsBuilder {
 
     static var forgetPasswordData: [AuthElement] {
         return [
-            .title("forget_label_title".localized),
-            .textLabel(TextLabelConfigurator(text: "forget_lable_subtitle".localized, font: UIFont.getLocalizedFont(type: .bold(12)), textColor: #colorLiteral(red: 0.7062214017, green: 0.7028648257, blue: 0.7061424851, alpha: 1), textAlign: .center, type: .phoneCodeResend)),
             .textField(TextFieldConfigurator(placeHolder: "forget_tf_placeholder".localized, isSecured: false, type: .email)),
             .button(ButtonCellConfigurator(title: "forget_btn_label".localized, color: .white, background: .black, type: .forgetPassSegue)),
-            .textLabel(TextLabelConfigurator(text: "back_to_login".localized, font: UIFont.getLocalizedFont(type: .bold(12)), textColor: #colorLiteral(red: 0.7062214017, green: 0.7028648257, blue: 0.7061424851, alpha: 1), textAlign: NSTextAlignment.right, type: .loginSegue))
+            .textLabel(TextLabelConfigurator(text: "back_to_login".localized, font: UIFont.getLocalizedFont(type: .bold(12)), textColor: #colorLiteral(red: 0.9874494672, green: 0.5041492581, blue: 0.00973271206, alpha: 1), textAlign: NSTextAlignment.right, type: .loginSegue))
         ]
     }
 
     static var newPasswordData: [AuthElement] {
         return [
             .title("newpass_label_title".localized),
-            .textLabel(TextLabelConfigurator(text: "newpass_label_subtitle".localized, font: UIFont.getLocalizedFont(type: .bold(12)), textColor: #colorLiteral(red: 0.7062214017, green: 0.7028648257, blue: 0.7061424851, alpha: 1), textAlign: .center, type: .phoneCodeResend)),
+            .textLabel(TextLabelConfigurator(text: "newpass_label_subtitle".localized, font: UIFont.getLocalizedFont(type: .bold(12)), textColor: #colorLiteral(red: 0.9874494672, green: 0.5041492581, blue: 0.00973271206, alpha: 1), textAlign: .center, type: .phoneCodeResend)),
             .textField(TextFieldConfigurator(placeHolder: "forget_tf_placeholder".localized, isSecured: false, type: .email)),
             .textField(TextFieldConfigurator(placeHolder: "pass_tf_placeholder".localized, isSecured: true, type: .password)),
             .textField(TextFieldConfigurator(placeHolder: "repeat_pass_tf_placeholder".localized, isSecured: true, type: .confirmPass)),

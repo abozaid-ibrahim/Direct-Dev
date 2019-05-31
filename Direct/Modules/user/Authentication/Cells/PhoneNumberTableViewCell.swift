@@ -12,21 +12,16 @@ class PhoneNumberTableViewCell: BaseTableViewCell {
 
     lazy var backView: UIView = {[unowned self] in
         let view = UIView()
-        view.layer.borderColor = #colorLiteral(red: 0.8797392845, green: 0.8797599673, blue: 0.8797488809, alpha: 1).cgColor
-        view.layer.borderWidth = 1
+        view.backgroundColor = #colorLiteral(red: 0.9763646722, green: 0.9765316844, blue: 0.9763541818, alpha: 1)
         view.addSubview(self.textField)
-        view.layer.cornerRadius = 22
+        view.layer.cornerRadius = 10
         view.clipsToBounds = true
-
         return view
-        }()
+    }()
 
 
     lazy var textField: UITextField = { [unowned self] in
         let tf = UITextField()
-        tf.textAlignment = .right
-        
-        tf.rightViewMode = .always
         tf.localizedFont = .bold(12)
         return tf
     }()

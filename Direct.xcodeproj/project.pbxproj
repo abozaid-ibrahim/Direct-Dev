@@ -46,6 +46,7 @@
 		39EE2ACF22A0A1BB00A9A501 /* UITextField+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EE2ACE22A0A1BB00A9A501 /* UITextField+Localized.swift */; };
 		39EE2AD122A0A1E600A9A501 /* UIButton+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EE2AD022A0A1E600A9A501 /* UIButton+Localized.swift */; };
 		39EE2AD322A0B80900A9A501 /* Authentication.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39EE2AD222A0B80900A9A501 /* Authentication.xcassets */; };
+		39EE2AD622A0BD6700A9A501 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39EE2AD822A0BD6700A9A501 /* Localizable.strings */; };
 		6530614424650A4028841976 /* Pods_Direct.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25185037101CA582CE39A627 /* Pods_Direct.framework */; };
 		6C1C6059228E38D8006490CB /* ReserveCourseInstitueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1C6057228E38D8006490CB /* ReserveCourseInstitueController.swift */; };
 		6C1C605E228E3D15006490CB /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1C605C228E3D15006490CB /* AboutUsViewController.swift */; };
@@ -78,6 +79,14 @@
 		6C3A62FF22A5033500DD6DD8 /* Cairo-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C3A62F922A5033500DD6DD8 /* Cairo-ExtraLight.ttf */; };
 		6C3A630122A5057000DD6DD8 /* Cairo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C3A630022A5057000DD6DD8 /* Cairo-Regular.ttf */; };
 		6C557557228BA52900BAE5E2 /* View+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C557556228BA52900BAE5E2 /* View+Colors.swift */; };
+		6C557565228BAC6100BAE5E2 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6C55755C228BAC6000BAE5E2 /* OFL.txt */; };
+		6C557566228BAC6100BAE5E2 /* Cairo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C55755D228BAC6100BAE5E2 /* Cairo-Regular.ttf */; };
+		6C557567228BAC6100BAE5E2 /* Cairo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C55755E228BAC6100BAE5E2 /* Cairo-Black.ttf */; };
+		6C557568228BAC6100BAE5E2 /* Cairo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C55755F228BAC6100BAE5E2 /* Cairo-Light.ttf */; };
+		6C557569228BAC6100BAE5E2 /* Cairo-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C557560228BAC6100BAE5E2 /* Cairo-ExtraLight.ttf */; };
+		6C55756A228BAC6100BAE5E2 /* Cairo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C557561228BAC6100BAE5E2 /* Cairo-Bold.ttf */; };
+		6C55756B228BAC6100BAE5E2 /* METADATA.pb in Resources */ = {isa = PBXBuildFile; fileRef = 6C557562228BAC6100BAE5E2 /* METADATA.pb */; };
+		6C55756D228BAC6100BAE5E2 /* Cairo-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C557564228BAC6100BAE5E2 /* Cairo-SemiBold.ttf */; };
 		6C55756F228BAEB700BAE5E2 /* UIFont+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C55756E228BAEB700BAE5E2 /* UIFont+UIView.swift */; };
 		6C5DE7652275DA99001A9FB6 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE7642275DA99001A9FB6 /* UIView.swift */; };
 		6C5DE7682275EC49001A9FB6 /* VisaRequirementTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE7662275EC49001A9FB6 /* VisaRequirementTableCell.swift */; };
@@ -275,6 +284,8 @@
 		39EE2ACE22A0A1BB00A9A501 /* UITextField+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Localized.swift"; sourceTree = "<group>"; };
 		39EE2AD022A0A1E600A9A501 /* UIButton+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Localized.swift"; sourceTree = "<group>"; };
 		39EE2AD222A0B80900A9A501 /* Authentication.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Authentication.xcassets; sourceTree = "<group>"; };
+		39EE2AD722A0BD6700A9A501 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		39EE2AD922A0BD6A00A9A501 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		51864FCE65244511A162A435 /* Pods-Direct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Direct.release.xcconfig"; path = "Pods/Target Support Files/Pods-Direct/Pods-Direct.release.xcconfig"; sourceTree = "<group>"; };
 		6C1C6057228E38D8006490CB /* ReserveCourseInstitueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveCourseInstitueController.swift; sourceTree = "<group>"; };
 		6C1C605C228E3D15006490CB /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
@@ -307,6 +318,14 @@
 		6C3A62F922A5033500DD6DD8 /* Cairo-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-ExtraLight.ttf"; sourceTree = "<group>"; };
 		6C3A630022A5057000DD6DD8 /* Cairo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Regular.ttf"; sourceTree = "<group>"; };
 		6C557556228BA52900BAE5E2 /* View+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Colors.swift"; sourceTree = "<group>"; };
+		6C55755C228BAC6000BAE5E2 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		6C55755D228BAC6100BAE5E2 /* Cairo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Regular.ttf"; sourceTree = "<group>"; };
+		6C55755E228BAC6100BAE5E2 /* Cairo-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Black.ttf"; sourceTree = "<group>"; };
+		6C55755F228BAC6100BAE5E2 /* Cairo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Light.ttf"; sourceTree = "<group>"; };
+		6C557560228BAC6100BAE5E2 /* Cairo-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-ExtraLight.ttf"; sourceTree = "<group>"; };
+		6C557561228BAC6100BAE5E2 /* Cairo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Bold.ttf"; sourceTree = "<group>"; };
+		6C557562228BAC6100BAE5E2 /* METADATA.pb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = METADATA.pb; sourceTree = "<group>"; };
+		6C557564228BAC6100BAE5E2 /* Cairo-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-SemiBold.ttf"; sourceTree = "<group>"; };
 		6C55756E228BAEB700BAE5E2 /* UIFont+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+UIView.swift"; sourceTree = "<group>"; };
 		6C5DE7642275DA99001A9FB6 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		6C5DE7662275EC49001A9FB6 /* VisaRequirementTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaRequirementTableCell.swift; sourceTree = "<group>"; };
@@ -685,6 +704,7 @@
 				39EE2AC222A09DF100A9A501 /* UIKit */,
 				6C55755B228BAC4500BAE5E2 /* fonts */,
 				39EE2AC122A09DCC00A9A501 /* Extension */,
+				39EE2AD822A0BD6700A9A501 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -699,7 +719,6 @@
 				6C55755F228BAC6100BAE5E2 /* Cairo-Light.ttf */,
 				6C55755D228BAC6100BAE5E2 /* Cairo-Regular.ttf */,
 				6C557564228BAC6100BAE5E2 /* Cairo-SemiBold.ttf */,
-				6C557563228BAC6100BAE5E2 /* DESCRIPTION.en_us.html */,
 				6C557562228BAC6100BAE5E2 /* METADATA.pb */,
 				6C55755C228BAC6000BAE5E2 /* OFL.txt */,
 			);
@@ -1221,6 +1240,8 @@
 				6C902773228F94BF00B41705 /* AboutUsViewController.xib in Resources */,
 				3992B66822961B5F00BBB7F1 /* TagCollectionCell.xib in Resources */,
 				6CF3E1A5227254A1007488BA /* InstituteCollectionViewCell.xib in Resources */,
+				6C557565228BAC6100BAE5E2 /* OFL.txt in Resources */,
+				39EE2AD622A0BD6700A9A501 /* Localizable.strings in Resources */,
 				6C90279D228F954C00B41705 /* PaymentMethodTableCell.xib in Resources */,
 				6C9027CD228F95B100B41705 /* VisaRequirementTableCell.xib in Resources */,
 				6C9027D9228F95C800B41705 /* PassangersCountController.xib in Resources */,
@@ -1552,6 +1573,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		39EE2AD822A0BD6700A9A501 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				39EE2AD722A0BD6700A9A501 /* ar */,
+				39EE2AD922A0BD6A00A9A501 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		6C5FDA502270816B00ABA39B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

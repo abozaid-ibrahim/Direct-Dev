@@ -30,12 +30,7 @@ class PhoneNumberCellController: GenericCellController<PhoneNumberTableViewCell>
         cell.textField.isSecureTextEntry = data.isSecured
         cell.textField.textContentType = data.inputType
         cell.textField.addTarget(self, action: #selector(didUpdateText), for: .editingDidEnd)
-        cell.textField.textAlignment = .center
         cell.textField.text = coordinator.collectedData[data.type.rawValue]
-//        if let phoneCode = coordinator.collectedData[AuthCellType.countryKey.rawValue] {
-//            cell.phonePickerView.setCountryByPhoneCode(phoneCode)
-//        }
-//        cell.phonePickerView.delegate = self
     }
 
     override func didSelectCell() {

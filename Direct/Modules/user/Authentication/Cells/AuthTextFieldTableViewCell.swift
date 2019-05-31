@@ -13,10 +13,9 @@ class AuthTextFieldTableViewCell: BaseTableViewCell {
 
     lazy var backView: UIView = {[unowned self] in
         let view = UIView()
-        view.layer.borderColor = #colorLiteral(red: 0.8797392845, green: 0.8797599673, blue: 0.8797488809, alpha: 1).cgColor
-        view.layer.borderWidth = 1
+        view.backgroundColor = #colorLiteral(red: 0.9763646722, green: 0.9765316844, blue: 0.9763541818, alpha: 1)
         view.addSubview(self.stackHolder)
-        view.layer.cornerRadius = 22
+        view.layer.cornerRadius = 10
         view.clipsToBounds = true
         return view
     }()
@@ -25,8 +24,8 @@ class AuthTextFieldTableViewCell: BaseTableViewCell {
         let view = UITextField()
         view.adjustsFontSizeToFitWidth = true
         view.autocorrectionType = .no
+        view.backgroundColor = #colorLiteral(red: 0.9763646722, green: 0.9765316844, blue: 0.9763541818, alpha: 1)
         view.autocapitalizationType = .none
-        view.textAlignment = .center
         view.localizedFont = .bold(12)
         view.delegate = self
         return view
@@ -34,7 +33,7 @@ class AuthTextFieldTableViewCell: BaseTableViewCell {
 
     lazy var passwordBtn: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "password"), for: .normal)
+        button.setImage(#imageLiteral(resourceName: "icons8Eye"), for: .normal)
         button.isHidden = true
         button.tintColor = .gray
         button.imageView?.contentMode = .scaleAspectFit
@@ -51,8 +50,8 @@ class AuthTextFieldTableViewCell: BaseTableViewCell {
 
     @objc func showPassword(sender: UIButton) {
         textField.isSecureTextEntry.toggle()
-        let image = textField.isSecureTextEntry ? #imageLiteral(resourceName: "password") :  #imageLiteral(resourceName: "show-password")
-        sender.setImage(image, for: .normal)
+//        let image = textField.isSecureTextEntry ? #imageLiteral(resourceName: "password") :  #imageLiteral(resourceName: "show-password")
+//        sender.setImage(image, for: .normal)
     }
 
     var textType: AuthCellType?

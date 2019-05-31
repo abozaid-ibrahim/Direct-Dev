@@ -15,7 +15,7 @@ class AuthButtonTableViewCell: BaseTableViewCell {
         let view = LoadingButton()
         view.backgroundColor = #colorLiteral(red: 0.9874494672, green: 0.5041492581, blue: 0.00973271206, alpha: 1)
         view.clipsToBounds = true
-        view.layer.cornerRadius = 20
+        view.layer.cornerRadius = 10
         view.localizedFont = .bold(12)
         return view
     }()
