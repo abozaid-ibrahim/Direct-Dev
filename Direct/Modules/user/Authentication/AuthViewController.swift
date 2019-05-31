@@ -50,7 +50,7 @@ class AuthViewController: UIViewController {
     lazy var actionStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [loginBtn, registerBtn])
         stack.axis = .horizontal
-        stack.spacing = 20
+        stack.spacing = 40
         stack.distribution = .fillEqually
         return stack
     }()
@@ -120,17 +120,11 @@ class AuthViewController: UIViewController {
             make.edges.equalToSuperview()
         }
         
-        indicatorView.snp.makeConstraints { (make) in
-            make.height.equalTo(3)
-            if case .login = authFrom.type  {
-                make.width.equalTo(loginBtn)
-                make.bottom.equalTo(loginBtn)
-                make.leading.equalTo(loginBtn)
-            }else {
-                make.width.equalTo(registerBtn)
-                make.bottom.equalTo(registerBtn)
-                make.leading.equalTo(registerBtn)
-            }
+        switch authFrom.type {
+            case .login:
+                animateBtn(loginBtn)
+            default:
+                animateBtn(registerBtn)
         }
         
         separatorView.snp.makeConstraints { (make) in
@@ -172,7 +166,17 @@ class AuthViewController: UIViewController {
 
     
     @objc func changeForm(_ sender: UIButton) {
-        
+        animateBtn(sender)
+        switch sender {
+        case loginBtn:
+            authFrom.type = .login
+        default:
+            authFrom.type = .register
+        }
+    }
+    
+    
+    func animateBtn(_ sender: UIButton) {
         indicatorView.snp.remakeConstraints { (make) in
             make.width.equalTo(sender)
             make.bottom.equalTo(sender)
@@ -180,18 +184,24 @@ class AuthViewController: UIViewController {
             make.height.equalTo(3)
         }
         
-        UIView.animate(withDuration: 0.3) {
+        
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 6, options: .curveEaseOut, animations: {
             self.topContainerView.layoutIfNeeded()
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
+            sender.transform = CGAffineTransform.init(scaleX: 1.1, y: 1.1)
+        }) { (_) in
+            sender.transform = .identity
+            sender.localizedFont = .bold(14)
         }
-        sender.localizedFont = .bold(14)
+        
         
         switch sender {
         case loginBtn:
             registerBtn.localizedFont = .regular(14)
-            authFrom.type = .login
         default:
             loginBtn.localizedFont = .regular(14)
-            authFrom.type = .register
         }
     }
 }

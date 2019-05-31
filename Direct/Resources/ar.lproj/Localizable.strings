@@ -9,7 +9,7 @@
 // LOGIN
 "login_title_label" = "تسجيل دخول";
 "email_tf_placeHolder" = "البريد الالكتروني";
-"email_phone_tf_placeHolder" = "الايميل او رقم الهاتف مع رمز الدولة";
+"email_phone_tf_placeHolder" = "البريد الإلكتروني أو رقم الجوال";
 "password_tf_placeHolder" = "كلمة المرور";
 "login_btn_label" = "تسجيل الدخول";
 "forget_password_label" = "نسيت كلمة المرور؟";
