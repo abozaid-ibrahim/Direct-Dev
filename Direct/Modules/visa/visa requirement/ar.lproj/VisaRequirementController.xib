@@ -12,6 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VisaRequirementController" customModule="Direct" customModuleProvider="target">
             <connections>
+                <outlet property="countryNameLbl" destination="kM6-j1-tzZ" id="hJz-z7-AEB"/>
+                <outlet property="descLbl" destination="Abm-vp-qVy" id="EAU-yl-ge5"/>
+                <outlet property="headerIconView" destination="RN0-T7-eu0" id="7uZ-YI-ipD"/>
                 <outlet property="tableView" destination="FC7-Wg-iIl" id="gEo-HF-y16"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

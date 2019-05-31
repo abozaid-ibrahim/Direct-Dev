@@ -97,6 +97,14 @@ class ApiClientFacade {
             return Disposables.create()
         }
     }
+    func getVisaRequirements(country:String) -> Observable<VisaRequirementForCountryResponse> {
+        return Observable<VisaRequirementForCountryResponse>.create { (observer) -> Disposable in
+            self.visaProvider.rx.request(VisaAPIs.visaRequirementForCountry(cid: country)).subscribe { [weak self] event in
+                self?.parser.emitDataModelfromResponse(event: event, observer: observer)
+                }.disposed(by: self.disposeBag)
+            return Disposables.create()
+        }
+    }
 }
 
 func log(_ value: Any) {

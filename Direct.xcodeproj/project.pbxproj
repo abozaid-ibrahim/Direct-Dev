@@ -458,6 +458,7 @@
 		6C3885C3229B1B4F00CA168A /* visa requirement */ = {
 			isa = PBXGroup;
 			children = (
+				6CCF4A04229F6FF60031B648 /* VisaReqForCountryResponse.swift */,
 				6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */,
 				6C9027CC228F95AC00B41705 /* VisaRequirementController.xib */,
 				6C5DE76B22762013001A9FB6 /* RequireVisaSectionHeader.swift */,
@@ -635,7 +636,6 @@
 			children = (
 				6C8503B0229DDB38004FE346 /* VisaRequestResponse.swift */,
 				6C8503B2229DDB5F004FE346 /* VisaAPIs.swift */,
-				6CCF4A04229F6FF60031B648 /* VisaReqForCountryResponse.swift */,
 				6CD2CE5422A0C32300FB308A /* APIsParams.swift */,
 				6CD2CE5822A0C85F00FB308A /* VisaPriceResponse.swift */,
 			);

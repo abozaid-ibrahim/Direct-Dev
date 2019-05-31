@@ -14,7 +14,7 @@ import RxSwift
 
 enum Destination {
     
-    case loginView, signupView, homeScreen, visaRequirement,
+    case loginView, signupView, homeScreen, visaRequirement(country:String),
     selectableSheet(data: [String], titleText: String?
    ,style: CellStyle),
     paymentMethod, passangersCount, newInstitueVisa, datePicker, hostsInfoScreen, passangersInfoScreen, successVisaReqScreen, MyOrders, orderDetails, institutesList, instituteDetails, packageDetails, successPackage, banks,newDirectVisa,searchCountries
@@ -31,8 +31,9 @@ enum Destination {
         case .homeScreen:
             let home = HomeViewController.instance("HomeViewController")
             return home
-        case .visaRequirement:
+        case .visaRequirement(let cid):
             let controller = VisaRequirementController()
+            controller.country = cid
             return controller
         case  .selectableSheet(let data,let title,let style):
             let vc = SelectableTableSheet()

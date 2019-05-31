@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 // MARK: - VisaRequirementForCountryResponse
 class VisaRequirementForCountryResponse: Codable {
     let requirementPage: [RequirementPage]
@@ -24,10 +23,10 @@ class VisaRequirementForCountryResponse: Codable {
 
 // MARK: - RequirementPage
 class RequirementPage: Codable {
-    let flagURL, backgroundImageURL: String
-    let backgroundImageUrl2: String
-    let name, countryID: String
-    let requirements: [Requirement]
+    let flagURL, backgroundImageURL: String?
+    let backgroundImageUrl2: String?
+    let name, countryID: String?
+    let requirements: [Requirement]?
     
     enum CodingKeys: String, CodingKey {
         case flagURL = "flag_url"

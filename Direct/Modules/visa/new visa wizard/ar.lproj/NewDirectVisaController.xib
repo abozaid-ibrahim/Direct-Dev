@@ -42,6 +42,9 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BhQ-iz-jOu" customClass="SpinnerTextField" customModule="Direct" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="355" height="48"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="AKx-sd-Oav"/>
+                                    </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="icons8AroundTheGlobe"/>
                                         <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="path5"/>
@@ -51,6 +54,9 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dik-0S-Omr" customClass="SpinnerTextField" customModule="Direct" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="58" width="355" height="48"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="EPl-bu-AwB"/>
+                                    </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="visaType"/>
                                         <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="path5"/>
@@ -60,6 +66,9 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fnp-rV-BGk" customClass="SpinnerTextField" customModule="Direct" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="116" width="355" height="48"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="LBZ-DX-XfH"/>
+                                    </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="icons8Marker"/>
                                         <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="path5"/>
@@ -88,10 +97,16 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="8re-ug-x5e"/>
+                                    </constraints>
                                 </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ch3-mS-msl" customClass="SpinnerTextField" customModule="Direct" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="232" width="355" height="48"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="3nW-I2-nkS"/>
+                                    </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="icons8Family"/>
                                         <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="path5"/>
@@ -99,9 +114,6 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                             </subviews>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="280" id="jQW-Iq-Ibn"/>
-                            </constraints>
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72P-rO-dCS" customClass="CheckoutFooter" customModule="Direct" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="327.5" width="355" height="80"/>

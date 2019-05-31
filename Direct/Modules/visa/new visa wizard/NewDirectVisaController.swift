@@ -37,6 +37,7 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
     override func viewDidLoad() {
         super.viewDidLoad()
         enableSwipeUpToDismiss()
+        relationsField.isHidden = true
         title = "دايركت فيزا"
         viewModel.showProgress.subscribe(onNext: { [weak self] value in
             self?.showProgress = value
@@ -71,7 +72,11 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
             .subscribe(onNext: { _ in
                 self.viewModel.showPasangersCountSpinner()
             }).disposed(by: disposeBag)
-        viewModel.passangersCount.map { "\($0)" }.bind(to: passangersCountField.txtField.rx.text).disposed(by: disposeBag)
+        viewModel.passangersCount.subscribe(onNext: {value in
+            self.passangersCountField.txtField.text = "\(value.0 + value.1)"
+            self.relationsField.isHidden = false
+        }, onError: nil, onCompleted: nil, onDisposed: nil)
+        
 
         dateField.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in

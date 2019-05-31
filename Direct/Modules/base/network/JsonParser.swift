@@ -6,18 +6,19 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
-import Foundation
-import RxSwift
 import Alamofire
+import Foundation
 import Moya
-class JsonParser{
-    func emitDataModelfromResponse<T:Codable>(event:SingleEvent<Response>,observer: AnyObserver<T>){
+import RxSwift
+class JsonParser {
+    func emitDataModelfromResponse<T: Codable>(event: SingleEvent<Response>, observer: AnyObserver<T>) {
         switch event {
         case let .success(response):
-            do{
-             let response = try JSONDecoder().decode(T.self, from: response.data)
-                observer.onNext(response)
-            }catch let error {
+            do {
+                let object = try JSONDecoder().decode(T.self, from: response.data)
+                print(object)
+                observer.onNext(object)
+            } catch let error{
                 print(">>> parsing error \(error)")
                 observer.onError(NetworkFailure.failedToParseData)
             }
@@ -25,5 +26,4 @@ class JsonParser{
             observer.onError(error)
         }
     }
-
 }

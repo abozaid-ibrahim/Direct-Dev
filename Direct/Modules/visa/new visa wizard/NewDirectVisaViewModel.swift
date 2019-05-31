@@ -70,6 +70,9 @@ class NewDirectVisaViewModel {
     var params = VisaRequestParams()
 
     func submitVisaRequest() {
+//        try! AppNavigator().push(.visaRequirement(country: self.selectedCountry!.countryID))
+//
+//        return
         if params.biometry_loc_id == nil {
             validate(msg: "all is well")
             return
@@ -78,10 +81,9 @@ class NewDirectVisaViewModel {
         params.no_of_passport = "0"
 
         showProgress.onNext(true)
-        network?.sendVisaRequest(params: params).subscribe(onNext: { response in
-            print(response)
+        network?.sendVisaRequest(params: params).subscribe(onNext: {[unowned self] response in
             self.showProgress.onNext(false)
-            try! AppNavigator().push(.visaRequirement)
+            try! AppNavigator().push(.visaRequirement(country: self.selectedCountry!.countryID))
 
         }, onError: { _ in
             self.showProgress.onNext(false)
