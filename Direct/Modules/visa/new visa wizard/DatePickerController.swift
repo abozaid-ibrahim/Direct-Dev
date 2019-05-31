@@ -23,7 +23,7 @@ class DatePickerController: UIViewController, PanModalPresentable {
     }
 
     private func setDate(date: Date) {
-        let str = "تاريخ السفر" + ": " + date.displayFormat 
+        let str = "تاريخ السفر" + ": " + date.displayFormat
         let attributedString = NSMutableAttributedString(string: str, attributes: [
             .font: UIFont(name: AppFonts.regularFont, size: 14.0)!,
             .foregroundColor: UIColor(white: 61.0 / 255.0, alpha: 1.0),
@@ -37,10 +37,29 @@ class DatePickerController: UIViewController, PanModalPresentable {
     @IBAction func confirmAction(_: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    
+    @IBOutlet weak var currentMonthLbl: UILabel!
+    @IBAction func loadNextMonth(_ sender: Any) {
+        datePicker.loadNextView()
+    }
+    
+    @IBAction func loadPreviousMonth(_ sender: Any) {
+        datePicker.loadPreviousView()
+    }
+
+    
 }
 
 extension DatePickerController: JBDatePickerViewDelegate {
-    // MARK: - JBDatePickerViewDelegate implementation
+    var shouldShowMonthOutDates: Bool { return false }
+    var weekDaysViewHeightRatio: CGFloat { return 0.2 }
+    var fontForDayLabel: JBFont { return JBFont(name: AppFonts.regularFont, size: .medium) }
+    var fontForWeekDaysViewText: JBFont { return JBFont(name: AppFonts.regularFont, size: .medium) }
+    var colorForSelelectedDayLabel: UIColor { return UIColor.white }
+    var colorForWeekDaysViewBackground: UIColor { return UIColor.clear }
+    var colorForWeekDaysViewText: UIColor { return UIColor.gray }
+    var colorForSelectionCircleForOtherDate: UIColor { return UIColor.appMango }
 
     func didSelectDay(_ dayView: JBDatePickerDayView) {
         if let date = dayView.date {
@@ -48,6 +67,11 @@ extension DatePickerController: JBDatePickerViewDelegate {
             self.setDate(date: date)
         }
     }
+    func didPresentOtherMonth(_ monthView: JBDatePickerMonthView) {
+        currentMonthLbl.text = monthView.monthDescription
+        
+    }
+    
 }
 
 extension Date {
@@ -57,6 +81,7 @@ extension Date {
         outputFormatter.dateFormat = "E, d MMM yyyy"
         return outputFormatter.string(from: self)
     }
+
     var apiFormat: String {
         let outputFormatter = DateFormatter()
         outputFormatter.locale = Locale(identifier: "en")

@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DatePickerController" customModule="Direct" customModuleProvider="target">
             <connections>
+                <outlet property="currentMonthLbl" destination="oDW-MK-0Y4" id="X3W-ED-NRw"/>
                 <outlet property="dateLbl" destination="GnT-2P-hab" id="6w3-Gl-8En"/>
                 <outlet property="datePicker" destination="Brd-he-eOY" id="QUR-pe-L2N"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -31,8 +32,48 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pvw-jg-rRC">
+                            <rect key="frame" x="8" y="40.5" width="382" height="25"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDW-MK-0Y4">
+                                    <rect key="frame" x="0.0" y="0.0" width="302" height="25"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wll-id-Jh9">
+                                    <rect key="frame" x="312" y="0.0" width="30" height="25"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="&gt;">
+                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="loadPreviousMonth:" destination="-1" eventType="touchUpInside" id="Fwv-rH-zhN"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CB-ml-sYN">
+                                    <rect key="frame" x="352" y="0.0" width="30" height="25"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="&lt;">
+                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="loadNextMonth:" destination="-1" eventType="touchUpInside" id="sSx-Ka-RoU"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="Bmz-Bw-tAk"/>
+                            </constraints>
+                        </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIE-4N-jxb">
-                            <rect key="frame" x="12" y="305.5" width="374" height="40"/>
+                            <rect key="frame" x="12" y="343" width="374" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="c1a-Ry-iSq"/>
                             </constraints>
@@ -47,13 +88,13 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تاريخ السفر : الأربعاء ، 2019/4/6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GnT-2P-hab">
-                            <rect key="frame" x="12" y="272.5" width="374" height="21"/>
+                            <rect key="frame" x="12" y="310.5" width="374" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Brd-he-eOY" customClass="JBDatePickerView" customModule="JBDatePicker">
-                            <rect key="frame" x="6" y="40.5" width="386" height="220"/>
+                            <rect key="frame" x="6" y="78.5" width="386" height="220"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="220" id="X9D-Tj-xff"/>
@@ -64,16 +105,19 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="GnT-2P-hab" secondAttribute="trailing" constant="12" id="1RY-gu-1vE"/>
                         <constraint firstItem="kfu-iw-Q79" firstAttribute="top" secondItem="iR9-ug-CxG" secondAttribute="top" constant="8" id="3kQ-qK-7TA"/>
+                        <constraint firstItem="Pvw-jg-rRC" firstAttribute="centerX" secondItem="kfu-iw-Q79" secondAttribute="centerX" id="7mA-ov-vJt"/>
                         <constraint firstAttribute="trailing" secondItem="BIE-4N-jxb" secondAttribute="trailing" constant="12" id="EcM-fe-nU3"/>
                         <constraint firstItem="Brd-he-eOY" firstAttribute="leading" secondItem="iR9-ug-CxG" secondAttribute="leading" constant="6" id="HNC-WB-F4T"/>
-                        <constraint firstItem="Brd-he-eOY" firstAttribute="top" secondItem="kfu-iw-Q79" secondAttribute="bottom" constant="12" id="PT4-xA-Pr4"/>
                         <constraint firstItem="BIE-4N-jxb" firstAttribute="leading" secondItem="iR9-ug-CxG" secondAttribute="leading" constant="12" id="QMv-d1-tnf"/>
                         <constraint firstAttribute="trailing" secondItem="kfu-iw-Q79" secondAttribute="trailing" constant="8" id="TQp-Ek-GEd"/>
                         <constraint firstItem="BIE-4N-jxb" firstAttribute="top" secondItem="GnT-2P-hab" secondAttribute="bottom" constant="12" id="Y3P-TW-qEn"/>
                         <constraint firstItem="GnT-2P-hab" firstAttribute="top" secondItem="Brd-he-eOY" secondAttribute="bottom" constant="12" id="fBk-Cs-qUK"/>
                         <constraint firstItem="kfu-iw-Q79" firstAttribute="leading" secondItem="iR9-ug-CxG" secondAttribute="leading" constant="8" id="fT8-Io-gyh"/>
+                        <constraint firstItem="Pvw-jg-rRC" firstAttribute="top" secondItem="kfu-iw-Q79" secondAttribute="bottom" constant="12" id="g4c-qO-sk6"/>
+                        <constraint firstItem="Brd-he-eOY" firstAttribute="top" secondItem="Pvw-jg-rRC" secondAttribute="bottom" constant="13" id="j9F-yJ-uxg"/>
                         <constraint firstAttribute="trailing" secondItem="Brd-he-eOY" secondAttribute="trailing" constant="6" id="lwA-pL-fwn"/>
                         <constraint firstItem="GnT-2P-hab" firstAttribute="leading" secondItem="iR9-ug-CxG" secondAttribute="leading" constant="12" id="rRC-b6-QI9"/>
+                        <constraint firstItem="Pvw-jg-rRC" firstAttribute="width" secondItem="kfu-iw-Q79" secondAttribute="width" id="xuf-pc-Oe9"/>
                     </constraints>
                 </view>
             </subviews>

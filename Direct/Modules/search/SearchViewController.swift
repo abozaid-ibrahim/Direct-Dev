@@ -23,6 +23,7 @@ final class SearchViewController: UIViewController, PanModalPresentable, StyledA
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        tableView.defaultSeperator()
         viewModel.viewDidLoad()
     }
 

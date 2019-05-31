@@ -23,7 +23,7 @@ public enum CommonAPIs {
 extension TargetType{
     public var baseURL: URL { return URL(string: "https://dev.visa.directksa.com/backend/api/")! }
     var appLang:String{
-        return "ar"
+        return "en"
     }
     var tokenKeyValue:String{
         return "bf930e30-8c28-42d6-bf8e-f4cbd0b83774"

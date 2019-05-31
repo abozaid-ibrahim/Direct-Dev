@@ -25,7 +25,7 @@ class NewDirectVisaViewModel {
     var selectedVisaType = PublishSubject<String?>()
     var selectedBio = PublishSubject<String?>()
     var selectedRelation = PublishSubject<String?>()
-
+    var totalCost:Double?
     var embassyLocations: [DTEmbassyLocation]?
     init(network: ApiClientFacade? = ApiClientFacade()) {
         self.network = network
@@ -117,7 +117,7 @@ class NewDirectVisaViewModel {
     }
 
     func showBiometricSpinner() {
-        guard  let locations  = embassyLocations else {return}
+        guard let locations = embassyLocations else { return }
         let cities = locations.map { $0.cityName }
         let dest = Destination.selectableSheet(data: cities, titleText: "مكان البصمة", style: .textCenter)
         let vc = dest.controller() as! SelectableTableSheet
@@ -178,14 +178,18 @@ class NewDirectVisaViewModel {
 
     func showPasangersCountSpinner() {
         var vc = Destination.passangersCount.controller() as! PassangersCountController
-
+        guard let country = self.selectedCountry else {
+            validate(msg: "")
+            return
+        }
+        vc.info = VisaPriceParams(cid: params.country_id, cityid: params.biometry_loc_id, no_of_adult: 0.stringValue, no_of_child: 0.stringValue, no_of_passport: 0.stringValue, promo_code: 0.stringValue, visatype: params.visatype)
         vc.result.asObservable().subscribe { event in
             switch event.event {
             case .next(let value):
                 self.passangersCount.onNext(value)
                 self.params.no_of_adult = "\(value.0)"
                 self.params.no_of_child = "\(value.1)"
-
+self.totalCost = value.2
             default:
                 break
             }

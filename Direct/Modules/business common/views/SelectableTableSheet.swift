@@ -34,6 +34,7 @@ final class SelectableTableSheet: UIViewController, PanModalPresentable {
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLbl.text = titleText ?? "عدد المسافرين"
+        tableView.defaultSeperator()
         setTableDataSource()
         setONSelect()
     }
