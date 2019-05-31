@@ -27,6 +27,6 @@ final class MyAccountController: UIViewController, PanModalPresentable {
     }
 
     @IBAction func login(_: Any) {
-        try! AppNavigator().push(.loginView)
+        try! AppNavigator().present(.loginView)
     }
 }

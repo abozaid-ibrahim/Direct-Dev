@@ -13,12 +13,15 @@ target 'Direct' do
   pod 'M13Checkbox'
 #  pod 'IBAnalyzer'
   pod 'RxGesture', '~> 2.1'
-#  pod 'YALField'
-  pod 'SwifterSwift/AppKit'
+  pod 'YALField'
+  pod 'SwifterSwift'
   pod 'ARSLineProgress', '~> 3.1'
   pod 'Kingfisher', '~> 5.0'
   pod 'JBDatePicker'
 
+  pod 'GenericCellControllers'
+  pod 'SnapKit'
+  pod 'SwiftMessages'
 
   
 end

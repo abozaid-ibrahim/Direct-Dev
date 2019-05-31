@@ -20,13 +20,9 @@ enum Destination {
     func controller() -> UIViewController {
         switch self {
         case .loginView:
-            let auth = UserAuthViewController()
-            auth.showView(.login)
-            return auth
+            return AuthViewController(.login)
         case .signupView:
-            let auth = UserAuthViewController()
-            auth.showView(.signup)
-            return auth
+            return AuthViewController(.register)
         case .homeScreen:
             let home = HomeViewController.instance("HomeViewController")
             return home

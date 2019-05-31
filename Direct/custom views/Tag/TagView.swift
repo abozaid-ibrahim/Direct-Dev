@@ -9,6 +9,7 @@
 import UIKit
 
 import UIKit
+
 enum TagViewAligment {
     case left, right
 }
@@ -36,9 +37,6 @@ public class TagView: UIView, TagsView {
 
     @IBInspectable
     public var bgColor: UIColor = .white
-
-    @IBInspectable
-    public var borderColor: UIColor = .lightGray
 
     @IBInspectable
     public var inimumInteritemSpacing = 10
@@ -85,6 +83,7 @@ public class TagView: UIView, TagsView {
 
     func setup() {
         backgroundColor = .white
+        borderColor = .lightGray
         addCollectionView()
         let bundle = Bundle(for: type(of: self))
         collectionView.register(UINib(nibName: TagCollectionCell.id, bundle: bundle), forCellWithReuseIdentifier: TagCollectionCell.id)
