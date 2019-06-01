@@ -37,7 +37,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func setRootController() {
         let root = UIStoryboard.main.instantiateViewController(withIdentifier: StoryBoardIds.rootController.id) as! RootNavigationViewController
-        window?.rootViewController = root
+        
+        
+        let x = UIStoryboard.visa.instantiateViewController(withIdentifier: "VisaReqConfirmationController")
+
+        window?.rootViewController = x
         window?.makeKeyAndVisible()
         navigator = AppNavigator(root: root)
     }

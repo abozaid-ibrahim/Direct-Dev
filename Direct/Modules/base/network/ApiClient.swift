@@ -14,11 +14,13 @@ import RxSwift
 // CALL Netowkr, get response , parse it to model , pass it ot view model
 
 class ApiClientFacade {
-    private let parser = JsonParser()
-    private let disposeBag = DisposeBag()
-    private let commonProvider = MoyaProvider<CommonAPIs>(plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: APIDateFromatter().JSONResponseDataFormatter)])
+    let parser = JsonParser()
+    let disposeBag = DisposeBag()
 
-    private let visaProvider = MoyaProvider<VisaAPIs>(plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: APIDateFromatter().JSONResponseDataFormatter)])
+    let commonProvider = MoyaProvider<CommonAPIs>(plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: APIDateFromatter().JSONResponseDataFormatter)])
+    let paymentProvider = MoyaProvider<PaymentAPIs>(plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: APIDateFromatter().JSONResponseDataFormatter)])
+
+    let visaProvider = MoyaProvider<VisaAPIs>(plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: APIDateFromatter().JSONResponseDataFormatter)])
 
     //    func downloadRepositories(_ username: String) {
     //        provider.request(.zen) { result in
@@ -97,11 +99,12 @@ class ApiClientFacade {
             return Disposables.create()
         }
     }
-    func getVisaRequirements(country:String) -> Observable<VisaRequirementForCountryResponse> {
+
+    func getVisaRequirements(country: String) -> Observable<VisaRequirementForCountryResponse> {
         return Observable<VisaRequirementForCountryResponse>.create { (observer) -> Disposable in
             self.visaProvider.rx.request(VisaAPIs.visaRequirementForCountry(cid: country)).subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
-                }.disposed(by: self.disposeBag)
+            }.disposed(by: self.disposeBag)
             return Disposables.create()
         }
     }

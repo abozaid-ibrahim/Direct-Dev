@@ -88,3 +88,4 @@ extension VisaAPIs: TargetType {
         return ["Content-Type": "application/x-www-form-urlencoded"]
     }
 }
+//get-master-payment-method

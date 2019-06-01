@@ -68,7 +68,7 @@ final class VisaRequirementController: UIViewController, PanModalPresentable, St
     }
     
     @IBAction func requestAction(_: Any) {
-        try! AppNavigator().push(.newDirectVisa)
+        try! AppNavigator().push(.paymentMethod)
     }
 }
 

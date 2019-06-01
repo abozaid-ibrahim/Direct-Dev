@@ -56,7 +56,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cMs-lq-j8J"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="مساعدة" image="icons8Geography" id="QVa-gB-goh"/>
+                    <tabBarItem key="tabBarItem" title="مساعدة" image="myordersImage" id="QVa-gB-goh"/>
                     <connections>
                         <outlet property="tableView" destination="EZD-3Q-xMd" id="fnz-nd-plQ"/>
                     </connections>
@@ -189,7 +189,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mU3-qE-UHR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="بكجات" image="icons8Mesh" id="It3-cK-2n6"/>
+                    <tabBarItem key="tabBarItem" title="بكجات" image="visaReqTabImage" id="It3-cK-2n6"/>
                     <connections>
                         <outlet property="tableView" destination="gB9-5Y-9eE" id="4kC-XW-jbH"/>
                     </connections>
@@ -247,7 +247,7 @@
             </objects>
             <point key="canvasLocation" x="-502" y="1530"/>
         </scene>
-        <!--طلباتي-->
+        <!--بحث-->
         <scene sceneID="GFv-uH-MDV">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="mUF-MA-QtB" customClass="HomeViewController" customModule="Direct" customModuleProvider="target" sceneMemberID="viewController">
@@ -409,7 +409,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9or-ET-63b"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="طلباتي" image="icons8TodoList" id="31F-ed-mth"/>
+                    <tabBarItem key="tabBarItem" title="بحث" image="saerchImage" id="31F-ed-mth"/>
                     <connections>
                         <outlet property="collectionView" destination="iND-Dx-gCi" id="FtC-E7-u71"/>
                         <outlet property="containerView" destination="T3u-i3-Zv4" id="8lz-Z5-IM1"/>
@@ -592,12 +592,13 @@
     </scenes>
     <resources>
         <image name="download" width="259" height="194"/>
-        <image name="icons8Geography" width="17" height="17"/>
         <image name="icons8Mesh" width="25" height="24"/>
         <image name="icons8Mortarboard" width="29" height="22"/>
         <image name="icons8Passport" width="28" height="35"/>
         <image name="icons8Person" width="16" height="17"/>
         <image name="icons8Search" width="27" height="27"/>
-        <image name="icons8TodoList" width="20" height="19"/>
+        <image name="myordersImage" width="19" height="20"/>
+        <image name="saerchImage" width="27" height="27"/>
+        <image name="visaReqTabImage" width="20" height="19"/>
     </resources>
 </document>

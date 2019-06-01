@@ -17,7 +17,7 @@ enum Destination {
     case loginView, signupView, homeScreen, visaRequirement(country:String),
     selectableSheet(data: [String], titleText: String?
    ,style: CellStyle),
-    paymentMethod, passangersCount, newInstitueVisa, datePicker, hostsInfoScreen, passangersInfoScreen, successVisaReqScreen, MyOrders, orderDetails, institutesList, instituteDetails, packageDetails, successPackage, banks,newDirectVisa,searchCountries
+    paymentMethod, passangersCount, newInstitueVisa, datePicker, hostsInfoScreen, passangersInfoScreen, successVisaReqScreen, MyOrders, orderDetails, institutesList, instituteDetails, packageDetails, successPackage, banks,newDirectVisa,searchCountries, confirmatonVisa
     func controller() -> UIViewController {
         switch self {
         case .loginView:
@@ -75,6 +75,8 @@ enum Destination {
             return NewDirectVisaController()
         case .searchCountries:
             return UIStoryboard.main.instantiateViewController(withIdentifier: "SearchViewController")
+        case .confirmatonVisa:
+            return UIStoryboard.visa.instantiateViewController(withIdentifier: "VisaReqConfirmationController")
         }
     }
 }

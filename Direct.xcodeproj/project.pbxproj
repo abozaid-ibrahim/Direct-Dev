@@ -58,6 +58,11 @@
 		6C5FDA522270816B00ABA39B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C5FDA502270816B00ABA39B /* Main.storyboard */; };
 		6C5FDA542270816C00ABA39B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C5FDA532270816C00ABA39B /* Assets.xcassets */; };
 		6C5FDA572270816C00ABA39B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C5FDA552270816C00ABA39B /* LaunchScreen.storyboard */; };
+		6C6EED6922A248BA0091B82F /* PaymentAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6EED6822A248BA0091B82F /* PaymentAPIs.swift */; };
+		6C6EED6B22A24C190091B82F /* PaymentMethodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6EED6A22A24C190091B82F /* PaymentMethodsResponse.swift */; };
+		6C6EED6D22A24C560091B82F /* PaymentChildsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6EED6C22A24C560091B82F /* PaymentChildsResponse.swift */; };
+		6C6EED6F22A24C680091B82F /* UpdatePaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6EED6E22A24C680091B82F /* UpdatePaymentResponse.swift */; };
+		6C6EED7122A24DEF0091B82F /* PaymentClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6EED7022A24DEF0091B82F /* PaymentClient.swift */; };
 		6C7782472278A54A001926B2 /* CheckoutFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7782462278A54A001926B2 /* CheckoutFooter.swift */; };
 		6C77824F2278ABDC001926B2 /* CheckoutBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C77824E2278ABDC001926B2 /* CheckoutBottomView.swift */; };
 		6C778257227A36F7001926B2 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C778256227A36F7001926B2 /* HelpViewController.swift */; };
@@ -142,6 +147,8 @@
 		6CDEBBE62284C55800EC3E6F /* PassangersCountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEBBE42284C55800EC3E6F /* PassangersCountController.swift */; };
 		6CDEBBEC2284FDA000EC3E6F /* PackagesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEBBEA2284FDA000EC3E6F /* PackagesTableCell.swift */; };
 		6CDEBBF02285012400EC3E6F /* PackageDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEBBEE2285012400EC3E6F /* PackageDetailsController.swift */; };
+		6CDEF77F22A11DDA00BF5F0B /* VisaReqConfirmationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEF77D22A11DDA00BF5F0B /* VisaReqConfirmationController.swift */; };
+		6CDEF78222A11EFC00BF5F0B /* Visa.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CDEF78122A11EFC00BF5F0B /* Visa.storyboard */; };
 		6CE722ED2274FA1B00E095DC /* VisaRequirementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */; };
 		6CF0E3672285BB1000149910 /* SwipeUpToDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0E3662285BB1000149910 /* SwipeUpToDismiss.swift */; };
 		6CF0E36C2285BE6800149910 /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0E36A2285BE6800149910 /* DatePickerController.swift */; };
@@ -232,6 +239,11 @@
 		6C5FDA532270816C00ABA39B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C5FDA562270816C00ABA39B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C5FDA582270816C00ABA39B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C6EED6822A248BA0091B82F /* PaymentAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAPIs.swift; sourceTree = "<group>"; };
+		6C6EED6A22A24C190091B82F /* PaymentMethodsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodsResponse.swift; sourceTree = "<group>"; };
+		6C6EED6C22A24C560091B82F /* PaymentChildsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentChildsResponse.swift; sourceTree = "<group>"; };
+		6C6EED6E22A24C680091B82F /* UpdatePaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePaymentResponse.swift; sourceTree = "<group>"; };
+		6C6EED7022A24DEF0091B82F /* PaymentClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentClient.swift; sourceTree = "<group>"; };
 		6C7782462278A54A001926B2 /* CheckoutFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutFooter.swift; sourceTree = "<group>"; };
 		6C77824E2278ABDC001926B2 /* CheckoutBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutBottomView.swift; sourceTree = "<group>"; };
 		6C778256227A36F7001926B2 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
@@ -320,6 +332,8 @@
 		6CDEBBE42284C55800EC3E6F /* PassangersCountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangersCountController.swift; sourceTree = "<group>"; };
 		6CDEBBEA2284FDA000EC3E6F /* PackagesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesTableCell.swift; sourceTree = "<group>"; };
 		6CDEBBEE2285012400EC3E6F /* PackageDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailsController.swift; sourceTree = "<group>"; };
+		6CDEF77D22A11DDA00BF5F0B /* VisaReqConfirmationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaReqConfirmationController.swift; sourceTree = "<group>"; };
+		6CDEF78122A11EFC00BF5F0B /* Visa.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Visa.storyboard; sourceTree = "<group>"; };
 		6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaRequirementController.swift; sourceTree = "<group>"; };
 		6CF0E3662285BB1000149910 /* SwipeUpToDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeUpToDismiss.swift; sourceTree = "<group>"; };
 		6CF0E36A2285BE6800149910 /* DatePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
@@ -422,6 +436,7 @@
 		6C2CFB9C22789DEA00D23CF4 /* payment */ = {
 			isa = PBXGroup;
 			children = (
+				6C6EED6722A248A20091B82F /* api */,
 				6C2CFB9D22789E0200D23CF4 /* PaymentViewController.swift */,
 				6C902799228F953A00B41705 /* PaymentViewController.xib */,
 				6C77825B227A3E23001926B2 /* BanksViewController.swift */,
@@ -458,13 +473,15 @@
 		6C3885C3229B1B4F00CA168A /* visa requirement */ = {
 			isa = PBXGroup;
 			children = (
-				6CCF4A04229F6FF60031B648 /* VisaReqForCountryResponse.swift */,
+				6CDEF77C22A11B3700BF5F0B /* api */,
 				6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */,
 				6C9027CC228F95AC00B41705 /* VisaRequirementController.xib */,
 				6C5DE76B22762013001A9FB6 /* RequireVisaSectionHeader.swift */,
 				6C9027D2228F95B700B41705 /* RequireVisaSectionHeader.xib */,
 				6C5DE7662275EC49001A9FB6 /* VisaRequirementTableCell.swift */,
 				6C9027CF228F95B100B41705 /* VisaRequirementTableCell.xib */,
+				6CDEF77D22A11DDA00BF5F0B /* VisaReqConfirmationController.swift */,
+				6CDEF78122A11EFC00BF5F0B /* Visa.storyboard */,
 			);
 			path = "visa requirement";
 			sourceTree = "<group>";
@@ -568,6 +585,18 @@
 				6CA040B52281BE0300619B6F /* FloatingTextField.swift */,
 			);
 			path = Direct;
+			sourceTree = "<group>";
+		};
+		6C6EED6722A248A20091B82F /* api */ = {
+			isa = PBXGroup;
+			children = (
+				6C6EED6822A248BA0091B82F /* PaymentAPIs.swift */,
+				6C6EED6A22A24C190091B82F /* PaymentMethodsResponse.swift */,
+				6C6EED6C22A24C560091B82F /* PaymentChildsResponse.swift */,
+				6C6EED6E22A24C680091B82F /* UpdatePaymentResponse.swift */,
+				6C6EED7022A24DEF0091B82F /* PaymentClient.swift */,
+			);
+			path = api;
 			sourceTree = "<group>";
 		};
 		6C778253227A36E4001926B2 /* help */ = {
@@ -775,6 +804,14 @@
 				6CD2CE5A22A0C9D000FB308A /* DataTypes.swift */,
 			);
 			path = "app common component";
+			sourceTree = "<group>";
+		};
+		6CDEF77C22A11B3700BF5F0B /* api */ = {
+			isa = PBXGroup;
+			children = (
+				6CCF4A04229F6FF60031B648 /* VisaReqForCountryResponse.swift */,
+			);
+			path = api;
 			sourceTree = "<group>";
 		};
 		6CE722E82274F9F700E095DC /* visa */ = {
@@ -993,6 +1030,7 @@
 				6C9027A6228F955F00B41705 /* PaymentMethodsContainerController.xib in Resources */,
 				6C9027E2228F95D800B41705 /* UserAuthViewController.xib in Resources */,
 				6C9027AC228F956B00B41705 /* PackageDetailsController.xib in Resources */,
+				6CDEF78222A11EFC00BF5F0B /* Visa.storyboard in Resources */,
 				6C9027CA228F95AC00B41705 /* VisaRequirementController.xib in Resources */,
 				6C9027BB228F958C00B41705 /* TextTableCell.xib in Resources */,
 				6C9027B2228F957700B41705 /* SingleRowTableCell.xib in Resources */,
@@ -1105,6 +1143,7 @@
 				3992B66722961B5F00BBB7F1 /* TagCollectionCell.swift in Sources */,
 				6CF0E3772285D78900149910 /* OrderDetailsController.swift in Sources */,
 				6C77827C227AA2C1001926B2 /* SuccessRequestInstituteController.swift in Sources */,
+				6C6EED6F22A24C680091B82F /* UpdatePaymentResponse.swift in Sources */,
 				6C778278227AA26F001926B2 /* InstituteDetailsController.swift in Sources */,
 				6C778261227A3E3D001926B2 /* BankTableCell.swift in Sources */,
 				6CF703DD2286F7E800B1C387 /* InstituteDetailsTableCell.swift in Sources */,
@@ -1112,6 +1151,7 @@
 				6CF3E1762271E598007488BA /* RootNavigationViewController.swift in Sources */,
 				6CF703E22286FBD700B1C387 /* InstituteDetailsHeaderView.swift in Sources */,
 				6C77825A227A3AFF001926B2 /* MyAccountController.swift in Sources */,
+				6C6EED6922A248BA0091B82F /* PaymentAPIs.swift in Sources */,
 				6CD2CE5322A0BFBB00FB308A /* CitiesResponse.swift in Sources */,
 				6CCE0324229C4DA4003523FE /* BioChoicesResponse.swift in Sources */,
 				6CDEBBEC2284FDA000EC3E6F /* PackagesTableCell.swift in Sources */,
@@ -1142,12 +1182,15 @@
 				6C77824F2278ABDC001926B2 /* CheckoutBottomView.swift in Sources */,
 				6C2CFB932277902400D23CF4 /* NewDirectVisaController.swift in Sources */,
 				6C87FAE42270C75F00AFE485 /* SignupViewController.swift in Sources */,
+				6C6EED6D22A24C560091B82F /* PaymentChildsResponse.swift in Sources */,
+				6C6EED7122A24DEF0091B82F /* PaymentClient.swift in Sources */,
 				6CA040B62281BE0300619B6F /* FloatingTextField.swift in Sources */,
 				6C5FDA4F2270816B00ABA39B /* ViewController.swift in Sources */,
 				3992B66922961B5F00BBB7F1 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				6C557557228BA52900BAE5E2 /* View+Colors.swift in Sources */,
 				6C5DE87A22872A1E00F900AE /* SuccessPackageController.swift in Sources */,
 				6CE722ED2274FA1B00E095DC /* VisaRequirementController.swift in Sources */,
+				6C6EED6B22A24C190091B82F /* PaymentMethodsResponse.swift in Sources */,
 				6C778289227C6EE6001926B2 /* ContactUsViewController.swift in Sources */,
 				6C5DE7782277330D001A9FB6 /* CountryTableCell.swift in Sources */,
 				6CF3E1B322725799007488BA /* Binder.swift in Sources */,
@@ -1201,6 +1244,7 @@
 				6C2CFB8F2277446600D23CF4 /* SingleRowTableCell.swift in Sources */,
 				6C2CFB9822779AFD00D23CF4 /* UIButton+App.swift in Sources */,
 				6CC514A2227DC43B00634B5D /* PassangersController.swift in Sources */,
+				6CDEF77F22A11DDA00BF5F0B /* VisaReqConfirmationController.swift in Sources */,
 				6C2CFBA72278A1C600D23CF4 /* PaymentBranchTableCell.swift in Sources */,
 				6C3885CB229B24D300CA168A /* NetworkErrors.swift in Sources */,
 				6C2CFB8C2277422900D23CF4 /* PackagesViewController.swift in Sources */,
