@@ -24,4 +24,8 @@ extension UIColor {
     @nonobjc class var appOffWhite: UIColor {
         return UIColor(white: 249.0 / 255.0, alpha: 1.0)
     }
+    @nonobjc class var tangerine7: UIColor {
+        return UIColor(red: 252.0 / 255.0, green: 134.0 / 255.0, blue: 14.0 / 255.0, alpha: 0.07)
+    }
+
 }

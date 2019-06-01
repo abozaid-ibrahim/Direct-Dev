@@ -11,29 +11,37 @@ import UIKit
 class PaymentMethodTableCell: UITableViewCell, TableCell {
     @IBOutlet private var containerLayout: UIView!
     static var cellId: String = "PaymentMethodTableCell"
-
+    
     typealias CellDataModel = PaymentMethod
-
+    
     @IBOutlet private var cardImageViews: [UIImageView]!
-
+    
     @IBOutlet private var titleLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        // Initialization code
-    }
-
+selectStyle(selected: false)    }
+    
     func setCellData(_ model: CellDataModel) {
         titleLbl.text = model.paymentName
         
-//        for (index, img) in model {
-//            cardImageViews[index].image = img
-//        }
+        //        for (index, img) in model {
+        //            cardImageViews[index].image = img
+        //        }
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        containerLayout.borderColorV = UIColor.appMango
-        containerLayout.backgroundColor = UIColor.appMango
+    }
+    func selectStyle(selected:Bool){
+        if selected{
+            containerLayout.borderColorV = UIColor.appPumpkinOrange
+            containerLayout.backgroundColor = UIColor.tangerine7
+            
+        }else{
+            containerLayout.borderColorV = UIColor.appOffWhite
+            containerLayout.backgroundColor = UIColor.white
+            
+        }
     }
 }

@@ -37,10 +37,10 @@ class PaymentBranchTableCell: UITableViewCell, TableCell {
     private func selectCell(_ selected: Bool) {
         containerLayout.borderWidthV = 1
         if selected {
-            containerLayout.borderColorV = UIColor.appMango
-            containerLayout.backgroundColor = UIColor.appMango
+            containerLayout.borderColorV = UIColor.appPumpkinOrange
+            containerLayout.backgroundColor = UIColor.tangerine7
         } else {
-            containerLayout.borderColorV = UIColor.lightGray
+            containerLayout.borderColorV = UIColor.appOffWhite
             containerLayout.backgroundColor = UIColor.white
         }
     }

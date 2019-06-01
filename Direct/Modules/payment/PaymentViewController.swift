@@ -42,9 +42,20 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
                 let mycell = (cell as! PaymentMethodTableCell)
                 mycell.setCellData(model)
             }.disposed(by: disposeBag)
+       
         paymentMethodTable.rx.modelSelected(PaymentMethod.self).subscribe(onNext: { value in
             self.selectChildMethod(value)
+            
         }).disposed(by: disposeBag)
+        paymentMethodTable.rx.itemSelected.subscribe(onNext: {[unowned self] value in
+            (self.paymentMethodTable.cellForRow(at: value) as! PaymentMethodTableCell).selectStyle(selected: true)
+            }, onError: nil, onCompleted: nil, onDisposed:  nil).disposed(by: disposeBag)
+
+
+        paymentMethodTable.rx.itemDeselected.subscribe(onNext: {[unowned self] value in
+            (self.paymentMethodTable.cellForRow(at: value) as! PaymentMethodTableCell).selectStyle(selected: false)
+            }, onError: nil, onCompleted: nil, onDisposed:  nil).disposed(by: disposeBag)
+
     }
 
     private func selectChildMethod(_ method: PaymentMethod) {
@@ -66,3 +77,5 @@ extension UITableView {
         register(UINib(nibName: id, bundle: nil), forCellReuseIdentifier: id)
     }
 }
+
+
