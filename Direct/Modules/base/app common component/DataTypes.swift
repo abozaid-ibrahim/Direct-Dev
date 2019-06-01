@@ -17,3 +17,14 @@ extension Double{
         return String(self)
     }
 }
+extension String{
+    var attributedText:NSAttributedString?{
+        let htmlData = self.data(using: String.Encoding.unicode)
+        let options = [NSAttributedString.DocumentReadingOptionKey.documentType:
+            NSAttributedString.DocumentType.html]
+        let attributedString = try? NSMutableAttributedString(data: htmlData ?? Data(),
+                                                              options: options,
+                                                              documentAttributes: nil)
+return attributedString
+    }
+}

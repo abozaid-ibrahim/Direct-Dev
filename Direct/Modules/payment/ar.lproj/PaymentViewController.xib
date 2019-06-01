@@ -24,17 +24,22 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZpS-QP-IRo">
-                    <rect key="frame" x="4" y="24" width="367" height="639"/>
+                    <rect key="frame" x="12" y="32" width="351" height="623"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ygq-bA-IRy">
-                            <rect key="frame" x="0.0" y="0.0" width="367" height="150"/>
+                            <rect key="frame" x="0.0" y="0.0" width="351" height="150"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="150" id="6mi-iM-zjM"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </tableView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اختر الفرع" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAh-cE-K7k">
-                            <rect key="frame" x="0.0" y="160" width="367" height="20.5"/>
+                            <rect key="frame" x="0.0" y="160" width="351" height="20.5"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20.5" id="L75-Cp-lCb"/>
                             </constraints>
@@ -43,11 +48,16 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uid-t3-Jrf">
-                            <rect key="frame" x="0.0" y="190.5" width="367" height="358.5"/>
+                            <rect key="frame" x="0.0" y="190.5" width="351" height="342.5"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </tableView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJJ-VS-hAg" customClass="CheckoutFooter" customModule="Direct" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="559" width="367" height="80"/>
+                            <rect key="frame" x="0.0" y="543" width="351" height="80"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="80" id="H4m-H3-Eq2"/>
@@ -61,12 +71,12 @@
                     </subviews>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ZpS-QP-IRo" secondAttribute="bottom" constant="4" id="36W-eL-5VQ"/>
-                <constraint firstItem="ZpS-QP-IRo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="4" id="5Nu-WJ-ii3"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZpS-QP-IRo" secondAttribute="trailing" constant="4" id="HPc-NK-gis"/>
-                <constraint firstItem="ZpS-QP-IRo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="4" id="egl-OA-6YR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ZpS-QP-IRo" secondAttribute="bottom" constant="12" id="36W-eL-5VQ"/>
+                <constraint firstItem="ZpS-QP-IRo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="5Nu-WJ-ii3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZpS-QP-IRo" secondAttribute="trailing" constant="12" id="HPc-NK-gis"/>
+                <constraint firstItem="ZpS-QP-IRo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="egl-OA-6YR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

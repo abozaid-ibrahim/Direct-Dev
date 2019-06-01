@@ -39,9 +39,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let root = UIStoryboard.main.instantiateViewController(withIdentifier: StoryBoardIds.rootController.id) as! RootNavigationViewController
         
         
-        let x = UIStoryboard.visa.instantiateViewController(withIdentifier: "VisaReqConfirmationController")
+//        let x = UIStoryboard.visa.instantiateViewController(withIdentifier: "VisaReqConfirmationController")
 
-        window?.rootViewController = x
+        window?.rootViewController = root
         window?.makeKeyAndVisible()
         navigator = AppNavigator(root: root)
     }

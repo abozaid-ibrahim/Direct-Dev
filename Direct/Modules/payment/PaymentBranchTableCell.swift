@@ -11,12 +11,13 @@ import UIKit
 class PaymentBranchTableCell: UITableViewCell, TableCell {
     static var cellId: String = "PaymentBranchTableCell"
 
-    func setCellData(_ model: (String, String)) {
-        titleLbl.text = model.0
-        descLbl.text = model.1
+    func setCellData(_ model: CellDataModel) {
+        titleLbl.text = model.paymentName
+        descLbl.attributedText = model.paymentMethodDescription.attributedText
+        
     }
 
-    typealias CellDataModel = (String, String)
+    typealias CellDataModel = ChildPaymentMethod
 
     @IBOutlet var containerLayout: UIView!
 
@@ -44,3 +45,4 @@ class PaymentBranchTableCell: UITableViewCell, TableCell {
         }
     }
 }
+

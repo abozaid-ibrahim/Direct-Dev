@@ -21,9 +21,9 @@ extension ApiClientFacade{
         }
     }
     
-    func getChildPayment(prm: VisaPriceParams) -> Observable<PaymentChildsResponse> {
+    func getChildPayment(method:String) -> Observable<PaymentChildsResponse> {
         return Observable<PaymentChildsResponse>.create { (observer) -> Disposable in
-            self.paymentProvider.rx.request(PaymentAPIs.getChildsOfPayment(cid: "")).subscribe { [weak self] event in
+            self.paymentProvider.rx.request(PaymentAPIs.getChildsOfPayment(cid: method)).subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
                 }.disposed(by: self.disposeBag)
             return Disposables.create()

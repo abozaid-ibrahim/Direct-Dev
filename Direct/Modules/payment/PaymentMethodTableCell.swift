@@ -12,7 +12,7 @@ class PaymentMethodTableCell: UITableViewCell, TableCell {
     @IBOutlet private var containerLayout: UIView!
     static var cellId: String = "PaymentMethodTableCell"
 
-    typealias CellDataModel = (String, [UIImage?])
+    typealias CellDataModel = PaymentMethod
 
     @IBOutlet private var cardImageViews: [UIImageView]!
 
@@ -23,11 +23,12 @@ class PaymentMethodTableCell: UITableViewCell, TableCell {
         // Initialization code
     }
 
-    func setCellData(_ model: (String, [UIImage?])) {
-        titleLbl.text = model.0
-        for (index, img) in model.1.enumerated() {
-            cardImageViews[index].image = img
-        }
+    func setCellData(_ model: CellDataModel) {
+        titleLbl.text = model.paymentName
+        
+//        for (index, img) in model {
+//            cardImageViews[index].image = img
+//        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
