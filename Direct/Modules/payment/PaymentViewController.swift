@@ -29,12 +29,16 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
         }
         Progress.show()
         network.getAllPaymentMethods().subscribe(onNext: { value in
-            self.setupPaymentMethodDataSource(value.paymentMethods)
-            self.selectChildMethod(value.paymentMethods.first!)
-        }, onError: nil, onCompleted: nil, onDisposed: nil)
+            self.setupPaymentMethodDataSource(value.paymentMethods ?? [])
+            Progress.hide()
+            
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 
     func setupPaymentMethodDataSource(_ methods: [PaymentMethod]) {
+        guard let first  = methods.first else {
+            return
+        }
         paymentMethodTable.registerNib(PaymentMethodTableCell.cellId)
         branchsTable.registerNib(PaymentBranchTableCell.cellId)
         Observable<[PaymentMethod]>.just(methods)
@@ -43,26 +47,26 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
                 mycell.setCellData(model)
             }.disposed(by: disposeBag)
        
-        paymentMethodTable.rx.modelSelected(PaymentMethod.self).subscribe(onNext: { value in
-            self.selectChildMethod(value)
+        paymentMethodTable.rx.modelSelected(PaymentMethod.self).startWith(first).subscribe(onNext: { value in
+            self.selectChildBranchMethod(value)
             
         }).disposed(by: disposeBag)
-        paymentMethodTable.rx.itemSelected.subscribe(onNext: {[unowned self] value in
-            (self.paymentMethodTable.cellForRow(at: value) as! PaymentMethodTableCell).selectStyle(selected: true)
-            }, onError: nil, onCompleted: nil, onDisposed:  nil).disposed(by: disposeBag)
-
-
-        paymentMethodTable.rx.itemDeselected.subscribe(onNext: {[unowned self] value in
-            (self.paymentMethodTable.cellForRow(at: value) as! PaymentMethodTableCell).selectStyle(selected: false)
-            }, onError: nil, onCompleted: nil, onDisposed:  nil).disposed(by: disposeBag)
+        
+//        paymentMethodTable.rx.itemSelected.subscribe(onNext: {[unowned self] value in
+//            (self.paymentMethodTable.cellForRow(at: value) as! PaymentMethodTableCell).selectStyle(selected: true)
+//            }, onError: nil, onCompleted: nil, onDisposed:  nil).disposed(by: disposeBag)
+//
+//
+//        paymentMethodTable.rx.itemDeselected.subscribe(onNext: {[unowned self] value in
+//            (self.paymentMethodTable.cellForRow(at: value) as! PaymentMethodTableCell).selectStyle(selected: false)
+//            }, onError: nil, onCompleted: nil, onDisposed:  nil).disposed(by: disposeBag)
 
     }
 
-    private func selectChildMethod(_ method: PaymentMethod) {
+    private func selectChildBranchMethod(_ method: PaymentMethod) {
         Progress.show()
         network.getChildPayment(method: method.id).subscribe(onNext: { [unowned self] value in
             Progress.hide()
-
             Observable<[ChildPaymentMethod]>.just(value.paymentMethods)
                 .bind(to: self.branchsTable.rx.items(cellIdentifier: PaymentBranchTableCell.cellId)) { _, model, cell in
                     let mycell = (cell as! PaymentBranchTableCell)

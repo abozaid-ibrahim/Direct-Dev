@@ -37,18 +37,15 @@ class DatePickerController: UIViewController, PanModalPresentable {
     @IBAction func confirmAction(_: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
-    
-    @IBOutlet weak var currentMonthLbl: UILabel!
+
+    @IBOutlet var currentMonthLbl: UILabel!
     @IBAction func loadNextMonth(_ sender: Any) {
-        datePicker.loadNextView()
-    }
-    
-    @IBAction func loadPreviousMonth(_ sender: Any) {
-        datePicker.loadPreviousView()
+        self.datePicker.loadNextView()
     }
 
-    
+    @IBAction func loadPreviousMonth(_ sender: Any) {
+        self.datePicker.loadPreviousView()
+    }
 }
 
 extension DatePickerController: JBDatePickerViewDelegate {
@@ -60,18 +57,18 @@ extension DatePickerController: JBDatePickerViewDelegate {
     var colorForWeekDaysViewBackground: UIColor { return UIColor.clear }
     var colorForWeekDaysViewText: UIColor { return UIColor.gray }
     var colorForSelectionCircleForOtherDate: UIColor { return UIColor.appMango }
-
+    var colorForCurrentDay: UIColor { return UIColor.appMango }
+    var colorForSelectionCircleForToday: UIColor { return UIColor.appMango }
     func didSelectDay(_ dayView: JBDatePickerDayView) {
         if let date = dayView.date {
             self.selectedDate.onNext(date)
             self.setDate(date: date)
         }
     }
+
     func didPresentOtherMonth(_ monthView: JBDatePickerMonthView) {
-        currentMonthLbl.text = monthView.monthDescription
-        
+        self.currentMonthLbl.text = monthView.monthDescription
     }
-    
 }
 
 extension Date {

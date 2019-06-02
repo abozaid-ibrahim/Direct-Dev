@@ -44,7 +44,6 @@ final class SelectableTableSheet: UIViewController, PanModalPresentable {
             switch event.event {
             case let .next(indexPath):
                 self.selectedItem.onNext(self.data?[indexPath.row] ?? "")
-                self.dismiss(animated: true, completion: nil)
             default:
                 break
             }
@@ -73,6 +72,9 @@ final class SelectableTableSheet: UIViewController, PanModalPresentable {
                     mycell.setCellData(model)
                 }.disposed(by: disposeBag)
         }
+    }
+    @IBAction func confirmAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

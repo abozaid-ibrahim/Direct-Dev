@@ -40,8 +40,8 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kLW-V3-XCT" userLabel="counts">
                                     <rect key="frame" x="0.0" y="32.5" width="382" height="70"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5Cs-1I-KuU" userLabel="counts stack">
-                                            <rect key="frame" x="0.0" y="0.0" width="382" height="70"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5Cs-1I-KuU" userLabel="counts stack">
+                                            <rect key="frame" x="2" y="1" width="382" height="70"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="zgV-7P-XfO" userLabel="adults">
                                                     <rect key="frame" x="0.0" y="0.0" width="382" height="24"/>
@@ -53,33 +53,33 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="البالغين" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytb-LW-yNG">
-                                                            <rect key="frame" x="37" y="0.0" width="202.5" height="24"/>
+                                                            <rect key="frame" x="37" y="0.0" width="168" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXr-nA-yTU">
-                                                            <rect key="frame" x="251.5" y="0.0" width="24" height="24"/>
+                                                            <rect key="frame" x="217" y="0.0" width="24" height="24"/>
                                                             <state key="normal" image="group"/>
                                                             <connections>
                                                                 <action selector="adultPlusAction:" destination="-1" eventType="touchUpInside" id="i2V-ff-ZeG"/>
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCT-az-A1k">
-                                                            <rect key="frame" x="287.5" y="0.0" width="10.5" height="24"/>
+                                                            <rect key="frame" x="253" y="0.0" width="10.5" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hca-9R-I5A">
-                                                            <rect key="frame" x="310" y="0.0" width="24" height="24"/>
+                                                            <rect key="frame" x="275.5" y="0.0" width="24" height="24"/>
                                                             <state key="normal" image="group2"/>
                                                             <connections>
                                                                 <action selector="adultMinusAction:" destination="-1" eventType="touchUpInside" id="xym-fQ-6ec"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SR 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAJ-7A-nx2">
-                                                            <rect key="frame" x="346" y="0.0" width="36" height="24"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SR 00.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAJ-7A-nx2">
+                                                            <rect key="frame" x="311.5" y="0.0" width="70.5" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -103,33 +103,33 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="الاطفال" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFi-SL-EXV">
-                                                            <rect key="frame" x="37" y="0.0" width="202.5" height="24"/>
+                                                            <rect key="frame" x="37" y="0.0" width="168" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bwk-uA-52o">
-                                                            <rect key="frame" x="251.5" y="0.0" width="24" height="24"/>
+                                                            <rect key="frame" x="217" y="0.0" width="24" height="24"/>
                                                             <state key="normal" image="group"/>
                                                             <connections>
                                                                 <action selector="childPlusAction:" destination="-1" eventType="touchUpInside" id="UjW-p3-N16"/>
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGj-V4-DQ4">
-                                                            <rect key="frame" x="287.5" y="0.0" width="10.5" height="24"/>
+                                                            <rect key="frame" x="253" y="0.0" width="10.5" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKx-FY-BH2">
-                                                            <rect key="frame" x="310" y="0.0" width="24" height="24"/>
+                                                            <rect key="frame" x="275.5" y="0.0" width="24" height="24"/>
                                                             <state key="normal" image="group2"/>
                                                             <connections>
                                                                 <action selector="childMinusAction:" destination="-1" eventType="touchUpInside" id="dNy-IR-5Yd"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SR 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBe-RC-Kkk">
-                                                            <rect key="frame" x="346" y="0.0" width="36" height="24"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SR 00.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBe-RC-Kkk">
+                                                            <rect key="frame" x="311.5" y="0.0" width="70.5" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>

@@ -20,28 +20,29 @@ class PaymentMethodTableCell: UITableViewCell, TableCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-selectStyle(selected: false)    }
+        selectStyle(selected: false)
+    }
     
     func setCellData(_ model: CellDataModel) {
         titleLbl.text = model.paymentName
-        
-        //        for (index, img) in model {
-        //            cardImageViews[index].image = img
-        //        }
+                            for iv in cardImageViews {
+                       iv.isHidden = true
+                    }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        selectStyle(selected: selected)
     }
-    func selectStyle(selected:Bool){
-        if selected{
+    
+    func selectStyle(selected: Bool) {
+        if selected {
             containerLayout.borderColorV = UIColor.appPumpkinOrange
             containerLayout.backgroundColor = UIColor.tangerine7
             
-        }else{
-            containerLayout.borderColorV = UIColor.appOffWhite
+        } else {
+            containerLayout.borderColorV = UIColor.lightGray
             containerLayout.backgroundColor = UIColor.white
-            
         }
     }
 }

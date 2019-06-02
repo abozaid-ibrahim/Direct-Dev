@@ -13,7 +13,7 @@ class PaymentBranchTableCell: UITableViewCell, TableCell {
 
     func setCellData(_ model: CellDataModel) {
         titleLbl.text = model.paymentName
-        descLbl.attributedText = model.paymentMethodDescription.attributedText
+        descLbl.text = model.paymentMethodDescription.html2String
         
     }
 
@@ -40,7 +40,7 @@ class PaymentBranchTableCell: UITableViewCell, TableCell {
             containerLayout.borderColorV = UIColor.appPumpkinOrange
             containerLayout.backgroundColor = UIColor.tangerine7
         } else {
-            containerLayout.borderColorV = UIColor.appOffWhite
+            containerLayout.borderColorV = UIColor.lightGray
             containerLayout.backgroundColor = UIColor.white
         }
     }

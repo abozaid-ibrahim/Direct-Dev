@@ -13,12 +13,16 @@ class VisaRequirementTableCell: UITableViewCell, TableCell {
         textlbl.text = model.title
         descLbl.text = model.desc
         if (model.image ?? "" ).isEmpty {
-            widthConst.constant = 12
+            widthConst.constant = 10
+            
             imgView.rounded = true
+            imgView.borderColorV = UIColor.appMango
+            imgView.borderWidthV = 2
         } else {
             imgView.setImage(url: model.image ?? "")
             widthConst.constant = 20
             imgView.rounded = false
+            
         }
     }
 

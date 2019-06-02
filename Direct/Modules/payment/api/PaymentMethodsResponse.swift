@@ -9,13 +9,13 @@
 import Foundation
 // MARK: - PaymentMethodsResponse
 class PaymentMethodsResponse: Codable {
-    let paymentMethods: [PaymentMethod]
+    let paymentMethods: [PaymentMethod]?
     
     enum CodingKeys: String, CodingKey {
         case paymentMethods = "Payment Methods"
     }
     
-    init(paymentMethods: [PaymentMethod]) {
+    init(paymentMethods: [PaymentMethod]?) {
         self.paymentMethods = paymentMethods
     }
 }
