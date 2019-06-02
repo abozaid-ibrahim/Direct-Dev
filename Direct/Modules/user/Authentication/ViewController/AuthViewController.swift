@@ -13,7 +13,7 @@ import SwifterSwift
 class AuthViewController: UIViewController {
 
     lazy var logoImageView: UIImageView = {
-        let view = UIImageView(image: #imageLiteral(resourceName: "group23"))
+        let view = UIImageView(image: #imageLiteral(resourceName: "authlogo"))
         view.adjustsImageSizeForAccessibilityContentSizeCategory = true
         view.contentMode = .center
         return view
@@ -93,6 +93,12 @@ class AuthViewController: UIViewController {
         stack.axis = .vertical
         return stack
     }()
+    
+    lazy var backgroundImage: UIImageView = {
+        let img = UIImageView(image: #imageLiteral(resourceName: "authbackground"))
+        img.contentMode = .scaleAspectFill
+        return img
+    }()
 
     let authFrom: AuthTableViewController
 
@@ -108,7 +114,7 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.addSubviews([holderStack, skipButton])
+        view.addSubviews([backgroundImage, holderStack, skipButton])
         view.backgroundColor = .white
         add(authFrom, container: containerView)
         
@@ -143,6 +149,12 @@ class AuthViewController: UIViewController {
         skipButton.snp.makeConstraints { (make) in
             make.leading.top.equalTo(view.safeAreaLayoutGuide).inset(20)
             make.width.height.equalTo(40)
+        }
+        
+        
+        backgroundImage.snp.makeConstraints { (make) in
+            make.leading.trailing.bottom.equalTo(view)
+            make.height.equalToSuperview().multipliedBy(0.5)
         }
     }
     

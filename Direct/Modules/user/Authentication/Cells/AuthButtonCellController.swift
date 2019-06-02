@@ -30,6 +30,7 @@ class AuthButtonCellController: GenericCellController<AuthButtonTableViewCell> {
         cell.button.layer.borderWidth = data.borderWidth
         cell.button.layer.borderColor = data.borderColor.cgColor
         cell.button.addTarget(self, action: #selector(didTapButton(_:)), for: .touchUpInside)
+        cell.backgroundColor = .clear
 
     }
 

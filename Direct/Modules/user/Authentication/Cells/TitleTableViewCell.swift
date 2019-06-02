@@ -17,6 +17,7 @@ class TitleTableViewCell: BaseTableViewCell {
         textLabel?.localizedFont = .bold(16)
         textLabel?.textColor = #colorLiteral(red: 0.3234693706, green: 0.3234777451, blue: 0.3234732151, alpha: 1)
         selectionStyle = .none
+        backgroundColor = .clear
     }
 
 }

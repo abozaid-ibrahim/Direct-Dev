@@ -19,7 +19,7 @@ struct ButtonCellConfigurator {
     init(title: String?, color: UIColor?, background: UIColor, type: AuthCellType) {
         self.title = title
         self.titleColor = color
-        self.backgroundColor = background
+        self.backgroundColor = .clear
         self.borderWidth = 0
         self.borderColor = .black
         self.type = type
@@ -28,7 +28,7 @@ struct ButtonCellConfigurator {
     init(title: String?, color: UIColor?, background: UIColor, border width: CGFloat, borderColor: UIColor, type: AuthCellType) {
         self.title = title
         self.titleColor = color
-        self.backgroundColor = background
+        self.backgroundColor = .clear
         self.borderWidth = width
         self.borderColor = borderColor
         self.type = type

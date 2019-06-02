@@ -153,12 +153,14 @@ extension AuthCoordinator {
         sender.startAnimating()
         let id = collectedData[AuthCellType.email.rawValue]
         let pass = collectedData[AuthCellType.password.rawValue]
-//        let command = LoginCommandsFactory.getLoginCommand(id: id ?? "", password: pass ?? "") {[weak self] (response) in
+        let command = LoginCommandsFactory.getLoginCommand(id: id ?? "", password: pass ?? "")
+        {[weak self] (response) in
 //            self?.handleServerLogin(response)
-//            sender.stopAnimating()
-//        }
+            sender.stopAnimating()
+            self?.viewController?.dismiss(animated: true, completion: nil)
+        }
         do {
-//            try command.execute()
+            try command.execute()
         }catch{
             sender.stopAnimating()
             showError(error)
@@ -172,7 +174,4 @@ extension AuthCoordinator {
             viewController?.showError(sub: error.localizedDescription)
         }
     }
-    
-    
-    
 }

@@ -12,9 +12,9 @@ struct LoginCommandsFactory {
     
     private init() {}
     
-    static func getLoginCommand(id: String, password: String) -> Command {
+    static func getLoginCommand(id: String, password: String, completion: UserResponse) -> Command {
         let validatorCommand = LoginDetailsValidator(id, password)
-        let reuqestCommand = LoginRequestCommand(id, password: password)
+        let reuqestCommand = LoginRequestCommand(id, password: password, completion: completion)
         let combined = CommandsCombiner(validatorCommand, reuqestCommand)
         return combined
     }

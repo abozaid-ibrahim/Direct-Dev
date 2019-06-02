@@ -22,7 +22,7 @@ class BaseTableViewCell: UITableViewCell {
     
     func setupViews() {
         separatorInset = .zero
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = .clear
     }
 }
 

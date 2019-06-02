@@ -37,6 +37,8 @@ class AuthTableViewController: UITableViewController {
         tableView.separatorStyle = .none
         tableView.rowHeight = UITableView.automaticDimension
         tableView.keyboardDismissMode = .interactive
+        tableView.backgroundColor = .clear
+        view.backgroundColor = .clear
     }
 
     override func viewDidLoad() {

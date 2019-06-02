@@ -31,6 +31,7 @@ class TextLabelCellController: GenericCellController<TextLabelTableViewCell> {
             cell.textLabel?.textAlignment = data.textAlign!
         }
         cell.selectionStyle = .none
+        
     }
 
     override func didSelectCell() {
