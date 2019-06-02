@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-typealias UserResponse = ((DirectUser) -> Void)?
+typealias UserResponse = ((Result<DirectUser, Error>) -> Void)?
 
 struct LoginRequestCommand: Command {
     let id: String
@@ -27,12 +27,22 @@ struct LoginRequestCommand: Command {
         provider.request(.login(id: id, password: password)) { (response) in
             switch response {
             case .failure(let error):
-                print(error)
+                self.completion?(.failure(error))
             case .success(let value):
                 print(value)
-//                let user = try decoder.decode(DirectUserResponse.self, from: value.data)
-//                completion(posts, nil)
+                let decoder = JSONDecoder()
+                
+                let user = try? decoder.decode(DirectUserResponse.self, from: value.data)
+                guard let duser = user?.userLogin?.first else {
+                    self.completion?(.failure(APIError.decodeError))
+                    return
+                }
+                self.completion?(.success(duser))
             }
         }
     }
+}
+
+enum APIError: Error {
+    case decodeError
 }
