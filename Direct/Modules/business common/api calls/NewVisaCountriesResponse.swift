@@ -23,17 +23,18 @@ class NewVisaCountriesResponse: Codable {
 
 // MARK: - NewVisaService
 class NewVisaService: Codable {
-    let countryID, priceIncludesTextEn, priceIncludesTextAr, countryName: String
+    let countryID,  countryName: String
+    let priceIncludesTextEn, priceIncludesTextAr:String?
     let bioNotes: String
     let visatypes: [Visatype]
     let isBiometryReq: IsBiometryReq
     let thankYouVideoURL: String
-    let formType, phoneCode: String
+    let formType, phoneCode: String?
     let priceBasedOn: PriceBasedOn
     let flagBg: String
     let flag: String
     let status: Status
-    let success, success111: String
+    let success, success111: String?
     
     enum CodingKeys: String, CodingKey {
         case countryID = "country_id"
@@ -51,7 +52,7 @@ class NewVisaService: Codable {
         case flag, status, success, success111
     }
     
-    init(countryID: String, priceIncludesTextEn: String, priceIncludesTextAr: String, countryName: String, bioNotes: String, visatypes: [Visatype], isBiometryReq: IsBiometryReq, thankYouVideoURL: String, formType: String, phoneCode: String, priceBasedOn: PriceBasedOn, flagBg: String, flag: String, status: Status, success: String, success111: String) {
+    init(countryID: String, priceIncludesTextEn: String?, priceIncludesTextAr: String?, countryName: String, bioNotes: String, visatypes: [Visatype], isBiometryReq: IsBiometryReq, thankYouVideoURL: String, formType: String, phoneCode: String?, priceBasedOn: PriceBasedOn, flagBg: String, flag: String, status: Status, success: String?, success111: String?) {
         self.countryID = countryID
         self.priceIncludesTextEn = priceIncludesTextEn
         self.priceIncludesTextAr = priceIncludesTextAr

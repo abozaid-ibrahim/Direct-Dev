@@ -35,24 +35,13 @@ class ApiClientFacade {
     //        }
     //    }
 
-    func getCountries() -> Observable<[NewVisaService]> {
-        let observable = Observable<[NewVisaService]>.create { (observer) -> Disposable in
-
-            self.commonProvider.rx.request(.getAllCountries).subscribe { event in
-                switch event {
-                case let .success(response):
-                    if let countries = try? JSONDecoder().decode(NewVisaCountriesResponse.self, from: response.data) {
-                        observer.onNext(countries.newVisaServices)
-                    } else {
-                        observer.onError(NetworkFailure.failedToParseData)
-                    }
-                case let .error(error):
-                    observer.onError(error)
-                }
+    func getCountries() -> Observable<NewVisaCountriesResponse> {
+        return Observable<NewVisaCountriesResponse>.create { (observer) -> Disposable in
+            self.commonProvider.rx.request(.getAllCountries).subscribe { [weak self] event in
+                self?.parser.emitDataModelfromResponse(event: event, observer: observer)
             }.disposed(by: self.disposeBag)
             return Disposables.create()
         }
-        return observable
     }
 
     func getBiometricChoices() -> Observable<BioChoicesResponse> {

@@ -40,7 +40,7 @@ class NewDirectVisaViewModel {
         // get countries
         let countries = network.getCountries()
         countries.subscribe(onNext: { [weak self] countries in
-            self?.screenData.onNext(countries)
+            self?.screenData.onNext(countries.newVisaServices)
         }, onError: { [weak self] err in
             self?.screenData.onError(err)
         }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
