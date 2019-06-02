@@ -25,11 +25,14 @@ final class SearchViewController: UIViewController, PanModalPresentable, StyledA
         setupTableView()
         tableView.defaultSeperator()
         viewModel.viewDidLoad()
+        Progress.show()
     }
 
     private func setupTableView() {
         tableView.register(UINib(nibName: CountryTableCell.cellId, bundle: nil), forCellReuseIdentifier: CountryTableCell.cellId)
-
+        viewModel.countriesList.take(1).subscribe{v in
+            Progress.hide()
+        }.disposed(by: disposeBag)
         viewModel.countriesList
             .bind(to: tableView.rx.items(cellIdentifier: CountryTableCell.cellId)) { _, model, cell in
                 let mycell = (cell as! CountryTableCell)

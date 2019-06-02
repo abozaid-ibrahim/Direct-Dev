@@ -26,11 +26,11 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZpS-QP-IRo">
                     <rect key="frame" x="12" y="32" width="351" height="623"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ygq-bA-IRy">
-                            <rect key="frame" x="0.0" y="0.0" width="351" height="150"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ygq-bA-IRy">
+                            <rect key="frame" x="0.0" y="0.0" width="351" height="155"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="150" id="6mi-iM-zjM"/>
+                                <constraint firstAttribute="height" constant="155" id="6mi-iM-zjM"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
@@ -39,7 +39,7 @@
                             </userDefinedRuntimeAttributes>
                         </tableView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اختر الفرع" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAh-cE-K7k">
-                            <rect key="frame" x="0.0" y="160" width="351" height="20.5"/>
+                            <rect key="frame" x="0.0" y="165" width="351" height="20.5"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20.5" id="L75-Cp-lCb"/>
                             </constraints>
@@ -48,7 +48,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uid-t3-Jrf">
-                            <rect key="frame" x="0.0" y="190.5" width="351" height="342.5"/>
+                            <rect key="frame" x="0.0" y="195.5" width="351" height="337.5"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
@@ -57,16 +57,16 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </tableView>
-                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xJJ-VS-hAg" customClass="CheckoutFooter" customModule="Direct" customModuleProvider="target">
-                            <rect key="frame" x="-1" y="543" width="351" height="80"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJJ-VS-hAg" customClass="CheckoutFooter" customModule="Direct" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="543" width="351" height="80"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="80" id="H4m-H3-Eq2"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="btnTitle" value="متابعة للدفع"/>
-                                <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="total value"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="التكلفة الإجمالية"/>
                                 <userDefinedRuntimeAttribute type="string" keyPath="valueText" value="00.00 SR"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="btnTitle" value="تأكيد"/>
                             </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>

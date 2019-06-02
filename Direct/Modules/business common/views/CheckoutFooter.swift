@@ -28,7 +28,12 @@ class CheckoutFooter: UIView {
             footer.valueLbl.text = valueText
         }
     }
-
+    var bg:UIColor?{
+        didSet{
+            self.backgroundColor = bg
+            footer.backgroundColor = bg
+        }
+    }
     
     typealias Action = () -> Void
     var action: Action?

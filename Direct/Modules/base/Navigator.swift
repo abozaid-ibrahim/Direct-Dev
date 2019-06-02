@@ -14,10 +14,10 @@ import RxSwift
 
 enum Destination {
     
-    case loginView, signupView, homeScreen, visaRequirement(country:String),
+    case loginView, signupView, homeScreen, visaRequirement(country:String,totalCost:String?),
     selectableSheet(data: [String], titleText: String?
    ,style: CellStyle),
-    paymentMethod, passangersCount, newInstitueVisa, datePicker, hostsInfoScreen, passangersInfoScreen, successVisaReqScreen, MyOrders, orderDetails, institutesList, instituteDetails, packageDetails, successPackage, banks,newDirectVisa,searchCountries, confirmatonVisa
+    paymentMethod(totalCost:String?), passangersCount, newInstitueVisa, datePicker, hostsInfoScreen, passangersInfoScreen, successVisaReqScreen, MyOrders, orderDetails, institutesList, instituteDetails, packageDetails, successPackage, banks,newDirectVisa,searchCountries, confirmatonVisa
     func controller() -> UIViewController {
         switch self {
         case .loginView:
@@ -31,9 +31,10 @@ enum Destination {
         case .homeScreen:
             let home = HomeViewController.instance("HomeViewController")
             return home
-        case .visaRequirement(let cid):
+        case .visaRequirement(let cid, let cost):
             let controller = VisaRequirementController()
             controller.country = cid
+            controller.totalCost = cost
             return controller
         case  .selectableSheet(let data,let title,let style):
             let vc = SelectableTableSheet()
@@ -41,8 +42,10 @@ enum Destination {
             vc.style = style
             vc.titleText = title
             return vc
-        case .paymentMethod:
-            return PaymentViewController()
+        case .paymentMethod(let cost):
+            let vc =  PaymentViewController()
+            vc.totalCost = cost
+            return vc
         case .passangersCount:
             return PassangersCountController()
         case .newInstitueVisa:

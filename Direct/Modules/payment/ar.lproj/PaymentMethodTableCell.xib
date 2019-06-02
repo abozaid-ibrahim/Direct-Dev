@@ -75,8 +75,8 @@
                 <constraints>
                     <constraint firstItem="4Kt-Ii-P47" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="9HP-c2-hj7"/>
                     <constraint firstAttribute="bottom" secondItem="4Kt-Ii-P47" secondAttribute="bottom" constant="4" id="fQ3-im-4DM"/>
-                    <constraint firstItem="4Kt-Ii-P47" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="gOT-gV-fSt"/>
-                    <constraint firstAttribute="trailing" secondItem="4Kt-Ii-P47" secondAttribute="trailing" constant="4" id="yhz-X5-JB0"/>
+                    <constraint firstItem="4Kt-Ii-P47" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="gOT-gV-fSt"/>
+                    <constraint firstAttribute="trailing" secondItem="4Kt-Ii-P47" secondAttribute="trailing" constant="12" id="yhz-X5-JB0"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

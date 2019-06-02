@@ -114,7 +114,7 @@ class NewDirectVisaViewModel {
         showProgress.onNext(true)
         network?.sendVisaRequest(params: params).subscribe(onNext: { [unowned self] _ in
             self.showProgress.onNext(false)
-            try! AppNavigator().push(.visaRequirement(country: self.selectedCountry?.country_id ?? ""))
+            try! AppNavigator().push(.visaRequirement(country: self.selectedCountry?.country_id ?? "", totalCost: self.params.totalCost))
 
         }, onError: { _ in
             self.showProgress.onNext(false)
@@ -224,6 +224,7 @@ class NewDirectVisaViewModel {
                 self.params.no_of_adult = "\(value.0)"
                 self.params.no_of_child = "\(value.1)"
                 self.totalCost.onNext(value.2.priced)
+                self.params.totalCost = value.2
             default:
                 break
             }

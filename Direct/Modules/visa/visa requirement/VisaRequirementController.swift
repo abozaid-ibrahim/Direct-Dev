@@ -36,7 +36,8 @@ final class VisaRequirementController: UIViewController, PanModalPresentable, St
     }
     
     private let data = PublishSubject<[Requirement]>()
-    
+    var totalCost: String?
+
     var country: String?
     internal let disposeBag = DisposeBag()
     
@@ -50,10 +51,11 @@ final class VisaRequirementController: UIViewController, PanModalPresentable, St
     }
     
     private func getData() {
-        Progress.show()
         guard let id = country else {
             return
         }
+        Progress.show()
+
         network.getVisaRequirements(country: id).subscribe(onNext: { [unowned self] req in
             
             self.data.onNext(req.requirementPage.first?.requirements ?? [])
@@ -64,11 +66,13 @@ final class VisaRequirementController: UIViewController, PanModalPresentable, St
             }
            
             Progress.hide()
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }, onError: { _ in
+            Progress.hide()
+        }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
     
     @IBAction func requestAction(_: Any) {
-        try! AppNavigator().push(.paymentMethod)
+        try! AppNavigator().push(.paymentMethod(totalCost: totalCost))
     }
 }
 
