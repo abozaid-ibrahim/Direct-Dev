@@ -12,11 +12,11 @@ class VisaRequirementTableCell: UITableViewCell, TableCell {
     func setCellData(_ model: Requirement) {
         textlbl.text = model.title
         descLbl.text = model.desc
-        if model.image.isEmpty {
+        if (model.image ?? "" ).isEmpty {
             widthConst.constant = 12
             imgView.rounded = true
         } else {
-            imgView.setImage(url: model.image)
+            imgView.setImage(url: model.image ?? "")
             widthConst.constant = 20
             imgView.rounded = false
         }

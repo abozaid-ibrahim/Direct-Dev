@@ -16,7 +16,7 @@ final class SearchViewController: UIViewController, PanModalPresentable, StyledA
 
     var shortFormHeight: PanModalHeight = .maxHeightWithTopInset(20)
 
-    var selectedItem = PublishSubject<NewVisaService>()
+    var selectedItem = PublishSubject<NewVisaServices>()
     private let viewModel = SearchCountriesViewModel()
     @IBOutlet var tableView: UITableView!
     internal let disposeBag = DisposeBag()
@@ -37,7 +37,7 @@ final class SearchViewController: UIViewController, PanModalPresentable, StyledA
             }.disposed(by: disposeBag)
 
         tableView.rx
-            .modelSelected(NewVisaService.self)
+            .modelSelected(NewVisaServices.self)
             .subscribe(onNext: { value in
                 self.selectedItem.onNext(value)
                 self.dismiss(animated: true, completion: nil)

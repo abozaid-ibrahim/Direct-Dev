@@ -10,11 +10,11 @@ import UIKit
 
 class CountryTableCell: UITableViewCell, TableCell {
     func setCellData(_ model: CellDataModel) {
-        logoView.setImage(url: model.flag)
+        logoView.setImage(url: model.flag ?? "")
         textLbl.text = model.countryName
     }
 
-    typealias CellDataModel = NewVisaService
+    typealias CellDataModel = NewVisaServices
 
     @IBOutlet private var logoView: UIImageView!
     @IBOutlet private var textLbl: UILabel!

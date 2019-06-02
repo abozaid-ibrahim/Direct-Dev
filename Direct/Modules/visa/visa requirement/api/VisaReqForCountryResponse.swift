@@ -50,15 +50,15 @@ class RequirementPage: Codable {
 // MARK: - Requirement
 class Requirement: Codable {
     let title, desc: String
-    let image, icon: String
-    let isInfo: String
+    let image, icon: String?
+    let isInfo: String?
     
     enum CodingKeys: String, CodingKey {
         case title, desc, image, icon
         case isInfo = "is_info"
     }
     
-    init(title: String, desc: String, image: String, icon: String, isInfo: String) {
+    init(title: String, desc: String, image: String?, icon: String?, isInfo: String?) {
         self.title = title
         self.desc = desc
         self.image = image

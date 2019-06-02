@@ -12,7 +12,7 @@ import RxSwift
 
 class SearchCountriesViewModel {
     var disposeBag = DisposeBag()
-    var countriesList = PublishSubject<[NewVisaService]>()
+    var countriesList = PublishSubject<[NewVisaServices]>()
     private var network: ApiClientFacade?
     init(network: ApiClientFacade? = ApiClientFacade()) {
         self.network = network
@@ -20,7 +20,7 @@ class SearchCountriesViewModel {
     
     func viewDidLoad() {
         network?.getCountries().subscribe(onNext: { [weak self] countries in
-            self?.countriesList.onNext(countries.newVisaServices)
+            self?.countriesList.onNext(countries.newVisaServices ?? [])
             }, onError: { [weak self] err in
                 self?.countriesList.onError(err)
             }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)

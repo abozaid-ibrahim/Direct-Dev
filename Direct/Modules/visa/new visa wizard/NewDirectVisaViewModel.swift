@@ -12,14 +12,14 @@ import RxSwift
 
 class NewDirectVisaViewModel {
     var disposeBag = DisposeBag()
-    var screenData = PublishSubject<[NewVisaService]>()
+    var screenData = PublishSubject<[NewVisaServices]>()
     var bioOptions: [BioOption] = []
     var relativesList: [Relative] = []
     var selectedDate = PublishSubject<Date?>()
     var showProgress = PublishSubject<Bool>()
 
     private var network: ApiClientFacade?
-    var selectedCountry: NewVisaService?
+    var selectedCountry: NewVisaServices?
     var selectedCountryName = PublishSubject<String?>()
     var passangersCount = PublishSubject<PassangerCount>()
     var selectedVisaType = PublishSubject<String?>()
@@ -40,7 +40,7 @@ class NewDirectVisaViewModel {
         // get countries
         let countries = network.getCountries()
         countries.subscribe(onNext: { [weak self] countries in
-            self?.screenData.onNext(countries.newVisaServices)
+            self?.screenData.onNext(countries.newVisaServices ?? [])
         }, onError: { [weak self] err in
             self?.screenData.onError(err)
         }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
@@ -83,7 +83,7 @@ class NewDirectVisaViewModel {
         showProgress.onNext(true)
         network?.sendVisaRequest(params: params).subscribe(onNext: {[unowned self] response in
             self.showProgress.onNext(false)
-            try! AppNavigator().push(.visaRequirement(country: self.selectedCountry!.countryID))
+            try! AppNavigator().push(.visaRequirement(country: self.selectedCountry?.country_id ?? "" ))
 
         }, onError: { _ in
             self.showProgress.onNext(false)
@@ -97,16 +97,16 @@ class NewDirectVisaViewModel {
             validate(msg: "اختر الدولة اولاً")
             return
         }
-        let str = data.map { $0.visaTypeName.rawValue }
+        let str = data.filter{$0.visaTypeName != nil}.map { $0.visaTypeName ?? "" }
 
-        let dest = Destination.selectableSheet(data: str, titleText: "نوع التأشيرة", style: .textCenter)
+        let dest = Destination.selectableSheet(data: str , titleText: "نوع التأشيرة", style: .textCenter)
         let vc = dest.controller() as! SelectableTableSheet
         vc.selectedItem.asObservable().subscribe { event in
             switch event.event {
             case .next(let value):
 
-                let itms = data.filter { $0.visaTypeName.rawValue == value }
-                if let id = itms.first?.visaTypeID {
+                let itms = data.filter { $0.visaTypeName ?? "" == value }
+                if let id = itms.first?.visaTypeId {
                     self.params.visatype = id
                 }
                 self.selectedVisaType.onNext(value)
@@ -163,9 +163,9 @@ class NewDirectVisaViewModel {
             switch event.event {
             case .next(let value):
                 self.selectedCountry = value
-                self.params.country_id = value.countryID
+                self.params.country_id = value.country_id ?? ""
                 self.selectedCountryName.onNext(value.countryName)
-                let cities = self.network?.getCities(country: value.countryID)
+                let cities = self.network?.getCities(country: value.country_id ?? "")
                 cities?.subscribe(onNext: { [weak self] cities in
                     self?.embassyLocations = cities.dtEmbassyLocations
                 }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: self.disposeBag)
