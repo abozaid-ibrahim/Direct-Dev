@@ -33,38 +33,32 @@ class ApiClientFacade {
     //
     //            }
     //        }
+}
+
+func log(_ value: Any) {
+    #if DEBUG
+        print("logger:\(value)")
+    #endif
+}
+
+// MARK: Common Apis
+
+extension ApiClientFacade {
     //    }
 
     func getCountries() -> Observable<NewVisaCountriesResponse> {
         return Observable<NewVisaCountriesResponse>.create { (observer) -> Disposable in
-            self.commonProvider.rx.request(.getAllCountries).subscribe { [weak self] event in
+            self.commonProvider.rx.request(.getAllCountries).observeOn(MainScheduler.instance).subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
             }.disposed(by: self.disposeBag)
             return Disposables.create()
         }
+        .share(replay: 0, scope: .whileConnected)
     }
 
     func getBiometricChoices() -> Observable<BioChoicesResponse> {
         return Observable<BioChoicesResponse>.create { (observer) -> Disposable in
             self.commonProvider.rx.request(.biometricChoices).subscribe { [weak self] event in
-                self?.parser.emitDataModelfromResponse(event: event, observer: observer)
-            }.disposed(by: self.disposeBag)
-            return Disposables.create()
-        }
-    }
-
-    func getRelationList() -> Observable<RelativesResponse> {
-        return Observable<RelativesResponse>.create { (observer) -> Disposable in
-            self.commonProvider.rx.request(.relationsList).subscribe { [weak self] event in
-                self?.parser.emitDataModelfromResponse(event: event, observer: observer)
-            }.disposed(by: self.disposeBag)
-            return Disposables.create()
-        }
-    }
-
-    func sendVisaRequest(params: VisaRequestParams) -> Observable<VisaRequestResponse> {
-        return Observable<VisaRequestResponse>.create { (observer) -> Disposable in
-            self.visaProvider.rx.request(VisaAPIs.visaRequest(prm: params)).subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
             }.disposed(by: self.disposeBag)
             return Disposables.create()
@@ -80,27 +74,12 @@ class ApiClientFacade {
         }
     }
 
-    func getVisaPrice(prm: VisaPriceParams) -> Observable<VisaPriceResponse> {
-        return Observable<VisaPriceResponse>.create { (observer) -> Disposable in
-            self.visaProvider.rx.request(VisaAPIs.getVisaPrice(prm: prm)).subscribe { [weak self] event in
+    func getRelationList() -> Observable<RelativesResponse> {
+        return Observable<RelativesResponse>.create { (observer) -> Disposable in
+            self.commonProvider.rx.request(.relationsList).subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
             }.disposed(by: self.disposeBag)
             return Disposables.create()
         }
     }
-
-    func getVisaRequirements(country: String) -> Observable<VisaRequirementForCountryResponse> {
-        return Observable<VisaRequirementForCountryResponse>.create { (observer) -> Disposable in
-            self.visaProvider.rx.request(VisaAPIs.visaRequirementForCountry(cid: country)).subscribe { [weak self] event in
-                self?.parser.emitDataModelfromResponse(event: event, observer: observer)
-            }.disposed(by: self.disposeBag)
-            return Disposables.create()
-        }
-    }
-}
-
-func log(_ value: Any) {
-    #if DEBUG
-        print("logger:\(value)")
-    #endif
 }

@@ -34,6 +34,7 @@ class SpinnerTextField: UIView {
         }
     }
 
+    var text = PublishSubject<String?>()
     let disposeBag = DisposeBag()
     typealias Action = () -> Void
     var action: Action?
@@ -71,6 +72,25 @@ class SpinnerTextField: UIView {
         addSubview(stack)
         stack.sameBoundsTo(parentView: self, l: 10, tr: 10)
         txtField.textAlignment = .right
+        text.subscribe(onNext: {[unowned self] value in
+                    if value == nil{
+                        self.layer.borderColor = UIColor.appMango.cgColor
+                        self.layer.borderWidth = 1.5
+                        
+                        UIView.animate(withDuration: 0.25, delay: 0, options: [.curveEaseInOut], animations: {
+                            self.alpha = 0.6
+                        }, completion: { _ in
+                            self.alpha = 1.0
+                            
+                        })
+                    }else{
+                        self.layer.borderWidth = 0
+                        self.txtField.text = value
+                        
+                    }
+            
+        
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 
     override init(frame: CGRect) {

@@ -21,12 +21,13 @@ class NewDirectVisaViewModel {
     private var network: ApiClientFacade?
     var selectedCountry: NewVisaServices?
     var selectedCountryName = PublishSubject<String?>()
-    var passangersCount = PublishSubject<PassangerCount>()
+    var passangersCount = PublishSubject<PassangerCount?>()
     var selectedVisaType = PublishSubject<String?>()
     var selectedBio = PublishSubject<String?>()
     var selectedRelation = PublishSubject<String?>()
     var totalCost = BehaviorSubject<String>(value: "0".priced)
     var embassyLocations: [DTEmbassyLocation]?
+
     init(network: ApiClientFacade? = ApiClientFacade()) {
         self.network = network
     }
@@ -43,20 +44,23 @@ class NewDirectVisaViewModel {
             self?.screenData.onNext(countries.newVisaServices ?? [])
         }, onError: { [weak self] err in
             self?.screenData.onError(err)
+            self?.showProgress.onNext(false)
         }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         // get biou
         let bios = network.getBiometricChoices()
         bios.subscribe(onNext: { [weak self] bios in
             self?.bioOptions.append(contentsOf: bios.bioOption)
         }, onError: { [weak self] _ in
-//                self?.bioOptions.onError(err)
+            self?.showProgress.onNext(false)
         }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
 
         // get relatives
         let rel = network.getRelationList()
         rel.subscribe(onNext: { [weak self] bios in
             self?.relativesList.append(contentsOf: bios.relatives)
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }, onError: { [weak self] _ in
+            self?.showProgress.onNext(false)
+        }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
 
         Observable.zip(
             countries, bios, rel,
@@ -68,22 +72,49 @@ class NewDirectVisaViewModel {
     }
 
     var params = VisaRequestParams()
+    func validateForPassangersCount()->Bool{
+        if params.country_id == nil {
+            selectedCountryName.onNext(nil)
+            return false
+        } else if params.visatype == nil {
+            selectedVisaType.onNext(nil)
+            return false
+        } else if params.biometry_loc_id == nil {
+            selectedBio.onNext(nil)
+            return false
+        } else if params.travel_date == nil {
+            selectedDate.onNext(nil)
+            return false
+        }
+        return true
+    }
+    func validateInputs() -> Bool {
+        if !validateForPassangersCount(){
+            return false
+        } else if pCount{
+            passangersCount.onNext(nil)
+            return false
+        } else if params.relation_with_travelers == nil {
+            selectedRelation.onNext(nil)
+            return false
+        }
+        return true
+    }
 
+    var pCount:Bool{
+        return params.no_of_child == nil && params.no_of_adult == nil && params.no_of_passport == nil
+    }
     func submitVisaRequest() {
-//        try! AppNavigator().push(.visaRequirement(country: self.selectedCountry!.countryID))
-//
-//        return
-        if params.biometry_loc_id == nil {
-            validate(msg: "all is well")
+        guard validateInputs() else {
+            
             return
         }
-
         params.no_of_passport = "0"
 
         showProgress.onNext(true)
-        network?.sendVisaRequest(params: params).subscribe(onNext: {[unowned self] response in
+        network?.sendVisaRequest(params: params).subscribe(onNext: { [unowned self] _ in
             self.showProgress.onNext(false)
-            try! AppNavigator().push(.visaRequirement(country: self.selectedCountry?.country_id ?? "" ))
+            try! AppNavigator().push(.visaRequirement(country: self.selectedCountry?.country_id ?? ""))
 
         }, onError: { _ in
             self.showProgress.onNext(false)
@@ -97,9 +128,9 @@ class NewDirectVisaViewModel {
             validate(msg: "اختر الدولة اولاً")
             return
         }
-        let str = data.filter{$0.visaTypeName != nil}.map { $0.visaTypeName ?? "" }
+        let str = data.filter { $0.visaTypeName != nil }.map { $0.visaTypeName ?? "" }
 
-        let dest = Destination.selectableSheet(data: str , titleText: "نوع التأشيرة", style: .textCenter)
+        let dest = Destination.selectableSheet(data: str, titleText: "نوع التأشيرة", style: .textCenter)
         let vc = dest.controller() as! SelectableTableSheet
         vc.selectedItem.asObservable().subscribe { event in
             switch event.event {
@@ -179,13 +210,13 @@ class NewDirectVisaViewModel {
     }
 
     func showPasangersCountSpinner() {
-        guard let country = self.selectedCountry else {
-            validate(msg: "")
+        guard validateForPassangersCount() else{
             return
         }
-        var vc = Destination.passangersCount.controller() as! PassangersCountController
+        let vc = Destination.passangersCount.controller() as! PassangersCountController
 
         vc.info = VisaPriceParams(cid: params.country_id, cityid: params.biometry_loc_id, no_of_adult: 0.stringValue, no_of_child: 0.stringValue, no_of_passport: 0.stringValue, promo_code: 0.stringValue, visatype: params.visatype)
+        
         vc.result.asObservable().subscribe { event in
             switch event.event {
             case .next(let value):
@@ -222,4 +253,8 @@ class NewDirectVisaViewModel {
         }.disposed(by: disposeBag)
         try! AppNavigator().presentModally(vc)
     }
+}
+
+enum InputsError: Error {
+    case missingInput
 }
