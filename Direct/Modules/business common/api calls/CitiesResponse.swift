@@ -8,13 +8,13 @@
 
 import Foundation
 class CountryCitiesResponse: Codable {
-    let dtEmbassyLocations: [DTEmbassyLocation]
+    let dtEmbassyLocations: [DTEmbassyLocation]?
     
     enum CodingKeys: String, CodingKey {
         case dtEmbassyLocations = "DT Embassy Locations"
     }
     
-    init(dtEmbassyLocations: [DTEmbassyLocation]) {
+    init(dtEmbassyLocations: [DTEmbassyLocation]?) {
         self.dtEmbassyLocations = dtEmbassyLocations
     }
 }

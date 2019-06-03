@@ -24,9 +24,10 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
     }
 
     // MARK: IBuilder ====================================>>
-    @IBOutlet weak var doNotesLbl: UILabel!
-    
-    @IBOutlet weak var dontNotesLbl: UILabel!
+
+    @IBOutlet var doNotesLbl: UILabel!
+
+    @IBOutlet var dontNotesLbl: UILabel!
     @IBOutlet var totalCostField: UILabel!
     @IBOutlet var cobonField: UITextField!
     @IBOutlet var dateField: SpinnerTextField!
@@ -35,8 +36,8 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
     @IBOutlet var visaField: SpinnerTextField!
     @IBOutlet var passangersCountField: SpinnerTextField!
     @IBOutlet var relationsField: SpinnerTextField!
-    @IBOutlet weak var rightNotesContainer: UIStackView!
-    @IBOutlet weak var wrongNotesContainer: UIStackView!
+    @IBOutlet var rightNotesContainer: UIStackView!
+    @IBOutlet var wrongNotesContainer: UIStackView!
     //===================================================<<
 
     private let viewModel = NewDirectVisaViewModel()
@@ -48,24 +49,24 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
         viewModel.showProgress.subscribe(onNext: { [weak self] value in
             self?.showProgress = value
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
-        self.wrongNotesContainer.isHidden = true
-        self.rightNotesContainer.isHidden = true
-        viewModel.priceNotes.subscribe(onNext: {[unowned self] value in
-           let notes = value.filter{$0.note_type != nil}
-            let rightNotes = notes.filter{$0.note_type ?? -1 == 1}.map{$0.text ?? ""}
-            let dontNotes = notes.filter{$0.note_type ?? -1 == 0}.map{$0.text ?? ""}
-            self.doNotesLbl.text = rightNotes.joined(separator: "\n-")
-             self.dontNotesLbl.text = dontNotes.joined(separator: "\n-")
-            if self.doNotesLbl.text!.isEmpty{
+        wrongNotesContainer.isHidden = true
+        rightNotesContainer.isHidden = true
+        viewModel.doNotesText.subscribe(onNext: { [unowned self] value in
+            if (value ?? "").isEmpty {
+                self.rightNotesContainer.isHidden = true
+            } else {
                 self.rightNotesContainer.isHidden = false
-
+                self.doNotesLbl.text = value
             }
-            if self.dontNotesLbl.text!.isEmpty{
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        viewModel.dontNotesText.subscribe(onNext: { [unowned self] value in
+            if (value ?? "").isEmpty {
+                self.wrongNotesContainer.isHidden = true
+            } else {
                 self.wrongNotesContainer.isHidden = false
-                
+                self.dontNotesLbl.text = value
             }
-            }, onError: nil, onCompleted: nil, onDisposed:  nil).disposed(by: disposeBag)
-            
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         viewModel.totalCost.bind(to: totalCostField.rx.text).disposed(by: disposeBag)
         setONClickViews()
         viewModel.viewDidLoad()

@@ -9,7 +9,6 @@
 import Foundation
 import RxOptional
 import RxSwift
-
 class NewDirectVisaViewModel {
     var disposeBag = DisposeBag()
     var screenData = PublishSubject<[NewVisaServices]>()
@@ -20,7 +19,22 @@ class NewDirectVisaViewModel {
     private var network: ApiClientFacade?
     var selectedCountry: NewVisaServices?
     var selectedCountryName = PublishSubject<String?>()
-    var priceNotes = PublishSubject<[Price_notes]>()
+    private var priceNotes:[Price_notes]?{
+        didSet{
+            guard let value = priceNotes else {return}
+            let notes = value.filter{$0.note_type != nil}
+            let rightNotes = notes.filter{$0.note_type ?? -1 == 1}.map{$0.text ?? ""}
+            let dontNotes = notes.filter{$0.note_type ?? -1 == 0}.map{$0.text ?? ""}
+            let rightText = rightNotes.joined(separator: "\n-")
+           let badText = dontNotes.joined(separator: "\n-")
+            doNotesText.onNext(rightText)
+              dontNotesText.onNext(badText)
+           
+        }
+    }
+    var doNotesText = PublishSubject<String?>()
+    var dontNotesText = PublishSubject<String?>()
+
 
     var passangersCount = PublishSubject<PassangerCount?>()
     var selectedVisaType = PublishSubject<String?>()
@@ -28,6 +42,7 @@ class NewDirectVisaViewModel {
     var selectedRelation = PublishSubject<String?>()
     var totalCost = BehaviorSubject<String>(value: "0".priced)
     var embassyLocations: [DTEmbassyLocation]?
+    let turkeyCountryId = "8"
 
     init(network: ApiClientFacade? = ApiClientFacade()) {
         self.network = network
@@ -80,7 +95,7 @@ class NewDirectVisaViewModel {
         } else if visaRequestData.visatype == nil {
             selectedVisaType.onNext(nil)
             return false
-        } else if visaRequestData.biometry_loc_id == nil {
+        } else if visaRequestData.biometry_loc_id == nil, visaRequestData.country_id != turkeyCountryId {
             selectedBio.onNext(nil)
             return false
         } else if visaRequestData.travel_date == nil {
@@ -111,7 +126,8 @@ class NewDirectVisaViewModel {
         guard validateInputs() else {
             return
         }
-        visaRequestData.no_of_passport = "0"
+        let count = (Int(visaRequestData.no_of_adult) ?? 0) + (Int(visaRequestData.no_of_child) ?? 0)
+        visaRequestData.no_of_passport = count.stringValue
 
         showProgress.onNext(true)
         network?.sendVisaRequest(params: visaRequestData).subscribe(onNext: { [unowned self] _ in
@@ -158,13 +174,13 @@ class NewDirectVisaViewModel {
             switch event.event {
             case .next(let value):
                 let locations = locations.filter { $0.cityName == value }
-                
+
                 if let cityObj = locations.first {
                     self.visaRequestData.biometry_loc_id = cityObj.cityID
                     self.visaRequestData.biometry_loc = cityObj.cityName
                     self.selectedBio.onNext(value)
-                    if let notes  = cityObj.price_notes{
-                        self.priceNotes.onNext(notes)
+                    if let notes = cityObj.price_notes {
+                        self.priceNotes = notes
                     }
                 }
             default:
@@ -201,10 +217,13 @@ class NewDirectVisaViewModel {
                 self.visaRequestData.country_id = value.country_id ?? ""
                 self.visaRequestData.countryName = value.countryName
                 self.selectedCountryName.onNext(value.countryName)
-                if let notes = value.price_notes{
-                    self.priceNotes.onNext(notes)
+                print("Tur>\(value.country_id ?? "")")
+                self.priceNotes = []
+                if let notes = value.price_notes {
+                  self.priceNotes = notes
                 }
                 let cities = self.network?.getCities(country: value.country_id ?? "")
+                self.embassyLocations = nil
                 cities?.subscribe(onNext: { [weak self] cities in
                     self?.embassyLocations = cities.dtEmbassyLocations
                 }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: self.disposeBag)
@@ -223,7 +242,7 @@ class NewDirectVisaViewModel {
         }
         let vc = Destination.passangersCount.controller() as! PassangersCountController
 
-        vc.info = VisaPriceParams(cid: visaRequestData.country_id, cityid: visaRequestData.biometry_loc_id, no_of_adult: 0.stringValue, no_of_child: 0.stringValue, no_of_passport: 0.stringValue, promo_code: 0.stringValue, visatype: visaRequestData.visatype)
+        vc.info = VisaPriceParams(cid: visaRequestData.country_id, cityid: visaRequestData.biometry_loc_id ?? "0", no_of_adult: 0.stringValue, no_of_child: 0.stringValue, no_of_passport: 0.stringValue, promo_code: 0.stringValue, visatype: visaRequestData.visatype)
 
         vc.result.asObservable().subscribe { event in
             switch event.event {

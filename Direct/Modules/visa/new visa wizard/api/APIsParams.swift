@@ -15,7 +15,7 @@ protocol NeedAuth: Codable {
 class VisaRequestParams {
     var userid: String!,
         country_id: String!,
-        biometry_loc_id: String!,
+        biometry_loc_id: String?,
         no_of_adult: String!,
         no_of_child: String!,
         no_of_passport: String!,
