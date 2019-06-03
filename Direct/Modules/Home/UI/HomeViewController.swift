@@ -37,24 +37,7 @@ final class HomeViewController: UIViewController, StyledActionBar {
         homeViewModel.getAllData()
     }
 
-    @IBAction func institureAction(_: Any) {
-        if children.contains(newInstitue) {
-            newInstitue.dismissWithAnim()
-        } else {
-            tabbarSelected(vc: newInstitue)
-        }
-    }
-
-    @IBAction func packagesDidSelect(_: Any) {
-        let vc = packagesVC as! PackagesViewController
-        if children.contains(vc) {
-            newInstitue.dismissWithAnim()
-        } else {
-            vc.dismissable = true
-            tabbarSelected(vc: vc)
-        }
-    }
-
+   
     private func getDataFromViewModel() {
         homeViewModel.collectionSecions.asObservable()
             .observeOn(MainScheduler.instance)
@@ -71,15 +54,32 @@ final class HomeViewController: UIViewController, StyledActionBar {
         collectionView.register(UINib(nibName: "HomeCollectionSectionHeader", bundle: nil), forSupplementaryViewOfKind: "UICollectionElementKindSectionHeader", withReuseIdentifier: "HomeCollectionSectionHeader")
     }
 
-    let vc = NewDirectVisaController()
+    let visaReqVC = NewDirectVisaController()
     let newInstitue = NewInstituteRequestController()
     let packagesVC = UIStoryboard.main.instantiateViewController(withIdentifier: "PackagesViewController")
 
     @IBAction func visaDidSelected(_: Any) {
-        if children.contains(vc) {
+        if children.contains(visaReqVC) {
+            visaReqVC.dismissWithAnim()
+        } else {
+            tabbarSelected(vc: visaReqVC)
+        }
+    }
+    @IBAction func institureAction(_: Any) {
+        if children.contains(newInstitue) {
             newInstitue.dismissWithAnim()
         } else {
-            tabbarSelected(vc: vc)
+            tabbarSelected(vc: newInstitue)
+        }
+    }
+    
+    @IBAction func packagesDidSelect(_: Any) {
+        let packages = packagesVC as! PackagesViewController
+        if children.contains(packages) {
+            packages.dismissWithAnim()
+        } else {
+            packages.dismissable = true
+            tabbarSelected(vc: packages)
         }
     }
 
