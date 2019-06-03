@@ -25,12 +25,15 @@ class VisaRequestParams {
         request_source: String!,
         request_source_comments: String!,
         promo_code: String!
-    var totalCost: String?
-
+  
+    var totalCost: String?,
+        countryName: String?,
+        biometry_loc: String?,
+        visatypeText: String?,
+        relation_with_travelersText: String?
 }
 
 struct VisaPriceParams {
-    
     var cid: String,
         cityid: String,
         no_of_adult: String,

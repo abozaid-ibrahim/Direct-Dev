@@ -8,20 +8,32 @@
 
 import UIKit
 enum ButtonStyles: Int {
-    case primary
+    case primary = 1
+    case secondary = 2
 }
 
 @IBDesignable
 extension UIButton {
+    private struct AssociatedKey {
+        static var buttonStyle = "UIButton.style"
+    }
+
     @IBInspectable var btnStyle: Int {
         get {
-            return 0
+            if let rounded = objc_getAssociatedObject(self, &AssociatedKey.buttonStyle) as? Int {
+                return rounded
+            } else {
+                return 0
+            }
         }
         set {
+            objc_setAssociatedObject(self, &AssociatedKey.buttonStyle, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+
             switch btnStyle {
             case ButtonStyles.primary.rawValue:
                 applyStyle(.primary)
-
+            case ButtonStyles.secondary.rawValue:
+                applyStyle(.secondary)
             default:
                 print("Not implemented yet")
             }
@@ -35,6 +47,13 @@ extension UIButton {
             cornerRadiusV = 10
             setTitleColor(.white, for: .normal)
             titleLabel?.font = UIFont(name: AppFonts.regularFont, size: 13)
+        case .secondary:
+            backgroundColor = UIColor.white
+            cornerRadiusV = 10
+            layer.borderColor = UIColor.appPumpkinOrange.cgColor
+            layer.borderWidth = 1
+            setTitleColor(.appPumpkinOrange, for: .normal)
+            titleLabel?.font = UIFont(name: AppFonts.boldFont, size: 14)
         }
     }
 }

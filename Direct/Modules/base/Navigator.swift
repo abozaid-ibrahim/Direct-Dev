@@ -14,10 +14,10 @@ import RxSwift
 
 enum Destination {
     
-    case loginView, signupView, homeScreen, visaRequirement(country:String,totalCost:String?),
+    case loginView, signupView, homeScreen, visaRequirement(VisaRequestParams),
     selectableSheet(data: [String], titleText: String?
    ,style: CellStyle),
-    paymentMethod(totalCost:String?), passangersCount, newInstitueVisa, datePicker, hostsInfoScreen, passangersInfoScreen, successVisaReqScreen, MyOrders, orderDetails, institutesList, instituteDetails, packageDetails, successPackage, banks,newDirectVisa,searchCountries, confirmatonVisa
+    paymentMethod(VisaRequestParams), passangersCount, newInstitueVisa, datePicker, hostsInfoScreen, passangersInfoScreen, successVisaReqScreen, MyOrders, orderDetails, institutesList, instituteDetails, packageDetails, successPackage, banks,newDirectVisa,searchCountries, confirmatonVisa(VisaRequestParams)
     func controller() -> UIViewController {
         switch self {
         case .loginView:
@@ -31,10 +31,9 @@ enum Destination {
         case .homeScreen:
             let home = HomeViewController.instance("HomeViewController")
             return home
-        case .visaRequirement(let cid, let cost):
+        case .visaRequirement(let data):
             let controller = VisaRequirementController()
-            controller.country = cid
-            controller.totalCost = cost
+            controller.visaData = data
             return controller
         case  .selectableSheet(let data,let title,let style):
             let vc = SelectableTableSheet()
@@ -44,7 +43,7 @@ enum Destination {
             return vc
         case .paymentMethod(let cost):
             let vc =  PaymentViewController()
-            vc.totalCost = cost
+            vc.totalCost = cost.totalCost ?? ""
             return vc
         case .passangersCount:
             return PassangersCountController()
@@ -78,8 +77,10 @@ enum Destination {
             return NewDirectVisaController()
         case .searchCountries:
             return UIStoryboard.main.instantiateViewController(withIdentifier: "SearchViewController")
-        case .confirmatonVisa:
-            return UIStoryboard.visa.instantiateViewController(withIdentifier: "VisaReqConfirmationController")
+        case .confirmatonVisa(let cost):
+            let vc =  UIStoryboard.visa.instantiateViewController(withIdentifier: "VisaReqConfirmationController") as! VisaReqConfirmationController
+            vc.visaRequestData = cost
+            return vc
         }
     }
 }

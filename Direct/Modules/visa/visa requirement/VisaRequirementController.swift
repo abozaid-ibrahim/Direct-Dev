@@ -13,17 +13,6 @@ import RxSwift
 import UIKit
 
 final class VisaRequirementController: UIViewController, PanModalPresentable, StyledActionBar {
-    //    let dataSource = RXTABleviewdataou<SectionModel<String, Double>>(
-    //        configureCell: { _, tv, _, _ in
-    //            let cell = tv.dequeueReusableCell(withIdentifier: VisaRequirementTableCell.cellId) as! VisaRequirementTableCell
-    //            cell.textlbl.text = "الجواز الأصل"
-    //            return cell
-    //        },
-    //        titleForHeaderInSection: { dataSource, sectionIndex in
-    //            dataSource[sectionIndex].model
-    //        }
-//    )
-    
     // MARK: IBuilder ====================================>>
     
     @IBOutlet var headerIconView: UIImageView!
@@ -36,47 +25,24 @@ final class VisaRequirementController: UIViewController, PanModalPresentable, St
     }
     
     private let data = PublishSubject<[Requirement]>()
-    var totalCost: String?
-
-    var country: String?
+    
+    var visaData:VisaRequestParams?
     internal let disposeBag = DisposeBag()
     
     let network = ApiClientFacade()
-    var x: [VisaService]?
     override func viewDidLoad() {
         super.viewDidLoad()
         setupActionBar(.withTitleAndX("متطلبات التأشيرة"))
         setDatasource()
-        getData()
-    }
-    
-    private func getData() {
-        guard let id = country else {
-            return
-        }
-        Progress.show()
-
-        network.getVisaRequirements(country: id).subscribe(onNext: { [unowned self] req in
-            
-            self.data.onNext(req.requirementPage.first?.requirements ?? [])
-            if let obj = req.requirementPage.first{
-                self.headerIconView.setImage(url: obj.flagURL ?? "")
-                self.countryNameLbl.text = obj.name
-                self.descLbl.text = ""
-            }
-           
-            Progress.hide()
-        }, onError: { _ in
-            Progress.hide()
-        }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        getDataRemotely()
     }
     
     @IBAction func requestAction(_: Any) {
-        try! AppNavigator().push(.paymentMethod(totalCost: totalCost))
+        try! AppNavigator().push(.confirmatonVisa(visaData!))
     }
 }
 
-extension VisaRequirementController: UITableViewDelegate {
+extension VisaRequirementController {
     func setDatasource() {
         tableView.defaultSeperator()
         tableView.rowHeight = UITableView.automaticDimension
@@ -85,25 +51,29 @@ extension VisaRequirementController: UITableViewDelegate {
         data.bind(to: tableView.rx.items(cellIdentifier: VisaRequirementTableCell.cellId)) { _, model, cell in
             let mycell = (cell as! VisaRequirementTableCell)
             mycell.setCellData(model)
-            
         }.disposed(by: disposeBag)
-        tableView.rx
-            .setDelegate(self)
-            .disposed(by: disposeBag)
+     
     }
     
-    // to prevent swipe to delete behavior
-    func tableView(_: UITableView, editingStyleForRowAt _: IndexPath) -> UITableViewCell.EditingStyle {
-        return .none
+    private func getDataRemotely() {
+        guard let id = visaData?.country_id else {
+            return
+        }
+        Progress.show()
+        
+        network.getVisaRequirements(country: id).subscribe(onNext: { [unowned self] req in
+            
+            self.data.onNext(req.requirementPage.first?.requirements ?? [])
+            if let obj = req.requirementPage.first {
+                self.headerIconView.setImage(url: obj.flagURL ?? "")
+                self.countryNameLbl.text = obj.name
+                self.descLbl.text = ""
+            }
+            
+            Progress.hide()
+        }, onError: { _ in
+            Progress.hide()
+        }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
-    
-//    func tableView(_: UITableView, heightForHeaderInSection _: Int) -> CGFloat {
-//        return 45
-//    }
-//
-//    func tableView(_: UITableView, viewForHeaderInSection _: Int) -> UIView? {
-//        let header = Bundle.main.loadNibNamed("RequireVisaSectionHeader", owner: nil)!.first as! RequireVisaSectionHeader
-//        header.setData(text: "المدة المتوقعة لصدور التأشيرة", img: #imageLiteral(resourceName: "icons8Fingerprint"))
-//        return header
-//    }
 }
+

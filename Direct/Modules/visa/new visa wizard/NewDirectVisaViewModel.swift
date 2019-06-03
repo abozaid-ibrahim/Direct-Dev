@@ -17,7 +17,6 @@ class NewDirectVisaViewModel {
     var relativesList: [Relative] = []
     var selectedDate = PublishSubject<Date?>()
     var showProgress = PublishSubject<Bool>()
-
     private var network: ApiClientFacade?
     var selectedCountry: NewVisaServices?
     var selectedCountryName = PublishSubject<String?>()
@@ -71,65 +70,63 @@ class NewDirectVisaViewModel {
             .disposed(by: disposeBag)
     }
 
-    var params = VisaRequestParams()
-    func validateForPassangersCount()->Bool{
-        if params.country_id == nil {
+    var visaRequestData = VisaRequestParams()
+    func validateForPassangersCount() -> Bool {
+        if visaRequestData.country_id == nil {
             selectedCountryName.onNext(nil)
             return false
-        } else if params.visatype == nil {
+        } else if visaRequestData.visatype == nil {
             selectedVisaType.onNext(nil)
             return false
-        } else if params.biometry_loc_id == nil {
+        } else if visaRequestData.biometry_loc_id == nil {
             selectedBio.onNext(nil)
             return false
-        } else if params.travel_date == nil {
+        } else if visaRequestData.travel_date == nil {
             selectedDate.onNext(nil)
             return false
         }
         return true
     }
+
     func validateInputs() -> Bool {
-        if !validateForPassangersCount(){
+        if !validateForPassangersCount() {
             return false
-        } else if pCount{
+        } else if pCount {
             passangersCount.onNext(nil)
             return false
-        } else if params.relation_with_travelers == nil {
+        } else if visaRequestData.relation_with_travelers == nil {
             selectedRelation.onNext(nil)
             return false
         }
         return true
     }
 
-    var pCount:Bool{
-        return params.no_of_child == nil && params.no_of_adult == nil && params.no_of_passport == nil
+    var pCount: Bool {
+        return visaRequestData.no_of_child == nil && visaRequestData.no_of_adult == nil && visaRequestData.no_of_passport == nil
     }
+
     func submitVisaRequest() {
         guard validateInputs() else {
-            
             return
         }
-        params.no_of_passport = "0"
+        visaRequestData.no_of_passport = "0"
 
         showProgress.onNext(true)
-        network?.sendVisaRequest(params: params).subscribe(onNext: { [unowned self] _ in
+        network?.sendVisaRequest(params: visaRequestData).subscribe(onNext: { [unowned self] _ in
             self.showProgress.onNext(false)
-            try! AppNavigator().push(.visaRequirement(country: self.selectedCountry?.country_id ?? "", totalCost: self.params.totalCost))
-
+            try! AppNavigator().push(.visaRequirement(self.visaRequestData)
+            )
         }, onError: { _ in
             self.showProgress.onNext(false)
         }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 
-    func validate(msg: String) {}
-
     func showVisaTypes() {
         guard let data = selectedCountry?.visatypes else {
-            validate(msg: "اختر الدولة اولاً")
+            selectedCountryName.onNext(nil)
             return
         }
         let str = data.filter { $0.visaTypeName != nil }.map { $0.visaTypeName ?? "" }
-
         let dest = Destination.selectableSheet(data: str, titleText: "نوع التأشيرة", style: .textCenter)
         let vc = dest.controller() as! SelectableTableSheet
         vc.selectedItem.asObservable().subscribe { event in
@@ -137,8 +134,9 @@ class NewDirectVisaViewModel {
             case .next(let value):
 
                 let itms = data.filter { $0.visaTypeName ?? "" == value }
-                if let id = itms.first?.visaTypeId {
-                    self.params.visatype = id
+                if let visa = itms.first {
+                    self.visaRequestData.visatype = visa.visaTypeId
+                    self.visaRequestData.visatypeText = visa.visaTypeName
                 }
                 self.selectedVisaType.onNext(value)
             default:
@@ -159,7 +157,8 @@ class NewDirectVisaViewModel {
             case .next(let value):
                 let locations = locations.filter { $0.cityName == value }
                 if let cityObj = locations.first {
-                    self.params.biometry_loc_id = cityObj.cityID
+                    self.visaRequestData.biometry_loc_id = cityObj.cityID
+                    self.visaRequestData.biometry_loc = cityObj.cityName
                     self.selectedBio.onNext(value)
                 }
             default:
@@ -176,8 +175,7 @@ class NewDirectVisaViewModel {
         vc.selectedDate.asObservable().subscribe { event in
             switch event.event {
             case .next(let value):
-                self.params.travel_date = value!.apiFormat
-                print(value!.apiFormat)
+                self.visaRequestData.travel_date = value!.apiFormat
                 self.selectedDate.onNext(value)
             default:
                 break
@@ -194,7 +192,8 @@ class NewDirectVisaViewModel {
             switch event.event {
             case .next(let value):
                 self.selectedCountry = value
-                self.params.country_id = value.country_id ?? ""
+                self.visaRequestData.country_id = value.country_id ?? ""
+                self.visaRequestData.countryName = value.countryName
                 self.selectedCountryName.onNext(value.countryName)
                 let cities = self.network?.getCities(country: value.country_id ?? "")
                 cities?.subscribe(onNext: { [weak self] cities in
@@ -210,21 +209,21 @@ class NewDirectVisaViewModel {
     }
 
     func showPasangersCountSpinner() {
-        guard validateForPassangersCount() else{
+        guard validateForPassangersCount() else {
             return
         }
         let vc = Destination.passangersCount.controller() as! PassangersCountController
 
-        vc.info = VisaPriceParams(cid: params.country_id, cityid: params.biometry_loc_id, no_of_adult: 0.stringValue, no_of_child: 0.stringValue, no_of_passport: 0.stringValue, promo_code: 0.stringValue, visatype: params.visatype)
-        
+        vc.info = VisaPriceParams(cid: visaRequestData.country_id, cityid: visaRequestData.biometry_loc_id, no_of_adult: 0.stringValue, no_of_child: 0.stringValue, no_of_passport: 0.stringValue, promo_code: 0.stringValue, visatype: visaRequestData.visatype)
+
         vc.result.asObservable().subscribe { event in
             switch event.event {
             case .next(let value):
                 self.passangersCount.onNext(value)
-                self.params.no_of_adult = "\(value.0)"
-                self.params.no_of_child = "\(value.1)"
+                self.visaRequestData.no_of_adult = "\(value.0)"
+                self.visaRequestData.no_of_child = "\(value.1)"
                 self.totalCost.onNext(value.2.priced)
-                self.params.totalCost = value.2
+                self.visaRequestData.totalCost = value.2
             default:
                 break
             }
@@ -242,7 +241,8 @@ class NewDirectVisaViewModel {
             case .next(let value):
                 let bio = self.relativesList.filter { $0.name == value }
                 if let bioObj = bio.first {
-                    self.params.relation_with_travelers = bioObj.id
+                    self.visaRequestData.relation_with_travelers = bioObj.id
+                    self.visaRequestData.relation_with_travelersText = bioObj.name
                 }
 
                 self.selectedRelation.onNext(value)

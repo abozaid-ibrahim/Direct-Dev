@@ -23,8 +23,8 @@ class HomeCollectionSectionWrapper: UICollectionViewCell {
         super.awakeFromNib()
         collectionView.dataSource = self
         collectionView.delegate = self //
-        collectionView.backgroundColor = UIColor.appVeryLightPink
-        backgroundColor = UIColor.appVeryLightPink
+        collectionView.backgroundColor = UIColor.appVeryLightGray
+        backgroundColor = UIColor.appVeryLightGray
 
         // getdata//
     }

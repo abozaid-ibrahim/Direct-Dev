@@ -27,8 +27,8 @@ final class HomeViewController: UIViewController, StyledActionBar {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.appVeryLightPink
-        collectionView.backgroundColor = UIColor.appVeryLightPink
+        view.backgroundColor = UIColor.appVeryLightGray
+        collectionView.backgroundColor = UIColor.appVeryLightGray
 
         collectionView.delegate = self
         registerCollectionNibs()
