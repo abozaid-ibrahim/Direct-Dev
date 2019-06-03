@@ -19,22 +19,21 @@ class NewDirectVisaViewModel {
     private var network: ApiClientFacade?
     var selectedCountry: NewVisaServices?
     var selectedCountryName = PublishSubject<String?>()
-    private var priceNotes:[Price_notes]?{
-        didSet{
-            guard let value = priceNotes else {return}
-            let notes = value.filter{$0.note_type != nil}
-            let rightNotes = notes.filter{$0.note_type ?? -1 == 1}.map{$0.text ?? ""}
-            let dontNotes = notes.filter{$0.note_type ?? -1 == 0}.map{$0.text ?? ""}
+    private var priceNotes: [Price_notes]? {
+        didSet {
+            guard let value = priceNotes else { return }
+            let notes = value.filter { $0.note_type != nil }
+            let rightNotes = notes.filter { $0.note_type ?? -1 == 1 }.map { $0.text ?? "" }
+            let dontNotes = notes.filter { $0.note_type ?? -1 == 0 }.map { $0.text ?? "" }
             let rightText = rightNotes.joined(separator: "\n-")
-           let badText = dontNotes.joined(separator: "\n-")
+            let badText = dontNotes.joined(separator: "\n-")
             doNotesText.onNext(rightText)
-              dontNotesText.onNext(badText)
-           
+            dontNotesText.onNext(badText)
         }
     }
+
     var doNotesText = PublishSubject<String?>()
     var dontNotesText = PublishSubject<String?>()
-
 
     var passangersCount = PublishSubject<PassangerCount?>()
     var selectedVisaType = PublishSubject<String?>()
@@ -217,13 +216,15 @@ class NewDirectVisaViewModel {
                 self.visaRequestData.country_id = value.country_id ?? ""
                 self.visaRequestData.countryName = value.countryName
                 self.selectedCountryName.onNext(value.countryName)
-                print("Tur>\(value.country_id ?? "")")
+                // RESET dep values
+                self.selectedBio.onNext("")
+                self.embassyLocations = nil
                 self.priceNotes = []
                 if let notes = value.price_notes {
-                  self.priceNotes = notes
+                    self.priceNotes = notes
                 }
+
                 let cities = self.network?.getCities(country: value.country_id ?? "")
-                self.embassyLocations = nil
                 cities?.subscribe(onNext: { [weak self] cities in
                     self?.embassyLocations = cities.dtEmbassyLocations
                 }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: self.disposeBag)
