@@ -20,6 +20,8 @@ class NewDirectVisaViewModel {
     private var network: ApiClientFacade?
     var selectedCountry: NewVisaServices?
     var selectedCountryName = PublishSubject<String?>()
+    var priceNotes = PublishSubject<[Price_notes]>()
+
     var passangersCount = PublishSubject<PassangerCount?>()
     var selectedVisaType = PublishSubject<String?>()
     var selectedBio = PublishSubject<String?>()
@@ -156,10 +158,14 @@ class NewDirectVisaViewModel {
             switch event.event {
             case .next(let value):
                 let locations = locations.filter { $0.cityName == value }
+                
                 if let cityObj = locations.first {
                     self.visaRequestData.biometry_loc_id = cityObj.cityID
                     self.visaRequestData.biometry_loc = cityObj.cityName
                     self.selectedBio.onNext(value)
+                    if let notes  = cityObj.price_notes{
+                        self.priceNotes.onNext(notes)
+                    }
                 }
             default:
                 break
@@ -195,6 +201,9 @@ class NewDirectVisaViewModel {
                 self.visaRequestData.country_id = value.country_id ?? ""
                 self.visaRequestData.countryName = value.countryName
                 self.selectedCountryName.onNext(value.countryName)
+                if let notes = value.price_notes{
+                    self.priceNotes.onNext(notes)
+                }
                 let cities = self.network?.getCities(country: value.country_id ?? "")
                 cities?.subscribe(onNext: { [weak self] cities in
                     self?.embassyLocations = cities.dtEmbassyLocations

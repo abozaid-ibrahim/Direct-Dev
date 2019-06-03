@@ -22,17 +22,19 @@ class CountryCitiesResponse: Codable {
 // MARK: - DTEmbassyLocation
 class DTEmbassyLocation: Codable {
     let cityID, cityName, status, success: String
-    
+ let price_notes : [Price_notes]?
     enum CodingKeys: String, CodingKey {
         case cityID = "city_id"
         case cityName = "city_name"
+        case price_notes = "price_notes"
         case status, success
     }
     
-    init(cityID: String, cityName: String, status: String, success: String) {
+    init(cityID: String, cityName: String, status: String, success: String,notes:[Price_notes]?) {
         self.cityID = cityID
         self.cityName = cityName
         self.status = status
         self.success = success
+        self.price_notes = notes
     }
 }
