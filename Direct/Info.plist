@@ -22,11 +22,12 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>UIAppFonts</key>
+	<key>Fonts provided by application</key>
 	<array>
-		<string>Cairo-SemiBold</string>
-		<string>Cairo</string>
-		<string>Cairo-Regular</string>
+
+		<string>Cairo-Regular.ttf</string>
+        <string>Cairo-Bold.ttf</string>
+
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
