@@ -23,6 +23,7 @@ class JsonParser {
                 observer.onError(NetworkFailure.failedToParseData)
             }
         case let .error(error):
+            print(">>> error: error \(error)")
             observer.onError(error)
         }
     }

@@ -27,12 +27,14 @@ final class InstituteDetailsController: UIViewController, StyledActionBar {
         tableView.dataSource = self
         tableView.delegate = self
     }
-
+    func doNO(){}
     private func setupTabbar() {
         let tab1 = ("حجز دورة", { [weak self] in
+            self?.doNO()
 
         })
         let tab2 = ("عن المعهد", { [weak self] in
+            self?.doNO()
         })
 
         let tabbar = TabBar(tabs: [tab1, tab2])

@@ -60,7 +60,9 @@ class VisaReqConfirmationController: UIViewController {
     }
 
     @IBAction func passangersInfoAction(_ sender: Any) {
-        try! AppNavigator().push(.passangersInfoScreen)
+    
+        guard let info  = visaRequestData  else {return}
+        try! AppNavigator().push(.passangersInfoScreen(info))
 
     }
 }

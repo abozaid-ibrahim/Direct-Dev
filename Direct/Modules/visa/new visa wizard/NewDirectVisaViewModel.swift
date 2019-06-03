@@ -70,7 +70,7 @@ class NewDirectVisaViewModel {
         }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
 
         // get relatives
-        let rel = network.getRelationList()
+        let rel = network.getRelationList().retry(2)
         rel.subscribe(onNext: { [weak self] bios in
             self?.relativesList.append(contentsOf: bios.relatives)
         }, onError: { [weak self] _ in

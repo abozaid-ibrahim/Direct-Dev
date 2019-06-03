@@ -12,7 +12,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PassangersController" customModule="Direct" customModuleProvider="target">
             <connections>
-                <outlet property="tabbarContainer" destination="39P-l9-GAW" id="vd0-si-CJT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,20 +21,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mN2-Fx-UkU">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="944"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="889"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="mds-7q-rFp" userLabel="conent">
-                            <rect key="frame" x="15" y="0.0" width="345" height="944"/>
+                            <rect key="frame" x="15" y="0.0" width="345" height="889"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39P-l9-GAW" userLabel="tabbar" customClass="TabBar" customModule="Direct" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="345" height="40"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="40" id="6Fh-9m-ASZ"/>
-                                    </constraints>
-                                </view>
                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4p-nI-fOB" userLabel="personal info">
-                                    <rect key="frame" x="0.0" y="55" width="345" height="280"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="345" height="280"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cF7-uI-mpO" userLabel="p1 stack">
                                             <rect key="frame" x="10" y="10" width="325" height="260"/>
@@ -276,7 +268,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WG0-nX-EM4" userLabel="mother info">
-                                    <rect key="frame" x="0.0" y="350" width="345" height="136"/>
+                                    <rect key="frame" x="0.0" y="295" width="345" height="136"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="x0b-px-5nP" userLabel="p1 stack">
                                             <rect key="frame" x="8" y="8" width="329" height="120"/>
@@ -373,7 +365,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5cw-LH-O2L" userLabel="p3">
-                                    <rect key="frame" x="0.0" y="501" width="345" height="122"/>
+                                    <rect key="frame" x="0.0" y="446" width="345" height="122"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="هل سبق وحصلت على تأشيرة لبريطانيا من قبل ؟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwP-ZW-0GN">
                                             <rect key="frame" x="8" y="8" width="329" height="20.5"/>
@@ -438,10 +430,10 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ha-2b-ygb" userLabel="p4">
-                                    <rect key="frame" x="0.0" y="638" width="345" height="122"/>
+                                    <rect key="frame" x="0.0" y="583" width="345" height="122"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" misplaced="YES" text="هل سافرت الى بريطانيا في العشر سنوات الاخيرة ؟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtG-hg-crn">
-                                            <rect key="frame" x="8" y="0.0" width="328" height="26"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="هل سافرت الى بريطانيا في العشر سنوات الاخيرة ؟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtG-hg-crn">
+                                            <rect key="frame" x="8" y="8" width="329" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -503,7 +495,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aaZ-b2-9Bp" userLabel="p5">
-                                    <rect key="frame" x="0.0" y="775" width="345" height="120"/>
+                                    <rect key="frame" x="0.0" y="720" width="345" height="120"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="LdM-Bo-Vvs" userLabel="p1 stack">
                                             <rect key="frame" x="8" y="8" width="329" height="104"/>
@@ -576,7 +568,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHw-JG-dWw">
-                                    <rect key="frame" x="0.0" y="910" width="345" height="34"/>
+                                    <rect key="frame" x="0.0" y="855" width="345" height="34"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="34" id="Ecw-9f-syQ"/>
                                     </constraints>
@@ -586,9 +578,6 @@
                                             <integer key="value" value="1"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="followAction:" destination="-1" eventType="touchUpInside" id="u1B-CQ-1wg"/>
-                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>

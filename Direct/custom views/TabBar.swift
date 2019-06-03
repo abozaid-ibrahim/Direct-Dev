@@ -10,7 +10,7 @@ import RxGesture
 import RxSwift
 import UIKit
 
-typealias Action = () -> Void
+public typealias TAB = (String,  () -> ()? )
 
 class TabBar: UIView {
     let stackContainer: UIStackView = {
@@ -39,7 +39,6 @@ class TabBar: UIView {
 
     let bag = DisposeBag()
     private var tabsSep: [UIView] = []
-    typealias TAB = (String, Action)
     func createUI(tabs: [TAB]) {
         for tab in tabs {
             let lbl = UILabel()
@@ -90,7 +89,7 @@ class TabBar: UIView {
         createUI(tabs: [])
     }
 
-    init(tabs: [(String, Action)]) {
+    init(tabs: [TAB]) {
         super.init(frame: CGRect(origin: .zero, size: CGSize(width: 200, height: 40)))
         createUI(tabs: tabs)
     }

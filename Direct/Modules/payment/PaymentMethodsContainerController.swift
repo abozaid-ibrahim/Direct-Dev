@@ -19,19 +19,23 @@ final class PaymentMethodsContainerController: UIViewController {
         setupTableData()
         setupTabbar()
     }
-
+    func doNO(){
+        self.tableView.dataSource = nil
+        self.tableView.delegate = nil
+        self.setupTableData()
+    }
+    func selectBranch(){
+        self.tableView.dataSource = nil
+        self.tableView.delegate = nil
+        self.setupBranchTableData()
+    }
     private func setupTabbar() {
         let tab1 = ("حوالة بنكية", { [weak self] in
-            self?.tableView.dataSource = nil
-            self?.tableView.delegate = nil
-            self?.setupTableData()
+           self?.doNO()
         })
         let tab2 = ("في أحد فروعنا", { [weak self] in
-            self?.tableView.dataSource = nil
-            self?.tableView.delegate = nil
-            self?.setupBranchTableData()
+           self?.selectBranch()
         })
-
         let tabbar = TabBar(tabs: [tab1, tab2])
         tabsContainer.addSubview(tabbar)
         tabbar.sameBoundsTo(parentView: tabsContainer)

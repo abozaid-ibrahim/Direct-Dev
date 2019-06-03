@@ -18,18 +18,19 @@ class SponsersViewController: UIViewController {
     }
 
     @IBAction func checkoutNextAction(_: Any) {
-        try! AppNavigator().push(.passangersInfoScreen)
+//        try! AppNavigator().push(.passangersInfoScreen)
     }
 
+    func dothin() {}
     private func setupTabbar() {
         let tab1 = ("المتكفل الأول ", { [weak self] in
-
+            self?.dothin()
         })
         let tab2 = ("المتكفل الثاني ", { [weak self] in
-
+            self?.dothin()
         })
         let tab3 = ("المتكفل الثالث ", { [weak self] in
-
+            self?.dothin()
         })
 
         let tabbarView = TabBar(tabs: [tab1, tab2, tab3])

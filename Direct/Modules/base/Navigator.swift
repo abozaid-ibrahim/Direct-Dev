@@ -7,17 +7,16 @@
 //
 
 import PanModal
-import UIKit
 import RxSwift
+import UIKit
 
 /* if any contoller need any dependencies, it should passed in the destination item */
 
 enum Destination {
-    
     case loginView, signupView, homeScreen, visaRequirement(VisaRequestParams),
-    selectableSheet(data: [String], titleText: String?
-   ,style: CellStyle),
-    paymentMethod(VisaRequestParams), passangersCount, newInstitueVisa, datePicker, hostsInfoScreen, passangersInfoScreen, successVisaReqScreen, MyOrders, orderDetails, institutesList, instituteDetails, packageDetails, successPackage, banks,newDirectVisa,searchCountries, confirmatonVisa(VisaRequestParams)
+        selectableSheet(data: [String], titleText: String?,
+                        style: CellStyle),
+        paymentMethod(VisaRequestParams), passangersCount, newInstitueVisa, datePicker, hostsInfoScreen, passangersInfoScreen(VisaRequestParams), successVisaReqScreen, MyOrders, orderDetails, institutesList, instituteDetails, packageDetails, successPackage, banks, newDirectVisa, searchCountries, confirmatonVisa(VisaRequestParams)
     func controller() -> UIViewController {
         switch self {
         case .loginView:
@@ -35,14 +34,14 @@ enum Destination {
             let controller = VisaRequirementController()
             controller.visaData = data
             return controller
-        case  .selectableSheet(let data,let title,let style):
+        case .selectableSheet(let data, let title, let style):
             let vc = SelectableTableSheet()
             vc.data = data
             vc.style = style
             vc.titleText = title
             return vc
         case .paymentMethod(let cost):
-            let vc =  PaymentViewController()
+            let vc = PaymentViewController()
             vc.totalCost = cost.totalCost ?? ""
             return vc
         case .passangersCount:
@@ -54,8 +53,10 @@ enum Destination {
 
         case .hostsInfoScreen:
             return SponsersViewController()
-        case .passangersInfoScreen:
-            return PassangersController()
+        case .passangersInfoScreen(let info):
+            let vc = PassangersInputViewViewController()
+            vc.visaInfo = info
+            return vc
         case .successVisaReqScreen:
             return SuccessVisaRequestController()
         case .MyOrders:
@@ -78,7 +79,7 @@ enum Destination {
         case .searchCountries:
             return UIStoryboard.main.instantiateViewController(withIdentifier: "SearchViewController")
         case .confirmatonVisa(let cost):
-            let vc =  UIStoryboard.visa.instantiateViewController(withIdentifier: "VisaReqConfirmationController") as! VisaReqConfirmationController
+            let vc = UIStoryboard.visa.instantiateViewController(withIdentifier: "VisaReqConfirmationController") as! VisaReqConfirmationController
             vc.visaRequestData = cost
             return vc
         }
@@ -101,6 +102,7 @@ final class AppNavigator: Navigator {
     func presentModally(_ dest: Destination) {
         AppNavigator.rootController.presentPanModal(dest.controller() as! UIViewController & PanModalPresentable)
     }
+
     func presentModally(_ vc: UIViewController) {
         AppNavigator.rootController.presentPanModal(vc as! UIViewController & PanModalPresentable)
     }
