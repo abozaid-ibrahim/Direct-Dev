@@ -16,7 +16,6 @@ class PassangersInputViewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "معلومات المسافرين"
-        
         setupTabbar()
     }
     

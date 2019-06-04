@@ -14,3 +14,5 @@ class ViewController: UIViewController {
 //        print(Connectivity.isConnected)
     }
 }
+
+
