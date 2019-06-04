@@ -49,7 +49,8 @@ class VisaService: Codable {
 class In: Codable {
     let updateOn, updateBy, visaCountryID, requestSource: String
     let requestSourceComments, travelDate, biometryLOCID, noOfAdult: String
-    let noOfChild, noOfPassport, relationWithTravelers, lang: String
+    let noOfChild, noOfPassport, lang: String
+    let relationWithTravelers:String?
     let promoPrice:String?
     var promoCode: String?
     
@@ -70,7 +71,7 @@ class In: Codable {
         case promoCode = "promo_code"
     }
     
-    init(updateOn: String, updateBy: String, visaCountryID: String, requestSource: String, requestSourceComments: String, travelDate: String, biometryLOCID: String, noOfAdult: String, noOfChild: String, noOfPassport: String, relationWithTravelers: String, lang: String, promoPrice: String, promoCode: String) {
+    init(updateOn: String, updateBy: String, visaCountryID: String, requestSource: String, requestSourceComments: String, travelDate: String, biometryLOCID: String, noOfAdult: String, noOfChild: String, noOfPassport: String, relationWithTravelers: String?, lang: String, promoPrice: String, promoCode: String) {
         self.updateOn = updateOn
         self.updateBy = updateBy
         self.visaCountryID = visaCountryID

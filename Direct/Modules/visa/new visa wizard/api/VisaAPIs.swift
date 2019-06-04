@@ -53,7 +53,7 @@ extension VisaAPIs: TargetType {
                           "no_of_passport": prm.no_of_passport!,
                           "visatype": prm.visatype!,
                           "travel_date": prm.travel_date!,
-                          "relation_with_travelers": prm.relation_with_travelers!,
+                          "relation_with_travelers": prm.relation_with_travelers ?? "",
                           "request_source": "ios",
                           "request_source_comments": "iOS App 2.0 on iPhone 6 – iOS 11.4.0",
                           "promo_code": ""] as [String: Any]
