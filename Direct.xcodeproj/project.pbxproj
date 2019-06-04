@@ -158,6 +158,10 @@
 		6CF1C9B122A5DBEE0034DB39 /* PassangersInputViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF1C9AF22A5DBEE0034DB39 /* PassangersInputViewViewController.swift */; };
 		6CF1C9B222A5DBEE0034DB39 /* PassangersInputViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF1C9B022A5DBEE0034DB39 /* PassangersInputViewViewController.xib */; };
 		6CF2514422A6108300CDA47C /* UIImage+Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514322A6108300CDA47C /* UIImage+Encoding.swift */; };
+		6CF2514622A62F1000CDA47C /* PreviousVisaTypeJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514522A62F1000CDA47C /* PreviousVisaTypeJson.swift */; };
+		6CF2514822A635E600CDA47C /* APIValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514722A635E600CDA47C /* APIValues.swift */; };
+		6CF2514A22A6374E00CDA47C /* Passagners + Dialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514922A6374D00CDA47C /* Passagners + Dialogs.swift */; };
+		6CF2514C22A639F600CDA47C /* PassangerFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514B22A639F600CDA47C /* PassangerFormViewModel.swift */; };
 		6CF3E1722271E451007488BA /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1712271E451007488BA /* Navigator.swift */; };
 		6CF3E1762271E598007488BA /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1752271E598007488BA /* RootNavigationViewController.swift */; };
 		6CF3E17E2271E702007488BA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E17D2271E702007488BA /* User.swift */; };
@@ -346,6 +350,10 @@
 		6CF1C9AF22A5DBEE0034DB39 /* PassangersInputViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangersInputViewViewController.swift; sourceTree = "<group>"; };
 		6CF1C9B022A5DBEE0034DB39 /* PassangersInputViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PassangersInputViewViewController.xib; sourceTree = "<group>"; };
 		6CF2514322A6108300CDA47C /* UIImage+Encoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIImage+Encoding.swift"; path = "../../../../../Desktop/UIImage+Encoding.swift"; sourceTree = "<group>"; };
+		6CF2514522A62F1000CDA47C /* PreviousVisaTypeJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousVisaTypeJson.swift; sourceTree = "<group>"; };
+		6CF2514722A635E600CDA47C /* APIValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIValues.swift; sourceTree = "<group>"; };
+		6CF2514922A6374D00CDA47C /* Passagners + Dialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Passagners + Dialogs.swift"; sourceTree = "<group>"; };
+		6CF2514B22A639F600CDA47C /* PassangerFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangerFormViewModel.swift; sourceTree = "<group>"; };
 		6CF3E1712271E451007488BA /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		6CF3E1752271E598007488BA /* RootNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationViewController.swift; sourceTree = "<group>"; };
 		6CF3E17D2271E702007488BA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -673,6 +681,7 @@
 				6CD84B5822A46D8100E3CAD3 /* VisaHttpClient.swift */,
 				6C29DD2322A5F66C0047DF54 /* USVisaRequestParams.swift */,
 				6C29DD2522A6040E0047DF54 /* USVisaJsonResponse.swift */,
+				6CF2514522A62F1000CDA47C /* PreviousVisaTypeJson.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -748,6 +757,9 @@
 				6C902778228F94C500B41705 /* PassangersController.xib */,
 				6CF1C9AF22A5DBEE0034DB39 /* PassangersInputViewViewController.swift */,
 				6CF1C9B022A5DBEE0034DB39 /* PassangersInputViewViewController.xib */,
+				6CF2514722A635E600CDA47C /* APIValues.swift */,
+				6CF2514922A6374D00CDA47C /* Passagners + Dialogs.swift */,
+				6CF2514B22A639F600CDA47C /* PassangerFormViewModel.swift */,
 			);
 			path = passangers;
 			sourceTree = "<group>";
@@ -1204,7 +1216,9 @@
 				6C29DD2622A6040E0047DF54 /* USVisaJsonResponse.swift in Sources */,
 				6C5FDA4F2270816B00ABA39B /* ViewController.swift in Sources */,
 				3992B66922961B5F00BBB7F1 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
+				6CF2514822A635E600CDA47C /* APIValues.swift in Sources */,
 				6CF2514422A6108300CDA47C /* UIImage+Encoding.swift in Sources */,
+				6CF2514A22A6374E00CDA47C /* Passagners + Dialogs.swift in Sources */,
 				6C557557228BA52900BAE5E2 /* View+Colors.swift in Sources */,
 				6C5DE87A22872A1E00F900AE /* SuccessPackageController.swift in Sources */,
 				6CE722ED2274FA1B00E095DC /* VisaRequirementController.swift in Sources */,
@@ -1256,6 +1270,7 @@
 				6CF0E3712285D70900149910 /* OrdersHistoryController.swift in Sources */,
 				6CF3E1AD2272551E007488BA /* VisaRequirementsSectionVM.swift in Sources */,
 				6C5DE7652275DA99001A9FB6 /* UIView.swift in Sources */,
+				6CF2514622A62F1000CDA47C /* PreviousVisaTypeJson.swift in Sources */,
 				6C8503B3229DDB5F004FE346 /* VisaAPIs.swift in Sources */,
 				6C87FAD92270C6D800AFE485 /* UIColor+Additions.swift in Sources */,
 				6C778284227AA33D001926B2 /* InstituteTableCell.swift in Sources */,
@@ -1266,6 +1281,7 @@
 				6CDEF77F22A11DDA00BF5F0B /* VisaReqConfirmationController.swift in Sources */,
 				6C2CFBA72278A1C600D23CF4 /* PaymentBranchTableCell.swift in Sources */,
 				6C3885CB229B24D300CA168A /* NetworkErrors.swift in Sources */,
+				6CF2514C22A639F600CDA47C /* PassangerFormViewModel.swift in Sources */,
 				6C29DD2422A5F66C0047DF54 /* USVisaRequestParams.swift in Sources */,
 				6C2CFB8C2277422900D23CF4 /* PackagesViewController.swift in Sources */,
 				6C87FADC2270C74000AFE485 /* UserAuthViewController.swift in Sources */,

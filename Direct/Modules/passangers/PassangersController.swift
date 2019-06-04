@@ -13,11 +13,15 @@ class PassangersController: UIViewController, ImagePicker {
     var currentImageID: Int = 0
     let familyImageID = 30
     let visaImageID = 23
+    
     // MARK: IBuilder ====================================>>
+    
     // Family
     @IBOutlet var firstNamePInfoLbl: FloatingTextField!
     @IBOutlet var familyNamePInfoLbl: FloatingTextField!
     @IBOutlet var statusPInfoLbl: FloatingTextField!
+    @IBOutlet var isHusbandWillTravelView: UIView!
+    
     @IBOutlet var husbundPInfoLbl: FloatingTextField!
     @IBOutlet var familyIDPInfoLbl: FloatingTextField!
     // MOTHER
@@ -31,28 +35,39 @@ class PassangersController: UIViewController, ImagePicker {
     @IBOutlet var everHadVisaSegment: UISegmentedControl!
     @IBOutlet var traveledInLast10YrsSegment: UISegmentedControl!
     //===================================================<<
-    var pickerId = 0
     internal let disposeBag = DisposeBag()
     var receivedImage = PublishSubject<(String?, UIImage?)>()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        arrivalDateLbl.rx.tapGesture().when(.recognized)
-            .subscribe(onNext: { _ in
-                self.showDatePickerDialog()
-            }).disposed(by: disposeBag)
+        pInfoSetup()
+        questionsSetup()
+    }
+    
+    private func pInfoSetup() {
+        statusPInfoLbl.rx.tapGesture().when(.recognized)
+            .subscribe { _ in
+                self.showMatrialState()
+            }.disposed(by: disposeBag)
         
         familyIDPInfoLbl.rx.tapGesture().when(.recognized)
             .subscribe { _ in
                 self.showImagePicker(id: self.familyImageID)
             }.disposed(by: disposeBag)
-       
-        previousVisaIdImageLbl.rx.tapGesture().when(.recognized)
+        
+        husbundPInfoLbl.rx.tapGesture().when(.recognized)
             .subscribe { _ in
-                self.showImagePicker(id: self.visaImageID)
+                self.showAgreemnetDialog(callback: { [weak self] agreed in
+                    self?.params.husbandOrWifeTravelWithYou = agreed.apiValue.stringValue
+                    self?.husbundPInfoLbl.text = agreed.rawValue
+                })
             }.disposed(by: disposeBag)
-        
-        
+    }
+    
+    private func questionsSetup() {
+        arrivalDateLbl.rx.tapGesture().when(.recognized)
+            .subscribe(onNext: { _ in
+                self.showDatePickerDialog()
+            }).disposed(by: disposeBag)
         previousVisaIdImageLbl.rx.tapGesture().when(.recognized)
             .subscribe { _ in
                 self.showImagePicker(id: self.visaImageID)
@@ -69,6 +84,15 @@ class PassangersController: UIViewController, ImagePicker {
             }
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
+    
+    func getPreviousVisaTypes() {
+        network.getPreviousVisaType().retry(2).subscribe(onNext: { [unowned self] value in
+            if let types = value.previousVisaType {
+                self.showOptions(types)
+            }
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+    }
+    
     @IBAction func submitData(_ sender: Any) {
         submit()
     }
@@ -83,20 +107,12 @@ class PassangersController: UIViewController, ImagePicker {
         picker.dismiss(animated: true, completion: nil)
     }
     
-    func showDatePickerDialog() {
-        let dest = Destination.datePicker
-        let vc = dest.controller() as! DatePickerController
-        vc.selectedDate.asObservable().subscribe { event in
-            switch event.event {
-            case .next(let value):
-                self.arrivalDateLbl.text = value!.apiFormat
-                self.params.dateOfArrival = value!.apiFormat
-            default:
-                break
-            }
-            
-        }.disposed(by: disposeBag)
-        try! AppNavigator().presentModally(vc)
+    @IBAction func previousVisaTypeChanged(_ sender: UISegmentedControl) {
+        if sender.state == .selected {
+            previousVisaIdImageLbl.isHidden = false
+        } else {
+            previousVisaIdImageLbl.isHidden = true
+        }
     }
     
     func validateTextFields() {}
@@ -112,8 +128,8 @@ class PassangersController: UIViewController, ImagePicker {
         params.mothersFamilyName = familyNameMotherLbl.text
         params.nationality = nationalityMotherLbl.text
         // Questions
-        params.everIssuedVisaBefore = "\(everHadVisaSegment.state == .selected ? 1 : 0 )"
-        params.travelledBeforeHere = "\(traveledInLast10YrsSegment.state == .selected ? 1 : 0 )"
+        params.everIssuedVisaBefore = "\(everHadVisaSegment.state == .selected ? 1 : 0)"
+        params.travelledBeforeHere = "\(traveledInLast10YrsSegment.state == .selected ? 1 : 0)"
         
         // Others PDF
         //        params.personalPhotoCopy
@@ -132,11 +148,11 @@ class PassangersController: UIViewController, ImagePicker {
         network.applyToUSVisa(params: params)
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] response in
-              Progress.hide()
+                Progress.hide()
                 
                 try! AppNavigator().push(.successVisaReqScreen(response))
-            }, onError: {e in
+            }, onError: { _ in
                 Progress.hide()
-            } , onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+            }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 }

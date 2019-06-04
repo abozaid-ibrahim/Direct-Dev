@@ -12,7 +12,9 @@ import Moya
 enum VisaAPIs {
     case visaRequest(prm: VisaRequestParams),
         visaRequirementForCountry(cid: String),
-        getVisaPrice(prm: VisaPriceParams),applyToUS(USRequestParams)
+        getVisaPrice(prm: VisaPriceParams),
+    applyToUS(USRequestParams),
+    getPreviousVisaType
 }
 
 extension VisaAPIs: TargetType {
@@ -26,12 +28,14 @@ extension VisaAPIs: TargetType {
             return "get-visa-price"
         case .applyToUS:
             return "to-apply-us"
+        case .getPreviousVisaType:
+            return "get-previous-visa-type"
         }
     }
     
     public var method: Moya.Method {
         switch self {
-        case .visaRequest, .visaRequirementForCountry, .getVisaPrice, .applyToUS:
+        case .visaRequest, .visaRequirementForCountry, .getVisaPrice, .applyToUS,.getPreviousVisaType:
             return .post
         }
     }
@@ -72,7 +76,15 @@ extension VisaAPIs: TargetType {
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
         case .applyToUS(let req):
            let data = try! self.prmEncoder.encode(req)
-            return .requestData(data)
+           return .requestData(data)
+
+        case  .getPreviousVisaType:
+            let prmDic = ["key": tokenKeyValue,
+                          "lang": appLang
+                        ] as [String: Any]
+            return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
+            
+            
         }
     }
     

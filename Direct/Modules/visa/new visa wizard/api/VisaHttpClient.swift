@@ -48,4 +48,13 @@ extension ApiClientFacade{
             return Disposables.create()
         }
     }
+    
+    func getPreviousVisaType() -> Observable<PreviousVisaTypeJSONResponse> {
+        return Observable<PreviousVisaTypeJSONResponse>.create { (observer) -> Disposable in
+            self.visaProvider.rx.request(VisaAPIs.getPreviousVisaType).subscribe { [weak self] event in
+                self?.parser.emitDataModelfromResponse(event: event, observer: observer)
+                }.disposed(by: self.disposeBag)
+            return Disposables.create()
+        }
+    }
 }
