@@ -107,26 +107,31 @@ class NewDirectVisaViewModel {
     func validateInputs() -> Bool {
         if !validateForPassangersCount() {
             return false
-        } else if pCount {
+        } else if unValidPassCount {
             passangersCount.onNext(nil)
             return false
-        } else if visaRequestData.relation_with_travelers == nil {
+        } else if visaRequestData.relation_with_travelers == nil && (passCount > 1) {
             selectedRelation.onNext(nil)
             return false
         }
         return true
     }
 
-    var pCount: Bool {
-        return visaRequestData.no_of_child == nil && visaRequestData.no_of_adult == nil && visaRequestData.no_of_passport == nil
+    var unValidPassCount: Bool {
+        return visaRequestData.no_of_child == nil && visaRequestData.no_of_adult == nil && visaRequestData.country_id != turkeyCountryId
+            
+        
     }
-
+    var passCount:Int{
+        let adults = (Int(visaRequestData.no_of_adult ?? "0") ?? 0)
+        let childs = (Int(visaRequestData.no_of_child ?? "0") ?? 0)
+        return childs + adults
+    }
     func submitVisaRequest() {
+        visaRequestData.no_of_passport = passCount.stringValue
         guard validateInputs() else {
             return
         }
-        let count = (Int(visaRequestData.no_of_adult) ?? 0) + (Int(visaRequestData.no_of_child) ?? 0)
-        visaRequestData.no_of_passport = count.stringValue
 
         showProgress.onNext(true)
         network?.sendVisaRequest(params: visaRequestData).subscribe(onNext: { [unowned self] _ in
@@ -252,6 +257,7 @@ class NewDirectVisaViewModel {
                 self.visaRequestData.no_of_adult = "\(value.0)"
                 self.visaRequestData.no_of_child = "\(value.1)"
                 self.totalCost.onNext(value.2.priced)
+
                 self.visaRequestData.totalCost = value.2
             default:
                 break

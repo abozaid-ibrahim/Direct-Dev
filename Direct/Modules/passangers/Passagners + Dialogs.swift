@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension PassangersController {
+extension PassangerFormController {
     func showMatrialState() {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alert.setTint(color: .appMango)

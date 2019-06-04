@@ -21,11 +21,11 @@ class PassangersInputViewViewController: UIViewController {
         setupTabbar()
     }
     
-    var tabs: [(TAB, PassangersController)] = []
+    var tabs: [(TAB, PassangerFormController)] = []
     private func setupTabbar() {
         guard let info = visaInfo else { return }
         for index in 0..<Int(info.no_of_adult)! {
-            let tab1VC = PassangersController()
+            let tab1VC = PassangerFormController()
             let tab1 = ("بالغ" + " " + "\(index + 1)", { [weak self] in
                 self?.selectTab(index, tab1VC)
             })
@@ -33,7 +33,7 @@ class PassangersInputViewViewController: UIViewController {
             tabs.append((tab1, tab1VC))
         }
         for index in 0..<Int(info.no_of_child)! {
-            let tab1VC = PassangersController()
+            let tab1VC = PassangerFormController()
             let tab1 = ("طفل" + " " + "\(index + 1)", { [weak self] in
                 self?.selectTab(index, tab1VC)
             })
@@ -48,7 +48,7 @@ class PassangersInputViewViewController: UIViewController {
         }
     }
     
-    private func selectTab(_ index: Int, _ tab1VC: PassangersController) {
+    private func selectTab(_ index: Int, _ tab1VC: PassangerFormController) {
         /* 1 if item is subview//goto 3
           show item
          if Not

@@ -9,7 +9,7 @@
 import RxSwift
 import UIKit
 
-class PassangersController: UIViewController, ImagePicker {
+class PassangerFormController: UIViewController, ImagePicker {
     var currentImageID: Int = 0
     let familyImageID = 30
     let visaImageID = 23
@@ -34,13 +34,23 @@ class PassangersController: UIViewController, ImagePicker {
     @IBOutlet var durationLbl: FloatingTextField!
     @IBOutlet var everHadVisaSegment: UISegmentedControl!
     @IBOutlet var traveledInLast10YrsSegment: UISegmentedControl!
+    
+    @IBOutlet private var previouslyTraveledCountriesView: UIView!
     //===================================================<<
     internal let disposeBag = DisposeBag()
     var receivedImage = PublishSubject<(String?, UIImage?)>()
     override func viewDidLoad() {
         super.viewDidLoad()
-        pInfoSetup()
-        questionsSetup()
+//        pInfoSetup()
+//        questionsSetup()
+        addPreviousCountries()
+    }
+    
+    private func addPreviousCountries() {
+        let travels = UIStoryboard.visa.instantiateViewController(withIdentifier: "PreviousTraveledCountriesController") as! PreviousTraveledCountriesController
+        addChild(travels)
+        previouslyTraveledCountriesView.addSubview(travels.view)
+        travels.view.sameBoundsTo(parentView: previouslyTraveledCountriesView)
     }
     
     private func pInfoSetup() {

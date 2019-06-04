@@ -10,10 +10,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PassangersController" customModule="Direct" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PassangerFormController" customModule="Direct" customModuleProvider="target">
             <connections>
-                <outlet property="arrivalDateLbl" destination="z4J-qf-7Uw" id="jbU-E5-axu"/>
-                <outlet property="durationLbl" destination="LNg-tJ-kyc" id="Csv-Uc-TuJ"/>
                 <outlet property="everHadVisaSegment" destination="pfD-FC-mRh" id="HFs-kH-aoX"/>
                 <outlet property="familyIDPInfoLbl" destination="wVu-qA-0g1" id="2Yl-aw-7vU"/>
                 <outlet property="familyNameMotherLbl" destination="rlH-mL-eXA" id="vr1-nh-GJ3"/>
@@ -24,6 +22,7 @@
                 <outlet property="isHusbandWillTravelView" destination="cA5-gS-9mN" id="JgB-hY-OQE"/>
                 <outlet property="nationalityMotherLbl" destination="3lR-Wv-gyp" id="1Rz-fn-lVq"/>
                 <outlet property="previousVisaIdImageLbl" destination="ggA-hv-pdZ" id="gT2-Zz-cFc"/>
+                <outlet property="previouslyTraveledCountriesView" destination="aaZ-b2-9Bp" id="N61-Zw-Otc"/>
                 <outlet property="statusPInfoLbl" destination="lrR-Wi-FYn" id="fux-xo-gef"/>
                 <outlet property="traveledInLast10YrsSegment" destination="adT-BP-weu" id="osF-V1-Lsp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -557,81 +556,9 @@
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aaZ-b2-9Bp" userLabel="p5">
                                     <rect key="frame" x="0.0" y="656" width="355" height="150"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="LdM-Bo-Vvs" userLabel="p1 stack">
-                                            <rect key="frame" x="8" y="8" width="339" height="134"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="اذكر بعض الدول التي سافرت إليها اخر 5 سنوات" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19F-2U-yUz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="339" height="32"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2H-W6-efM">
-                                                    <rect key="frame" x="0.0" y="36" width="339" height="30"/>
-                                                    <state key="normal" title="+ اضف">
-                                                        <color key="titleColor" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
-                                                            <real key="value" value="10"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColorV">
-                                                            <color key="value" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
-                                                            <real key="value" value="1"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </button>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z4J-qf-7Uw" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="70" width="339" height="30"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="تاريخ الوصول تقريبًا"/>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="تاريخ الوصول تقريبًا"/>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
-                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="lineErrorColor">
-                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LNg-tJ-kyc" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="104" width="339" height="30"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="مدة الإقامة تقريبًا"/>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
-                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="lineErrorColor">
-                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="مدة الإقامة تقريبًا"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </textField>
-                                            </subviews>
-                                        </stackView>
-                                    </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="LdM-Bo-Vvs" secondAttribute="trailing" constant="8" id="OfW-Rb-tMG"/>
-                                        <constraint firstItem="LdM-Bo-Vvs" firstAttribute="leading" secondItem="aaZ-b2-9Bp" secondAttribute="leading" constant="8" id="Tjb-3n-8F0"/>
-                                        <constraint firstItem="LdM-Bo-Vvs" firstAttribute="top" secondItem="aaZ-b2-9Bp" secondAttribute="top" constant="8" id="gNn-D3-dWN"/>
                                         <constraint firstAttribute="height" constant="150" id="tcM-2j-Lqc"/>
-                                        <constraint firstAttribute="bottom" secondItem="LdM-Bo-Vvs" secondAttribute="bottom" constant="8" id="znM-Bk-RkH"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
