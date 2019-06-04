@@ -41,7 +41,7 @@ extension PassangersController {
             callback(AgreementValues.no)
             
         })
-        let yesAction = UIAlertAction(title: MartialState.single.rawValue, style: .default, handler: { [weak self] _ in
+        let yesAction = UIAlertAction(title: AgreementValues.yes.rawValue, style: .default, handler: { [weak self] _ in
             callback(AgreementValues.yes)
             
         })
