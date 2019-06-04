@@ -459,7 +459,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SCY-J0-VUp">
-                                <rect key="frame" x="10" y="54" width="414" height="798"/>
+                                <rect key="frame" x="10" y="54" width="394" height="798"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اذكر بعض الدول التي سافرت إليها اخر 5 سنوات" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocC-P9-gJ6">
                                         <rect key="frame" x="0.0" y="0.0" width="337.5" height="20.5"/>
@@ -488,14 +488,14 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Oqq-H0-uzA">
-                                        <rect key="frame" x="0.0" y="66.5" width="414" height="731.5"/>
+                                        <rect key="frame" x="0.0" y="66.5" width="394" height="731.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountryCell" id="ljg-jk-ues" customClass="CountryCell" customModule="Direct" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                                <rect key="frame" x="0.0" y="28" width="394" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ljg-jk-ues" id="SCO-Og-M7j">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="394" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="saB-OG-pZO">
@@ -545,7 +545,7 @@
                         <constraints>
                             <constraint firstItem="Hqx-je-eO6" firstAttribute="bottom" secondItem="SCY-J0-VUp" secondAttribute="bottom" constant="10" id="GZd-hv-FdK"/>
                             <constraint firstItem="SCY-J0-VUp" firstAttribute="top" secondItem="Hqx-je-eO6" secondAttribute="top" constant="10" id="Ro8-pd-TSP"/>
-                            <constraint firstItem="SCY-J0-VUp" firstAttribute="trailing" secondItem="Hqx-je-eO6" secondAttribute="trailing" constant="10" id="Xnr-ps-baL"/>
+                            <constraint firstItem="SCY-J0-VUp" firstAttribute="trailing" secondItem="Hqx-je-eO6" secondAttribute="trailing" constant="-10" id="Xnr-ps-baL"/>
                             <constraint firstItem="SCY-J0-VUp" firstAttribute="leading" secondItem="Hqx-je-eO6" secondAttribute="leading" constant="10" id="lNf-80-tiw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hqx-je-eO6"/>

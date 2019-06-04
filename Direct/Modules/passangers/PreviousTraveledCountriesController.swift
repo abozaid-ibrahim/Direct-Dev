@@ -27,7 +27,7 @@ class PreviousTraveledCountriesController: UIViewController {
 
     func setupTable() {
         tableView.register(CountryCell.self, forCellReuseIdentifier: CountryCell.id)
-        countries
+        Observable.just(["asdfa","asfsd"])
             .bind(to: tableView.rx.items(cellIdentifier: CountryCell.id, cellType: UITableViewCell.self)) { _, element, cell in
                 guard let myCell = cell as? CountryCell else { return }
                 myCell.textLbl.text = element
