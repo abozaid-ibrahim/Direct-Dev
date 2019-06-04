@@ -72,7 +72,7 @@ extension PassangerFormController {
         vc.selectedDate.asObservable().subscribe { event in
             switch event.event {
             case .next(let value):
-                self.arrivalDateLbl.text = value!.apiFormat
+//                self.arrivalDateLbl.text = value!.apiFormat
                 self.params.dateOfArrival = value!.apiFormat
             default:
                 break

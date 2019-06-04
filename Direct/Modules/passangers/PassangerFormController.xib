@@ -12,19 +12,32 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PassangerFormController" customModule="Direct" customModuleProvider="target">
             <connections>
+                <outlet property="everHadVisaSegment" destination="Rs5-Tl-9eQ" id="yJ3-ge-EEQ"/>
+                <outlet property="familyIDPInfoLbl" destination="TKR-FA-JXh" id="BU6-Tx-ywC"/>
+                <outlet property="familyNameMotherLbl" destination="4jh-8C-l0V" id="IQw-9H-1oh"/>
+                <outlet property="familyNamePInfoLbl" destination="vrR-hq-2s5" id="yba-vK-H8I"/>
+                <outlet property="firstNameMotherLbl" destination="4jh-8C-l0V" id="YAo-KT-BvK"/>
+                <outlet property="firstNamePInfoLbl" destination="m0e-OQ-wcS" id="mII-uc-8pq"/>
+                <outlet property="husbundPInfoLbl" destination="mMM-Eh-ZZ3" id="WEw-J9-99R"/>
+                <outlet property="isHusbandWillTravelView" destination="mMM-Eh-ZZ3" id="NsL-Ho-yDa"/>
+                <outlet property="nationalityMotherLbl" destination="Vdd-2N-Chk" id="34v-4j-Ylr"/>
+                <outlet property="previousVisaIdImageLbl" destination="q59-Z3-9J1" id="e9v-g1-Erj"/>
+                <outlet property="previouslyTraveledCountriesView" destination="wwd-0y-oSK" id="4Qw-CR-4w5"/>
+                <outlet property="statusPInfoLbl" destination="fiT-t2-HOr" id="3p7-5c-IDU"/>
+                <outlet property="traveledInLast10YrsSegment" destination="Rs5-Tl-9eQ" id="LBr-33-SKV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="1179"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hSo-I5-dPz">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hSo-I5-dPz">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="1145"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2xs-CW-hrx" userLabel="conent">
-                            <rect key="frame" x="10" y="0.0" width="394" height="855"/>
+                            <rect key="frame" x="10" y="0.0" width="394" height="1020"/>
                             <subviews>
                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGe-Ha-rxi" userLabel="personal info">
                                     <rect key="frame" x="0.0" y="0.0" width="394" height="290"/>
@@ -62,15 +75,6 @@
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
                                                                     <real key="value" value="0.0"/>
                                                                 </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
-                                                                    <real key="value" value="1"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColorV">
-                                                                    <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
-                                                                    <real key="value" value="6"/>
-                                                                </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </textField>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vrR-hq-2s5" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
@@ -90,15 +94,6 @@
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
                                                                     <real key="value" value="0.0"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
-                                                                    <real key="value" value="1"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColorV">
-                                                                    <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
-                                                                    <real key="value" value="6"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
                                                                     <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -136,15 +131,6 @@
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                                                     <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
-                                                                    <real key="value" value="6"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
-                                                                    <real key="value" value="1"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColorV">
-                                                                    <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </textField>
@@ -194,15 +180,6 @@
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                                                     <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
-                                                                    <real key="value" value="6"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
-                                                                    <real key="value" value="1"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColorV">
-                                                                    <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </textField>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomArrow" translatesAutoresizingMaskIntoConstraints="NO" id="zd9-iN-Jkm">
@@ -251,14 +228,8 @@
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                                                     <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
-                                                                    <real key="value" value="6"/>
-                                                                </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
                                                                     <real key="value" value="1"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColorV">
-                                                                    <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </textField>
@@ -419,6 +390,9 @@
                                                 <segment title="نعم "/>
                                             </segments>
                                             <color key="tintColor" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="previousVisaTypeChanged:" destination="-1" eventType="valueChanged" id="xJT-ih-yao"/>
+                                            </connections>
                                         </segmentedControl>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q59-Z3-9J1" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
                                             <rect key="frame" x="8" y="102" width="378" height="45"/>
@@ -453,7 +427,6 @@
                                         <constraint firstAttribute="trailing" secondItem="q59-Z3-9J1" secondAttribute="trailing" constant="8" id="TJw-40-Bv6"/>
                                         <constraint firstAttribute="bottom" secondItem="q59-Z3-9J1" secondAttribute="bottom" constant="8" id="VG0-Gz-oAe"/>
                                         <constraint firstAttribute="height" constant="155" id="Xao-q6-yqt"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8Nh-5G-xSX" secondAttribute="trailing" constant="20" symbolic="YES" id="g1m-EM-voP"/>
                                         <constraint firstAttribute="trailing" secondItem="J2v-AG-KYJ" secondAttribute="trailing" constant="8" id="hYS-f0-SGj"/>
                                         <constraint firstItem="q59-Z3-9J1" firstAttribute="top" secondItem="8Nh-5G-xSX" secondAttribute="bottom" constant="10" id="u9N-BI-tQ3"/>
                                     </constraints>
@@ -469,8 +442,8 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TWF-e7-GMx" userLabel="p4">
-                                    <rect key="frame" x="0.0" y="648.5" width="394" height="150"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TWF-e7-GMx" userLabel="p4">
+                                    <rect key="frame" x="0.0" y="656" width="394" height="150"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="هل سافرت الى بريطانيا في العشر سنوات الاخيرة ؟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qoY-Hm-P1U">
                                             <rect key="frame" x="8" y="8" width="378" height="39"/>
@@ -519,7 +492,6 @@
                                         <constraint firstAttribute="trailing" secondItem="qoY-Hm-P1U" secondAttribute="trailing" constant="8" id="40S-OR-ihv"/>
                                         <constraint firstAttribute="trailing" secondItem="X7a-55-caS" secondAttribute="trailing" constant="8" id="9Zf-ZU-cnf"/>
                                         <constraint firstItem="qoY-Hm-P1U" firstAttribute="top" secondItem="TWF-e7-GMx" secondAttribute="top" constant="8" id="PMn-2x-iTY"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Rs5-Tl-9eQ" secondAttribute="trailing" constant="20" symbolic="YES" id="WWA-I3-sr5"/>
                                         <constraint firstItem="qoY-Hm-P1U" firstAttribute="leading" secondItem="TWF-e7-GMx" secondAttribute="leading" constant="8" id="auP-Ud-K5R"/>
                                         <constraint firstItem="Rs5-Tl-9eQ" firstAttribute="top" secondItem="qoY-Hm-P1U" secondAttribute="bottom" constant="10" id="b1x-Ut-wQu"/>
                                         <constraint firstAttribute="height" constant="150" id="fH3-JI-O7K"/>
@@ -539,7 +511,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwd-0y-oSK" userLabel="p5">
-                                    <rect key="frame" x="0.0" y="656" width="394" height="150"/>
+                                    <rect key="frame" x="0.0" y="821" width="394" height="150"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="150" id="yue-2m-2o6"/>
@@ -557,7 +529,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Tq-2F-bE9">
-                                    <rect key="frame" x="0.0" y="821" width="394" height="34"/>
+                                    <rect key="frame" x="0.0" y="986" width="394" height="34"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="34" id="1L4-Ys-hfN"/>
                                     </constraints>
@@ -567,6 +539,9 @@
                                             <integer key="value" value="1"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="submitData:" destination="-1" eventType="touchUpInside" id="1ry-LG-BmZ"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
@@ -576,19 +551,20 @@
                         <constraint firstItem="2xs-CW-hrx" firstAttribute="top" secondItem="hSo-I5-dPz" secondAttribute="top" id="VP9-zy-ilI"/>
                         <constraint firstAttribute="bottom" secondItem="2xs-CW-hrx" secondAttribute="bottom" constant="300" id="Z1h-qv-nvK"/>
                         <constraint firstItem="2xs-CW-hrx" firstAttribute="leading" secondItem="hSo-I5-dPz" secondAttribute="leading" constant="10" id="adK-Ad-zYg"/>
-                        <constraint firstItem="2xs-CW-hrx" firstAttribute="centerY" secondItem="hSo-I5-dPz" secondAttribute="centerY" id="eH5-oj-iXs"/>
-                        <constraint firstItem="2xs-CW-hrx" firstAttribute="centerX" secondItem="hSo-I5-dPz" secondAttribute="centerX" id="p97-oA-MCj"/>
                     </constraints>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hSo-I5-dPz" secondAttribute="trailing" id="A8h-xL-ygp"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hSo-I5-dPz" secondAttribute="bottom" id="Ayd-8J-8a7"/>
+                <constraint firstItem="hSo-I5-dPz" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="EJ6-0M-TdM"/>
                 <constraint firstItem="hSo-I5-dPz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="WHX-ca-afr"/>
                 <constraint firstItem="hSo-I5-dPz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="d1h-sb-fag"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="239.39732142857142"/>
         </view>
     </objects>
     <resources>

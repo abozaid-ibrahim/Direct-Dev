@@ -32,8 +32,8 @@ class PassangerFormController: UIViewController, ImagePicker {
     @IBOutlet var nationalityMotherLbl: FloatingTextField!
     // Questions
     @IBOutlet var previousVisaIdImageLbl: FloatingTextField!
-    @IBOutlet var arrivalDateLbl: FloatingTextField!
-    @IBOutlet var durationLbl: FloatingTextField!
+//    @IBOutlet var arrivalDateLbl: FloatingTextField!
+//    @IBOutlet var durationLbl: FloatingTextField!
     @IBOutlet var everHadVisaSegment: UISegmentedControl!
     @IBOutlet var traveledInLast10YrsSegment: UISegmentedControl!
     
@@ -76,10 +76,10 @@ class PassangerFormController: UIViewController, ImagePicker {
     }
     
     private func questionsSetup() {
-        arrivalDateLbl.rx.tapGesture().when(.recognized)
-            .subscribe(onNext: { _ in
-                self.showDatePickerDialog()
-            }).disposed(by: disposeBag)
+//        arrivalDateLbl.rx.tapGesture().when(.recognized)
+//            .subscribe(onNext: { _ in
+//                self.showDatePickerDialog()
+//            }).disposed(by: disposeBag)
         previousVisaIdImageLbl.rx.tapGesture().when(.recognized)
             .subscribe { _ in
                 self.showImagePicker(id: self.visaImageID)
@@ -148,7 +148,7 @@ class PassangerFormController: UIViewController, ImagePicker {
         params.previousVisaCopy = previousVisaIdImageLbl.text
         params.lang = AppLanguage.langCode
         //        params.typeOfPreviousVisa = prev
-        params.periodOfPreviousStay = durationLbl.text
+//        params.periodOfPreviousStay = durationLbl.text
     }
     
     var params = USRequestParams()

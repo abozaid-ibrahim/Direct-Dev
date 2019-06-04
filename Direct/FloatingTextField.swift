@@ -25,8 +25,12 @@ class FloatingTextField: SkyFloatingLabelTextField {
         selectedTitleColor = .lightGray
         cornerRadiusV = 8
         borderWidthV = 1
-        borderColorV = UIColor.lightGray
-        backgroundColor = .white
+        borderColorV = UIColor.appVeryLightGray
+        backgroundColor = UIColor.appVeryLightGray
+        titleLabel.font = UIFont.appRegularFontWith(size: 10)
+        placeholderFont = UIFont.appRegularFontWith(size: 10)
+        font = UIFont.appRegularFontWith(size: 14)
+        
     }
 
     let padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
