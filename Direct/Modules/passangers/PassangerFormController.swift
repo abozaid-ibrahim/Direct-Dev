@@ -1,10 +1,12 @@
 //
-//  PassangersController.swift
+//  PassangerFormController.swift
 //  Direct
 //
-//  Created by abuzeid on 5/4/19.
+//  Created by abuzeid on 6/4/19.
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
+
+import UIKit
 
 import RxSwift
 import UIKit
@@ -41,8 +43,8 @@ class PassangerFormController: UIViewController, ImagePicker {
     var receivedImage = PublishSubject<(String?, UIImage?)>()
     override func viewDidLoad() {
         super.viewDidLoad()
-//        pInfoSetup()
-//        questionsSetup()
+        pInfoSetup()
+        questionsSetup()
         addPreviousCountries()
     }
     
@@ -92,7 +94,7 @@ class PassangerFormController: UIViewController, ImagePicker {
                 self.params.visaReqID = value.1?.convertImageToBase64String()
                 self.previousVisaIdImageLbl.text = value.0
             }
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+            }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
     
     func getPreviousVisaTypes() {
@@ -100,7 +102,7 @@ class PassangerFormController: UIViewController, ImagePicker {
             if let types = value.previousVisaType {
                 self.showOptions(types)
             }
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+            }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
     
     @IBAction func submitData(_ sender: Any) {
@@ -161,8 +163,8 @@ class PassangerFormController: UIViewController, ImagePicker {
                 Progress.hide()
                 
                 try! AppNavigator().push(.successVisaReqScreen(response))
-            }, onError: { _ in
-                Progress.hide()
+                }, onError: { _ in
+                    Progress.hide()
             }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 }

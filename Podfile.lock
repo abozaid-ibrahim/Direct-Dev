@@ -2,8 +2,6 @@ PODS:
   - Alamofire (4.8.2)
   - ARSLineProgress (3.1.0)
   - Differentiator (3.1.0)
-  - Hero (1.4.0)
-  - IBAnalyzer (0.3.0)
   - JBDatePicker (1.2.5)
   - Kingfisher (5.5.0)
   - M13Checkbox (3.4.0)
@@ -30,12 +28,9 @@ PODS:
   - RxSwift (4.5.0)
   - SkyFloatingLabelTextField (3.7.0)
   - SwifterSwift/AppKit (5.0.0)
-  - YALField (1.0.1)
 
 DEPENDENCIES:
   - ARSLineProgress (~> 3.1)
-  - Hero
-  - IBAnalyzer
   - JBDatePicker
   - Kingfisher (~> 5.0)
   - M13Checkbox
@@ -48,15 +43,12 @@ DEPENDENCIES:
   - RxSwift (~> 4.0)
   - SkyFloatingLabelTextField (~> 3.0)
   - SwifterSwift/AppKit
-  - YALField
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - ARSLineProgress
     - Differentiator
-    - Hero
-    - IBAnalyzer
     - JBDatePicker
     - Kingfisher
     - M13Checkbox
@@ -70,14 +62,11 @@ SPEC REPOS:
     - RxSwift
     - SkyFloatingLabelTextField
     - SwifterSwift
-    - YALField
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   ARSLineProgress: 60778657c69491796c3faf5b834c72924c405833
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
-  Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
-  IBAnalyzer: b126675d57df92f5b2464e836f22bcc83fd4970e
   JBDatePicker: 0e791c8a79c49b0d37decea28ba147515bf5cfca
   Kingfisher: 6fe5e67a90fd335e49b0f5c075ff55ac5ebedd94
   M13Checkbox: 6f59404540ac98ba83a3d1afac335895a40c6a5d
@@ -91,8 +80,7 @@ SPEC CHECKSUMS:
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
   SwifterSwift: 96f90594b370802f01647c2b1229c74a84ffafee
-  YALField: f80f986de790bb13690264422437fa4e0593af0a
 
-PODFILE CHECKSUM: 55b9600479c403737266d7d92ebeb1356ff20d24
+PODFILE CHECKSUM: 4a08c63bf7b2cb4e7f385cd12d18d2136b6ea8a9
 
 COCOAPODS: 1.6.1

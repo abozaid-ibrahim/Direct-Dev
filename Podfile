@@ -3,7 +3,7 @@ target 'Direct' do
   use_frameworks!
 
   pod 'PanModal'
-  pod 'Hero'
+#  pod 'Hero'
   pod 'RxSwift',    '~> 4.0'
   pod 'Moya/RxSwift', '~> 13.0'
   pod 'RxOptional'
@@ -11,9 +11,9 @@ target 'Direct' do
   pod 'RxDataSources'
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'M13Checkbox'
-  pod 'IBAnalyzer'
+#  pod 'IBAnalyzer'
   pod 'RxGesture', '~> 2.1'
-  pod 'YALField'
+#  pod 'YALField'
   pod 'SwifterSwift/AppKit'
   pod 'ARSLineProgress', '~> 3.1'
   pod 'Kingfisher', '~> 5.0'

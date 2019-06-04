@@ -89,7 +89,6 @@
 		6C87FAE42270C75F00AFE485 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C87FAE22270C75F00AFE485 /* SignupViewController.swift */; };
 		6C90276E228F88CC00B41705 /* UploadField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C90276D228F88CC00B41705 /* UploadField.swift */; };
 		6C902773228F94BF00B41705 /* AboutUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C902775228F94BF00B41705 /* AboutUsViewController.xib */; };
-		6C902776228F94C500B41705 /* PassangerFormController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C902778228F94C500B41705 /* PassangerFormController.xib */; };
 		6C902779228F94CF00B41705 /* ContactUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C90277B228F94CF00B41705 /* ContactUsViewController.xib */; };
 		6C90277C228F94D700B41705 /* NewInstituteRequestController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C90277E228F94D700B41705 /* NewInstituteRequestController.xib */; };
 		6C90277F228F94E000B41705 /* InstituteDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C902781228F94E000B41705 /* InstituteDetailsController.xib */; };
@@ -131,7 +130,6 @@
 		6CA040B62281BE0300619B6F /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA040B52281BE0300619B6F /* FloatingTextField.swift */; };
 		6CB2A8BC228CAD8200A78541 /* AboutUsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB2A8BA228CAD8200A78541 /* AboutUsTableCell.swift */; };
 		6CBD17DB228BCB7300144B6C /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD17DA228BCB7300144B6C /* PaddingLabel.swift */; };
-		6CC514A2227DC43B00634B5D /* PassangerFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC514A0227DC43B00634B5D /* PassangerFormController.swift */; };
 		6CC94EDD228BE5BA002F3464 /* CommonAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC94EDC228BE5BA002F3464 /* CommonAPIs.swift */; };
 		6CC94EE2228BE7FC002F3464 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC94EE1228BE7FC002F3464 /* ApiClient.swift */; };
 		6CCE0324229C4DA4003523FE /* BioChoicesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCE0323229C4DA4003523FE /* BioChoicesResponse.swift */; };
@@ -163,6 +161,8 @@
 		6CF2514A22A6374E00CDA47C /* Passagners + Dialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514922A6374D00CDA47C /* Passagners + Dialogs.swift */; };
 		6CF2514C22A639F600CDA47C /* PassangerFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514B22A639F600CDA47C /* PassangerFormViewModel.swift */; };
 		6CF2514F22A6496200CDA47C /* PreviousTraveledCountriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514D22A6496200CDA47C /* PreviousTraveledCountriesController.swift */; };
+		6CF2515322A660A000CDA47C /* PassangerFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2515122A660A000CDA47C /* PassangerFormController.swift */; };
+		6CF2515422A660A000CDA47C /* PassangerFormController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF2515222A660A000CDA47C /* PassangerFormController.xib */; };
 		6CF3E1722271E451007488BA /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1712271E451007488BA /* Navigator.swift */; };
 		6CF3E1762271E598007488BA /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1752271E598007488BA /* RootNavigationViewController.swift */; };
 		6CF3E17E2271E702007488BA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E17D2271E702007488BA /* User.swift */; };
@@ -280,7 +280,6 @@
 		6C902771228F93BE00B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		6C902772228F93BE00B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		6C902774228F94BF00B41705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AboutUsViewController.xib; sourceTree = "<group>"; };
-		6C902777228F94C500B41705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PassangerFormController.xib; sourceTree = "<group>"; };
 		6C90277A228F94CF00B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/ContactUsViewController.xib; sourceTree = "<group>"; };
 		6C90277D228F94D700B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/NewInstituteRequestController.xib; sourceTree = "<group>"; };
 		6C902780228F94E000B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/InstituteDetailsController.xib; sourceTree = "<group>"; };
@@ -320,11 +319,9 @@
 		6C9027E9228F95E300B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/SignupViewController.xib; sourceTree = "<group>"; };
 		6C9027EC228F95EB00B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/HomeCollectionSectionWrapper.xib; sourceTree = "<group>"; };
 		6C9027EF228F960D00B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/AboutUsViewController.strings; sourceTree = "<group>"; };
-		6C9027F1228F961200B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/PassangerFormController.strings; sourceTree = "<group>"; };
 		6CA040B52281BE0300619B6F /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
 		6CB2A8BA228CAD8200A78541 /* AboutUsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsTableCell.swift; sourceTree = "<group>"; };
 		6CBD17DA228BCB7300144B6C /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
-		6CC514A0227DC43B00634B5D /* PassangerFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangerFormController.swift; sourceTree = "<group>"; };
 		6CC94EDC228BE5BA002F3464 /* CommonAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAPIs.swift; sourceTree = "<group>"; };
 		6CC94EE1228BE7FC002F3464 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		6CCE0323229C4DA4003523FE /* BioChoicesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioChoicesResponse.swift; sourceTree = "<group>"; };
@@ -356,6 +353,8 @@
 		6CF2514922A6374D00CDA47C /* Passagners + Dialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Passagners + Dialogs.swift"; sourceTree = "<group>"; };
 		6CF2514B22A639F600CDA47C /* PassangerFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangerFormViewModel.swift; sourceTree = "<group>"; };
 		6CF2514D22A6496200CDA47C /* PreviousTraveledCountriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousTraveledCountriesController.swift; sourceTree = "<group>"; };
+		6CF2515122A660A000CDA47C /* PassangerFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangerFormController.swift; sourceTree = "<group>"; };
+		6CF2515222A660A000CDA47C /* PassangerFormController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PassangerFormController.xib; sourceTree = "<group>"; };
 		6CF3E1712271E451007488BA /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		6CF3E1752271E598007488BA /* RootNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationViewController.swift; sourceTree = "<group>"; };
 		6CF3E17D2271E702007488BA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -755,14 +754,14 @@
 		6CC5149D227DC02900634B5D /* passangers */ = {
 			isa = PBXGroup;
 			children = (
-				6CC514A0227DC43B00634B5D /* PassangerFormController.swift */,
-				6C902778228F94C500B41705 /* PassangerFormController.xib */,
 				6CF1C9AF22A5DBEE0034DB39 /* PassangersInputViewViewController.swift */,
 				6CF1C9B022A5DBEE0034DB39 /* PassangersInputViewViewController.xib */,
 				6CF2514722A635E600CDA47C /* APIValues.swift */,
 				6CF2514922A6374D00CDA47C /* Passagners + Dialogs.swift */,
-				6CF2514B22A639F600CDA47C /* PassangerFormViewModel.swift */,
 				6CF2514D22A6496200CDA47C /* PreviousTraveledCountriesController.swift */,
+				6CF2514B22A639F600CDA47C /* PassangerFormViewModel.swift */,
+				6CF2515122A660A000CDA47C /* PassangerFormController.swift */,
+				6CF2515222A660A000CDA47C /* PassangerFormController.xib */,
 			);
 			path = passangers;
 			sourceTree = "<group>";
@@ -1039,9 +1038,9 @@
 				6C9027D3228F95BD00B41705 /* NewDirectVisaController.xib in Resources */,
 				6C9027D6228F95C300B41705 /* SuccessVisaRequestController.xib in Resources */,
 				6CF3E1A122725478007488BA /* OfferCollectionViewCell.xib in Resources */,
+				6CF2515422A660A000CDA47C /* PassangerFormController.xib in Resources */,
 				6C902779228F94CF00B41705 /* ContactUsViewController.xib in Resources */,
 				6C902797228F953A00B41705 /* PaymentViewController.xib in Resources */,
-				6C902776228F94C500B41705 /* PassangerFormController.xib in Resources */,
 				6C244FCC229212E600B205B9 /* HelpTableCell.xib in Resources */,
 				6C90278B228F951000B41705 /* InstituteDetailsTableCell.xib in Resources */,
 				6C5FDA572270816C00ABA39B /* LaunchScreen.storyboard in Resources */,
@@ -1100,7 +1099,6 @@
 				"${BUILT_PRODUCTS_DIR}/ARSLineProgress/ARSLineProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
-				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/JBDatePicker/JBDatePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/M13Checkbox/M13Checkbox.framework",
@@ -1114,14 +1112,12 @@
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/YALField/YALField.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ARSLineProgress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JBDatePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M13Checkbox.framework",
@@ -1135,7 +1131,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YALField.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1171,6 +1166,7 @@
 				6CF3E1AF2272558A007488BA /* InstitutesSectionVM.swift in Sources */,
 				6C8286EB228B9C96009FB5FF /* View+App.swift in Sources */,
 				3992B66722961B5F00BBB7F1 /* TagCollectionCell.swift in Sources */,
+				6CF2515322A660A000CDA47C /* PassangerFormController.swift in Sources */,
 				6CF0E3772285D78900149910 /* OrderDetailsController.swift in Sources */,
 				6C77827C227AA2C1001926B2 /* SuccessRequestInstituteController.swift in Sources */,
 				6C6EED6F22A24C680091B82F /* UpdatePaymentResponse.swift in Sources */,
@@ -1281,7 +1277,6 @@
 				6C87FAE02270C75100AFE485 /* LoginViewController.swift in Sources */,
 				6C2CFB8F2277446600D23CF4 /* SingleRowTableCell.swift in Sources */,
 				6C2CFB9822779AFD00D23CF4 /* UIButton+App.swift in Sources */,
-				6CC514A2227DC43B00634B5D /* PassangerFormController.swift in Sources */,
 				6CDEF77F22A11DDA00BF5F0B /* VisaReqConfirmationController.swift in Sources */,
 				6C2CFBA72278A1C600D23CF4 /* PaymentBranchTableCell.swift in Sources */,
 				6C3885CB229B24D300CA168A /* NetworkErrors.swift in Sources */,
@@ -1321,15 +1316,6 @@
 				6C9027EF228F960D00B41705 /* ar */,
 			);
 			name = AboutUsViewController.xib;
-			sourceTree = "<group>";
-		};
-		6C902778228F94C500B41705 /* PassangerFormController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6C902777228F94C500B41705 /* Base */,
-				6C9027F1228F961200B41705 /* ar */,
-			);
-			name = PassangerFormController.xib;
 			sourceTree = "<group>";
 		};
 		6C90277B228F94CF00B41705 /* ContactUsViewController.xib */ = {
