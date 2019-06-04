@@ -34,10 +34,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mN2-Fx-UkU">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="1020"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="855"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="mds-7q-rFp" userLabel="conent">
-                            <rect key="frame" x="15" y="0.0" width="345" height="1020"/>
+                            <rect key="frame" x="15" y="0.0" width="345" height="855"/>
                             <subviews>
                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4p-nI-fOB" userLabel="personal info">
                                     <rect key="frame" x="0.0" y="0.0" width="345" height="290"/>
@@ -351,7 +351,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pfD-FC-mRh">
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pfD-FC-mRh">
                                             <rect key="frame" x="8" y="62" width="73" height="31"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="bGY-lT-gvn"/>
@@ -410,8 +410,8 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ha-2b-ygb" userLabel="p4">
-                                    <rect key="frame" x="0.0" y="656" width="345" height="150"/>
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ha-2b-ygb" userLabel="p4">
+                                    <rect key="frame" x="0.0" y="648.5" width="345" height="150"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="هل سافرت الى بريطانيا في العشر سنوات الاخيرة ؟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtG-hg-crn">
                                             <rect key="frame" x="8" y="8" width="329" height="39"/>
@@ -479,7 +479,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aaZ-b2-9Bp" userLabel="p5">
-                                    <rect key="frame" x="0.0" y="821" width="345" height="150"/>
+                                    <rect key="frame" x="0.0" y="656" width="345" height="150"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="LdM-Bo-Vvs" userLabel="p1 stack">
                                             <rect key="frame" x="8" y="8" width="329" height="134"/>
@@ -552,7 +552,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHw-JG-dWw">
-                                    <rect key="frame" x="0.0" y="986" width="345" height="34"/>
+                                    <rect key="frame" x="0.0" y="821" width="345" height="34"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="34" id="Ecw-9f-syQ"/>
                                     </constraints>
@@ -562,6 +562,9 @@
                                             <integer key="value" value="1"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="submitData:" destination="-1" eventType="touchUpInside" id="9SB-cx-y2w"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
@@ -585,7 +588,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="53.600000000000001" y="27.886056971514247"/>
+            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
         </view>
     </objects>
 </document>

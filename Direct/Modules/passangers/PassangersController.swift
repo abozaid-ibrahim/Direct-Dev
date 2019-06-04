@@ -69,6 +69,9 @@ class PassangersController: UIViewController, ImagePicker {
             }
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
+    @IBAction func submitData(_ sender: Any) {
+        submit()
+    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         let image = info[.editedImage] as? UIImage
@@ -109,8 +112,8 @@ class PassangersController: UIViewController, ImagePicker {
         params.mothersFamilyName = familyNameMotherLbl.text
         params.nationality = nationalityMotherLbl.text
         // Questions
-        params.everIssuedVisaBefore = "\(everHadVisaSegment.state)"
-        params.travelledBeforeHere = "\(traveledInLast10YrsSegment.state)"
+        params.everIssuedVisaBefore = "\(everHadVisaSegment.state == .selected ? 1 : 0 )"
+        params.travelledBeforeHere = "\(traveledInLast10YrsSegment.state == .selected ? 1 : 0 )"
         
         // Others PDF
         //        params.personalPhotoCopy
@@ -128,9 +131,12 @@ class PassangersController: UIViewController, ImagePicker {
         Progress.show()
         network.applyToUSVisa(params: params)
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [unowned self] _ in
+            .subscribe(onNext: { [unowned self] response in
+              Progress.hide()
                 
-                try! AppNavigator().push(.successVisaReqScreen)
-            }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+                try! AppNavigator().push(.successVisaReqScreen(response))
+            }, onError: {e in
+                Progress.hide()
+            } , onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 }

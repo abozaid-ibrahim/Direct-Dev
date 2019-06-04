@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+protocol PassangerInputsConnection {
+    func submit()
+}
 class PassangersInputViewViewController: UIViewController {
     @IBOutlet var containerView: UIView!
     @IBOutlet var tabbarView: TabBar!
@@ -64,8 +66,5 @@ class PassangersInputViewViewController: UIViewController {
             item.1.view.isHidden = index == i ? false : true
         }
     }
-    
-    @IBAction func followAction(_: Any) {
-        try! AppNavigator().push(.successVisaReqScreen)
-    }
+   
 }
