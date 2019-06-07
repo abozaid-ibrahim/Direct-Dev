@@ -24,6 +24,7 @@ class PassangersInputViewViewController: UIViewController {
     var tabs: [(TAB, PassangerFormController)] = []
     private func setupTabbar() {
         guard let info = visaInfo else { return }
+        
         for index in 0..<Int(info.no_of_adult)! {
             let tab1VC = PassangerFormController()
             let tab1 = ("بالغ" + " " + "\(index + 1)", { [weak self] in

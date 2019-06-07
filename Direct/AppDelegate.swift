@@ -16,9 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setRootController()
         setupGlobalAppearance()
         setLanguage()
-        for familyName in UIFont.familyNames {
-            print(UIFont.fontNames(forFamilyName: familyName))
-        }
+//        for familyName in UIFont.familyNames {
+//            print(UIFont.fontNames(forFamilyName: familyName))
+//        }
 
         return true
     }
@@ -36,7 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITextField.appearance().substituteFontName = AppFonts.regularFont
         UILabel.appearance().substituteFontName = AppFonts.regularFont
         UILabel.appearance().substituteFontNameBold = AppFonts.boldFont
-        
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: AppFonts.regularFont, size: 11)!, NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
     }
 
@@ -49,5 +48,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = root
         window?.makeKeyAndVisible()
         navigator = AppNavigator(root: root)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+            let x = VisaRequestParams()
+            x.no_of_adult = "1"
+            x.no_of_child = "1"
+            try? AppNavigator().push(.passangersInfoScreen(x))
+        })
     }
 }
+

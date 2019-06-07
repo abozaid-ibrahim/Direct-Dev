@@ -12,14 +12,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PassangerFormController" customModule="Direct" customModuleProvider="target">
             <connections>
-                <outlet property="everHadVisaSegment" destination="Rs5-Tl-9eQ" id="yJ3-ge-EEQ"/>
+                <outlet property="countriesContainerHeight" destination="f3N-a3-cd0" id="RqR-iU-2uS"/>
+                <outlet property="everHadVisaSegment" destination="8Nh-5G-xSX" id="jie-o3-1I5"/>
                 <outlet property="familyIDPInfoLbl" destination="TKR-FA-JXh" id="BU6-Tx-ywC"/>
                 <outlet property="familyNameMotherLbl" destination="4jh-8C-l0V" id="IQw-9H-1oh"/>
                 <outlet property="familyNamePInfoLbl" destination="vrR-hq-2s5" id="yba-vK-H8I"/>
                 <outlet property="firstNameMotherLbl" destination="4jh-8C-l0V" id="YAo-KT-BvK"/>
                 <outlet property="firstNamePInfoLbl" destination="m0e-OQ-wcS" id="mII-uc-8pq"/>
                 <outlet property="husbundPInfoLbl" destination="mMM-Eh-ZZ3" id="WEw-J9-99R"/>
-                <outlet property="isHusbandWillTravelView" destination="mMM-Eh-ZZ3" id="NsL-Ho-yDa"/>
+                <outlet property="isHusbandWillTravelView" destination="25P-yK-KWg" id="twy-Bb-84h"/>
                 <outlet property="nationalityMotherLbl" destination="Vdd-2N-Chk" id="34v-4j-Ylr"/>
                 <outlet property="previousVisaIdImageLbl" destination="q59-Z3-9J1" id="e9v-g1-Erj"/>
                 <outlet property="previouslyTraveledCountriesView" destination="wwd-0y-oSK" id="4Qw-CR-4w5"/>
@@ -37,7 +38,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="1145"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2xs-CW-hrx" userLabel="conent">
-                            <rect key="frame" x="10" y="0.0" width="394" height="1070"/>
+                            <rect key="frame" x="10" y="0.0" width="394" height="1010"/>
                             <subviews>
                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGe-Ha-rxi" userLabel="personal info">
                                     <rect key="frame" x="0.0" y="0.0" width="394" height="290"/>
@@ -390,9 +391,6 @@
                                                 <segment title="نعم "/>
                                             </segments>
                                             <color key="tintColor" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <connections>
-                                                <action selector="previousVisaTypeChanged:" destination="-1" eventType="valueChanged" id="xJT-ih-yao"/>
-                                            </connections>
                                         </segmentedControl>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q59-Z3-9J1" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
                                             <rect key="frame" x="8" y="102" width="378" height="45"/>
@@ -510,11 +508,11 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwd-0y-oSK" userLabel="p5">
-                                    <rect key="frame" x="0.0" y="821" width="394" height="200"/>
+                                <view contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="wwd-0y-oSK" userLabel="p5">
+                                    <rect key="frame" x="0.0" y="821" width="394" height="140"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="200" id="yue-2m-2o6"/>
+                                        <constraint firstAttribute="height" constant="140" id="f3N-a3-cd0"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
@@ -529,7 +527,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Tq-2F-bE9">
-                                    <rect key="frame" x="0.0" y="1036" width="394" height="34"/>
+                                    <rect key="frame" x="0.0" y="976" width="394" height="34"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="34" id="1L4-Ys-hfN"/>
                                     </constraints>
@@ -549,7 +547,7 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="2xs-CW-hrx" secondAttribute="trailing" constant="10" id="Rgg-cs-iJ4"/>
                         <constraint firstItem="2xs-CW-hrx" firstAttribute="top" secondItem="hSo-I5-dPz" secondAttribute="top" id="VP9-zy-ilI"/>
-                        <constraint firstAttribute="bottom" secondItem="2xs-CW-hrx" secondAttribute="bottom" constant="300" id="Z1h-qv-nvK"/>
+                        <constraint firstAttribute="bottom" secondItem="2xs-CW-hrx" secondAttribute="bottom" constant="80" id="Z1h-qv-nvK"/>
                         <constraint firstItem="2xs-CW-hrx" firstAttribute="leading" secondItem="hSo-I5-dPz" secondAttribute="leading" constant="10" id="adK-Ad-zYg"/>
                     </constraints>
                 </scrollView>

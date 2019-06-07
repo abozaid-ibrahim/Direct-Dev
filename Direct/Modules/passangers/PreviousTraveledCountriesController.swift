@@ -13,30 +13,40 @@ class PreviousTraveledCountriesController: UIViewController {
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var addButton: UIButton!
     private let disposeBag = DisposeBag()
+    var tableHeight = PublishSubject<CGFloat>()
     var countries = PublishSubject<[String]>()
     var items: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTable()
-        tableView.defaultSeperator()
         addButton.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
                 self.showEnterField()
             }).disposed(by: disposeBag)
+        tableView.rx.observeWeakly(CGSize.self, contentSizeKey).subscribe(onNext: { [unowned self] _ in
+            self.tableHeight.onNext(self.tableView.contentSize.height + self.headerHeight)
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 
+    private let headerHeight = CGFloat(85)
+    private let contentSizeKey = "contentSize"
+
     func setupTable() {
-        tableView.register(CountryCell.self, forCellReuseIdentifier: CountryCell.id)
-        Observable.just(["asdfa","asfsd"])
-            .bind(to: tableView.rx.items(cellIdentifier: CountryCell.id, cellType: UITableViewCell.self)) { _, element, cell in
-                guard let myCell = cell as? CountryCell else { return }
-                myCell.textLbl.text = element
+        countries
+            .bind(to: tableView.rx.items(cellIdentifier: CountryCell.id, cellType: CountryCell.self)) { pos, element, cell in
+                cell.textLbl.text = element
+                cell.deleteBtn.rx.tapGesture().when(.recognized)
+                    .subscribe(onNext: { _ in
+                        self.items.remove(at: pos)
+                        self.countries.onNext(self.items)
+                    }).disposed(by: cell.disposeBag)
             }
             .disposed(by: disposeBag)
     }
 
     func showEnterField() {
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "اختر اسم الدولة وعام السفر", message: nil, preferredStyle: .alert)
         alert.setTint(color: UIColor.appMango)
         alert.setBackgroudColor(color: UIColor.appVeryLightGray)
         alert.addTextField { (textField) -> Void in
@@ -62,7 +72,17 @@ class PreviousTraveledCountriesController: UIViewController {
 }
 
 class CountryCell: UITableViewCell {
+    let disposeBag = DisposeBag()
     static let id = "CountryCell"
     @IBOutlet var textLbl: UILabel!
     @IBOutlet var deleteBtn: UIImageView!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5))
+    }
 }
