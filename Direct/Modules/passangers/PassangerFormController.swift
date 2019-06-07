@@ -269,6 +269,14 @@ extension PassangerFormController {
             statusPInfoLbl.setError.onNext(true)
             return false
         }
+        if !isHusbandWillTravelView.isHidden {
+            if husbundPInfoLbl.text.isValidText {
+                husbundPInfoLbl.setError.onNext(false)
+            } else {
+                husbundPInfoLbl.setError.onNext(true)
+                return false
+            }
+        }
         if params.familyIDCopy.isValidText {
             familyNamePInfoLbl.setError.onNext(false)
         } else {
