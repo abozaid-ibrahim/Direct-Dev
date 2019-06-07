@@ -16,9 +16,9 @@ class PassangerFormController: UIViewController, ImagePicker {
     let familyImageID = 30
     let visaImageID = 23
     var countryId: String?
+    var index:Int?
     
     // MARK: IBuilder ====================================>>
-    
     // Family
     @IBOutlet var firstNamePInfoLbl: FloatingTextField!
     @IBOutlet var familyNamePInfoLbl: FloatingTextField!
@@ -33,8 +33,6 @@ class PassangerFormController: UIViewController, ImagePicker {
     @IBOutlet var nationalityMotherLbl: FloatingTextField!
     // Questions
     @IBOutlet var previousVisaIdImageLbl: FloatingTextField!
-//    @IBOutlet var arrivalDateLbl: FloatingTextField!
-//    @IBOutlet var durationLbl: FloatingTextField!
     @IBOutlet var countriesContainerHeight: NSLayoutConstraint!
     @IBOutlet var everHadVisaSegment: UISegmentedControl! {
         didSet {
@@ -89,10 +87,6 @@ class PassangerFormController: UIViewController, ImagePicker {
     }
     
     private func questionsSetup() {
-//        arrivalDateLbl.rx.tapGesture().when(.recognized)
-//            .subscribe(onNext: { _ in
-//                self.showDatePickerDialog()
-//            }).disposed(by: disposeBag)
         
         previousVisaIdImageLbl.rx.tapGesture().when(.recognized)
             .subscribe { _ in
@@ -207,82 +201,10 @@ class PassangerFormController: UIViewController, ImagePicker {
         api.observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] response in
                 Progress.hide()
-                
+               
                 try! AppNavigator().push(.successVisaReqScreen(response))
             }, onError: { _ in
                 Progress.hide()
             }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
-    }
-}
-
-extension UISegmentedControl {
-    func appFont() {
-        let font = UIFont.appRegularFontWith(size: 13)
-        setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
-    }
-}
-
-extension Optional where Wrapped == String {
-    var isValidText: Bool {
-        if let value = self {
-            return !value.isEmpty
-        }
-        return false
-    }
-}
-
-// Validation
-extension PassangerFormController {
-    func isValidateFamilySectionTextFields() -> Bool {
-        if params.mothersFirstName.isValidText {
-            firstNameMotherLbl.setError.onNext(false)
-        } else {
-            firstNameMotherLbl.setError.onNext(true)
-            return false
-        }
-        if params.mothersFamilyName.isValidText {
-            familyNameMotherLbl.setError.onNext(false)
-        } else {
-            familyNamePInfoLbl.setError.onNext(true)
-            return false
-        }
-        
-        return true
-    }
-    
-    func isValidatePersonalSectionTextFields() -> Bool {
-        if params.firstName.isValidText {
-            firstNamePInfoLbl.setError.onNext(false)
-        } else {
-            firstNamePInfoLbl.setError.onNext(true)
-            return false
-        }
-        if params.familyName.isValidText {
-            familyNamePInfoLbl.setError.onNext(false)
-        } else {
-            familyNamePInfoLbl.setError.onNext(true)
-            return false
-        }
-        if params.martialStatus.isValidText {
-            statusPInfoLbl.setError.onNext(false)
-        } else {
-            statusPInfoLbl.setError.onNext(true)
-            return false
-        }
-        if !isHusbandWillTravelView.isHidden {
-            if husbundPInfoLbl.text.isValidText {
-                husbundPInfoLbl.setError.onNext(false)
-            } else {
-                husbundPInfoLbl.setError.onNext(true)
-                return false
-            }
-        }
-        if params.familyIDCopy.isValidText {
-            familyNamePInfoLbl.setError.onNext(false)
-        } else {
-            familyNamePInfoLbl.setError.onNext(true)
-            return false
-        }
-        return true
     }
 }

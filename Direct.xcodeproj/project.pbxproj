@@ -146,6 +146,7 @@
 		6CDB3C9A22AA683D00C0165C /* InputsJsonBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDB3C9922AA683D00C0165C /* InputsJsonBuilder.swift */; };
 		6CDB3C9B22AA6A1700C0165C /* InputsJsonBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDB3C9922AA683D00C0165C /* InputsJsonBuilder.swift */; };
 		6CDB3C9D22AA6DF200C0165C /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDB3C9C22AA6DF200C0165C /* APIConstants.swift */; };
+		6CDB3C9F22AA7B6000C0165C /* UISegment +APP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDB3C9E22AA7B6000C0165C /* UISegment +APP.swift */; };
 		6CDEBBE62284C55800EC3E6F /* PassangersCountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEBBE42284C55800EC3E6F /* PassangersCountController.swift */; };
 		6CDEBBEC2284FDA000EC3E6F /* PackagesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEBBEA2284FDA000EC3E6F /* PackagesTableCell.swift */; };
 		6CDEBBF02285012400EC3E6F /* PackageDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEBBEE2285012400EC3E6F /* PackageDetailsController.swift */; };
@@ -163,7 +164,7 @@
 		6CF2514622A62F1000CDA47C /* PreviousVisaTypeJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514522A62F1000CDA47C /* PreviousVisaTypeJson.swift */; };
 		6CF2514822A635E600CDA47C /* APIValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514722A635E600CDA47C /* APIValues.swift */; };
 		6CF2514A22A6374E00CDA47C /* Passagners + Dialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514922A6374D00CDA47C /* Passagners + Dialogs.swift */; };
-		6CF2514C22A639F600CDA47C /* PassangerFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514B22A639F600CDA47C /* PassangerFormViewModel.swift */; };
+		6CF2514C22A639F600CDA47C /* PassangerFormValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514B22A639F600CDA47C /* PassangerFormValidation.swift */; };
 		6CF2514F22A6496200CDA47C /* PreviousTraveledCountriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514D22A6496200CDA47C /* PreviousTraveledCountriesController.swift */; };
 		6CF2515322A660A000CDA47C /* PassangerFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2515122A660A000CDA47C /* PassangerFormController.swift */; };
 		6CF2515422A660A000CDA47C /* PassangerFormController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF2515222A660A000CDA47C /* PassangerFormController.xib */; };
@@ -353,6 +354,7 @@
 		6CDB3C9422AA67DD00C0165C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CDB3C9922AA683D00C0165C /* InputsJsonBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputsJsonBuilder.swift; sourceTree = "<group>"; };
 		6CDB3C9C22AA6DF200C0165C /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		6CDB3C9E22AA7B6000C0165C /* UISegment +APP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegment +APP.swift"; sourceTree = "<group>"; };
 		6CDEBBE42284C55800EC3E6F /* PassangersCountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangersCountController.swift; sourceTree = "<group>"; };
 		6CDEBBEA2284FDA000EC3E6F /* PackagesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesTableCell.swift; sourceTree = "<group>"; };
 		6CDEBBEE2285012400EC3E6F /* PackageDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailsController.swift; sourceTree = "<group>"; };
@@ -370,7 +372,7 @@
 		6CF2514522A62F1000CDA47C /* PreviousVisaTypeJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousVisaTypeJson.swift; sourceTree = "<group>"; };
 		6CF2514722A635E600CDA47C /* APIValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIValues.swift; sourceTree = "<group>"; };
 		6CF2514922A6374D00CDA47C /* Passagners + Dialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Passagners + Dialogs.swift"; sourceTree = "<group>"; };
-		6CF2514B22A639F600CDA47C /* PassangerFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangerFormViewModel.swift; sourceTree = "<group>"; };
+		6CF2514B22A639F600CDA47C /* PassangerFormValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangerFormValidation.swift; sourceTree = "<group>"; };
 		6CF2514D22A6496200CDA47C /* PreviousTraveledCountriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousTraveledCountriesController.swift; sourceTree = "<group>"; };
 		6CF2515122A660A000CDA47C /* PassangerFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangerFormController.swift; sourceTree = "<group>"; };
 		6CF2515222A660A000CDA47C /* PassangerFormController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PassangerFormController.xib; sourceTree = "<group>"; };
@@ -788,7 +790,7 @@
 				6CF2514722A635E600CDA47C /* APIValues.swift */,
 				6CF2514922A6374D00CDA47C /* Passagners + Dialogs.swift */,
 				6CF2514D22A6496200CDA47C /* PreviousTraveledCountriesController.swift */,
-				6CF2514B22A639F600CDA47C /* PassangerFormViewModel.swift */,
+				6CF2514B22A639F600CDA47C /* PassangerFormValidation.swift */,
 				6CF2515122A660A000CDA47C /* PassangerFormController.swift */,
 				6CF2515222A660A000CDA47C /* PassangerFormController.xib */,
 				6CDB3C9922AA683D00C0165C /* InputsJsonBuilder.swift */,
@@ -810,6 +812,7 @@
 				6C77828B227C715A001926B2 /* ImageLabel.swift */,
 				6C5DE87E22872F0900F900AE /* TextTableCell.swift */,
 				6C9027BD228F958C00B41705 /* TextTableCell.xib */,
+				6CDB3C9E22AA7B6000C0165C /* UISegment +APP.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1261,6 +1264,7 @@
 				6CC94EE2228BE7FC002F3464 /* ApiClient.swift in Sources */,
 				6CD2CE5B22A0C9D000FB308A /* DataTypes.swift in Sources */,
 				6CF3E1B8227268CF007488BA /* HomeCollectionSectionHeader.swift in Sources */,
+				6CDB3C9F22AA7B6000C0165C /* UISegment +APP.swift in Sources */,
 				6CDEBBF02285012400EC3E6F /* PackageDetailsController.swift in Sources */,
 				6CCF4A05229F6FF60031B648 /* VisaReqForCountryResponse.swift in Sources */,
 				6C5DE88022872F0900F900AE /* TextTableCell.swift in Sources */,
@@ -1350,7 +1354,7 @@
 				6CDEF77F22A11DDA00BF5F0B /* VisaReqConfirmationController.swift in Sources */,
 				6C2CFBA72278A1C600D23CF4 /* PaymentBranchTableCell.swift in Sources */,
 				6C3885CB229B24D300CA168A /* NetworkErrors.swift in Sources */,
-				6CF2514C22A639F600CDA47C /* PassangerFormViewModel.swift in Sources */,
+				6CF2514C22A639F600CDA47C /* PassangerFormValidation.swift in Sources */,
 				6C29DD2422A5F66C0047DF54 /* USVisaRequestParams.swift in Sources */,
 				6C2CFB8C2277422900D23CF4 /* PackagesViewController.swift in Sources */,
 				6C87FADC2270C74000AFE485 /* UserAuthViewController.swift in Sources */,

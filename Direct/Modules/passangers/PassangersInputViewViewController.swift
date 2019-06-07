@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+
 protocol PassangerInputsConnection {
     func submit()
 }
@@ -14,7 +16,9 @@ class PassangersInputViewViewController: UIViewController {
     @IBOutlet var containerView: UIView!
     @IBOutlet var tabbarView: TabBar!
     var visaInfo: VisaRequestParams?
-    
+    var successInputIndexes:[Int] = []
+    var successIndex = PublishSubject<Int>()
+    private let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "معلومات المسافرين"
@@ -28,6 +32,7 @@ class PassangersInputViewViewController: UIViewController {
         for index in 0..<Int(info.no_of_adult)! {
             let tab1VC = PassangerFormController()
             tab1VC.countryId = info.country_id
+            tab1VC.index = index
             let tab1 = ("بالغ" + " " + "\(index + 1)", { [weak self] in
                 self?.selectTab(index, tab1VC)
             })
@@ -48,6 +53,15 @@ class PassangersInputViewViewController: UIViewController {
             selectTab(0, first.1)
             
         }
+        successIndex.subscribe(onNext: {[unowned self] value in
+            self.successInputIndexes.append(value)
+            for tab in self.tabs{
+                if !self.successInputIndexes.contains((tab.1.index ?? -1 ) ){
+                    self.selectTab((tab.1.index ?? -1), tab.1)
+                    break
+                }
+            }
+            }, onError: nil, onCompleted: nil, onDisposed:  nil).disposed(by: disposeBag)
     }
     
     private func selectTab(_ index: Int, _ tab1VC: PassangerFormController) {
