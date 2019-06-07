@@ -465,10 +465,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdC-TN-SmQ">
-                                <rect key="frame" x="8" y="32.5" width="70" height="30"/>
+                                <rect key="frame" x="8" y="32.5" width="70" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="fp1-td-rjm"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title=" + أضف">
                                     <color key="titleColor" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -485,14 +486,14 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="55" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Oqq-H0-uzA">
-                                <rect key="frame" x="8" y="70.5" width="398" height="817.5"/>
+                                <rect key="frame" x="8" y="72.5" width="398" height="815.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountryCell" id="ljg-jk-ues" customClass="CountryCell" customModule="Direct" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="398" height="50"/>
+                                        <rect key="frame" x="0.0" y="28" width="398" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ljg-jk-ues" id="SCO-Og-M7j">
-                                            <rect key="frame" x="0.0" y="0.0" width="398" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="398" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="saB-OG-pZO">

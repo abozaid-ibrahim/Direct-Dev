@@ -11,7 +11,11 @@ import UIKit
 
 class PreviousTraveledCountriesController: UIViewController {
     @IBOutlet private var tableView: UITableView!
-    @IBOutlet private var addButton: UIButton!
+    @IBOutlet private var addButton: UIButton!{
+        didSet{
+            addButton.titleLabel?.font  = UIFont.appRegularFontWith(size: 15)
+        }
+    }
     private let disposeBag = DisposeBag()
     var tableHeight = PublishSubject<CGFloat>()
     var countries = PublishSubject<[String]>()

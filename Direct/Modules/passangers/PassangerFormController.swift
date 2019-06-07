@@ -34,14 +34,15 @@ class PassangerFormController: UIViewController, ImagePicker {
     @IBOutlet var previousVisaIdImageLbl: FloatingTextField!
 //    @IBOutlet var arrivalDateLbl: FloatingTextField!
 //    @IBOutlet var durationLbl: FloatingTextField!
-    @IBOutlet weak var countriesContainerHeight: NSLayoutConstraint!
-    @IBOutlet var everHadVisaSegment: UISegmentedControl!{
-        didSet{
+    @IBOutlet var countriesContainerHeight: NSLayoutConstraint!
+    @IBOutlet var everHadVisaSegment: UISegmentedControl! {
+        didSet {
             everHadVisaSegment.appFont()
         }
     }
-    @IBOutlet var traveledInLast10YrsSegment: UISegmentedControl!{
-        didSet{
+    
+    @IBOutlet var traveledInLast10YrsSegment: UISegmentedControl! {
+        didSet {
             traveledInLast10YrsSegment.appFont()
         }
     }
@@ -55,10 +56,10 @@ class PassangerFormController: UIViewController, ImagePicker {
         pInfoSetup()
         questionsSetup()
         addPreviousCountries()
-        
     }
+    
     let travels = UIStoryboard.visa.instantiateViewController(withIdentifier: "PreviousTraveledCountriesController") as! PreviousTraveledCountriesController
-
+    
     private func addPreviousCountries() {
         addChild(travels)
         previouslyTraveledCountriesView.addSubview(travels.view)
@@ -105,7 +106,7 @@ class PassangerFormController: UIViewController, ImagePicker {
                 self.params.visaReqID = value.1?.convertImageToBase64String()
                 self.previousVisaIdImageLbl.text = value.0
             }
-            }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
     
     func getPreviousVisaTypes() {
@@ -113,7 +114,7 @@ class PassangerFormController: UIViewController, ImagePicker {
             if let types = value.previousVisaType {
                 self.showOptions(types)
             }
-            }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
     
     @IBAction func submitData(_ sender: Any) {
@@ -162,7 +163,11 @@ class PassangerFormController: UIViewController, ImagePicker {
 //        params.periodOfPreviousStay = durationLbl.text
         
         //
-        params.travelledBeforeHere = travels.items.joined(separator: ",")
+        params.travelledBeforeHere = prevTravelsJson
+    }
+    
+    var prevTravelsJson: String {
+        return InputJsonBuilder().buildPassangers(travels.items)
     }
     
     var params = USRequestParams()
@@ -177,15 +182,15 @@ class PassangerFormController: UIViewController, ImagePicker {
                 Progress.hide()
                 
                 try! AppNavigator().push(.successVisaReqScreen(response))
-                }, onError: { _ in
-                    Progress.hide()
+            }, onError: { _ in
+                Progress.hide()
             }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 }
-extension UISegmentedControl{
-    func appFont(){
-        let font = UIFont.appRegularFontWith(size: 13)
-        self.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
 
+extension UISegmentedControl {
+    func appFont() {
+        let font = UIFont.appRegularFontWith(size: 13)
+        setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
     }
 }
