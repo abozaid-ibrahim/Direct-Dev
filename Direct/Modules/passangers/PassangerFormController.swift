@@ -15,6 +15,7 @@ class PassangerFormController: UIViewController, ImagePicker {
     var currentImageID: Int = 0
     let familyImageID = 30
     let visaImageID = 23
+    var countryId: String?
     
     // MARK: IBuilder ====================================>>
     
@@ -92,6 +93,7 @@ class PassangerFormController: UIViewController, ImagePicker {
 //            .subscribe(onNext: { _ in
 //                self.showDatePickerDialog()
 //            }).disposed(by: disposeBag)
+        
         previousVisaIdImageLbl.rx.tapGesture().when(.recognized)
             .subscribe { _ in
                 self.showImagePicker(id: self.visaImageID)
@@ -139,7 +141,17 @@ class PassangerFormController: UIViewController, ImagePicker {
         }
     }
     
-    func validateTextFields() {}
+    func isValidateTextFields() -> Bool {
+        if !isValidatePersonalSectionTextFields() {
+            return false
+        }
+        if !isValidateFamilySectionTextFields() {
+            return false
+        }
+        
+        return true
+    }
+    
     func fillParams() {
         /// Personal Info
         params.firstName = firstNamePInfoLbl.text
@@ -174,10 +186,25 @@ class PassangerFormController: UIViewController, ImagePicker {
     private let network = ApiClientFacade()
     func submit() {
         fillParams()
-        validateTextFields()
+        guard isValidateTextFields() else {
+            return
+        }
+        guard let id = countryId else {
+            return
+        }
         Progress.show()
-        network.applyToUSVisa(params: params)
-            .observeOn(MainScheduler.instance)
+        
+        if id == APIConstants.USID {
+            sendDataToServer(network.applyToUSVisa(params: params))
+        } else if id == APIConstants.UKID {
+            sendDataToServer(network.applyToUKVisa(params: params))
+        } else {
+            sendDataToServer(network.applyToUSVisa(params: params))
+        }
+    }
+    
+    func sendDataToServer(_ api: Observable<USVvisaRequestJSONResponse>) {
+        api.observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] response in
                 Progress.hide()
                 
@@ -192,5 +219,62 @@ extension UISegmentedControl {
     func appFont() {
         let font = UIFont.appRegularFontWith(size: 13)
         setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
+    }
+}
+
+extension Optional where Wrapped == String {
+    var isValidText: Bool {
+        if let value = self {
+            return !value.isEmpty
+        }
+        return false
+    }
+}
+
+// Validation
+extension PassangerFormController {
+    func isValidateFamilySectionTextFields() -> Bool {
+        if params.mothersFirstName.isValidText {
+            firstNameMotherLbl.setError.onNext(false)
+        } else {
+            firstNameMotherLbl.setError.onNext(true)
+            return false
+        }
+        if params.mothersFamilyName.isValidText {
+            familyNameMotherLbl.setError.onNext(false)
+        } else {
+            familyNamePInfoLbl.setError.onNext(true)
+            return false
+        }
+        
+        return true
+    }
+    
+    func isValidatePersonalSectionTextFields() -> Bool {
+        if params.firstName.isValidText {
+            firstNamePInfoLbl.setError.onNext(false)
+        } else {
+            firstNamePInfoLbl.setError.onNext(true)
+            return false
+        }
+        if params.familyName.isValidText {
+            familyNamePInfoLbl.setError.onNext(false)
+        } else {
+            familyNamePInfoLbl.setError.onNext(true)
+            return false
+        }
+        if params.martialStatus.isValidText {
+            statusPInfoLbl.setError.onNext(false)
+        } else {
+            statusPInfoLbl.setError.onNext(true)
+            return false
+        }
+        if params.familyIDCopy.isValidText {
+            familyNamePInfoLbl.setError.onNext(false)
+        } else {
+            familyNamePInfoLbl.setError.onNext(true)
+            return false
+        }
+        return true
     }
 }

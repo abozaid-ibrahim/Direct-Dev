@@ -27,6 +27,7 @@ class PassangersInputViewViewController: UIViewController {
         
         for index in 0..<Int(info.no_of_adult)! {
             let tab1VC = PassangerFormController()
+            tab1VC.countryId = info.country_id
             let tab1 = ("بالغ" + " " + "\(index + 1)", { [weak self] in
                 self?.selectTab(index, tab1VC)
             })

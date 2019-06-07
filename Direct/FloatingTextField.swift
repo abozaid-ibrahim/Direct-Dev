@@ -8,8 +8,11 @@
 
 import SkyFloatingLabelTextField
 import UIKit
+import RxSwift
 
 class FloatingTextField: SkyFloatingLabelTextField {
+    var setError = PublishSubject<Bool>()
+private let disposeBag = DisposeBag()
     override init(frame: CGRect) {
         super.init(frame: frame)
         CommonInit()
@@ -27,9 +30,32 @@ class FloatingTextField: SkyFloatingLabelTextField {
         borderWidthV = 1
         borderColorV = UIColor.appVeryLightGray
         backgroundColor = UIColor.appVeryLightGray
+        titleFont =  UIFont.appRegularFontWith(size: 10)
         titleLabel.font = UIFont.appRegularFontWith(size: 10)
         placeholderFont = UIFont.appRegularFontWith(size: 10)
+        errorColor = UIColor.appMango
+    
         font = UIFont.appRegularFontWith(size: 14)
+        
+        
+        setError.subscribe(onNext: {[unowned self] value in
+            if value{
+                self.layer.borderColor = UIColor.appMango.cgColor
+                self.layer.borderWidth = 1.5
+                self.errorMessage = self.placeholder
+                UIView.animate(withDuration: 0.25, delay: 0, options: [.curveEaseInOut], animations: {
+                    self.alpha = 0.6
+                }, completion: { _ in
+                    self.alpha = 1.0
+                    
+                })
+            }else{
+                self.layer.borderWidth = 0
+                 self.errorMessage = nil
+            }
+            
+            
+            }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
     }
 
