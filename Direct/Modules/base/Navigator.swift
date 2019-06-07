@@ -16,7 +16,7 @@ enum Destination {
     case loginView, signupView, homeScreen, visaRequirement(VisaRequestParams),
         selectableSheet(data: [String], titleText: String?,
                         style: CellStyle),
-        paymentMethod(VisaRequestParams), passangersCount, newInstitueVisa, datePicker, hostsInfoScreen, passangersInfoScreen(VisaRequestParams), successVisaReqScreen(USVvisaRequestJSONResponse), MyOrders, orderDetails, institutesList, instituteDetails, packageDetails, successPackage, banks, newDirectVisa, searchCountries, confirmatonVisa(VisaRequestParams)
+        paymentMethod(VisaRequestParams), passangersCount, newInstitueVisa, datePicker, hostsInfoScreen, passangersInfoScreen(VisaRequestParams), successVisaReqScreen(USVvisaRequestJSONResponse?), MyOrders, orderDetails, institutesList, instituteDetails, packageDetails, successPackage, banks, newDirectVisa, searchCountries, confirmatonVisa(VisaRequestParams)
     func controller() -> UIViewController {
         switch self {
         case .loginView:
@@ -59,7 +59,7 @@ enum Destination {
             return vc
         case .successVisaReqScreen(let prm):
             let vc = SuccessVisaRequestController()
-            vc.orderId = prm.applyGB?.first?.success
+//            vc.orderId = prm.applyGB?.first?.success
             return vc
         case .MyOrders:
             return OrdersHistoryController()

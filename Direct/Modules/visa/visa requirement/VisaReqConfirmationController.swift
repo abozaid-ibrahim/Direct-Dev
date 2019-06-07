@@ -74,7 +74,7 @@ class VisaReqConfirmationController: UIViewController {
         setupTable()
        
         passangersTable.rx
-            .itemAccessoryButtonTapped
+            .itemSelected
             .subscribe(onNext: { indexPath in
                 self.gotoFormsScreen(index: indexPath.row)
             })
@@ -122,6 +122,7 @@ class VisaConfrimationPassangerCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .none
     }
     
     override func layoutSubviews() {

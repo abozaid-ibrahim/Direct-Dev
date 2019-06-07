@@ -17,7 +17,8 @@ class PassangerFormController: UIViewController, ImagePicker {
     let visaImageID = 23
     var countryId: String?
     var index:Int?
-    
+    var successIndex = PublishSubject<Int>()
+
     // MARK: IBuilder ====================================>>
     // Family
     @IBOutlet var firstNamePInfoLbl: FloatingTextField!
@@ -201,8 +202,7 @@ class PassangerFormController: UIViewController, ImagePicker {
         api.observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] response in
                 Progress.hide()
-               
-                try! AppNavigator().push(.successVisaReqScreen(response))
+                self.successIndex.onNext(self.index ?? 0)
             }, onError: { _ in
                 Progress.hide()
             }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)

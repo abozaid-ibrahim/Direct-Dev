@@ -17,7 +17,6 @@ class PassangersInputViewViewController: UIViewController {
     @IBOutlet var tabbarView: TabBar!
     var visaInfo: VisaRequestParams?
     var successInputIndexes:[Int] = []
-    var successIndex = PublishSubject<Int>()
     private let disposeBag = DisposeBag()
     var defaultTabSelection:Int?
     override func viewDidLoad() {
@@ -34,10 +33,17 @@ class PassangersInputViewViewController: UIViewController {
             let tab1VC = PassangerFormController()
             tab1VC.countryId = info.country_id
             tab1VC.index = index
+          
             let tab1 = ("بالغ" + " " + "\(index + 1)", { [weak self] in
                 self?.selectTab(index, tab1VC)
             })
             
+            tab1VC.successIndex.subscribe(onNext: {[unowned self] value in
+                self.successInputIndexes.append(value)
+                if !self.selectNextTab(){
+                    try! AppNavigator().push(.successVisaReqScreen(nil))
+                }
+                }, onError: nil, onCompleted: nil, onDisposed:  nil).disposed(by: disposeBag)
             tabs.append((tab1, tab1VC))
         }
         for index in 0..<Int(info.no_of_child)! {
@@ -48,24 +54,30 @@ class PassangersInputViewViewController: UIViewController {
             tabs.append((tab1 , tab1VC))
         }
         let tabbar = TabBar(tabs: tabs.map { $0.0 })
+        tabbar.icon.isHidden = false
         tabbarView.addSubview(tabbar)
         tabbar.sameBoundsTo(parentView: tabbarView)
-        if defaultTabSelection != nil{
-              selectTab(defaultTabSelection ?? 0, tabs[defaultTabSelection ?? 0].1)
-        }
        
-        successIndex.subscribe(onNext: {[unowned self] value in
-            self.successInputIndexes.append(value)
-            for tab in self.tabs{
-                if !self.successInputIndexes.contains((tab.1.index ?? -1 ) ){
-                    self.selectTab((tab.1.index ?? -1), tab.1)
-                    break
-                }
-            }
-            }, onError: nil, onCompleted: nil, onDisposed:  nil).disposed(by: disposeBag)
+       
+        
         
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if defaultTabSelection != nil{
+            selectTab(defaultTabSelection ?? 0, tabs[defaultTabSelection ?? 0].1)
+        }
+    }
+    private func selectNextTab()->Bool{
+        for tab in self.tabs{
+            if !self.successInputIndexes.contains((tab.1.index ?? -1 ) ){
+                self.selectTab((tab.1.index ?? -1), tab.1)
+                return true
+            }
+            
+        }
+        return false
+    }
     private func selectTab(_ index: Int, _ tab1VC: PassangerFormController) {
         /* 1 if item is subview//goto 3
           show item

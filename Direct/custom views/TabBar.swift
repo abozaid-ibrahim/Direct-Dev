@@ -10,7 +10,7 @@ import RxGesture
 import RxSwift
 import UIKit
 
-public typealias TAB = (String,  () -> ()? )
+public typealias TAB = (String, () -> ()?)
 
 class TabBar: UIView {
     let stackContainer: UIStackView = {
@@ -21,6 +21,15 @@ class TabBar: UIView {
         stack.spacing = 10
         return stack
     }()
+
+    func createContentStack()->UIStackView{
+            let stack = UIStackView()
+            stack.alignment = .fill
+            stack.distribution = .fill
+            stack.axis = .horizontal
+            stack.spacing = 10
+            return stack
+    }
 
     var selector: UIView {
         let view = UIView()
@@ -37,17 +46,28 @@ class TabBar: UIView {
         return lbl
     }
 
+    var icon: UIImageView {
+        let iv = UIImageView()
+        iv.image = #imageLiteral(resourceName: "path4")
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        iv.isHidden = true
+        return iv
+    }
+
     let bag = DisposeBag()
     private var tabsSep: [UIView] = []
     func createUI(tabs: [TAB]) {
         for tab in tabs {
+            let content = createContentStack()
             let lbl = UILabel()
             lbl.textAlignment = .center
             lbl.text = tab.0
             lbl.font = UIFont(name: AppFonts.regularFont, size: 15)
-
+            content.addArrangedSubview(icon)
+            content.addArrangedSubview(lbl)
             let sel = selector
-            let view = UIStackView(arrangedSubviews: [lbl, sel])
+            let view = UIStackView(arrangedSubviews: [content, sel])
             view.alignment = .fill
             view.axis = .vertical
             view.spacing = 5
