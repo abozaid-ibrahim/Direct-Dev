@@ -19,6 +19,7 @@ class PassangersInputViewViewController: UIViewController {
     var successInputIndexes:[Int] = []
     var successIndex = PublishSubject<Int>()
     private let disposeBag = DisposeBag()
+    var defaultTabSelection:Int?
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "معلومات المسافرين"
@@ -49,10 +50,10 @@ class PassangersInputViewViewController: UIViewController {
         let tabbar = TabBar(tabs: tabs.map { $0.0 })
         tabbarView.addSubview(tabbar)
         tabbar.sameBoundsTo(parentView: tabbarView)
-        if let first  = tabs.first{
-            selectTab(0, first.1)
-            
+        if defaultTabSelection != nil{
+              selectTab(defaultTabSelection ?? 0, tabs[defaultTabSelection ?? 0].1)
         }
+       
         successIndex.subscribe(onNext: {[unowned self] value in
             self.successInputIndexes.append(value)
             for tab in self.tabs{
@@ -62,6 +63,7 @@ class PassangersInputViewViewController: UIViewController {
                 }
             }
             }, onError: nil, onCompleted: nil, onDisposed:  nil).disposed(by: disposeBag)
+        
     }
     
     private func selectTab(_ index: Int, _ tab1VC: PassangerFormController) {

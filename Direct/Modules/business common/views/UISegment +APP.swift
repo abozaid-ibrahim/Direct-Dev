@@ -22,4 +22,7 @@ extension Optional where Wrapped == String {
         }
         return false
     }
+    var intValue: Int {
+        return Int(self ?? "0") ?? 0
+    }
 }

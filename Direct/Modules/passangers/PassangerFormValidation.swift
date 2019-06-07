@@ -57,9 +57,9 @@ extension PassangerFormController {
             }
         }
         if params.familyIDCopy.isValidText {
-            familyNamePInfoLbl.setError.onNext(false)
+            familyIDPInfoLbl.setError.onNext(false)
         } else {
-            familyNamePInfoLbl.setError.onNext(true)
+            familyIDPInfoLbl.setError.onNext(true)
             return false
         }
         return true

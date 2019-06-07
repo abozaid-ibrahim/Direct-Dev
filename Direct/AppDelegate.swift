@@ -48,12 +48,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = root
         window?.makeKeyAndVisible()
         navigator = AppNavigator(root: root)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
-            let x = VisaRequestParams()
-            x.no_of_adult = "1"
-            x.no_of_child = "1"
-            try? AppNavigator().push(.passangersInfoScreen(x))
-        })
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+//            let x = VisaRequestParams()
+//            x.no_of_adult = "1"
+//            x.no_of_child = "1"
+//            try? AppNavigator().push(.passangersInfoScreen(x))
+//        })
     }
 }
 
