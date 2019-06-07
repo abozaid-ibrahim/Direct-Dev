@@ -33,7 +33,7 @@ class PreviousTraveledCountriesController: UIViewController {
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 
-    private let headerHeight = CGFloat(85)
+     let headerHeight = CGFloat(90)
     private let contentSizeKey = "contentSize"
 
     func setupTable() {

@@ -64,7 +64,7 @@ class PassangerFormController: UIViewController, ImagePicker {
         addChild(travels)
         previouslyTraveledCountriesView.addSubview(travels.view)
         travels.view.sameBoundsTo(parentView: previouslyTraveledCountriesView)
-        travels.tableHeight.asDriver(onErrorJustReturn: 85).asObservable().bind(to: countriesContainerHeight.rx.constant).disposed(by: disposeBag)
+        travels.tableHeight.asDriver(onErrorJustReturn: travels.headerHeight).asObservable().bind(to: countriesContainerHeight.rx.constant).disposed(by: disposeBag)
     }
     
     private func pInfoSetup() {
