@@ -41,7 +41,9 @@ class NewDirectVisaViewModel {
     var selectedRelation = PublishSubject<String?>()
     var totalCost = BehaviorSubject<String>(value: "0".priced)
     var embassyLocations: [DTEmbassyLocation]?
-    let turkeyCountryId = "8"
+    var turkeyCountryId:String {
+        return APIConstants.TurkeyID
+    }
 
     init(network: ApiClientFacade? = ApiClientFacade()) {
         self.network = network

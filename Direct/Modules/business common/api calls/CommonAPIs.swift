@@ -14,7 +14,6 @@ public enum CommonAPIs {
     getCities(cid:String)
     case biometricChoices
     case relationsList
-
     case userProfile(String)
     case userRepositories(String)
     
