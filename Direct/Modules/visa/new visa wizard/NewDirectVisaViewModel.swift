@@ -137,7 +137,7 @@ class NewDirectVisaViewModel {
 
         showProgress.onNext(true)
         network?.sendVisaRequest(params: visaRequestData).subscribe(onNext: { [unowned self] _ in
-            self.showProgress.onNext(false)
+//            self.showProgress.onNext(false)
             try! AppNavigator().push(.visaRequirement(self.visaRequestData)
             )
         }, onError: { _ in

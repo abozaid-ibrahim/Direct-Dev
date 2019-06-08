@@ -109,8 +109,9 @@ class VisaReqConfirmationController: UIViewController {
      gotoFormsScreen()
     }
     func gotoFormsScreen(index:Int = 0){
-        passangersInfoScreen.defaultTabSelection = index
         navigationController?.pushViewController(passangersInfoScreen, animated: true)
+        passangersInfoScreen.defaultTabSelection.onNext(index)
+
     }
 }
 

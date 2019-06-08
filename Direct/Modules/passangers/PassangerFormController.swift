@@ -101,7 +101,7 @@ class PassangerFormController: UIViewController, ImagePicker {
     }
     private func questionsSetup() {
        // ever you travedled
-        previousVisaLbl.text = " من قبل؟" + countryString + "هل سبق وحصلت على تأشيرة"
+        previousVisaLbl.text =  "هل سبق وحصلت على تأشيرة "  + countryString  + " من قبل؟"
         
         previousVisaImageField.rx.tapGesture().when(.recognized)
             .subscribe { _ in
@@ -126,7 +126,7 @@ class PassangerFormController: UIViewController, ImagePicker {
     }
     private func last10YearsSection(){
         
-        didYouTraveledLast10YearLbl.text = "في العشر سنوات الاخيرة ؟" + countryString + "هل سافرت الى "
+        didYouTraveledLast10YearLbl.text = "هل سافرت الى " + countryString + " في العشر سنوات الاخيرة ؟"
         
         last10VisaField.rx.tapGesture().when(.recognized)
             .subscribe { _ in

@@ -30,7 +30,7 @@
                                         <color key="backgroundColor" red="0.99607843139999996" green="0.58039215690000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="3Zx-82-hoi"/>
-                                            <constraint firstAttribute="width" secondItem="2bk-Z8-jmR" secondAttribute="height" id="fkg-WQ-UTF"/>
+                                            <constraint firstAttribute="width" secondItem="2bk-Z8-jmR" secondAttribute="height" multiplier="1:1" id="fkg-WQ-UTF"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -45,7 +45,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MyM-BD-vOV">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>

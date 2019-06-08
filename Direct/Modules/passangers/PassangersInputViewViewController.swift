@@ -6,22 +6,22 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
-import UIKit
 import RxSwift
+import UIKit
 
 protocol PassangerInputsConnection {
     func submit()
 }
+
 class PassangersInputViewViewController: UIViewController {
     @IBOutlet var containerView: UIView!
     @IBOutlet var tabbarView: TabBar!
-    @IBOutlet private  weak var tabbarWidthConstrain: NSLayoutConstraint!
+    @IBOutlet private var tabbarWidthConstrain: NSLayoutConstraint!
     var tabbar: TabBar!
     var visaInfo: VisaRequestParams?
-    var successInputIndexes:[Int] = []
+    var successInputIndexes: [Int] = []
     private let disposeBag = DisposeBag()
-    var defaultTabSelection:Int?
-    
+    var defaultTabSelection = PublishSubject<Int>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,17 +38,17 @@ class PassangersInputViewViewController: UIViewController {
             tab1VC.countryName = info.countryName
             tab1VC.countryId = info.country_id
             tab1VC.index = index
-          
+            
             let tab1 = ("بالغ" + " " + "\(index + 1)", { [weak self] in
                 self?.selectTab(index, tab1VC)
             })
             
-            tab1VC.successIndex.subscribe(onNext: {[unowned self] value in
+            tab1VC.successIndex.subscribe(onNext: { [unowned self] value in
                 self.successInputIndexes.append(value)
-                if !self.selectNextTab(){
+                if !self.selectNextTab() {
                     try! AppNavigator().push(.successVisaReqScreen(nil))
                 }
-                }, onError: nil, onCompleted: nil, onDisposed:  nil).disposed(by: disposeBag)
+            }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
             tabs.append((tab1, tab1VC))
         }
         for index in 0..<Int(info.no_of_child)! {
@@ -56,36 +56,29 @@ class PassangersInputViewViewController: UIViewController {
             let tab1 = ("طفل" + " " + "\(index + 1)", { [weak self] in
                 self?.selectTab(index, tab1VC)
             })
-            tabs.append((tab1 , tab1VC))
+            tabs.append((tab1, tab1VC))
         }
-        if tabs.count > 3{
+        if tabs.count > 3 {
             tabbarWidthConstrain.constant = view.bounds.width
-        }else{
+        } else {
             tabbarWidthConstrain.constant = CGFloat(tabs.count * 80)
         }
-         tabbar = TabBar(tabs: tabs.map { $0.0 })
-        tabbar.tabsIcon.forEach{$0.image = #imageLiteral(resourceName: "rightGreen")}
+        tabbar = TabBar(tabs: tabs.map { $0.0 })
+        tabbar.tabsIcon.forEach { $0.image = #imageLiteral(resourceName: "rightGreen") }
         tabbarView.addSubview(tabbar)
         tabbar.sameBoundsTo(parentView: tabbarView)
-       
-       
-        
-        
+        defaultTabSelection.startWith(0).subscribe(onNext: { [unowned self] value in
+            self.selectTab(value, self.tabs[value].1)
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if defaultTabSelection != nil{
-            selectTab(defaultTabSelection ?? 0, tabs[defaultTabSelection ?? 0].1)
-        }
-    }
-    private func selectNextTab()->Bool{
-        
-        for tab in self.tabs{
-            let index = (tab.1.index! )
-            if self.successInputIndexes.contains(index){
+    
+    private func selectNextTab() -> Bool {
+        for tab in tabs {
+            let index = (tab.1.index!)
+            if successInputIndexes.contains(index) {
                 tabbar.tabsIcon[index].image = #imageLiteral(resourceName: "path4")
-            }else{
-                self.selectTab(index, tab.1)
+            } else {
+                selectTab(index, tab.1)
                 return true
             }
         }
@@ -106,10 +99,9 @@ class PassangersInputViewViewController: UIViewController {
             tab1VC.view.sameBoundsTo(parentView: containerView)
         }
         
-        for (i,item) in tabs.enumerated() {
+        for (i, item) in tabs.enumerated() {
             item.1.view.isHidden = index == i ? false : true
         }
         tabbar.didSelectTab(index: index)
     }
-   
 }

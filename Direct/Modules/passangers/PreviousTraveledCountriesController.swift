@@ -59,11 +59,23 @@ class PreviousTraveledCountriesController: UIViewController {
             textField.textColor = UIColor.black
             textField.font = UIFont.appRegularFontWith(size: 14)
         }
-        let add = UIAlertAction(title: "تم", style: .default, handler: { [weak self] _ in
+        let add = UIAlertAction(title: "تم", style: .default, handler: { [weak self , unowned alert] _ in
             guard let self = self else { return }
             let text = alert.textFields?.first!.text ?? ""
-            self.items.append(text)
-            self.countries.onNext(self.items)
+   
+            let regex = try! NSRegularExpression(pattern: "[a-z]*[-][0-9]{4}")
+
+            let results = regex.matches(in: text,
+                                        range: NSRange(text.startIndex..., in: text))
+            if results.count > 0{
+                
+                self.items.append(text)
+                self.countries.onNext(self.items)
+
+            }else{
+                alert.message = "ادخل الصيغه الصحيحه"
+            }
+          
         })
 
         let cancel = UIAlertAction(title: "الغاء", style: .cancel, handler: nil)
