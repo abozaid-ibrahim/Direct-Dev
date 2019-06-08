@@ -6,13 +6,31 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
+import RxSwift
 import UIKit
 
 class VisaRequirementTableCell: UITableViewCell, TableCell {
+   
+    typealias CellDataModel = Requirement
+    @IBOutlet private var imgView: UIImageView!
+    @IBOutlet var expandRow: UIImageView!
+    @IBOutlet var textlbl: UILabel! {
+        didSet {
+            textLabel?.font = UIFont.appBoldFontWith(size: 18)
+        }
+    }
+
+    let disposeBag = DisposeBag()
+    @IBOutlet private var widthConst: NSLayoutConstraint!
+    static let cellId = "VisaRequirementTableCell"
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        selectionStyle = .none
+    }
+    
     func setCellData(_ model: Requirement) {
         textlbl.text = model.title
-        descLbl.text = model.desc
-        if (model.image ?? "" ).isEmpty {
+        if (model.image ?? "").isEmpty {
             widthConst.constant = 10
             
             imgView.layer.cornerRadius = 4.9
@@ -22,23 +40,7 @@ class VisaRequirementTableCell: UITableViewCell, TableCell {
             imgView.setImage(url: model.image ?? "")
             widthConst.constant = 20
             imgView.rounded = false
-            
         }
-    }
-
-    typealias CellDataModel = Requirement
-    @IBOutlet private var imgView: UIImageView!
-    @IBOutlet private var descLbl: UILabel!
-    @IBOutlet var textlbl: UILabel!{
-        didSet{
-            textLabel?.font = UIFont.appBoldFontWith(size: 18)
-        }
-    }
-    @IBOutlet private var widthConst: NSLayoutConstraint!
-    static let cellId = "VisaRequirementTableCell"
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setLanguage() {
         UserDefaults.standard.set(["ar"], forKey: "AppleLanguages")
         UserDefaults.standard.synchronize()
-      
     }
 
     func setupGlobalAppearance() {
@@ -42,19 +41,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func setRootController() {
         let root = UIStoryboard.main.instantiateViewController(withIdentifier: StoryBoardIds.rootController.id) as! RootNavigationViewController
-        
-        
-//        let x = UIStoryboard.visa.instantiateViewController(withIdentifier: "VisaReqConfirmationController")
-
         window?.rootViewController = root
         window?.makeKeyAndVisible()
         navigator = AppNavigator(root: root)
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
-//            let x = VisaRequestParams()
-//            x.no_of_adult = "1"
-//            x.no_of_child = "1"
-//            try? AppNavigator().push(.passangersInfoScreen(x))
-//        })
+        shortcut()
+    }
+
+    private func shortcut() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            let x = VisaRequestParams()
+            x.no_of_adult = "1"
+            x.country_id = "1"
+            x.no_of_child = "1"
+            try? AppNavigator().push(.visaRequirement(x))
+        }
     }
 }
-

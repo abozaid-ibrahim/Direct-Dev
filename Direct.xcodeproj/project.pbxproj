@@ -79,7 +79,6 @@
 		6C55756F228BAEB700BAE5E2 /* UIFont+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C55756E228BAEB700BAE5E2 /* UIFont+UIView.swift */; };
 		6C5DE7652275DA99001A9FB6 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE7642275DA99001A9FB6 /* UIView.swift */; };
 		6C5DE7682275EC49001A9FB6 /* VisaRequirementTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE7662275EC49001A9FB6 /* VisaRequirementTableCell.swift */; };
-		6C5DE76C22762013001A9FB6 /* RequireVisaSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE76B22762013001A9FB6 /* RequireVisaSectionHeader.swift */; };
 		6C5DE774227732EF001A9FB6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE772227732EF001A9FB6 /* SearchViewController.swift */; };
 		6C5DE7782277330D001A9FB6 /* CountryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE7762277330D001A9FB6 /* CountryTableCell.swift */; };
 		6C5DE87A22872A1E00F900AE /* SuccessPackageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE87822872A1E00F900AE /* SuccessPackageController.swift */; };
@@ -95,6 +94,8 @@
 		6C6A0C0F22AB81F800150FF6 /* Cairo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C6A0C0922AB81F800150FF6 /* Cairo-Black.ttf */; };
 		6C6A0C1022AB81F800150FF6 /* Cairo-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C6A0C0A22AB81F800150FF6 /* Cairo-SemiBold.ttf */; };
 		6C6A0C1122AB81F800150FF6 /* Cairo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C6A0C0B22AB81F800150FF6 /* Cairo-Bold.ttf */; };
+		6C6A0C1D22ABF17E00150FF6 /* ReqDescTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6A0C1B22ABF17E00150FF6 /* ReqDescTableCell.swift */; };
+		6C6A0C1E22ABF17E00150FF6 /* ReqDescTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C6A0C1C22ABF17E00150FF6 /* ReqDescTableCell.xib */; };
 		6C6EED6922A248BA0091B82F /* PaymentAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6EED6822A248BA0091B82F /* PaymentAPIs.swift */; };
 		6C6EED6B22A24C190091B82F /* PaymentMethodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6EED6A22A24C190091B82F /* PaymentMethodsResponse.swift */; };
 		6C6EED6D22A24C560091B82F /* PaymentChildsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6EED6C22A24C560091B82F /* PaymentChildsResponse.swift */; };
@@ -152,7 +153,6 @@
 		6C9027C7228F95A600B41705 /* OrderTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9027C9228F95A600B41705 /* OrderTableCell.xib */; };
 		6C9027CA228F95AC00B41705 /* VisaRequirementController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9027CC228F95AC00B41705 /* VisaRequirementController.xib */; };
 		6C9027CD228F95B100B41705 /* VisaRequirementTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9027CF228F95B100B41705 /* VisaRequirementTableCell.xib */; };
-		6C9027D0228F95B700B41705 /* RequireVisaSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9027D2228F95B700B41705 /* RequireVisaSectionHeader.xib */; };
 		6C9027D3228F95BD00B41705 /* NewDirectVisaController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9027D5228F95BD00B41705 /* NewDirectVisaController.xib */; };
 		6C9027D6228F95C300B41705 /* SuccessVisaRequestController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9027D8228F95C300B41705 /* SuccessVisaRequestController.xib */; };
 		6C9027D9228F95C800B41705 /* PassangersCountController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9027DB228F95C800B41705 /* PassangersCountController.xib */; };
@@ -318,7 +318,6 @@
 		6C55756E228BAEB700BAE5E2 /* UIFont+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+UIView.swift"; sourceTree = "<group>"; };
 		6C5DE7642275DA99001A9FB6 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		6C5DE7662275EC49001A9FB6 /* VisaRequirementTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaRequirementTableCell.swift; sourceTree = "<group>"; };
-		6C5DE76B22762013001A9FB6 /* RequireVisaSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequireVisaSectionHeader.swift; sourceTree = "<group>"; };
 		6C5DE772227732EF001A9FB6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		6C5DE7762277330D001A9FB6 /* CountryTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableCell.swift; sourceTree = "<group>"; };
 		6C5DE87822872A1E00F900AE /* SuccessPackageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPackageController.swift; sourceTree = "<group>"; };
@@ -336,6 +335,8 @@
 		6C6A0C0922AB81F800150FF6 /* Cairo-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Black.ttf"; sourceTree = "<group>"; };
 		6C6A0C0A22AB81F800150FF6 /* Cairo-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-SemiBold.ttf"; sourceTree = "<group>"; };
 		6C6A0C0B22AB81F800150FF6 /* Cairo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Bold.ttf"; sourceTree = "<group>"; };
+		6C6A0C1B22ABF17E00150FF6 /* ReqDescTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReqDescTableCell.swift; sourceTree = "<group>"; };
+		6C6A0C1C22ABF17E00150FF6 /* ReqDescTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReqDescTableCell.xib; sourceTree = "<group>"; };
 		6C6EED6822A248BA0091B82F /* PaymentAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAPIs.swift; sourceTree = "<group>"; };
 		6C6EED6A22A24C190091B82F /* PaymentMethodsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodsResponse.swift; sourceTree = "<group>"; };
 		6C6EED6C22A24C560091B82F /* PaymentChildsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentChildsResponse.swift; sourceTree = "<group>"; };
@@ -395,7 +396,6 @@
 		6C9027C8228F95A600B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/OrderTableCell.xib; sourceTree = "<group>"; };
 		6C9027CB228F95AC00B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/VisaRequirementController.xib; sourceTree = "<group>"; };
 		6C9027CE228F95B100B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/VisaRequirementTableCell.xib; sourceTree = "<group>"; };
-		6C9027D1228F95B700B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/RequireVisaSectionHeader.xib; sourceTree = "<group>"; };
 		6C9027D4228F95BD00B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/NewDirectVisaController.xib; sourceTree = "<group>"; };
 		6C9027D7228F95C300B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/SuccessVisaRequestController.xib; sourceTree = "<group>"; };
 		6C9027DA228F95C800B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/PassangersCountController.xib; sourceTree = "<group>"; };
@@ -705,12 +705,12 @@
 				6CDEF77C22A11B3700BF5F0B /* api */,
 				6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */,
 				6C9027CC228F95AC00B41705 /* VisaRequirementController.xib */,
-				6C5DE76B22762013001A9FB6 /* RequireVisaSectionHeader.swift */,
-				6C9027D2228F95B700B41705 /* RequireVisaSectionHeader.xib */,
 				6C5DE7662275EC49001A9FB6 /* VisaRequirementTableCell.swift */,
 				6C9027CF228F95B100B41705 /* VisaRequirementTableCell.xib */,
 				6CDEF77D22A11DDA00BF5F0B /* VisaReqConfirmationController.swift */,
 				6CDEF78122A11EFC00BF5F0B /* Visa.storyboard */,
+				6C6A0C1B22ABF17E00150FF6 /* ReqDescTableCell.swift */,
+				6C6A0C1C22ABF17E00150FF6 /* ReqDescTableCell.xib */,
 			);
 			path = "visa requirement";
 			sourceTree = "<group>";
@@ -1316,12 +1316,12 @@
 				6C6A0C1122AB81F800150FF6 /* Cairo-Bold.ttf in Resources */,
 				6CF3E19D22725430007488BA /* VisaCollectionViewCell.xib in Resources */,
 				6C902785228F950400B41705 /* InstitutesListController.xib in Resources */,
+				6C6A0C1E22ABF17E00150FF6 /* ReqDescTableCell.xib in Resources */,
 				6C9027C7228F95A600B41705 /* OrderTableCell.xib in Resources */,
 				6C6A0C0E22AB81F800150FF6 /* Cairo-Regular.ttf in Resources */,
 				6C9027AF228F957100B41705 /* SuccessPackageController.xib in Resources */,
 				6C9027A3228F955800B41705 /* BankTableCell.xib in Resources */,
 				6C9027DF228F95D200B41705 /* AboutUsTableCell.xib in Resources */,
-				6C9027D0228F95B700B41705 /* RequireVisaSectionHeader.xib in Resources */,
 				6C9027A6228F955F00B41705 /* PaymentMethodsContainerController.xib in Resources */,
 				6C9027AC228F956B00B41705 /* PackageDetailsController.xib in Resources */,
 				6CDEF78222A11EFC00BF5F0B /* Visa.storyboard in Resources */,
@@ -1540,9 +1540,9 @@
 				6CF3E1AB227254DB007488BA /* NewsSectionVM.swift in Sources */,
 				39EE2A9C22A0984200A9A501 /* LoginCommandsFactory.swift in Sources */,
 				39EE2AB722A09A0000A9A501 /* ButtonCellConfigurator.swift in Sources */,
-				6C5DE76C22762013001A9FB6 /* RequireVisaSectionHeader.swift in Sources */,
 				6C3885CF229B672600CA168A /* SearchViewModel.swift in Sources */,
 				39EE2A9722A0984200A9A501 /* LoginDetailsValidator.swift in Sources */,
+				6C6A0C1D22ABF17E00150FF6 /* ReqDescTableCell.swift in Sources */,
 				6CCE032B229CA5A2003523FE /* RelativesResponse.swift in Sources */,
 				6CD2CE5522A0C32300FB308A /* APIsParams.swift in Sources */,
 				39EE2AAD22A09A0000A9A501 /* TextFieldConfigurator.swift in Sources */,
@@ -1880,14 +1880,6 @@
 				6C9027CE228F95B100B41705 /* ar */,
 			);
 			name = VisaRequirementTableCell.xib;
-			sourceTree = "<group>";
-		};
-		6C9027D2228F95B700B41705 /* RequireVisaSectionHeader.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6C9027D1228F95B700B41705 /* ar */,
-			);
-			name = RequireVisaSectionHeader.xib;
 			sourceTree = "<group>";
 		};
 		6C9027D5228F95BD00B41705 /* NewDirectVisaController.xib */ = {

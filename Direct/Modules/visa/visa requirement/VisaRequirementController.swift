@@ -15,21 +15,21 @@ import UIKit
 final class VisaRequirementController: UIViewController, PanModalPresentable, StyledActionBar {
     // MARK: IBuilder ====================================>>
     
-    @IBOutlet var headerIconView: UIImageView!
+    @IBOutlet private var headerIconView: UIImageView!
     @IBOutlet private var tableView: UITableView!
-    @IBOutlet var countryNameLbl: UILabel!
-    @IBOutlet var descLbl: UILabel!
+    @IBOutlet private var countryNameLbl: UILabel!
+    @IBOutlet private var descLbl: UILabel!
     //===================================================<<
     var panScrollable: UIScrollView? {
         return tableView
     }
     
     private let data = PublishSubject<[Requirement]>()
-    
-    var visaData:VisaRequestParams?
+    private var datalist: [ReqDataSection] = []
+    var visaData: VisaRequestParams?
     internal let disposeBag = DisposeBag()
     
-    let network = ApiClientFacade()
+    private let network = ApiClientFacade()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupActionBar(.withTitleAndX("متطلبات التأشيرة"))
@@ -46,13 +46,16 @@ extension VisaRequirementController {
     func setDatasource() {
         tableView.defaultSeperator()
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 80
-        tableView.register(UINib(nibName: VisaRequirementTableCell.cellId, bundle: nil), forCellReuseIdentifier: VisaRequirementTableCell.cellId)
-        data.bind(to: tableView.rx.items(cellIdentifier: VisaRequirementTableCell.cellId)) { _, model, cell in
-            let mycell = (cell as! VisaRequirementTableCell)
-            mycell.setCellData(model)
-        }.disposed(by: disposeBag)
-     
+        tableView.estimatedRowHeight = 70
+        tableView.registerNib(VisaRequirementTableCell.cellId)
+        tableView.registerNib(ReqDescTableCell.cellId)
+        tableView.dataSource = self
+        tableView.delegate = self
+        data.subscribe(onNext: { [unowned self] value in
+            self.datalist.removeAll()
+            self.datalist.append(contentsOf: value.map { ReqDataSection($0) })
+            self.tableView.reloadData()
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
     
     private func getDataRemotely() {
@@ -65,6 +68,7 @@ extension VisaRequirementController {
             
             self.data.onNext(req.requirementPage.first?.requirements ?? [])
             if let obj = req.requirementPage.first {
+                // set header data
                 self.headerIconView.setImage(url: obj.flagURL ?? "")
                 self.countryNameLbl.text = obj.name
                 self.descLbl.text = ""
@@ -77,3 +81,53 @@ extension VisaRequirementController {
     }
 }
 
+extension VisaRequirementController: UITableViewDataSource {
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        return datalist.count
+    }
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if datalist[section].opened {
+            return 2
+        }
+        return 1
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: VisaRequirementTableCell.cellId) as? VisaRequirementTableCell else {
+                return UITableViewCell()
+            }
+            
+            cell.setCellData(datalist[indexPath.section].data)
+            
+            return cell
+        } else {
+            //this is for expanded cells
+            let cell = tableView.dequeueReusableCell(withIdentifier: ReqDescTableCell.cellId) as! ReqDescTableCell
+            cell.setCellData(datalist[indexPath.section].data.desc)
+            return cell
+        }
+    }
+}
+
+extension VisaRequirementController: UITableViewDelegate {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if datalist[indexPath.section].opened {
+            datalist[indexPath.section].opened = false
+        } else {
+            datalist[indexPath.section].opened = true
+        }
+        let set = IndexSet(integer: indexPath.section)
+        self.tableView.reloadSections(set, with: .none)
+    }
+}
+
+class ReqDataSection {
+    var opened: Bool = false
+    var data: Requirement
+    init(_ req: Requirement) {
+        data = req
+        opened = false
+    }
+}

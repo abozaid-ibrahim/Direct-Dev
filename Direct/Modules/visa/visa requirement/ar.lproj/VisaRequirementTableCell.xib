@@ -41,17 +41,11 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rbx-92-oUz">
-                                <rect key="frame" x="30" y="0.0" width="240" height="71.5"/>
+                                <rect key="frame" x="30" y="0.0" width="240" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MyM-BD-vOV">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="20.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label Label Label Label Label Label Label Label Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sG-13-pmD">
-                                        <rect key="frame" x="0.0" y="30.5" width="240" height="41"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -80,7 +74,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="descLbl" destination="5sG-13-pmD" id="JmC-DG-HVm"/>
+                <outlet property="expandRow" destination="W1M-XR-Da2" id="NIV-tW-exw"/>
                 <outlet property="imgView" destination="2bk-Z8-jmR" id="dnR-bj-0Ek"/>
                 <outlet property="textlbl" destination="MyM-BD-vOV" id="ist-Hd-fmo"/>
                 <outlet property="widthConst" destination="3Zx-82-hoi" id="d5E-aJ-Aei"/>
