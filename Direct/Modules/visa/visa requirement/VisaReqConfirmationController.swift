@@ -48,13 +48,13 @@ class VisaReqConfirmationController: UIViewController {
             try! AppNavigator().push(.paymentMethod(self.visaRequestData!))
         }
         
-        passangersTable.rx.observeWeakly(CGSize.self, contentSizeKey).subscribe(onNext: { [unowned self] _ in
+        passangersTable.rx.observeWeakly(CGSize.self, contentSizeKey).subscribe(onNext: { [unowned self] value in
             if self.checkoutFooter.frame.minY - self.pickDateView.frame.maxY  <= 50{
                 self.passangersTable.isScrollEnabled  = true
                 self.passangersTable.bounces = true
                 self.passangersTable.bouncesZoom = true
             }else{
-                self.tableHeightConstrain.constant = self.passangersTable.contentSize.height
+                self.tableHeightConstrain.constant = value?.height ?? 100
                 
             }
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
