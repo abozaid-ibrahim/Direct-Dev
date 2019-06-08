@@ -371,7 +371,7 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I4m-Fh-s2U" customClass="CheckoutFooter" customModule="Direct" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="698" width="374" height="100"/>
+                                        <rect key="frame" x="0.0" y="698" width="390" height="100"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="0WF-wm-WEe"/>
@@ -390,9 +390,9 @@
                                     <constraint firstAttribute="bottom" secondItem="I4m-Fh-s2U" secondAttribute="bottom" constant="8" id="B7a-en-C9p"/>
                                     <constraint firstItem="uX8-RI-m07" firstAttribute="leading" secondItem="N17-uZ-MS7" secondAttribute="leading" id="BLb-CD-1sC"/>
                                     <constraint firstItem="uX8-RI-m07" firstAttribute="leading" secondItem="N17-uZ-MS7" secondAttribute="leading" id="EWs-lk-vh1"/>
-                                    <constraint firstItem="I4m-Fh-s2U" firstAttribute="leading" secondItem="N17-uZ-MS7" secondAttribute="leading" constant="8" id="TNV-Cc-6Ei"/>
+                                    <constraint firstItem="I4m-Fh-s2U" firstAttribute="leading" secondItem="N17-uZ-MS7" secondAttribute="leading" id="TNV-Cc-6Ei"/>
                                     <constraint firstItem="uX8-RI-m07" firstAttribute="top" secondItem="N17-uZ-MS7" secondAttribute="top" id="Xrz-ik-D6X"/>
-                                    <constraint firstAttribute="trailing" secondItem="I4m-Fh-s2U" secondAttribute="trailing" constant="8" id="cDH-rI-CRj"/>
+                                    <constraint firstAttribute="trailing" secondItem="I4m-Fh-s2U" secondAttribute="trailing" id="cDH-rI-CRj"/>
                                     <constraint firstAttribute="trailing" secondItem="uX8-RI-m07" secondAttribute="trailing" id="foV-6M-I9T"/>
                                 </constraints>
                             </view>
