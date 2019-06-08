@@ -15,7 +15,7 @@ protocol PassangerInputsConnection {
 
 class PassangersInputViewViewController: UIViewController {
     @IBOutlet var containerView: UIView!
-    @IBOutlet var tabbarView: TabBar!
+    @IBOutlet private  var tabbarView: TabBar!
     @IBOutlet private var tabbarWidthConstrain: NSLayoutConstraint!
     var tabbar: TabBar!
     var visaInfo: VisaRequestParams?
@@ -58,11 +58,14 @@ class PassangersInputViewViewController: UIViewController {
             })
             tabs.append((tab1, tab1VC))
         }
+        print(tabs.count)
         if tabs.count > 3 {
             tabbarWidthConstrain.constant = view.bounds.width
         } else {
             tabbarWidthConstrain.constant = CGFloat(tabs.count * 80)
+        
         }
+        tabbarView.needsUpdateConstraints()
         tabbar = TabBar(tabs: tabs.map { $0.0 })
         tabbar.tabsIcon.forEach { $0.image = #imageLiteral(resourceName: "rightGreen") }
         tabbarView.addSubview(tabbar)
@@ -86,12 +89,6 @@ class PassangersInputViewViewController: UIViewController {
     }
     
     private func selectTab(_ index: Int, _ tab1VC: PassangerFormController) {
-        /* 1 if item is subview//goto 3
-          show item
-         if Not
-         add item then show
-         */
-        
         if !containerView.subviews.contains(tab1VC.view) {
             // add
             addChild(tab1VC)

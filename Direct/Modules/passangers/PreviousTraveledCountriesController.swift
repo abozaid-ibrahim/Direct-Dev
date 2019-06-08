@@ -63,7 +63,7 @@ class PreviousTraveledCountriesController: UIViewController {
             guard let self = self else { return }
             let text = alert.textFields?.first!.text ?? ""
    
-            let regex = try! NSRegularExpression(pattern: "[a-z]*[-][0-9]{4}")
+            let regex = try! NSRegularExpression(pattern: #"^[\\u0621-\u064A\u0660-\u0669 ]"#)
 
             let results = regex.matches(in: text,
                                         range: NSRange(text.startIndex..., in: text))
@@ -74,6 +74,7 @@ class PreviousTraveledCountriesController: UIViewController {
 
             }else{
                 alert.message = "ادخل الصيغه الصحيحه"
+            
             }
           
         })

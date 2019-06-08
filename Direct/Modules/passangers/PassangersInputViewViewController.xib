@@ -30,7 +30,7 @@
                             <rect key="frame" x="20" y="20" width="414" height="40"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="414" id="b6s-lR-hwr"/>
+                                <constraint firstAttribute="width" constant="80" id="b6s-lR-hwr"/>
                                 <constraint firstAttribute="height" constant="40" id="rTX-F0-ecU"/>
                             </constraints>
                         </view>

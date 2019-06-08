@@ -50,7 +50,7 @@ extension VisaAPIs: TargetType {
                           "lang": appLang,
                           "userid": 703,
                           "country_id": prm.country_id!,
-                          "biometry_loc_id": prm.biometry_loc_id!,
+                          "biometry_loc_id": prm.biometry_loc_id ?? "0",
                           "no_of_adult": prm.no_of_adult!,
                           "no_of_child": prm.no_of_child!,
                           "no_of_passport": prm.no_of_passport!,
