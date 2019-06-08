@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = root
         window?.makeKeyAndVisible()
         navigator = AppNavigator(root: root)
-        shortcut()
+//        shortcut()
     }
 
     private func shortcut() {

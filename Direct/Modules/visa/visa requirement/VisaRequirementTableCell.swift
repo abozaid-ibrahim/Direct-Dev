@@ -10,15 +10,10 @@ import RxSwift
 import UIKit
 
 class VisaRequirementTableCell: UITableViewCell, TableCell {
-   
     typealias CellDataModel = Requirement
     @IBOutlet private var imgView: UIImageView!
     @IBOutlet var expandRow: UIImageView!
-    @IBOutlet var textlbl: UILabel! {
-        didSet {
-            textLabel?.font = UIFont.appBoldFontWith(size: 18)
-        }
-    }
+    @IBOutlet var textlbl: UILabel!
 
     let disposeBag = DisposeBag()
     @IBOutlet private var widthConst: NSLayoutConstraint!
@@ -26,13 +21,14 @@ class VisaRequirementTableCell: UITableViewCell, TableCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
+        textlbl.font = UIFont.appBoldFontWith(size: 14)
     }
-    
+
     func setCellData(_ model: Requirement) {
         textlbl.text = model.title
         if (model.image ?? "").isEmpty {
             widthConst.constant = 10
-            
+
             imgView.layer.cornerRadius = 4.9
             imgView.borderColorV = UIColor.appMango
             imgView.borderWidthV = 2

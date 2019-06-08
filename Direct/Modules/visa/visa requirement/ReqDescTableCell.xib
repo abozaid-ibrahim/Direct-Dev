@@ -20,16 +20,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epg-oa-erN">
-                        <rect key="frame" x="25" y="6" width="279" height="31.5"/>
+                        <rect key="frame" x="55" y="6" width="249" height="31.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="Epg-oa-erN" secondAttribute="trailing" constant="16" id="6dd-jA-sW7"/>
-                    <constraint firstItem="Epg-oa-erN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="UWn-9Q-y9B"/>
+                    <constraint firstItem="Epg-oa-erN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="UWn-9Q-y9B"/>
                     <constraint firstItem="Epg-oa-erN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="wtp-sW-MJF"/>
                     <constraint firstAttribute="bottom" secondItem="Epg-oa-erN" secondAttribute="bottom" constant="6" id="zhG-11-EAv"/>
                 </constraints>
