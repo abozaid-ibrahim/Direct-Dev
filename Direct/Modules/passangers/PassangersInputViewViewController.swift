@@ -35,6 +35,7 @@ class PassangersInputViewViewController: UIViewController {
         
         for index in 0..<Int(info.no_of_adult)! {
             let tab1VC = PassangerFormController()
+            tab1VC.countryName = info.countryName
             tab1VC.countryId = info.country_id
             tab1VC.index = index
           

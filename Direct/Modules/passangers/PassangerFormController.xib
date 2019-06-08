@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PassangerFormController" customModule="Direct" customModuleProvider="target">
             <connections>
                 <outlet property="countriesContainerHeight" destination="f3N-a3-cd0" id="RqR-iU-2uS"/>
+                <outlet property="didYouTraveledLast10YearLbl" destination="qoY-Hm-P1U" id="7cz-Mk-3j9"/>
                 <outlet property="everHadVisaSegment" destination="8Nh-5G-xSX" id="jie-o3-1I5"/>
                 <outlet property="familyIDPInfoLbl" destination="TKR-FA-JXh" id="BU6-Tx-ywC"/>
                 <outlet property="familyNameMotherLbl" destination="4jh-8C-l0V" id="IQw-9H-1oh"/>
@@ -21,8 +22,10 @@
                 <outlet property="firstNamePInfoLbl" destination="m0e-OQ-wcS" id="mII-uc-8pq"/>
                 <outlet property="husbundPInfoLbl" destination="mMM-Eh-ZZ3" id="WEw-J9-99R"/>
                 <outlet property="isHusbandWillTravelView" destination="25P-yK-KWg" id="twy-Bb-84h"/>
+                <outlet property="last10VisaField" destination="X7a-55-caS" id="nPR-lj-3a2"/>
                 <outlet property="nationalityMotherLbl" destination="Vdd-2N-Chk" id="34v-4j-Ylr"/>
-                <outlet property="previousVisaIdImageLbl" destination="q59-Z3-9J1" id="e9v-g1-Erj"/>
+                <outlet property="previousVisaImageField" destination="q59-Z3-9J1" id="P2d-IO-khr"/>
+                <outlet property="previousVisaLbl" destination="J2v-AG-KYJ" id="OOA-sG-V08"/>
                 <outlet property="previouslyTraveledCountriesView" destination="wwd-0y-oSK" id="4Qw-CR-4w5"/>
                 <outlet property="statusPInfoLbl" destination="fiT-t2-HOr" id="3p7-5c-IDU"/>
                 <outlet property="traveledInLast10YrsSegment" destination="Rs5-Tl-9eQ" id="LBr-33-SKV"/>

@@ -15,6 +15,9 @@ class PassangerFormController: UIViewController, ImagePicker {
     var currentImageID: Int = 0
     let familyImageID = 30
     let visaImageID = 23
+    let last10YearsVisaImageID = 20
+    var countryName: String?
+
     var countryId: String?
     var index:Int?
     var successIndex = PublishSubject<Int>()
@@ -32,22 +35,29 @@ class PassangerFormController: UIViewController, ImagePicker {
     @IBOutlet var firstNameMotherLbl: FloatingTextField!
     @IBOutlet var familyNameMotherLbl: FloatingTextField!
     @IBOutlet var nationalityMotherLbl: FloatingTextField!
-    // Questions
-    @IBOutlet var previousVisaIdImageLbl: FloatingTextField!
-    @IBOutlet var countriesContainerHeight: NSLayoutConstraint!
+    //Ever you had a vis
+    @IBOutlet weak var previousVisaLbl: UILabel!
+    @IBOutlet weak var previousVisaImageField: FloatingTextField!
     @IBOutlet var everHadVisaSegment: UISegmentedControl! {
         didSet {
             everHadVisaSegment.appFont()
         }
     }
     
+    
+    
+    // last 10 years
+    @IBOutlet weak var didYouTraveledLast10YearLbl: UILabel!
+    @IBOutlet weak var last10VisaField: FloatingTextField!
     @IBOutlet var traveledInLast10YrsSegment: UISegmentedControl! {
         didSet {
             traveledInLast10YrsSegment.appFont()
         }
     }
-    
+    //countries
     @IBOutlet private var previouslyTraveledCountriesView: UIView!
+    @IBOutlet var countriesContainerHeight: NSLayoutConstraint!
+
     //===================================================<<
     internal let disposeBag = DisposeBag()
     var receivedImage = PublishSubject<(String?, UIImage?)>()
@@ -86,10 +96,14 @@ class PassangerFormController: UIViewController, ImagePicker {
                 })
             }.disposed(by: disposeBag)
     }
-    
+    private var countryString:String{
+        return countryName ?? ""
+    }
     private func questionsSetup() {
+       // ever you travedled
+        previousVisaLbl.text = " من قبل؟" + countryString + "هل سبق وحصلت على تأشيرة"
         
-        previousVisaIdImageLbl.rx.tapGesture().when(.recognized)
+        previousVisaImageField.rx.tapGesture().when(.recognized)
             .subscribe { _ in
                 self.showImagePicker(id: self.visaImageID)
             }.disposed(by: disposeBag)
@@ -101,9 +115,24 @@ class PassangerFormController: UIViewController, ImagePicker {
                 
             } else if self.currentImageID == self.visaImageID {
                 self.params.visaReqID = value.1?.convertImageToBase64String()
-                self.previousVisaIdImageLbl.text = value.0
+                self.previousVisaImageField.text = value.0
+            }else if self.currentImageID == self.last10YearsVisaImageID{
+                self.params.previousVisaCopy = value.1?.convertImageToBase64String()
+                self.last10VisaField.text = value.0
             }
+            
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        last10YearsSection()
+    }
+    private func last10YearsSection(){
+        
+        didYouTraveledLast10YearLbl.text = "في العشر سنوات الاخيرة ؟" + countryString + "هل سافرت الى "
+        
+        last10VisaField.rx.tapGesture().when(.recognized)
+            .subscribe { _ in
+                self.showImagePicker(id: self.last10YearsVisaImageID)
+            }.disposed(by: disposeBag)
+  
     }
     
     func getPreviousVisaTypes() {
@@ -128,13 +157,7 @@ class PassangerFormController: UIViewController, ImagePicker {
         picker.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func previousVisaTypeChanged(_ sender: UISegmentedControl) {
-        if sender.state == .selected {
-            previousVisaIdImageLbl.isHidden = false
-        } else {
-            previousVisaIdImageLbl.isHidden = true
-        }
-    }
+   
     
     func isValidateTextFields() -> Bool {
         if !isValidatePersonalSectionTextFields() {
@@ -164,12 +187,12 @@ class PassangerFormController: UIViewController, ImagePicker {
         
         // Others PDF
         //        params.personalPhotoCopy
-        params.previousVisaCopy = previousVisaIdImageLbl.text
         params.lang = AppLanguage.langCode
         //        params.typeOfPreviousVisa = prev
 //        params.periodOfPreviousStay = durationLbl.text
         
         //
+        
         params.travelledBeforeHere = prevTravelsJson
     }
     

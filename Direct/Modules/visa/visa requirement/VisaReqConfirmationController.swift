@@ -97,7 +97,7 @@ class VisaReqConfirmationController: UIViewController {
     func setupTable() {
         Observable.just(passangers)
             .bind(to: passangersTable.rx.items(cellIdentifier: VisaConfrimationPassangerCell.id, cellType: VisaConfrimationPassangerCell.self)) { pos, element, cell in
-                cell.textLbl.text =  element.0 + "\(pos + 1)" 
+                cell.textLbl.text =  element.0  + " " + "\(pos + 1)" 
                 cell.statuxIcon.image = element.1 ? #imageLiteral(resourceName: "path4") : #imageLiteral(resourceName: "rightGreen")
             }
             .disposed(by: disposeBag)
