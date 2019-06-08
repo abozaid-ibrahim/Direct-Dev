@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import UIKit
+
 enum MartialState:String{
-    case single = "اعزب",married = "متزوج"
+    case single = "single" ,married = "married"
     var apiValue:Int{
         switch self {
         case .single:
@@ -17,11 +19,14 @@ enum MartialState:String{
             return 1
         }
     }
+    var string:String{
+        return self.rawValue.localized
+    }
 }
 
 
 enum AgreementValues:String{
-    case yes = "نعم" ,no = "لا"
+    case yes = "yes" ,no = "no"
     var apiValue:Int{
         switch self {
         case .no:
@@ -29,5 +34,8 @@ enum AgreementValues:String{
         case .yes:
             return 1
         }
+    }
+    var string:String{
+        return self.rawValue.localized
     }
 }

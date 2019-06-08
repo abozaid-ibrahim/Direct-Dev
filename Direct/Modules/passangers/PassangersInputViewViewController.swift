@@ -34,38 +34,36 @@ class PassangersInputViewViewController: UIViewController {
         guard let info = visaInfo else { return }
         
         for index in 0..<Int(info.no_of_adult)! {
-            let tab1VC = PassangerFormController()
-            tab1VC.countryName = info.countryName
-            tab1VC.countryId = info.country_id
-            tab1VC.index = index
+            let tabController = PassangerFormController()
+            tabController.countryName = info.countryName
+            tabController.countryId = info.country_id
+            tabController.index = index
             
-            let tab1 = ("بالغ" + " " + "\(index + 1)", { [weak self] in
-                self?.selectTab(index, tab1VC)
+            let tabView = ("adult".localized + " " + "\(index + 1)", { [weak self] in
+                self?.selectTab(index, tabController)
             })
             
-            tab1VC.successIndex.subscribe(onNext: { [unowned self] value in
+            tabController.successIndex.subscribe(onNext: { [unowned self] value in
                 self.successInputIndexes.append(value)
                 if !self.selectNextTab() {
                     try! AppNavigator().push(.successVisaReqScreen(nil))
                 }
             }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
-            tabs.append((tab1, tab1VC))
+            tabs.append((tabView, tabController))
         }
         for index in 0..<Int(info.no_of_child)! {
             let tab1VC = PassangerFormController()
-            let tab1 = ("طفل" + " " + "\(index + 1)", { [weak self] in
+            let tab1 = ("child".localized + " " + "\(index + 1)", { [weak self] in
                 self?.selectTab(index, tab1VC)
             })
             tabs.append((tab1, tab1VC))
         }
-        print(tabs.count)
         if tabs.count > 3 {
             tabbarWidthConstrain.constant = view.bounds.width
         } else {
-            tabbarWidthConstrain.constant = CGFloat(tabs.count * 80)
-        
+            tabbarWidthConstrain.constant = CGFloat(tabs.count * 85)
         }
-        tabbarView.needsUpdateConstraints()
+        tabbarView.setNeedsUpdateConstraints()
         tabbar = TabBar(tabs: tabs.map { $0.0 })
         tabbar.tabsIcon.forEach { $0.image = #imageLiteral(resourceName: "rightGreen") }
         tabbarView.addSubview(tabbar)
@@ -74,6 +72,7 @@ class PassangersInputViewViewController: UIViewController {
             self.selectTab(value, self.tabs[value].1)
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
+  
     
     private func selectNextTab() -> Bool {
         for tab in tabs {

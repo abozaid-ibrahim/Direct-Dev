@@ -13,18 +13,18 @@ extension PassangerFormController {
     func showMatrialState() {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alert.setTint(color: .appMango)
-        let action = UIAlertAction(title: MartialState.married.rawValue, style: .default, handler: { [weak self] _ in
+        let action = UIAlertAction(title: MartialState.married.string, style: .default, handler: { [weak self] _ in
             guard let `self` = self else { return }
             self.params.martialStatus = MartialState.married.apiValue.stringValue
             self.isHusbandWillTravelView.isHidden = false
-            self.statusPInfoLbl.text = MartialState.married.rawValue
+            self.statusPInfoLbl.text = MartialState.married.string
             
         })
-        let singleAction = UIAlertAction(title: MartialState.single.rawValue, style: .default, handler: { [weak self] _ in
+        let singleAction = UIAlertAction(title: MartialState.single.string, style: .default, handler: { [weak self] _ in
             guard let `self` = self else { return }
             self.params.martialStatus = MartialState.single.apiValue.stringValue
             self.isHusbandWillTravelView.isHidden = true
-             self.statusPInfoLbl.text = MartialState.single.rawValue
+             self.statusPInfoLbl.text = MartialState.single.string
         })
       
         alert.addAction(action)
@@ -37,11 +37,11 @@ extension PassangerFormController {
     func showAgreemnetDialog(callback: @escaping (AgreementValues) -> ()) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alert.setTint(color: .appMango)
-        let noAction = UIAlertAction(title: AgreementValues.no.rawValue, style: .default, handler: { _ in
+        let noAction = UIAlertAction(title: AgreementValues.no.string, style: .default, handler: { _ in
             callback(AgreementValues.no)
             
         })
-        let yesAction = UIAlertAction(title: AgreementValues.yes.rawValue, style: .default, handler: { [weak self] _ in
+        let yesAction = UIAlertAction(title: AgreementValues.yes.string, style: .default, handler: { [weak self] _ in
             callback(AgreementValues.yes)
             
         })

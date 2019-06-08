@@ -23,11 +23,11 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gD0-fW-O8V">
-                    <rect key="frame" x="-20" y="44" width="454" height="60"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gD0-fW-O8V">
+                    <rect key="frame" x="0.0" y="44" width="414" height="40"/>
                     <subviews>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qY2-aq-TDa" userLabel="tabbar" customClass="TabBar" customModule="Direct" customModuleProvider="target">
-                            <rect key="frame" x="20" y="20" width="414" height="40"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qY2-aq-TDa" userLabel="tabbar" customClass="TabBar" customModule="Direct" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="80" id="b6s-lR-hwr"/>
@@ -40,12 +40,11 @@
                         <constraint firstAttribute="bottom" secondItem="qY2-aq-TDa" secondAttribute="bottom" id="NoY-Zj-yev"/>
                         <constraint firstItem="qY2-aq-TDa" firstAttribute="top" secondItem="gD0-fW-O8V" secondAttribute="top" id="U7l-Lo-84J"/>
                         <constraint firstAttribute="height" constant="40" id="ZTg-OI-xsI"/>
-                        <constraint firstAttribute="trailing" secondItem="qY2-aq-TDa" secondAttribute="trailing" id="bAC-gE-5oR"/>
                         <constraint firstItem="qY2-aq-TDa" firstAttribute="leading" secondItem="gD0-fW-O8V" secondAttribute="leading" id="wC0-Ky-OLN"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7mX-0p-wxc">
-                    <rect key="frame" x="0.0" y="183" width="414" height="679"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7mX-0p-wxc">
+                    <rect key="frame" x="0.0" y="96" width="414" height="778"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
@@ -61,7 +60,6 @@
                 <constraint firstItem="gD0-fW-O8V" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="77s-TI-4hT"/>
                 <constraint firstAttribute="trailing" secondItem="gD0-fW-O8V" secondAttribute="trailing" id="8iB-3B-SD9"/>
                 <constraint firstItem="gD0-fW-O8V" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Tfm-zs-mOv"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="7mX-0p-wxc" secondAttribute="bottom" id="Ux4-LS-RIQ"/>
                 <constraint firstItem="7mX-0p-wxc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tvk-P2-VyE"/>
                 <constraint firstItem="7mX-0p-wxc" firstAttribute="top" secondItem="gD0-fW-O8V" secondAttribute="bottom" constant="12" id="xTo-PU-heG"/>
             </constraints>

@@ -75,13 +75,7 @@
 		6C3885CD229B2B4900CA168A /* NewVisaCountriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3885CC229B2B4900CA168A /* NewVisaCountriesResponse.swift */; };
 		6C3885CF229B672600CA168A /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3885CE229B672600CA168A /* SearchViewModel.swift */; };
 		6C3885D1229B6CD700CA168A /* UIIMage + Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3885D0229B6CD700CA168A /* UIIMage + Kingfisher.swift */; };
-		6C3A62FA22A5033500DD6DD8 /* Cairo-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C3A62F422A5033500DD6DD8 /* Cairo-SemiBold.ttf */; };
-		6C3A62FC22A5033500DD6DD8 /* Cairo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C3A62F622A5033500DD6DD8 /* Cairo-Black.ttf */; };
-		6C3A62FD22A5033500DD6DD8 /* Cairo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C3A62F722A5033500DD6DD8 /* Cairo-Bold.ttf */; };
-		6C3A62FE22A5033500DD6DD8 /* Cairo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C3A62F822A5033500DD6DD8 /* Cairo-Light.ttf */; };
-		6C3A62FF22A5033500DD6DD8 /* Cairo-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C3A62F922A5033500DD6DD8 /* Cairo-ExtraLight.ttf */; };
 		6C557557228BA52900BAE5E2 /* View+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C557556228BA52900BAE5E2 /* View+Colors.swift */; };
-		6C557565228BAC6100BAE5E2 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6C55755C228BAC6000BAE5E2 /* OFL.txt */; };
 		6C55756F228BAEB700BAE5E2 /* UIFont+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C55756E228BAEB700BAE5E2 /* UIFont+UIView.swift */; };
 		6C5DE7652275DA99001A9FB6 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE7642275DA99001A9FB6 /* UIView.swift */; };
 		6C5DE7682275EC49001A9FB6 /* VisaRequirementTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE7662275EC49001A9FB6 /* VisaRequirementTableCell.swift */; };
@@ -95,6 +89,12 @@
 		6C5FDA522270816B00ABA39B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C5FDA502270816B00ABA39B /* Main.storyboard */; };
 		6C5FDA542270816C00ABA39B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C5FDA532270816C00ABA39B /* Assets.xcassets */; };
 		6C5FDA572270816C00ABA39B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C5FDA552270816C00ABA39B /* LaunchScreen.storyboard */; };
+		6C6A0C0C22AB81F800150FF6 /* Cairo-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C6A0C0622AB81F700150FF6 /* Cairo-ExtraLight.ttf */; };
+		6C6A0C0D22AB81F800150FF6 /* Cairo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C6A0C0722AB81F800150FF6 /* Cairo-Light.ttf */; };
+		6C6A0C0E22AB81F800150FF6 /* Cairo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C6A0C0822AB81F800150FF6 /* Cairo-Regular.ttf */; };
+		6C6A0C0F22AB81F800150FF6 /* Cairo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C6A0C0922AB81F800150FF6 /* Cairo-Black.ttf */; };
+		6C6A0C1022AB81F800150FF6 /* Cairo-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C6A0C0A22AB81F800150FF6 /* Cairo-SemiBold.ttf */; };
+		6C6A0C1122AB81F800150FF6 /* Cairo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C6A0C0B22AB81F800150FF6 /* Cairo-Bold.ttf */; };
 		6C6EED6922A248BA0091B82F /* PaymentAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6EED6822A248BA0091B82F /* PaymentAPIs.swift */; };
 		6C6EED6B22A24C190091B82F /* PaymentMethodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6EED6A22A24C190091B82F /* PaymentMethodsResponse.swift */; };
 		6C6EED6D22A24C560091B82F /* PaymentChildsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6EED6C22A24C560091B82F /* PaymentChildsResponse.swift */; };
@@ -315,14 +315,6 @@
 		6C3A62F822A5033500DD6DD8 /* Cairo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Light.ttf"; sourceTree = "<group>"; };
 		6C3A62F922A5033500DD6DD8 /* Cairo-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-ExtraLight.ttf"; sourceTree = "<group>"; };
 		6C557556228BA52900BAE5E2 /* View+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Colors.swift"; sourceTree = "<group>"; };
-		6C55755C228BAC6000BAE5E2 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
-		6C55755D228BAC6100BAE5E2 /* Cairo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Regular.ttf"; sourceTree = "<group>"; };
-		6C55755E228BAC6100BAE5E2 /* Cairo-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Black.ttf"; sourceTree = "<group>"; };
-		6C55755F228BAC6100BAE5E2 /* Cairo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Light.ttf"; sourceTree = "<group>"; };
-		6C557560228BAC6100BAE5E2 /* Cairo-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-ExtraLight.ttf"; sourceTree = "<group>"; };
-		6C557561228BAC6100BAE5E2 /* Cairo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Bold.ttf"; sourceTree = "<group>"; };
-		6C557562228BAC6100BAE5E2 /* METADATA.pb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = METADATA.pb; sourceTree = "<group>"; };
-		6C557564228BAC6100BAE5E2 /* Cairo-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-SemiBold.ttf"; sourceTree = "<group>"; };
 		6C55756E228BAEB700BAE5E2 /* UIFont+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+UIView.swift"; sourceTree = "<group>"; };
 		6C5DE7642275DA99001A9FB6 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		6C5DE7662275EC49001A9FB6 /* VisaRequirementTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaRequirementTableCell.swift; sourceTree = "<group>"; };
@@ -338,6 +330,12 @@
 		6C5FDA532270816C00ABA39B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C5FDA562270816C00ABA39B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C5FDA582270816C00ABA39B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C6A0C0622AB81F700150FF6 /* Cairo-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-ExtraLight.ttf"; sourceTree = "<group>"; };
+		6C6A0C0722AB81F800150FF6 /* Cairo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Light.ttf"; sourceTree = "<group>"; };
+		6C6A0C0822AB81F800150FF6 /* Cairo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Regular.ttf"; sourceTree = "<group>"; };
+		6C6A0C0922AB81F800150FF6 /* Cairo-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Black.ttf"; sourceTree = "<group>"; };
+		6C6A0C0A22AB81F800150FF6 /* Cairo-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-SemiBold.ttf"; sourceTree = "<group>"; };
+		6C6A0C0B22AB81F800150FF6 /* Cairo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Bold.ttf"; sourceTree = "<group>"; };
 		6C6EED6822A248BA0091B82F /* PaymentAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAPIs.swift; sourceTree = "<group>"; };
 		6C6EED6A22A24C190091B82F /* PaymentMethodsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodsResponse.swift; sourceTree = "<group>"; };
 		6C6EED6C22A24C560091B82F /* PaymentChildsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentChildsResponse.swift; sourceTree = "<group>"; };
@@ -752,15 +750,13 @@
 		6C55755B228BAC4500BAE5E2 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
+				6C6A0C0922AB81F800150FF6 /* Cairo-Black.ttf */,
+				6C6A0C0B22AB81F800150FF6 /* Cairo-Bold.ttf */,
+				6C6A0C0622AB81F700150FF6 /* Cairo-ExtraLight.ttf */,
+				6C6A0C0722AB81F800150FF6 /* Cairo-Light.ttf */,
+				6C6A0C0822AB81F800150FF6 /* Cairo-Regular.ttf */,
+				6C6A0C0A22AB81F800150FF6 /* Cairo-SemiBold.ttf */,
 				39EE2ABA22A09D0300A9A501 /* Helpers */,
-				6C55755E228BAC6100BAE5E2 /* Cairo-Black.ttf */,
-				6C557561228BAC6100BAE5E2 /* Cairo-Bold.ttf */,
-				6C557560228BAC6100BAE5E2 /* Cairo-ExtraLight.ttf */,
-				6C55755F228BAC6100BAE5E2 /* Cairo-Light.ttf */,
-				6C55755D228BAC6100BAE5E2 /* Cairo-Regular.ttf */,
-				6C557564228BAC6100BAE5E2 /* Cairo-SemiBold.ttf */,
-				6C557562228BAC6100BAE5E2 /* METADATA.pb */,
-				6C55755C228BAC6000BAE5E2 /* OFL.txt */,
 			);
 			path = fonts;
 			sourceTree = "<group>";
@@ -797,6 +793,7 @@
 				6C5FDA4A2270816B00ABA39B /* Products */,
 				5F1FA66011DE826955166F58 /* Pods */,
 				C90B9680D0CBA3B7A036164C /* Frameworks */,
+				6C6A0C0522AB7F9C00150FF6 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -824,6 +821,18 @@
 				6CA040B52281BE0300619B6F /* FloatingTextField.swift */,
 			);
 			path = Direct;
+			sourceTree = "<group>";
+		};
+		6C6A0C0522AB7F9C00150FF6 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				6C3A62F722A5033500DD6DD8 /* Cairo-Bold.ttf */,
+				6C3A62F822A5033500DD6DD8 /* Cairo-Light.ttf */,
+				6C3A62F922A5033500DD6DD8 /* Cairo-ExtraLight.ttf */,
+				6C3A62F622A5033500DD6DD8 /* Cairo-Black.ttf */,
+				6C3A62F422A5033500DD6DD8 /* Cairo-SemiBold.ttf */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		6C6EED6722A248A20091B82F /* api */ = {
@@ -1270,17 +1279,15 @@
 				6C90278E228F951700B41705 /* InstituteDetailsHeaderView.xib in Resources */,
 				6C9027C4228F95A000B41705 /* OrderDetailsController.xib in Resources */,
 				6C902794228F952500B41705 /* SponsersViewController.xib in Resources */,
-				6C3A62FD22A5033500DD6DD8 /* Cairo-Bold.ttf in Resources */,
 				6C9027B8228F958600B41705 /* CheckoutBottomView.xib in Resources */,
+				6C6A0C1022AB81F800150FF6 /* Cairo-SemiBold.ttf in Resources */,
 				6C9027C1228F959900B41705 /* OrdersHistoryController.xib in Resources */,
 				6C9027A9228F956600B41705 /* PackagesTableCell.xib in Resources */,
-				6C3A62FE22A5033500DD6DD8 /* Cairo-Light.ttf in Resources */,
 				6C902782228F94FD00B41705 /* SuccessRequestInstituteController.xib in Resources */,
 				6C902788228F950A00B41705 /* InstituteTableCell.xib in Resources */,
 				6C902773228F94BF00B41705 /* AboutUsViewController.xib in Resources */,
 				3992B66822961B5F00BBB7F1 /* TagCollectionCell.xib in Resources */,
 				6CF3E1A5227254A1007488BA /* InstituteCollectionViewCell.xib in Resources */,
-				6C557565228BAC6100BAE5E2 /* OFL.txt in Resources */,
 				39EE2AD622A0BD6700A9A501 /* Localizable.strings in Resources */,
 				6C90279D228F954C00B41705 /* PaymentMethodTableCell.xib in Resources */,
 				6C9027CD228F95B100B41705 /* VisaRequirementTableCell.xib in Resources */,
@@ -1292,23 +1299,25 @@
 				6C9027A0228F955200B41705 /* PaymentBranchTableCell.xib in Resources */,
 				6C9027D3228F95BD00B41705 /* NewDirectVisaController.xib in Resources */,
 				6C9027D6228F95C300B41705 /* SuccessVisaRequestController.xib in Resources */,
+				6C6A0C0C22AB81F800150FF6 /* Cairo-ExtraLight.ttf in Resources */,
 				6CF3E1A122725478007488BA /* OfferCollectionViewCell.xib in Resources */,
 				39EE2AD322A0B80900A9A501 /* Authentication.xcassets in Resources */,
 				6CF2515422A660A000CDA47C /* PassangerFormController.xib in Resources */,
+				6C6A0C0F22AB81F800150FF6 /* Cairo-Black.ttf in Resources */,
 				6C902779228F94CF00B41705 /* ContactUsViewController.xib in Resources */,
 				6C902797228F953A00B41705 /* PaymentViewController.xib in Resources */,
 				6C244FCC229212E600B205B9 /* HelpTableCell.xib in Resources */,
 				6C90278B228F951000B41705 /* InstituteDetailsTableCell.xib in Resources */,
 				6C5FDA572270816C00ABA39B /* LaunchScreen.storyboard in Resources */,
-				6C3A62FF22A5033500DD6DD8 /* Cairo-ExtraLight.ttf in Resources */,
 				6C5FDA542270816C00ABA39B /* Assets.xcassets in Resources */,
 				6C902791228F951E00B41705 /* ReserveCourseInstitueController.xib in Resources */,
 				6C5FDA522270816B00ABA39B /* Main.storyboard in Resources */,
 				6CF3E1B9227268CF007488BA /* HomeCollectionSectionHeader.xib in Resources */,
+				6C6A0C1122AB81F800150FF6 /* Cairo-Bold.ttf in Resources */,
 				6CF3E19D22725430007488BA /* VisaCollectionViewCell.xib in Resources */,
 				6C902785228F950400B41705 /* InstitutesListController.xib in Resources */,
-				6C3A62FC22A5033500DD6DD8 /* Cairo-Black.ttf in Resources */,
 				6C9027C7228F95A600B41705 /* OrderTableCell.xib in Resources */,
+				6C6A0C0E22AB81F800150FF6 /* Cairo-Regular.ttf in Resources */,
 				6C9027AF228F957100B41705 /* SuccessPackageController.xib in Resources */,
 				6C9027A3228F955800B41705 /* BankTableCell.xib in Resources */,
 				6C9027DF228F95D200B41705 /* AboutUsTableCell.xib in Resources */,
@@ -1321,8 +1330,8 @@
 				6C9027B2228F957700B41705 /* SingleRowTableCell.xib in Resources */,
 				6C9027DC228F95CD00B41705 /* DatePickerController.xib in Resources */,
 				6C90279A228F954000B41705 /* BanksViewController.xib in Resources */,
-				6C3A62FA22A5033500DD6DD8 /* Cairo-SemiBold.ttf in Resources */,
 				6CF3E1A9227254B7007488BA /* NewsCollectionViewCell.xib in Resources */,
+				6C6A0C0D22AB81F800150FF6 /* Cairo-Light.ttf in Resources */,
 				3992B66F2296211300BBB7F1 /* CountryTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1357,7 +1366,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Direct/Pods-Direct-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Direct/Pods-Direct-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ARSLineProgress/ARSLineProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
@@ -1404,7 +1413,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Direct/Pods-Direct-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Direct/Pods-Direct-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FDA22F40912A830360693561 /* [CP] Check Pods Manifest.lock */ = {
