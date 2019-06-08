@@ -33,6 +33,7 @@ class VisaReqConfirmationController: UIViewController {
     @IBOutlet var checkoutFooter: CheckoutFooter!
     @IBOutlet var tableHeightConstrain: NSLayoutConstraint!
     @IBOutlet var passangersTable: UITableView!
+    @IBOutlet private  weak var pickDateView: UIView!
     //===================================================<<
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +49,14 @@ class VisaReqConfirmationController: UIViewController {
         }
         
         passangersTable.rx.observeWeakly(CGSize.self, contentSizeKey).subscribe(onNext: { [unowned self] _ in
-//            self.tableHeight.onNext(self.passangersTable.contentSize.height + self.headerHeight)
-            self.tableHeightConstrain.constant = self.passangersTable.contentSize.height
+            if self.checkoutFooter.frame.minY - self.pickDateView.frame.maxY  <= 50{
+                self.passangersTable.isScrollEnabled  = true
+                self.passangersTable.bounces = true
+                self.passangersTable.bouncesZoom = true
+            }else{
+                self.tableHeightConstrain.constant = self.passangersTable.contentSize.height
+                
+            }
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
     

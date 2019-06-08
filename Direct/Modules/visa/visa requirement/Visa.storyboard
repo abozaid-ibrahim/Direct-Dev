@@ -415,6 +415,7 @@
                         <outlet property="pasangerCountLbl" destination="t8H-mk-MHH" id="htq-FW-G8X"/>
                         <outlet property="passangersTable" destination="FJQ-Qm-LFe" id="WBa-hB-zpJ"/>
                         <outlet property="pckDateLbl" destination="SsY-RN-4BW" id="LPF-Vy-hPF"/>
+                        <outlet property="pickDateView" destination="aKs-D1-LLb" id="uoZ-Jp-KWs"/>
                         <outlet property="relationlbl" destination="ejD-Hx-lWN" id="X9t-cL-Ij0"/>
                         <outlet property="tableHeightConstrain" destination="eby-jC-k8N" id="ZYa-of-woM"/>
                         <outlet property="visaTypeLbl" destination="a7T-le-4cT" id="CoD-m5-hQb"/>
@@ -477,16 +478,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="saB-OG-pZO">
-                                                    <rect key="frame" x="6" y="6" width="386" height="38"/>
+                                                    <rect key="frame" x="6" y="6" width="386" height="43"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDi-Ew-jwg">
-                                                            <rect key="frame" x="0.0" y="0.0" width="358" height="38"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="358" height="43"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cancelGray" translatesAutoresizingMaskIntoConstraints="NO" id="wN9-aA-PKx">
-                                                            <rect key="frame" x="366" y="0.0" width="20" height="38"/>
+                                                            <rect key="frame" x="366" y="0.0" width="20" height="43"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="20" id="9lU-UJ-HPA"/>
                                                             </constraints>
@@ -533,6 +534,7 @@
                             <constraint firstItem="ocC-P9-gJ6" firstAttribute="leading" secondItem="Ayf-pf-clK" secondAttribute="leading" constant="8" id="cSD-5e-DWx"/>
                             <constraint firstItem="vdC-TN-SmQ" firstAttribute="top" secondItem="ocC-P9-gJ6" secondAttribute="bottom" constant="8" id="zCt-pg-01y"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="dsN-Xd-IeA"/>
                     </view>
                     <connections>
                         <outlet property="addButton" destination="vdC-TN-SmQ" id="q2X-IE-Tjz"/>
