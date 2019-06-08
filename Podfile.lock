@@ -2,12 +2,7 @@ PODS:
   - Alamofire (4.8.2)
   - ARSLineProgress (3.1.0)
   - Differentiator (3.1.0)
-<<<<<<< develop
-=======
   - GenericCellControllers (1.1.0)
-  - Hero (1.4.0)
-  - IBAnalyzer (0.3.0)
->>>>>>> Auth
   - JBDatePicker (1.2.5)
   - Kingfisher (5.5.0)
   - M13Checkbox (3.4.0)
@@ -45,11 +40,6 @@ PODS:
     - SwifterSwift/SwiftStdlib (= 5.0.0)
     - SwifterSwift/UIKit (= 5.0.0)
   - SwifterSwift/AppKit (5.0.0)
-<<<<<<< develop
-
-DEPENDENCIES:
-  - ARSLineProgress (~> 3.1)
-=======
   - SwifterSwift/CoreGraphics (5.0.0)
   - SwifterSwift/CoreLocation (5.0.0)
   - SwifterSwift/Dispatch (5.0.0)
@@ -66,9 +56,6 @@ DEPENDENCIES:
 DEPENDENCIES:
   - ARSLineProgress (~> 3.1)
   - GenericCellControllers
-  - Hero
-  - IBAnalyzer
->>>>>>> Auth
   - JBDatePicker
   - Kingfisher (~> 5.0)
   - M13Checkbox
@@ -80,26 +67,17 @@ DEPENDENCIES:
   - RxOptional
   - RxSwift (~> 4.0)
   - SkyFloatingLabelTextField (~> 3.0)
-<<<<<<< develop
-  - SwifterSwift/AppKit
-=======
   - SnapKit
   - SwifterSwift
   - SwiftMessages
   - YALField
->>>>>>> Auth
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - ARSLineProgress
     - Differentiator
-<<<<<<< develop
-=======
     - GenericCellControllers
-    - Hero
-    - IBAnalyzer
->>>>>>> Auth
     - JBDatePicker
     - Kingfisher
     - M13Checkbox
@@ -114,22 +92,14 @@ SPEC REPOS:
     - SkyFloatingLabelTextField
     - SnapKit
     - SwifterSwift
-<<<<<<< develop
-=======
     - SwiftMessages
     - YALField
->>>>>>> Auth
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   ARSLineProgress: 60778657c69491796c3faf5b834c72924c405833
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
-<<<<<<< develop
-=======
   GenericCellControllers: dfb84b8f74ed40fc85bba4bd9c0b2e0780fa6258
-  Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
-  IBAnalyzer: b126675d57df92f5b2464e836f22bcc83fd4970e
->>>>>>> Auth
   JBDatePicker: 0e791c8a79c49b0d37decea28ba147515bf5cfca
   Kingfisher: 6fe5e67a90fd335e49b0f5c075ff55ac5ebedd94
   M13Checkbox: 6f59404540ac98ba83a3d1afac335895a40c6a5d
@@ -144,14 +114,9 @@ SPEC CHECKSUMS:
   SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
   SwifterSwift: 96f90594b370802f01647c2b1229c74a84ffafee
-<<<<<<< develop
-
-PODFILE CHECKSUM: 7cee4900387f29261e1cdb91e6fd4a7f5d992db2
-=======
   SwiftMessages: a952f7a9103d9aeab93730a2861d2d8fcdd8758f
   YALField: f80f986de790bb13690264422437fa4e0593af0a
 
-PODFILE CHECKSUM: 2afa3f64eb8caba23d991531a427a09391e2bb98
->>>>>>> Auth
+PODFILE CHECKSUM: c2bb8a4bf280b0e57527ab71504c91b1bd07db2c
 
 COCOAPODS: 1.5.2
