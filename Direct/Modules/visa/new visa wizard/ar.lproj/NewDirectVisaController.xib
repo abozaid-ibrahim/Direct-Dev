@@ -163,16 +163,16 @@
                                             <rect key="frame" x="0.0" y="35" width="335" height="59"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6pv-tG-js8">
-                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="42"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="35"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightGreenIcon" translatesAutoresizingMaskIntoConstraints="NO" id="XEG-sb-vIO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="15" height="42"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="15" height="35"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="15" id="ti7-kK-zWJ"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="248" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5d-Y8-FWJ">
-                                                            <rect key="frame" x="25" y="0.0" width="310" height="42"/>
+                                                            <rect key="frame" x="25" y="0.0" width="310" height="35"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -180,16 +180,16 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bAq-8h-yOj">
-                                                    <rect key="frame" x="0.0" y="50" width="335" height="9"/>
+                                                    <rect key="frame" x="0.0" y="43" width="335" height="16"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group14" translatesAutoresizingMaskIntoConstraints="NO" id="NK9-4H-vA7">
-                                                            <rect key="frame" x="0.0" y="0.0" width="15" height="9"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cancelGray" translatesAutoresizingMaskIntoConstraints="NO" id="NK9-4H-vA7">
+                                                            <rect key="frame" x="0.0" y="0.0" width="15" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="15" id="lZd-Xb-6k7"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="248" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zK2-wC-8cu">
-                                                            <rect key="frame" x="25" y="0.0" width="310" height="9"/>
+                                                            <rect key="frame" x="25" y="0.0" width="310" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -286,7 +286,7 @@
         </view>
     </objects>
     <resources>
-        <image name="group14" width="10" height="9"/>
+        <image name="cancelGray" width="10" height="9"/>
         <image name="group19" width="18" height="18"/>
         <image name="icons8AroundTheGlobe" width="16" height="16"/>
         <image name="icons8Calendar1" width="17" height="17"/>

@@ -29,7 +29,11 @@ class VisaRequirementTableCell: UITableViewCell, TableCell {
     typealias CellDataModel = Requirement
     @IBOutlet private var imgView: UIImageView!
     @IBOutlet private var descLbl: UILabel!
-    @IBOutlet var textlbl: UILabel!
+    @IBOutlet var textlbl: UILabel!{
+        didSet{
+            textLabel?.font = UIFont.appBoldFontWith(size: 18)
+        }
+    }
     @IBOutlet private var widthConst: NSLayoutConstraint!
     static let cellId = "VisaRequirementTableCell"
     override func awakeFromNib() {
