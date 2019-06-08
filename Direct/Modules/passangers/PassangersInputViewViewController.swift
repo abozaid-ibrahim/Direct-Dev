@@ -15,10 +15,14 @@ protocol PassangerInputsConnection {
 class PassangersInputViewViewController: UIViewController {
     @IBOutlet var containerView: UIView!
     @IBOutlet var tabbarView: TabBar!
+    @IBOutlet private  weak var tabbarWidthConstrain: NSLayoutConstraint!
+    var tabbar: TabBar!
     var visaInfo: VisaRequestParams?
     var successInputIndexes:[Int] = []
     private let disposeBag = DisposeBag()
     var defaultTabSelection:Int?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "معلومات المسافرين"
@@ -53,8 +57,13 @@ class PassangersInputViewViewController: UIViewController {
             })
             tabs.append((tab1 , tab1VC))
         }
-        let tabbar = TabBar(tabs: tabs.map { $0.0 })
-        tabbar.icon.isHidden = false
+        if tabs.count > 3{
+            tabbarWidthConstrain.constant = view.bounds.width
+        }else{
+            tabbarWidthConstrain.constant = CGFloat(tabs.count * 80)
+        }
+         tabbar = TabBar(tabs: tabs.map { $0.0 })
+        tabbar.tabsIcon.forEach{$0.image = #imageLiteral(resourceName: "rightGreen")}
         tabbarView.addSubview(tabbar)
         tabbar.sameBoundsTo(parentView: tabbarView)
        
@@ -69,15 +78,19 @@ class PassangersInputViewViewController: UIViewController {
         }
     }
     private func selectNextTab()->Bool{
+        
         for tab in self.tabs{
-            if !self.successInputIndexes.contains((tab.1.index ?? -1 ) ){
-                self.selectTab((tab.1.index ?? -1), tab.1)
+            let index = (tab.1.index! )
+            if self.successInputIndexes.contains(index){
+                tabbar.tabsIcon[index].image = #imageLiteral(resourceName: "path4")
+            }else{
+                self.selectTab(index, tab.1)
                 return true
             }
-            
         }
         return false
     }
+    
     private func selectTab(_ index: Int, _ tab1VC: PassangerFormController) {
         /* 1 if item is subview//goto 3
           show item
@@ -95,6 +108,7 @@ class PassangersInputViewViewController: UIViewController {
         for (i,item) in tabs.enumerated() {
             item.1.view.isHidden = index == i ? false : true
         }
+        tabbar.didSelectTab(index: index)
     }
    
 }

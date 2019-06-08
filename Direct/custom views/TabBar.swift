@@ -22,13 +22,13 @@ class TabBar: UIView {
         return stack
     }()
 
-    func createContentStack()->UIStackView{
-            let stack = UIStackView()
-            stack.alignment = .fill
-            stack.distribution = .fill
-            stack.axis = .horizontal
-            stack.spacing = 10
-            return stack
+    func createContentStack() -> UIStackView {
+        let stack = UIStackView()
+        stack.alignment = .fill
+        stack.distribution = .fill
+        stack.axis = .horizontal
+        stack.spacing = 10
+        return stack
     }
 
     var selector: UIView {
@@ -48,46 +48,61 @@ class TabBar: UIView {
 
     var icon: UIImageView {
         let iv = UIImageView()
-        iv.image = #imageLiteral(resourceName: "path4")
+        iv.image = #imageLiteral(resourceName: "icons8More")
         iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.widthAnchor.constraint(equalToConstant: 20).isActive = true
-        iv.isHidden = true
+        iv.widthAnchor.constraint(equalToConstant: 15).isActive = true
+        iv.contentMode = .scaleAspectFit
         return iv
     }
 
     let bag = DisposeBag()
     private var tabsSep: [UIView] = []
+    var tabsIcon: [UIImageView] = []
+
     func createUI(tabs: [TAB]) {
-        for tab in tabs {
+        for (index, tab) in tabs.enumerated() {
             let content = createContentStack()
             let lbl = UILabel()
             lbl.textAlignment = .center
             lbl.text = tab.0
             lbl.font = UIFont(name: AppFonts.regularFont, size: 15)
-            content.addArrangedSubview(icon)
+            let iv = icon
+            content.addArrangedSubview(iv)
             content.addArrangedSubview(lbl)
             let sel = selector
-            let view = UIStackView(arrangedSubviews: [content, sel])
-            view.alignment = .fill
-            view.axis = .vertical
-            view.spacing = 5
-            view.rx.tapGesture().asObservable().skip(1).subscribe { _ in
+            let oneTabView = UIStackView(arrangedSubviews: [content, sel])
+            oneTabView.alignment = .fill
+            oneTabView.axis = .vertical
+            oneTabView.spacing = 5
+            oneTabView.rx.tapGesture().asObservable().skip(1).subscribe { _ in
                 tab.1()
-                for sep in self.tabsSep {
-                    sep.alpha = 0.0
+                for (i, sep) in self.tabsSep.enumerated() {
+                    if index == i {
+                        sep.alpha = 1.0
+                    } else {
+                        sep.alpha = 0.0
+                    }
                 }
-                sel.alpha = 1.0
 
             }.disposed(by: bag)
             tabsSep.append(sel)
-            stackContainer.addArrangedSubview(view)
+            tabsIcon.append(iv)
+            stackContainer.addArrangedSubview(oneTabView)
         }
         // set default selection 1
         setFirstDefaultSelector()
         addSubview(stackContainer)
-        stackContainer.sameBoundsTo(parentView: self)
+        stackContainer.sameBoundsTo(parentView: self, l: 10, tr: 10)
     }
-
+    func didSelectTab(index:Int){
+        for (i, sep) in self.tabsSep.enumerated() {
+            if index == i {
+                sep.alpha = 1.0
+            } else {
+                sep.alpha = 0.0
+            }
+        }
+    }
     private func setFirstDefaultSelector() {
         for sep in tabsSep.enumerated() {
             if sep.offset == 0 {
