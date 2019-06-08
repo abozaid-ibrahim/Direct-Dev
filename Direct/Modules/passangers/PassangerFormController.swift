@@ -12,17 +12,25 @@ import RxSwift
 import UIKit
 
 class PassangerFormController: UIViewController, ImagePicker {
+    // MARK: ImagePicker
+    
     var currentImageID: Int = 0
-    let familyImageID = 30
-    let visaImageID = 23
-    let last10YearsVisaImageID = 20
-    var countryName: String?
-
-    var countryId: String?
-    var index:Int?
+    private let familyImageID = 30
+    private let visaImageID = 23
+    private let last10YearsVisaImageID = 20
+    
+    // MARK: Inject FromOutSide
+    
+    var countryName: String!
+    var countryId: String!
+    var index: Int!
+    
+    // MARK: update parent
+    
     var successIndex = PublishSubject<Int>()
-
+    
     // MARK: IBuilder ====================================>>
+    
     // Family
     @IBOutlet var firstNamePInfoLbl: FloatingTextField!
     @IBOutlet var familyNamePInfoLbl: FloatingTextField!
@@ -31,33 +39,38 @@ class PassangerFormController: UIViewController, ImagePicker {
     
     @IBOutlet var husbundPInfoLbl: FloatingTextField!
     @IBOutlet var familyIDPInfoLbl: FloatingTextField!
-    // MOTHER
+    
+    // MARK: MOTHER
+    
     @IBOutlet var firstNameMotherLbl: FloatingTextField!
     @IBOutlet var familyNameMotherLbl: FloatingTextField!
     @IBOutlet var nationalityMotherLbl: FloatingTextField!
-    //Ever you had a vis
-    @IBOutlet weak var previousVisaLbl: UILabel!
-    @IBOutlet weak var previousVisaImageField: FloatingTextField!
+    
+    // MARK: Ever you had a vis
+    
+    @IBOutlet var previousVisaLbl: UILabel!
+    @IBOutlet var previousVisaImageField: FloatingTextField!
     @IBOutlet var everHadVisaSegment: UISegmentedControl! {
         didSet {
             everHadVisaSegment.appFont()
         }
     }
     
+    // MARK: last 10 years
     
-    
-    // last 10 years
-    @IBOutlet weak var didYouTraveledLast10YearLbl: UILabel!
-    @IBOutlet weak var last10VisaField: FloatingTextField!
+    @IBOutlet var didYouTraveledLast10YearLbl: UILabel!
+    @IBOutlet var last10VisaField: FloatingTextField!
     @IBOutlet var traveledInLast10YrsSegment: UISegmentedControl! {
         didSet {
             traveledInLast10YrsSegment.appFont()
         }
     }
-    //countries
+    
+    // MARK: countries
+    
     @IBOutlet private var previouslyTraveledCountriesView: UIView!
     @IBOutlet var countriesContainerHeight: NSLayoutConstraint!
-
+    
     //===================================================<<
     internal let disposeBag = DisposeBag()
     var receivedImage = PublishSubject<(String?, UIImage?)>()
@@ -92,16 +105,18 @@ class PassangerFormController: UIViewController, ImagePicker {
             .subscribe { _ in
                 self.showAgreemnetDialog(callback: { [weak self] agreed in
                     self?.params.husbandOrWifeTravelWithYou = agreed.apiValue.stringValue
-                    self?.husbundPInfoLbl.text = agreed.rawValue
+                    self?.husbundPInfoLbl.text = agreed.string
                 })
             }.disposed(by: disposeBag)
     }
-    private var countryString:String{
+    
+    private var countryString: String {
         return countryName ?? ""
     }
+    
     private func questionsSetup() {
-       // ever you travedled
-        previousVisaLbl.text =  "هل سبق وحصلت على تأشيرة "  + countryString  + " من قبل؟"
+        // ever you travedled
+        previousVisaLbl.text = "هل سبق وحصلت على تأشيرة " + countryString + " من قبل؟"
         
         previousVisaImageField.rx.tapGesture().when(.recognized)
             .subscribe { _ in
@@ -116,7 +131,7 @@ class PassangerFormController: UIViewController, ImagePicker {
             } else if self.currentImageID == self.visaImageID {
                 self.params.visaReqID = value.1?.convertImageToBase64String()
                 self.previousVisaImageField.text = value.0
-            }else if self.currentImageID == self.last10YearsVisaImageID{
+            } else if self.currentImageID == self.last10YearsVisaImageID {
                 self.params.previousVisaCopy = value.1?.convertImageToBase64String()
                 self.last10VisaField.text = value.0
             }
@@ -124,15 +139,14 @@ class PassangerFormController: UIViewController, ImagePicker {
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         last10YearsSection()
     }
-    private func last10YearsSection(){
-        
+    
+    private func last10YearsSection() {
         didYouTraveledLast10YearLbl.text = "هل سافرت الى " + countryString + " في العشر سنوات الاخيرة ؟"
         
         last10VisaField.rx.tapGesture().when(.recognized)
             .subscribe { _ in
                 self.showImagePicker(id: self.last10YearsVisaImageID)
             }.disposed(by: disposeBag)
-  
     }
     
     func getPreviousVisaTypes() {
@@ -157,19 +171,6 @@ class PassangerFormController: UIViewController, ImagePicker {
         picker.dismiss(animated: true, completion: nil)
     }
     
-   
-    
-    func isValidateTextFields() -> Bool {
-        if !isValidatePersonalSectionTextFields() {
-            return false
-        }
-        if !isValidateFamilySectionTextFields() {
-            return false
-        }
-        
-        return true
-    }
-    
     func fillParams() {
         /// Personal Info
         params.firstName = firstNamePInfoLbl.text
@@ -186,12 +187,7 @@ class PassangerFormController: UIViewController, ImagePicker {
         params.travelledBeforeHere = "\(traveledInLast10YrsSegment.state == .selected ? 1 : 0)"
         
         // Others PDF
-        //        params.personalPhotoCopy
         params.lang = AppLanguage.langCode
-        //        params.typeOfPreviousVisa = prev
-//        params.periodOfPreviousStay = durationLbl.text
-        
-        //
         
         params.travelledBeforeHere = prevTravelsJson
     }
@@ -207,9 +203,7 @@ class PassangerFormController: UIViewController, ImagePicker {
         guard isValidateTextFields() else {
             return
         }
-        guard let id = countryId else {
-            return
-        }
+        let id = countryId!
         Progress.show()
         
         if id == APIConstants.USID {
@@ -223,7 +217,7 @@ class PassangerFormController: UIViewController, ImagePicker {
     
     func sendDataToServer(_ api: Observable<USVvisaRequestJSONResponse>) {
         api.observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [unowned self] response in
+            .subscribe(onNext: { [unowned self] _ in
                 Progress.hide()
                 self.successIndex.onNext(self.index ?? 0)
             }, onError: { _ in

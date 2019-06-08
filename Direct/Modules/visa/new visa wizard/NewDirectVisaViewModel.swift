@@ -137,7 +137,7 @@ class NewDirectVisaViewModel {
 
         showProgress.onNext(true)
         network?.sendVisaRequest(params: visaRequestData).subscribe(onNext: { [unowned self] _ in
-//            self.showProgress.onNext(false)
+log(self.visaRequestData.country_id)
             try! AppNavigator().push(.visaRequirement(self.visaRequestData)
             )
         }, onError: { _ in
@@ -220,7 +220,7 @@ class NewDirectVisaViewModel {
             switch event.event {
             case .next(let value):
                 self.selectedCountry = value
-                self.visaRequestData.country_id = value.country_id ?? ""
+                self.visaRequestData.country_id = value.country_id!
                 self.visaRequestData.countryName = value.countryName
                 self.selectedCountryName.onNext(value.countryName)
                 // RESET dep values
@@ -231,7 +231,7 @@ class NewDirectVisaViewModel {
                     self.priceNotes = notes
                 }
 
-                let cities = self.network?.getCities(country: value.country_id ?? "")
+                let cities = self.network?.getCities(country: value.country_id!)
                 cities?.subscribe(onNext: { [weak self] cities in
                     self?.embassyLocations = cities.dtEmbassyLocations
                 }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: self.disposeBag)

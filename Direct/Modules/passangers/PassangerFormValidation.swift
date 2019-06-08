@@ -12,6 +12,17 @@ import RxSwift
 
 // Validation
 extension PassangerFormController {
+    func isValidateTextFields() -> Bool {
+        if !isValidatePersonalSectionTextFields() {
+            return false
+        }
+        if !isValidateFamilySectionTextFields() {
+            return false
+        }
+        
+        return true
+    }
+    
     func isValidateFamilySectionTextFields() -> Bool {
         if params.mothersFirstName.isValidText {
             firstNameMotherLbl.setError.onNext(false)

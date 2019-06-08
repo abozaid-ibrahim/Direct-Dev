@@ -9,13 +9,9 @@
 import RxSwift
 import UIKit
 
-protocol PassangerInputsConnection {
-    func submit()
-}
-
 class PassangersInputViewViewController: UIViewController {
-    @IBOutlet var containerView: UIView!
-    @IBOutlet private  var tabbarView: TabBar!
+    @IBOutlet private var containerView: UIView!
+    @IBOutlet private var tabbarView: UIView!
     @IBOutlet private var tabbarWidthConstrain: NSLayoutConstraint!
     var tabbar: TabBar!
     var visaInfo: VisaRequestParams?

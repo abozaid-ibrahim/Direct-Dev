@@ -37,7 +37,7 @@ class ApiClientFacade {
 
 func log(_ value: Any) {
     #if DEBUG
-        print("logger:\(value)")
+        print("\n\n>>>logger:\(value)")
     #endif
 }
 
