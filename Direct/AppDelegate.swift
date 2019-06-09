@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,10 +20,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        for familyName in UIFont.familyNames {
 //            print(UIFont.fontNames(forFamilyName: familyName))
 //        }
-
+setupKeyboardManager()
         return true
     }
 
+    private func setupKeyboardManager() {
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
+        IQKeyboardManager.shared.previousNextDisplayMode = .alwaysHide
+        IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
+        IQKeyboardManager.shared.enableAutoToolbar = false
+    }
     private func setLanguage() {
         UserDefaults.standard.set(["ar"], forKey: "AppleLanguages")
         UserDefaults.standard.synchronize()

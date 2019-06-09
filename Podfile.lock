@@ -3,6 +3,7 @@ PODS:
   - ARSLineProgress (3.1.0)
   - Differentiator (3.1.0)
   - GenericCellControllers (1.1.0)
+  - IQKeyboardManagerSwift (6.3.0)
   - JBDatePicker (1.2.5)
   - Kingfisher (5.5.0)
   - M13Checkbox (3.4.0)
@@ -56,6 +57,7 @@ PODS:
 DEPENDENCIES:
   - ARSLineProgress (~> 3.1)
   - GenericCellControllers
+  - IQKeyboardManagerSwift
   - JBDatePicker
   - Kingfisher (~> 5.0)
   - M13Checkbox
@@ -78,6 +80,7 @@ SPEC REPOS:
     - ARSLineProgress
     - Differentiator
     - GenericCellControllers
+    - IQKeyboardManagerSwift
     - JBDatePicker
     - Kingfisher
     - M13Checkbox
@@ -100,6 +103,7 @@ SPEC CHECKSUMS:
   ARSLineProgress: 60778657c69491796c3faf5b834c72924c405833
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   GenericCellControllers: dfb84b8f74ed40fc85bba4bd9c0b2e0780fa6258
+  IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
   JBDatePicker: 0e791c8a79c49b0d37decea28ba147515bf5cfca
   Kingfisher: 6fe5e67a90fd335e49b0f5c075ff55ac5ebedd94
   M13Checkbox: 6f59404540ac98ba83a3d1afac335895a40c6a5d
@@ -117,6 +121,6 @@ SPEC CHECKSUMS:
   SwiftMessages: a952f7a9103d9aeab93730a2861d2d8fcdd8758f
   YALField: f80f986de790bb13690264422437fa4e0593af0a
 
-PODFILE CHECKSUM: c2bb8a4bf280b0e57527ab71504c91b1bd07db2c
+PODFILE CHECKSUM: 0d70fc946ad802609b6cd869c80faf8ce2d76ee3
 
 COCOAPODS: 1.6.1

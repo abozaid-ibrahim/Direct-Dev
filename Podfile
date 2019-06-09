@@ -23,7 +23,8 @@ target 'Direct' do
   pod 'SnapKit'
   pod 'SwiftMessages'
 
-  
+  	pod 'IQKeyboardManagerSwift' #, '~> 6.1.1'
+
 end
 post_install do |installer|
   installer.pods_project.build_configurations.each do |config|
