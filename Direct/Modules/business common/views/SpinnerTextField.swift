@@ -107,5 +107,7 @@ class SpinnerTextField: UIView {
         createUI()
         backgroundColor = UIColor.appOffWhite
         cornerRadiusV = 8
+        txtField.inputView = UIView()
+
     }
 }

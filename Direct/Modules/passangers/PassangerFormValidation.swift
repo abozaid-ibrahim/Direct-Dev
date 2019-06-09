@@ -73,6 +73,12 @@ extension PassangerFormController {
             familyIDPInfoLbl.setError.onNext(true)
             return false
         }
+        if params.passportCopy.isValidText {
+            passportImageField.setError.onNext(false)
+        } else {
+            passportImageField.setError.onNext(true)
+            return false
+        }
         return true
     }
 }

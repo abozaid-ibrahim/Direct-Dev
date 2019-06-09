@@ -28,7 +28,7 @@ class PassangersInputViewViewController: UIViewController {
     var tabs: [(TAB, PassangerFormController)] = []
     private func setupTabbar() {
         guard let info = visaInfo else { return }
-        
+        print(info.country_id ?? "country id is nil")
         for index in 0..<Int(info.no_of_adult)! {
             let tabController = PassangerFormController()
             tabController.countryName = info.countryName
@@ -55,9 +55,9 @@ class PassangersInputViewViewController: UIViewController {
             tabs.append((tab1, tab1VC))
         }
         if tabs.count > 3 {
-            tabbarWidthConstrain.constant = view.bounds.width
+            tabbarWidthConstrain.constant = tabbarView.bounds.width - 20
         } else {
-            tabbarWidthConstrain.constant = CGFloat(tabs.count * 85)
+            tabbarWidthConstrain.constant = CGFloat(tabs.count * 90)
         }
         tabbarView.setNeedsUpdateConstraints()
         tabbar = TabBar(tabs: tabs.map { $0.0 })

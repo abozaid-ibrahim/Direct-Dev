@@ -11,16 +11,17 @@ import UIKit
 
 class PreviousTraveledCountriesController: UIViewController {
     @IBOutlet private var tableView: UITableView!
-    @IBOutlet private var addButton: UIButton!{
-        didSet{
-            addButton.titleLabel?.font  = UIFont.appRegularFontWith(size: 15)
+    @IBOutlet private var addButton: UIButton! {
+        didSet {
+            addButton.titleLabel?.font = UIFont.appRegularFontWith(size: 15)
         }
     }
+
     private let disposeBag = DisposeBag()
     var tableHeight = PublishSubject<CGFloat>()
     var countries = PublishSubject<[String]>()
     var items: [String] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTable()
@@ -33,7 +34,7 @@ class PreviousTraveledCountriesController: UIViewController {
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 
-     let headerHeight = CGFloat(90)
+    let headerHeight = CGFloat(90)
     private let contentSizeKey = "contentSize"
 
     func setupTable() {
@@ -55,28 +56,32 @@ class PreviousTraveledCountriesController: UIViewController {
         alert.setBackgroudColor(color: UIColor.appVeryLightGray)
         alert.addTextField { (textField) -> Void in
             textField.textColor = UIColor.appVeryLightGray
-            textField.placeholder = "الدولة-السنة"
+            textField.placeholder = "the_country".localized
             textField.textColor = UIColor.black
             textField.font = UIFont.appRegularFontWith(size: 14)
         }
-        let add = UIAlertAction(title: "تم", style: .default, handler: { [weak self , unowned alert] _ in
+        alert.addTextField { (textField) -> Void in
+            textField.textColor = UIColor.appVeryLightGray
+            textField.placeholder = "the_year".localized
+            textField.textColor = UIColor.black
+            textField.font = UIFont.appRegularFontWith(size: 14)
+        }
+        let add = UIAlertAction(title: "تم", style: .default, handler: { [weak self, unowned alert] _ in
             guard let self = self else { return }
-            let text = alert.textFields?.first!.text ?? ""
-   
-            let regex = try! NSRegularExpression(pattern: #"^[\\u0621-\u064A\u0660-\u0669 ]"#)
+            let country = alert.textFields?.first!.text ?? ""
+            let year = alert.textFields?[1].text ?? ""
+//            let regex = try! NSRegularExpression(pattern: #"^[\\u0621-\u064A\u0660-\u0669 ]"#)
 
-            let results = regex.matches(in: text,
-                                        range: NSRange(text.startIndex..., in: text))
-            if results.count > 0{
-                
-                self.items.append(text)
+//            let results = regex.matches(in: text,
+//                                        range: NSRange(text.startIndex..., in: text))
+            if country.isNotEmpty && year.isNotEmpty {
+                self.items.append("\(country)-\(year)")
                 self.countries.onNext(self.items)
 
-            }else{
+            } else {
                 alert.message = "ادخل الصيغه الصحيحه"
-            
             }
-          
+
         })
 
         let cancel = UIAlertAction(title: "الغاء", style: .cancel, handler: nil)

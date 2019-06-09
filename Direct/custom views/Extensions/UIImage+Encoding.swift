@@ -110,13 +110,13 @@ extension ImagePicker{
         let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         optionMenu.popoverPresentationController?.sourceView = self.view
        optionMenu.setTint(color:  UIColor.appMango)
-        let takePhoto = UIAlertAction(title: "Take Photo", style: .default) { (alert : UIAlertAction!) in
+        let takePhoto = UIAlertAction(title: "Take Photo".localized, style: .default) { (alert : UIAlertAction!) in
             camera.getCameraOn(self, canEdit: true)
         }
-        let sharePhoto = UIAlertAction(title: "Photo Library", style: .default) { (alert : UIAlertAction!) in
+        let sharePhoto = UIAlertAction(title: "Photo Library".localized, style: .default) { (alert : UIAlertAction!) in
             camera.getPhotoLibraryOn(self, canEdit: true)
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (alert : UIAlertAction!) in
+        let cancelAction = UIAlertAction(title: "Cancel".localized, style: .cancel) { (alert : UIAlertAction!) in
         }
         optionMenu.addAction(takePhoto)
         optionMenu.addAction(sharePhoto)

@@ -16,10 +16,9 @@ class PassangerFormController: UIViewController, ImagePicker {
     
     var currentImageID: Int = 0
     private let familyImageID = 30
-    private let passportImageID = 30
-    
-    private let visaImageID = 23
-    private let last10YearsVisaImageID = 20
+    private let passportImageID = 31
+    private let visaImageID = 32
+    private let last10YearsVisaImageID = 33
     
     // MARK: Inject FromOutSide
     
@@ -76,11 +75,23 @@ class PassangerFormController: UIViewController, ImagePicker {
     @IBOutlet var countriesContainerHeight: NSLayoutConstraint!
     //
     
-    @IBOutlet var driverLicenseSegment: UISegmentedControl!
+    @IBOutlet var driverLicenseSegment: UISegmentedControl!{
+        didSet {
+            driverLicenseSegment.appFont()
+        }
+    }
     @IBOutlet private var relativeInCountryLbl: UILabel!
-    @IBOutlet var relativeINCountrySegment: UISegmentedControl!
+    @IBOutlet var relativeINCountrySegment: UISegmentedControl!{
+        didSet {
+            relativeINCountrySegment.appFont()
+        }
+    }
     @IBOutlet private var visaCancelationLbl: UILabel!
-    @IBOutlet var visaCancelationSegment: UISegmentedControl!
+    @IBOutlet var visaCancelationSegment: UISegmentedControl!{
+        didSet {
+            visaCancelationSegment.appFont()
+        }
+    }
     
     //===================================================<<
     internal let disposeBag = DisposeBag()
@@ -106,12 +117,13 @@ class PassangerFormController: UIViewController, ImagePicker {
             .subscribe { _ in
                 self.showMatrialState()
             }.disposed(by: disposeBag)
-        
+        familyIDPInfoLbl.neverShowKeypad(view)
         familyIDPInfoLbl.rx.tapGesture().when(.recognized)
             .subscribe { _ in
                 self.showImagePicker(id: self.familyImageID)
             }.disposed(by: disposeBag)
         
+        passportImageField.neverShowKeypad(view)
         passportImageField.rx.tapGesture().when(.recognized)
             .subscribe { _ in
                 self.showImagePicker(id: self.passportImageID)
@@ -134,6 +146,7 @@ class PassangerFormController: UIViewController, ImagePicker {
         previousVisaLbl.text = "هل سبق وحصلت على تأشيرة " + countryString + " من قبل؟"
         relativeInCountryLbl.text = "هل لديك اى اقارب فى " + countryString + "?"
         visaCancelationLbl.text = "هل تم رض دخولك أو الغاء تأشيرتك الى " + countryString + " من قبل؟"
+        previousVisaImageField.neverShowKeypad(view)
         previousVisaImageField.rx.tapGesture().when(.recognized)
             .subscribe { _ in
                 self.showImagePicker(id: self.visaImageID)
@@ -161,7 +174,7 @@ class PassangerFormController: UIViewController, ImagePicker {
     
     private func last10YearsSection() {
         didYouTraveledLast10YearLbl.text = "هل سافرت الى " + countryString + " في العشر سنوات الاخيرة ؟"
-        
+        last10VisaField.neverShowKeypad(view)
         last10VisaField.rx.tapGesture().when(.recognized)
             .subscribe { _ in
                 self.showImagePicker(id: self.last10YearsVisaImageID)
@@ -226,7 +239,7 @@ class PassangerFormController: UIViewController, ImagePicker {
         guard isValidateTextFields() else {
             return
         }
-        let id = countryId!
+        let id = countryId
         Progress.show()
         
         if id == APIConstants.USID {
@@ -246,5 +259,11 @@ class PassangerFormController: UIViewController, ImagePicker {
             }, onError: { _ in
                 Progress.hide()
             }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+    }
+}
+extension UITextField{
+    func neverShowKeypad(_ view:UIView){
+        self.inputView = UIView()
+        
     }
 }

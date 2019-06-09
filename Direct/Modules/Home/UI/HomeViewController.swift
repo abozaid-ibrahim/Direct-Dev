@@ -50,8 +50,10 @@ final class HomeViewController: UIViewController, StyledActionBar {
     }
 
     private func registerCollectionNibs() {
-        collectionView.register(UINib(nibName: HomeCollectionSectionWrapper.cellId, bundle: nil), forCellWithReuseIdentifier: HomeCollectionSectionWrapper.cellId)
-        collectionView.register(UINib(nibName: "HomeCollectionSectionHeader", bundle: nil), forSupplementaryViewOfKind: "UICollectionElementKindSectionHeader", withReuseIdentifier: "HomeCollectionSectionHeader")
+        let bundle = Bundle(for: type(of: self))
+
+        collectionView.register(UINib(nibName: HomeCollectionSectionWrapper.cellId, bundle: bundle), forCellWithReuseIdentifier: HomeCollectionSectionWrapper.cellId)
+        collectionView.register(UINib(nibName: "HomeCollectionSectionHeader", bundle: bundle), forSupplementaryViewOfKind: "UICollectionElementKindSectionHeader", withReuseIdentifier: "HomeCollectionSectionHeader")
     }
 
     let visaReqVC = NewDirectVisaController()

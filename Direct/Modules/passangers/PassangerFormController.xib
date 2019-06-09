@@ -43,7 +43,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="1179"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hSo-I5-dPz">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSo-I5-dPz">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="1145"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2xs-CW-hrx" userLabel="conent">
@@ -742,7 +742,6 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hSo-I5-dPz" secondAttribute="trailing" id="A8h-xL-ygp"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hSo-I5-dPz" secondAttribute="bottom" id="Ayd-8J-8a7"/>
-                <constraint firstItem="hSo-I5-dPz" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="EJ6-0M-TdM"/>
                 <constraint firstItem="hSo-I5-dPz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="WHX-ca-afr"/>
                 <constraint firstItem="hSo-I5-dPz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="d1h-sb-fag"/>
             </constraints>
