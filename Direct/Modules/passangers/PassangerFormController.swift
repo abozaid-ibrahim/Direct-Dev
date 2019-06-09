@@ -109,15 +109,9 @@ class PassangerFormController: UIViewController, ImagePicker {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        scrollView.pinchGestureRecognizer?.isEnabled = false
-        
         scrollView.minimumZoomScale = 1.0
-        scrollView.minimumZoomScale = 1.001
-        if #available(iOS 11, *) {
-            scrollView.contentInsetAdjustmentBehavior = .never
-        }
-        scrollView.bounces = false
-        scrollView.bouncesZoom = false
+        scrollView.maximumZoomScale = 1.1
+
     }
     
     let travels = UIStoryboard.visa.instantiateViewController(withIdentifier: "PreviousTraveledCountriesController") as! PreviousTraveledCountriesController

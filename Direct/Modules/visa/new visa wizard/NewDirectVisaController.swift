@@ -24,7 +24,8 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
     }
 
     // MARK: IBuilder ====================================>>
-
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet var doNotesLbl: UILabel!
     @IBOutlet var totalCostPlaceholder: UILabel!
 
@@ -57,7 +58,9 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
         setONClickViews()
         viewModel.viewDidLoad()
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
     private func bindDataToUI() {
         relationsField.isHidden = true
         wrongNotesContainer.isHidden = true
