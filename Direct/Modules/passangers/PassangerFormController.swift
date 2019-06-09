@@ -16,6 +16,8 @@ class PassangerFormController: UIViewController, ImagePicker {
     
     var currentImageID: Int = 0
     private let familyImageID = 30
+    private let passportImageID = 30
+    
     private let visaImageID = 23
     private let last10YearsVisaImageID = 20
     
@@ -40,7 +42,8 @@ class PassangerFormController: UIViewController, ImagePicker {
     @IBOutlet var husbundPInfoLbl: FloatingTextField!
     @IBOutlet var familyIDPInfoLbl: FloatingTextField!
     
-    @IBOutlet weak var passportImageField: FloatingTextField!
+    @IBOutlet var passportImageField: FloatingTextField!
+    
     // MARK: MOTHER
     
     @IBOutlet var firstNameMotherLbl: FloatingTextField!
@@ -73,12 +76,11 @@ class PassangerFormController: UIViewController, ImagePicker {
     @IBOutlet var countriesContainerHeight: NSLayoutConstraint!
     //
     
-    @IBOutlet weak var driverLicenseSegment: UISegmentedControl!
-    @IBOutlet private  weak var relativeInCountryLbl: UILabel!
-    @IBOutlet weak var relativeINCountrySegment: UISegmentedControl!
-    @IBOutlet private  weak var visaCancelationLbl: UILabel!
-    @IBOutlet weak var visaCancelationSegment: UISegmentedControl!
-
+    @IBOutlet var driverLicenseSegment: UISegmentedControl!
+    @IBOutlet private var relativeInCountryLbl: UILabel!
+    @IBOutlet var relativeINCountrySegment: UISegmentedControl!
+    @IBOutlet private var visaCancelationLbl: UILabel!
+    @IBOutlet var visaCancelationSegment: UISegmentedControl!
     
     //===================================================<<
     internal let disposeBag = DisposeBag()
@@ -110,6 +112,10 @@ class PassangerFormController: UIViewController, ImagePicker {
                 self.showImagePicker(id: self.familyImageID)
             }.disposed(by: disposeBag)
         
+        passportImageField.rx.tapGesture().when(.recognized)
+            .subscribe { _ in
+                self.showImagePicker(id: self.passportImageID)
+            }.disposed(by: disposeBag)
         husbundPInfoLbl.rx.tapGesture().when(.recognized)
             .subscribe { _ in
                 self.showAgreemnetDialog(callback: { [weak self] agreed in
@@ -127,7 +133,7 @@ class PassangerFormController: UIViewController, ImagePicker {
         // ever you travedled
         previousVisaLbl.text = "هل سبق وحصلت على تأشيرة " + countryString + " من قبل؟"
         relativeInCountryLbl.text = "هل لديك اى اقارب فى " + countryString + "?"
-        visaCancelationLbl.text = "هل تم رض دخولك أو الغاء تأشيرتك الى " + countryString  + " من قبل؟"
+        visaCancelationLbl.text = "هل تم رض دخولك أو الغاء تأشيرتك الى " + countryString + " من قبل؟"
         previousVisaImageField.rx.tapGesture().when(.recognized)
             .subscribe { _ in
                 self.showImagePicker(id: self.visaImageID)
@@ -144,6 +150,9 @@ class PassangerFormController: UIViewController, ImagePicker {
             } else if self.currentImageID == self.last10YearsVisaImageID {
                 self.params.previousVisaCopy = value.1?.convertImageToBase64String()
                 self.last10VisaField.text = value.0
+            } else if self.currentImageID == self.passportImageID {
+                self.params.passportCopy = value.1?.convertImageToBase64String()
+                self.passportImageField.text = value.0
             }
             
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
@@ -200,9 +209,10 @@ class PassangerFormController: UIViewController, ImagePicker {
         params.lang = AppLanguage.langCode
         
         params.travelledBeforeHere = prevTravelsJson
-        
+        params.have_driver_license = driverLicenseSegment.isSelected ? 1 : 0
+        params.any_relatives_here = relativeINCountrySegment.isSelected ? 1 : 0
+        params.visa_cancelled_before = visaCancelationSegment.isSelected ? 1 : 0
         //
-    
     }
     
     var prevTravelsJson: String {
