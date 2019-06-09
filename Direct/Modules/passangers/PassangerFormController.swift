@@ -40,6 +40,7 @@ class PassangerFormController: UIViewController, ImagePicker {
     @IBOutlet var husbundPInfoLbl: FloatingTextField!
     @IBOutlet var familyIDPInfoLbl: FloatingTextField!
     
+    @IBOutlet weak var passportImageField: FloatingTextField!
     // MARK: MOTHER
     
     @IBOutlet var firstNameMotherLbl: FloatingTextField!
@@ -70,6 +71,14 @@ class PassangerFormController: UIViewController, ImagePicker {
     
     @IBOutlet private var previouslyTraveledCountriesView: UIView!
     @IBOutlet var countriesContainerHeight: NSLayoutConstraint!
+    //
+    
+    @IBOutlet weak var driverLicenseSegment: UISegmentedControl!
+    @IBOutlet private  weak var relativeInCountryLbl: UILabel!
+    @IBOutlet weak var relativeINCountrySegment: UISegmentedControl!
+    @IBOutlet private  weak var visaCancelationLbl: UILabel!
+    @IBOutlet weak var visaCancelationSegment: UISegmentedControl!
+
     
     //===================================================<<
     internal let disposeBag = DisposeBag()
@@ -117,7 +126,8 @@ class PassangerFormController: UIViewController, ImagePicker {
     private func questionsSetup() {
         // ever you travedled
         previousVisaLbl.text = "هل سبق وحصلت على تأشيرة " + countryString + " من قبل؟"
-        
+        relativeInCountryLbl.text = "هل لديك اى اقارب فى " + countryString + "?"
+        visaCancelationLbl.text = "هل تم رض دخولك أو الغاء تأشيرتك الى " + countryString  + " من قبل؟"
         previousVisaImageField.rx.tapGesture().when(.recognized)
             .subscribe { _ in
                 self.showImagePicker(id: self.visaImageID)
@@ -190,6 +200,9 @@ class PassangerFormController: UIViewController, ImagePicker {
         params.lang = AppLanguage.langCode
         
         params.travelledBeforeHere = prevTravelsJson
+        
+        //
+    
     }
     
     var prevTravelsJson: String {

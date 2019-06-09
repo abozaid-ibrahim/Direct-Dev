@@ -96,6 +96,7 @@
 		6C6A0C1122AB81F800150FF6 /* Cairo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C6A0C0B22AB81F800150FF6 /* Cairo-Bold.ttf */; };
 		6C6A0C1D22ABF17E00150FF6 /* ReqDescTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6A0C1B22ABF17E00150FF6 /* ReqDescTableCell.swift */; };
 		6C6A0C1E22ABF17E00150FF6 /* ReqDescTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C6A0C1C22ABF17E00150FF6 /* ReqDescTableCell.xib */; };
+		6C6A0C2022ACC16F00150FF6 /* UIImage+Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6A0C1F22ACC16F00150FF6 /* UIImage+Encoding.swift */; };
 		6C6EED6922A248BA0091B82F /* PaymentAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6EED6822A248BA0091B82F /* PaymentAPIs.swift */; };
 		6C6EED6B22A24C190091B82F /* PaymentMethodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6EED6A22A24C190091B82F /* PaymentMethodsResponse.swift */; };
 		6C6EED6D22A24C560091B82F /* PaymentChildsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6EED6C22A24C560091B82F /* PaymentChildsResponse.swift */; };
@@ -192,7 +193,6 @@
 		6CF0E37B2285DA8900149910 /* OrderTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0E3792285DA8900149910 /* OrderTableCell.swift */; };
 		6CF1C9B122A5DBEE0034DB39 /* PassangersInputViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF1C9AF22A5DBEE0034DB39 /* PassangersInputViewViewController.swift */; };
 		6CF1C9B222A5DBEE0034DB39 /* PassangersInputViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF1C9B022A5DBEE0034DB39 /* PassangersInputViewViewController.xib */; };
-		6CF2514422A6108300CDA47C /* UIImage+Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514322A6108300CDA47C /* UIImage+Encoding.swift */; };
 		6CF2514622A62F1000CDA47C /* PreviousVisaTypeJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514522A62F1000CDA47C /* PreviousVisaTypeJson.swift */; };
 		6CF2514822A635E600CDA47C /* APIValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514722A635E600CDA47C /* APIValues.swift */; };
 		6CF2514A22A6374E00CDA47C /* Passagners + Dialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514922A6374D00CDA47C /* Passagners + Dialogs.swift */; };
@@ -337,6 +337,7 @@
 		6C6A0C0B22AB81F800150FF6 /* Cairo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Bold.ttf"; sourceTree = "<group>"; };
 		6C6A0C1B22ABF17E00150FF6 /* ReqDescTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReqDescTableCell.swift; sourceTree = "<group>"; };
 		6C6A0C1C22ABF17E00150FF6 /* ReqDescTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReqDescTableCell.xib; sourceTree = "<group>"; };
+		6C6A0C1F22ACC16F00150FF6 /* UIImage+Encoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Encoding.swift"; sourceTree = "<group>"; };
 		6C6EED6822A248BA0091B82F /* PaymentAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAPIs.swift; sourceTree = "<group>"; };
 		6C6EED6A22A24C190091B82F /* PaymentMethodsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodsResponse.swift; sourceTree = "<group>"; };
 		6C6EED6C22A24C560091B82F /* PaymentChildsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentChildsResponse.swift; sourceTree = "<group>"; };
@@ -437,7 +438,6 @@
 		6CF0E3792285DA8900149910 /* OrderTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableCell.swift; sourceTree = "<group>"; };
 		6CF1C9AF22A5DBEE0034DB39 /* PassangersInputViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangersInputViewViewController.swift; sourceTree = "<group>"; };
 		6CF1C9B022A5DBEE0034DB39 /* PassangersInputViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PassangersInputViewViewController.xib; sourceTree = "<group>"; };
-		6CF2514322A6108300CDA47C /* UIImage+Encoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIImage+Encoding.swift"; path = "../../../../../Desktop/UIImage+Encoding.swift"; sourceTree = "<group>"; };
 		6CF2514522A62F1000CDA47C /* PreviousVisaTypeJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousVisaTypeJson.swift; sourceTree = "<group>"; };
 		6CF2514722A635E600CDA47C /* APIValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIValues.swift; sourceTree = "<group>"; };
 		6CF2514922A6374D00CDA47C /* Passagners + Dialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Passagners + Dialogs.swift"; sourceTree = "<group>"; };
@@ -1092,7 +1092,7 @@
 		6CF2514222A6107400CDA47C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				6CF2514322A6108300CDA47C /* UIImage+Encoding.swift */,
+				6C6A0C1F22ACC16F00150FF6 /* UIImage+Encoding.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1443,6 +1443,7 @@
 			files = (
 				6CD2CE5722A0C77200FB308A /* UITableView+Appearance.swift in Sources */,
 				6CF3E1AF2272558A007488BA /* InstitutesSectionVM.swift in Sources */,
+				6C6A0C2022ACC16F00150FF6 /* UIImage+Encoding.swift in Sources */,
 				6C8286EB228B9C96009FB5FF /* View+App.swift in Sources */,
 				3992B66722961B5F00BBB7F1 /* TagCollectionCell.swift in Sources */,
 				6CF2515322A660A000CDA47C /* PassangerFormController.swift in Sources */,
@@ -1507,7 +1508,6 @@
 				6C5FDA4F2270816B00ABA39B /* ViewController.swift in Sources */,
 				3992B66922961B5F00BBB7F1 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				6CF2514822A635E600CDA47C /* APIValues.swift in Sources */,
-				6CF2514422A6108300CDA47C /* UIImage+Encoding.swift in Sources */,
 				6CF2514A22A6374E00CDA47C /* Passagners + Dialogs.swift in Sources */,
 				6C557557228BA52900BAE5E2 /* View+Colors.swift in Sources */,
 				6C5DE87A22872A1E00F900AE /* SuccessPackageController.swift in Sources */,
