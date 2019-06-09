@@ -31,6 +31,7 @@
                 <outlet property="previouslyTraveledCountriesView" destination="wwd-0y-oSK" id="4Qw-CR-4w5"/>
                 <outlet property="relativeINCountrySegment" destination="fbe-PQ-3qa" id="5ab-Ju-SbH"/>
                 <outlet property="relativeInCountryLbl" destination="6Kz-Kn-DDj" id="OMR-zY-dHB"/>
+                <outlet property="scrollView" destination="hSo-I5-dPz" id="xtq-Je-TTS"/>
                 <outlet property="statusPInfoLbl" destination="fiT-t2-HOr" id="3p7-5c-IDU"/>
                 <outlet property="traveledInLast10YrsSegment" destination="Rs5-Tl-9eQ" id="LBr-33-SKV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -43,7 +44,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="1179"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSo-I5-dPz">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" maximumZoomScale="1.01" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSo-I5-dPz">
                     <rect key="frame" x="10.5" y="0.0" width="393" height="1179"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2xs-CW-hrx" userLabel="conent">

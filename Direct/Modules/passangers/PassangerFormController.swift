@@ -32,6 +32,8 @@ class PassangerFormController: UIViewController, ImagePicker {
     
     // MARK: IBuilder ====================================>>
     
+    @IBOutlet var scrollView: UIScrollView!
+    
     // Family
     @IBOutlet var firstNamePInfoLbl: FloatingTextField!
     @IBOutlet var familyNamePInfoLbl: FloatingTextField!
@@ -75,19 +77,21 @@ class PassangerFormController: UIViewController, ImagePicker {
     @IBOutlet var countriesContainerHeight: NSLayoutConstraint!
     //
     
-    @IBOutlet var driverLicenseSegment: UISegmentedControl!{
+    @IBOutlet var driverLicenseSegment: UISegmentedControl! {
         didSet {
             driverLicenseSegment.appFont()
         }
     }
+    
     @IBOutlet private var relativeInCountryLbl: UILabel!
-    @IBOutlet var relativeINCountrySegment: UISegmentedControl!{
+    @IBOutlet var relativeINCountrySegment: UISegmentedControl! {
         didSet {
             relativeINCountrySegment.appFont()
         }
     }
+    
     @IBOutlet private var visaCancelationLbl: UILabel!
-    @IBOutlet var visaCancelationSegment: UISegmentedControl!{
+    @IBOutlet var visaCancelationSegment: UISegmentedControl! {
         didSet {
             visaCancelationSegment.appFont()
         }
@@ -101,6 +105,19 @@ class PassangerFormController: UIViewController, ImagePicker {
         pInfoSetup()
         questionsSetup()
         addPreviousCountries()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        scrollView.pinchGestureRecognizer?.isEnabled = false
+        
+        scrollView.minimumZoomScale = 1.0
+        scrollView.minimumZoomScale = 1.001
+        if #available(iOS 11, *) {
+            scrollView.contentInsetAdjustmentBehavior = .never
+        }
+        scrollView.bounces = false
+        scrollView.bouncesZoom = false
     }
     
     let travels = UIStoryboard.visa.instantiateViewController(withIdentifier: "PreviousTraveledCountriesController") as! PreviousTraveledCountriesController
@@ -261,8 +278,9 @@ class PassangerFormController: UIViewController, ImagePicker {
             }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 }
-extension UITextField{
-    func neverShowKeypad(){
-        self.inputView = UIView()
+
+extension UITextField {
+    func neverShowKeypad() {
+        inputView = UIView()
     }
 }
