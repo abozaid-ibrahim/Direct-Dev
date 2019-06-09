@@ -44,7 +44,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="1179"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" maximumZoomScale="1.01" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSo-I5-dPz">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" bounces="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" maximumZoomScale="1.01" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSo-I5-dPz">
                     <rect key="frame" x="10.5" y="0.0" width="393" height="1179"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2xs-CW-hrx" userLabel="conent">
