@@ -117,13 +117,13 @@ class PassangerFormController: UIViewController, ImagePicker {
             .subscribe { _ in
                 self.showMatrialState()
             }.disposed(by: disposeBag)
-        familyIDPInfoLbl.neverShowKeypad(view)
+        familyIDPInfoLbl.neverShowKeypad()
         familyIDPInfoLbl.rx.tapGesture().when(.recognized)
             .subscribe { _ in
                 self.showImagePicker(id: self.familyImageID)
             }.disposed(by: disposeBag)
         
-        passportImageField.neverShowKeypad(view)
+        passportImageField.neverShowKeypad()
         passportImageField.rx.tapGesture().when(.recognized)
             .subscribe { _ in
                 self.showImagePicker(id: self.passportImageID)
@@ -146,7 +146,7 @@ class PassangerFormController: UIViewController, ImagePicker {
         previousVisaLbl.text = "هل سبق وحصلت على تأشيرة " + countryString + " من قبل؟"
         relativeInCountryLbl.text = "هل لديك اى اقارب فى " + countryString + "?"
         visaCancelationLbl.text = "هل تم رض دخولك أو الغاء تأشيرتك الى " + countryString + " من قبل؟"
-        previousVisaImageField.neverShowKeypad(view)
+        previousVisaImageField.neverShowKeypad()
         previousVisaImageField.rx.tapGesture().when(.recognized)
             .subscribe { _ in
                 self.showImagePicker(id: self.visaImageID)
@@ -174,7 +174,7 @@ class PassangerFormController: UIViewController, ImagePicker {
     
     private func last10YearsSection() {
         didYouTraveledLast10YearLbl.text = "هل سافرت الى " + countryString + " في العشر سنوات الاخيرة ؟"
-        last10VisaField.neverShowKeypad(view)
+        last10VisaField.neverShowKeypad()
         last10VisaField.rx.tapGesture().when(.recognized)
             .subscribe { _ in
                 self.showImagePicker(id: self.last10YearsVisaImageID)
@@ -262,8 +262,7 @@ class PassangerFormController: UIViewController, ImagePicker {
     }
 }
 extension UITextField{
-    func neverShowKeypad(_ view:UIView){
+    func neverShowKeypad(){
         self.inputView = UIView()
-        
     }
 }
