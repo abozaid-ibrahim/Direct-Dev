@@ -11,6 +11,7 @@ import RxSwift
 import UIKit
 
 private typealias HeaderObject = (UIImage, String)
+
 final class HomeViewController: UIViewController, StyledActionBar {
     @IBOutlet var packageView: UIStackView!
     @IBOutlet var institueView: UIStackView!
@@ -32,7 +33,7 @@ final class HomeViewController: UIViewController, StyledActionBar {
 
         collectionView.delegate = self
         registerCollectionNibs()
-        setupActionBar(.withTitle("دايركت فيزا"))
+        setupActionBar(.withTitle("بحث"))
         getDataFromViewModel()
         homeViewModel.getAllData()
     }

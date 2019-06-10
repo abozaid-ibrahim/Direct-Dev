@@ -13,7 +13,7 @@ class AuthTextFieldTableViewCell: BaseTableViewCell {
 
     lazy var backView: UIView = {[unowned self] in
         let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 0.9763646722, green: 0.9765316844, blue: 0.9763541818, alpha: 1)
+        view.backgroundColor = .clear
         view.addSubview(self.stackHolder)
         view.layer.cornerRadius = 10
         view.clipsToBounds = true
@@ -50,8 +50,6 @@ class AuthTextFieldTableViewCell: BaseTableViewCell {
 
     @objc func showPassword(sender: UIButton) {
         textField.isSecureTextEntry.toggle()
-//        let image = textField.isSecureTextEntry ? #imageLiteral(resourceName: "password") :  #imageLiteral(resourceName: "show-password")
-//        sender.setImage(image, for: .normal)
     }
 
     var textType: AuthCellType?

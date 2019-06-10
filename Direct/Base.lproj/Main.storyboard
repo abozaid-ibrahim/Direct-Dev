@@ -34,7 +34,7 @@
             </objects>
             <point key="canvasLocation" x="-1271" y="-113"/>
         </scene>
-        <!--مساعدة-->
+        <!--بحث-->
         <scene sceneID="zJh-OH-16J">
             <objects>
                 <viewController storyboardIdentifier="HelpViewController" id="De0-aQ-EfP" customClass="HelpViewController" customModule="Direct" customModuleProvider="target" sceneMemberID="viewController">
@@ -56,7 +56,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cMs-lq-j8J"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="مساعدة" image="myordersImage" id="QVa-gB-goh"/>
+                    <tabBarItem key="tabBarItem" title="بحث" image="myordersImage" id="QVa-gB-goh"/>
                     <connections>
                         <outlet property="tableView" destination="EZD-3Q-xMd" id="fnz-nd-plQ"/>
                     </connections>
