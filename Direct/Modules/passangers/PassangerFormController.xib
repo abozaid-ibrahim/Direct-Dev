@@ -23,6 +23,7 @@
                 <outlet property="firstNamePInfoLbl" destination="m0e-OQ-wcS" id="mII-uc-8pq"/>
                 <outlet property="husbundPInfoLbl" destination="mMM-Eh-ZZ3" id="WEw-J9-99R"/>
                 <outlet property="isHusbandWillTravelView" destination="25P-yK-KWg" id="twy-Bb-84h"/>
+                <outlet property="isTravelWithFamilyView" destination="N31-Nd-Uuf" id="kKp-sS-Ikh"/>
                 <outlet property="last10VisaField" destination="X7a-55-caS" id="nPR-lj-3a2"/>
                 <outlet property="nationalityMotherLbl" destination="Vdd-2N-Chk" id="34v-4j-Ylr"/>
                 <outlet property="passportImageField" destination="KS4-md-Uj2" id="x04-TG-kwU"/>
@@ -31,7 +32,6 @@
                 <outlet property="previouslyTraveledCountriesView" destination="wwd-0y-oSK" id="4Qw-CR-4w5"/>
                 <outlet property="relativeINCountrySegment" destination="fbe-PQ-3qa" id="5ab-Ju-SbH"/>
                 <outlet property="relativeInCountryLbl" destination="6Kz-Kn-DDj" id="OMR-zY-dHB"/>
-                <outlet property="scrollView" destination="hSo-I5-dPz" id="xtq-Je-TTS"/>
                 <outlet property="statusPInfoLbl" destination="fiT-t2-HOr" id="3p7-5c-IDU"/>
                 <outlet property="traveledInLast10YrsSegment" destination="Rs5-Tl-9eQ" id="LBr-33-SKV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

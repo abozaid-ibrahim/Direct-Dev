@@ -53,16 +53,16 @@ setupKeyboardManager()
         window?.rootViewController = root
         window?.makeKeyAndVisible()
         navigator = AppNavigator(root: root)
-//        shortcut()
+        shortcut()
     }
 
     private func shortcut() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             let x = VisaRequestParams()
-            x.no_of_adult = "1"
-            x.country_id = "1"
-            x.no_of_child = "1"
-            try? AppNavigator().push(.visaRequirement(x))
+            x.no_of_adult = "4"
+            x.country_id = "2"
+            x.no_of_child = "3"
+            try? AppNavigator().push(.passangersInfoScreen(x))
         }
     }
 }
