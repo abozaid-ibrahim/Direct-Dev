@@ -258,9 +258,9 @@ class NewDirectVisaViewModel {
                 self.passangersCount.onNext(value)
                 self.visaRequestData.no_of_adult = "\(value.0)"
                 self.visaRequestData.no_of_child = "\(value.1)"
-                if (self.selectedCountry?.country_id ?? "-1") == APIConstants.TurkeyID {
+//                if (self.selectedCountry?.country_id ?? "-1") == APIConstants.TurkeyID {
                     self.visaRequestData.no_of_passport = self.passCount.stringValue
-                }
+//                }
                 self.totalCost.onNext(value.2.priced)
 
                 self.visaRequestData.totalCost = value.2
