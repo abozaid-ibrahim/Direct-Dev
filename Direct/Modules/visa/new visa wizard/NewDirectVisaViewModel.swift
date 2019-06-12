@@ -196,7 +196,7 @@ class NewDirectVisaViewModel {
     }
 
     func showDatePickerDialog() {
-        let dest = Destination.datePicker
+        let dest = Destination.datePicker(title:nil)
         let vc = dest.controller() as! DatePickerController
         vc.selectedDate.asObservable().subscribe { event in
             switch event.event {

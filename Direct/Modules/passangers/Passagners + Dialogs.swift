@@ -29,7 +29,7 @@ extension PassangerFormController {
       
         alert.addAction(action)
         alert.addAction(singleAction)
-        let cancel = UIAlertAction(title: "الغاء", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
         alert.addAction(cancel)
         present(alert, animated: true, completion: nil)
     }
@@ -47,7 +47,7 @@ extension PassangerFormController {
         })
         alert.addAction(noAction)
         alert.addAction(yesAction)
-        let cancel = UIAlertAction(title: "الغاء", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
         alert.addAction(cancel)
         present(alert, animated: true, completion: nil)
     }
@@ -67,12 +67,11 @@ extension PassangerFormController {
     }
     
     func showDatePickerDialog() {
-        let dest = Destination.datePicker
+        let dest = Destination.datePicker(title:nil)
         let vc = dest.controller() as! DatePickerController
         vc.selectedDate.asObservable().subscribe { event in
             switch event.event {
             case .next(let value):
-//                self.arrivalDateLbl.text = value!.apiFormat
                 self.params.dateOfArrival = value!.apiFormat
             default:
                 break

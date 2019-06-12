@@ -13,13 +13,17 @@ import UIKit
 
 class DatePickerController: UIViewController, PanModalPresentable {
     @IBOutlet var datePicker: JBDatePickerView!
-
+    @IBOutlet private var tilteLbl: UILabel!
     var panScrollable: UIScrollView?
     var shortFormHeight: PanModalHeight = .contentHeight(400)
     @IBOutlet private var dateLbl: UILabel!
+     var pickerTitle: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.datePicker.delegate = self
+        if let title = self.pickerTitle {
+            self.tilteLbl.text = title
+        }
     }
 
     private func setDate(date: Date) {

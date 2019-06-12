@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PassangersQuestionsStepVC" customModule="Direct" customModuleProvider="target">
+            <connections>
+                <outlet property="arrivalDateField" destination="Oh6-DU-cxc" id="ZrN-lT-LZz"/>
+                <outlet property="contentView" destination="f3M-WP-iLy" id="z7H-qm-5xR"/>
+                <outlet property="durationField" destination="6oz-uI-A0S" id="Ipt-iq-BGb"/>
+                <outlet property="everTraveledDetailsSection" destination="808-EJ-i0X" id="5kp-Uq-zDK"/>
+                <outlet property="everYouTraveledLbl" destination="QsX-D7-pVx" id="jJc-kQ-n2a"/>
+                <outlet property="everYouTraveledSegment" destination="xB5-V6-UUH" id="kQ0-Em-I6y"/>
+                <outlet property="licenceSegment" destination="jb0-CY-BGA" id="kUF-xd-tYK"/>
+                <outlet property="previousVisaImageField" destination="S4U-22-dng" id="78X-D5-0bH"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="408" height="254"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="هل سافرت الى بريطانيا في العشر سنوات الاخيرة ؟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsX-D7-pVx">
+                    <rect key="frame" x="8" y="8" width="392" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xB5-V6-UUH">
+                    <rect key="frame" x="8" y="36.5" width="73" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="ab5-yX-PwX"/>
+                    </constraints>
+                    <segments>
+                        <segment title="لا"/>
+                        <segment title="نعم "/>
+                    </segments>
+                    <color key="tintColor" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <action selector="everTraveledChanged:" destination="-1" eventType="valueChanged" id="I8T-SD-HrF"/>
+                    </connections>
+                </segmentedControl>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3M-WP-iLy" userLabel="p3">
+                    <rect key="frame" x="8" y="74.5" width="392" height="171.5"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="808-EJ-i0X">
+                            <rect key="frame" x="8" y="0.0" width="376" height="80"/>
+                            <subviews>
+                                <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S4U-22-dng" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="-45" width="376" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="Oez-jW-zKV"/>
+                                    </constraints>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="صورة التأشيرة السابقة (إن وجدت)"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="صورة التأشيرة السابقة (إن وجدت)"/>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="lineErrorColor">
+                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wlc-9T-Mit" userLabel="arrival date stack">
+                                    <rect key="frame" x="0.0" y="0.0" width="376" height="35"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تاريخ الوصول" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9d-i7-pGe">
+                                            <rect key="frame" x="0.0" y="7.5" width="89.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oh6-DU-cxc">
+                                            <rect key="frame" x="99.5" y="2.5" width="276.5" height="30"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Nc6-mk-6wg" userLabel="duration stack">
+                                    <rect key="frame" x="0.0" y="45" width="376" height="35"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مـدة الاقــامة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBe-YO-7tk">
+                                            <rect key="frame" x="0.0" y="7.5" width="86.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6oz-uI-A0S">
+                                            <rect key="frame" x="96.5" y="2.5" width="279.5" height="30"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="CCJ-Fb-o6A"/>
+                            </constraints>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="هل لديك رخصة قيادة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1A-cz-a3G">
+                            <rect key="frame" x="8" y="88" width="376" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jb0-CY-BGA">
+                            <rect key="frame" x="8" y="118.5" width="73" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="vmT-8N-b3U"/>
+                            </constraints>
+                            <segments>
+                                <segment title="لا"/>
+                                <segment title="نعم "/>
+                            </segments>
+                            <color key="tintColor" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </segmentedControl>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="jb0-CY-BGA" firstAttribute="top" secondItem="x1A-cz-a3G" secondAttribute="bottom" constant="10" id="Ajv-t0-PHf"/>
+                        <constraint firstAttribute="trailing" secondItem="808-EJ-i0X" secondAttribute="trailing" constant="8" id="CYu-qf-APu"/>
+                        <constraint firstItem="x1A-cz-a3G" firstAttribute="leading" secondItem="f3M-WP-iLy" secondAttribute="leading" constant="8" id="P42-1T-jQ0"/>
+                        <constraint firstAttribute="trailing" secondItem="x1A-cz-a3G" secondAttribute="trailing" constant="8" id="cmZ-Me-iwA"/>
+                        <constraint firstItem="808-EJ-i0X" firstAttribute="leading" secondItem="f3M-WP-iLy" secondAttribute="leading" constant="8" id="ges-6s-s19"/>
+                        <constraint firstItem="808-EJ-i0X" firstAttribute="top" secondItem="f3M-WP-iLy" secondAttribute="top" id="lBi-lk-Neh"/>
+                        <constraint firstItem="jb0-CY-BGA" firstAttribute="leading" secondItem="f3M-WP-iLy" secondAttribute="leading" constant="8" id="rKf-Ls-pvD"/>
+                        <constraint firstItem="x1A-cz-a3G" firstAttribute="top" secondItem="808-EJ-i0X" secondAttribute="bottom" constant="8" id="zhT-qB-72T"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColorV">
+                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="QsX-D7-pVx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="1U8-ep-O9U"/>
+                <constraint firstItem="f3M-WP-iLy" firstAttribute="top" secondItem="xB5-V6-UUH" secondAttribute="bottom" constant="8" id="5Yx-8o-OQn"/>
+                <constraint firstItem="xB5-V6-UUH" firstAttribute="top" secondItem="QsX-D7-pVx" secondAttribute="bottom" constant="8" id="6Vg-8K-UMi"/>
+                <constraint firstAttribute="bottom" secondItem="f3M-WP-iLy" secondAttribute="bottom" constant="8" id="A5k-ff-Aq5"/>
+                <constraint firstItem="QsX-D7-pVx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="FhS-zs-lrP"/>
+                <constraint firstItem="xB5-V6-UUH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="g3s-M8-0sd"/>
+                <constraint firstAttribute="trailing" secondItem="QsX-D7-pVx" secondAttribute="trailing" constant="8" id="jLP-n7-VCe"/>
+                <constraint firstItem="f3M-WP-iLy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="nzV-0S-Efc"/>
+                <constraint firstAttribute="trailing" secondItem="f3M-WP-iLy" secondAttribute="trailing" constant="8" id="xEW-m0-o46"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="131.8840579710145" y="-153.34821428571428"/>
+        </view>
+    </objects>
+</document>

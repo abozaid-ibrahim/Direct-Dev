@@ -16,7 +16,7 @@ enum Destination {
     case loginView, signupView, homeScreen, visaRequirement(VisaRequestParams),
         selectableSheet(data: [String], titleText: String?,
                         style: CellStyle),
-        paymentMethod(VisaRequestParams), passangersCount, newInstitueVisa, datePicker, hostsInfoScreen, passangersInfoScreen(VisaRequestParams), successVisaReqScreen(USVvisaRequestJSONResponse?), MyOrders, orderDetails, institutesList, instituteDetails, packageDetails, successPackage, banks, newDirectVisa, searchCountries, confirmatonVisa(VisaRequestParams)
+        paymentMethod(VisaRequestParams), passangersCount, newInstitueVisa, datePicker(title: String?), hostsInfoScreen, passangersInfoScreen(VisaRequestParams), successVisaReqScreen(USVvisaRequestJSONResponse?), MyOrders, orderDetails, institutesList, instituteDetails, packageDetails, successPackage, banks, newDirectVisa, searchCountries, confirmatonVisa(VisaRequestParams)
     func controller() -> UIViewController {
         switch self {
         case .loginView:
@@ -44,9 +44,10 @@ enum Destination {
             return PassangersCountController()
         case .newInstitueVisa:
             return NewInstituteRequestController()
-        case .datePicker:
-            return DatePickerController()
-
+        case .datePicker(let title):
+            let date = DatePickerController()
+            date.pickerTitle = title
+            return date
         case .hostsInfoScreen:
             return SponsersViewController()
         case .passangersInfoScreen(let info):

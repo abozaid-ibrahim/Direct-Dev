@@ -79,7 +79,6 @@ class PassangersInputViewViewController: UIViewController {
     
     private func selectTab(_ index: Int, _ tab1VC: PassangerFormController) {
         if !containerView.subviews.contains(tab1VC.view) {
-            // add
             addChild(tab1VC)
             containerView.addSubview(tab1VC.view)
             tab1VC.view.sameBoundsTo(parentView: containerView)

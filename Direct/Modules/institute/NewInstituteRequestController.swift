@@ -32,13 +32,13 @@ class NewInstituteRequestController: UIViewController, SwipeUpDismissable {
 
     private func setupFields() {
         travelDateField.rx.tapGesture().when(.recognized)
-            .subscribe(onNext: { _ in
-                try! AppNavigator().presentModally(.datePicker)
+            .subscribe({ _ in
+                try! AppNavigator().presentModally(.datePicker(title:nil))
             }).disposed(by: disposeBag)
 
         studyPeriod.rx.tapGesture().when(.recognized)
-            .subscribe(onNext: { _ in
-                try! AppNavigator().presentModally(.datePicker)
+            .subscribe({ _ in
+                try! AppNavigator().presentModally(.datePicker(title:nil))
             }).disposed(by: disposeBag)
     }
 

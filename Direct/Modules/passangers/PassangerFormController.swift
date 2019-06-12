@@ -6,8 +6,6 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
-import UIKit
-
 import RxSwift
 import UIKit
 
@@ -32,14 +30,13 @@ class PassangerFormController: UIViewController, ImagePicker {
     
     // MARK: IBuilder ====================================>>
     
-    
     // Family
     @IBOutlet var firstNamePInfoLbl: FloatingTextField!
     @IBOutlet var familyNamePInfoLbl: FloatingTextField!
     @IBOutlet var statusPInfoLbl: FloatingTextField!
     @IBOutlet var isHusbandWillTravelView: UIView!
     @IBOutlet var husbundPInfoLbl: FloatingTextField!
-    @IBOutlet weak var isTravelWithFamilyView: UIView!
+    @IBOutlet var isTravelWithFamilyView: UIView!
     @IBOutlet var familyIDPInfoLbl: FloatingTextField!
     
     @IBOutlet var passportImageField: FloatingTextField!
@@ -52,23 +49,11 @@ class PassangerFormController: UIViewController, ImagePicker {
     
     // MARK: Ever you had a vis
     
+    @IBOutlet var everTraveledBeforeView: UIView!
+    
     @IBOutlet var previousVisaLbl: UILabel!
     @IBOutlet var previousVisaImageField: FloatingTextField!
-    @IBOutlet var everHadVisaSegment: UISegmentedControl! {
-        didSet {
-            everHadVisaSegment.appFont()
-        }
-    }
-    
-    // MARK: last 10 years
-    
-    @IBOutlet var didYouTraveledLast10YearLbl: UILabel!
-    @IBOutlet var last10VisaField: FloatingTextField!
-    @IBOutlet var traveledInLast10YrsSegment: UISegmentedControl! {
-        didSet {
-            traveledInLast10YrsSegment.appFont()
-        }
-    }
+    @IBOutlet var everHadVisaSegment: UISegmentedControl!
     
     // MARK: countries
     
@@ -76,26 +61,11 @@ class PassangerFormController: UIViewController, ImagePicker {
     @IBOutlet var countriesContainerHeight: NSLayoutConstraint!
     //
     
-    @IBOutlet var driverLicenseSegment: UISegmentedControl! {
-        didSet {
-            driverLicenseSegment.appFont()
-        }
-    }
-    
     @IBOutlet private var relativeInCountryLbl: UILabel!
-    @IBOutlet var relativeINCountrySegment: UISegmentedControl! {
-        didSet {
-            relativeINCountrySegment.appFont()
-        }
-    }
-    
+    @IBOutlet var relativeINCountrySegment: UISegmentedControl!
     @IBOutlet private var visaCancelationLbl: UILabel!
-    @IBOutlet var visaCancelationSegment: UISegmentedControl! {
-        didSet {
-            visaCancelationSegment.appFont()
-        }
-    }
-    
+    @IBOutlet var visaCancelationSegment: UISegmentedControl!
+    @IBOutlet var traveledHereBeforeHConstrain: NSLayoutConstraint!
     //===================================================<<
     internal let disposeBag = DisposeBag()
     var receivedImage = PublishSubject<(String?, UIImage?)>()
@@ -104,9 +74,15 @@ class PassangerFormController: UIViewController, ImagePicker {
         pInfoSetup()
         questionsSetup()
         addPreviousCountries()
+        addEverTraveledView()
+        setFonts()
     }
     
-   
+    private func setFonts() {
+        visaCancelationSegment.appFont()
+        relativeINCountrySegment.appFont()
+        everHadVisaSegment.appFont()
+    }
     
     let travels = UIStoryboard.visa.instantiateViewController(withIdentifier: "PreviousTraveledCountriesController") as! PreviousTraveledCountriesController
     
@@ -115,6 +91,25 @@ class PassangerFormController: UIViewController, ImagePicker {
         previouslyTraveledCountriesView.addSubview(travels.view)
         travels.view.sameBoundsTo(parentView: previouslyTraveledCountriesView)
         travels.tableHeight.asDriver(onErrorJustReturn: travels.headerHeight).asObservable().bind(to: countriesContainerHeight.rx.constant).disposed(by: disposeBag)
+    }
+    
+    let questionsVC = PassangersQuestionsStepVC()
+    private func addEverTraveledView() {
+        addChild(questionsVC)
+        everTraveledBeforeView.addSubview(questionsVC.view)
+        questionsVC.view.frame = everTraveledBeforeView.bounds
+        questionsVC.contentHeight
+            .asDriver(onErrorJustReturn: 0)
+            .debug()
+            .drive(onNext: { value in
+                self.animateConstrain(value: value)
+            },onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+    }
+    
+    private func animateConstrain(value: CGFloat) {
+        UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseOut], animations: {
+            self.traveledHereBeforeHConstrain.constant = value
+        }, completion: nil)
     }
     
     private func pInfoSetup() {
@@ -138,9 +133,9 @@ class PassangerFormController: UIViewController, ImagePicker {
                 self.showAgreemnetDialog(callback: { [weak self] agreed in
                     self?.params.husbandOrWifeTravelWithYou = agreed.apiValue.stringValue
                     self?.husbundPInfoLbl.text = agreed.string
-                    if agreed.apiValue == AgreementValues.yes.apiValue{
+                    if agreed.apiValue == AgreementValues.yes.apiValue {
                         self?.isTravelWithFamilyView.isHidden = false
-                    }else{
+                    } else {
                         self?.isTravelWithFamilyView.isHidden = true
                     }
                 })
@@ -170,25 +165,12 @@ class PassangerFormController: UIViewController, ImagePicker {
             } else if self.currentImageID == self.visaImageID {
                 self.params.visaReqID = value.1?.convertImageToBase64String()
                 self.previousVisaImageField.text = value.0
-            } else if self.currentImageID == self.last10YearsVisaImageID {
-                self.params.previousVisaCopy = value.1?.convertImageToBase64String()
-                self.last10VisaField.text = value.0
             } else if self.currentImageID == self.passportImageID {
                 self.params.passportCopy = value.1?.convertImageToBase64String()
                 self.passportImageField.text = value.0
             }
             
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
-        last10YearsSection()
-    }
-    
-    private func last10YearsSection() {
-        didYouTraveledLast10YearLbl.text = "هل سافرت الى " + countryString + " في العشر سنوات الاخيرة ؟"
-        last10VisaField.neverShowKeypad()
-        last10VisaField.rx.tapGesture().when(.recognized)
-            .subscribe { _ in
-                self.showImagePicker(id: self.last10YearsVisaImageID)
-            }.disposed(by: disposeBag)
     }
     
     func getPreviousVisaTypes() {
@@ -225,16 +207,16 @@ class PassangerFormController: UIViewController, ImagePicker {
         params.mothersFamilyName = familyNameMotherLbl.text
         params.nationality = nationalityMotherLbl.text
         // Questions
-        params.everIssuedVisaBefore = "\(everHadVisaSegment.state == .selected ? 1 : 0)"
-        params.travelledBeforeHere = "\(traveledInLast10YrsSegment.state == .selected ? 1 : 0)"
+        params.everIssuedVisaBefore = "\(visaCancelationSegment.selectedSegmentIndex)"
+        params.travelledBeforeHere = questionsVC.travelledBeforeHere.stringValue
         
         // Others PDF
         params.lang = AppLanguage.langCode
         
         params.travelledBeforeHere = prevTravelsJson
-        params.have_driver_license = driverLicenseSegment.isSelected ? 1 : 0
-        params.any_relatives_here = relativeINCountrySegment.isSelected ? 1 : 0
-        params.visa_cancelled_before = visaCancelationSegment.isSelected ? 1 : 0
+        params.have_driver_license = questionsVC.haveLicense
+        params.any_relatives_here = relativeINCountrySegment.selectedSegmentIndex
+        params.visa_cancelled_before = visaCancelationSegment.selectedSegmentIndex
         //
     }
     
@@ -275,5 +257,20 @@ class PassangerFormController: UIViewController, ImagePicker {
 extension UITextField {
     func neverShowKeypad() {
         inputView = UIView()
+    }
+}
+
+extension Reactive where Base == UIView {
+    func animate(duration: TimeInterval, animationBlock: @escaping () -> Void) -> Observable<Void> {
+        return Observable.create { (observer) -> Disposable in
+            UIView.animate(withDuration: duration, animations: {
+                animationBlock()
+//                self.base.frame = self.base.frame.offsetBy(dx: 50, dy: 0)
+            }, completion: { _ in
+                observer.onNext(())
+                observer.onCompleted()
+            })
+            return Disposables.create()
+        }
     }
 }
