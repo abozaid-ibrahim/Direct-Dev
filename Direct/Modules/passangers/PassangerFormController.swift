@@ -50,17 +50,16 @@ class PassangerFormController: UIViewController, ImagePicker {
     // MARK: Ever you had a vis
     
     @IBOutlet var everTraveledBeforeView: UIView!
-    
     @IBOutlet var previousVisaLbl: UILabel!
     @IBOutlet var previousVisaImageField: FloatingTextField!
     @IBOutlet var everHadVisaSegment: UISegmentedControl!
     
     // MARK: countries
     
+    @IBOutlet weak var relativeField: FloatingTextField!
     @IBOutlet private var previouslyTraveledCountriesView: UIView!
     @IBOutlet var countriesContainerHeight: NSLayoutConstraint!
-    //
-    
+    @IBOutlet private  weak var rejetionReasonField: FloatingTextField!
     @IBOutlet private var relativeInCountryLbl: UILabel!
     @IBOutlet var relativeINCountrySegment: UISegmentedControl!
     @IBOutlet private var visaCancelationLbl: UILabel!
@@ -161,7 +160,6 @@ class PassangerFormController: UIViewController, ImagePicker {
             if self.currentImageID == self.familyImageID {
                 self.params.familyIDCopy = value.1?.convertImageToBase64String()
                 self.familyIDPInfoLbl.text = value.0
-                
             } else if self.currentImageID == self.visaImageID {
                 self.params.visaReqID = value.1?.convertImageToBase64String()
                 self.previousVisaImageField.text = value.0
@@ -173,6 +171,21 @@ class PassangerFormController: UIViewController, ImagePicker {
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
     
+    @IBAction func cancelReasonChanged(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0{
+            rejetionReasonField.isHidden = true
+        }else{
+             rejetionReasonField.isHidden = false
+        }
+    }
+    @IBAction func hasRelativeDidChange(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0{
+            relativeField.isHidden = true
+        }else{
+            relativeField.isHidden = false
+        }
+    }
+
     func getPreviousVisaTypes() {
         network.getPreviousVisaType().retry(2).subscribe(onNext: { [unowned self] value in
             if let types = value.previousVisaType {
@@ -188,10 +201,7 @@ class PassangerFormController: UIViewController, ImagePicker {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         let image = info[.editedImage] as? UIImage
         let fileUrl = info[.imageURL] as? URL
-        
         receivedImage.onNext((fileUrl?.lastPathComponent, image))
-        // image is our desired image
-        
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -257,20 +267,5 @@ class PassangerFormController: UIViewController, ImagePicker {
 extension UITextField {
     func neverShowKeypad() {
         inputView = UIView()
-    }
-}
-
-extension Reactive where Base == UIView {
-    func animate(duration: TimeInterval, animationBlock: @escaping () -> Void) -> Observable<Void> {
-        return Observable.create { (observer) -> Disposable in
-            UIView.animate(withDuration: duration, animations: {
-                animationBlock()
-//                self.base.frame = self.base.frame.offsetBy(dx: 50, dy: 0)
-            }, completion: { _ in
-                observer.onNext(())
-                observer.onCompleted()
-            })
-            return Disposables.create()
-        }
     }
 }

@@ -28,6 +28,8 @@
                 <outlet property="previousVisaImageField" destination="q59-Z3-9J1" id="P2d-IO-khr"/>
                 <outlet property="previousVisaLbl" destination="J2v-AG-KYJ" id="OOA-sG-V08"/>
                 <outlet property="previouslyTraveledCountriesView" destination="wwd-0y-oSK" id="4Qw-CR-4w5"/>
+                <outlet property="rejetionReasonField" destination="v0a-uD-rhc" id="cB3-fK-zAg"/>
+                <outlet property="relativeField" destination="Bxz-Vc-zWi" id="7R9-Os-xGg"/>
                 <outlet property="relativeINCountrySegment" destination="fbe-PQ-3qa" id="5ab-Ju-SbH"/>
                 <outlet property="relativeInCountryLbl" destination="6Kz-Kn-DDj" id="OMR-zY-dHB"/>
                 <outlet property="statusPInfoLbl" destination="fiT-t2-HOr" id="3p7-5c-IDU"/>
@@ -46,7 +48,7 @@
                     <rect key="frame" x="10.5" y="0.0" width="393" height="1500"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2xs-CW-hrx" userLabel="conent">
-                            <rect key="frame" x="10" y="0.0" width="373" height="1526"/>
+                            <rect key="frame" x="10" y="0.0" width="373" height="1148"/>
                             <subviews>
                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGe-Ha-rxi" userLabel="personal info">
                                     <rect key="frame" x="0.0" y="0.0" width="373" height="346"/>
@@ -431,35 +433,60 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czo-D9-83s" userLabel="p3">
-                                    <rect key="frame" x="0.0" y="542" width="373" height="90"/>
+                                <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="czo-D9-83s" userLabel="p3">
+                                    <rect key="frame" x="0.0" y="542" width="373" height="142"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="هل تم رفض دخولك او الغاء تاشيرتك لامريكا من قبل" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDE-pp-DXt">
-                                            <rect key="frame" x="8" y="8" width="357" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NZ3-MG-5eV">
-                                            <rect key="frame" x="8" y="38.5" width="73" height="31"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="NOw-iw-bh1"/>
-                                            </constraints>
-                                            <segments>
-                                                <segment title="لا"/>
-                                                <segment title="نعم "/>
-                                            </segments>
-                                            <color key="tintColor" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </segmentedControl>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AhV-aY-8rF">
+                                            <rect key="frame" x="8" y="8" width="357" height="126"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="هل تم رفض دخولك او الغاء تاشيرتك لامريكا من قبل" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDE-pp-DXt">
+                                                    <rect key="frame" x="0.0" y="0.0" width="341.5" height="33.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NZ3-MG-5eV">
+                                                    <rect key="frame" x="0.0" y="43.5" width="73" height="31"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="NOw-iw-bh1"/>
+                                                    </constraints>
+                                                    <segments>
+                                                        <segment title="لا"/>
+                                                        <segment title="نعم "/>
+                                                    </segments>
+                                                    <color key="tintColor" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <connections>
+                                                        <action selector="cancelReasonChanged:" destination="-1" eventType="valueChanged" id="zEI-Mo-KeU"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v0a-uD-rhc" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="83.5" width="357" height="42.5"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="اشرح السبب بايجاز"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="اشرح السبب بايجاز"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="lineErrorColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="vDE-pp-DXt" secondAttribute="trailing" constant="8" id="2pG-8m-lCz"/>
-                                        <constraint firstItem="vDE-pp-DXt" firstAttribute="top" secondItem="czo-D9-83s" secondAttribute="top" constant="8" id="KUT-9j-WNt"/>
-                                        <constraint firstItem="NZ3-MG-5eV" firstAttribute="leading" secondItem="czo-D9-83s" secondAttribute="leading" constant="8" id="MHo-XF-p0v"/>
-                                        <constraint firstAttribute="height" constant="90" id="Pxw-3u-g0a"/>
-                                        <constraint firstItem="vDE-pp-DXt" firstAttribute="leading" secondItem="czo-D9-83s" secondAttribute="leading" constant="8" id="aTb-3v-rVG"/>
-                                        <constraint firstItem="NZ3-MG-5eV" firstAttribute="top" secondItem="vDE-pp-DXt" secondAttribute="bottom" constant="10" id="jMK-r7-Icq"/>
+                                        <constraint firstAttribute="trailing" secondItem="AhV-aY-8rF" secondAttribute="trailing" constant="8" id="8wk-WV-6WU"/>
+                                        <constraint firstAttribute="bottom" secondItem="AhV-aY-8rF" secondAttribute="bottom" constant="8" id="AtD-gq-blt"/>
+                                        <constraint firstItem="AhV-aY-8rF" firstAttribute="top" secondItem="czo-D9-83s" secondAttribute="top" constant="8" id="cwj-z0-vCp"/>
+                                        <constraint firstItem="AhV-aY-8rF" firstAttribute="leading" secondItem="czo-D9-83s" secondAttribute="leading" constant="8" id="xZq-sZ-Mv2"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
@@ -474,34 +501,59 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fev-d4-x60" userLabel="p3">
-                                    <rect key="frame" x="0.0" y="647" width="373" height="90"/>
+                                    <rect key="frame" x="0.0" y="699" width="373" height="140"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="هل لديك اى اقارب فى امريكا؟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Kz-Kn-DDj">
-                                            <rect key="frame" x="8" y="8" width="357" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fbe-PQ-3qa">
-                                            <rect key="frame" x="8" y="38.5" width="73" height="31"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="vfn-dE-e40"/>
-                                            </constraints>
-                                            <segments>
-                                                <segment title="لا"/>
-                                                <segment title="نعم "/>
-                                            </segments>
-                                            <color key="tintColor" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </segmentedControl>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="yiG-aX-Mnn">
+                                            <rect key="frame" x="8" y="8" width="357" height="124"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="هل لديك اى اقارب فى امريكا؟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Kz-Kn-DDj">
+                                                    <rect key="frame" x="0.0" y="0.0" width="196" height="33.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fbe-PQ-3qa">
+                                                    <rect key="frame" x="0.0" y="42.5" width="73" height="31"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="vfn-dE-e40"/>
+                                                    </constraints>
+                                                    <segments>
+                                                        <segment title="لا"/>
+                                                        <segment title="نعم "/>
+                                                    </segments>
+                                                    <color key="tintColor" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </segmentedControl>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bxz-Vc-zWi" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="81.5" width="357" height="42.5"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="اختر النسبية"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="اختر النسبية"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="lineErrorColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="hasRelativeDidChange:" destination="-1" eventType="editingDidEnd" id="Shg-6v-loe"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="6Kz-Kn-DDj" secondAttribute="trailing" constant="8" id="hsQ-7L-hTL"/>
-                                        <constraint firstItem="6Kz-Kn-DDj" firstAttribute="leading" secondItem="Fev-d4-x60" secondAttribute="leading" constant="8" id="oEZ-bT-iVB"/>
-                                        <constraint firstItem="fbe-PQ-3qa" firstAttribute="leading" secondItem="Fev-d4-x60" secondAttribute="leading" constant="8" id="uqC-rr-yWR"/>
-                                        <constraint firstItem="6Kz-Kn-DDj" firstAttribute="top" secondItem="Fev-d4-x60" secondAttribute="top" constant="8" id="vbO-zn-Oln"/>
-                                        <constraint firstAttribute="height" constant="90" id="vnn-z3-vIS"/>
-                                        <constraint firstItem="fbe-PQ-3qa" firstAttribute="top" secondItem="6Kz-Kn-DDj" secondAttribute="bottom" constant="10" id="zOu-S2-r9k"/>
+                                        <constraint firstAttribute="trailing" secondItem="yiG-aX-Mnn" secondAttribute="trailing" constant="8" id="Kos-A6-1tr"/>
+                                        <constraint firstAttribute="bottom" secondItem="yiG-aX-Mnn" secondAttribute="bottom" constant="8" id="QF7-NO-Z7g"/>
+                                        <constraint firstItem="yiG-aX-Mnn" firstAttribute="leading" secondItem="Fev-d4-x60" secondAttribute="leading" constant="8" id="VQT-YF-LZx"/>
+                                        <constraint firstItem="yiG-aX-Mnn" firstAttribute="top" secondItem="Fev-d4-x60" secondAttribute="top" constant="8" id="yP3-uI-gBH"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
@@ -515,8 +567,8 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5vJ-c5-Hnv" userLabel="p3">
-                                    <rect key="frame" x="0.0" y="752" width="373" height="155"/>
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5vJ-c5-Hnv" userLabel="p3">
+                                    <rect key="frame" x="0.0" y="846.5" width="373" height="155"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="هل سبق وحصلت على تأشيرة لبريطانيا من قبل ؟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2v-AG-KYJ">
                                             <rect key="frame" x="8" y="8" width="357" height="44"/>
@@ -584,10 +636,10 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" verticalHuggingPriority="247" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="TWF-e7-GMx" userLabel="Ever you traveld before">
-                                    <rect key="frame" x="0.0" y="922" width="373" height="400"/>
+                                    <rect key="frame" x="0.0" y="854" width="373" height="90"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="400" id="qBR-ce-A7j"/>
+                                        <constraint firstAttribute="height" constant="90" id="qBR-ce-A7j"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
@@ -602,7 +654,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="wwd-0y-oSK" userLabel="p5">
-                                    <rect key="frame" x="0.0" y="1337" width="373" height="140"/>
+                                    <rect key="frame" x="0.0" y="959" width="373" height="140"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="140" id="f3N-a3-cd0"/>
@@ -620,7 +672,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Tq-2F-bE9">
-                                    <rect key="frame" x="0.0" y="1492" width="373" height="34"/>
+                                    <rect key="frame" x="0.0" y="1114" width="373" height="34"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="34" id="1L4-Ys-hfN"/>
                                     </constraints>
