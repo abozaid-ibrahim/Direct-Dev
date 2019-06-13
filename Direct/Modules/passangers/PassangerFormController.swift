@@ -10,24 +10,18 @@ import RxSwift
 import UIKit
 
 class PassangerFormController: UIViewController, ImagePicker {
-    // MARK: ImagePicker
-
+    // ImagePicker
     var currentImageID: Int = 0
     private let familyImageID = 30
     private let passportImageID = 31
     private let visaImageID = 32
     private let last10YearsVisaImageID = 33
 
-    // MARK: Inject FromOutSide
-
+    //Inject FromOutSide
     var countryName: String!
     var countryId: String!
     var index: Int!
-
-    // MARK: update parent
-
     var successIndex = PublishSubject<Int>()
-
     // MARK: IBuilder ====================================>>
 
     // Family
@@ -38,24 +32,19 @@ class PassangerFormController: UIViewController, ImagePicker {
     @IBOutlet var husbundPInfoLbl: FloatingTextField!
     @IBOutlet var isTravelWithFamilyView: UIView!
     @IBOutlet var familyIDPInfoLbl: FloatingTextField!
-
     @IBOutlet var passportImageField: FloatingTextField!
-
-    // MARK: MOTHER
-
+    // MOTHER
     @IBOutlet var firstNameMotherLbl: FloatingTextField!
     @IBOutlet var familyNameMotherLbl: FloatingTextField!
     @IBOutlet var nationalityMotherLbl: FloatingTextField!
 
-    // MARK: Ever you had a vis
-
+    // Ever you had a vis
     @IBOutlet var everTraveledBeforeView: UIView!
     @IBOutlet var previousVisaLbl: UILabel!
     @IBOutlet var previousVisaImageField: FloatingTextField!
     @IBOutlet var everHadVisaSegment: UISegmentedControl!
 
-    // MARK: countries
-
+    // countries
     @IBOutlet var relativeField: FloatingTextField!
     @IBOutlet private var previouslyTraveledCountriesView: UIView!
     @IBOutlet var countriesContainerHeight: NSLayoutConstraint!
@@ -88,13 +77,13 @@ class PassangerFormController: UIViewController, ImagePicker {
         everHadVisaSegment.appFont()
     }
 
-    let travels = UIStoryboard.visa.instantiateViewController(withIdentifier: "PreviousTraveledCountriesController") as! PreviousTraveledCountriesController
-
+    let travels = UIStoryboard.visa.controller(PreviousTraveledCountriesController.self)
     private func addPreviousCountries() {
-        addChild(travels)
-        previouslyTraveledCountriesView.addSubview(travels.view)
-        travels.view.sameBoundsTo(parentView: previouslyTraveledCountriesView)
-        travels.tableHeight.asDriver(onErrorJustReturn: travels.headerHeight).asObservable().bind(to: countriesContainerHeight.rx.constant).disposed(by: disposeBag)
+        guard let travelVC = travels as? PreviousTraveledCountriesController else { return }
+        addChild(travelVC)
+        previouslyTraveledCountriesView.addSubview(travelVC.view)
+        travelVC.view.sameBoundsTo(parentView: previouslyTraveledCountriesView)
+        travelVC.tableHeight.asDriver(onErrorJustReturn: travelVC.headerHeight).asObservable().bind(to: countriesContainerHeight.rx.constant).disposed(by: disposeBag)
     }
 
     let questionsVC = PassangersQuestionsStepVC()
@@ -102,9 +91,9 @@ class PassangerFormController: UIViewController, ImagePicker {
         addChild(questionsVC)
         everTraveledBeforeView.addSubview(questionsVC.view)
         questionsVC.view.frame = everTraveledBeforeView.bounds
-        questionsVC.selectedDuration.filter{$0?.id != nil}.subscribe(onNext: {[unowned self] value in
+        questionsVC.selectedDuration.filter { $0?.id != nil }.subscribe(onNext: { [unowned self] value in
             self.params.periodOfPreviousStay = value?.id ?? ""
-            }, onError: nil, onCompleted: nil, onDisposed:  nil).disposed(by: disposeBag)
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         questionsVC.contentHeight
             .asDriver(onErrorJustReturn: 0)
             .debug()
@@ -121,7 +110,7 @@ class PassangerFormController: UIViewController, ImagePicker {
 
     private func pInfoSetup() {
         isTravelWithFamilyView.isHidden = true
-        self.isHusbandWillTravelView.isHidden = true
+        isHusbandWillTravelView.isHidden = true
         statusPInfoLbl.rx.tapGesture().when(.recognized)
             .subscribe { _ in
                 self.showMatrialState()
@@ -149,7 +138,6 @@ class PassangerFormController: UIViewController, ImagePicker {
                     }
                 })
             }.disposed(by: disposeBag)
-        
     }
 
     private var countryString: String {
@@ -225,7 +213,8 @@ class PassangerFormController: UIViewController, ImagePicker {
         submit()
     }
 
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         let image = info[.editedImage] as? UIImage
         let fileUrl = info[.imageURL] as? URL
         receivedImage.onNext((fileUrl?.lastPathComponent, image))
@@ -259,7 +248,7 @@ class PassangerFormController: UIViewController, ImagePicker {
     }
 
     var prevTravelsJson: String {
-        return InputJsonBuilder().buildPassangers(travels.items)
+        return InputJsonBuilder().buildPassangers((travels as! PreviousTraveledCountriesController).items)
     }
 
     var params = USRequestParams()
@@ -300,4 +289,11 @@ extension UITextField {
 
 struct Segment {
     static let no = 0
+}
+
+extension UIStoryboard {
+    func controller(_ type: UIViewController.Type) -> UIViewController {
+        print(type)
+        return instantiateViewController(withIdentifier: "\(type)")
+    }
 }

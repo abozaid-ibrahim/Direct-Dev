@@ -13,7 +13,7 @@ class PassangersInputViewViewController: UIViewController {
     @IBOutlet private var containerView: UIView!
     @IBOutlet private var tabbarView: UIView!
     @IBOutlet private var tabbarWidthConstrain: NSLayoutConstraint!
-    @IBOutlet weak var headerLbl: UILabel!
+    @IBOutlet var headerLbl: UILabel!
     var tabbar: TabBar!
     var visaInfo: VisaRequestParams?
     var successInputIndexes: [Int] = []
@@ -24,9 +24,10 @@ class PassangersInputViewViewController: UIViewController {
         super.viewDidLoad()
         title = "معلومات المسافرين"
         guard let info = visaInfo else { return }
-
-        self.headerLbl.text = "\(info.countryName!)-\(info.visatypeText!)-\(info.no_of_passport!) \("passangers".localized)"
-        self.headerLbl.setYellowGradient()
+        if let type = info.visatypeText {
+            headerLbl.text = "\(info.countryName!)-\(type)-\(info.no_of_passport!) \("passangers".localized)"
+        }
+        headerLbl.setYellowGradient()
         setupTabbar(info)
     }
 
@@ -58,11 +59,13 @@ class PassangersInputViewViewController: UIViewController {
             tabs.append((tab1, tab1VC))
         }
         tabbarWidthConstrain.constant = CGFloat(tabs.count * 100)
-
         tabbar = TabBar(tabs: tabs.map { $0.0 })
         tabbar.tabsIcon.forEach { $0.image = #imageLiteral(resourceName: "rightGreen") }
         tabbarView.addSubview(tabbar)
         tabbar.frame = tabbarView.bounds
+        tabbar.snp.makeConstraints { make in
+            make.top.leading.trailing.bottom.equalToSuperview()
+        }
         defaultTabSelection.startWith(0).subscribe(onNext: { [unowned self] value in
             self.selectTab(value, self.tabs[value].1)
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
