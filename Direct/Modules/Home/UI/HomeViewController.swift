@@ -29,6 +29,10 @@ final class HomeViewController: UIViewController, StyledActionBar {
     private let sectionsHeaderData: [HeaderObject] = [(#imageLiteral(resourceName: "p"), "متطلبات التأشيرة"), (#imageLiteral(resourceName: "p"), "أفضل المعاهد "), (#imageLiteral(resourceName: "p"), "بكجات وعروض"), (#imageLiteral(resourceName: "p"), "أخبار ومعلومات"), (#imageLiteral(resourceName: "p"), "Visa")]
     private var collectionSecions: [HomeCollectionViewSection] = []
     private let sectionsCellSize: [CGSize] = [CGSize(width: 147, height: 113), CGSize(width: 292, height: 171), CGSize(width: 292, height: 226), CGSize(width: 292, height: 171)]
+    
+    let visaReqVC = NewDirectVisaController()
+    let newInstitue = NewInstituteRequestController()
+    let packagesVC = UIStoryboard.main.instantiateViewController(withIdentifier: "PackagesViewController")
 
     
 
@@ -61,9 +65,6 @@ final class HomeViewController: UIViewController, StyledActionBar {
         collectionView.register(UINib(nibName: "HomeCollectionSectionHeader", bundle: bundle), forSupplementaryViewOfKind: "UICollectionElementKindSectionHeader", withReuseIdentifier: "HomeCollectionSectionHeader")
     }
 
-    let visaReqVC = NewDirectVisaController()
-    let newInstitue = NewInstituteRequestController()
-    let packagesVC = UIStoryboard.main.instantiateViewController(withIdentifier: "PackagesViewController")
 
     @IBAction func visaDidSelected(_: Any) {
         if children.contains(visaReqVC) {

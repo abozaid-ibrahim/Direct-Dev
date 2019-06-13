@@ -14,7 +14,6 @@ class VisaReqConfirmationController: UIViewController {
     var visaRequestData: VisaRequestParams?
     private let disposeBag = DisposeBag()
     var tableHeight = PublishSubject<CGFloat>()
-    let headerHeight = CGFloat(90)
     private let contentSizeKey = "contentSize"
     typealias TypeIndex = Int
     typealias ConfrimTableRow = (String, Bool, Int, TypeIndex)
@@ -35,6 +34,8 @@ class VisaReqConfirmationController: UIViewController {
     @IBOutlet var tableHeightConstrain: NSLayoutConstraint!
     @IBOutlet var passangersTable: UITableView!
     @IBOutlet private var pickDateView: UIView!
+    
+    
     //===================================================<<
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,13 +59,14 @@ class VisaReqConfirmationController: UIViewController {
                 self.passangersTable.isScrollEnabled = true
                 self.passangersTable.bounces = true
                 self.passangersTable.bouncesZoom = true
-
                 self.tableHeightConstrain.constant = 250
             } else {
                 self.tableHeightConstrain.constant = value?.height ?? 100
             }
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
+    
+    
 
     private func fillUIWithData() {
         guard let info = visaRequestData else {
@@ -92,6 +94,8 @@ class VisaReqConfirmationController: UIViewController {
             })
             .disposed(by: disposeBag)
     }
+    
+    
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
