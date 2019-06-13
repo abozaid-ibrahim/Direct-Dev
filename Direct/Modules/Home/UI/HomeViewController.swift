@@ -90,11 +90,9 @@ final class HomeViewController: UIViewController, StyledActionBar {
         addChild(vc)
         containerView.addSubview(vc.view)
         vc.dismessed.asObservable().subscribe(onNext: { [weak self] dismessed in
-            guard let self = self else { return }
-            self.collectionView.isHidden = !dismessed
-            self.updateHeaderFrame(fullWidth: !dismessed)
+            self?.collectionView.isHidden = !dismessed
+            self?.updateHeaderFrame(fullWidth: !dismessed)
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
-
         startViewsAnim(vc)
     }
 
