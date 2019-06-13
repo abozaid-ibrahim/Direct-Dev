@@ -48,24 +48,23 @@ class PassangerFormController: UIViewController, ImagePicker {
     @IBOutlet var nationalityMotherLbl: FloatingTextField!
 
     // MARK: Ever you had a vis
-    
+
     @IBOutlet var everTraveledBeforeView: UIView!
     @IBOutlet var previousVisaLbl: UILabel!
     @IBOutlet var previousVisaImageField: FloatingTextField!
     @IBOutlet var everHadVisaSegment: UISegmentedControl!
-    
+
     // MARK: countries
-    
-    @IBOutlet weak var relativeField: FloatingTextField!
+
+    @IBOutlet var relativeField: FloatingTextField!
     @IBOutlet private var previouslyTraveledCountriesView: UIView!
     @IBOutlet var countriesContainerHeight: NSLayoutConstraint!
-    @IBOutlet private  weak var rejetionReasonField: FloatingTextField!
+    @IBOutlet private var rejetionReasonField: FloatingTextField!
     @IBOutlet private var relativeInCountryLbl: UILabel!
     @IBOutlet var relativeINCountrySegment: UISegmentedControl!
     @IBOutlet private var visaCancelationLbl: UILabel!
     @IBOutlet var visaCancelationSegment: UISegmentedControl!
     @IBOutlet var traveledHereBeforeHConstrain: NSLayoutConstraint!
-
 
     //===================================================<<
     internal let disposeBag = DisposeBag()
@@ -77,14 +76,15 @@ class PassangerFormController: UIViewController, ImagePicker {
         addPreviousCountries()
         addEverTraveledView()
         setFonts()
+        relativeSwitchChanged()
+        cancelReasonSwitch()
     }
-    
+
     private func setFonts() {
         visaCancelationSegment.appFont()
         relativeINCountrySegment.appFont()
         everHadVisaSegment.appFont()
     }
-    
 
     let travels = UIStoryboard.visa.instantiateViewController(withIdentifier: "PreviousTraveledCountriesController") as! PreviousTraveledCountriesController
 
@@ -94,7 +94,7 @@ class PassangerFormController: UIViewController, ImagePicker {
         travels.view.sameBoundsTo(parentView: previouslyTraveledCountriesView)
         travels.tableHeight.asDriver(onErrorJustReturn: travels.headerHeight).asObservable().bind(to: countriesContainerHeight.rx.constant).disposed(by: disposeBag)
     }
-    
+
     let questionsVC = PassangersQuestionsStepVC()
     private func addEverTraveledView() {
         addChild(questionsVC)
@@ -105,15 +105,14 @@ class PassangerFormController: UIViewController, ImagePicker {
             .debug()
             .drive(onNext: { value in
                 self.animateConstrain(value: value)
-            },onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+            }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
-    
+
     private func animateConstrain(value: CGFloat) {
         UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseOut], animations: {
             self.traveledHereBeforeHConstrain.constant = value
         }, completion: nil)
     }
-    
 
     private func pInfoSetup() {
         statusPInfoLbl.rx.tapGesture().when(.recognized)
@@ -176,23 +175,29 @@ class PassangerFormController: UIViewController, ImagePicker {
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 
-    
-    @IBAction func cancelReasonChanged(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0{
-            rejetionReasonField.isHidden = true
-        }else{
-             rejetionReasonField.isHidden = false
-        }
+    @IBAction func cancelReasonChanged(_: UISegmentedControl) {
+        cancelReasonSwitch()
     }
-    @IBAction func hasRelativeDidChange(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0{
-            relativeField.isHidden = true
-        }else{
-            relativeField.isHidden = false
+
+    private func cancelReasonSwitch() {
+        if visaCancelationSegment.selectedSegmentIndex == 0 {
+            rejetionReasonField.isHidden = true
+        } else {
+            rejetionReasonField.isHidden = false
         }
     }
 
-   
+    @IBAction func hasRelativeDidChange(_: UISegmentedControl) {
+        relativeSwitchChanged()
+    }
+
+    private func relativeSwitchChanged() {
+        if relativeINCountrySegment.selectedSegmentIndex == 0 {
+            relativeField.isHidden = true
+        } else {
+            relativeField.isHidden = false
+        }
+    }
 
     func getPreviousVisaTypes() {
         network.getPreviousVisaType().retry(2).subscribe(onNext: { [unowned self] value in
@@ -228,8 +233,7 @@ class PassangerFormController: UIViewController, ImagePicker {
         // Questions
         params.everIssuedVisaBefore = "\(visaCancelationSegment.selectedSegmentIndex)"
         params.travelledBeforeHere = questionsVC.travelledBeforeHere.stringValue
-        
-        
+
         // Others PDF
         params.lang = AppLanguage.langCode
 

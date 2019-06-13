@@ -440,13 +440,13 @@
                                             <rect key="frame" x="8" y="8" width="357" height="126"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="هل تم رفض دخولك او الغاء تاشيرتك لامريكا من قبل" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDE-pp-DXt">
-                                                    <rect key="frame" x="0.0" y="0.0" width="341.5" height="33.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="341.5" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NZ3-MG-5eV">
-                                                    <rect key="frame" x="0.0" y="43.5" width="73" height="31"/>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NZ3-MG-5eV">
+                                                    <rect key="frame" x="0.0" y="56" width="73" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="NOw-iw-bh1"/>
                                                     </constraints>
@@ -459,8 +459,8 @@
                                                         <action selector="cancelReasonChanged:" destination="-1" eventType="valueChanged" id="zEI-Mo-KeU"/>
                                                     </connections>
                                                 </segmentedControl>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v0a-uD-rhc" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="83.5" width="357" height="42.5"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v0a-uD-rhc" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="96" width="357" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -479,6 +479,10 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="v0a-uD-rhc" firstAttribute="leading" secondItem="AhV-aY-8rF" secondAttribute="leading" id="1ne-Fy-LIN"/>
+                                                <constraint firstAttribute="trailing" secondItem="v0a-uD-rhc" secondAttribute="trailing" id="NHO-hK-kGC"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -507,13 +511,13 @@
                                             <rect key="frame" x="8" y="8" width="357" height="124"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="هل لديك اى اقارب فى امريكا؟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Kz-Kn-DDj">
-                                                    <rect key="frame" x="0.0" y="0.0" width="196" height="33.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="196" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fbe-PQ-3qa">
-                                                    <rect key="frame" x="0.0" y="42.5" width="73" height="31"/>
+                                                    <rect key="frame" x="0.0" y="55" width="73" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="vfn-dE-e40"/>
                                                     </constraints>
@@ -522,9 +526,12 @@
                                                         <segment title="نعم "/>
                                                     </segments>
                                                     <color key="tintColor" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <connections>
+                                                        <action selector="hasRelativeDidChange:" destination="-1" eventType="valueChanged" id="w2b-oO-T9i"/>
+                                                    </connections>
                                                 </segmentedControl>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bxz-Vc-zWi" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="81.5" width="357" height="42.5"/>
+                                                    <rect key="frame" x="0.0" y="94" width="357" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -541,11 +548,12 @@
                                                             <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
-                                                    <connections>
-                                                        <action selector="hasRelativeDidChange:" destination="-1" eventType="editingDidEnd" id="Shg-6v-loe"/>
-                                                    </connections>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Bxz-Vc-zWi" firstAttribute="leading" secondItem="yiG-aX-Mnn" secondAttribute="leading" id="E1u-Mj-KUV"/>
+                                                <constraint firstAttribute="trailing" secondItem="Bxz-Vc-zWi" secondAttribute="trailing" id="edc-Jg-tNj"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
