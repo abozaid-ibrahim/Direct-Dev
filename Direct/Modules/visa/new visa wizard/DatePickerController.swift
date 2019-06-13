@@ -17,6 +17,8 @@ class DatePickerController: UIViewController, PanModalPresentable {
     var panScrollable: UIScrollView?
     var shortFormHeight: PanModalHeight = .contentHeight(400)
     @IBOutlet private var dateLbl: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         datePicker.delegate = self
@@ -59,6 +61,7 @@ extension DatePickerController: JBDatePickerViewDelegate {
     var colorForSelectionCircleForOtherDate: UIColor { return UIColor.appMango }
     var colorForCurrentDay: UIColor { return UIColor.appMango }
     var colorForSelectionCircleForToday: UIColor { return UIColor.appMango }
+    
     func didSelectDay(_ dayView: JBDatePickerDayView) {
         if let date = dayView.date {
             selectedDate.onNext(date)

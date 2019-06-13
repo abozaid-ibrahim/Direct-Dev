@@ -23,10 +23,15 @@ class PassangersCountController: UIViewController, PanModalPresentable {
     @IBOutlet var childTotalLbl: UILabel!
     @IBOutlet var adultTotalLbl: UILabel!
     @IBOutlet private var countLbl: UILabel!
+    
+    
     //===================================================<<
     private let network = ApiClientFacade()
+    var result = PublishSubject<PassangerCount>()
     var info: VisaPriceParams?
     private var totolCost: String = "0"
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let info = info else { return }
@@ -95,7 +100,6 @@ class PassangersCountController: UIViewController, PanModalPresentable {
         }
     }
 
-    var result = PublishSubject<PassangerCount>()
 
     @IBAction func confirmAction(_: Any) {
         result.onNext((menCount, childCount, totolCost))
