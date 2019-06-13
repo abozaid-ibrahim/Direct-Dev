@@ -13,19 +13,24 @@ import UIKit
 private typealias HeaderObject = (UIImage, String)
 
 final class HomeViewController: UIViewController, StyledActionBar {
+    
     @IBOutlet var packageView: UIStackView!
     @IBOutlet var institueView: UIStackView!
-    private let homeViewModel = HomeViewModel()
-    var disposeBag = DisposeBag()
-    private let sectionsHeaderData: [HeaderObject] = [(#imageLiteral(resourceName: "p"), "متطلبات التأشيرة"), (#imageLiteral(resourceName: "p"), "أفضل المعاهد "), (#imageLiteral(resourceName: "p"), "بكجات وعروض"), (#imageLiteral(resourceName: "p"), "أخبار ومعلومات"), (#imageLiteral(resourceName: "p"), "Visa")]
-    private var collectionSecions: [HomeCollectionViewSection] = []
-    private let sectionsCellSize: [CGSize] = [CGSize(width: 147, height: 113), CGSize(width: 292, height: 171), CGSize(width: 292, height: 226), CGSize(width: 292, height: 171)]
-
     @IBOutlet var containerView: UIView!
     @IBOutlet private var collectionView: UICollectionView!
     @IBOutlet private var headerView: UIView!
     @IBOutlet var headerActiveViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet var headerNoneActiveViewWidthConstraint: NSLayoutConstraint!
+    
+    
+    private let homeViewModel = HomeViewModel()
+    var disposeBag = DisposeBag()
+    
+    private let sectionsHeaderData: [HeaderObject] = [(#imageLiteral(resourceName: "p"), "متطلبات التأشيرة"), (#imageLiteral(resourceName: "p"), "أفضل المعاهد "), (#imageLiteral(resourceName: "p"), "بكجات وعروض"), (#imageLiteral(resourceName: "p"), "أخبار ومعلومات"), (#imageLiteral(resourceName: "p"), "Visa")]
+    private var collectionSecions: [HomeCollectionViewSection] = []
+    private let sectionsCellSize: [CGSize] = [CGSize(width: 147, height: 113), CGSize(width: 292, height: 171), CGSize(width: 292, height: 226), CGSize(width: 292, height: 171)]
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
