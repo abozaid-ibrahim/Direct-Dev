@@ -69,6 +69,7 @@ class PassangerFormController: UIViewController, ImagePicker {
     //===================================================<<
     internal let disposeBag = DisposeBag()
     var receivedImage = PublishSubject<(String?, UIImage?)>()
+    let viewModel = PassangerFormViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         pInfoSetup()
@@ -78,6 +79,7 @@ class PassangerFormController: UIViewController, ImagePicker {
         setFonts()
         relativeSwitchChanged()
         cancelReasonSwitch()
+        viewModel.getRelatives()
     }
 
     private func setFonts() {
@@ -115,6 +117,7 @@ class PassangerFormController: UIViewController, ImagePicker {
     }
 
     private func pInfoSetup() {
+        isTravelWithFamilyView.isHidden = true
         statusPInfoLbl.rx.tapGesture().when(.recognized)
             .subscribe { _ in
                 self.showMatrialState()
@@ -173,6 +176,11 @@ class PassangerFormController: UIViewController, ImagePicker {
             }
 
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        relativeField.rx.tapGesture().when(.recognized)
+            .subscribe { _ in
+                self.showRelationsSpinner()
+            }.disposed(by: disposeBag)
+        viewModel.selectedRelation.bind(to: relativeField.rx.text).disposed(by: disposeBag)
     }
 
     @IBAction func cancelReasonChanged(_: UISegmentedControl) {
@@ -180,7 +188,7 @@ class PassangerFormController: UIViewController, ImagePicker {
     }
 
     private func cancelReasonSwitch() {
-        if visaCancelationSegment.selectedSegmentIndex == 0 {
+        if visaCancelationSegment.selectedSegmentIndex == Segment.no {
             rejetionReasonField.isHidden = true
         } else {
             rejetionReasonField.isHidden = false
@@ -192,7 +200,7 @@ class PassangerFormController: UIViewController, ImagePicker {
     }
 
     private func relativeSwitchChanged() {
-        if relativeINCountrySegment.selectedSegmentIndex == 0 {
+        if relativeINCountrySegment.selectedSegmentIndex == Segment.no {
             relativeField.isHidden = true
         } else {
             relativeField.isHidden = false
@@ -282,4 +290,8 @@ extension UITextField {
     func neverShowKeypad() {
         inputView = UIView()
     }
+}
+
+struct Segment {
+    static let no = 0
 }

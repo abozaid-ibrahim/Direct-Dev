@@ -12,7 +12,7 @@ import UIKit
 class PassangersQuestionsStepVC: UIViewController {
     // MARK: IBuilder ====================================>>
 
-    @IBOutlet private weak var contentView: UIView!
+    @IBOutlet private var contentView: UIView!
     @IBOutlet private var everYouTraveledLbl: UILabel!
     @IBOutlet private var everYouTraveledSegment: UISegmentedControl!
     @IBOutlet private var everTraveledDetailsSection: UIStackView!
@@ -22,14 +22,18 @@ class PassangersQuestionsStepVC: UIViewController {
     @IBOutlet private var licenceSegment: UISegmentedControl!
     //===================================================<<
     private let disposeBag = DisposeBag()
-    
+    var selectedDate = PublishSubject<Date?>()
+    var selectedDuration = PublishSubject<String?>()
+
     var travelledBeforeHere: Int {
         return everYouTraveledSegment.selectedSegmentIndex
     }
 
+    var travel_date: String?
     var haveLicense: Int {
         return licenceSegment.selectedSegmentIndex
     }
+
     var contentHeight = BehaviorSubject<CGFloat>(value: 90)
 
     override func viewDidLoad() {
@@ -42,9 +46,19 @@ class PassangersQuestionsStepVC: UIViewController {
     private func addActionsToFields() {
         arrivalDateField.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
-                let hint = "Choose arrival date".localized
-                try? AppNavigator().presentModally(Destination.datePicker(title: hint))
+
+                self.showDatePickerDialog()
             }).disposed(by: disposeBag)
+        selectedDate.map { $0?.displayFormat }.bind(to: arrivalDateField.rx.text).disposed(by: disposeBag)
+        
+        durationField.rx.tapGesture().when(.recognized)
+            .subscribe(onNext: { _ in
+                
+                self.showDurationSpinner()
+            }).disposed(by: disposeBag)
+        selectedDate.map { $0?.displayFormat }.bind(to: arrivalDateField.rx.text).disposed(by: disposeBag)
+        selectedDuration.bind(to: durationField.rx.text).disposed(by: disposeBag)
+
     }
 
     private func setupUI() {
@@ -55,8 +69,45 @@ class PassangersQuestionsStepVC: UIViewController {
     }
 
     @IBAction func everTraveledChanged(_ sender: UISegmentedControl) {
-        
         setViewAppearance()
+    }
+    private func  showDurationSpinner() {
+        let bios = ["day","month","year"]
+        let dest = Destination.selectableSheet(data: bios, titleText: "Choose".localized, style: .textCenter)
+        let vc = dest.controller() as! SelectableTableSheet
+        vc.selectedItem.asObservable().subscribe { event in
+            switch event.event {
+            case let .next(value):
+//                let bio = self.relativesList.filter { $0.name == value }
+//                if let bioObj = bio.first {
+//                    self.visaRequestData.relation_with_travelers = bioObj.id
+//                    self.visaRequestData.relation_with_travelersText = bioObj.name
+//                }
+                
+                self.selectedDuration.onNext(value)
+                
+            default:
+                break
+            }
+            
+            }.disposed(by: disposeBag)
+        try! AppNavigator().presentModally(vc)
+    }
+    private func showDatePickerDialog() {
+        let hint = "Choose arrival date".localized
+        let dest = Destination.datePicker(title: hint)
+        let vc = dest.controller() as! DatePickerController
+        vc.selectedDate.asObservable().subscribe { event in
+            switch event.event {
+            case let .next(value):
+                self.travel_date = value!.apiFormat
+                self.selectedDate.onNext(value)
+            default:
+                break
+            }
+
+        }.disposed(by: disposeBag)
+        try! AppNavigator().presentModally(vc)
     }
 
     private func setViewAppearance() {
