@@ -40,6 +40,14 @@ extension ApiClientFacade {
         }
     }
 
+    func getVisaRelations() -> Observable<VisaRelationsJSONResponse> {
+        return Observable<VisaRelationsJSONResponse>.create { (observer) -> Disposable in
+            self.visaProvider.rx.request(VisaAPIs.getVisaReqRelation).subscribe { [weak self] event in
+                self?.parser.emitDataModelfromResponse(event: event, observer: observer)
+                }.disposed(by: self.disposeBag)
+            return Disposables.create()
+        }
+    }
     func applyToUSVisa(params: USRequestParams) -> Observable<USVvisaRequestJSONResponse> {
         return Observable<USVvisaRequestJSONResponse>.create { (observer) -> Disposable in
             self.visaProvider.rx.request(VisaAPIs.applyToUS(params)).subscribe { [weak self] event in

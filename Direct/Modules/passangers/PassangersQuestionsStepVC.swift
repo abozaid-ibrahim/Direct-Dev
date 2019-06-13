@@ -44,21 +44,21 @@ class PassangersQuestionsStepVC: UIViewController {
     }
 
     private func addActionsToFields() {
+        arrivalDateField.neverShowKeypad()
         arrivalDateField.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
 
                 self.showDatePickerDialog()
             }).disposed(by: disposeBag)
         selectedDate.map { $0?.displayFormat }.bind(to: arrivalDateField.rx.text).disposed(by: disposeBag)
-        
+        durationField.neverShowKeypad()
         durationField.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
-                
+
                 self.showDurationSpinner()
             }).disposed(by: disposeBag)
         selectedDate.map { $0?.displayFormat }.bind(to: arrivalDateField.rx.text).disposed(by: disposeBag)
         selectedDuration.bind(to: durationField.rx.text).disposed(by: disposeBag)
-
     }
 
     private func setupUI() {
@@ -71,8 +71,9 @@ class PassangersQuestionsStepVC: UIViewController {
     @IBAction func everTraveledChanged(_ sender: UISegmentedControl) {
         setViewAppearance()
     }
-    private func  showDurationSpinner() {
-        let bios = ["day","month","year"]
+
+    private func showDurationSpinner() {
+        let bios = ["day", "month", "year"]
         let dest = Destination.selectableSheet(data: bios, titleText: "Choose".localized, style: .textCenter)
         let vc = dest.controller() as! SelectableTableSheet
         vc.selectedItem.asObservable().subscribe { event in
@@ -83,16 +84,17 @@ class PassangersQuestionsStepVC: UIViewController {
 //                    self.visaRequestData.relation_with_travelers = bioObj.id
 //                    self.visaRequestData.relation_with_travelersText = bioObj.name
 //                }
-                
+
                 self.selectedDuration.onNext(value)
-                
+
             default:
                 break
             }
-            
-            }.disposed(by: disposeBag)
+
+        }.disposed(by: disposeBag)
         try! AppNavigator().presentModally(vc)
     }
+
     private func showDatePickerDialog() {
         let hint = "Choose arrival date".localized
         let dest = Destination.datePicker(title: hint)

@@ -176,6 +176,7 @@ class PassangerFormController: UIViewController, ImagePicker {
             }
 
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        relativeField.neverShowKeypad()
         relativeField.rx.tapGesture().when(.recognized)
             .subscribe { _ in
                 self.showRelationsSpinner()

@@ -15,7 +15,8 @@ enum VisaAPIs {
         getVisaPrice(prm: VisaPriceParams),
         applyToUS(USRequestParams),
         applyToUK(USRequestParams),
-        getPreviousVisaType
+        getPreviousVisaType,
+        getVisaReqRelation
 }
 
 extension VisaAPIs: TargetType {
@@ -33,12 +34,14 @@ extension VisaAPIs: TargetType {
             return "get-previous-visa-type"
         case .applyToUK:
             return "to-apply-gb"
+        case .getVisaReqRelation:
+            return "get-visa-req-relation"
         }
     }
 
     public var method: Moya.Method {
         switch self {
-        case .visaRequest, .visaRequirementForCountry, .getVisaPrice, .applyToUK, .applyToUS, .getPreviousVisaType:
+        case .visaRequest, .visaRequirementForCountry, .getVisaPrice, .applyToUK, .applyToUS, .getPreviousVisaType,.getVisaReqRelation:
             return .post
         }
     }
@@ -87,6 +90,13 @@ extension VisaAPIs: TargetType {
             let prmDic = ["key": tokenKeyValue,
                           "lang": appLang] as [String: Any]
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
+        
+        
+        case  .getVisaReqRelation:
+            let prmDic = ["key": tokenKeyValue,
+                          "lang": appLang] as [String: Any]
+            return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
+            
         }
     }
 

@@ -13,7 +13,7 @@ class NewDirectVisaViewModel {
     var disposeBag = DisposeBag()
     var screenData = PublishSubject<[NewVisaServices]>()
     var bioOptions: [BioOption] = []
-    var relativesList: [Relative] = []
+    var relativesList: [USRelative] = []
     var selectedDate = PublishSubject<Date?>()
     var showProgress = PublishSubject<Bool>()
     private var network: ApiClientFacade?
@@ -72,9 +72,10 @@ class NewDirectVisaViewModel {
         }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
 
         // get relatives
-        let rel = network.getRelationList().retry(2)
+        let rel = network.getVisaRelations().retry(2)
         rel.subscribe(onNext: { [weak self] bios in
-            self?.relativesList.append(contentsOf: bios.relatives)
+            
+            self?.relativesList.append(contentsOf: bios.usRelatives ?? [])
         }, onError: { [weak self] _ in
             self?.showProgress.onNext(false)
         }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
@@ -275,7 +276,7 @@ class NewDirectVisaViewModel {
     }
 
     func showRelationsSpinner() {
-        let bios = relativesList.map { $0.name }
+        let bios = relativesList.map { $0.name ?? "" }
         let dest = Destination.selectableSheet(data: bios, titleText: "العلاقة بين المسافرين", style: .textCenter)
         let vc = dest.controller() as! SelectableTableSheet
         vc.selectedItem.asObservable().subscribe { event in
