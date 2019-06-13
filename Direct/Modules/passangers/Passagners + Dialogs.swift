@@ -84,7 +84,7 @@ extension PassangerFormController {
     }
     
     func showRelationsSpinner() {
-        let bios = viewModel.relativesList.map { $0.name }
+        let bios = viewModel.relativesList.map { $0.name ?? ""}
         let dest = Destination.selectableSheet(data: bios, titleText: "relativity".localized, style: .textCenter)
         let vc = dest.controller() as! SelectableTableSheet
         vc.selectedItem.asObservable().subscribe { event in
@@ -92,7 +92,7 @@ extension PassangerFormController {
             case let .next(value):
                 let bio = self.viewModel.relativesList.filter { $0.name == value }
                 if let bioObj = bio.first {
-                    self.params.relative_type = bioObj.id.int ?? 0
+                    self.params.relative_type = bioObj.id?.int ?? 0
                 }
                 
                 self.viewModel.selectedRelation.onNext(value)

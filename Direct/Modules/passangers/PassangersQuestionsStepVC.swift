@@ -113,7 +113,7 @@ class PassangersQuestionsStepVC: UIViewController {
     }
 
     private func setViewAppearance() {
-        let height = everYouTraveledSegment.selectedSegmentIndex == 0 ? 90 : 250
+        let height = everYouTraveledSegment.selectedSegmentIndex == 0 ? 90 : 260
         let hide = everYouTraveledSegment.selectedSegmentIndex == 0
         contentView.isHidden = hide
         contentHeight.onNext(CGFloat(height))

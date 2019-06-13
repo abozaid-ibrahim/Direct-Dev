@@ -12,12 +12,12 @@ class PassangerFormViewModel {
     private let network = ApiClientFacade()
     var selectedRelation = PublishSubject<String?>()
 
-    var relativesList: [Relative] = []
+    var relativesList: [USRelative] = []
     private let disposeBag = DisposeBag()
     func getRelatives() {
-        let rel = network.getRelationList().retry(2)
+        let rel = network.getUSLivingVisaRelatives().retry(2)
         rel.subscribe(onNext: { [weak self] bios in
-            self?.relativesList.append(contentsOf: bios.relatives)
+            self?.relativesList.append(contentsOf: bios.usRelatives ?? [])
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
     
