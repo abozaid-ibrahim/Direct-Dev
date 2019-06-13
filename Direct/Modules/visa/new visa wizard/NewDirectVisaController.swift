@@ -58,9 +58,8 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
         setONClickViews()
         viewModel.viewDidLoad()
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
+   
+    
     private func bindDataToUI() {
         relationsField.isHidden = true
         wrongNotesContainer.isHidden = true
@@ -89,9 +88,6 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
         viewModel.selectedVisaType.bind(to: visaField.text).disposed(by: disposeBag)
         viewModel.selectedDate.map { $0?.displayFormat }.bind(to: dateField.text).disposed(by: disposeBag)
         viewModel.passangersCount.map { $0 == nil ? true : ($0!.0 + $0!.1) <= 1 }.debug(">>>hide", trimOutput: true).bind(to: relationsField.rx.isHidden).disposed(by: disposeBag)
-
-
-
     }
 
     var showProgress: Bool? {

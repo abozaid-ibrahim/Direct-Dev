@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+
 struct AppFonts {
     static let regularFont = "Cairo-Regular"
     static let boldFont = "Cairo-Bold"
@@ -24,6 +25,8 @@ extension UIFont {
 }
 
 extension UILabel {
+    
+    
     var substituteFontName: String {
         get { return font.fontName }
         set {
