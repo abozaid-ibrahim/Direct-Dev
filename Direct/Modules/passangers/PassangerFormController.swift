@@ -121,6 +121,7 @@ class PassangerFormController: UIViewController, ImagePicker {
 
     private func pInfoSetup() {
         isTravelWithFamilyView.isHidden = true
+        self.isHusbandWillTravelView.isHidden = true
         statusPInfoLbl.rx.tapGesture().when(.recognized)
             .subscribe { _ in
                 self.showMatrialState()
@@ -148,6 +149,7 @@ class PassangerFormController: UIViewController, ImagePicker {
                     }
                 })
             }.disposed(by: disposeBag)
+        
     }
 
     private var countryString: String {

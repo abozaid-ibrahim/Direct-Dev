@@ -92,7 +92,7 @@ extension PassangerFormController {
             case let .next(value):
                 let bio = self.viewModel.relativesList.filter { $0.name == value }
                 if let bioObj = bio.first {
-                    self.params.relative_type = bioObj.id?.int ?? 0
+                    self.params.relative_type = bioObj.id.int ?? 0
                 }
                 
                 self.viewModel.selectedRelation.onNext(value)
