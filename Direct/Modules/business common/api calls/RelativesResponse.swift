@@ -9,22 +9,24 @@
 import Foundation
 
 // MARK: - RelativesResponse
+
 class RelativesResponse: Codable {
     let relatives: [Relative]
-    
+
     enum CodingKeys: String, CodingKey {
         case relatives = "Relatives"
     }
-    
+
     init(relatives: [Relative]) {
         self.relatives = relatives
     }
 }
 
 // MARK: - Relative
+
 class Relative: Codable {
     let id, name, status, success: String
-    
+
     init(id: String, name: String, status: String, success: String) {
         self.id = id
         self.name = name

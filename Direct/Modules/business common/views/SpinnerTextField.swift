@@ -35,16 +35,20 @@ class SpinnerTextField: UIView {
     }
 
     var text = PublishSubject<String?>()
+
     let disposeBag = DisposeBag()
+
     typealias Action = () -> Void
+
     var action: Action?
+
     func setOnclick(ac _: @escaping Action) {
-//        action = ac
-//        let tap = UITapGestureRecognizer(target: self, action: #selector(clicked(sender:)))
-//        addGestureRecognizer(tap)
-//        self.rx.tapGesture().subscribe{
-//            ac()
-//            }.disposed(by: disposeBag)
+        //        action = ac
+        //        let tap = UITapGestureRecognizer(target: self, action: #selector(clicked(sender:)))
+        //        addGestureRecognizer(tap)
+        //        self.rx.tapGesture().subscribe{
+        //            ac()
+        //            }.disposed(by: disposeBag)
     }
 
     @objc private func clicked(sender _: Any) {
@@ -57,6 +61,7 @@ class SpinnerTextField: UIView {
         stack.alignment = .center
         stack.axis = .horizontal
         stack.spacing = 10
+
         leftLogo.translatesAutoresizingMaskIntoConstraints = false
         leftLogo.widthAnchor.constraint(equalToConstant: 25).isActive = true
         leftLogo.contentMode = .scaleAspectFit
@@ -72,24 +77,22 @@ class SpinnerTextField: UIView {
         addSubview(stack)
         stack.sameBoundsTo(parentView: self, l: 10, tr: 10)
         txtField.textAlignment = .right
-        text.subscribe(onNext: {[unowned self] value in
-                    if value == nil{
-                        self.layer.borderColor = UIColor.appMango.cgColor
-                        self.layer.borderWidth = 1.5
-                        
-                        UIView.animate(withDuration: 0.25, delay: 0, options: [.curveEaseInOut], animations: {
-                            self.alpha = 0.6
-                        }, completion: { _ in
-                            self.alpha = 1.0
-                            
-                        })
-                    }else{
-                        self.layer.borderWidth = 0
-                        self.txtField.text = value
-                        
-                    }
-            
-        
+        text.subscribe(onNext: { [unowned self] value in
+            if value == nil {
+                self.layer.borderColor = UIColor.appMango.cgColor
+                self.layer.borderWidth = 1.5
+
+                UIView.animate(withDuration: 0.25, delay: 0, options: [.curveEaseInOut], animations: {
+                    self.alpha = 0.6
+                }, completion: { _ in
+                    self.alpha = 1.0
+
+                })
+            } else {
+                self.layer.borderWidth = 0
+                self.txtField.text = value
+            }
+
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 
@@ -105,9 +108,8 @@ class SpinnerTextField: UIView {
 
     private func commonInit() {
         createUI()
-        backgroundColor = UIColor.appOffWhite
+        backgroundColor = UIColor.white
         cornerRadiusV = 8
         txtField.inputView = UIView()
-
     }
 }

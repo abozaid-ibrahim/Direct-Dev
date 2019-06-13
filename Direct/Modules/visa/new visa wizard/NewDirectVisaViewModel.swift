@@ -83,7 +83,8 @@ class NewDirectVisaViewModel {
             countries, bios, rel,
             resultSelector: { _, _, _ in
                 self.showProgress.onNext(false)
-        }).observeOn(MainScheduler.instance)
+            }
+        ).observeOn(MainScheduler.instance)
             .subscribe()
             .disposed(by: disposeBag)
     }
@@ -153,7 +154,7 @@ class NewDirectVisaViewModel {
         let vc = dest.controller() as! SelectableTableSheet
         vc.selectedItem.asObservable().subscribe { event in
             switch event.event {
-            case .next(let value):
+            case let .next(value):
 
                 let itms = data.filter { $0.visaTypeName ?? "" == value }
                 if let visa = itms.first {
@@ -176,7 +177,7 @@ class NewDirectVisaViewModel {
         let vc = dest.controller() as! SelectableTableSheet
         vc.selectedItem.asObservable().subscribe { event in
             switch event.event {
-            case .next(let value):
+            case let .next(value):
                 let locations = locations.filter { $0.cityName == value }
 
                 if let cityObj = locations.first {
@@ -200,7 +201,7 @@ class NewDirectVisaViewModel {
         let vc = dest.controller() as! DatePickerController
         vc.selectedDate.asObservable().subscribe { event in
             switch event.event {
-            case .next(let value):
+            case let .next(value):
                 self.visaRequestData.travel_date = value!.apiFormat
                 self.selectedDate.onNext(value)
             default:
@@ -216,7 +217,7 @@ class NewDirectVisaViewModel {
     func showCountriesSpinner() {
         countriesController.selectedItem.asObservable().subscribe { event in
             switch event.event {
-            case .next(let value):
+            case let .next(value):
                 self.selectedCountry = value
                 self.visaRequestData.country_id = value.country_id!
                 self.visaRequestData.countryName = value.countryName
@@ -225,7 +226,7 @@ class NewDirectVisaViewModel {
                 self.selectedBio.onNext("")
                 self.selectedVisaType.onNext("")
                 self.embassyLocations = nil
-                
+
                 self.priceNotes = []
                 if let notes = value.price_notes {
                     self.priceNotes = notes
@@ -254,17 +255,17 @@ class NewDirectVisaViewModel {
 
         vc.result.asObservable().subscribe { event in
             switch event.event {
-            case .next(let value):
+            case let .next(value):
                 self.passangersCount.onNext(value)
                 self.visaRequestData.no_of_adult = "\(value.0)"
                 self.visaRequestData.no_of_child = "\(value.1)"
 //                if (self.selectedCountry?.country_id ?? "-1") == APIConstants.TurkeyID {
-                    self.visaRequestData.no_of_passport = self.passCount.stringValue
+                self.visaRequestData.no_of_passport = self.passCount.stringValue
 //                }
                 self.totalCost.onNext(value.2.priced)
 
                 self.visaRequestData.totalCost = value.2
-                
+
             default:
                 break
             }
@@ -279,7 +280,7 @@ class NewDirectVisaViewModel {
         let vc = dest.controller() as! SelectableTableSheet
         vc.selectedItem.asObservable().subscribe { event in
             switch event.event {
-            case .next(let value):
+            case let .next(value):
                 let bio = self.relativesList.filter { $0.name == value }
                 if let bioObj = bio.first {
                     self.visaRequestData.relation_with_travelers = bioObj.id

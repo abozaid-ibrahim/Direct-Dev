@@ -10,7 +10,6 @@ import UIKit
 
 @IBDesignable
 extension UIButton {
-    
     @IBInspectable var localizedText: String? {
         get {
             return currentTitle
@@ -19,14 +18,12 @@ extension UIButton {
             setTitle(newValue?.localized, for: .normal)
         }
     }
-    
+
     var localizedFont: FontTypesWithSize {
         set {
             titleLabel?.font = UIFont.getLocalizedFont(type: newValue)
-        }get {
+        } get {
             return .regular(16)
         }
     }
-    
 }
-

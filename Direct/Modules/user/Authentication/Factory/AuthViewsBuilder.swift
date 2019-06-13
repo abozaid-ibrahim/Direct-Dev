@@ -23,8 +23,8 @@ enum AuthCellType: String {
 }
 
 struct AuthViewsBuilder {
-
     // MARK: - Helpers and static text with style
+
     fileprivate static func styleText(_ main: String, _ sub: String) -> NSAttributedString {
         let att = NSMutableAttributedString(string: main, attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.9874494672, green: 0.5041492581, blue: 0.00973271206, alpha: 1), NSAttributedString.Key.font: UIFont.getLocalizedFont(type: .bold(12)), NSAttributedString.Key.writingDirection: [NSWritingDirection.rightToLeft.rawValue]])
         let subAt = NSAttributedString(string: sub, attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.6871660352, green: 0.4308405519, blue: 0.671536684, alpha: 1), NSAttributedString.Key.font: UIFont.getLocalizedFont(type: .bold(12)), NSAttributedString.Key.writingDirection: [NSWritingDirection.rightToLeft.rawValue]])
@@ -50,13 +50,14 @@ struct AuthViewsBuilder {
     }
 
     // MARK: - Views data
+
     static var loginViewData: [AuthElement] {
         return [
             .textField(TextFieldConfigurator(placeHolder: "email_phone_tf_placeHolder".localized, isSecured: false, type: .email)),
             .textField(TextFieldConfigurator(placeHolder: "password_tf_placeHolder".localized, isSecured: true, type: .password)),
             .textLabel(TextLabelConfigurator(attributedText: forgetPassword, type: .forgetPassSegue)),
-            .button(ButtonCellConfigurator(title: "login_btn_label".localized, color: .white, background: .black, type: .loginSegue))
-            ]
+            .button(ButtonCellConfigurator(title: "login_btn_label".localized, color: .white, background: .black, type: .loginSegue)),
+        ]
     }
 
     static var signupViewData: [AuthElement] {
@@ -65,7 +66,7 @@ struct AuthViewsBuilder {
             .textField(TextFieldConfigurator(placeHolder: "email_placeholder".localized, isSecured: false, type: .email)),
             .phoneNumber(TextFieldConfigurator(placeHolder: "phone_number_placeholder".localized, isSecured: false, type: .phonenumber)),
             .textField(TextFieldConfigurator(placeHolder: "password_tf_placeHolder".localized, isSecured: true, type: .password)),
-            .button(ButtonCellConfigurator(title: "signup_btn_label".localized, color: .white, background: .black, type: .registerSegue))
+            .button(ButtonCellConfigurator(title: "signup_btn_label".localized, color: .white, background: .black, type: .registerSegue)),
         ]
     }
 
@@ -76,7 +77,7 @@ struct AuthViewsBuilder {
             .button(ButtonCellConfigurator(title: "confirm_code_btn_label".localized, color: .white, background: .black, type: .verifyPhoneCode)),
 
             .textLabel(TextLabelConfigurator(text: "unrecived_code_label".localized, font: UIFont.getLocalizedFont(type: .bold(12)), textColor: #colorLiteral(red: 0.2558659911, green: 0.2558728456, blue: 0.2558691502, alpha: 1), textAlign: .center, type: .phoneCodeResend)),
-            .button(ButtonCellConfigurator(title: "resend_code_btn_label".localized, color: .white, background: .black, type: .phoneCodeResend))
+            .button(ButtonCellConfigurator(title: "resend_code_btn_label".localized, color: .white, background: .black, type: .phoneCodeResend)),
         ]
     }
 
@@ -87,7 +88,7 @@ struct AuthViewsBuilder {
             .button(ButtonCellConfigurator(title: "confirm_code_btn_label".localized, color: .white, background: .black, type: .verifyPhoneCode)),
 
             .textLabel(TextLabelConfigurator(text: "unrecived_code_label".localized, font: UIFont.getLocalizedFont(type: .bold(12)), textColor: #colorLiteral(red: 0.2558659911, green: 0.2558728456, blue: 0.2558691502, alpha: 1), textAlign: .center, type: .phoneCodeResend)),
-            .button(ButtonCellConfigurator(title: "resend_code_btn_label".localized, color: .white, background: .black, type: .phoneCodeResendWait))
+            .button(ButtonCellConfigurator(title: "resend_code_btn_label".localized, color: .white, background: .black, type: .phoneCodeResendWait)),
         ]
     }
 
@@ -95,7 +96,7 @@ struct AuthViewsBuilder {
         return [
             .textField(TextFieldConfigurator(placeHolder: "forget_tf_placeholder".localized, isSecured: false, type: .email)),
             .button(ButtonCellConfigurator(title: "forget_btn_label".localized, color: .white, background: .black, type: .forgetPassSegue)),
-            .textLabel(TextLabelConfigurator(text: "back_to_login".localized, font: UIFont.getLocalizedFont(type: .bold(12)), textColor: #colorLiteral(red: 0.9874494672, green: 0.5041492581, blue: 0.00973271206, alpha: 1), textAlign: NSTextAlignment.right, type: .loginSegue))
+            .textLabel(TextLabelConfigurator(text: "back_to_login".localized, font: UIFont.getLocalizedFont(type: .bold(12)), textColor: #colorLiteral(red: 0.9874494672, green: 0.5041492581, blue: 0.00973271206, alpha: 1), textAlign: NSTextAlignment.right, type: .loginSegue)),
         ]
     }
 
@@ -106,19 +107,13 @@ struct AuthViewsBuilder {
             .textField(TextFieldConfigurator(placeHolder: "forget_tf_placeholder".localized, isSecured: false, type: .email)),
             .textField(TextFieldConfigurator(placeHolder: "pass_tf_placeholder".localized, isSecured: true, type: .password)),
             .textField(TextFieldConfigurator(placeHolder: "repeat_pass_tf_placeholder".localized, isSecured: true, type: .confirmPass)),
-            .button(ButtonCellConfigurator(title: "pass_btn_label_confirm".localized, color: .white, background: .black, type: .password))
+            .button(ButtonCellConfigurator(title: "pass_btn_label_confirm".localized, color: .white, background: .black, type: .password)),
         ]
     }
-
 }
-
-
-
-
 
 @IBDesignable
 extension UILabel {
-    
     @IBInspectable var localizedText: String? {
         get {
             return text
@@ -127,14 +122,12 @@ extension UILabel {
             text = newValue?.localized
         }
     }
-    
+
     var localizedFont: FontTypesWithSize {
         set {
             font = UIFont.getLocalizedFont(type: newValue)
-        }get {
+        } get {
             return .regular(16)
         }
     }
-    
 }
-

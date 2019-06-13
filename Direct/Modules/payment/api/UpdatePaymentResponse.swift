@@ -9,28 +9,30 @@
 import Foundation
 
 // MARK: - UpdatePaymentResponse
+
 class UpdatePaymentResponse: Codable {
     let updatePayment: [UpdatePayment]
-    
+
     enum CodingKeys: String, CodingKey {
         case updatePayment = "Update Payment "
     }
-    
+
     init(updatePayment: [UpdatePayment]) {
         self.updatePayment = updatePayment
     }
 }
 
 // MARK: - UpdatePayment
+
 class UpdatePayment: Codable {
     let trackNo: Int
     let status, success: String
-    
+
     enum CodingKeys: String, CodingKey {
         case trackNo = "track_no"
         case status, success
     }
-    
+
     init(trackNo: Int, status: String, success: String) {
         self.trackNo = trackNo
         self.status = status

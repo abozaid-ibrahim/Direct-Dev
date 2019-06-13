@@ -35,14 +35,14 @@ extension VisaAPIs: TargetType {
             return "to-apply-gb"
         }
     }
-    
+
     public var method: Moya.Method {
         switch self {
         case .visaRequest, .visaRequirementForCountry, .getVisaPrice, .applyToUK, .applyToUS, .getPreviousVisaType:
             return .post
         }
     }
-    
+
     public var task: Task {
         switch self {
         case let .visaRequest(prm):
@@ -78,10 +78,10 @@ extension VisaAPIs: TargetType {
                           "promo_code": ""] as [String: Any]
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
         case let .applyToUS(req):
-            let data = try! self.prmEncoder.encode(req)
+            let data = try! prmEncoder.encode(req)
             return .requestData(data)
         case let .applyToUK(req):
-            let data = try! self.prmEncoder.encode(req)
+            let data = try! prmEncoder.encode(req)
             return .requestData(data)
         case .getPreviousVisaType:
             let prmDic = ["key": tokenKeyValue,
@@ -89,7 +89,7 @@ extension VisaAPIs: TargetType {
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
         }
     }
-    
+
     public var validationType: ValidationType {
         switch self {
         case .visaRequest:
@@ -98,11 +98,11 @@ extension VisaAPIs: TargetType {
             return .none
         }
     }
-    
+
     public var sampleData: Data {
         return "{no data handled, mock it if you need}".data(using: String.Encoding.utf8)!
     }
-    
+
     public var headers: [String: String]? {
         return ["Content-Type": "application/x-www-form-urlencoded"]
     }

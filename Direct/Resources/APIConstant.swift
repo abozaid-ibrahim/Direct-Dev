@@ -8,7 +8,6 @@
 
 import Foundation
 
-
-enum APIConstant:String {
+enum APIConstant: String {
     case Key = "bf930e30-8c28-42d6-bf8e-f4cbd0b83774"
 }

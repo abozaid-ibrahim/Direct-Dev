@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+
 struct AppFonts {
     static let regularFont = "Cairo-Regular"
     static let boldFont = "Cairo-Bold"

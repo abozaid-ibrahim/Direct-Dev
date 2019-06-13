@@ -6,14 +6,13 @@
 //  Copyright © 2018 abdelrahman mohamed. All rights reserved.
 //
 
-import UIKit
 import SnapKit
+import UIKit
 
 class AuthTextFieldTableViewCell: BaseTableViewCell {
-
-    lazy var backView: UIView = {[unowned self] in
+    lazy var backView: UIView = { [unowned self] in
         let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 0.9763646722, green: 0.9765316844, blue: 0.9763541818, alpha: 1)
+        view.backgroundColor = .clear
         view.addSubview(self.stackHolder)
         view.layer.cornerRadius = 10
         view.clipsToBounds = true
@@ -41,34 +40,32 @@ class AuthTextFieldTableViewCell: BaseTableViewCell {
         return button
     }()
 
-    lazy var stackHolder: UIStackView = {[unowned self] in
+    lazy var stackHolder: UIStackView = { [unowned self] in
         let stack = UIStackView(arrangedSubviews: [self.textField, self.passwordBtn])
         stack.axis = .horizontal
         stack.distribution = .fillProportionally
         return stack
     }()
 
-    @objc func showPassword(sender: UIButton) {
+    @objc func showPassword(sender _: UIButton) {
         textField.isSecureTextEntry.toggle()
-//        let image = textField.isSecureTextEntry ? #imageLiteral(resourceName: "password") :  #imageLiteral(resourceName: "show-password")
-//        sender.setImage(image, for: .normal)
     }
 
     var textType: AuthCellType?
 
     override func setupViews() {
         selectionStyle = .none
-        self.contentView.addSubview(backView)
-        backView.snp.makeConstraints { (make) in
+        contentView.addSubview(backView)
+        backView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview().inset(8)
             make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(44)
         }
 
-        stackHolder.snp.makeConstraints { (make) in
+        stackHolder.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(10)
         }
-        passwordBtn.snp.makeConstraints { (make) in
+        passwordBtn.snp.makeConstraints { make in
             make.width.equalTo(35)
         }
     }

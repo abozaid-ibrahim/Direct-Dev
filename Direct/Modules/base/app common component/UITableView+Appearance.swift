@@ -7,9 +7,8 @@
 //
 
 import UIKit
-extension UITableView{
-    func defaultSeperator(){
-        self.tableFooterView = UIView()
-        
+extension UITableView {
+    func defaultSeperator() {
+        tableFooterView = UIView()
     }
 }

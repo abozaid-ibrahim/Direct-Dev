@@ -10,7 +10,6 @@ import Foundation
 import GenericCellControllers
 
 class AuthButtonCellController: GenericCellController<AuthButtonTableViewCell> {
-
     private let data: ButtonCellConfigurator
     private let coordinator: AuthCoordinator
     private var timer: Timer?
@@ -19,8 +18,6 @@ class AuthButtonCellController: GenericCellController<AuthButtonTableViewCell> {
         self.data = data
         self.coordinator = coordinator
     }
-
-   
 
     override func configureCell(_ cell: AuthButtonTableViewCell) {
         // Easy configuration since the Cell Controller receive the right type of cell and
@@ -31,13 +28,11 @@ class AuthButtonCellController: GenericCellController<AuthButtonTableViewCell> {
         cell.button.layer.borderColor = data.borderColor.cgColor
         cell.button.addTarget(self, action: #selector(didTapButton(_:)), for: .touchUpInside)
         cell.backgroundColor = .clear
-
     }
 
     override func didSelectCell() {
         // We can call the right method in the coordinator since the Cell Controller only deals
         // with one type of data.
-
     }
 
     @objc func didTapButton(_ sender: LoadingButton) {

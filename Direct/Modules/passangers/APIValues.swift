@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-enum MartialState:String{
-    case single = "single" ,married = "married"
-    var apiValue:Int{
+enum MartialState: String {
+    case single, married
+    var apiValue: Int {
         switch self {
         case .single:
             return 0
@@ -19,15 +19,15 @@ enum MartialState:String{
             return 1
         }
     }
-    var string:String{
-        return self.rawValue.localized
+
+    var string: String {
+        return rawValue.localized
     }
 }
 
-
-enum AgreementValues:String{
-    case yes = "yes" ,no = "no"
-    var apiValue:Int{
+enum AgreementValues: String {
+    case yes, no
+    var apiValue: Int {
         switch self {
         case .no:
             return 0
@@ -35,7 +35,8 @@ enum AgreementValues:String{
             return 1
         }
     }
-    var string:String{
-        return self.rawValue.localized
+
+    var string: String {
+        return rawValue.localized
     }
 }

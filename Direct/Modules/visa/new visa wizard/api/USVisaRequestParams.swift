@@ -9,6 +9,7 @@
 import Foundation
 
 // MARK: - USRequestParams
+
 class USRequestParams: Codable {
     var key, lang, userid, visaReqID: String?
     var visaReqApplicantID, firstName, familyName, mothersFirstName: String?
@@ -16,15 +17,14 @@ class USRequestParams: Codable {
     var visaLetterCopy, everIssuedVisaBefore, previousVisaCopy, typeOfPreviousVisa: String?
     var travelledBeforeHere, dateOfArrival, periodOfPreviousStay, martialStatus: String?
     var familyIDCopy, husbandOrWifeTravelWithYou: String?
-    var have_driver_license:Int?
-    var visa_cancelled_before:Int?
-    var before_visa_cancelled_reason:String?
-    var any_relatives_here:Int?
-    var relative_type:Int?
-    
+    var have_driver_license: Int?
+    var visa_cancelled_before: Int?
+    var before_visa_cancelled_reason: String?
+    var any_relatives_here: Int?
+    var relative_type: Int?
 
     var visits: [Visit]?
-    
+
     enum CodingKeys: String, CodingKey {
         case key, lang, userid
         case visaReqID = "visa_req_id"
@@ -52,45 +52,44 @@ class USRequestParams: Codable {
         case before_visa_cancelled_reason
         case any_relatives_here
         case relative_type
-        
     }
+
     init() {
-        self.key = nil
-        self.lang = nil
-        self.userid = nil
-        self.visaReqID = nil
-        self.visaReqApplicantID = nil
-        self.firstName = nil
-        self.familyName = nil
-        self.mothersFirstName = nil
-        self.mothersFamilyName = nil
-        self.nationality = nil
-        self.passportCopy = nil
-        self.personalPhotoCopy = nil
-        self.visaLetterCopy = nil
-        self.everIssuedVisaBefore = nil
-        self.previousVisaCopy = nil
-        self.typeOfPreviousVisa = nil
-        self.travelledBeforeHere = nil
-        self.dateOfArrival = nil
-        self.periodOfPreviousStay = nil
-        self.martialStatus = nil
-        self.familyIDCopy = nil
-        self.husbandOrWifeTravelWithYou = nil
-        self.visits = nil
-        self.have_driver_license = nil
-        self.visa_cancelled_before = nil
-        self.before_visa_cancelled_reason = nil
-        self.any_relatives_here = nil
-        self.relative_type = nil
-        
+        key = nil
+        lang = nil
+        userid = nil
+        visaReqID = nil
+        visaReqApplicantID = nil
+        firstName = nil
+        familyName = nil
+        mothersFirstName = nil
+        mothersFamilyName = nil
+        nationality = nil
+        passportCopy = nil
+        personalPhotoCopy = nil
+        visaLetterCopy = nil
+        everIssuedVisaBefore = nil
+        previousVisaCopy = nil
+        typeOfPreviousVisa = nil
+        travelledBeforeHere = nil
+        dateOfArrival = nil
+        periodOfPreviousStay = nil
+        martialStatus = nil
+        familyIDCopy = nil
+        husbandOrWifeTravelWithYou = nil
+        visits = nil
+        have_driver_license = nil
+        visa_cancelled_before = nil
+        before_visa_cancelled_reason = nil
+        any_relatives_here = nil
+        relative_type = nil
     }
-    init(key: String?, lang: String?, userid: String?, visaReqID: String?, visaReqApplicantID: String?, firstName: String?, familyName: String?, mothersFirstName: String?, mothersFamilyName: String?, nationality: String?, passportCopy: String?, personalPhotoCopy: String?, visaLetterCopy: String?, everIssuedVisaBefore: String?, previousVisaCopy: String?, typeOfPreviousVisa: String?, travelledBeforeHere: String?, dateOfArrival: String?, periodOfPreviousStay: String?, martialStatus: String?, familyIDCopy: String?, husbandOrWifeTravelWithYou: String?, visits: [Visit]?, have_driver_license:Int?
-    , visa_cancelled_before:Int?
-    , before_visa_cancelled_reason:String?
-    , any_relatives_here:Int?
-    , relative_type:Int?
-    ) {
+
+    init(key: String?, lang: String?, userid: String?, visaReqID: String?, visaReqApplicantID: String?, firstName: String?, familyName: String?, mothersFirstName: String?, mothersFamilyName: String?, nationality: String?, passportCopy: String?, personalPhotoCopy: String?, visaLetterCopy: String?, everIssuedVisaBefore: String?, previousVisaCopy: String?, typeOfPreviousVisa: String?, travelledBeforeHere: String?, dateOfArrival: String?, periodOfPreviousStay: String?, martialStatus: String?, familyIDCopy: String?, husbandOrWifeTravelWithYou: String?, visits: [Visit]?, have_driver_license: Int?,
+         visa_cancelled_before: Int?,
+         before_visa_cancelled_reason: String?,
+         any_relatives_here: Int?,
+         relative_type: Int?) {
         self.key = key
         self.lang = lang
         self.userid = userid
@@ -114,7 +113,7 @@ class USRequestParams: Codable {
         self.familyIDCopy = familyIDCopy
         self.husbandOrWifeTravelWithYou = husbandOrWifeTravelWithYou
         self.visits = visits
-        
+
         self.have_driver_license = have_driver_license
         self.visa_cancelled_before = visa_cancelled_before
         self.before_visa_cancelled_reason = before_visa_cancelled_reason
@@ -122,10 +121,11 @@ class USRequestParams: Codable {
         self.relative_type = relative_type
     }
 }
+
 //
 //// MARK: USRequestParams convenience initializers and mutators
 //
-//extension USRequestParams {
+// extension USRequestParams {
 //    convenience init(data: Data) throws {
 //        let me = try newJSONDecoder().decode(USRequestParams.self, from: data)
 //        self.init(key: me.key, lang: me.lang, userid: me.userid, visaReqID: me.visaReqID, visaReqApplicantID: me.visaReqApplicantID, firstName: me.firstName, familyName: me.familyName, mothersFirstName: me.mothersFirstName, mothersFamilyName: me.mothersFamilyName, nationality: me.nationality, passportCopy: me.passportCopy, personalPhotoCopy: me.personalPhotoCopy, visaLetterCopy: me.visaLetterCopy, everIssuedVisaBefore: me.everIssuedVisaBefore, previousVisaCopy: me.previousVisaCopy, typeOfPreviousVisa: me.typeOfPreviousVisa, travelledBeforeHere: me.travelledBeforeHere, dateOfArrival: me.dateOfArrival, periodOfPreviousStay: me.periodOfPreviousStay, martialStatus: me.martialStatus, familyIDCopy: me.familyIDCopy, husbandOrWifeTravelWithYou: me.husbandOrWifeTravelWithYou, visits: me.visits)
@@ -201,9 +201,10 @@ class USRequestParams: Codable {
 //    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
 //        return String(data: try self.jsonData(), encoding: encoding)
 //    }
-//}
+// }
 
 // MARK: - Visit
+
 class Visit: Codable {
     let cname, year: String?
 
@@ -215,7 +216,7 @@ class Visit: Codable {
 
 // MARK: Visit convenience initializers and mutators
 
-//extension Visit {
+// extension Visit {
 //    convenience init(data: Data) throws {
 //        let me = try newJSONDecoder().decode(Visit.self, from: data)
 //        self.init(cname: me.cname, year: me.year)
@@ -249,22 +250,22 @@ class Visit: Codable {
 //    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
 //        return String(data: try self.jsonData(), encoding: encoding)
 //    }
-//}
+// }
 //
 //// MARK: - Helper functions for creating encoders and decoders
 //
-//func newJSONDecoder() -> JSONDecoder {
+// func newJSONDecoder() -> JSONDecoder {
 //    let decoder = JSONDecoder()
 //    if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
 //        decoder.dateDecodingStrategy = .iso8601
 //    }
 //    return decoder
-//}
+// }
 //
-//func newJSONEncoder() -> JSONEncoder {
+// func newJSONEncoder() -> JSONEncoder {
 //    let encoder = JSONEncoder()
 //    if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
 //        encoder.dateEncodingStrategy = .iso8601
 //    }
 //    return encoder
-//}
+// }

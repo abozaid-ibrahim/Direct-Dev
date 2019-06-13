@@ -53,7 +53,7 @@ extension UIButton {
             layer.borderColor = UIColor.appPumpkinOrange.cgColor
             layer.borderWidth = 1
             setTitleColor(.appPumpkinOrange, for: .normal)
-            
+
             titleLabel?.font = UIFont(name: AppFonts.boldFont, size: 14)
         }
     }

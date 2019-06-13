@@ -6,15 +6,14 @@
 //  Copyright © 2018 abdelrahman mohamed. All rights reserved.
 //
 
-import UIKit
 import GenericCellControllers
+import UIKit
 
 enum AuthType {
     case login, register, recoverPassword, verifyPhoneNumber, createNewPassword(key: String), verifyPhoneNumberLogin
 }
 
 class AuthTableViewController: UITableViewController {
-
     private let cellControllerFactory = AuthCellControllerFactory()
     private var cellControllers: [TableCellController] = []
     var type: AuthType {
@@ -28,7 +27,7 @@ class AuthTableViewController: UITableViewController {
         super.init(style: .plain)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -72,7 +71,8 @@ class AuthTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source & delegates
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+    override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return cellControllers.count
     }
 
@@ -80,13 +80,13 @@ class AuthTableViewController: UITableViewController {
         return cellControllers[indexPath.row].cellFromReusableCellHolder(tableView, forIndexPath: indexPath)
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         cellControllers[indexPath.row].didSelectCell()
     }
 }
 
 extension UITableView {
     func reloadData(with animation: UITableView.RowAnimation) {
-        reloadSections(IndexSet(integersIn: 0..<numberOfSections), with: animation)
+        reloadSections(IndexSet(integersIn: 0 ..< numberOfSections), with: animation)
     }
 }

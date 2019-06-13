@@ -7,33 +7,34 @@
 //
 
 import Foundation
-import RxSwift
 import Moya
+import RxSwift
 
-//Payment
-extension ApiClientFacade{
+// Payment
+extension ApiClientFacade {
     func getAllPaymentMethods() -> Observable<PaymentMethodsResponse> {
         return Observable<PaymentMethodsResponse>.create { (observer) -> Disposable in
             self.paymentProvider.rx.request(PaymentAPIs.getAllParentPaymentMethod).subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
-                }.disposed(by: self.disposeBag)
+            }.disposed(by: self.disposeBag)
             return Disposables.create()
         }
     }
-    
-    func getChildPayment(method:String) -> Observable<PaymentChildsResponse> {
+
+    func getChildPayment(method: String) -> Observable<PaymentChildsResponse> {
         return Observable<PaymentChildsResponse>.create { (observer) -> Disposable in
             self.paymentProvider.rx.request(PaymentAPIs.getChildsOfPayment(cid: method)).subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
-                }.disposed(by: self.disposeBag)
+            }.disposed(by: self.disposeBag)
             return Disposables.create()
         }
     }
-    func updatePaymentDetails(country:String) -> Observable<UpdatePaymentResponse> {
+
+    func updatePaymentDetails(country _: String) -> Observable<UpdatePaymentResponse> {
         return Observable<UpdatePaymentResponse>.create { (observer) -> Disposable in
             self.paymentProvider.rx.request(PaymentAPIs.updatePaymentDetails(prm: "")).subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
-                }.disposed(by: self.disposeBag)
+            }.disposed(by: self.disposeBag)
             return Disposables.create()
         }
     }

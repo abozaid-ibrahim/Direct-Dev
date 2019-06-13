@@ -11,7 +11,7 @@ import Foundation
 struct UserSignupInfo {
     var email, phone, fullname, password, confirmPassword: String
 
-    init (fullname: String, email: String, countryCode: String, phone: String, password: String, confirmPassword: String) {
+    init(fullname: String, email: String, countryCode: String, phone: String, password: String, confirmPassword: String) {
         self.email = email
         self.phone = "\(countryCode)\(phone)"
         self.password = password
@@ -27,7 +27,7 @@ enum DaleelError: Error {
 extension DaleelError: LocalizedError {
     var errorDescription: String? {
         switch self {
-        case .serverError(let str):
+        case let .serverError(str):
             return str ?? "general_error_title".localized
         }
     }

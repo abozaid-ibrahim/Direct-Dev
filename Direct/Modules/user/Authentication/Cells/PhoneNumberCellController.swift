@@ -10,7 +10,6 @@ import Foundation
 import GenericCellControllers
 
 class PhoneNumberCellController: GenericCellController<PhoneNumberTableViewCell> {
-
     private let data: TextFieldConfigurator
     private var coordinator: AuthCoordinator
     private var cell: PhoneNumberTableViewCell?
@@ -44,7 +43,7 @@ class PhoneNumberCellController: GenericCellController<PhoneNumberTableViewCell>
         }
 
         phoneData = [
-            AuthCellType.phonenumber.rawValue: phone
+            AuthCellType.phonenumber.rawValue: phone,
         ]
         coordinator.textChanged(values: phoneData)
     }

@@ -26,17 +26,17 @@ enum Destination {
         case .homeScreen:
             let home = HomeViewController.instance("HomeViewController")
             return home
-        case .visaRequirement(let data):
+        case let .visaRequirement(data):
             let controller = VisaRequirementController()
             controller.visaData = data
             return controller
-        case .selectableSheet(let data, let title, let style):
+        case let .selectableSheet(data, title, style):
             let vc = SelectableTableSheet()
             vc.data = data
             vc.style = style
             vc.titleText = title
             return vc
-        case .paymentMethod(let cost):
+        case let .paymentMethod(cost):
             let vc = PaymentViewController()
             vc.totalCost = cost.totalCost ?? ""
             return vc
@@ -50,11 +50,11 @@ enum Destination {
             return date
         case .hostsInfoScreen:
             return SponsersViewController()
-        case .passangersInfoScreen(let info):
+        case let .passangersInfoScreen(info):
             let vc = PassangersInputViewViewController()
             vc.visaInfo = info
             return vc
-        case .successVisaReqScreen(let prm):
+        case let .successVisaReqScreen(prm):
             let vc = SuccessVisaRequestController()
 //            vc.orderId = prm.applyGB?.first?.success
             return vc
@@ -77,7 +77,7 @@ enum Destination {
             return NewDirectVisaController()
         case .searchCountries:
             return UIStoryboard.main.instantiateViewController(withIdentifier: "SearchViewController")
-        case .confirmatonVisa(let cost):
+        case let .confirmatonVisa(cost):
             let vc = UIStoryboard.visa.instantiateViewController(withIdentifier: "VisaReqConfirmationController") as! VisaReqConfirmationController
             vc.visaRequestData = cost
             return vc

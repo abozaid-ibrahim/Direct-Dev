@@ -6,21 +6,20 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
-import UIKit
 import IQKeyboardManagerSwift
+import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var navigator: Navigator!
+
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setRootController()
         setupGlobalAppearance()
         setLanguage()
-//        for familyName in UIFont.familyNames {
-//            print(UIFont.fontNames(forFamilyName: familyName))
-//        }
-setupKeyboardManager()
+
+        setupKeyboardManager()
         return true
     }
 
@@ -32,6 +31,7 @@ setupKeyboardManager()
         IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
         IQKeyboardManager.shared.enableAutoToolbar = false
     }
+
     private func setLanguage() {
         UserDefaults.standard.set(["ar"], forKey: "AppleLanguages")
         UserDefaults.standard.synchronize()

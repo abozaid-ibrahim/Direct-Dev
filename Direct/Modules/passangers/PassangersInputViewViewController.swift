@@ -18,26 +18,26 @@ class PassangersInputViewViewController: UIViewController {
     var successInputIndexes: [Int] = []
     private let disposeBag = DisposeBag()
     var defaultTabSelection = PublishSubject<Int>()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "معلومات المسافرين"
         setupTabbar()
     }
-    
+
     var tabs: [(TAB, PassangerFormController)] = []
     private func setupTabbar() {
         guard let info = visaInfo else { return }
-        for index in 0..<Int(info.no_of_adult)! {
+        for index in 0 ..< Int(info.no_of_adult)! {
             let tabController = PassangerFormController()
             tabController.countryName = info.countryName
             tabController.countryId = info.country_id
             tabController.index = index
-            
+
             let tabView = ("adult".localized + " " + "\(index + 1)", { [weak self] in
                 self?.selectTab(index, tabController)
             })
-            
+
             tabController.successIndex.subscribe(onNext: { [unowned self] value in
                 self.successInputIndexes.append(value)
                 if !self.selectNextTab() {
@@ -46,7 +46,7 @@ class PassangersInputViewViewController: UIViewController {
             }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
             tabs.append((tabView, tabController))
         }
-        for index in 0..<Int(info.no_of_child)! {
+        for index in 0 ..< Int(info.no_of_child)! {
             let tab1VC = PassangerFormController()
             let tab1 = ("child".localized + " " + "\(index + 1)", { [weak self] in
                 self?.selectTab(index, tab1VC)
@@ -54,7 +54,7 @@ class PassangersInputViewViewController: UIViewController {
             tabs.append((tab1, tab1VC))
         }
         tabbarWidthConstrain.constant = CGFloat(tabs.count * 100)
-        
+
         tabbar = TabBar(tabs: tabs.map { $0.0 })
         tabbar.tabsIcon.forEach { $0.image = #imageLiteral(resourceName: "rightGreen") }
         tabbarView.addSubview(tabbar)
@@ -63,7 +63,7 @@ class PassangersInputViewViewController: UIViewController {
             self.selectTab(value, self.tabs[value].1)
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
-    
+
     private func selectNextTab() -> Bool {
         for tab in tabs {
             let index = (tab.1.index!)
@@ -76,14 +76,14 @@ class PassangersInputViewViewController: UIViewController {
         }
         return false
     }
-    
+
     private func selectTab(_ index: Int, _ tab1VC: PassangerFormController) {
         if !containerView.subviews.contains(tab1VC.view) {
             addChild(tab1VC)
             containerView.addSubview(tab1VC.view)
             tab1VC.view.sameBoundsTo(parentView: containerView)
         }
-        
+
         for (i, item) in tabs.enumerated() {
             item.1.view.isHidden = index == i ? false : true
         }

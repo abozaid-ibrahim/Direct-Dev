@@ -9,14 +9,12 @@
 import Foundation
 
 struct CommandsCombiner: Command {
-    
-    
     let commands: [Command]
-    
+
     init(_ commands: Command...) {
         self.commands = commands
     }
-    
+
     func execute() throws {
         try commands.forEach { try $0.execute() }
     }

@@ -7,10 +7,10 @@
 //
 
 import Foundation
-class  InputJsonBuilder {
-    func buildPassangers(_ input:[String])->String{
+class InputJsonBuilder {
+    func buildPassangers(_ input: [String]) -> String {
         var output = "["
-        input.forEach{
+        input.forEach {
             let key = $0.split(separator: "-", maxSplits: 2, omittingEmptySubsequences: true)
             output += "{\"\(key[0])\":\"\(key[1])\"},"
         }

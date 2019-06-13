@@ -6,13 +6,13 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
-import UIKit
 import Kingfisher
-extension UIImageView{
-    func setImage(url:String){
-        guard let urlObj = URL(string:url) else {
+import UIKit
+extension UIImageView {
+    func setImage(url: String) {
+        guard let urlObj = URL(string: url) else {
             return
         }
-        self.kf.setImage(with: urlObj)
+        kf.setImage(with: urlObj)
     }
 }

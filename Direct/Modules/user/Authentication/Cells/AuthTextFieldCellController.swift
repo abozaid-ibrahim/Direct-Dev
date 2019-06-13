@@ -10,7 +10,6 @@ import Foundation
 import GenericCellControllers
 
 class AuthTextFieldCellController: GenericCellController<AuthTextFieldTableViewCell> {
-
     private let data: TextFieldConfigurator
     private var coordinator: AuthCoordinator
 
@@ -37,5 +36,4 @@ class AuthTextFieldCellController: GenericCellController<AuthTextFieldTableViewC
         guard let value = sender.text else { return }
         coordinator.textChanged(values: [data.type.rawValue: value])
     }
-
 }

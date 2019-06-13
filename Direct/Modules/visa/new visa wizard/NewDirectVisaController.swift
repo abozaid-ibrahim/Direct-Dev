@@ -24,8 +24,9 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
     }
 
     // MARK: IBuilder ====================================>>
-    @IBOutlet weak var scrollView: UIScrollView!
-    
+
+    @IBOutlet var scrollView: UIScrollView!
+
     @IBOutlet var doNotesLbl: UILabel!
     @IBOutlet var totalCostPlaceholder: UILabel!
 
@@ -58,9 +59,7 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
         setONClickViews()
         viewModel.viewDidLoad()
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
+
     private func bindDataToUI() {
         relationsField.isHidden = true
         wrongNotesContainer.isHidden = true
@@ -89,9 +88,6 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
         viewModel.selectedVisaType.bind(to: visaField.text).disposed(by: disposeBag)
         viewModel.selectedDate.map { $0?.displayFormat }.bind(to: dateField.text).disposed(by: disposeBag)
         viewModel.passangersCount.map { $0 == nil ? true : ($0!.0 + $0!.1) <= 1 }.debug(">>>hide", trimOutput: true).bind(to: relationsField.rx.isHidden).disposed(by: disposeBag)
-
-
-
     }
 
     var showProgress: Bool? {
@@ -104,9 +100,9 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
         }
     }
 
-    @IBAction func addCobonAction(_ sender: Any) {}
+    @IBAction func addCobonAction(_: Any) {}
 
-    @IBAction func orderAction(_ sender: Any) {
+    @IBAction func orderAction(_: Any) {
         viewModel.submitVisaRequest()
     }
 
@@ -115,7 +111,7 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
             .subscribe(onNext: { _ in
                 self.viewModel.showCountriesSpinner()
             }).disposed(by: disposeBag)
-        
+
         passangersCountField.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
                 self.viewModel.showPasangersCountSpinner()
@@ -134,7 +130,7 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
             .subscribe(onNext: { _ in
                 self.viewModel.showBiometricSpinner()
             }).disposed(by: disposeBag)
-       
+
         relationsField.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
                 self.viewModel.showRelationsSpinner()

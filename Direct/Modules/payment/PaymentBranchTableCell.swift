@@ -14,7 +14,6 @@ class PaymentBranchTableCell: UITableViewCell, TableCell {
     func setCellData(_ model: CellDataModel) {
         titleLbl.text = model.paymentName
         descLbl.text = model.paymentMethodDescription.html2String
-        
     }
 
     typealias CellDataModel = ChildPaymentMethod
@@ -45,4 +44,3 @@ class PaymentBranchTableCell: UITableViewCell, TableCell {
         }
     }
 }
-

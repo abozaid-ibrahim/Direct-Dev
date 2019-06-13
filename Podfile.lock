@@ -13,7 +13,7 @@ PODS:
   - Moya/RxSwift (13.0.1):
     - Moya/Core
     - RxSwift (~> 4.0)
-  - PanModal (1.2.2)
+  - PanModal (1.2.3)
   - Result (4.1.0)
   - RxCocoa (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
@@ -108,7 +108,7 @@ SPEC CHECKSUMS:
   Kingfisher: 6fe5e67a90fd335e49b0f5c075ff55ac5ebedd94
   M13Checkbox: 6f59404540ac98ba83a3d1afac335895a40c6a5d
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
-  PanModal: db200380a267634f746f8dea550dc3d1df017fc0
+  PanModal: 021af5c40d501908529f17bde508b8b9ab1c322d
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
@@ -123,4 +123,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 0d70fc946ad802609b6cd869c80faf8ce2d76ee3
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.5.2

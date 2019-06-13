@@ -11,6 +11,10 @@ import UIKit
 @IBDesignable
 class CheckoutFooter: UIView {
     var footer: CheckoutBottomView!
+    typealias Action = () -> Void
+    var action: Action?
+    
+    
     @IBInspectable var btnTitle: String? {
         didSet {
             footer.actionBtn.setTitle(btnTitle ?? "", for: .normal)
@@ -28,15 +32,15 @@ class CheckoutFooter: UIView {
             footer.valueLbl.text = valueText
         }
     }
-    var bg:UIColor?{
-        didSet{
-            self.backgroundColor = bg
+
+    var bg: UIColor? {
+        didSet {
+            backgroundColor = bg
             footer.backgroundColor = bg
         }
     }
-    
-    typealias Action = () -> Void
-    var action: Action?
+
+  
     func setOnclick(ac: @escaping Action) {
         action = ac
     }

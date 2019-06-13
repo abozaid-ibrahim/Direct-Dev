@@ -11,19 +11,30 @@ import RxSwift
 import UIKit
 
 private typealias HeaderObject = (UIImage, String)
+
 final class HomeViewController: UIViewController, StyledActionBar {
+    
     @IBOutlet var packageView: UIStackView!
     @IBOutlet var institueView: UIStackView!
-    private let homeViewModel = HomeViewModel()
-    var disposeBag = DisposeBag()
-    private let sectionsHeaderData: [HeaderObject] = [(#imageLiteral(resourceName: "p"), "متطلبات التأشيرة"), (#imageLiteral(resourceName: "p"), "أفضل المعاهد "), (#imageLiteral(resourceName: "p"), "بكجات وعروض"), (#imageLiteral(resourceName: "p"), "أخبار ومعلومات"), (#imageLiteral(resourceName: "p"), "Visa")]
-    private var collectionSecions: [HomeCollectionViewSection] = []
-    private let sectionsCellSize: [CGSize] = [CGSize(width: 147, height: 113), CGSize(width: 292, height: 171), CGSize(width: 292, height: 226), CGSize(width: 292, height: 171)]
-
     @IBOutlet var containerView: UIView!
     @IBOutlet private var collectionView: UICollectionView!
     @IBOutlet private var headerView: UIView!
-    @IBOutlet var headerWidthConstrain: NSLayoutConstraint!
+    @IBOutlet var headerActiveViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet var headerNoneActiveViewWidthConstraint: NSLayoutConstraint!
+    
+    
+    private let homeViewModel = HomeViewModel()
+    var disposeBag = DisposeBag()
+    
+    private let sectionsHeaderData: [HeaderObject] = [(#imageLiteral(resourceName: "p"), "متطلبات التأشيرة"), (#imageLiteral(resourceName: "p"), "أفضل المعاهد "), (#imageLiteral(resourceName: "p"), "بكجات وعروض"), (#imageLiteral(resourceName: "p"), "أخبار ومعلومات"), (#imageLiteral(resourceName: "p"), "Visa")]
+    private var collectionSecions: [HomeCollectionViewSection] = []
+    private let sectionsCellSize: [CGSize] = [CGSize(width: 147, height: 113), CGSize(width: 292, height: 171), CGSize(width: 292, height: 226), CGSize(width: 292, height: 171)]
+    
+    let visaReqVC = NewDirectVisaController()
+    let newInstitue = NewInstituteRequestController()
+    let packagesVC = UIStoryboard.main.instantiateViewController(withIdentifier: "PackagesViewController")
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +43,11 @@ final class HomeViewController: UIViewController, StyledActionBar {
 
         collectionView.delegate = self
         registerCollectionNibs()
-        setupActionBar(.withTitle("دايركت فيزا"))
+        setupActionBar(.withTitle("بحث"))
         getDataFromViewModel()
         homeViewModel.getAllData()
     }
 
-   
     private func getDataFromViewModel() {
         homeViewModel.collectionSecions.asObservable()
             .observeOn(MainScheduler.instance)
@@ -51,14 +61,10 @@ final class HomeViewController: UIViewController, StyledActionBar {
 
     private func registerCollectionNibs() {
         let bundle = Bundle(for: type(of: self))
-
         collectionView.register(UINib(nibName: HomeCollectionSectionWrapper.cellId, bundle: bundle), forCellWithReuseIdentifier: HomeCollectionSectionWrapper.cellId)
         collectionView.register(UINib(nibName: "HomeCollectionSectionHeader", bundle: bundle), forSupplementaryViewOfKind: "UICollectionElementKindSectionHeader", withReuseIdentifier: "HomeCollectionSectionHeader")
     }
 
-    let visaReqVC = NewDirectVisaController()
-    let newInstitue = NewInstituteRequestController()
-    let packagesVC = UIStoryboard.main.instantiateViewController(withIdentifier: "PackagesViewController")
 
     @IBAction func visaDidSelected(_: Any) {
         if children.contains(visaReqVC) {
@@ -67,6 +73,7 @@ final class HomeViewController: UIViewController, StyledActionBar {
             tabbarSelected(vc: visaReqVC)
         }
     }
+
     @IBAction func institureAction(_: Any) {
         if children.contains(newInstitue) {
             newInstitue.dismissWithAnim()
@@ -74,7 +81,7 @@ final class HomeViewController: UIViewController, StyledActionBar {
             tabbarSelected(vc: newInstitue)
         }
     }
-    
+
     @IBAction func packagesDidSelect(_: Any) {
         let packages = packagesVC as! PackagesViewController
         if children.contains(packages) {
@@ -89,11 +96,9 @@ final class HomeViewController: UIViewController, StyledActionBar {
         addChild(vc)
         containerView.addSubview(vc.view)
         vc.dismessed.asObservable().subscribe(onNext: { [weak self] dismessed in
-            guard let self = self else { return }
-            self.collectionView.isHidden = !dismessed
-            self.updateHeaderFrame(fullWidth: !dismessed)
+            self?.collectionView.isHidden = !dismessed
+            self?.updateHeaderFrame(fullWidth: !dismessed)
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
-
         startViewsAnim(vc)
     }
 
@@ -107,17 +112,21 @@ final class HomeViewController: UIViewController, StyledActionBar {
     }
 
     private func updateHeaderFrame(fullWidth: Bool) {
-        UIView.animate(withDuration: 0.3, animations: { [weak self] in
-            guard let self = self else { return }
-            if fullWidth {
+        if fullWidth {
+            UIView.animate(withDuration: 0.3, animations: { [weak self] in
+                guard let self = self else { return }
                 self.headerView.layer.cornerRadius = 0
-                self.headerWidthConstrain.constant = self.headerView.superview!.bounds.width
-            } else {
+                self.headerNoneActiveViewWidthConstraint.priority = .defaultLow
+                self.headerActiveViewWidthConstraint.priority = .defaultHigh
+            })
+        } else {
+            UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseOut, animations: {
+                self.headerActiveViewWidthConstraint.priority = .defaultLow
+                self.headerNoneActiveViewWidthConstraint.priority = .defaultHigh
                 self.headerView.layer.cornerRadius = 30
                 self.headerView.clipsToBounds = true
-                self.headerWidthConstrain.constant = 300
-            }
-        }, completion: nil)
+            }, completion: nil)
+        }
     }
 }
 
@@ -132,7 +141,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HomeCollectionSectionHeader", for: indexPath)
-
         guard let header = sectionHeader as? HomeCollectionSectionHeader else {
             return sectionHeader
         }

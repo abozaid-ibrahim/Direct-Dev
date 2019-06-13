@@ -6,11 +6,10 @@
 //  Copyright © 2018 abdelrahman mohamed. All rights reserved.
 //
 
-import UIKit
 import SnapKit
+import UIKit
 
 class TitleTableViewCell: BaseTableViewCell {
-
     override func layoutSubviews() {
         super.layoutSubviews()
         textLabel?.textAlignment = .center
@@ -19,5 +18,4 @@ class TitleTableViewCell: BaseTableViewCell {
         selectionStyle = .none
         backgroundColor = .clear
     }
-
 }

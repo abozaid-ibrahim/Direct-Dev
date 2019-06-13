@@ -20,18 +20,18 @@ struct LoginRequestCommand: Command {
         self.password = password
         self.completion = completion
     }
-    
+
     func execute() throws {
 //        UserRequest.login(phone: id, password: password).send(DaleelUser.self, completion: completion)
         let provider = MoyaProvider<AuthAPI>()
-        provider.request(.login(id: id, password: password)) { (response) in
+        provider.request(.login(id: id, password: password)) { response in
             switch response {
-            case .failure(let error):
+            case let .failure(error):
                 self.completion?(.failure(error))
-            case .success(let value):
+            case let .success(value):
                 print(value)
                 let decoder = JSONDecoder()
-                
+
                 let user = try? decoder.decode(DirectUserResponse.self, from: value.data)
                 guard let duser = user?.userLogin?.first else {
                     self.completion?(.failure(APIError.decodeError))

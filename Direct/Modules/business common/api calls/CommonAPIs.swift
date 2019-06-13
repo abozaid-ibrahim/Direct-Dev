@@ -11,29 +11,31 @@ import Moya
 
 public enum CommonAPIs {
     case getAllCountries,
-    getCities(cid:String)
+        getCities(cid: String)
     case biometricChoices
     case relationsList
     case userProfile(String)
     case userRepositories(String)
-    
 }
-//share base url cross all of the APIs∑
-extension TargetType{
+
+// share base url cross all of the APIs∑
+extension TargetType {
     public var baseURL: URL { return URL(string: "https://dev.visa.directksa.com/backend/api/")! }
-    var appLang:String{
+    var appLang: String {
         return AppLanguage.langCode
     }
-    var tokenKeyValue:String{
+
+    var tokenKeyValue: String {
         return "bf930e30-8c28-42d6-bf8e-f4cbd0b83774"
     }
-    
-    var prmEncoder:JSONEncoder{
+
+    var prmEncoder: JSONEncoder {
         let encoder = JSONEncoder()
         encoder.keyEncodingStrategy = .useDefaultKeys
         return encoder
     }
 }
+
 extension CommonAPIs: TargetType {
     public var path: String {
         switch self {
@@ -54,7 +56,7 @@ extension CommonAPIs: TargetType {
 
     public var method: Moya.Method {
         switch self {
-        case .getAllCountries, .biometricChoices, .relationsList ,.getCities:
+        case .getAllCountries, .biometricChoices, .relationsList, .getCities:
             return .post
 
         default:
@@ -64,8 +66,8 @@ extension CommonAPIs: TargetType {
 
     public var task: Task {
         switch self {
-        case .getCities(let cid):
-            return .requestParameters(parameters: ["cid": cid,"key": tokenKeyValue, "lang": appLang], encoding: URLEncoding.default)
+        case let .getCities(cid):
+            return .requestParameters(parameters: ["cid": cid, "key": tokenKeyValue, "lang": appLang], encoding: URLEncoding.default)
         default:
             return .requestParameters(parameters: ["key": tokenKeyValue, "lang": appLang], encoding: URLEncoding.default)
         }
