@@ -16,20 +16,20 @@ struct ButtonCellConfigurator {
     var borderColor: UIColor
     var type: AuthCellType
 
-    init(title: String?, color: UIColor?, background: UIColor, type: AuthCellType) {
+    init(title: String?, color: UIColor?, background _: UIColor, type: AuthCellType) {
         self.title = title
-        self.titleColor = color
-        self.backgroundColor = .clear
-        self.borderWidth = 0
-        self.borderColor = .black
+        titleColor = color
+        backgroundColor = .clear
+        borderWidth = 0
+        borderColor = .black
         self.type = type
     }
 
-    init(title: String?, color: UIColor?, background: UIColor, border width: CGFloat, borderColor: UIColor, type: AuthCellType) {
+    init(title: String?, color: UIColor?, background _: UIColor, border width: CGFloat, borderColor: UIColor, type: AuthCellType) {
         self.title = title
-        self.titleColor = color
-        self.backgroundColor = .clear
-        self.borderWidth = width
+        titleColor = color
+        backgroundColor = .clear
+        borderWidth = width
         self.borderColor = borderColor
         self.type = type
     }

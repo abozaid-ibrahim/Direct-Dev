@@ -10,7 +10,6 @@ import Foundation
 import GenericCellControllers
 
 struct AuthCellControllerFactory {
-
     func registerCells(on tableView: UITableView) {
         // The factory is the only one who knows the exact Cell Controllers we are using, hence,
         // it is responsible for registering them in the UITableView/UICollectionView
@@ -24,17 +23,17 @@ struct AuthCellControllerFactory {
     func cellControllers(from elements: [AuthElement], coordinator: AuthCoordinator) -> [TableCellController] {
         // Matching each type of data to the right Cell Controller is now something we only do once. Here.
 
-        return elements.map { (element) in
+        return elements.map { element in
             switch element {
-            case .title(let str):
+            case let .title(str):
                 return TitleCellController(str, coordinator: coordinator)
-            case .button(let config):
+            case let .button(config):
                 return AuthButtonCellController(config, coordinator: coordinator)
-            case .textField(let config):
+            case let .textField(config):
                 return AuthTextFieldCellController(config, coordinator: coordinator)
-            case .phoneNumber(let conf):
+            case let .phoneNumber(conf):
                 return PhoneNumberCellController(conf, coordinator: coordinator)
-            case .textLabel(let conf):
+            case let .textLabel(conf):
                 return TextLabelCellController(conf, coordinator: coordinator)
             }
         }

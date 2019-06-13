@@ -18,32 +18,32 @@ extension PassangerFormController {
             self.params.martialStatus = MartialState.married.apiValue.stringValue
             self.isHusbandWillTravelView.isHidden = false
             self.statusPInfoLbl.text = MartialState.married.string
-            
+
         })
         let singleAction = UIAlertAction(title: MartialState.single.string, style: .default, handler: { [weak self] _ in
             guard let `self` = self else { return }
             self.params.martialStatus = MartialState.single.apiValue.stringValue
             self.isHusbandWillTravelView.isHidden = true
-             self.statusPInfoLbl.text = MartialState.single.string
+            self.statusPInfoLbl.text = MartialState.single.string
         })
-      
+
         alert.addAction(action)
         alert.addAction(singleAction)
         let cancel = UIAlertAction(title: "الغاء", style: .cancel, handler: nil)
         alert.addAction(cancel)
         present(alert, animated: true, completion: nil)
     }
-    
-    func showAgreemnetDialog(callback: @escaping (AgreementValues) -> ()) {
+
+    func showAgreemnetDialog(callback: @escaping (AgreementValues) -> Void) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alert.setTint(color: .appMango)
         let noAction = UIAlertAction(title: AgreementValues.no.string, style: .default, handler: { _ in
             callback(AgreementValues.no)
-            
+
         })
         let yesAction = UIAlertAction(title: AgreementValues.yes.string, style: .default, handler: { [weak self] _ in
             callback(AgreementValues.yes)
-            
+
         })
         alert.addAction(noAction)
         alert.addAction(yesAction)
@@ -51,7 +51,7 @@ extension PassangerFormController {
         alert.addAction(cancel)
         present(alert, animated: true, completion: nil)
     }
-    
+
     func showOptions(_ values: [PreviousVisaType]) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alert.setTint(color: .appMango)
@@ -62,23 +62,23 @@ extension PassangerFormController {
             })
             alert.addAction(action)
         }
-        
+
         present(alert, animated: true, completion: nil)
     }
-    
+
     func showDatePickerDialog() {
         let dest = Destination.datePicker
         let vc = dest.controller() as! DatePickerController
         vc.selectedDate.asObservable().subscribe { event in
             switch event.event {
-            case .next(let value):
+            case let .next(value):
 //                self.arrivalDateLbl.text = value!.apiFormat
                 self.params.dateOfArrival = value!.apiFormat
             default:
                 break
             }
-            
-            }.disposed(by: disposeBag)
+
+        }.disposed(by: disposeBag)
         try! AppNavigator().presentModally(vc)
     }
 }

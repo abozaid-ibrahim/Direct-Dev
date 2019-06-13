@@ -9,25 +9,27 @@
 import Foundation
 
 // MARK: - VisaPriceResponse
+
 class VisaPriceResponse: Codable {
     let visaPrice: [VisaPrice]
-    
+
     enum CodingKeys: String, CodingKey {
         case visaPrice = "Visa Price"
     }
-    
+
     init(visaPrice: [VisaPrice]) {
         self.visaPrice = visaPrice
     }
 }
 
 // MARK: - VisaPrice
+
 class VisaPrice: Codable {
     let price, status, success, adultPrice: String
     let childPrice, passPrice, promoCodePrice: String
     let promoCodePriceStatus: Int
     let promoCodePriceType: Int
-    
+
     enum CodingKeys: String, CodingKey {
         case price, status, success
         case adultPrice = "adult_price"
@@ -37,7 +39,7 @@ class VisaPrice: Codable {
         case promoCodePriceStatus = "promo_code_price_status "
         case promoCodePriceType = "promo_code_price_type"
     }
-    
+
     init(price: String, status: String, success: String, adultPrice: String, childPrice: String, passPrice: String, promoCodePrice: String, promoCodePriceStatus: Int, promoCodePriceType: Int) {
         self.price = price
         self.status = status

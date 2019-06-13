@@ -22,47 +22,47 @@ extension PaymentAPIs: TargetType {
         switch self {
         case .getAllParentPaymentMethod:
             return "get-master-payment-method"
-        case .getChildsOfPayment(let pid):
+        case let .getChildsOfPayment(pid):
             return "get-payment-method"
-        case .updatePaymentDetails(let prm):
+        case let .updatePaymentDetails(prm):
             return "update-payment-details"
         }
     }
-    
+
     public var method: Moya.Method {
         return .post
     }
-    
+
     public var task: Task {
         switch self {
         case .getAllParentPaymentMethod:
-            
+
             let prmDic = ["key": tokenKeyValue,
                           "lang": appLang,
                           "promo_code": ""] as [String: Any]
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
-        case .getChildsOfPayment(let pid):
+        case let .getChildsOfPayment(pid):
             let prmDic = ["key": tokenKeyValue,
                           "lang": appLang,
                           "pid": pid] as [String: Any]
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
-            
-        case .updatePaymentDetails(let prm):
+
+        case let .updatePaymentDetails(prm):
             let prmDic = ["key": tokenKeyValue,
                           "lang": appLang,
                           "promo_code": ""] as [String: Any]
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
         }
     }
-    
+
     public var validationType: ValidationType {
         return .none
     }
-    
+
     public var sampleData: Data {
         return "{no data handled, mock it if you need}".data(using: String.Encoding.utf8)!
     }
-    
+
     public var headers: [String: String]? {
         return ["Content-Type": "application/x-www-form-urlencoded"]
     }

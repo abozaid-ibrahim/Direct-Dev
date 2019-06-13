@@ -28,13 +28,14 @@ class CheckoutFooter: UIView {
             footer.valueLbl.text = valueText
         }
     }
-    var bg:UIColor?{
-        didSet{
-            self.backgroundColor = bg
+
+    var bg: UIColor? {
+        didSet {
+            backgroundColor = bg
             footer.backgroundColor = bg
         }
     }
-    
+
     typealias Action = () -> Void
     var action: Action?
     func setOnclick(ac: @escaping Action) {

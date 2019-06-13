@@ -30,7 +30,7 @@ final class SearchViewController: UIViewController, PanModalPresentable, StyledA
 
     private func setupTableView() {
         tableView.register(UINib(nibName: CountryTableCell.cellId, bundle: nil), forCellReuseIdentifier: CountryTableCell.cellId)
-        viewModel.countriesList.take(1).subscribe{v in
+        viewModel.countriesList.take(1).subscribe { _ in
             Progress.hide()
         }.disposed(by: disposeBag)
         viewModel.countriesList

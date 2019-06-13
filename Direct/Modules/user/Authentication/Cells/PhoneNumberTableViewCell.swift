@@ -9,8 +9,7 @@
 import UIKit
 
 class PhoneNumberTableViewCell: BaseTableViewCell {
-
-    lazy var backView: UIView = {[unowned self] in
+    lazy var backView: UIView = { [unowned self] in
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.9763646722, green: 0.9765316844, blue: 0.9763541818, alpha: 1)
         view.addSubview(self.textField)
@@ -18,7 +17,6 @@ class PhoneNumberTableViewCell: BaseTableViewCell {
         view.clipsToBounds = true
         return view
     }()
-
 
     lazy var textField: UITextField = { [unowned self] in
         let tf = UITextField()
@@ -29,13 +27,13 @@ class PhoneNumberTableViewCell: BaseTableViewCell {
     override func setupViews() {
         addSubview(backView)
         selectionStyle = .none
-        backView.snp.makeConstraints { (make) in
+        backView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview().inset(8)
             make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(44)
         }
 
-        textField.snp.makeConstraints { (make) in
+        textField.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(10)
         }
     }

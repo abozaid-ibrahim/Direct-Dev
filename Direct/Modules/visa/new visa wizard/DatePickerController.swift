@@ -19,7 +19,7 @@ class DatePickerController: UIViewController, PanModalPresentable {
     @IBOutlet private var dateLbl: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.datePicker.delegate = self
+        datePicker.delegate = self
     }
 
     private func setDate(date: Date) {
@@ -29,7 +29,7 @@ class DatePickerController: UIViewController, PanModalPresentable {
             .foregroundColor: UIColor(white: 61.0 / 255.0, alpha: 1.0),
         ])
         attributedString.addAttribute(.font, value: UIFont(name: AppFonts.regularFont, size: 14.0)!, range: NSRange(location: 0, length: 13))
-        self.dateLbl.attributedText = attributedString
+        dateLbl.attributedText = attributedString
     }
 
     var selectedDate = PublishSubject<Date?>()
@@ -39,12 +39,12 @@ class DatePickerController: UIViewController, PanModalPresentable {
     }
 
     @IBOutlet var currentMonthLbl: UILabel!
-    @IBAction func loadNextMonth(_ sender: Any) {
-        self.datePicker.loadNextView()
+    @IBAction func loadNextMonth(_: Any) {
+        datePicker.loadNextView()
     }
 
-    @IBAction func loadPreviousMonth(_ sender: Any) {
-        self.datePicker.loadPreviousView()
+    @IBAction func loadPreviousMonth(_: Any) {
+        datePicker.loadPreviousView()
     }
 }
 
@@ -61,13 +61,13 @@ extension DatePickerController: JBDatePickerViewDelegate {
     var colorForSelectionCircleForToday: UIColor { return UIColor.appMango }
     func didSelectDay(_ dayView: JBDatePickerDayView) {
         if let date = dayView.date {
-            self.selectedDate.onNext(date)
-            self.setDate(date: date)
+            selectedDate.onNext(date)
+            setDate(date: date)
         }
     }
 
     func didPresentOtherMonth(_ monthView: JBDatePickerMonthView) {
-        self.currentMonthLbl.text = monthView.monthDescription
+        currentMonthLbl.text = monthView.monthDescription
     }
 }
 

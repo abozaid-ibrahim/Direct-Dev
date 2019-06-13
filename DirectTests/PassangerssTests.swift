@@ -9,11 +9,8 @@
 import XCTest
 
 class PassangersTests: XCTestCase {
-
-
     func testJsonBuilder() {
-        let input  = ["egypt-2011","saudi-2010"]
+        let input = ["egypt-2011", "saudi-2010"]
         XCTAssertEqual(InputJsonBuilder().buildPassangers(input), "[{\"egypt\":\"2011\"},{\"saudi\":\"2010\"}]")
     }
-
 }

@@ -24,8 +24,9 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
     }
 
     // MARK: IBuilder ====================================>>
-    @IBOutlet weak var scrollView: UIScrollView!
-    
+
+    @IBOutlet var scrollView: UIScrollView!
+
     @IBOutlet var doNotesLbl: UILabel!
     @IBOutlet var totalCostPlaceholder: UILabel!
 
@@ -58,8 +59,7 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
         setONClickViews()
         viewModel.viewDidLoad()
     }
-   
-    
+
     private func bindDataToUI() {
         relationsField.isHidden = true
         wrongNotesContainer.isHidden = true
@@ -100,9 +100,9 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
         }
     }
 
-    @IBAction func addCobonAction(_ sender: Any) {}
+    @IBAction func addCobonAction(_: Any) {}
 
-    @IBAction func orderAction(_ sender: Any) {
+    @IBAction func orderAction(_: Any) {
         viewModel.submitVisaRequest()
     }
 
@@ -111,7 +111,7 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
             .subscribe(onNext: { _ in
                 self.viewModel.showCountriesSpinner()
             }).disposed(by: disposeBag)
-        
+
         passangersCountField.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
                 self.viewModel.showPasangersCountSpinner()
@@ -130,7 +130,7 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
             .subscribe(onNext: { _ in
                 self.viewModel.showBiometricSpinner()
             }).disposed(by: disposeBag)
-       
+
         relationsField.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
                 self.viewModel.showRelationsSpinner()

@@ -18,7 +18,7 @@ class JsonParser {
                 let object = try JSONDecoder().decode(T.self, from: response.data)
                 print(object)
                 observer.onNext(object)
-            } catch let error{
+            } catch {
                 print(">>> parsing error \(error)")
                 observer.onError(NetworkFailure.failedToParseData)
             }

@@ -74,7 +74,7 @@ class PreviousTraveledCountriesController: UIViewController {
 
 //            let results = regex.matches(in: text,
 //                                        range: NSRange(text.startIndex..., in: text))
-            if country.isNotEmpty && year.isNotEmpty {
+            if country.isNotEmpty, year.isNotEmpty {
                 self.items.append("\(country)-\(year)")
                 self.countries.onNext(self.items)
 

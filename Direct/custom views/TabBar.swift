@@ -10,7 +10,7 @@ import RxGesture
 import RxSwift
 import UIKit
 
-public typealias TAB = (String, () -> ()?)
+public typealias TAB = (String, () -> Void?)
 
 class TabBar: UIView {
     let stackContainer: UIStackView = {
@@ -94,8 +94,9 @@ class TabBar: UIView {
         addSubview(stackContainer)
         stackContainer.sameBoundsTo(parentView: self, l: 10, tr: 10)
     }
-    func didSelectTab(index:Int){
-        for (i, sep) in self.tabsSep.enumerated() {
+
+    func didSelectTab(index: Int) {
+        for (i, sep) in tabsSep.enumerated() {
             if index == i {
                 sep.alpha = 1.0
             } else {
@@ -103,6 +104,7 @@ class TabBar: UIView {
             }
         }
     }
+
     private func setFirstDefaultSelector() {
         for sep in tabsSep.enumerated() {
             if sep.offset == 0 {

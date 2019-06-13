@@ -9,22 +9,24 @@
 import Foundation
 
 // MARK: - BioChoicesResponse
+
 class BioChoicesResponse: Codable {
     let bioOption: [BioOption]
-    
+
     enum CodingKeys: String, CodingKey {
         case bioOption = "Bio-Option"
     }
-    
+
     init(bioOption: [BioOption]) {
         self.bioOption = bioOption
     }
 }
 
 // MARK: - BioOption
+
 class BioOption: Codable {
     let id, name, status, success: String
-    
+
     init(id: String, name: String, status: String, success: String) {
         self.id = id
         self.name = name

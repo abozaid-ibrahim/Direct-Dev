@@ -25,7 +25,7 @@ class VisaRequestParams {
         request_source: String!,
         request_source_comments: String!,
         promo_code: String!
-  
+
     var totalCost: String?,
         countryName: String?,
         biometry_loc: String?,

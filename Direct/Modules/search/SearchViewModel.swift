@@ -17,12 +17,12 @@ class SearchCountriesViewModel {
     init(network: ApiClientFacade? = ApiClientFacade()) {
         self.network = network
     }
-    
+
     func viewDidLoad() {
         network?.getCountries().subscribe(onNext: { [weak self] countries in
             self?.countriesList.onNext(countries.newVisaServices ?? [])
-            }, onError: { [weak self] err in
-                self?.countriesList.onError(err)
-            }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }, onError: { [weak self] err in
+            self?.countriesList.onError(err)
+        }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 }

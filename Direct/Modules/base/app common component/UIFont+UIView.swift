@@ -25,8 +25,6 @@ extension UIFont {
 }
 
 extension UILabel {
-    
-    
     var substituteFontName: String {
         get { return font.fontName }
         set {

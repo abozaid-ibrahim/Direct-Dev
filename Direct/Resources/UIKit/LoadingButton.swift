@@ -13,45 +13,43 @@ protocol AnimatableView: class {
     func stopAnimating()
 }
 
-
 class LoadingButton: UIButton, AnimatableView {
-    
     var originalButtonText: String?
     var activityIndicator: UIActivityIndicatorView!
-    
+
     @IBInspectable
     var activityIndicatorColor: UIColor = .white
-    
+
     func startAnimating() {
-        originalButtonText = self.titleLabel?.text
-        self.setTitle("", for: .normal)
-        
-        if (activityIndicator == nil) {
+        originalButtonText = titleLabel?.text
+        setTitle("", for: .normal)
+
+        if activityIndicator == nil {
             activityIndicator = createActivityIndicator()
         }
-        
+
         showSpinning()
     }
-    
+
     func stopAnimating() {
-        self.setTitle(originalButtonText, for: .normal)
+        setTitle(originalButtonText, for: .normal)
         activityIndicator.stopAnimating()
     }
-    
+
     private func createActivityIndicator() -> UIActivityIndicatorView {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.hidesWhenStopped = true
         activityIndicator.color = activityIndicatorColor
         return activityIndicator
     }
-    
+
     private func showSpinning() {
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(activityIndicator)
+        addSubview(activityIndicator)
         centerActivityIndicatorInButton()
         activityIndicator.startAnimating()
     }
-    
+
     private func centerActivityIndicatorInButton() {
         let xCenterConstraint = NSLayoutConstraint(item: self,
                                                    attribute: .centerX,
@@ -59,15 +57,14 @@ class LoadingButton: UIButton, AnimatableView {
                                                    toItem: activityIndicator,
                                                    attribute: .centerX,
                                                    multiplier: 1, constant: 0)
-        self.addConstraint(xCenterConstraint)
-        
+        addConstraint(xCenterConstraint)
+
         let yCenterConstraint = NSLayoutConstraint(item: self,
                                                    attribute: .centerY,
                                                    relatedBy: .equal,
                                                    toItem: activityIndicator,
                                                    attribute: .centerY,
                                                    multiplier: 1, constant: 0)
-        self.addConstraint(yCenterConstraint)
+        addConstraint(yCenterConstraint)
     }
-    
 }

@@ -12,7 +12,6 @@ import UIKit
 public extension UIView {
     private struct AssociatedKey {
         static var rounded = "UIView.rounded"
-
     }
 
     @IBInspectable var cornerRadiusV: CGFloat {
@@ -156,7 +155,6 @@ extension UIView {
         topAnchor.constraint(equalTo: parentView.topAnchor, constant: tp).isActive = true
         bottomAnchor.constraint(equalTo: parentView.bottomAnchor, constant: b).isActive = true
     }
-    
 }
 
 extension UIView {

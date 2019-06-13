@@ -8,7 +8,5 @@
 
 import UIKit
 
-/// Just a basic cell to show a title. 
-class TextLabelTableViewCell: BaseTableViewCell {
-
-}
+/// Just a basic cell to show a title.
+class TextLabelTableViewCell: BaseTableViewCell {}

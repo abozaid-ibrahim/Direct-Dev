@@ -6,11 +6,10 @@
 //  Copyright © 2018 abdelrahman mohamed. All rights reserved.
 //
 
-import UIKit
 import SwifterSwift
+import UIKit
 
 class AuthCoordinator {
-
     private weak var viewController: AuthTableViewController?
 
     var collectedData = [String: String]()
@@ -57,9 +56,9 @@ class AuthCoordinator {
                 showError(error)
             }
 
-        case .createNewPassword(let key):
+        case let .createNewPassword(key):
 
-            guard let email = collectedData[AuthCellType.email.rawValue], email.isEmail  else {
+            guard let email = collectedData[AuthCellType.email.rawValue], email.isEmail else {
                 showError(AuthenticationError.email)
                 return
             }
@@ -78,7 +77,7 @@ class AuthCoordinator {
 //            }
 
         case .recoverPassword:
-            guard let email = collectedData[AuthCellType.email.rawValue], email.isEmail  else {
+            guard let email = collectedData[AuthCellType.email.rawValue], email.isEmail else {
                 showError(AuthenticationError.email)
                 return
             }
@@ -106,9 +105,8 @@ class AuthCoordinator {
             }
         }
     }
-    
-    func getSignupData() throws -> UserSignupInfo {
 
+    func getSignupData() throws -> UserSignupInfo {
         guard let fullname = collectedData[AuthCellType.fullname.rawValue] else {
             throw AuthenticationError.fullname
         }
@@ -119,7 +117,7 @@ class AuthCoordinator {
 
         guard let phone = collectedData[AuthCellType.phonenumber.rawValue],
             let code = collectedData[AuthCellType.countryKey.rawValue] else {
-                throw AuthenticationError.phonenumber
+            throw AuthenticationError.phonenumber
         }
 
         guard let password = collectedData[AuthCellType.password.rawValue] else {
@@ -138,39 +136,36 @@ class AuthCoordinator {
     }
 
     func textChanged(values: [String: String]) {
-
         collectedData = collectedData.merging(values,
-                                    uniquingKeysWith: { (_, last) in last })
+                                              uniquingKeysWith: { _, last in last })
     }
 }
 
 extension AuthCoordinator {
+    // MARK: - Login
 
-   
-    //MARK: - Login
     func login(_ sender: LoadingButton) {
         viewController?.view.endEditing(true)
         sender.startAnimating()
         let id = collectedData[AuthCellType.email.rawValue]
         let pass = collectedData[AuthCellType.password.rawValue]
-        let command = LoginCommandsFactory.getLoginCommand(id: id ?? "", password: pass ?? "")
-        {[weak self] (response) in
+        let command = LoginCommandsFactory.getLoginCommand(id: id ?? "", password: pass ?? "") { [weak self] _ in
 //            self?.handleServerLogin(response)
             sender.stopAnimating()
             self?.viewController?.dismiss(animated: true, completion: nil)
         }
         do {
             try command.execute()
-        }catch{
+        } catch {
             sender.stopAnimating()
             showError(error)
         }
     }
-    
+
     func showError(_ error: Error) {
         if let error = error as? LocalizedError {
             viewController?.showError(sub: error.errorDescription)
-        }else {
+        } else {
             viewController?.showError(sub: error.localizedDescription)
         }
     }

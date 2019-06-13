@@ -10,7 +10,6 @@ import Foundation
 import GenericCellControllers
 
 class TitleCellController: GenericCellController<TitleTableViewCell> {
-
     private let data: String
     private let coordinator: AuthCoordinator
 

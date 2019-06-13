@@ -7,53 +7,50 @@
 //
 
 import Foundation
-struct NewVisaCountriesResponse : Codable {
-    let newVisaServices : [NewVisaServices]?
-    
+struct NewVisaCountriesResponse: Codable {
+    let newVisaServices: [NewVisaServices]?
+
     enum CodingKeys: String, CodingKey {
-        
         case newVisaServices = "New Visa Services"
     }
-    
+
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         newVisaServices = try values.decodeIfPresent([NewVisaServices].self, forKey: .newVisaServices)
     }
-    
 }
 
-struct NewVisaServices : Codable {
-    let country_id : String?
-    let price_notes : [Price_notes]?
-    let countryName : String?
-    let bio_notes : String?
-    let visatypes : [Visatypes]?
-    let is_biometry_req : String?
-    let thank_you_video_url : String?
-    let form_type : String?
-    let price_based_on : String?
-    let flag_bg : String?
-    let flag : String?
-    let status : String?
-    let success : String?
-    
+struct NewVisaServices: Codable {
+    let country_id: String?
+    let price_notes: [Price_notes]?
+    let countryName: String?
+    let bio_notes: String?
+    let visatypes: [Visatypes]?
+    let is_biometry_req: String?
+    let thank_you_video_url: String?
+    let form_type: String?
+    let price_based_on: String?
+    let flag_bg: String?
+    let flag: String?
+    let status: String?
+    let success: String?
+
     enum CodingKeys: String, CodingKey {
-        
-        case country_id = "country_id"
-        case price_notes = "price_notes"
+        case country_id
+        case price_notes
         case countryName = "CountryName"
-        case bio_notes = "bio_notes"
-        case visatypes = "visatypes"
-        case is_biometry_req = "is_biometry_req"
-        case thank_you_video_url = "thank_you_video_url"
-        case form_type = "form_type"
-        case price_based_on = "price_based_on"
-        case flag_bg = "flag_bg"
-        case flag = "flag"
-        case status = "status"
-        case success = "success"
+        case bio_notes
+        case visatypes
+        case is_biometry_req
+        case thank_you_video_url
+        case form_type
+        case price_based_on
+        case flag_bg
+        case flag
+        case status
+        case success
     }
-    
+
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         country_id = try values.decodeIfPresent(String.self, forKey: .country_id)
@@ -70,23 +67,21 @@ struct NewVisaServices : Codable {
         status = try values.decodeIfPresent(String.self, forKey: .status)
         success = try values.decodeIfPresent(String.self, forKey: .success)
     }
-    
 }
 
-struct Visatypes : Codable {
-    let visaTypeName : String?
-    let visaTypeId : String?
-    let status : String?
-    let success : String?
-    
+struct Visatypes: Codable {
+    let visaTypeName: String?
+    let visaTypeId: String?
+    let status: String?
+    let success: String?
+
     enum CodingKeys: String, CodingKey {
-        
         case visaTypeName = "VisaTypeName"
         case visaTypeId = "VisaTypeId"
-        case status = "status"
-        case success = "success"
+        case status
+        case success
     }
-    
+
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         visaTypeName = try values.decodeIfPresent(String.self, forKey: .visaTypeName)
@@ -94,30 +89,26 @@ struct Visatypes : Codable {
         status = try values.decodeIfPresent(String.self, forKey: .status)
         success = try values.decodeIfPresent(String.self, forKey: .success)
     }
-    
 }
 
-struct Price_notes : Codable {
-    let text : String?
-    let note_type : Int?
-    
+struct Price_notes: Codable {
+    let text: String?
+    let note_type: Int?
+
     enum CodingKeys: String, CodingKey {
-        
-        case text = "text"
-        case note_type = "note_type"
+        case text
+        case note_type
     }
-    
+
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         text = try values.decodeIfPresent(String.self, forKey: .text)
         note_type = try values.decodeIfPresent(Int.self, forKey: .note_type)
     }
-    
 }
+
 /***
- 
- 
- 
+
  //
  //// MARK: - NewVisaCountriesResponse
  //class NewVisaCountriesResponse: Codable {

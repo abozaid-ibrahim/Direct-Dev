@@ -73,8 +73,9 @@ final class SelectableTableSheet: UIViewController, PanModalPresentable {
                 }.disposed(by: disposeBag)
         }
     }
-    @IBAction func confirmAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+
+    @IBAction func confirmAction(_: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }
 

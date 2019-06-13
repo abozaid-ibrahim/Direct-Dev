@@ -9,9 +9,8 @@
 import Foundation
 
 struct LoginCommandsFactory {
-    
     private init() {}
-    
+
     static func getLoginCommand(id: String, password: String, completion: UserResponse) -> Command {
         let validatorCommand = LoginDetailsValidator(id, password)
         let reuqestCommand = LoginRequestCommand(id, password: password, completion: completion)

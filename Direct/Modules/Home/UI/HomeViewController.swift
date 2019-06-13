@@ -24,9 +24,9 @@ final class HomeViewController: UIViewController, StyledActionBar {
     @IBOutlet var containerView: UIView!
     @IBOutlet private var collectionView: UICollectionView!
     @IBOutlet private var headerView: UIView!
-    @IBOutlet weak var headerActiveViewWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var headerNoneActiveViewWidthConstraint: NSLayoutConstraint!
-    
+    @IBOutlet var headerActiveViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet var headerNoneActiveViewWidthConstraint: NSLayoutConstraint!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.appVeryLightGray
@@ -39,7 +39,6 @@ final class HomeViewController: UIViewController, StyledActionBar {
         homeViewModel.getAllData()
     }
 
-   
     private func getDataFromViewModel() {
         homeViewModel.collectionSecions.asObservable()
             .observeOn(MainScheduler.instance)
@@ -68,8 +67,7 @@ final class HomeViewController: UIViewController, StyledActionBar {
             tabbarSelected(vc: visaReqVC)
         }
     }
-    
-    
+
     @IBAction func institureAction(_: Any) {
         if children.contains(newInstitue) {
             newInstitue.dismissWithAnim()
@@ -77,7 +75,7 @@ final class HomeViewController: UIViewController, StyledActionBar {
             tabbarSelected(vc: newInstitue)
         }
     }
-    
+
     @IBAction func packagesDidSelect(_: Any) {
         let packages = packagesVC as! PackagesViewController
         if children.contains(packages) {
@@ -110,26 +108,25 @@ final class HomeViewController: UIViewController, StyledActionBar {
     }
 
     private func updateHeaderFrame(fullWidth: Bool) {
-            if fullWidth {
-                UIView.animate(withDuration: 0.3, animations: { [weak self] in
-                    guard let self = self else { return }
-                    self.headerView.layer.cornerRadius = 0
-                    self.headerNoneActiveViewWidthConstraint.priority = .defaultLow
-                    self.headerActiveViewWidthConstraint.priority = .defaultHigh
-                })
-            } else {
-                UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseOut, animations: {
-                    self.headerActiveViewWidthConstraint.priority = .defaultLow
-                    self.headerNoneActiveViewWidthConstraint.priority = .defaultHigh
-                    self.headerView.layer.cornerRadius = 30
-                    self.headerView.clipsToBounds = true
-                }, completion: nil)
-            }
+        if fullWidth {
+            UIView.animate(withDuration: 0.3, animations: { [weak self] in
+                guard let self = self else { return }
+                self.headerView.layer.cornerRadius = 0
+                self.headerNoneActiveViewWidthConstraint.priority = .defaultLow
+                self.headerActiveViewWidthConstraint.priority = .defaultHigh
+            })
+        } else {
+            UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseOut, animations: {
+                self.headerActiveViewWidthConstraint.priority = .defaultLow
+                self.headerNoneActiveViewWidthConstraint.priority = .defaultHigh
+                self.headerView.layer.cornerRadius = 30
+                self.headerView.clipsToBounds = true
+            }, completion: nil)
+        }
     }
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
     func numberOfSections(in _: UICollectionView) -> Int {
         return collectionSecions.count
     }

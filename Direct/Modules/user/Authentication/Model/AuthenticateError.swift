@@ -12,7 +12,6 @@ enum AuthenticationError: Error {
     case emailOrPhone, password
     case email, confirmPass, fullname, phonenumber, activateCode
     case blockedAccount, codeSentManyTimesBlock, useYourCode(message: String?)
-    
 }
 
 extension AuthenticationError: LocalizedError {
@@ -36,12 +35,11 @@ extension AuthenticationError: LocalizedError {
             return "blocked_account_message".localized
         case .codeSentManyTimesBlock:
             return "auth_user_blocked".localized
-        case .useYourCode(let message):
+        case let .useYourCode(message):
             return message ?? "login_activation_message".localized
         }
     }
 }
-
 
 extension String {
     var localized: String {

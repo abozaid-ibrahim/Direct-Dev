@@ -10,7 +10,6 @@ import Foundation
 import GenericCellControllers
 
 class TextLabelCellController: GenericCellController<TextLabelTableViewCell> {
-
     private let data: TextLabelConfigurator
     private let coordinator: AuthCoordinator
 
@@ -31,11 +30,9 @@ class TextLabelCellController: GenericCellController<TextLabelTableViewCell> {
             cell.textLabel?.textAlignment = data.textAlign!
         }
         cell.selectionStyle = .none
-        
     }
 
     override func didSelectCell() {
         coordinator.labelClicked(type: data.type)
     }
-
 }

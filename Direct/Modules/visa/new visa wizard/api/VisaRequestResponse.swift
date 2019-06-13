@@ -8,34 +8,35 @@
 
 import Foundation
 
-
 // MARK: - Welcome
+
 class VisaRequestResponse: Codable {
     let visaServices: [VisaService]
-    
+
     enum CodingKeys: String, CodingKey {
         case visaServices = "Visa Services"
     }
-    
+
     init(visaServices: [VisaService]) {
         self.visaServices = visaServices
     }
 }
 
 // MARK: - VisaService
+
 class VisaService: Codable {
     let status, success: String
     let requestID: Int
     let query: String
     let visaServiceIn: In
-    
+
     enum CodingKeys: String, CodingKey {
         case status, success
         case requestID = "request_id"
         case query
         case visaServiceIn = "in"
     }
-    
+
     init(status: String, success: String, requestID: Int, query: String, visaServiceIn: In) {
         self.status = status
         self.success = success
@@ -46,14 +47,15 @@ class VisaService: Codable {
 }
 
 // MARK: - In
+
 class In: Codable {
     let updateOn, updateBy, visaCountryID, requestSource: String
     let requestSourceComments, travelDate, biometryLOCID, noOfAdult: String
     let noOfChild, noOfPassport, lang: String
-    let relationWithTravelers:String?
-    let promoPrice:String?
+    let relationWithTravelers: String?
+    let promoPrice: String?
     var promoCode: String?
-    
+
     enum CodingKeys: String, CodingKey {
         case updateOn = "update_on"
         case updateBy = "update_by"
@@ -70,7 +72,7 @@ class In: Codable {
         case promoPrice = "promo_price"
         case promoCode = "promo_code"
     }
-    
+
     init(updateOn: String, updateBy: String, visaCountryID: String, requestSource: String, requestSourceComments: String, travelDate: String, biometryLOCID: String, noOfAdult: String, noOfChild: String, noOfPassport: String, relationWithTravelers: String?, lang: String, promoPrice: String, promoCode: String) {
         self.updateOn = updateOn
         self.updateBy = updateBy
