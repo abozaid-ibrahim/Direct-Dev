@@ -68,90 +68,6 @@
             </objects>
             <point key="canvasLocation" x="1137" y="1261"/>
         </scene>
-        <!--My Account Controller-->
-        <scene sceneID="Zql-DD-71p">
-            <objects>
-                <viewController storyboardIdentifier="MyAccountController" id="iUh-JJ-tAH" customClass="MyAccountController" customModule="Direct" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zOU-fN-deZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4IP-Jd-N7J" userLabel="header">
-                                <rect key="frame" x="0.0" y="64" width="375" height="170"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="0wN-HD-X89">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
-                                    </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QAq-UV-ufn">
-                                        <rect key="frame" x="56.5" y="41.5" width="262.5" height="87"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اهلاً بك" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHZ-pe-Ztw">
-                                                <rect key="frame" x="0.0" y="0.0" width="262.5" height="29"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z95-fp-EAL">
-                                                <rect key="frame" x="0.0" y="37" width="262.5" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="21Y-2J-Zvw"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <state key="normal" title="سجل الدخول / انشئ حساب"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">
-                                                        <integer key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="login:" destination="iUh-JJ-tAH" eventType="touchUpInside" id="tfB-No-1fI"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="QAq-UV-ufn" firstAttribute="centerY" secondItem="4IP-Jd-N7J" secondAttribute="centerY" id="06n-YV-EqU"/>
-                                    <constraint firstItem="QAq-UV-ufn" firstAttribute="width" secondItem="4IP-Jd-N7J" secondAttribute="width" multiplier="0.7" id="Omp-Pq-XNp"/>
-                                    <constraint firstAttribute="bottom" secondItem="0wN-HD-X89" secondAttribute="bottom" id="Ui7-HW-S9c"/>
-                                    <constraint firstItem="QAq-UV-ufn" firstAttribute="centerX" secondItem="4IP-Jd-N7J" secondAttribute="centerX" id="WMA-CL-hpl"/>
-                                    <constraint firstAttribute="height" constant="170" id="bel-nI-L0a"/>
-                                    <constraint firstItem="0wN-HD-X89" firstAttribute="top" secondItem="4IP-Jd-N7J" secondAttribute="top" id="gOa-Eh-XQR"/>
-                                    <constraint firstAttribute="trailing" secondItem="0wN-HD-X89" secondAttribute="trailing" id="nY5-7y-01y"/>
-                                    <constraint firstItem="0wN-HD-X89" firstAttribute="leading" secondItem="4IP-Jd-N7J" secondAttribute="leading" id="r3t-7a-ghE"/>
-                                </constraints>
-                            </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="99V-lv-Xpe">
-                                <rect key="frame" x="18" y="262" width="339" height="338"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="iUh-JJ-tAH" id="PWI-hs-Ecp"/>
-                                    <outlet property="delegate" destination="iUh-JJ-tAH" id="gyF-ci-zVL"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="4IP-Jd-N7J" firstAttribute="leading" secondItem="Qjf-da-Vnd" secondAttribute="leading" id="Cqd-Ch-SR3"/>
-                            <constraint firstItem="99V-lv-Xpe" firstAttribute="leading" secondItem="Qjf-da-Vnd" secondAttribute="leading" constant="18" id="QCv-cp-H5P"/>
-                            <constraint firstItem="4IP-Jd-N7J" firstAttribute="top" secondItem="Qjf-da-Vnd" secondAttribute="top" id="UX5-4L-OoD"/>
-                            <constraint firstItem="Qjf-da-Vnd" firstAttribute="bottom" secondItem="99V-lv-Xpe" secondAttribute="bottom" constant="18" id="WLq-ac-3RH"/>
-                            <constraint firstItem="Qjf-da-Vnd" firstAttribute="trailing" secondItem="99V-lv-Xpe" secondAttribute="trailing" constant="18" id="pSd-gX-5mE"/>
-                            <constraint firstItem="4IP-Jd-N7J" firstAttribute="trailing" secondItem="Qjf-da-Vnd" secondAttribute="trailing" id="uZO-zP-rGB"/>
-                            <constraint firstItem="99V-lv-Xpe" firstAttribute="top" secondItem="4IP-Jd-N7J" secondAttribute="bottom" constant="28" id="uqb-Xe-qu3"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Qjf-da-Vnd"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" selectedImage="icons8Person" systemItem="more" id="C27-47-LS7"/>
-                    <connections>
-                        <outlet property="tableView" destination="99V-lv-Xpe" id="eZQ-16-lTT"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="31c-lX-OZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1136.8" y="441.22938530734638"/>
-        </scene>
         <!--بكجات-->
         <scene sceneID="5wZ-wa-HQh">
             <objects>
@@ -610,20 +526,28 @@
                         <segue destination="mUF-MA-QtB" kind="relationship" relationship="viewControllers" id="Hsv-gc-yUQ"/>
                         <segue destination="XfK-Hb-2tX" kind="relationship" relationship="viewControllers" id="h0c-oo-WK8"/>
                         <segue destination="De0-aQ-EfP" kind="relationship" relationship="viewControllers" id="QV1-RU-pkk"/>
-                        <segue destination="iUh-JJ-tAH" kind="relationship" relationship="viewControllers" id="hU4-in-vaz"/>
+                        <segue destination="jOn-n7-G2L" kind="relationship" relationship="viewControllers" id="hU4-in-vaz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i9O-88-3FJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-601" y="-114"/>
         </scene>
+        <!--MyAccountController-->
+        <scene sceneID="h3v-Qg-iJA">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="MyAccountController" storyboardName="MyAccount" referencedIdentifier="MyAccountController" id="jOn-n7-G2L" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="KRz-Tb-NDR"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lyL-MO-gmj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1136.8" y="441.22938530734638"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="download" width="259" height="194"/>
         <image name="icons8Mesh" width="25" height="24"/>
         <image name="icons8Mortarboard" width="29" height="22"/>
         <image name="icons8Passport" width="28" height="35"/>
-        <image name="icons8Person" width="16" height="17"/>
         <image name="icons8Search" width="27" height="27"/>
         <image name="myordersImage" width="19" height="20"/>
         <image name="saerchImage" width="27" height="27"/>

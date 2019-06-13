@@ -52,6 +52,8 @@ enum MoreDataRep: CaseIterable {
             return #imageLiteral(resourceName: "icons8Geography")
         }
     }
+    
+    
 }
 
 
@@ -63,6 +65,7 @@ final class MyAccountController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(nibWithCellClass: AboutUsTableCell.self)
+        tableView.tableFooterView = UIView()
         
     }
 
@@ -89,10 +92,7 @@ extension MyAccountController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 45
+        return 50
     }
-    
-    
-    
     
 }

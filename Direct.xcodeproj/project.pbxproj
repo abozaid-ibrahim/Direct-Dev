@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3940FBE422B26CE400A801C0 /* MyAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3940FBE322B26CE400A801C0 /* MyAccount.storyboard */; };
 		3992B66722961B5F00BBB7F1 /* TagCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3992B66322961B5E00BBB7F1 /* TagCollectionCell.swift */; };
 		3992B66822961B5F00BBB7F1 /* TagCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3992B66422961B5E00BBB7F1 /* TagCollectionCell.xib */; };
 		3992B66922961B5F00BBB7F1 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3992B66522961B5E00BBB7F1 /* LeftAlignedCollectionViewFlowLayout.swift */; };
@@ -258,6 +259,7 @@
 
 /* Begin PBXFileReference section */
 		25185037101CA582CE39A627 /* Pods_Direct.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Direct.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3940FBE322B26CE400A801C0 /* MyAccount.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyAccount.storyboard; sourceTree = "<group>"; };
 		3992B66322961B5E00BBB7F1 /* TagCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagCollectionCell.swift; sourceTree = "<group>"; };
 		3992B66422961B5E00BBB7F1 /* TagCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagCollectionCell.xib; sourceTree = "<group>"; };
 		3992B66522961B5E00BBB7F1 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
@@ -956,6 +958,7 @@
 		6C778258227A3AE4001926B2 /* my account */ = {
 			isa = PBXGroup;
 			children = (
+				3940FBE322B26CE400A801C0 /* MyAccount.storyboard */,
 				6C778259227A3AFF001926B2 /* MyAccountController.swift */,
 				6CB2A8BA228CAD8200A78541 /* AboutUsTableCell.swift */,
 				6C9027E1228F95D200B41705 /* AboutUsTableCell.xib */,
@@ -1422,6 +1425,7 @@
 				6C9027DF228F95D200B41705 /* AboutUsTableCell.xib in Resources */,
 				6C9027A6228F955F00B41705 /* PaymentMethodsContainerController.xib in Resources */,
 				6C9027AC228F956B00B41705 /* PackageDetailsController.xib in Resources */,
+				3940FBE422B26CE400A801C0 /* MyAccount.storyboard in Resources */,
 				6CDEF78222A11EFC00BF5F0B /* Visa.storyboard in Resources */,
 				6C9027CA228F95AC00B41705 /* VisaRequirementController.xib in Resources */,
 				6C9027BB228F958C00B41705 /* TextTableCell.xib in Resources */,
