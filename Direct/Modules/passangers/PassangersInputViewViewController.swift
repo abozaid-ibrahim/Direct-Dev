@@ -13,6 +13,7 @@ class PassangersInputViewViewController: UIViewController {
     @IBOutlet private var containerView: UIView!
     @IBOutlet private var tabbarView: UIView!
     @IBOutlet private var tabbarWidthConstrain: NSLayoutConstraint!
+    @IBOutlet weak var headerLbl: UILabel!
     var tabbar: TabBar!
     var visaInfo: VisaRequestParams?
     var successInputIndexes: [Int] = []
@@ -22,12 +23,15 @@ class PassangersInputViewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "معلومات المسافرين"
-        setupTabbar()
+        guard let info = visaInfo else { return }
+
+        self.headerLbl.text = "\(info.countryName!)-\(info.visatypeText!)-\(info.no_of_passport!) \("passangers".localized)"
+        self.headerLbl.setYellowGradient()
+        setupTabbar(info)
     }
 
     var tabs: [(TAB, PassangerFormController)] = []
-    private func setupTabbar() {
-        guard let info = visaInfo else { return }
+    private func setupTabbar(_ info: VisaRequestParams) {
         for index in 0 ..< Int(info.no_of_adult)! {
             let tabController = PassangerFormController()
             tabController.countryName = info.countryName
@@ -58,7 +62,7 @@ class PassangersInputViewViewController: UIViewController {
         tabbar = TabBar(tabs: tabs.map { $0.0 })
         tabbar.tabsIcon.forEach { $0.image = #imageLiteral(resourceName: "rightGreen") }
         tabbarView.addSubview(tabbar)
-        tabbar.sameBoundsTo(parentView: tabbarView)
+        tabbar.frame = tabbarView.bounds
         defaultTabSelection.startWith(0).subscribe(onNext: { [unowned self] value in
             self.selectTab(value, self.tabs[value].1)
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)

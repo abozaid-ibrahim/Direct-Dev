@@ -13,6 +13,7 @@ class PassangerFormViewModel {
     var selectedRelation = PublishSubject<String?>()
 
     var relativesList: [USRelative] = []
+    
     private let disposeBag = DisposeBag()
     func getRelatives() {
         let rel = network.getUSLivingVisaRelatives().retry(2)

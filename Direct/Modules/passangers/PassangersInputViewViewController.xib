@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PassangersInputViewViewController" customModule="Direct" customModuleProvider="target">
             <connections>
                 <outlet property="containerView" destination="7mX-0p-wxc" id="dEu-JH-lBR"/>
+                <outlet property="headerLbl" destination="fdg-d1-MWs" id="fif-qO-7Wu"/>
                 <outlet property="tabbarView" destination="qY2-aq-TDa" id="9MU-Zf-lmd"/>
                 <outlet property="tabbarWidthConstrain" destination="WwR-Wc-UFA" id="cLd-fy-3BQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -23,9 +24,34 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gD0-fW-O8V">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RiB-4K-IAb">
                     <rect key="frame" x="0.0" y="44" width="414" height="40"/>
                     <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdg-d1-MWs">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="fdg-d1-MWs" firstAttribute="leading" secondItem="RiB-4K-IAb" secondAttribute="leading" id="ERJ-rH-O2J"/>
+                        <constraint firstAttribute="height" constant="40" id="Xf1-lh-iEa"/>
+                        <constraint firstAttribute="trailing" secondItem="fdg-d1-MWs" secondAttribute="trailing" id="clD-AJ-7iC"/>
+                        <constraint firstItem="fdg-d1-MWs" firstAttribute="top" secondItem="RiB-4K-IAb" secondAttribute="top" id="zp7-lc-UQH"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gD0-fW-O8V">
+                    <rect key="frame" x="0.0" y="92" width="414" height="40"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N92-xQ-qDI">
+                            <rect key="frame" x="186" y="9" width="42" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="yxa-Ou-Er1">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                             <subviews>
@@ -56,7 +82,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7mX-0p-wxc">
-                    <rect key="frame" x="0.0" y="96" width="414" height="778"/>
+                    <rect key="frame" x="0.0" y="144" width="414" height="730"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
@@ -71,9 +97,12 @@
                 <constraint firstItem="7mX-0p-wxc" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="12" id="3Ad-Zu-QW6"/>
                 <constraint firstItem="gD0-fW-O8V" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="77s-TI-4hT"/>
                 <constraint firstAttribute="trailing" secondItem="gD0-fW-O8V" secondAttribute="trailing" id="8iB-3B-SD9"/>
-                <constraint firstItem="gD0-fW-O8V" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Tfm-zs-mOv"/>
+                <constraint firstItem="gD0-fW-O8V" firstAttribute="top" secondItem="RiB-4K-IAb" secondAttribute="bottom" constant="8" id="UVI-Uc-Pck"/>
+                <constraint firstItem="RiB-4K-IAb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="VUt-V4-nul"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RiB-4K-IAb" secondAttribute="trailing" id="X0z-jR-QEP"/>
                 <constraint firstItem="7mX-0p-wxc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tvk-P2-VyE"/>
                 <constraint firstItem="7mX-0p-wxc" firstAttribute="top" secondItem="gD0-fW-O8V" secondAttribute="bottom" constant="12" id="xTo-PU-heG"/>
+                <constraint firstItem="RiB-4K-IAb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yrL-6R-UpW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>

@@ -102,6 +102,9 @@ class PassangerFormController: UIViewController, ImagePicker {
         addChild(questionsVC)
         everTraveledBeforeView.addSubview(questionsVC.view)
         questionsVC.view.frame = everTraveledBeforeView.bounds
+        questionsVC.selectedDuration.filter{$0?.id != nil}.subscribe(onNext: {[unowned self] value in
+            self.params.periodOfPreviousStay = value?.id ?? ""
+            }, onError: nil, onCompleted: nil, onDisposed:  nil).disposed(by: disposeBag)
         questionsVC.contentHeight
             .asDriver(onErrorJustReturn: 0)
             .debug()

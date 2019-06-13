@@ -17,7 +17,8 @@ enum VisaAPIs {
         applyToUK(USRequestParams),
         getPreviousVisaType,
         getVisaReqRelation,
-    getUSLivingRelatives
+        getUSLivingRelatives,
+    getPeriodOfPrevStay
 }
 
 extension VisaAPIs: TargetType {
@@ -39,12 +40,14 @@ extension VisaAPIs: TargetType {
             return "get-visa-req-relation"
         case .getUSLivingRelatives:
             return "get-us-living-relation"
+        case .getPeriodOfPrevStay:
+            return "get-period_of_prev_stay"
         }
     }
 
     public var method: Moya.Method {
         switch self {
-        case .visaRequest, .visaRequirementForCountry, .getVisaPrice, .applyToUK, .applyToUS, .getPreviousVisaType,.getVisaReqRelation,.getUSLivingRelatives:
+        case .visaRequest, .visaRequirementForCountry, .getVisaPrice, .applyToUK, .applyToUS, .getPreviousVisaType, .getVisaReqRelation, .getPeriodOfPrevStay, .getUSLivingRelatives:
             return .post
         }
     }
@@ -93,17 +96,19 @@ extension VisaAPIs: TargetType {
             let prmDic = ["key": tokenKeyValue,
                           "lang": appLang] as [String: Any]
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
-        
-        
-        case  .getVisaReqRelation:
+
+        case .getVisaReqRelation:
             let prmDic = ["key": tokenKeyValue,
                           "lang": appLang] as [String: Any]
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
-        case  .getUSLivingRelatives:
+        case .getUSLivingRelatives:
             let prmDic = ["key": tokenKeyValue,
                           "lang": appLang] as [String: Any]
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
-            
+        case .getPeriodOfPrevStay:
+            let prmDic = ["key": tokenKeyValue,
+                          "lang": appLang] as [String: Any]
+            return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
         }
     }
 

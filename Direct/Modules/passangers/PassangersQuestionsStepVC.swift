@@ -23,7 +23,8 @@ class PassangersQuestionsStepVC: UIViewController {
     //===================================================<<
     private let disposeBag = DisposeBag()
     var selectedDate = PublishSubject<Date?>()
-    var selectedDuration = PublishSubject<String?>()
+    var selectedDuration = PublishSubject<Period?>()
+    var stayPeriod: [Period] = []
 
     var travelledBeforeHere: Int {
         return everYouTraveledSegment.selectedSegmentIndex
@@ -41,6 +42,7 @@ class PassangersQuestionsStepVC: UIViewController {
         setupUI()
         addActionsToFields()
         setViewAppearance()
+        getPeriod()
     }
 
     private func addActionsToFields() {
@@ -58,7 +60,7 @@ class PassangersQuestionsStepVC: UIViewController {
                 self.showDurationSpinner()
             }).disposed(by: disposeBag)
         selectedDate.map { $0?.displayFormat }.bind(to: arrivalDateField.rx.text).disposed(by: disposeBag)
-        selectedDuration.bind(to: durationField.rx.text).disposed(by: disposeBag)
+        selectedDuration.map { $0?.name ?? "" }.bind(to: durationField.rx.text).disposed(by: disposeBag)
     }
 
     private func setupUI() {
@@ -72,31 +74,31 @@ class PassangersQuestionsStepVC: UIViewController {
         setViewAppearance()
     }
 
+    private let network = ApiClientFacade()
+    var selectedRelation = PublishSubject<String?>()
+
+    var relativesList: [USRelative] = []
+    func getPeriod() {
+        let rel = network.getStayPeriod()
+        rel.debug().subscribe(onNext: { [weak self] bios in
+            self?.stayPeriod.removeAll()
+            self?.stayPeriod.append(contentsOf: bios.periods ?? [])
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+    }
+
     private func showDurationSpinner() {
-        let bios = ["day", "month", "year"]
+        let bios = stayPeriod.map { $0.name ?? "" }
         let dest = Destination.selectableSheet(data: bios, titleText: "Choose".localized, style: .textCenter)
         let vc = dest.controller() as! SelectableTableSheet
-        vc.selectedItem.asObservable().subscribe { event in
-            switch event.event {
-            case let .next(value):
-//                let bio = self.relativesList.filter { $0.name == value }
-//                if let bioObj = bio.first {
-//                    self.visaRequestData.relation_with_travelers = bioObj.id
-//                    self.visaRequestData.relation_with_travelersText = bioObj.name
-//                }
-
-                self.selectedDuration.onNext(value)
-
-            default:
-                break
-            }
-
-        }.disposed(by: disposeBag)
+        vc.selectedItem.asDriver(onErrorJustReturn: "").drive(onNext: { value in
+            let bio = self.stayPeriod.filter { $0.name == value }
+            self.selectedDuration.onNext(bio.first)
+        }).disposed(by: disposeBag)
         try! AppNavigator().presentModally(vc)
     }
 
     private func showDatePickerDialog() {
-        let hint = "Choose arrival date".localized
+        let hint = "Choose".localized
         let dest = Destination.datePicker(title: hint)
         let vc = dest.controller() as! DatePickerController
         vc.selectedDate.asObservable().subscribe { event in
