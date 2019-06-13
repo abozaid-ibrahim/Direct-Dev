@@ -16,7 +16,8 @@ class VisaReqConfirmationController: UIViewController {
     var tableHeight = PublishSubject<CGFloat>()
     let headerHeight = CGFloat(90)
     private let contentSizeKey = "contentSize"
-    typealias ConfrimTableRow = (String, Bool, Int)
+    typealias TypeIndex = Int
+    typealias ConfrimTableRow = (String, Bool, Int,TypeIndex)
     var passangers: [ConfrimTableRow] = []
     
     // MARK: IBuilder ====================================>>
@@ -78,11 +79,11 @@ class VisaReqConfirmationController: UIViewController {
         relationlbl.text = info.relation_with_travelersText
         checkoutFooter.valueText = info.totalCost ?? "".priced
         
-        for _ in 0..<(info.no_of_adult ?? "0").intValue {
-            passangers.append(("adult".localized, false, 1))
+        for index in 0..<(info.no_of_adult ?? "0").intValue {
+            passangers.append(("adult".localized, false, 1,index + 1))
         }
-        for _ in 0..<(info.no_of_child ?? "0").intValue {
-            passangers.append(("child".localized, false, 0))
+        for index in 0..<(info.no_of_child ?? "0").intValue {
+            passangers.append(("child".localized, false, 0,index+1))
         }
         setupTable()
         passangersTable.rx
@@ -109,7 +110,7 @@ class VisaReqConfirmationController: UIViewController {
     func setupTable() {
         Observable.just(passangers)
             .bind(to: passangersTable.rx.items(cellIdentifier: VisaConfrimationPassangerCell.id, cellType: VisaConfrimationPassangerCell.self)) { pos, element, cell in
-                cell.textLbl.text = element.0 + " \(pos + 1)"
+                cell.textLbl.text = element.0 + " \(element.3)"
                 cell.statuxIcon.image = element.1 ? #imageLiteral(resourceName: "path4") : #imageLiteral(resourceName: "rightGreen")
             }
             .disposed(by: disposeBag)

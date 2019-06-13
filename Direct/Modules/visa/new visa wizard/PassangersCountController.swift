@@ -9,7 +9,7 @@
 import PanModal
 import RxSwift
 import UIKit
- typealias PassangerCount = (Int, Int, String)
+typealias PassangerCount = (Int, Int, String)
 
 class PassangersCountController: UIViewController, PanModalPresentable {
     var panScrollable: UIScrollView?
@@ -29,6 +29,13 @@ class PassangersCountController: UIViewController, PanModalPresentable {
     private var totolCost: String = "0"
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let info = info else { return }
+        childCount = Int(info.no_of_child) ?? 0
+        menCount = Int(info.no_of_adult) ?? 0
+        if (info.cid) == APIConstants.TurkeyID {
+            menCount = Int(info.no_of_passport) ?? 0
+            childCount = 0
+        }
     }
     
     var childCount: Int {
@@ -52,7 +59,7 @@ class PassangersCountController: UIViewController, PanModalPresentable {
             getPrices()
         }
     }
-
+    
     private func getPrices() {
         guard var params = info else {
             return

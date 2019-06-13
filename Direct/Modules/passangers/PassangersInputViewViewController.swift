@@ -28,7 +28,6 @@ class PassangersInputViewViewController: UIViewController {
     var tabs: [(TAB, PassangerFormController)] = []
     private func setupTabbar() {
         guard let info = visaInfo else { return }
-        print(info.country_id ?? "country id is nil")
         for index in 0..<Int(info.no_of_adult)! {
             let tabController = PassangerFormController()
             tabController.countryName = info.countryName
@@ -54,12 +53,8 @@ class PassangersInputViewViewController: UIViewController {
             })
             tabs.append((tab1, tab1VC))
         }
-        if tabs.count > 3 {
-            tabbarWidthConstrain.constant = tabbarView.bounds.width - 20
-        } else {
-            tabbarWidthConstrain.constant = CGFloat(tabs.count * 90)
-        }
-        tabbarView.setNeedsUpdateConstraints()
+        tabbarWidthConstrain.constant = CGFloat(tabs.count * 100)
+        
         tabbar = TabBar(tabs: tabs.map { $0.0 })
         tabbar.tabsIcon.forEach { $0.image = #imageLiteral(resourceName: "rightGreen") }
         tabbarView.addSubview(tabbar)
@@ -68,7 +63,6 @@ class PassangersInputViewViewController: UIViewController {
             self.selectTab(value, self.tabs[value].1)
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
-  
     
     private func selectNextTab() -> Bool {
         for tab in tabs {

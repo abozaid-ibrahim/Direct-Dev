@@ -32,15 +32,14 @@ class PassangerFormController: UIViewController, ImagePicker {
     
     // MARK: IBuilder ====================================>>
     
-    @IBOutlet var scrollView: UIScrollView!
     
     // Family
     @IBOutlet var firstNamePInfoLbl: FloatingTextField!
     @IBOutlet var familyNamePInfoLbl: FloatingTextField!
     @IBOutlet var statusPInfoLbl: FloatingTextField!
     @IBOutlet var isHusbandWillTravelView: UIView!
-    
     @IBOutlet var husbundPInfoLbl: FloatingTextField!
+    @IBOutlet weak var isTravelWithFamilyView: UIView!
     @IBOutlet var familyIDPInfoLbl: FloatingTextField!
     
     @IBOutlet var passportImageField: FloatingTextField!
@@ -107,12 +106,7 @@ class PassangerFormController: UIViewController, ImagePicker {
         addPreviousCountries()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        scrollView.minimumZoomScale = 1.0
-        scrollView.maximumZoomScale = 1.1
-
-    }
+   
     
     let travels = UIStoryboard.visa.instantiateViewController(withIdentifier: "PreviousTraveledCountriesController") as! PreviousTraveledCountriesController
     
@@ -144,6 +138,11 @@ class PassangerFormController: UIViewController, ImagePicker {
                 self.showAgreemnetDialog(callback: { [weak self] agreed in
                     self?.params.husbandOrWifeTravelWithYou = agreed.apiValue.stringValue
                     self?.husbundPInfoLbl.text = agreed.string
+                    if agreed.apiValue == AgreementValues.yes.apiValue{
+                        self?.isTravelWithFamilyView.isHidden = false
+                    }else{
+                        self?.isTravelWithFamilyView.isHidden = true
+                    }
                 })
             }.disposed(by: disposeBag)
     }

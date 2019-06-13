@@ -14,7 +14,7 @@
             <connections>
                 <outlet property="containerView" destination="7mX-0p-wxc" id="dEu-JH-lBR"/>
                 <outlet property="tabbarView" destination="qY2-aq-TDa" id="9MU-Zf-lmd"/>
-                <outlet property="tabbarWidthConstrain" destination="b6s-lR-hwr" id="O6F-yi-6rM"/>
+                <outlet property="tabbarWidthConstrain" destination="WwR-Wc-UFA" id="cLd-fy-3BQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,21 +26,33 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gD0-fW-O8V">
                     <rect key="frame" x="0.0" y="44" width="414" height="40"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qY2-aq-TDa" userLabel="tabbar" customClass="TabBar" customModule="Direct" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="yxa-Ou-Er1">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qY2-aq-TDa" userLabel="tabbar" customClass="TabBar" customModule="Direct" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="KQU-wS-ODk"/>
+                                        <constraint firstAttribute="width" constant="600" id="WwR-Wc-UFA"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
                             <constraints>
-                                <constraint firstAttribute="width" constant="80" id="b6s-lR-hwr"/>
-                                <constraint firstAttribute="height" constant="40" id="rTX-F0-ecU"/>
+                                <constraint firstItem="qY2-aq-TDa" firstAttribute="leading" secondItem="yxa-Ou-Er1" secondAttribute="leading" id="Agt-ut-pkj"/>
+                                <constraint firstItem="qY2-aq-TDa" firstAttribute="top" secondItem="yxa-Ou-Er1" secondAttribute="top" id="Yxw-Zh-rUW"/>
+                                <constraint firstAttribute="bottom" secondItem="qY2-aq-TDa" secondAttribute="bottom" id="eat-tA-H4v"/>
+                                <constraint firstAttribute="trailing" secondItem="qY2-aq-TDa" secondAttribute="trailing" id="qsO-Wh-vir"/>
                             </constraints>
-                        </view>
+                        </scrollView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="qY2-aq-TDa" secondAttribute="bottom" id="NoY-Zj-yev"/>
-                        <constraint firstItem="qY2-aq-TDa" firstAttribute="top" secondItem="gD0-fW-O8V" secondAttribute="top" id="U7l-Lo-84J"/>
+                        <constraint firstItem="yxa-Ou-Er1" firstAttribute="centerX" secondItem="gD0-fW-O8V" secondAttribute="centerX" id="Xgh-nU-mBH"/>
+                        <constraint firstItem="yxa-Ou-Er1" firstAttribute="width" secondItem="gD0-fW-O8V" secondAttribute="width" id="ZFO-9E-l9E"/>
                         <constraint firstAttribute="height" constant="40" id="ZTg-OI-xsI"/>
-                        <constraint firstItem="qY2-aq-TDa" firstAttribute="leading" secondItem="gD0-fW-O8V" secondAttribute="leading" id="wC0-Ky-OLN"/>
+                        <constraint firstItem="yxa-Ou-Er1" firstAttribute="centerY" secondItem="gD0-fW-O8V" secondAttribute="centerY" id="mcB-pa-3Nc"/>
+                        <constraint firstItem="yxa-Ou-Er1" firstAttribute="height" secondItem="gD0-fW-O8V" secondAttribute="height" id="uJ4-sk-giX"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7mX-0p-wxc">

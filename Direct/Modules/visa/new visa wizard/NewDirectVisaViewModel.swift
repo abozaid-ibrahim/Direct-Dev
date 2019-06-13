@@ -41,7 +41,7 @@ class NewDirectVisaViewModel {
     var selectedRelation = PublishSubject<String?>()
     var totalCost = BehaviorSubject<String>(value: "0".priced)
     var embassyLocations: [DTEmbassyLocation]?
-    var turkeyCountryId:String {
+    var turkeyCountryId: String {
         return APIConstants.TurkeyID
     }
 
@@ -112,7 +112,7 @@ class NewDirectVisaViewModel {
         } else if unValidPassCount {
             passangersCount.onNext(nil)
             return false
-        } else if visaRequestData.relation_with_travelers == nil && (passCount > 1) {
+        } else if visaRequestData.relation_with_travelers == nil, passCount > 1 {
             selectedRelation.onNext(nil)
             return false
         }
@@ -121,16 +121,15 @@ class NewDirectVisaViewModel {
 
     var unValidPassCount: Bool {
         return visaRequestData.no_of_child == nil && visaRequestData.no_of_adult == nil && visaRequestData.country_id != turkeyCountryId
-            
-        
     }
-    var passCount:Int{
+
+    var passCount: Int {
         let adults = (Int(visaRequestData.no_of_adult ?? "0") ?? 0)
         let childs = (Int(visaRequestData.no_of_child ?? "0") ?? 0)
         return childs + adults
     }
+
     func submitVisaRequest() {
-        visaRequestData.no_of_passport = passCount.stringValue
         guard validateInputs() else {
             return
         }
@@ -224,7 +223,9 @@ class NewDirectVisaViewModel {
                 self.selectedCountryName.onNext(value.countryName)
                 // RESET dep values
                 self.selectedBio.onNext("")
+                self.selectedVisaType.onNext("")
                 self.embassyLocations = nil
+                
                 self.priceNotes = []
                 if let notes = value.price_notes {
                     self.priceNotes = notes
@@ -249,7 +250,7 @@ class NewDirectVisaViewModel {
         }
         let vc = Destination.passangersCount.controller() as! PassangersCountController
 
-        vc.info = VisaPriceParams(cid: visaRequestData.country_id, cityid: visaRequestData.biometry_loc_id ?? "0", no_of_adult: 0.stringValue, no_of_child: 0.stringValue, no_of_passport: 0.stringValue, promo_code: 0.stringValue, visatype: visaRequestData.visatype)
+        vc.info = VisaPriceParams(cid: visaRequestData.country_id, cityid: visaRequestData.biometry_loc_id ?? "0", no_of_adult: visaRequestData.no_of_adult ?? "0", no_of_child: visaRequestData.no_of_child ?? "0", no_of_passport: visaRequestData.no_of_passport ?? "0", promo_code: 0.stringValue, visatype: visaRequestData.visatype)
 
         vc.result.asObservable().subscribe { event in
             switch event.event {
@@ -257,9 +258,13 @@ class NewDirectVisaViewModel {
                 self.passangersCount.onNext(value)
                 self.visaRequestData.no_of_adult = "\(value.0)"
                 self.visaRequestData.no_of_child = "\(value.1)"
+//                if (self.selectedCountry?.country_id ?? "-1") == APIConstants.TurkeyID {
+                    self.visaRequestData.no_of_passport = self.passCount.stringValue
+//                }
                 self.totalCost.onNext(value.2.priced)
 
                 self.visaRequestData.totalCost = value.2
+                
             default:
                 break
             }

@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import UIKit
 import RxSwift
+import UIKit
 
 // Validation
 extension PassangerFormController {
@@ -19,10 +19,10 @@ extension PassangerFormController {
         if !isValidateFamilySectionTextFields() {
             return false
         }
-        
+
         return true
     }
-    
+
     func isValidateFamilySectionTextFields() -> Bool {
         if params.mothersFirstName.isValidText {
             firstNameMotherLbl.setError.onNext(false)
@@ -36,10 +36,10 @@ extension PassangerFormController {
             familyNamePInfoLbl.setError.onNext(true)
             return false
         }
-        
+
         return true
     }
-    
+
     func isValidatePersonalSectionTextFields() -> Bool {
         if params.firstName.isValidText {
             firstNamePInfoLbl.setError.onNext(false)
@@ -67,11 +67,13 @@ extension PassangerFormController {
                 return false
             }
         }
-        if params.familyIDCopy.isValidText {
-            familyIDPInfoLbl.setError.onNext(false)
-        } else {
-            familyIDPInfoLbl.setError.onNext(true)
-            return false
+        if !isTravelWithFamilyView.isHidden {
+            if params.familyIDCopy.isValidText {
+                familyIDPInfoLbl.setError.onNext(false)
+            } else {
+                familyIDPInfoLbl.setError.onNext(true)
+                return false
+            }
         }
         if params.passportCopy.isValidText {
             passportImageField.setError.onNext(false)
@@ -82,4 +84,3 @@ extension PassangerFormController {
         return true
     }
 }
-
