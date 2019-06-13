@@ -8,19 +8,11 @@
 
 import UIKit
 
-class AboutUsTableCell: UITableViewCell, TableCell {
-    static var cellId: String = "AboutUsTableCell"
+class AboutUsTableCell: UITableViewCell {
 
-    func setCellData(_: String) {}
+    @IBOutlet var iconImage: UIImageView!
+    @IBOutlet var cellTitleLabel: UILabel!
+    @IBOutlet var extensionImage: UIImageView!
+    
 
-    typealias CellDataModel = String
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
 }

@@ -106,3 +106,18 @@
 "time to get a visa" = "المدة المتوقعة لصدور التأشيرة";
 "time to get a visa desc" = "من 3 الى 15 يوم عمل من موعد التبصيم.";
 
+
+
+// More screen
+
+"about_direct_label" = "عن دايركت فيرا";
+
+// items
+"about_us_label" = "من نحن";
+"branches_label" = "الفروع";
+"banks_label" = "البنوك";
+"call_us_label" = "اتصل بنا";
+"share_label" = "مشاركة";
+"logout_label" = "تسجيل الخروح";
+"app_lang_label" = "لغة التطبيق";
+"arabic_lang_label" = "العربية";
