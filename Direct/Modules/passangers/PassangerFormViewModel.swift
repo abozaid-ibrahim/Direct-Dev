@@ -25,3 +25,6 @@ class PassangerFormViewModel {
   
 
 }
+struct Segment {
+    static let no = 0
+}

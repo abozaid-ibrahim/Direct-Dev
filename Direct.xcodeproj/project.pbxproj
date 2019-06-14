@@ -75,6 +75,8 @@
 		6C3885CD229B2B4900CA168A /* NewVisaCountriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3885CC229B2B4900CA168A /* NewVisaCountriesResponse.swift */; };
 		6C3885CF229B672600CA168A /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3885CE229B672600CA168A /* SearchViewModel.swift */; };
 		6C3885D1229B6CD700CA168A /* UIIMage + Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3885D0229B6CD700CA168A /* UIIMage + Kingfisher.swift */; };
+		6C431DD822B3C69000DD140D /* UIView + Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C431DD722B3C69000DD140D /* UIView + Helper.swift */; };
+		6C431DD922B3C90400DD140D /* PassangersInputViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C431DDB22B3C90400DD140D /* PassangersInputViewViewController.xib */; };
 		6C557557228BA52900BAE5E2 /* View+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C557556228BA52900BAE5E2 /* View+Colors.swift */; };
 		6C55756F228BAEB700BAE5E2 /* UIFont+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C55756E228BAEB700BAE5E2 /* UIFont+UIView.swift */; };
 		6C5DE7652275DA99001A9FB6 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE7642275DA99001A9FB6 /* UIView.swift */; };
@@ -198,7 +200,6 @@
 		6CF0E3772285D78900149910 /* OrderDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0E3752285D78900149910 /* OrderDetailsController.swift */; };
 		6CF0E37B2285DA8900149910 /* OrderTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0E3792285DA8900149910 /* OrderTableCell.swift */; };
 		6CF1C9B122A5DBEE0034DB39 /* PassangersInputViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF1C9AF22A5DBEE0034DB39 /* PassangersInputViewViewController.swift */; };
-		6CF1C9B222A5DBEE0034DB39 /* PassangersInputViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF1C9B022A5DBEE0034DB39 /* PassangersInputViewViewController.xib */; };
 		6CF2514622A62F1000CDA47C /* PreviousVisaTypeJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514522A62F1000CDA47C /* PreviousVisaTypeJson.swift */; };
 		6CF2514822A635E600CDA47C /* APIValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514722A635E600CDA47C /* APIValues.swift */; };
 		6CF2514A22A6374E00CDA47C /* Passagners + Dialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514922A6374D00CDA47C /* Passagners + Dialogs.swift */; };
@@ -320,6 +321,9 @@
 		6C3A62F722A5033500DD6DD8 /* Cairo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Bold.ttf"; sourceTree = "<group>"; };
 		6C3A62F822A5033500DD6DD8 /* Cairo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Light.ttf"; sourceTree = "<group>"; };
 		6C3A62F922A5033500DD6DD8 /* Cairo-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-ExtraLight.ttf"; sourceTree = "<group>"; };
+		6C431DD722B3C69000DD140D /* UIView + Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Helper.swift"; sourceTree = "<group>"; };
+		6C431DDA22B3C90400DD140D /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/PassangersInputViewViewController.xib; sourceTree = "<group>"; };
+		6C431DDC22B3D09B00DD140D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PassangersInputViewViewController.xib; sourceTree = "<group>"; };
 		6C557556228BA52900BAE5E2 /* View+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Colors.swift"; sourceTree = "<group>"; };
 		6C55756E228BAEB700BAE5E2 /* UIFont+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+UIView.swift"; sourceTree = "<group>"; };
 		6C5DE7642275DA99001A9FB6 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -449,7 +453,6 @@
 		6CF0E3752285D78900149910 /* OrderDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsController.swift; sourceTree = "<group>"; };
 		6CF0E3792285DA8900149910 /* OrderTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableCell.swift; sourceTree = "<group>"; };
 		6CF1C9AF22A5DBEE0034DB39 /* PassangersInputViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangersInputViewViewController.swift; sourceTree = "<group>"; };
-		6CF1C9B022A5DBEE0034DB39 /* PassangersInputViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PassangersInputViewViewController.xib; sourceTree = "<group>"; };
 		6CF2514522A62F1000CDA47C /* PreviousVisaTypeJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousVisaTypeJson.swift; sourceTree = "<group>"; };
 		6CF2514722A635E600CDA47C /* APIValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIValues.swift; sourceTree = "<group>"; };
 		6CF2514922A6374D00CDA47C /* Passagners + Dialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Passagners + Dialogs.swift"; sourceTree = "<group>"; };
@@ -999,7 +1002,7 @@
 			isa = PBXGroup;
 			children = (
 				6CF1C9AF22A5DBEE0034DB39 /* PassangersInputViewViewController.swift */,
-				6CF1C9B022A5DBEE0034DB39 /* PassangersInputViewViewController.xib */,
+				6C431DDB22B3C90400DD140D /* PassangersInputViewViewController.xib */,
 				6CF2514722A635E600CDA47C /* APIValues.swift */,
 				6CDB3C9922AA683D00C0165C /* InputsJsonBuilder.swift */,
 				6CF2514922A6374D00CDA47C /* Passagners + Dialogs.swift */,
@@ -1111,6 +1114,7 @@
 			isa = PBXGroup;
 			children = (
 				6C6A0C1F22ACC16F00150FF6 /* UIImage+Encoding.swift */,
+				6C431DD722B3C69000DD140D /* UIView + Helper.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1311,7 +1315,7 @@
 				6C9027CD228F95B100B41705 /* VisaRequirementTableCell.xib in Resources */,
 				6C9027D9228F95C800B41705 /* PassangersCountController.xib in Resources */,
 				6C90277C228F94D700B41705 /* NewInstituteRequestController.xib in Resources */,
-				6CF1C9B222A5DBEE0034DB39 /* PassangersInputViewViewController.xib in Resources */,
+				6C431DD922B3C90400DD140D /* PassangersInputViewViewController.xib in Resources */,
 				6C9027EB228F95EB00B41705 /* HomeCollectionSectionWrapper.xib in Resources */,
 				6C90277F228F94E000B41705 /* InstituteDetailsController.xib in Resources */,
 				6C9027A0228F955200B41705 /* PaymentBranchTableCell.xib in Resources */,
@@ -1514,6 +1518,7 @@
 				6C2CFB882277419A00D23CF4 /* SelectableTableSheet.swift in Sources */,
 				6CF3E1802271F303007488BA /* ViewControllerActionBarStyle.swift in Sources */,
 				6C5DE774227732EF001A9FB6 /* SearchViewController.swift in Sources */,
+				6C431DD822B3C69000DD140D /* UIView + Helper.swift in Sources */,
 				6CF3E1A8227254B7007488BA /* NewsCollectionViewCell.swift in Sources */,
 				39EE2ABC22A09D1400A9A501 /* Font+Helpers.swift in Sources */,
 				3992B66D22961BA800BBB7F1 /* TagView.swift in Sources */,
@@ -1655,6 +1660,15 @@
 				39EE2AD922A0BD6A00A9A501 /* en */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		6C431DDB22B3C90400DD140D /* PassangersInputViewViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C431DDA22B3C90400DD140D /* ar */,
+				6C431DDC22B3D09B00DD140D /* Base */,
+			);
+			name = PassangersInputViewViewController.xib;
 			sourceTree = "<group>";
 		};
 		6C5FDA502270816B00ABA39B /* Main.storyboard */ = {

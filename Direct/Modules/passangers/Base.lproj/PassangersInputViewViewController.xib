@@ -42,13 +42,13 @@
                         <constraint firstItem="fdg-d1-MWs" firstAttribute="top" secondItem="RiB-4K-IAb" secondAttribute="top" id="zp7-lc-UQH"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gD0-fW-O8V">
-                    <rect key="frame" x="0.0" y="92" width="414" height="40"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gD0-fW-O8V" userLabel="tabbar">
+                    <rect key="frame" x="0.0" y="84" width="414" height="40"/>
                     <subviews>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxa-Ou-Er1">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qY2-aq-TDa" userLabel="tabbar" customClass="TabBar" customModule="Direct" customModuleProvider="target">
+                                <view contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" translatesAutoresizingMaskIntoConstraints="NO" id="qY2-aq-TDa" userLabel="tabbar" customClass="TabBar" customModule="Direct" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
@@ -75,7 +75,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7mX-0p-wxc">
-                    <rect key="frame" x="0.0" y="144" width="414" height="730"/>
+                    <rect key="frame" x="0.0" y="136" width="414" height="738"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
@@ -90,7 +90,7 @@
                 <constraint firstItem="7mX-0p-wxc" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="12" id="3Ad-Zu-QW6"/>
                 <constraint firstItem="gD0-fW-O8V" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="77s-TI-4hT"/>
                 <constraint firstAttribute="trailing" secondItem="gD0-fW-O8V" secondAttribute="trailing" id="8iB-3B-SD9"/>
-                <constraint firstItem="gD0-fW-O8V" firstAttribute="top" secondItem="RiB-4K-IAb" secondAttribute="bottom" constant="8" id="UVI-Uc-Pck"/>
+                <constraint firstItem="gD0-fW-O8V" firstAttribute="top" secondItem="RiB-4K-IAb" secondAttribute="bottom" id="UVI-Uc-Pck"/>
                 <constraint firstItem="RiB-4K-IAb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="VUt-V4-nul"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RiB-4K-IAb" secondAttribute="trailing" id="X0z-jR-QEP"/>
                 <constraint firstItem="7mX-0p-wxc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tvk-P2-VyE"/>

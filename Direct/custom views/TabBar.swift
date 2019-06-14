@@ -19,6 +19,8 @@ class TabBar: UIView {
         stack.distribution = .fillEqually
         stack.axis = .horizontal
         stack.spacing = 10
+        stack.semanticContentAttribute = .forceRightToLeft
+
         return stack
     }()
 

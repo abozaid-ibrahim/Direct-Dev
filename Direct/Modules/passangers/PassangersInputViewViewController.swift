@@ -24,47 +24,53 @@ class PassangersInputViewViewController: UIViewController {
         super.viewDidLoad()
         title = "معلومات المسافرين"
         guard let info = visaInfo else { return }
-        if let type = info.visatypeText {
-            headerLbl.text = "\(info.countryName!)-\(type)-\(info.no_of_passport!) \("passangers".localized)"
-        }
+        setHeader(info)
         headerLbl.setYellowGradient()
         setupTabbar(info)
     }
 
+    private func setHeader(_ info: VisaRequestParams) {
+        if let type = info.visatypeText {
+            headerLbl.text = "\(info.countryName!)-\(type)-\(info.no_of_passport!) \("passangers".localized)"
+        }
+    }
+
     var tabs: [(TAB, PassangerFormController)] = []
+    private func addTabItemAndController(_ placeholder: String, _ info: VisaRequestParams, index: Int) {
+        let tabController = PassangerFormController()
+        tabController.countryName = info.countryName
+        tabController.countryId = info.country_id
+        tabController.index = index
+
+        let tabView = (placeholder.localized + " " + "\(index + 1)", { [weak self] in
+            self?.selectTab(index, tabController)
+        })
+
+        tabController.successIndex.subscribe(onNext: { [unowned self] value in
+            self.successInputIndexes.append(value)
+            if !self.selectNextTab() {
+                try! AppNavigator().push(.successVisaReqScreen(nil))
+            }
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        tabs.append((tabView, tabController))
+    }
+
     private func setupTabbar(_ info: VisaRequestParams) {
         for index in 0 ..< Int(info.no_of_adult)! {
-            let tabController = PassangerFormController()
-            tabController.countryName = info.countryName
-            tabController.countryId = info.country_id
-            tabController.index = index
-
-            let tabView = ("adult".localized + " " + "\(index + 1)", { [weak self] in
-                self?.selectTab(index, tabController)
-            })
-
-            tabController.successIndex.subscribe(onNext: { [unowned self] value in
-                self.successInputIndexes.append(value)
-                if !self.selectNextTab() {
-                    try! AppNavigator().push(.successVisaReqScreen(nil))
-                }
-            }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
-            tabs.append((tabView, tabController))
+            addTabItemAndController("adult", info, index: index)
         }
         for index in 0 ..< Int(info.no_of_child)! {
-            let tab1VC = PassangerFormController()
-            let tab1 = ("child".localized + " " + "\(index + 1)", { [weak self] in
-                self?.selectTab(index, tab1VC)
-            })
-            tabs.append((tab1, tab1VC))
+            addTabItemAndController("child", info, index: index)
         }
-        tabbarWidthConstrain.constant = CGFloat(tabs.count * 100)
         tabbar = TabBar(tabs: tabs.map { $0.0 })
         tabbar.tabsIcon.forEach { $0.image = #imageLiteral(resourceName: "rightGreen") }
         tabbarView.addSubview(tabbar)
+//        tabbarWidthConstrain.constant = CGFloat(tabs.count * 100)
+
         tabbar.frame = tabbarView.bounds
         tabbar.snp.makeConstraints { make in
-            make.top.leading.trailing.bottom.equalToSuperview()
+            make.top.trailing.bottom.equalToSuperview()
+            make.width.equalTo(CGFloat(tabs.count * 100))
         }
         defaultTabSelection.startWith(0).subscribe(onNext: { [unowned self] value in
             self.selectTab(value, self.tabs[value].1)

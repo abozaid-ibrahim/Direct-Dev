@@ -71,7 +71,8 @@ extension VisaRequirementController {
                 // set header data
                 self.headerIconView.setImage(url: obj.flagURL ?? "")
                 self.countryNameLbl.text = obj.name
-                self.descLbl.text = ""
+                self.descLbl.text =  self.visaData?.visatypeText
+
             }
 
             Progress.hide()
