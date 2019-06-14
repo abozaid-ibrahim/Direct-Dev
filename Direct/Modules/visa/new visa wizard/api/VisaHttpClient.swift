@@ -83,9 +83,9 @@ extension ApiClientFacade {
         }
     }
 
-    func applyToUKVisa(params: USRequestParams) -> Observable<USVvisaRequestJSONResponse> {
+    func applyToVisa(path:String,params: USRequestParams) -> Observable<USVvisaRequestJSONResponse> {
         return Observable<USVvisaRequestJSONResponse>.create { (observer) -> Disposable in
-            self.visaProvider.rx.request(VisaAPIs.applyToUK(params)).subscribe { [weak self] event in
+            self.visaProvider.rx.request(VisaAPIs.applyToVisa(path: path, params)).subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
             }.disposed(by: self.disposeBag)
             return Disposables.create()

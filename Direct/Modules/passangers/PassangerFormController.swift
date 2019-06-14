@@ -92,6 +92,7 @@ class PassangerFormController: UIViewController, ImagePicker {
     let questionsVC = PassangersQuestionsStepVC()
     private func addEverTraveledView() {
         addChild(questionsVC)
+        questionsVC.countryText = countryString
         everTraveledBeforeView.addSubview(questionsVC.view)
         questionsVC.view.frame = everTraveledBeforeView.bounds
         questionsVC.selectedDuration.filter { $0?.id != nil }.subscribe(onNext: { [unowned self] value in
@@ -152,32 +153,32 @@ class PassangerFormController: UIViewController, ImagePicker {
     private var countryString: String {
         return countryName ?? ""
     }
-    private func onRecieveImageCallback(){
-    
-    receivedImage.filter { $0.0 != nil }.subscribe(onNext: { [unowned self] value in
-    if self.currentImageID == self.familyImageID {
-    self.params.familyIDCopy = value.1?.convertImageToBase64String()
-    self.familyIDPInfoLbl.text = value.0
-    
-    } else if self.currentImageID == self.visaImageID {
-    self.params.visaReqID = value.1?.convertImageToBase64String()
-    self.previousVisaImageField.text = value.0
-    } else if self.currentImageID == self.passportImageID {
-    self.params.passportCopy = value.1?.convertImageToBase64String()
-    self.passportImageField.text = value.0
-    } else if self.currentImageID == self.personalPhotoID {
-    self.params.personalPhotoCopy = value.1?.convertImageToBase64String()
-    self.personalPhotoField.text = value.0
+
+    private func onRecieveImageCallback() {
+        receivedImage.filter { $0.0 != nil }.subscribe(onNext: { [unowned self] value in
+            if self.currentImageID == self.familyImageID {
+                self.params.familyIDCopy = value.1?.convertImageToBase64String()
+                self.familyIDPInfoLbl.text = value.0
+
+            } else if self.currentImageID == self.visaImageID {
+                self.params.visaReqID = value.1?.convertImageToBase64String()
+                self.previousVisaImageField.text = value.0
+            } else if self.currentImageID == self.passportImageID {
+                self.params.passportCopy = value.1?.convertImageToBase64String()
+                self.passportImageField.text = value.0
+            } else if self.currentImageID == self.personalPhotoID {
+                self.params.personalPhotoCopy = value.1?.convertImageToBase64String()
+                self.personalPhotoField.text = value.0
+            }
+
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
-    
-    }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
-    }
-    
+
     private func questionsSetup() {
         // ever you travedled
         previousVisaLbl.text = "هل سبق وحصلت على تأشيرة " + countryString + " من قبل؟"
-        relativeInCountryLbl.text = "هل لديك اى اقارب فى " + countryString + "?"
-        visaCancelationLbl.text = "هل تم رض دخولك أو الغاء تأشيرتك الى " + countryString + " من قبل؟"
+        relativeInCountryLbl.text = "هل لديك اى اقارب فى " + countryString + "؟"
+        visaCancelationLbl.text = "هل تم رفض دخولك أو الغاء تأشيرتك الى " + countryString + " من قبل؟"
         previousVisaImageField.neverShowKeypad()
         previousVisaImageField.rx.tapGesture().when(.recognized)
             .subscribe { _ in
@@ -273,16 +274,11 @@ class PassangerFormController: UIViewController, ImagePicker {
         guard isValidateTextFields() else {
             return
         }
-        let id = countryId
         Progress.show()
-
-        if id == APIConstants.USID {
-            sendDataToServer(network.applyToUSVisa(params: params))
-        } else if id == APIConstants.UKID {
-            sendDataToServer(network.applyToUKVisa(params: params))
-        } else {
-            sendDataToServer(network.applyToUSVisa(params: params))
+        guard let cnt  = CountriesIDs(rawValue: countryId.intValue) else {
+            return
         }
+        sendDataToServer(network.applyToVisa(path: cnt.endPointPath, params: params))
     }
 
     func sendDataToServer(_ api: Observable<USVvisaRequestJSONResponse>) {
@@ -295,4 +291,3 @@ class PassangerFormController: UIViewController, ImagePicker {
             }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 }
-

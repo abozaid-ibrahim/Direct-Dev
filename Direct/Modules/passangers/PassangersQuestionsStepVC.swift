@@ -30,6 +30,7 @@ class PassangersQuestionsStepVC: UIViewController {
         return everYouTraveledSegment.selectedSegmentIndex
     }
 
+    var countryText: String?
     var travel_date: String?
     var haveLicense: Int {
         return licenceSegment.selectedSegmentIndex
@@ -64,7 +65,8 @@ class PassangersQuestionsStepVC: UIViewController {
     }
 
     private func setupUI() {
-        licenceSegment.appFont()
+        everYouTraveledLbl.text = "Ever you traveled to".localized + " \( countryText!) " + "Before".localized
+            licenceSegment.appFont()
         everYouTraveledSegment.appFont()
         arrivalDateField.neverShowKeypad()
         durationField.neverShowKeypad()

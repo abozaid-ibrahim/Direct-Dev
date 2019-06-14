@@ -62,6 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             x.no_of_adult = "1"
             x.country_id = "1"
             x.no_of_child = "1"
+            x.countryName = "امريكا"
             try? AppNavigator().push(.passangersInfoScreen(x))
         }
     }

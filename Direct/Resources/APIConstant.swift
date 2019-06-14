@@ -14,15 +14,15 @@ enum APIConstant: String {
 
 enum CountriesIDs: Int {
     case US = 1,
-        GB = 2,
-        SGN = 3,
-        IN = 4,
-        CN = 5,
-        JP = 6,
-        IE = 7,
-        TR = 8
-
-    var endPointPath: String {
+ GB = 2,
+   SGN = 3,
+    IN = 4,
+    CN = 5,
+    JP = 6,
+    IE = 7,
+    TR = 8
+    
+    var endPointPath:String{
         switch self {
         case .US:
             return "to-apply-us"
@@ -42,4 +42,5 @@ enum CountriesIDs: Int {
             return "to-apply-tr"
         }
     }
+    
 }
