@@ -81,6 +81,12 @@ extension PassangerFormController {
             passportImageField.setError.onNext(true)
             return false
         }
+        if params.personalPhotoCopy.isValidText {
+            personalPhotoField.setError.onNext(false)
+        } else {
+            personalPhotoField.setError.onNext(true)
+            return false
+        }
         return true
     }
 }
