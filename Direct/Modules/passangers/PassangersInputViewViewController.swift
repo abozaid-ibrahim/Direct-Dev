@@ -21,7 +21,7 @@ class PassangersInputViewViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "معلومات المسافرين"
+        title = Str.passangersInfo
         guard let info = visaInfo else { return }
         setHeader(info)
         headerLbl.setYellowGradient()
@@ -34,14 +34,15 @@ class PassangersInputViewViewController: UIViewController {
         }
     }
 
-    var tabs: [(TAB, PassangerFormController)] = []
+    var tabs: [(TAB,vc: PassangerFormController)] = []
     private func addTabItemAndController(_ placeholder: String, _ info: VisaRequestParams, index: Int) {
         let tabController = PassangerFormController()
         tabController.countryName = info.countryName
         tabController.countryId = info.country_id
         tabController.index = index
 
-        let tabView = (placeholder.localized + " " + "\(index + 1)", { [weak self] in
+        
+        let tabView = (placeholder + " " + "\(index + 1)", { [weak self] in
             self?.selectTab(index, tabController)
         })
 
@@ -51,15 +52,16 @@ class PassangersInputViewViewController: UIViewController {
                 try! AppNavigator().push(.successVisaReqScreen(nil))
             }
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        tabController.view.tag = index
         tabs.append((tabView, tabController))
     }
 
     private func setupTabbar(_ info: VisaRequestParams) {
         for index in 0 ..< Int(info.no_of_adult)! {
-            addTabItemAndController("adult", info, index: index)
+            addTabItemAndController(Str.adult, info, index: index)
         }
         for index in 0 ..< Int(info.no_of_child)! {
-            addTabItemAndController("child", info, index: index)
+            addTabItemAndController(Str.child, info, index: index)
         }
         tabbar = TabBar(tabs: tabs.map { $0.0 })
         tabbar.tabsIcon.forEach { $0.image = #imageLiteral(resourceName: "rightGreen") }
@@ -86,15 +88,20 @@ class PassangersInputViewViewController: UIViewController {
         return false
     }
 
-    private func selectTab(_ index: Int, _ tab1VC: PassangerFormController) {
-        if !containerView.subviews.contains(tab1VC.view) {
-            addChild(tab1VC)
-            containerView.addSubview(tab1VC.view)
-            tab1VC.view.sameBoundsTo(parentView: containerView)
+    private func selectTab(_ index: Int, _ tabController: PassangerFormController) {
+        if !containerView.subviews.contains(tabController.view) {
+            addChild(tabController)
+            containerView.addSubview(tabController.view)
+            tabController.view.sameBoundsTo(parentView: containerView)
         }
 
         for (i, item) in tabs.enumerated() {
+            print("hideing> \(i)\(i == index)")
             item.1.view.isHidden = index == i ? false : true
+        }
+        
+        for vIndex in 0..<containerView.subviews.count{
+            containerView.subviews[vIndex].isHidden = index == vIndex ? false : true
         }
         tabbar.didSelectTab(index: index)
     }

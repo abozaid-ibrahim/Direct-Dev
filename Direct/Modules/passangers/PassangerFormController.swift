@@ -176,9 +176,9 @@ class PassangerFormController: UIViewController, ImagePicker {
 
     private func questionsSetup() {
         // ever you travedled
-        previousVisaLbl.text = "هل سبق وحصلت على تأشيرة " + countryString + " من قبل؟"
+        previousVisaLbl.text = "هل سبق وحصلت على تأشيرة " + countryString + Str.before
         relativeInCountryLbl.text = "هل لديك اى اقارب فى " + countryString + "؟"
-        visaCancelationLbl.text = "هل تم رفض دخولك أو الغاء تأشيرتك الى " + countryString + " من قبل؟"
+        visaCancelationLbl.text = "هل تم رفض دخولك أو الغاء تأشيرتك الى " + countryString + Str.before
         previousVisaImageField.neverShowKeypad()
         previousVisaImageField.rx.tapGesture().when(.recognized)
             .subscribe { _ in

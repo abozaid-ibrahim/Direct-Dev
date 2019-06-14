@@ -18,6 +18,7 @@ target 'Direct' do
   pod 'ARSLineProgress', '~> 3.1'
   pod 'Kingfisher', '~> 5.0'
   pod 'JBDatePicker'
+  pod 'Tabby'
 
   pod 'GenericCellControllers'
   pod 'SnapKit'
