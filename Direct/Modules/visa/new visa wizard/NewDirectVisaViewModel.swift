@@ -34,7 +34,6 @@ class NewDirectVisaViewModel {
 
     var doNotesText = PublishSubject<String?>()
     var dontNotesText = PublishSubject<String?>()
-
     var passangersCount = PublishSubject<PassangerCount?>()
     var selectedVisaType = PublishSubject<String?>()
     var selectedBio = PublishSubject<String?>()
@@ -74,7 +73,7 @@ class NewDirectVisaViewModel {
         // get relatives
         let rel = network.getVisaRelations().retry(2)
         rel.subscribe(onNext: { [weak self] bios in
-            
+
             self?.relativesList.append(contentsOf: bios.usRelatives ?? [])
         }, onError: { [weak self] _ in
             self?.showProgress.onNext(false)
@@ -91,14 +90,15 @@ class NewDirectVisaViewModel {
     }
 
     var visaRequestData = VisaRequestParams()
-    func validateForPassangersCount() -> Bool {
+    var hasBioLocation: Bool = true
+    func validateForPassangersCount(_ hasBioLocation: Bool) -> Bool {
         if visaRequestData.country_id == nil {
             selectedCountryName.onNext(nil)
             return false
         } else if visaRequestData.visatype == nil {
             selectedVisaType.onNext(nil)
             return false
-        } else if visaRequestData.biometry_loc_id == nil, visaRequestData.country_id != turkeyCountryId {
+        } else if visaRequestData.biometry_loc_id == nil, visaRequestData.country_id != turkeyCountryId, hasBioLocation {
             selectedBio.onNext(nil)
             return false
         } else if visaRequestData.travel_date == nil {
@@ -109,7 +109,7 @@ class NewDirectVisaViewModel {
     }
 
     func validateInputs() -> Bool {
-        if !validateForPassangersCount() {
+        if !validateForPassangersCount(hasBioLocation) {
             return false
         } else if unValidPassCount {
             passangersCount.onNext(nil)
@@ -198,7 +198,7 @@ class NewDirectVisaViewModel {
     }
 
     func showDatePickerDialog() {
-        let dest = Destination.datePicker(title:nil)
+        let dest = Destination.datePicker(title: nil)
         let vc = dest.controller() as! DatePickerController
         vc.selectedDate.asObservable().subscribe { event in
             switch event.event {
@@ -213,41 +213,53 @@ class NewDirectVisaViewModel {
         try! AppNavigator().presentModally(vc)
     }
 
-    private let countriesController = Destination.searchCountries.controller() as! SearchViewController
+    var hideBioLocation = PublishSubject<Bool>()
+    var countriesController: SearchViewController?
+    private func initCountriesController() {
+        if countriesController == nil {
+            countriesController = Destination.searchCountries.controller() as! SearchViewController
 
-    func showCountriesSpinner() {
-        countriesController.selectedItem.asObservable().subscribe { event in
-            switch event.event {
-            case let .next(value):
-                self.selectedCountry = value
-                self.visaRequestData.country_id = value.country_id!
-                self.visaRequestData.countryName = value.countryName
-                self.selectedCountryName.onNext(value.countryName)
-                // RESET dep values
-                self.selectedBio.onNext("")
-                self.selectedVisaType.onNext("")
-                self.embassyLocations = nil
+            countriesController?.selectedItem.subscribe { event in
+                switch event.event {
+                case let .next(value):
+                    self.selectedCountry = value
+                    self.visaRequestData.country_id = value.country_id!
+                    self.visaRequestData.countryName = value.countryName
+                    self.selectedCountryName.onNext(value.countryName)
+                    // RESET dep values
+                    self.selectedBio.onNext("")
+                    self.selectedVisaType.onNext("")
+                    self.embassyLocations = nil
+                    self.hideBioLocation.onNext(true)
 
-                self.priceNotes = []
-                if let notes = value.price_notes {
-                    self.priceNotes = notes
+                    self.priceNotes = []
+                    if let notes = value.price_notes {
+                        self.priceNotes = notes
+                    }
+
+                    let cities = self.network?.getCities(country: value.country_id!).share()
+                    cities?.subscribe(onNext: { [weak self] cities in
+                        print("xx\(cities.dtEmbassyLocations.isNilOrEmpty)")
+                        self?.embassyLocations = cities.dtEmbassyLocations
+                        self?.hideBioLocation.onNext(cities.dtEmbassyLocations.isNilOrEmpty)
+                        self?.hasBioLocation = cities.dtEmbassyLocations.isNilOrEmpty
+                    }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: self.disposeBag)
+
+                default:
+                    break
                 }
 
-                let cities = self.network?.getCities(country: value.country_id!)
-                cities?.subscribe(onNext: { [weak self] cities in
-                    self?.embassyLocations = cities.dtEmbassyLocations
-                }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: self.disposeBag)
+            }.disposed(by: disposeBag)
+        }
+    }
 
-            default:
-                break
-            }
-
-        }.disposed(by: disposeBag)
-        try! AppNavigator().presentModally(countriesController)
+    func showCountriesSpinner() {
+        initCountriesController()
+        try! AppNavigator().presentModally(countriesController!)
     }
 
     func showPasangersCountSpinner() {
-        guard validateForPassangersCount() else {
+        guard validateForPassangersCount(hasBioLocation) else {
             return
         }
         let vc = Destination.passangersCount.controller() as! PassangersCountController

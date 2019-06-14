@@ -84,6 +84,7 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
         viewModel.selectedCountryName.bind(to: countryField.text).disposed(by: disposeBag)
         viewModel.passangersCount.map { $0 == nil ? nil : "\($0!.0 + $0!.1)" }.bind(to: passangersCountField.text).disposed(by: disposeBag)
         viewModel.selectedBio.bind(to: biometricField.text).disposed(by: disposeBag)
+        viewModel.hideBioLocation.debug().bind(to: biometricField.rx.isHidden).disposed(by: disposeBag)
         viewModel.selectedRelation.bind(to: relationsField.text).disposed(by: disposeBag)
         viewModel.selectedVisaType.bind(to: visaField.text).disposed(by: disposeBag)
         viewModel.selectedDate.map { $0?.displayFormat }.bind(to: dateField.text).disposed(by: disposeBag)
