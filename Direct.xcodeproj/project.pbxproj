@@ -322,8 +322,8 @@
 		6C3A62F822A5033500DD6DD8 /* Cairo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Light.ttf"; sourceTree = "<group>"; };
 		6C3A62F922A5033500DD6DD8 /* Cairo-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-ExtraLight.ttf"; sourceTree = "<group>"; };
 		6C431DD722B3C69000DD140D /* UIView + Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Helper.swift"; sourceTree = "<group>"; };
-		6C431DDA22B3C90400DD140D /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/PassangersInputViewViewController.xib; sourceTree = "<group>"; };
 		6C431DDC22B3D09B00DD140D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PassangersInputViewViewController.xib; sourceTree = "<group>"; };
+		6C431DDE22B3F10800DD140D /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/PassangersInputViewViewController.strings; sourceTree = "<group>"; };
 		6C557556228BA52900BAE5E2 /* View+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Colors.swift"; sourceTree = "<group>"; };
 		6C55756E228BAEB700BAE5E2 /* UIFont+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+UIView.swift"; sourceTree = "<group>"; };
 		6C5DE7642275DA99001A9FB6 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -1665,8 +1665,8 @@
 		6C431DDB22B3C90400DD140D /* PassangersInputViewViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6C431DDA22B3C90400DD140D /* ar */,
 				6C431DDC22B3D09B00DD140D /* Base */,
+				6C431DDE22B3F10800DD140D /* ar */,
 			);
 			name = PassangersInputViewViewController.xib;
 			sourceTree = "<group>";

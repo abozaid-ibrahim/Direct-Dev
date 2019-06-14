@@ -14,8 +14,7 @@
             <connections>
                 <outlet property="containerView" destination="7mX-0p-wxc" id="dEu-JH-lBR"/>
                 <outlet property="headerLbl" destination="fdg-d1-MWs" id="fif-qO-7Wu"/>
-                <outlet property="tabbarView" destination="qY2-aq-TDa" id="9MU-Zf-lmd"/>
-                <outlet property="tabbarWidthConstrain" destination="WwR-Wc-UFA" id="cLd-fy-3BQ"/>
+                <outlet property="tabbarContainer" destination="yxa-Ou-Er1" id="WpG-rN-i8v"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -47,22 +46,6 @@
                     <subviews>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxa-Ou-Er1">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" translatesAutoresizingMaskIntoConstraints="NO" id="qY2-aq-TDa" userLabel="tabbar" customClass="TabBar" customModule="Direct" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="40" id="KQU-wS-ODk"/>
-                                        <constraint firstAttribute="width" constant="414" id="WwR-Wc-UFA"/>
-                                    </constraints>
-                                </view>
-                            </subviews>
-                            <constraints>
-                                <constraint firstItem="qY2-aq-TDa" firstAttribute="leading" secondItem="yxa-Ou-Er1" secondAttribute="leading" id="Agt-ut-pkj"/>
-                                <constraint firstItem="qY2-aq-TDa" firstAttribute="top" secondItem="yxa-Ou-Er1" secondAttribute="top" id="Yxw-Zh-rUW"/>
-                                <constraint firstAttribute="bottom" secondItem="qY2-aq-TDa" secondAttribute="bottom" id="eat-tA-H4v"/>
-                                <constraint firstAttribute="trailing" secondItem="qY2-aq-TDa" secondAttribute="trailing" id="qsO-Wh-vir"/>
-                            </constraints>
                         </scrollView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

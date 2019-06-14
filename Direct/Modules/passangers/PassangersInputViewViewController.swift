@@ -11,8 +11,7 @@ import UIKit
 
 class PassangersInputViewViewController: UIViewController {
     @IBOutlet private var containerView: UIView!
-    @IBOutlet private var tabbarView: UIView!
-    @IBOutlet private var tabbarWidthConstrain: NSLayoutConstraint!
+    @IBOutlet private var tabbarContainer: UIScrollView!
     @IBOutlet var headerLbl: UILabel!
     var tabbar: TabBar!
     var visaInfo: VisaRequestParams?
@@ -64,12 +63,9 @@ class PassangersInputViewViewController: UIViewController {
         }
         tabbar = TabBar(tabs: tabs.map { $0.0 })
         tabbar.tabsIcon.forEach { $0.image = #imageLiteral(resourceName: "rightGreen") }
-        tabbarView.addSubview(tabbar)
-//        tabbarWidthConstrain.constant = CGFloat(tabs.count * 100)
-
-        tabbar.frame = tabbarView.bounds
+        tabbarContainer.addSubview(tabbar)
         tabbar.snp.makeConstraints { make in
-            make.top.trailing.bottom.equalToSuperview()
+            make.leading.top.trailing.bottom.equalToSuperview()
             make.width.equalTo(CGFloat(tabs.count * 100))
         }
         defaultTabSelection.startWith(0).subscribe(onNext: { [unowned self] value in
