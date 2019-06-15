@@ -232,7 +232,7 @@ class PassangerFormController: UIViewController {
     var params = USRequestParams()
     private let network = ApiClientFacade()
     var hasMotherView:Bool{
-       return (formTypeValue == .US) || (formTypeValue == .IN)
+       return (formTypeValue == .US) || (formTypeValue == .IN) || (formTypeValue == CountriesIDs.GB) || (formTypeValue == CountriesIDs.TR)
     }
     func submit() {
         fillParams()

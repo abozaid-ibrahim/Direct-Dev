@@ -38,6 +38,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
         switch type {
         case .US , CountriesIDs.GB:
             return isValidatePersonalSectionTextFields()
+
         default:
             return validateNameAndIdentity()
         }
@@ -80,21 +81,25 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
         case .US, .GB: // BR
             print("show all items")
         case .SGN:
-            hideAllExceptNameAndPass()
+            hideAllExcepSelfIdentity()
         case .IN:
-            hideAllExceptNameAndPass()
+            hideAllExcepSelfIdentity()
         case .CN:
-            hideAllExceptNameAndPass()
+            hideAllExcepSelfIdentity()
         case .JP:
-            hideAllExceptNameAndPass()
+            hideAllExcepSelfIdentity()
         case .IE:
-            hideAllExceptNameAndPass()
+            hideIsHusbendWillTravelWithYou()
         case .TR:
-            hideAllExceptNameAndPass()
+            hideAllExcepSelfIdentity()
         }
     }
     
-    private func hideAllExceptNameAndPass() {
+    private func hideIsHusbendWillTravelWithYou() {
+        isHusbandWillTravelView.isHidden = true
+        contentHeight.onNext(neededHeight)
+    }
+    private func hideAllExcepSelfIdentity() {
         isHusbandWillTravelView.isHidden = true
         familyIDView.isHidden = true
         martialStateView.isHidden = true
