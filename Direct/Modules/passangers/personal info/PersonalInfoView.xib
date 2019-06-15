@@ -367,8 +367,11 @@
                 <outlet property="firstNamePInfoField" destination="e1n-W9-thR" id="dIE-Jt-tRL"/>
                 <outlet property="husbundPInfoField" destination="oes-je-8Ko" id="bIJ-U2-wq4"/>
                 <outlet property="isHusbandWillTravelView" destination="oOd-O7-Hlg" id="TRn-Z9-JNP"/>
+                <outlet property="martialStateView" destination="xrN-zc-62G" id="dgc-Fb-U3q"/>
                 <outlet property="passportImageField" destination="lc8-ck-Qdw" id="vhW-a3-zH9"/>
+                <outlet property="passportView" destination="kWx-uS-I4g" id="bcQ-or-FWH"/>
                 <outlet property="personalPhotoField" destination="DyA-wb-Oiy" id="44B-TK-psj"/>
+                <outlet property="personalPictureView" destination="83a-Ct-bFk" id="6Mr-kj-vBe"/>
                 <outlet property="statusPInfoField" destination="eFd-nH-Ymd" id="b8K-1F-SfA"/>
             </connections>
             <point key="canvasLocation" x="131.15942028985509" y="19.419642857142858"/>

@@ -31,6 +31,8 @@ class VisaRequestParams {
         biometry_loc: String?,
         visatypeText: String?,
         relation_with_travelersText: String?
+    var form_type:String?
+    
 }
 
 struct VisaPriceParams {

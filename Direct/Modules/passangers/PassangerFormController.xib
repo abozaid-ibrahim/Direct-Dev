@@ -38,7 +38,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentInsetAdjustmentBehavior="never" maximumZoomScale="1.01" translatesAutoresizingMaskIntoConstraints="NO" id="hSo-I5-dPz">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" bounces="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" maximumZoomScale="1.01" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSo-I5-dPz">
                     <rect key="frame" x="10.5" y="0.0" width="393" height="1500"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2xs-CW-hrx" userLabel="conent">
@@ -436,6 +436,7 @@
                         <constraint firstItem="2xs-CW-hrx" firstAttribute="top" secondItem="hSo-I5-dPz" secondAttribute="top" id="VP9-zy-ilI"/>
                         <constraint firstAttribute="bottom" secondItem="2xs-CW-hrx" secondAttribute="bottom" constant="80" id="Z1h-qv-nvK"/>
                         <constraint firstItem="2xs-CW-hrx" firstAttribute="leading" secondItem="hSo-I5-dPz" secondAttribute="leading" constant="10" id="adK-Ad-zYg"/>
+                        <constraint firstItem="2xs-CW-hrx" firstAttribute="width" secondItem="hSo-I5-dPz" secondAttribute="width" constant="-20" id="yDD-3Q-9mf"/>
                     </constraints>
                 </scrollView>
             </subviews>

@@ -19,8 +19,12 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     private let visaImageID = 32
     private let personalPhotoID = 35
     var receivedImage = PublishSubject<(String?, UIImage?)>()
+    var formType: CountriesIDs? {
+        didSet {
+            applyFormRules()
+        }
+    }
     
-    var formType: CountriesIDs
     internal let disposeBag = DisposeBag()
     var contentHeight = BehaviorSubject<CGFloat>(value: 300)
     func fillParams(_ prm: inout USRequestParams) {}
@@ -30,48 +34,64 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     }
     
     override init(frame: CGRect) {
-        self.formType = .US
         super.init(frame: frame)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        self.formType = .US
         super.init(coder: aDecoder)
     }
     
-    convenience init(formType: CountriesIDs) {
-        self.init(frame: CGRect.zero)
-        fromNib()
-        self.formType = formType
-    }
+//    convenience init(formType: String) {
+//        let id = CountriesIDs(formType: formType)
+//        self.init(frame: CGRect.zero)
+//        self.formString = formType
+//
+//        fromNib()
+//        self.formType = id
+//        self.formString = formType
+//
+//
+//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         pInfoSetup()
         onRecieveImageCallback()
-        applyFormRules()
     }
     
     private func applyFormRules() {
-        switch formType {
+        guard let type = formType else {
+            print("exit")
+            return
+        }
+        
+        switch type {
         case .US:
             print("donothing")
-            
-        case .GB:
-            print("donothing")
+        case .GB: // BR
+            hideAllExceptName()
         case .SGN:
-            print("donothing")
+            hideAllExceptName()
         case .IN:
-            print("donothing")
+            hideAllExceptName()
         case .CN:
-            print("donothing")
+            hideAllExceptName()
         case .JP:
-            print("donothing")
+            hideAllExceptName()
         case .IE:
-            print("donothing")
+            hideAllExceptName()
         case .TR:
-            statusPInfoField.isHidden = true
+            hideAllExceptName()
         }
+    }
+    
+    private func hideAllExceptName() {
+        isHusbandWillTravelView.isHidden = true
+        familyIDView.isHidden = true
+        martialStateView.isHidden = true
+        passportView.isHidden = true
+        personalPictureView.isHidden = true
+        contentHeight.onNext(130)
     }
     
     // Family
@@ -85,6 +105,9 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     @IBOutlet var familyIDPInfoField: FloatingTextField!
     @IBOutlet var passportImageField: FloatingTextField!
     
+    @IBOutlet var martialStateView: UIView!
+    @IBOutlet var personalPictureView: UIView!
+    @IBOutlet var passportView: UIView!
     private let dialogs = DialogBuilder()
     
     private func pInfoSetup() {

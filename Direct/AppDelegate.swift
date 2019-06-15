@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = root
         window?.makeKeyAndVisible()
         navigator = AppNavigator(root: root)
-        shortcut()
+//        shortcut()
     }
 
     private func shortcut() {
@@ -61,6 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let x = VisaRequestParams()
             x.no_of_adult = "1"
             x.country_id = "1"
+            x.form_type = "gb"
             x.no_of_child = "1"
             x.countryName = "امريكا"
             try? AppNavigator().push(.passangersInfoScreen(x))

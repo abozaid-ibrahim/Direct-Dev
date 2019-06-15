@@ -11,6 +11,6 @@ import RxSwift
 protocol PassangerInputsSection: UIView {
     var contentHeight: BehaviorSubject<CGFloat> { get set }
     func isInputsValid() -> Bool
-    var formType: CountriesIDs { get set }
+    var formType: CountriesIDs? { get set }
     var params: USRequestParams? { get set }
 }

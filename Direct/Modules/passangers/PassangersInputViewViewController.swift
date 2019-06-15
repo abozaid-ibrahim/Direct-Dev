@@ -60,6 +60,7 @@ class PassangersInputViewViewController: UIViewController {
         let tabController = PassangerFormController()
         tabController.countryName = info.countryName
         tabController.countryId = info.country_id
+        tabController.formType = info.form_type
         tabController.index = index
         let item = ViewPagerTab(title: "\(placeholder) \(1 + index )", image: #imageLiteral(resourceName: "rightGray"))
 

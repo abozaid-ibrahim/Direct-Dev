@@ -223,6 +223,8 @@ class NewDirectVisaViewModel {
                 switch event.event {
                 case let .next(value):
                     self.selectedCountry = value
+                    print("i> id \(value.country_id) form type: \(value.form_type!)")
+                    self.visaRequestData.form_type = value.form_type
                     self.visaRequestData.country_id = value.country_id!
                     self.visaRequestData.countryName = value.countryName
                     self.selectedCountryName.onNext(value.countryName)

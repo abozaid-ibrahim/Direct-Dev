@@ -20,6 +20,7 @@ class PassangerFormController: UIViewController {
     // Inject FromOutSide
     var countryName: String!
     var countryId: String!
+    var formType: String!
     var index: Int!
     var successIndex = PublishSubject<Int>()
 
@@ -28,7 +29,6 @@ class PassangerFormController: UIViewController {
     @IBOutlet private var personalInfoContainer: UIView!
     @IBOutlet private var personalInfoHeight: NSLayoutConstraint!
 
-  
     // MOTHER
     @IBOutlet var firstNameMotherLbl: FloatingTextField!
     @IBOutlet var familyNameMotherLbl: FloatingTextField!
@@ -106,9 +106,11 @@ class PassangerFormController: UIViewController {
         }, completion: nil)
     }
 
-    private lazy var personalInfoView: PersonalInfoView = PersonalInfoView(formType: .IN)
     private func pInfoSetup() {
-        personalInfoView.params = self.params
+        let personalInfoView: PersonalInfoView = PersonalInfoView.loadNib()
+        let type = CountriesIDs(formType: formType)
+        personalInfoView.formType = type
+        personalInfoView.params = params
         personalInfoContainer.addSubview(personalInfoView)
         personalInfoView.frame = personalInfoContainer.bounds
         personalInfoView.contentHeight.bind(to: personalInfoHeight.rx.constant).disposed(by: disposeBag)
