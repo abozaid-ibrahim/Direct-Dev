@@ -28,11 +28,8 @@ class PassangerFormController: UIViewController {
 
     @IBOutlet private var personalInfoContainer: UIView!
     @IBOutlet private var personalInfoHeight: NSLayoutConstraint!
-
-    // MOTHER
-    @IBOutlet var firstNameMotherLbl: FloatingTextField!
-    @IBOutlet var familyNameMotherLbl: FloatingTextField!
-    @IBOutlet var nationalityMotherLbl: FloatingTextField!
+    @IBOutlet private var motherInfoContainer: UIView!
+    @IBOutlet private var motherInfoHeight: NSLayoutConstraint!
 
     // Ever you had a vis
     @IBOutlet var everTraveledBeforeView: UIView!
@@ -57,7 +54,8 @@ class PassangerFormController: UIViewController {
     let viewModel = PassangerFormViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        pInfoSetup()
+        personalInfoSetup()
+        motherSectionSetup()
         questionsSetup()
         addPreviousCountries()
         addEverTraveledView()
@@ -66,6 +64,22 @@ class PassangerFormController: UIViewController {
         cancelReasonSwitch()
         viewModel.getRelatives()
         onRecieveImageCallback()
+    }
+
+    private func motherSectionSetup() {
+        switch formTypeValue {
+        case .US:
+            let motherView: MotherInfoView = MotherInfoView.loadNib()
+            motherView.formType = formTypeValue
+            motherView.params = params
+            motherInfoContainer.addSubview(motherView)
+            motherView.frame = motherInfoContainer.bounds
+            motherView.contentHeight.bind(to: motherInfoHeight.rx.constant).disposed(by: disposeBag)
+        default:
+            print("hide this section")
+            motherInfoHeight.constant = 0
+            motherInfoContainer.isHidden = true
+        }
     }
 
     private func setFonts() {
@@ -106,10 +120,13 @@ class PassangerFormController: UIViewController {
         }, completion: nil)
     }
 
-    private func pInfoSetup() {
+    var formTypeValue: CountriesIDs {
+        return CountriesIDs(formType: formType)
+    }
+
+    private func personalInfoSetup() {
         let personalInfoView: PersonalInfoView = PersonalInfoView.loadNib()
-        let type = CountriesIDs(formType: formType)
-        personalInfoView.formType = type
+        personalInfoView.formType = formTypeValue
         personalInfoView.params = params
         personalInfoContainer.addSubview(personalInfoView)
         personalInfoView.frame = personalInfoContainer.bounds
@@ -212,9 +229,6 @@ class PassangerFormController: UIViewController {
 //        params.familyIDCopy = familyIDPInfoLbl.text
 //        params.husbandOrWifeTravelWithYou = husbundPInfoLbl.text
 //        /// Mother
-        params.mothersFirstName = firstNameMotherLbl.text
-        params.mothersFamilyName = familyNameMotherLbl.text
-        params.nationality = nationalityMotherLbl.text
         // Questions
         params.everIssuedVisaBefore = "\(visaCancelationSegment.selectedSegmentIndex)"
         params.travelledBeforeHere = questionsVC.travelledBeforeHere.stringValue
@@ -237,9 +251,7 @@ class PassangerFormController: UIViewController {
     private let network = ApiClientFacade()
     func submit() {
         fillParams()
-        guard isValidateTextFields() else {
-            return
-        }
+       
         Progress.show()
         guard let cnt = CountriesIDs(rawValue: countryId.intValue) else {
             return

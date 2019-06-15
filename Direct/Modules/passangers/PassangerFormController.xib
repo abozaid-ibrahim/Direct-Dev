@@ -15,9 +15,8 @@
                 <outlet property="countriesContainerHeight" destination="f3N-a3-cd0" id="RqR-iU-2uS"/>
                 <outlet property="everHadVisaSegment" destination="8Nh-5G-xSX" id="jie-o3-1I5"/>
                 <outlet property="everTraveledBeforeView" destination="TWF-e7-GMx" id="ecz-yP-AUe"/>
-                <outlet property="familyNameMotherLbl" destination="4jh-8C-l0V" id="IQw-9H-1oh"/>
-                <outlet property="firstNameMotherLbl" destination="4jh-8C-l0V" id="YAo-KT-BvK"/>
-                <outlet property="nationalityMotherLbl" destination="Vdd-2N-Chk" id="34v-4j-Ylr"/>
+                <outlet property="motherInfoContainer" destination="o0n-mV-2My" id="PAl-da-y3C"/>
+                <outlet property="motherInfoHeight" destination="rJZ-TS-jfL" id="JjW-K6-FLj"/>
                 <outlet property="personalInfoContainer" destination="OGe-Ha-rxi" id="zCI-j7-bWS"/>
                 <outlet property="personalInfoHeight" destination="Ga8-Lf-hEz" id="dOy-Om-k6v"/>
                 <outlet property="previousVisaImageField" destination="q59-Z3-9J1" id="P2d-IO-khr"/>
@@ -64,88 +63,9 @@
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o0n-mV-2My" userLabel="mother info">
                                     <rect key="frame" x="0.0" y="417" width="373" height="166"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HDL-GG-Zvv" userLabel="p1 stack">
-                                            <rect key="frame" x="8" y="8" width="357" height="150"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="معلومات الأم" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNk-Rx-mTz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="357" height="44.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="NOh-so-Gce">
-                                                    <rect key="frame" x="0.0" y="52.5" width="357" height="45"/>
-                                                    <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4jh-8C-l0V" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="176.5" height="45"/>
-                                                            <nil key="textColor"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="إسم العائلة"/>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="إسم العائلة"/>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
-                                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="lineErrorColor">
-                                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </textField>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ACq-Wt-ap1" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
-                                                            <rect key="frame" x="180.5" y="0.0" width="176.5" height="45"/>
-                                                            <nil key="textColor"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="الاسم الاول"/>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="الاسم الاول"/>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
-                                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="lineErrorColor">
-                                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </textField>
-                                                    </subviews>
-                                                </stackView>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vdd-2N-Chk" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="105.5" width="357" height="44.5"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="الجنسية"/>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="الجنسية"/>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
-                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="lineErrorColor">
-                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </textField>
-                                            </subviews>
-                                        </stackView>
-                                    </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="HDL-GG-Zvv" secondAttribute="bottom" constant="8" id="1dA-aS-GFA"/>
-                                        <constraint firstAttribute="trailing" secondItem="HDL-GG-Zvv" secondAttribute="trailing" constant="8" id="W1s-3R-ga9"/>
-                                        <constraint firstItem="HDL-GG-Zvv" firstAttribute="leading" secondItem="o0n-mV-2My" secondAttribute="leading" constant="8" id="qf5-xL-2ha"/>
                                         <constraint firstAttribute="height" constant="166" id="rJZ-TS-jfL"/>
-                                        <constraint firstItem="HDL-GG-Zvv" firstAttribute="top" secondItem="o0n-mV-2My" secondAttribute="top" constant="8" id="wUp-n8-3kQ"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">

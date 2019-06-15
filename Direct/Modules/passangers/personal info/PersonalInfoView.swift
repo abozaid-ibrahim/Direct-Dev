@@ -30,7 +30,17 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     func fillParams(_ prm: inout USRequestParams) {}
     
     func isInputsValid() -> Bool {
-        return true
+        guard let type = formType else {
+            print("exit")
+            return false
+        }
+        
+        switch type {
+        case .US:
+            return isValidatePersonalSectionTextFields()
+        default:
+            return validateName()
+        }
     }
     
     override init(frame: CGRect) {
@@ -40,18 +50,6 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
-//    convenience init(formType: String) {
-//        let id = CountriesIDs(formType: formType)
-//        self.init(frame: CGRect.zero)
-//        self.formString = formType
-//
-//        fromNib()
-//        self.formType = id
-//        self.formString = formType
-//
-//
-//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -92,6 +90,70 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
         passportView.isHidden = true
         personalPictureView.isHidden = true
         contentHeight.onNext(130)
+    }
+    
+    private func validateName() -> Bool {
+        guard let params = self.params else {
+            return false
+        }
+        if params.firstName.isValidText {
+            firstNamePInfoField.setError.onNext(false)
+        } else {
+            firstNamePInfoField.setError.onNext(true)
+            return false
+        }
+        if params.familyName.isValidText {
+            familyNamePInfoField.setError.onNext(false)
+        } else {
+            familyNamePInfoField.setError.onNext(true)
+            return false
+        }
+        return true
+    }
+    
+    func isValidatePersonalSectionTextFields() -> Bool {
+        guard let params = self.params else {
+            return false
+        }
+        if !validateName() {
+            return false
+        }
+        if params.martialStatus.isValidText {
+            statusPInfoField.setError.onNext(false)
+        } else {
+            statusPInfoField.setError.onNext(true)
+            return false
+        }
+        if !isHusbandWillTravelView.isHidden {
+            if husbundPInfoField.text.isValidText {
+                husbundPInfoField.setError.onNext(false)
+            } else {
+                husbundPInfoField.setError.onNext(true)
+                return false
+            }
+        }
+        
+        if !familyIDView.isHidden {
+            if params.familyIDCopy.isValidText {
+                familyIDPInfoField.setError.onNext(false)
+            } else {
+                familyIDPInfoField.setError.onNext(true)
+                return false
+            }
+        }
+        if params.passportCopy.isValidText {
+            passportImageField.setError.onNext(false)
+        } else {
+            passportImageField.setError.onNext(true)
+            return false
+        }
+        if params.personalPhotoCopy.isValidText {
+            personalPhotoField.setError.onNext(false)
+        } else {
+            personalPhotoField.setError.onNext(true)
+            return false
+        }
+        return true
     }
     
     // Family
