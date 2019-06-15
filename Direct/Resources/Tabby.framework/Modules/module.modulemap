@@ -1,4 +1,0 @@
-framework module Tabby {
-  header "Tabby-Swift.h"
-  requires objc
-}

@@ -43,7 +43,7 @@ class DSCameraHandler: NSObject {
         delegate = delegate_
     }
 
-    func getPhotoLibraryOn(_ onVC: UIViewController, canEdit: Bool) {
+    func getPhotoLibraryOn( canEdit: Bool) {
         if !isPhotoLibraryAvailable, !isSavedPhotoAlbumAvailable { return }
         let type = kUTTypeImage as String
 
@@ -68,10 +68,10 @@ class DSCameraHandler: NSObject {
 
         imagePicker.allowsEditing = canEdit
         imagePicker.delegate = delegate
-        onVC.present(imagePicker, animated: true, completion: nil)
+        try! AppNavigator().present(imagePicker)
     }
 
-    func getCameraOn(_ onVC: UIViewController, canEdit: Bool) {
+    func getCameraOn( canEdit: Bool) {
         if !isCameraAvailable { return }
         let type1 = kUTTypeImage as String
 
@@ -95,7 +95,7 @@ class DSCameraHandler: NSObject {
         imagePicker.allowsEditing = canEdit
         imagePicker.showsCameraControls = true
         imagePicker.delegate = delegate
-        onVC.present(imagePicker, animated: true, completion: nil)
+        try! AppNavigator().present(imagePicker)
     }
 }
 
@@ -104,13 +104,13 @@ extension ImagePicker {
         currentImageID = id
         let camera = DSCameraHandler(delegate_: self)
         let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        optionMenu.popoverPresentationController?.sourceView = view
+        optionMenu.popoverPresentationController?.sourceView = self
         optionMenu.setTint(color: UIColor.appMango)
         let takePhoto = UIAlertAction(title: "Take Photo".localized, style: .default) { (_: UIAlertAction!) in
-            camera.getCameraOn(self, canEdit: true)
+            camera.getCameraOn(canEdit: false)
         }
         let sharePhoto = UIAlertAction(title: "Photo Library".localized, style: .default) { (_: UIAlertAction!) in
-            camera.getPhotoLibraryOn(self, canEdit: true)
+            camera.getPhotoLibraryOn(canEdit: false)
         }
         let cancelAction = UIAlertAction(title: "Cancel".localized, style: .cancel) { (_: UIAlertAction!) in
         }
@@ -118,7 +118,7 @@ extension ImagePicker {
         optionMenu.addAction(sharePhoto)
         optionMenu.addAction(cancelAction)
 
-        present(optionMenu, animated: true, completion: nil)
+        try! AppNavigator().present(optionMenu)
     }
 
 //
@@ -135,7 +135,7 @@ extension ImagePicker {
 //    }
 }
 
-protocol ImagePicker: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+protocol ImagePicker: UIView, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     var disposeBag: DisposeBag { get }
     var currentImageID: Int { get set } //this is just flage to multi picker in same countroller
     var receivedImage: PublishSubject<(String?, UIImage?)> { get set }

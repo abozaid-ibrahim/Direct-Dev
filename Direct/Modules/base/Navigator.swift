@@ -97,7 +97,9 @@ final class AppNavigator: Navigator {
     func present(_ dest: Destination) {
         AppNavigator.rootController.present(dest.controller(), animated: true, completion: nil)
     }
-
+    func present(_ vc: UIViewController) {
+        AppNavigator.rootController.present(vc, animated: true, completion: nil)
+    }
     func presentModally(_ dest: Destination) {
         AppNavigator.rootController.presentPanModal(dest.controller() as! UIViewController & PanModalPresentable)
     }

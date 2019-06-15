@@ -9,7 +9,7 @@
 import RxSwift
 import UIKit
 
-class PassangerFormController: UIViewController, ImagePicker {
+class PassangerFormController: UIViewController {
     // ImagePicker
     var currentImageID: Int = 0
     private let familyImageID = 30
@@ -25,16 +25,10 @@ class PassangerFormController: UIViewController, ImagePicker {
 
     // MARK: IBuilder ====================================>>
 
-    // Family
-    @IBOutlet var firstNamePInfoLbl: FloatingTextField!
-    @IBOutlet var familyNamePInfoLbl: FloatingTextField!
-    @IBOutlet var personalPhotoField: FloatingTextField!
-    @IBOutlet var statusPInfoLbl: FloatingTextField!
-    @IBOutlet var isHusbandWillTravelView: UIView!
-    @IBOutlet var husbundPInfoLbl: FloatingTextField!
-    @IBOutlet var isTravelWithFamilyView: UIView!
-    @IBOutlet var familyIDPInfoLbl: FloatingTextField!
-    @IBOutlet var passportImageField: FloatingTextField!
+    @IBOutlet private var personalInfoContainer: UIView!
+    @IBOutlet private var personalInfoHeight: NSLayoutConstraint!
+
+  
     // MOTHER
     @IBOutlet var firstNameMotherLbl: FloatingTextField!
     @IBOutlet var familyNameMotherLbl: FloatingTextField!
@@ -112,42 +106,12 @@ class PassangerFormController: UIViewController, ImagePicker {
         }, completion: nil)
     }
 
+    private lazy var personalInfoView: PersonalInfoView = PersonalInfoView(formType: .IN)
     private func pInfoSetup() {
-        isTravelWithFamilyView.isHidden = true
-        isHusbandWillTravelView.isHidden = true
-        statusPInfoLbl.rx.tapGesture().when(.recognized)
-            .subscribe { _ in
-                self.showMatrialState()
-            }.disposed(by: disposeBag)
-        familyIDPInfoLbl.neverShowKeypad()
-        familyIDPInfoLbl.rx.tapGesture().when(.recognized)
-            .subscribe { _ in
-                self.showImagePicker(id: self.familyImageID)
-            }.disposed(by: disposeBag)
-
-        passportImageField.neverShowKeypad()
-        passportImageField.rx.tapGesture().when(.recognized)
-            .subscribe { _ in
-                self.showImagePicker(id: self.passportImageID)
-            }.disposed(by: disposeBag)
-        husbundPInfoLbl.rx.tapGesture().when(.recognized)
-            .subscribe { _ in
-                self.showAgreemnetDialog(callback: { [weak self] agreed in
-                    self?.params.husbandOrWifeTravelWithYou = agreed.apiValue.stringValue
-                    self?.husbundPInfoLbl.text = agreed.string
-                    if agreed.apiValue == AgreementValues.yes.apiValue {
-                        self?.isTravelWithFamilyView.isHidden = false
-                    } else {
-                        self?.isTravelWithFamilyView.isHidden = true
-                    }
-                })
-            }.disposed(by: disposeBag)
-
-        personalPhotoField.neverShowKeypad()
-        personalPhotoField.rx.tapGesture().when(.recognized)
-            .subscribe { _ in
-                self.showImagePicker(id: self.personalPhotoID)
-            }.disposed(by: disposeBag)
+        personalInfoView.params = self.params
+        personalInfoContainer.addSubview(personalInfoView)
+        personalInfoView.frame = personalInfoContainer.bounds
+        personalInfoView.contentHeight.bind(to: personalInfoHeight.rx.constant).disposed(by: disposeBag)
     }
 
     private var countryString: String {
@@ -155,23 +119,23 @@ class PassangerFormController: UIViewController, ImagePicker {
     }
 
     private func onRecieveImageCallback() {
-        receivedImage.filter { $0.0 != nil }.subscribe(onNext: { [unowned self] value in
-            if self.currentImageID == self.familyImageID {
-                self.params.familyIDCopy = value.1?.convertImageToBase64String()
-                self.familyIDPInfoLbl.text = value.0
-
-            } else if self.currentImageID == self.visaImageID {
-                self.params.visaReqID = value.1?.convertImageToBase64String()
-                self.previousVisaImageField.text = value.0
-            } else if self.currentImageID == self.passportImageID {
-                self.params.passportCopy = value.1?.convertImageToBase64String()
-                self.passportImageField.text = value.0
-            } else if self.currentImageID == self.personalPhotoID {
-                self.params.personalPhotoCopy = value.1?.convertImageToBase64String()
-                self.personalPhotoField.text = value.0
-            }
-
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+//        receivedImage.filter { $0.0 != nil }.subscribe(onNext: { [unowned self] value in
+//            if self.currentImageID == self.familyImageID {
+//                self.params.familyIDCopy = value.1?.convertImageToBase64String()
+//                self.familyIDPInfoLbl.text = value.0
+//
+//            } else if self.currentImageID == self.visaImageID {
+//                self.params.visaReqID = value.1?.convertImageToBase64String()
+//                self.previousVisaImageField.text = value.0
+//            } else if self.currentImageID == self.passportImageID {
+//                self.params.passportCopy = value.1?.convertImageToBase64String()
+//                self.passportImageField.text = value.0
+//            } else if self.currentImageID == self.personalPhotoID {
+//                self.params.personalPhotoCopy = value.1?.convertImageToBase64String()
+//                self.personalPhotoField.text = value.0
+//            }
+//
+//        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 
     private func questionsSetup() {
@@ -182,7 +146,7 @@ class PassangerFormController: UIViewController, ImagePicker {
         previousVisaImageField.neverShowKeypad()
         previousVisaImageField.rx.tapGesture().when(.recognized)
             .subscribe { _ in
-                self.showImagePicker(id: self.visaImageID)
+//                self.showImagePicker(id: self.visaImageID)
             }.disposed(by: disposeBag)
 
         relativeField.neverShowKeypad()
@@ -240,12 +204,12 @@ class PassangerFormController: UIViewController, ImagePicker {
 
     func fillParams() {
         /// Personal Info
-        params.firstName = firstNamePInfoLbl.text
-        params.familyName = familyNamePInfoLbl.text
-        params.martialStatus = statusPInfoLbl.text
-        params.familyIDCopy = familyIDPInfoLbl.text
-        params.husbandOrWifeTravelWithYou = husbundPInfoLbl.text
-        /// Mother
+//        params.firstName = firstNamePInfoLbl.text
+//        params.familyName = familyNamePInfoLbl.text
+//        params.martialStatus = statusPInfoLbl.text
+//        params.familyIDCopy = familyIDPInfoLbl.text
+//        params.husbandOrWifeTravelWithYou = husbundPInfoLbl.text
+//        /// Mother
         params.mothersFirstName = firstNameMotherLbl.text
         params.mothersFamilyName = familyNameMotherLbl.text
         params.nationality = nationalityMotherLbl.text
@@ -275,7 +239,7 @@ class PassangerFormController: UIViewController, ImagePicker {
             return
         }
         Progress.show()
-        guard let cnt  = CountriesIDs(rawValue: countryId.intValue) else {
+        guard let cnt = CountriesIDs(rawValue: countryId.intValue) else {
             return
         }
         sendDataToServer(network.applyToVisa(path: cnt.endPointPath, params: params))

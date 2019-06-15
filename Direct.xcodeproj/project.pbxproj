@@ -78,11 +78,13 @@
 		6C431DD822B3C69000DD140D /* UIView + Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C431DD722B3C69000DD140D /* UIView + Helper.swift */; };
 		6C431DD922B3C90400DD140D /* PassangersInputViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C431DDB22B3C90400DD140D /* PassangersInputViewViewController.xib */; };
 		6C431DE022B4077F00DD140D /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C431DDF22B4077F00DD140D /* Strings.swift */; };
-		6C431DE222B410D100DD140D /* Tabby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C431DE122B410D100DD140D /* Tabby.framework */; };
 		6C431DF622B51C0C00DD140D /* ViewPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C431DF222B51C0C00DD140D /* ViewPager.swift */; };
 		6C431DF722B51C0C00DD140D /* ViewPagerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C431DF322B51C0C00DD140D /* ViewPagerTabView.swift */; };
 		6C431DF822B51C0C00DD140D /* ViewPagerTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C431DF422B51C0C00DD140D /* ViewPagerTab.swift */; };
 		6C431DF922B51C0C00DD140D /* ViewPagerOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C431DF522B51C0C00DD140D /* ViewPagerOptions.swift */; };
+		6C431E0122B52DB500DD140D /* PassangerInputsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C431E0022B52DB500DD140D /* PassangerInputsSection.swift */; };
+		6C431E0322B52E8B00DD140D /* PersonalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C431E0222B52E8B00DD140D /* PersonalInfoView.swift */; };
+		6C431E0522B52E9D00DD140D /* PersonalInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C431E0422B52E9D00DD140D /* PersonalInfoView.xib */; };
 		6C557557228BA52900BAE5E2 /* View+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C557556228BA52900BAE5E2 /* View+Colors.swift */; };
 		6C55756F228BAEB700BAE5E2 /* UIFont+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C55756E228BAEB700BAE5E2 /* UIFont+UIView.swift */; };
 		6C5DE7652275DA99001A9FB6 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE7642275DA99001A9FB6 /* UIView.swift */; };
@@ -208,7 +210,7 @@
 		6CF1C9B122A5DBEE0034DB39 /* PassangersInputViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF1C9AF22A5DBEE0034DB39 /* PassangersInputViewViewController.swift */; };
 		6CF2514622A62F1000CDA47C /* PreviousVisaTypeJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514522A62F1000CDA47C /* PreviousVisaTypeJson.swift */; };
 		6CF2514822A635E600CDA47C /* APIValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514722A635E600CDA47C /* APIValues.swift */; };
-		6CF2514A22A6374E00CDA47C /* Passagners + Dialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514922A6374D00CDA47C /* Passagners + Dialogs.swift */; };
+		6CF2514A22A6374E00CDA47C /* DialogsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514922A6374D00CDA47C /* DialogsBuilder.swift */; };
 		6CF2514C22A639F600CDA47C /* PassangerFormValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514B22A639F600CDA47C /* PassangerFormValidation.swift */; };
 		6CF2514F22A6496200CDA47C /* PreviousTraveledCountriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514D22A6496200CDA47C /* PreviousTraveledCountriesController.swift */; };
 		6CF2515322A660A000CDA47C /* PassangerFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2515122A660A000CDA47C /* PassangerFormController.swift */; };
@@ -330,12 +332,14 @@
 		6C431DD722B3C69000DD140D /* UIView + Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Helper.swift"; sourceTree = "<group>"; };
 		6C431DDC22B3D09B00DD140D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PassangersInputViewViewController.xib; sourceTree = "<group>"; };
 		6C431DDF22B4077F00DD140D /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
-		6C431DE122B410D100DD140D /* Tabby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Tabby.framework; sourceTree = "<group>"; };
 		6C431DF222B51C0C00DD140D /* ViewPager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPager.swift; sourceTree = "<group>"; };
 		6C431DF322B51C0C00DD140D /* ViewPagerTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPagerTabView.swift; sourceTree = "<group>"; };
 		6C431DF422B51C0C00DD140D /* ViewPagerTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPagerTab.swift; sourceTree = "<group>"; };
 		6C431DF522B51C0C00DD140D /* ViewPagerOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPagerOptions.swift; sourceTree = "<group>"; };
 		6C431DFB22B5286600DD140D /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/PassangersInputViewViewController.strings; sourceTree = "<group>"; };
+		6C431E0022B52DB500DD140D /* PassangerInputsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangerInputsSection.swift; sourceTree = "<group>"; };
+		6C431E0222B52E8B00DD140D /* PersonalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoView.swift; sourceTree = "<group>"; };
+		6C431E0422B52E9D00DD140D /* PersonalInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalInfoView.xib; sourceTree = "<group>"; };
 		6C557556228BA52900BAE5E2 /* View+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Colors.swift"; sourceTree = "<group>"; };
 		6C55756E228BAEB700BAE5E2 /* UIFont+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+UIView.swift"; sourceTree = "<group>"; };
 		6C5DE7642275DA99001A9FB6 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -467,7 +471,7 @@
 		6CF1C9AF22A5DBEE0034DB39 /* PassangersInputViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangersInputViewViewController.swift; sourceTree = "<group>"; };
 		6CF2514522A62F1000CDA47C /* PreviousVisaTypeJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousVisaTypeJson.swift; sourceTree = "<group>"; };
 		6CF2514722A635E600CDA47C /* APIValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIValues.swift; sourceTree = "<group>"; };
-		6CF2514922A6374D00CDA47C /* Passagners + Dialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Passagners + Dialogs.swift"; sourceTree = "<group>"; };
+		6CF2514922A6374D00CDA47C /* DialogsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogsBuilder.swift; sourceTree = "<group>"; };
 		6CF2514B22A639F600CDA47C /* PassangerFormValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangerFormValidation.swift; sourceTree = "<group>"; };
 		6CF2514D22A6496200CDA47C /* PreviousTraveledCountriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousTraveledCountriesController.swift; sourceTree = "<group>"; };
 		6CF2515122A660A000CDA47C /* PassangerFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangerFormController.swift; sourceTree = "<group>"; };
@@ -506,7 +510,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6530614424650A4028841976 /* Pods_Direct.framework in Frameworks */,
-				6C431DE222B410D100DD140D /* Tabby.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -781,10 +784,18 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		6C431E0622B53A9B00DD140D /* personal info */ = {
+			isa = PBXGroup;
+			children = (
+				6C431E0222B52E8B00DD140D /* PersonalInfoView.swift */,
+				6C431E0422B52E9D00DD140D /* PersonalInfoView.xib */,
+			);
+			path = "personal info";
+			sourceTree = "<group>";
+		};
 		6C55755A228BAC3F00BAE5E2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6C431DE122B410D100DD140D /* Tabby.framework */,
 				39EE2AC922A09E7000A9A501 /* Command */,
 				39EE2AC222A09DF100A9A501 /* UIKit */,
 				6C55755B228BAC4500BAE5E2 /* fonts */,
@@ -1036,11 +1047,12 @@
 		6CC5149D227DC02900634B5D /* passangers */ = {
 			isa = PBXGroup;
 			children = (
+				6C431E0622B53A9B00DD140D /* personal info */,
 				6CF1C9AF22A5DBEE0034DB39 /* PassangersInputViewViewController.swift */,
 				6C431DDB22B3C90400DD140D /* PassangersInputViewViewController.xib */,
 				6CF2514722A635E600CDA47C /* APIValues.swift */,
 				6CDB3C9922AA683D00C0165C /* InputsJsonBuilder.swift */,
-				6CF2514922A6374D00CDA47C /* Passagners + Dialogs.swift */,
+				6CF2514922A6374D00CDA47C /* DialogsBuilder.swift */,
 				6CF2514D22A6496200CDA47C /* PreviousTraveledCountriesController.swift */,
 				6CF2514B22A639F600CDA47C /* PassangerFormValidation.swift */,
 				6CF2515122A660A000CDA47C /* PassangerFormController.swift */,
@@ -1048,6 +1060,7 @@
 				6C6F361B22AF7C660045BAC8 /* PassangersQuestionsStepVC.swift */,
 				6C6F361C22AF7C660045BAC8 /* PassangersQuestionsStepVC.xib */,
 				6CD5848122B25736005A2190 /* PassangerFormViewModel.swift */,
+				6C431E0022B52DB500DD140D /* PassangerInputsSection.swift */,
 			);
 			path = passangers;
 			sourceTree = "<group>";
@@ -1336,6 +1349,7 @@
 				6C90278E228F951700B41705 /* InstituteDetailsHeaderView.xib in Resources */,
 				6C9027C4228F95A000B41705 /* OrderDetailsController.xib in Resources */,
 				6C902794228F952500B41705 /* SponsersViewController.xib in Resources */,
+				6C431E0522B52E9D00DD140D /* PersonalInfoView.xib in Resources */,
 				6C9027B8228F958600B41705 /* CheckoutBottomView.xib in Resources */,
 				6C6A0C1022AB81F800150FF6 /* Cairo-SemiBold.ttf in Resources */,
 				6C9027C1228F959900B41705 /* OrdersHistoryController.xib in Resources */,
@@ -1496,6 +1510,7 @@
 				6CF0E3672285BB1000149910 /* SwipeUpToDismiss.swift in Sources */,
 				6C1C6062228E46ED006490CB /* PaymentMethodsContainerController.swift in Sources */,
 				6CF3E19C22725430007488BA /* VisaCollectionViewCell.swift in Sources */,
+				6C431E0322B52E8B00DD140D /* PersonalInfoView.swift in Sources */,
 				6C55756F228BAEB700BAE5E2 /* UIFont+UIView.swift in Sources */,
 				6C2CFBA322789F6100D23CF4 /* PaymentMethodTableCell.swift in Sources */,
 				6C778274227AA196001926B2 /* NewInstituteRequestController.swift in Sources */,
@@ -1534,7 +1549,7 @@
 				6C5FDA4F2270816B00ABA39B /* ViewController.swift in Sources */,
 				3992B66922961B5F00BBB7F1 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				6CF2514822A635E600CDA47C /* APIValues.swift in Sources */,
-				6CF2514A22A6374E00CDA47C /* Passagners + Dialogs.swift in Sources */,
+				6CF2514A22A6374E00CDA47C /* DialogsBuilder.swift in Sources */,
 				6C557557228BA52900BAE5E2 /* View+Colors.swift in Sources */,
 				6C5DE87A22872A1E00F900AE /* SuccessPackageController.swift in Sources */,
 				6CE722ED2274FA1B00E095DC /* VisaRequirementController.swift in Sources */,
@@ -1593,6 +1608,7 @@
 				6C2CFB962277996500D23CF4 /* SpinnerTextField.swift in Sources */,
 				6CF75E9F228BD8C900009BAB /* Progress.swift in Sources */,
 				39EE2A9A22A0984200A9A501 /* AuthCellControllerFactory.swift in Sources */,
+				6C431E0122B52DB500DD140D /* PassangerInputsSection.swift in Sources */,
 				39EE2AB522A09A0000A9A501 /* AuthTextFieldTableViewCell.swift in Sources */,
 				6C77828C227C715A001926B2 /* ImageLabel.swift in Sources */,
 				6C3885D1229B6CD700CA168A /* UIIMage + Kingfisher.swift in Sources */,

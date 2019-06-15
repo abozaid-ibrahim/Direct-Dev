@@ -43,4 +43,25 @@ enum CountriesIDs: Int {
         }
     }
     
+    var formType:String{
+        switch self {
+        case .US:
+            return "us"
+        case .GB:
+            return "gb"
+        case .SGN:
+            return "sgn"
+        case .IN:
+            return "in"
+        case .CN:
+            return "cn"
+        case .JP:
+            return "jp"
+        case .IE:
+            return "ie"
+        case .TR:
+            return "tr"
+        }
+    }
+    
 }
