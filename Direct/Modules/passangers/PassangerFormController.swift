@@ -26,8 +26,8 @@ class PassangerFormController: UIViewController {
 
     // MARK: IBuilder ====================================>>
 
-    @IBOutlet weak var visaCanceledBeforeView: UIView!
-    @IBOutlet weak var relativesView: UIView!
+    @IBOutlet var visaCanceledBeforeView: UIView!
+    @IBOutlet var relativesView: UIView!
     @IBOutlet private var personalInfoContainer: UIView!
     @IBOutlet private var personalInfoHeight: NSLayoutConstraint!
     @IBOutlet private var motherInfoContainer: UIView!
@@ -74,13 +74,13 @@ class PassangerFormController: UIViewController {
     }
 
     private func motherSectionSetup() {
-        if hasMotherView{
+        if hasMotherView {
             motherView.formType = formTypeValue
             motherView.params = params
             motherInfoContainer.addSubview(motherView)
             motherView.frame = motherInfoContainer.bounds
             motherView.contentHeight.bind(to: motherInfoHeight.rx.constant).disposed(by: disposeBag)
-        }else{
+        } else {
             print("hide this section")
             motherInfoHeight.constant = 0
             motherInfoContainer.isHidden = true
@@ -150,15 +150,22 @@ class PassangerFormController: UIViewController {
     }
 
     private func questionsSetup() {
-        if formTypeValue != .US{
-            relativesView.isHidden = true
-            visaCanceledBeforeView.isHidden = true
-            
-        }else if formTypeValue == .TR{
+        if formTypeValue == .TR {} else if formTypeValue != .US {}
+
+        switch formTypeValue {
+        case .US, .GB:
+            relativesView.isHidden = false
+            visaCanceledBeforeView.isHidden = false
+            everTraveledBeforeView.isHidden = false
+            previouslyTraveledCountriesView.isHidden = false
+        case .TR:
             relativesView.isHidden = true
             visaCanceledBeforeView.isHidden = true
             everTraveledBeforeView.isHidden = true
             previouslyTraveledCountriesView.isHidden = true
+        default:
+            relativesView.isHidden = true
+            visaCanceledBeforeView.isHidden = true
         }
         // ever you travedled
         previousVisaLbl.text = "هل سبق وحصلت على تأشيرة " + countryString + Str.before
@@ -243,15 +250,16 @@ class PassangerFormController: UIViewController {
 
     var params = USRequestParams()
     private let network = ApiClientFacade()
-    var hasMotherView:Bool{
-       return (formTypeValue == .US) || (formTypeValue == .IN) || (formTypeValue == CountriesIDs.GB) || (formTypeValue == CountriesIDs.TR)
+    var hasMotherView: Bool {
+        return (formTypeValue == .US) || (formTypeValue == .IN) || (formTypeValue == CountriesIDs.GB) || (formTypeValue == CountriesIDs.TR)
     }
+
     func submit() {
         fillParams()
         guard personalInfoView.isInputsValid() else {
             return
         }
-        if  hasMotherView{
+        if hasMotherView {
             guard motherView.isInputsValid() else {
                 return
             }
