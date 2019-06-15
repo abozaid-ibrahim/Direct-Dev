@@ -105,6 +105,9 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
         guard let params = self.params else {
             return false
         }
+        params.firstName = firstNamePInfoField.text
+        params.familyName = familyNamePInfoField.text
+        
         if params.firstName.isValidText {
             firstNamePInfoField.setError.onNext(false)
         } else {
