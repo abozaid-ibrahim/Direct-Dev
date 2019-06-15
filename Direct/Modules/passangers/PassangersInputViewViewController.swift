@@ -8,12 +8,14 @@
 
 import RxSwift
 import UIKit
-
 class PassangersInputViewViewController: UIViewController {
+    /// Description
+
+    var tabs = [(ViewPagerTab, PassangerFormController)]()
+    var pager: ViewPager?
+
     @IBOutlet private var containerView: UIView!
-    @IBOutlet private var tabbarContainer: UIScrollView!
     @IBOutlet var headerLbl: UILabel!
-    var tabbar: TabBar!
     var visaInfo: VisaRequestParams?
     var successInputIndexes: [Int] = []
     private let disposeBag = DisposeBag()
@@ -26,6 +28,26 @@ class PassangersInputViewViewController: UIViewController {
         setHeader(info)
         headerLbl.setYellowGradient()
         setupTabbar(info)
+        setupPager()
+    }
+
+    func setupPager() {
+        pager = ViewPager(viewController: self,containerView: containerView)
+
+        let options = ViewPagerOptions()
+        options.tabType = .imageWithText
+        options.distribution = .normal
+        options.tabViewBackgroundHighlightColor = UIColor.clear
+        options.tabViewBackgroundDefaultColor = UIColor.white
+        options.tabViewTextDefaultColor = .gray
+        options.tabViewTextHighlightColor = .black
+        options.tabIndicatorViewBackgroundColor = UIColor.appPumpkinOrange
+        options.viewPagerTransitionStyle = .scroll
+        options.tabViewHeight = 50
+        pager?.setOptions(options: options)
+        pager?.setDataSource(dataSource: self)
+        pager?.setDelegate(delegate: self)
+        pager?.build()
     }
 
     private func setHeader(_ info: VisaRequestParams) {
@@ -34,17 +56,12 @@ class PassangersInputViewViewController: UIViewController {
         }
     }
 
-    var tabs: [(TAB,vc: PassangerFormController)] = []
     private func addTabItemAndController(_ placeholder: String, _ info: VisaRequestParams, index: Int) {
         let tabController = PassangerFormController()
         tabController.countryName = info.countryName
         tabController.countryId = info.country_id
         tabController.index = index
-
-        
-        let tabView = (placeholder + " " + "\(index + 1)", { [weak self] in
-            self?.selectTab(index, tabController)
-        })
+        let item = ViewPagerTab(title: "\(placeholder) \(1 + index )", image: #imageLiteral(resourceName: "rightGray"))
 
         tabController.successIndex.subscribe(onNext: { [unowned self] value in
             self.successInputIndexes.append(value)
@@ -52,8 +69,7 @@ class PassangersInputViewViewController: UIViewController {
                 try! AppNavigator().push(.successVisaReqScreen(nil))
             }
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
-        tabController.view.tag = index
-        tabs.append((tabView, tabController))
+        tabs.append((item, tabController))
     }
 
     private func setupTabbar(_ info: VisaRequestParams) {
@@ -63,46 +79,52 @@ class PassangersInputViewViewController: UIViewController {
         for index in 0 ..< Int(info.no_of_child)! {
             addTabItemAndController(Str.child, info, index: index)
         }
-        tabbar = TabBar(tabs: tabs.map { $0.0 })
-        tabbar.tabsIcon.forEach { $0.image = #imageLiteral(resourceName: "rightGreen") }
-        tabbarContainer.addSubview(tabbar)
-        tabbar.snp.makeConstraints { make in
-            make.leading.top.trailing.bottom.equalToSuperview()
-            make.width.equalTo(CGFloat(tabs.count * 100))
-        }
-        defaultTabSelection.startWith(0).subscribe(onNext: { [unowned self] value in
-            self.selectTab(value, self.tabs[value].1)
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+
     }
 
     private func selectNextTab() -> Bool {
         for tab in tabs {
             let index = (tab.1.index!)
             if successInputIndexes.contains(index) {
-                tabbar.tabsIcon[index].image = #imageLiteral(resourceName: "path4")
+                tabs[index].0.image = #imageLiteral(resourceName: "path4")
             } else {
-                selectTab(index, tab.1)
+            
+                self.willMoveToControllerAtIndex(index: index)
                 return true
             }
         }
         return false
     }
 
-    private func selectTab(_ index: Int, _ tabController: PassangerFormController) {
-        if !containerView.subviews.contains(tabController.view) {
-            addChild(tabController)
-            containerView.addSubview(tabController.view)
-            tabController.view.sameBoundsTo(parentView: containerView)
-        }
+}
 
-        for (i, item) in tabs.enumerated() {
-            print("hideing> \(i)\(i == index)")
-            item.1.view.isHidden = index == i ? false : true
-        }
-        
-        for vIndex in 0..<containerView.subviews.count{
-            containerView.subviews[vIndex].isHidden = index == vIndex ? false : true
-        }
-        tabbar.didSelectTab(index: index)
+extension PassangersInputViewViewController: ViewPagerDataSource {
+    func numberOfPages() -> Int {
+        return tabs.count
+    }
+
+    func viewControllerAtPosition(position: Int) -> UIViewController {
+        let vc = tabs[position].1
+//            vc.itemText = "\(tabs[position].0.title)"
+
+        return vc
+    }
+
+    func tabsForPages() -> [ViewPagerTab] {
+        return tabs.map { $0.0 }
+    }
+
+    func startViewPagerAtIndex() -> Int {
+        return 0
+    }
+}
+
+extension PassangersInputViewViewController: ViewPagerDelegate {
+    func willMoveToControllerAtIndex(index: Int) {
+        print("Moving to page \(index)")
+    }
+
+    func didMoveToControllerAtIndex(index: Int) {
+        print("Moved to page \(index)")
     }
 }

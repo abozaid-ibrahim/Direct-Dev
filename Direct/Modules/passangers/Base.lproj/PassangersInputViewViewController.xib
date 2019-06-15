@@ -14,12 +14,11 @@
             <connections>
                 <outlet property="containerView" destination="7mX-0p-wxc" id="dEu-JH-lBR"/>
                 <outlet property="headerLbl" destination="fdg-d1-MWs" id="fif-qO-7Wu"/>
-                <outlet property="tabbarContainer" destination="yxa-Ou-Er1" id="WpG-rN-i8v"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -41,24 +40,8 @@
                         <constraint firstItem="fdg-d1-MWs" firstAttribute="top" secondItem="RiB-4K-IAb" secondAttribute="top" id="zp7-lc-UQH"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gD0-fW-O8V" userLabel="tabbar">
-                    <rect key="frame" x="0.0" y="84" width="414" height="40"/>
-                    <subviews>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxa-Ou-Er1">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
-                        </scrollView>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstItem="yxa-Ou-Er1" firstAttribute="centerX" secondItem="gD0-fW-O8V" secondAttribute="centerX" id="Xgh-nU-mBH"/>
-                        <constraint firstItem="yxa-Ou-Er1" firstAttribute="width" secondItem="gD0-fW-O8V" secondAttribute="width" id="ZFO-9E-l9E"/>
-                        <constraint firstAttribute="height" constant="40" id="ZTg-OI-xsI"/>
-                        <constraint firstItem="yxa-Ou-Er1" firstAttribute="centerY" secondItem="gD0-fW-O8V" secondAttribute="centerY" id="mcB-pa-3Nc"/>
-                        <constraint firstItem="yxa-Ou-Er1" firstAttribute="height" secondItem="gD0-fW-O8V" secondAttribute="height" id="uJ4-sk-giX"/>
-                    </constraints>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7mX-0p-wxc">
-                    <rect key="frame" x="0.0" y="136" width="414" height="738"/>
+                    <rect key="frame" x="0.0" y="84" width="414" height="790"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
@@ -71,13 +54,10 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7mX-0p-wxc" secondAttribute="trailing" id="1Pn-TJ-G22"/>
                 <constraint firstItem="7mX-0p-wxc" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="12" id="3Ad-Zu-QW6"/>
-                <constraint firstItem="gD0-fW-O8V" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="77s-TI-4hT"/>
-                <constraint firstAttribute="trailing" secondItem="gD0-fW-O8V" secondAttribute="trailing" id="8iB-3B-SD9"/>
-                <constraint firstItem="gD0-fW-O8V" firstAttribute="top" secondItem="RiB-4K-IAb" secondAttribute="bottom" id="UVI-Uc-Pck"/>
                 <constraint firstItem="RiB-4K-IAb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="VUt-V4-nul"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RiB-4K-IAb" secondAttribute="trailing" id="X0z-jR-QEP"/>
+                <constraint firstItem="7mX-0p-wxc" firstAttribute="top" secondItem="RiB-4K-IAb" secondAttribute="bottom" id="Zzs-lP-Esa"/>
                 <constraint firstItem="7mX-0p-wxc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tvk-P2-VyE"/>
-                <constraint firstItem="7mX-0p-wxc" firstAttribute="top" secondItem="gD0-fW-O8V" secondAttribute="bottom" constant="12" id="xTo-PU-heG"/>
                 <constraint firstItem="RiB-4K-IAb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yrL-6R-UpW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
