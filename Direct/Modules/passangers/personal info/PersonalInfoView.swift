@@ -80,18 +80,11 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
         switch type {
         case .US, .GB: // BR
             print("show all items")
-        case .SGN:
+        case .SGN , .TR:
             hideAllExcepSelfIdentity()
-        case .IN:
-            hideAllExcepSelfIdentity()
-        case .CN:
-            hideAllExcepSelfIdentity()
-        case .JP:
-            hideAllExcepSelfIdentity()
-        case .IE:
+        case .IN ,.CN,.JP,.IE:
             hideIsHusbendWillTravelWithYou()
-        case .TR:
-            hideAllExcepSelfIdentity()
+          
         }
     }
     
