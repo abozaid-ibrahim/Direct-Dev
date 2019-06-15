@@ -36,11 +36,23 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
         }
         
         switch type {
-        case .US:
+        case .US , CountriesIDs.GB:
             return isValidatePersonalSectionTextFields()
         default:
-            return validateName()
+            return validateNameAndIdentity()
         }
+    }
+    
+    var neededHeight: CGFloat {
+        var basic = 130
+        let unit = 55
+        basic += isHusbandWillTravelView.isHidden ? 0 : unit
+        basic += familyIDView.isHidden ? 0 : unit
+        basic += martialStateView.isHidden ? 0 : unit
+        basic += passportView.isHidden ? 0 : unit
+        basic += personalPictureView.isHidden ? 0 : unit
+        print("i>contentH \(basic)")
+        return CGFloat(basic)
     }
     
     override init(frame: CGRect) {
@@ -54,6 +66,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     override func awakeFromNib() {
         super.awakeFromNib()
         pInfoSetup()
+        contentHeight.onNext(neededHeight)
         onRecieveImageCallback()
     }
     
@@ -64,35 +77,33 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
         }
         
         switch type {
-        case .US:
-            print("donothing")
-        case .GB: // BR
-            hideAllExceptName()
+        case .US, .GB: // BR
+            print("show all items")
         case .SGN:
-            hideAllExceptName()
+            hideAllExceptNameAndPass()
         case .IN:
-            hideAllExceptName()
+            hideAllExceptNameAndPass()
         case .CN:
-            hideAllExceptName()
+            hideAllExceptNameAndPass()
         case .JP:
-            hideAllExceptName()
+            hideAllExceptNameAndPass()
         case .IE:
-            hideAllExceptName()
+            hideAllExceptNameAndPass()
         case .TR:
-            hideAllExceptName()
+            hideAllExceptNameAndPass()
         }
     }
     
-    private func hideAllExceptName() {
+    private func hideAllExceptNameAndPass() {
         isHusbandWillTravelView.isHidden = true
         familyIDView.isHidden = true
         martialStateView.isHidden = true
-        passportView.isHidden = true
         personalPictureView.isHidden = true
-        contentHeight.onNext(130)
+        passportView.isHidden = false
+        contentHeight.onNext(neededHeight)
     }
     
-    private func validateName() -> Bool {
+    private func validateNameAndIdentity() -> Bool {
         guard let params = self.params else {
             return false
         }
@@ -108,6 +119,12 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
             familyNamePInfoField.setError.onNext(true)
             return false
         }
+        if params.passportCopy.isValidText {
+            passportImageField.setError.onNext(false)
+        } else {
+            passportImageField.setError.onNext(true)
+            return false
+        }
         return true
     }
     
@@ -115,7 +132,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
         guard let params = self.params else {
             return false
         }
-        if !validateName() {
+        if !validateNameAndIdentity() {
             return false
         }
         if params.martialStatus.isValidText {
@@ -141,12 +158,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
                 return false
             }
         }
-        if params.passportCopy.isValidText {
-            passportImageField.setError.onNext(false)
-        } else {
-            passportImageField.setError.onNext(true)
-            return false
-        }
+        
         if params.personalPhotoCopy.isValidText {
             personalPhotoField.setError.onNext(false)
         } else {
@@ -179,13 +191,15 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
             .subscribe { _ in
                 let alert = self.dialogs.buildMatrialState(callback: { [weak self] state in
                     print(state, state.string, state.apiValue)
-                    self?.statusPInfoField.text = state.string
+                    guard let self = self else { return }
+                    self.statusPInfoField.text = state.string
                     if state.apiValue == MartialState.single.apiValue {
-                        self?.isHusbandWillTravelView.isHidden = false
+                        self.isHusbandWillTravelView.isHidden = true
                     } else {
-                        self?.isHusbandWillTravelView.isHidden = true
+                        self.isHusbandWillTravelView.isHidden = false
                     }
-                    self?.params?.husbandOrWifeTravelWithYou = state.apiValue.stringValue
+                    self.params?.husbandOrWifeTravelWithYou = state.apiValue.stringValue
+                    self.contentHeight.onNext(self.neededHeight)
                     
                 })
                 try! AppNavigator().present(alert)
@@ -204,13 +218,15 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
         husbundPInfoField.rx.tapGesture().when(.recognized)
             .subscribe { _ in
                 let alert = self.dialogs.buildAgreemnetDialog(callback: { [weak self] agreed in
-                    self?.params?.husbandOrWifeTravelWithYou = agreed.apiValue.stringValue
-                    self?.husbundPInfoField.text = agreed.string
+                    guard let self = self else { return }
+                    self.params?.husbandOrWifeTravelWithYou = agreed.apiValue.stringValue
+                    self.husbundPInfoField.text = agreed.string
                     if agreed.apiValue == AgreementValues.yes.apiValue {
-                        self?.familyIDView.isHidden = false
+                        self.familyIDView.isHidden = false
                     } else {
-                        self?.familyIDView.isHidden = true
+                        self.familyIDView.isHidden = true
                     }
+                    self.contentHeight.onNext(self.neededHeight)
                 })
                 try! AppNavigator().present(alert)
                 

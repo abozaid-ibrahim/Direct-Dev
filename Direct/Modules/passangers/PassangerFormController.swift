@@ -72,14 +72,13 @@ class PassangerFormController: UIViewController {
     }
 
     private func motherSectionSetup() {
-        switch formTypeValue {
-        case .US:
+        if hasMotherView{
             motherView.formType = formTypeValue
             motherView.params = params
             motherInfoContainer.addSubview(motherView)
             motherView.frame = motherInfoContainer.bounds
             motherView.contentHeight.bind(to: motherInfoHeight.rx.constant).disposed(by: disposeBag)
-        default:
+        }else{
             print("hide this section")
             motherInfoHeight.constant = 0
             motherInfoContainer.isHidden = true
@@ -232,12 +231,15 @@ class PassangerFormController: UIViewController {
 
     var params = USRequestParams()
     private let network = ApiClientFacade()
+    var hasMotherView:Bool{
+       return (formTypeValue == .US) || (formTypeValue == .IN)
+    }
     func submit() {
         fillParams()
         guard personalInfoView.isInputsValid() else {
             return
         }
-        if !motherInfoContainer.subviews.isEmpty {
+        if  hasMotherView{
             guard motherView.isInputsValid() else {
                 return
             }

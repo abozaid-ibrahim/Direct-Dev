@@ -21,7 +21,7 @@ class MotherInfoView: UIView, PassangerInputsSection {
     }
     
     internal let disposeBag = DisposeBag()
-    var contentHeight = BehaviorSubject<CGFloat>(value: 166)
+    var contentHeight = BehaviorSubject<CGFloat>(value: 145)
     
     func isInputsValid() -> Bool {
         params?.mothersFirstName = firstNameMotherField.text

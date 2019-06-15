@@ -37,8 +37,8 @@ enum CountriesIDs: Int,Equatable {
         }
     }
     case US = 1,
-        GB = 2,
-        SGN = 3,
+        GB = 2,//UK
+        SGN = 3,//FR
         IN = 4,
         CN = 5,
         JP = 6,
