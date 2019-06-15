@@ -49,6 +49,11 @@ class PassangerFormController: UIViewController {
     @IBOutlet private var traveledHereBeforeHConstrain: NSLayoutConstraint!
 
     //===================================================<<
+    let motherView: MotherInfoView = MotherInfoView.loadNib()
+    let travels = UIStoryboard.visa.controller(PreviousTraveledCountriesController.self)
+    let questionsVC = PassangersQuestionsStepVC()
+    let personalInfoView: PersonalInfoView = PersonalInfoView.loadNib()
+
     internal let disposeBag = DisposeBag()
     var receivedImage = PublishSubject<(String?, UIImage?)>()
     let viewModel = PassangerFormViewModel()
@@ -69,7 +74,6 @@ class PassangerFormController: UIViewController {
     private func motherSectionSetup() {
         switch formTypeValue {
         case .US:
-            let motherView: MotherInfoView = MotherInfoView.loadNib()
             motherView.formType = formTypeValue
             motherView.params = params
             motherInfoContainer.addSubview(motherView)
@@ -88,7 +92,6 @@ class PassangerFormController: UIViewController {
         everHadVisaSegment.appFont()
     }
 
-    let travels = UIStoryboard.visa.controller(PreviousTraveledCountriesController.self)
     private func addPreviousCountries() {
         guard let travelVC = travels as? PreviousTraveledCountriesController else { return }
         addChild(travelVC)
@@ -97,7 +100,6 @@ class PassangerFormController: UIViewController {
         travelVC.tableHeight.asDriver(onErrorJustReturn: travelVC.headerHeight).asObservable().bind(to: countriesContainerHeight.rx.constant).disposed(by: disposeBag)
     }
 
-    let questionsVC = PassangersQuestionsStepVC()
     private func addEverTraveledView() {
         addChild(questionsVC)
         questionsVC.countryText = countryString
@@ -125,7 +127,6 @@ class PassangerFormController: UIViewController {
     }
 
     private func personalInfoSetup() {
-        let personalInfoView: PersonalInfoView = PersonalInfoView.loadNib()
         personalInfoView.formType = formTypeValue
         personalInfoView.params = params
         personalInfoContainer.addSubview(personalInfoView)
@@ -138,23 +139,13 @@ class PassangerFormController: UIViewController {
     }
 
     private func onRecieveImageCallback() {
-//        receivedImage.filter { $0.0 != nil }.subscribe(onNext: { [unowned self] value in
-//            if self.currentImageID == self.familyImageID {
-//                self.params.familyIDCopy = value.1?.convertImageToBase64String()
-//                self.familyIDPInfoLbl.text = value.0
-//
-//            } else if self.currentImageID == self.visaImageID {
-//                self.params.visaReqID = value.1?.convertImageToBase64String()
-//                self.previousVisaImageField.text = value.0
-//            } else if self.currentImageID == self.passportImageID {
-//                self.params.passportCopy = value.1?.convertImageToBase64String()
-//                self.passportImageField.text = value.0
-//            } else if self.currentImageID == self.personalPhotoID {
-//                self.params.personalPhotoCopy = value.1?.convertImageToBase64String()
-//                self.personalPhotoField.text = value.0
-//            }
-//
-//        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        receivedImage.filter { $0.0 != nil }.subscribe(onNext: { [unowned self] value in
+            if self.currentImageID == self.visaImageID {
+                self.params.visaReqID = value.1?.convertImageToBase64String()
+                self.previousVisaImageField.text = value.0
+            }
+
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 
     private func questionsSetup() {
@@ -222,14 +213,6 @@ class PassangerFormController: UIViewController {
     }
 
     func fillParams() {
-        /// Personal Info
-//        params.firstName = firstNamePInfoLbl.text
-//        params.familyName = familyNamePInfoLbl.text
-//        params.martialStatus = statusPInfoLbl.text
-//        params.familyIDCopy = familyIDPInfoLbl.text
-//        params.husbandOrWifeTravelWithYou = husbundPInfoLbl.text
-//        /// Mother
-        // Questions
         params.everIssuedVisaBefore = "\(visaCancelationSegment.selectedSegmentIndex)"
         params.travelledBeforeHere = questionsVC.travelledBeforeHere.stringValue
 
@@ -251,7 +234,14 @@ class PassangerFormController: UIViewController {
     private let network = ApiClientFacade()
     func submit() {
         fillParams()
-       
+        guard personalInfoView.isInputsValid() else {
+            return
+        }
+        if !motherInfoContainer.subviews.isEmpty {
+            guard motherView.isInputsValid() else {
+                return
+            }
+        }
         Progress.show()
         guard let cnt = CountriesIDs(rawValue: countryId.intValue) else {
             return
