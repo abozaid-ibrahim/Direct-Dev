@@ -26,10 +26,12 @@
                 <outlet property="relativeField" destination="Bxz-Vc-zWi" id="7R9-Os-xGg"/>
                 <outlet property="relativeINCountrySegment" destination="fbe-PQ-3qa" id="5ab-Ju-SbH"/>
                 <outlet property="relativeInCountryLbl" destination="6Kz-Kn-DDj" id="OMR-zY-dHB"/>
+                <outlet property="relativesView" destination="Fev-d4-x60" id="T1K-uF-I8W"/>
                 <outlet property="traveledHereBeforeHConstrain" destination="qBR-ce-A7j" id="qmm-vh-3ir"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="visaCancelationLbl" destination="vDE-pp-DXt" id="Ikc-2G-A0c"/>
                 <outlet property="visaCancelationSegment" destination="NZ3-MG-5eV" id="Rzs-1S-VDz"/>
+                <outlet property="visaCanceledBeforeView" destination="czo-D9-83s" id="jox-Y1-EUL"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

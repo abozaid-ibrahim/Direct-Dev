@@ -87,6 +87,8 @@
 		6C431E0522B52E9D00DD140D /* PersonalInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C431E0422B52E9D00DD140D /* PersonalInfoView.xib */; };
 		6C431E0822B5807300DD140D /* MotherInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C431E0722B5807300DD140D /* MotherInfoView.swift */; };
 		6C431E0A22B5808900DD140D /* MotherInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C431E0922B5808900DD140D /* MotherInfoView.xib */; };
+		6C431E0C22B5A1F100DD140D /* VisaQuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C431E0B22B5A1F100DD140D /* VisaQuestionsView.swift */; };
+		6C431E0E22B5A1FF00DD140D /* VisaQuestionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C431E0D22B5A1FF00DD140D /* VisaQuestionsView.xib */; };
 		6C557557228BA52900BAE5E2 /* View+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C557556228BA52900BAE5E2 /* View+Colors.swift */; };
 		6C55756F228BAEB700BAE5E2 /* UIFont+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C55756E228BAEB700BAE5E2 /* UIFont+UIView.swift */; };
 		6C5DE7652275DA99001A9FB6 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE7642275DA99001A9FB6 /* UIView.swift */; };
@@ -343,6 +345,8 @@
 		6C431E0422B52E9D00DD140D /* PersonalInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalInfoView.xib; sourceTree = "<group>"; };
 		6C431E0722B5807300DD140D /* MotherInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherInfoView.swift; sourceTree = "<group>"; };
 		6C431E0922B5808900DD140D /* MotherInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MotherInfoView.xib; sourceTree = "<group>"; };
+		6C431E0B22B5A1F100DD140D /* VisaQuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaQuestionsView.swift; sourceTree = "<group>"; };
+		6C431E0D22B5A1FF00DD140D /* VisaQuestionsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisaQuestionsView.xib; sourceTree = "<group>"; };
 		6C557556228BA52900BAE5E2 /* View+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Colors.swift"; sourceTree = "<group>"; };
 		6C55756E228BAEB700BAE5E2 /* UIFont+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+UIView.swift"; sourceTree = "<group>"; };
 		6C5DE7642275DA99001A9FB6 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -793,6 +797,8 @@
 				6C431E0422B52E9D00DD140D /* PersonalInfoView.xib */,
 				6C431E0722B5807300DD140D /* MotherInfoView.swift */,
 				6C431E0922B5808900DD140D /* MotherInfoView.xib */,
+				6C431E0B22B5A1F100DD140D /* VisaQuestionsView.swift */,
+				6C431E0D22B5A1FF00DD140D /* VisaQuestionsView.xib */,
 			);
 			path = "personal info";
 			sourceTree = "<group>";
@@ -1381,6 +1387,7 @@
 				6C902779228F94CF00B41705 /* ContactUsViewController.xib in Resources */,
 				6C902797228F953A00B41705 /* PaymentViewController.xib in Resources */,
 				6C244FCC229212E600B205B9 /* HelpTableCell.xib in Resources */,
+				6C431E0E22B5A1FF00DD140D /* VisaQuestionsView.xib in Resources */,
 				6C90278B228F951000B41705 /* InstituteDetailsTableCell.xib in Resources */,
 				6C5FDA572270816C00ABA39B /* LaunchScreen.storyboard in Resources */,
 				6C5FDA542270816C00ABA39B /* Assets.xcassets in Resources */,
@@ -1561,6 +1568,7 @@
 				6C778289227C6EE6001926B2 /* ContactUsViewController.swift in Sources */,
 				6CDB3C9D22AA6DF200C0165C /* APIConstants.swift in Sources */,
 				6C5DE7782277330D001A9FB6 /* CountryTableCell.swift in Sources */,
+				6C431E0C22B5A1F100DD140D /* VisaQuestionsView.swift in Sources */,
 				6CF3E1B322725799007488BA /* Binder.swift in Sources */,
 				6C5FDA4D2270816B00ABA39B /* AppDelegate.swift in Sources */,
 				6C431E0822B5807300DD140D /* MotherInfoView.swift in Sources */,

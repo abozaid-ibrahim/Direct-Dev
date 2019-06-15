@@ -26,6 +26,8 @@ class PassangerFormController: UIViewController {
 
     // MARK: IBuilder ====================================>>
 
+    @IBOutlet weak var visaCanceledBeforeView: UIView!
+    @IBOutlet weak var relativesView: UIView!
     @IBOutlet private var personalInfoContainer: UIView!
     @IBOutlet private var personalInfoHeight: NSLayoutConstraint!
     @IBOutlet private var motherInfoContainer: UIView!
@@ -148,6 +150,16 @@ class PassangerFormController: UIViewController {
     }
 
     private func questionsSetup() {
+        if formTypeValue != .US{
+            relativesView.isHidden = true
+            visaCanceledBeforeView.isHidden = true
+            
+        }else if formTypeValue == .TR{
+            relativesView.isHidden = true
+            visaCanceledBeforeView.isHidden = true
+            everTraveledBeforeView.isHidden = true
+            previouslyTraveledCountriesView.isHidden = true
+        }
         // ever you travedled
         previousVisaLbl.text = "هل سبق وحصلت على تأشيرة " + countryString + Str.before
         relativeInCountryLbl.text = "هل لديك اى اقارب فى " + countryString + "؟"
