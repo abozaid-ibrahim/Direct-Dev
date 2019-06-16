@@ -21,20 +21,37 @@ class MotherInfoView: UIView, PassangerInputsSection {
     }
     
     internal let disposeBag = DisposeBag()
-    var contentHeight = BehaviorSubject<CGFloat>(value: 145)
+    var contentHeight = BehaviorSubject<CGFloat>(value: 130)
     
     func isInputsValid() -> Bool {
+        if firstNameMotherField.text.isValidText {
+            firstNameMotherField.setError.onNext(false)
+        } else {
+            firstNameMotherField.setError.onNext(true)
+            return false
+        }
+        if familyNameMotherField.text.isValidText {
+            familyNameMotherField.setError.onNext(false)
+        } else {
+            familyNameMotherField.setError.onNext(true)
+            return false
+        }
+       
         params?.mothersFirstName = firstNameMotherField.text
         params?.mothersFamilyName = familyNameMotherField.text
-        params?.nationality = nationalityMotherField.text
-        let name =  firstNameMotherField.hasText && familyNameMotherField.hasText
-        
+       
         //validate id
-        var id = true
         if formType! != CountriesIDs.TR{
-            id = nationalityMotherField.hasText
+            if nationalityMotherField.text.isValidText {
+                nationalityMotherField.setError.onNext(false)
+            } else {
+                nationalityMotherField.setError.onNext(true)
+                return false
+            }
+            params?.nationality = nationalityMotherField.text
+
         }
-        return name && id
+        return true
     }
     
     override init(frame: CGRect) {
@@ -48,6 +65,7 @@ class MotherInfoView: UIView, PassangerInputsSection {
     override func awakeFromNib() {
         super.awakeFromNib()
         viewSetup()
+        contentHeight.onNext(neededHeight)
     }
     func applyFormRules(){
         if formType! == .TR{
@@ -59,10 +77,9 @@ class MotherInfoView: UIView, PassangerInputsSection {
     }
 
     var neededHeight: CGFloat {
-        var basic = 65
+        var basic = 55
         let unit = 55
         basic += firstNameMotherField.isHidden ? 0 : unit
-        basic += familyNameMotherField.isHidden ? 0 : unit
         basic += nationalityMotherField.isHidden ? 0 : unit
         return CGFloat(basic)
     }

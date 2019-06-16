@@ -36,9 +36,9 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
         }
         
         switch type {
-        case .US , CountriesIDs.GB:
+        case .US, CountriesIDs.GB:
             return isValidatePersonalSectionTextFields()
-
+            
         default:
             return validateNameAndIdentity()
         }
@@ -80,11 +80,10 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
         switch type {
         case .US, .GB: // BR
             print("show all items")
-        case .SGN , .TR:
+        case .SGN, .TR:
             hideAllExcepSelfIdentity()
-        case .IN ,.CN,.JP,.IE:
+        case .IN, .CN, .JP, .IE:
             hideIsHusbendWillTravelWithYou()
-          
         }
     }
     
@@ -92,6 +91,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
         isHusbandWillTravelView.isHidden = true
         contentHeight.onNext(neededHeight)
     }
+    
     private func hideAllExcepSelfIdentity() {
         isHusbandWillTravelView.isHidden = true
         familyIDView.isHidden = true
@@ -134,6 +134,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
             return false
         }
         if !validateNameAndIdentity() {
+           print("flse")
             return false
         }
         if params.martialStatus.isValidText {
@@ -186,7 +187,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     private let dialogs = DialogBuilder()
     
     private func pInfoSetup() {
-        familyIDView.isHidden = true
+        familyIDView.isHidden = false
         isHusbandWillTravelView.isHidden = true
         statusPInfoField.rx.tapGesture().when(.recognized)
             .subscribe { _ in
@@ -199,7 +200,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
                     } else {
                         self.isHusbandWillTravelView.isHidden = false
                     }
-                    self.params?.husbandOrWifeTravelWithYou = state.apiValue.stringValue
+                    self.params?.martialStatus = state.apiValue.stringValue
                     self.contentHeight.onNext(self.neededHeight)
                     
                 })
@@ -222,11 +223,11 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
                     guard let self = self else { return }
                     self.params?.husbandOrWifeTravelWithYou = agreed.apiValue.stringValue
                     self.husbundPInfoField.text = agreed.string
-                    if agreed.apiValue == AgreementValues.yes.apiValue {
-                        self.familyIDView.isHidden = false
-                    } else {
-                        self.familyIDView.isHidden = true
-                    }
+//                    if agreed.apiValue == AgreementValues.yes.apiValue {
+//                        self.familyIDView.isHidden = false
+//                    } else {
+//                        self.familyIDView.isHidden = true
+//                    }
                     self.contentHeight.onNext(self.neededHeight)
                 })
                 try! AppNavigator().present(alert)
@@ -242,7 +243,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-        let image = info[.editedImage] as? UIImage
+        let image = info[.originalImage] as? UIImage
         let fileUrl = info[.imageURL] as? URL
         receivedImage.onNext((fileUrl?.lastPathComponent, image))
         
@@ -251,15 +252,19 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     
     private func onRecieveImageCallback() {
         receivedImage.filter { $0.0 != nil }.subscribe(onNext: { [unowned self] value in
+            guard let img = value.1?.convertImageToBase64String() else {
+                
+                return }
+            
             if self.currentImageID == self.familyImageID {
-                self.params?.familyIDCopy = value.1?.convertImageToBase64String()
+                self.params?.familyIDCopy = img
                 self.familyIDPInfoField.text = value.0
                 
             } else if self.currentImageID == self.passportImageID {
-                self.params?.passportCopy = value.1?.convertImageToBase64String()
+                self.params?.passportCopy = img
                 self.passportImageField.text = value.0
             } else if self.currentImageID == self.personalPhotoID {
-                self.params?.personalPhotoCopy = value.1?.convertImageToBase64String()
+                self.params?.personalPhotoCopy = img
                 self.personalPhotoField.text = value.0
             }
             

@@ -12,11 +12,8 @@ import UIKit
 class PassangerFormController: UIViewController {
     // ImagePicker
     var currentImageID: Int = 0
-    private let familyImageID = 30
-    private let passportImageID = 31
     private let visaImageID = 32
     private let last10YearsVisaImageID = 33
-    private let personalPhotoID = 35
     // Inject FromOutSide
     var countryName: String!
     var countryId: String!
@@ -79,7 +76,7 @@ class PassangerFormController: UIViewController {
             motherView.params = params
             motherInfoContainer.addSubview(motherView)
             motherView.frame = motherInfoContainer.bounds
-            motherView.contentHeight.bind(to: motherInfoHeight.rx.constant).disposed(by: disposeBag)
+            motherView.contentHeight.debug().bind(to: motherInfoHeight.rx.constant).disposed(by: disposeBag)
         } else {
             print("hide this section")
             motherInfoHeight.constant = 0
@@ -272,12 +269,11 @@ class PassangerFormController: UIViewController {
     }
 
     func sendDataToServer(_ api: Observable<USVvisaRequestJSONResponse>) {
-        api.observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [unowned self] _ in
-                Progress.hide()
-                self.successIndex.onNext(self.index ?? 0)
-            }, onError: { _ in
-                Progress.hide()
-            }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        api.observeOn(MainScheduler.instance).subscribeOn(SerialDispatchQueueScheduler(qos: .background)).subscribe(onNext: { [unowned self] _ in
+            Progress.hide()
+            self.successIndex.onNext(self.index ?? 0)
+        }, onError: { _ in
+            Progress.hide()
+        }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 }
