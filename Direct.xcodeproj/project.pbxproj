@@ -1476,7 +1476,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Direct/Pods-Direct-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Direct/Pods-Direct-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FDA22F40912A830360693561 /* [CP] Check Pods Manifest.lock */ = {
