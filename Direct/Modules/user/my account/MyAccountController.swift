@@ -9,7 +9,7 @@
 import PanModal
 import RxSwift
 import UIKit
-
+import Social
 
 
 enum MoreDataRep: CaseIterable {
@@ -54,6 +54,21 @@ enum MoreDataRep: CaseIterable {
     }
     
     
+    var viewController: UIViewController {
+        switch self {
+        case .aboutUs:
+            return AboutUsViewController(nibName: "AboutUsViewController", bundle: nil)
+        case .callUs:
+            return ContactUsViewController(nibName: "ContactUsViewController", bundle: nil)
+        case .banks:
+            return BanksViewController(nibName: "BanksViewController", bundle: nil)
+        case .share:
+            return SLComposeServiceViewController()
+        default:
+            return UIViewController()
+        }
+    }
+    
 }
 
 
@@ -61,11 +76,13 @@ enum MoreDataRep: CaseIterable {
 final class MyAccountController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
-    private let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(nibWithCellClass: AboutUsTableCell.self)
         tableView.tableFooterView = UIView()
+        tabBarItem.image = #imageLiteral(resourceName: "More")
+        title = "more_tab_item".localized
         
     }
 
@@ -93,6 +110,11 @@ extension MyAccountController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(MoreDataRep.allCases[indexPath.row].viewController, completion: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }

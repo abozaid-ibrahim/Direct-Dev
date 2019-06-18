@@ -37,7 +37,7 @@
             </objects>
             <point key="canvasLocation" x="-1271" y="-113"/>
         </scene>
-        <!--بحث-->
+        <!--طلباتي-->
         <scene sceneID="zJh-OH-16J">
             <objects>
                 <viewController storyboardIdentifier="HelpViewController" id="De0-aQ-EfP" customClass="HelpViewController" customModule="Direct" customModuleProvider="target" sceneMemberID="viewController">
@@ -59,16 +59,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cMs-lq-j8J"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="بحث" image="myordersImage" id="QVa-gB-goh"/>
+                    <tabBarItem key="tabBarItem" title="طلباتي" image="myordersImage" id="QVa-gB-goh"/>
                     <connections>
                         <outlet property="tableView" destination="EZD-3Q-xMd" id="fnz-nd-plQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5bn-9s-L7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1137" y="1261"/>
+            <point key="canvasLocation" x="-951" y="765"/>
         </scene>
-        <!--بكجات-->
+        <!--متطلبات التأشيرة-->
         <scene sceneID="5wZ-wa-HQh">
             <objects>
                 <viewController storyboardIdentifier="PackagesViewController" id="XfK-Hb-2tX" customClass="PackagesViewController" customModule="Direct" customModuleProvider="target" sceneMemberID="viewController">
@@ -91,7 +91,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mU3-qE-UHR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="بكجات" image="visaReqTabImage" id="It3-cK-2n6"/>
+                    <tabBarItem key="tabBarItem" title="متطلبات التأشيرة" image="visaReqTabImage" id="It3-cK-2n6"/>
                     <connections>
                         <outlet property="tableView" destination="gB9-5Y-9eE" id="4kC-XW-jbH"/>
                     </connections>
@@ -524,8 +524,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="mUF-MA-QtB" kind="relationship" relationship="viewControllers" id="Hsv-gc-yUQ"/>
-                        <segue destination="XfK-Hb-2tX" kind="relationship" relationship="viewControllers" id="h0c-oo-WK8"/>
                         <segue destination="De0-aQ-EfP" kind="relationship" relationship="viewControllers" id="QV1-RU-pkk"/>
+                        <segue destination="XfK-Hb-2tX" kind="relationship" relationship="viewControllers" id="h0c-oo-WK8"/>
                         <segue destination="jOn-n7-G2L" kind="relationship" relationship="viewControllers" id="hU4-in-vaz"/>
                     </connections>
                 </tabBarController>
@@ -548,7 +548,7 @@
         <image name="icons8Mesh" width="25" height="24"/>
         <image name="icons8Mortarboard" width="29" height="22"/>
         <image name="icons8Passport" width="28" height="35"/>
-        <image name="icons8Search" width="27" height="27"/>
+        <image name="icons8Search" width="20" height="20"/>
         <image name="myordersImage" width="19" height="20"/>
         <image name="saerchImage" width="27" height="27"/>
         <image name="visaReqTabImage" width="20" height="19"/>

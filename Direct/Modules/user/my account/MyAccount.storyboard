@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aUB-rq-qFZ">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4IP-Jd-N7J" userLabel="header">
-                                <rect key="frame" x="0.0" y="44" width="414" height="170"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="170"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="0wN-HD-X89">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
@@ -65,7 +65,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BST-SS-8oc">
-                                <rect key="frame" x="18" y="242" width="378" height="602"/>
+                                <rect key="frame" x="18" y="286" width="378" height="509"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAc-Qb-uTF">
                                         <rect key="frame" x="0.0" y="0.0" width="378" height="20.5"/>
@@ -77,7 +77,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="99V-lv-Xpe">
-                                        <rect key="frame" x="0.0" y="30.5" width="378" height="571.5"/>
+                                        <rect key="frame" x="0.0" y="30.5" width="378" height="478.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -104,18 +104,41 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qjf-da-Vnd"/>
                     </view>
-                    <tabBarItem key="tabBarItem" selectedImage="icons8Person" systemItem="more" id="C27-47-LS7"/>
+                    <navigationItem key="navigationItem" id="HfV-Ap-aSy"/>
                     <connections>
                         <outlet property="tableView" destination="99V-lv-Xpe" id="eZQ-16-lTT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="31c-lX-OZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1136.8" y="441.22938530734638"/>
+            <point key="canvasLocation" x="2046.376811594203" y="440.625"/>
+        </scene>
+        <!--المزيد-->
+        <scene sceneID="BBg-mk-xMZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aUB-rq-qFZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="المزيد" image="icons8More" selectedImage="icons8More" id="C27-47-LS7"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lmN-0W-Uz2">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aZc-zc-6JT">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="iUh-JJ-tAH" kind="relationship" relationship="rootViewController" id="q3B-Ww-sSU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Poa-Yh-hDp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1136.231884057971" y="440.625"/>
         </scene>
     </scenes>
     <resources>
         <image name="download" width="259" height="194"/>
-        <image name="icons8Person" width="16" height="17"/>
+        <image name="icons8More" width="23" height="6"/>
     </resources>
 </document>
