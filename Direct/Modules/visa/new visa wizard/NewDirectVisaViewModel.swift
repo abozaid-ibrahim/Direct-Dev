@@ -163,6 +163,7 @@ class NewDirectVisaViewModel {
                     self.visaRequestData.visatypeText = visa.visaTypeName
                 }
                 self.selectedVisaType.onNext(value)
+                self.callApiToUpdatePrices()
             default:
                 break
             }
@@ -188,6 +189,7 @@ class NewDirectVisaViewModel {
                     if let notes = cityObj.price_notes {
                         self.priceNotes = notes
                     }
+                    self.callApiToUpdatePrices()
                 }
             default:
                 break
@@ -238,13 +240,14 @@ class NewDirectVisaViewModel {
                     if let notes = value.price_notes {
                         self.priceNotes = notes
                     }
-
+                    self.callApiToUpdatePrices()
                     let cities = self.network?.getCities(country: value.country_id!).share()
                     cities?.subscribe(onNext: { [weak self] cities in
                         print("xx\(cities.dtEmbassyLocations.isNilOrEmpty)")
                         self?.embassyLocations = cities.dtEmbassyLocations
                         self?.hideBioLocation.onNext(cities.dtEmbassyLocations.isNilOrEmpty)
                         self?.hasBioLocation = cities.dtEmbassyLocations.isNilOrEmpty
+
                     }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: self.disposeBag)
 
                 default:
@@ -260,33 +263,46 @@ class NewDirectVisaViewModel {
         try! AppNavigator().presentModally(countriesController!)
     }
 
+    private var visaPriceParams: VisaPriceParams {
+        return VisaPriceParams(cid: visaRequestData.country_id, cityid: visaRequestData.biometry_loc_id ?? "0", no_of_adult: visaRequestData.no_of_adult ?? "0", no_of_child: visaRequestData.no_of_child ?? "0", no_of_passport: visaRequestData.no_of_passport ?? "0", promo_code: 0.stringValue, visatype: visaRequestData.visatype)
+    }
+
+    private func callApiToUpdatePrices() {
+        network?.getVisaPrice(prm: visaPriceParams).subscribe(onNext: { [weak self] pr in
+            print(pr)
+            self?.updateTotalCost(with: PassangersCountController.totalPrice(from: pr))
+
+        }).disposed(by: disposeBag)
+    }
+
     func showPasangersCountSpinner() {
         guard validateForPassangersCount(hasBioLocation) else {
             return
         }
-        let vc = Destination.passangersCount.controller() as! PassangersCountController
+        let passangersCountVC = Destination.passangersCount.controller() as! PassangersCountController
 
-        vc.info = VisaPriceParams(cid: visaRequestData.country_id, cityid: visaRequestData.biometry_loc_id ?? "0", no_of_adult: visaRequestData.no_of_adult ?? "0", no_of_child: visaRequestData.no_of_child ?? "0", no_of_passport: visaRequestData.no_of_passport ?? "0", promo_code: 0.stringValue, visatype: visaRequestData.visatype)
+        passangersCountVC.info = visaPriceParams
 
-        vc.result.asObservable().subscribe { event in
+        passangersCountVC.result.subscribe { event in
             switch event.event {
             case let .next(value):
                 self.passangersCount.onNext(value)
                 self.visaRequestData.no_of_adult = "\(value.0)"
                 self.visaRequestData.no_of_child = "\(value.1)"
-//                if (self.selectedCountry?.country_id ?? "-1") == APIConstants.TurkeyID {
                 self.visaRequestData.no_of_passport = self.passCount.stringValue
-//                }
-                self.totalCost.onNext(value.2.priced)
-
-                self.visaRequestData.totalCost = value.2
+                self.updateTotalCost(with: value.2)
 
             default:
                 break
             }
 
         }.disposed(by: disposeBag)
-        try! AppNavigator().presentModally(vc)
+        try! AppNavigator().presentModally(passangersCountVC)
+    }
+
+    private func updateTotalCost(with value: String) {
+        totalCost.onNext(value.priced)
+        visaRequestData.totalCost = value
     }
 
     func showRelationsSpinner() {

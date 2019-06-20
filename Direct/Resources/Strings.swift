@@ -17,7 +17,26 @@ struct Str{
     static var adult:String{
         return "adult".localized
     }
+    static var adults:String{
+        return "adults".localized
+    }
+    static var passangers:String{
+        return "Passangers".localized
+    }
+    static var passangersCount:String{
+        return "Passangers Count".localized
+    }
+    static var passportsCount:String{
+        return "Passport Count".localized
+    }
+    static var childs:String{
+        return "childs".localized
+    }
+    static var passport:String{
+        return "Passport".localized
+    }
     static var child:String{
         return "child".localized
     }
+    
 }

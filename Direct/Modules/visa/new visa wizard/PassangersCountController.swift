@@ -18,28 +18,30 @@ class PassangersCountController: UIViewController, PanModalPresentable {
 
     // MARK: IBuilder ====================================>>
 
-    @IBOutlet var childCountLbl: UILabel!
-    @IBOutlet var adultCountLbl: UILabel!
-    @IBOutlet var childTotalLbl: UILabel!
-    @IBOutlet var adultTotalLbl: UILabel!
+    @IBOutlet private var childCountLbl: UILabel!
+    @IBOutlet private var adultCountLbl: UILabel!
+    @IBOutlet private var childTotalLbl: UILabel!
+    @IBOutlet private var adultTotalLbl: UILabel!
     @IBOutlet private var countLbl: UILabel!
-    
-    
+    @IBOutlet private var childViewContainer: [UIView]!
+    @IBOutlet weak private var adultsPlaceholderLbl: UILabel!
+
     //===================================================<<
     private let network = ApiClientFacade()
     var result = PublishSubject<PassangerCount>()
     var info: VisaPriceParams?
     private var totolCost: String = "0"
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let info = info else { return }
         childCount = Int(info.no_of_child) ?? 0
         menCount = Int(info.no_of_adult) ?? 0
-        if info.cid == APIConstants.TurkeyID {
+        if info.cid == CountriesIDs.TR.rawValue.stringValue {
             menCount = Int(info.no_of_passport) ?? 0
             childCount = 0
+            childViewContainer.forEach { $0.isHidden = true }
+            adultsPlaceholderLbl.text = Str.passport
         }
     }
 
@@ -53,7 +55,7 @@ class PassangersCountController: UIViewController, PanModalPresentable {
             getPrices()
         }
     }
-
+    
     var menCount: Int {
         get {
             return Int(adultCountLbl.text!)!
@@ -65,17 +67,22 @@ class PassangersCountController: UIViewController, PanModalPresentable {
         }
     }
 
+    static func totalPrice(from prices: VisaPriceResponse) -> String {
+        return prices.visaPrice.first?.price ?? "0"
+    }
+
     private func getPrices() {
         guard var params = info else {
             return
         }
         params.no_of_adult = menCount.stringValue
         params.no_of_child = childCount.stringValue
-        network.getVisaPrice(prm: params).asObservable().subscribe(onNext: { [weak self] pr in
-            self?.childTotalLbl.text = pr.visaPrice.first?.childPrice.priced
-            self?.adultTotalLbl.text = pr.visaPrice.first?.adultPrice.priced
-            self?.totolCost = pr.visaPrice.first?.price ?? "0"
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        network.getVisaPrice(prm: params).debug()
+            .subscribe(onNext: { [weak self] pr in
+                self?.childTotalLbl.text = pr.visaPrice.first?.childPrice.priced
+                self?.adultTotalLbl.text = pr.visaPrice.first?.adultPrice.priced
+                self?.totolCost = PassangersCountController.totalPrice(from: pr)
+            }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 
     @IBAction func childPlusAction(_: Any) {
@@ -100,20 +107,25 @@ class PassangersCountController: UIViewController, PanModalPresentable {
         }
     }
 
-
     @IBAction func confirmAction(_: Any) {
         result.onNext((menCount, childCount, totolCost))
         dismiss(animated: true, completion: nil)
     }
 
     func setTotalFooterCount(men: Int, child: Int) {
-        let str = "عدد المسافرين" + " : " + " \(child) " + "اطفال" + "," + " \(men) " + "بالغين"
+        guard let info = self.info else { return }
+        var str: String = ""
+        if info.cid == APIConstants.TurkeyID {
+            str = Str.passportsCount + " : " + " \(men) " + Str.passangers
+        } else {
+            str = Str.passangersCount + " : " + " \(child) " + Str.childs + "," + " \(men) " + Str.adults
+        }
         let attributedString = NSMutableAttributedString(string: str,
                                                          attributes: [
                                                              .font: UIFont(name: AppFonts.boldFont, size: 14.0)!,
                                                              .foregroundColor: UIColor(white: 61.0 / 255.0, alpha: 1.0),
                                                          ])
-        attributedString.addAttribute(.font, value: UIFont(name: AppFonts.regularFont, size: 14.0)!, range: NSRange(location: 0, length: 15))
+        attributedString.addAttribute(.font, value: UIFont(name: AppFonts.regularFont, size: 14.0)!, range: NSRange(location: 0, length: 16))
         countLbl.attributedText = attributedString
     }
 }

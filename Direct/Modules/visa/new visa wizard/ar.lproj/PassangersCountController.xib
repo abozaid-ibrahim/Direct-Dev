@@ -14,10 +14,13 @@
             <connections>
                 <outlet property="adultCountLbl" destination="yCT-az-A1k" id="d7M-ot-MUx"/>
                 <outlet property="adultTotalLbl" destination="rAJ-7A-nx2" id="JMM-5m-wmS"/>
+                <outlet property="adultsPlaceholderLbl" destination="ytb-LW-yNG" id="Lcg-Xc-g5J"/>
                 <outlet property="childCountLbl" destination="fGj-V4-DQ4" id="6pv-jH-fL0"/>
                 <outlet property="childTotalLbl" destination="kBe-RC-Kkk" id="GB7-Mv-JkM"/>
                 <outlet property="countLbl" destination="4Yv-PW-gI9" id="j2i-Iy-OqU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="childViewContainer" destination="gyV-Lf-dzO" collectionClass="NSMutableArray" id="awy-Wb-5IF"/>
+                <outletCollection property="childViewContainer" destination="YcG-th-rWq" collectionClass="NSMutableArray" id="msk-hf-nXl"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
