@@ -41,7 +41,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7mX-0p-wxc">
-                    <rect key="frame" x="0.0" y="94" width="414" height="780"/>
+                    <rect key="frame" x="0.0" y="139" width="414" height="735"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
@@ -49,15 +49,22 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OdZ-R2-IRD">
+                    <rect key="frame" x="0.0" y="84" width="414" height="55"/>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7mX-0p-wxc" secondAttribute="trailing" id="1Pn-TJ-G22"/>
                 <constraint firstItem="7mX-0p-wxc" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="12" id="3Ad-Zu-QW6"/>
+                <constraint firstItem="7mX-0p-wxc" firstAttribute="top" secondItem="OdZ-R2-IRD" secondAttribute="bottom" id="KsM-0G-aSh"/>
+                <constraint firstItem="OdZ-R2-IRD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Tdo-HX-37i"/>
                 <constraint firstItem="RiB-4K-IAb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="VUt-V4-nul"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RiB-4K-IAb" secondAttribute="trailing" id="X0z-jR-QEP"/>
-                <constraint firstItem="7mX-0p-wxc" firstAttribute="top" secondItem="RiB-4K-IAb" secondAttribute="bottom" constant="10" id="Zzs-lP-Esa"/>
+                <constraint firstItem="7mX-0p-wxc" firstAttribute="top" secondItem="RiB-4K-IAb" secondAttribute="bottom" constant="55" id="Zzs-lP-Esa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OdZ-R2-IRD" secondAttribute="trailing" id="kOI-jC-v5n"/>
                 <constraint firstItem="7mX-0p-wxc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tvk-P2-VyE"/>
+                <constraint firstItem="OdZ-R2-IRD" firstAttribute="top" secondItem="RiB-4K-IAb" secondAttribute="bottom" id="xdR-QW-9NT"/>
                 <constraint firstItem="RiB-4K-IAb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yrL-6R-UpW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

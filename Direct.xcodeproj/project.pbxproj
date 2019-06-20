@@ -339,7 +339,6 @@
 		6C431DF322B51C0C00DD140D /* ViewPagerTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPagerTabView.swift; sourceTree = "<group>"; };
 		6C431DF422B51C0C00DD140D /* ViewPagerTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPagerTab.swift; sourceTree = "<group>"; };
 		6C431DF522B51C0C00DD140D /* ViewPagerOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPagerOptions.swift; sourceTree = "<group>"; };
-		6C431DFB22B5286600DD140D /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/PassangersInputViewViewController.strings; sourceTree = "<group>"; };
 		6C431E0022B52DB500DD140D /* PassangerInputsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangerInputsSection.swift; sourceTree = "<group>"; };
 		6C431E0222B52E8B00DD140D /* PersonalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoView.swift; sourceTree = "<group>"; };
 		6C431E0422B52E9D00DD140D /* PersonalInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalInfoView.xib; sourceTree = "<group>"; };
@@ -664,6 +663,32 @@
 				51864FCE65244511A162A435 /* Pods-Direct.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		6C06E80D22BC2ABF006A48DD /* view */ = {
+			isa = PBXGroup;
+			children = (
+				6CF1C9AF22A5DBEE0034DB39 /* PassangersInputViewViewController.swift */,
+				6C431DDB22B3C90400DD140D /* PassangersInputViewViewController.xib */,
+				6CF2515122A660A000CDA47C /* PassangerFormController.swift */,
+				6CF2515222A660A000CDA47C /* PassangerFormController.xib */,
+				6CF2514D22A6496200CDA47C /* PreviousTraveledCountriesController.swift */,
+				6C6F361B22AF7C660045BAC8 /* PassangersQuestionsStepVC.swift */,
+				6C6F361C22AF7C660045BAC8 /* PassangersQuestionsStepVC.xib */,
+				6C431E0022B52DB500DD140D /* PassangerInputsSection.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		6C06E80E22BC2AD1006A48DD /* model */ = {
+			isa = PBXGroup;
+			children = (
+				6CF2514722A635E600CDA47C /* APIValues.swift */,
+				6CDB3C9922AA683D00C0165C /* InputsJsonBuilder.swift */,
+				6CF2514922A6374D00CDA47C /* DialogsBuilder.swift */,
+				6CD5848122B25736005A2190 /* PassangerFormViewModel.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		6C1C605B228E3D01006490CB /* about */ = {
@@ -1057,19 +1082,9 @@
 		6CC5149D227DC02900634B5D /* passangers */ = {
 			isa = PBXGroup;
 			children = (
+				6C06E80E22BC2AD1006A48DD /* model */,
+				6C06E80D22BC2ABF006A48DD /* view */,
 				6C431E0622B53A9B00DD140D /* personal info */,
-				6CF1C9AF22A5DBEE0034DB39 /* PassangersInputViewViewController.swift */,
-				6C431DDB22B3C90400DD140D /* PassangersInputViewViewController.xib */,
-				6CF2514722A635E600CDA47C /* APIValues.swift */,
-				6CDB3C9922AA683D00C0165C /* InputsJsonBuilder.swift */,
-				6CF2514922A6374D00CDA47C /* DialogsBuilder.swift */,
-				6CF2514D22A6496200CDA47C /* PreviousTraveledCountriesController.swift */,
-				6CF2515122A660A000CDA47C /* PassangerFormController.swift */,
-				6CF2515222A660A000CDA47C /* PassangerFormController.xib */,
-				6C6F361B22AF7C660045BAC8 /* PassangersQuestionsStepVC.swift */,
-				6C6F361C22AF7C660045BAC8 /* PassangersQuestionsStepVC.xib */,
-				6CD5848122B25736005A2190 /* PassangerFormViewModel.swift */,
-				6C431E0022B52DB500DD140D /* PassangerInputsSection.swift */,
 			);
 			path = passangers;
 			sourceTree = "<group>";
@@ -1693,7 +1708,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				6C431DDC22B3D09B00DD140D /* Base */,
-				6C431DFB22B5286600DD140D /* ar */,
 			);
 			name = PassangersInputViewViewController.xib;
 			sourceTree = "<group>";

@@ -11,14 +11,16 @@ import UIKit
 class PassangersInputViewViewController: UIViewController {
     /// Description
 
-    var tabs = [(ViewPagerTab, PassangerFormController)]()
-    var pager: ViewPager?
+   
 
     @IBOutlet private var containerView: UIView!
+    private let disposeBag = DisposeBag()
+
     @IBOutlet var headerLbl: UILabel!
+    private var tabs = [(ViewPagerTab, PassangerFormController)]()
+    private var pager: ViewPager?
     var visaInfo: VisaRequestParams?
     var successInputIndexes: [Int] = []
-    private let disposeBag = DisposeBag()
     var defaultTabSelection = PublishSubject<Int>()
 
     override func viewDidLoad() {
@@ -33,7 +35,6 @@ class PassangersInputViewViewController: UIViewController {
 
     func setupPager() {
         pager = ViewPager(viewController: self,containerView: containerView)
-
         let options = ViewPagerOptions()
         options.tabType = .imageWithText
         options.distribution = .normal
@@ -89,7 +90,6 @@ class PassangersInputViewViewController: UIViewController {
             if successInputIndexes.contains(index) {
                 tabs[index].0.image = #imageLiteral(resourceName: "path4")
             } else {
-            
                 self.willMoveToControllerAtIndex(index: index)
                 return true
             }
