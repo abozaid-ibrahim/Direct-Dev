@@ -33,8 +33,9 @@ class VisaRequirementTableCell: UITableViewCell, TableCell {
             imgView.borderColorV = UIColor.appMango
             imgView.borderWidthV = 2
         } else {
-            imgView.setImage(url: model.image ?? "")
+            imgView.setImage(model.image ?? "")
             widthConst.constant = 20
+            imgView.backgroundColor = .clear
             imgView.rounded = false
         }
     }

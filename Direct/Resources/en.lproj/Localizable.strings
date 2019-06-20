@@ -39,8 +39,6 @@
 "login_btn_clickable" = "تسجيل دخول  ";
 "auth_code_sent" = "سيتم إرسال كود التفعيل خلال دقائق";
 "signup_error_subtitle" = "لم نتمكن من تسجيلك كمستخدم جديد ";
-
-
 // ConfirmCode
 "confirm_title_label" = "كود التفعيل";
 "confirm_subtitle_label" = "نرجوا إدخال كود التفعيل الذي استلمته على الرقم المدخل من قبلكم";
@@ -52,23 +50,18 @@
 
 "confirm_error_title" = "";
 "confirm_error_sub" = "لم نتمكن من تفعيل الرقم";
-
-
-
 // forgetPassword
 "forget_label_title" = "استعادة كلمة المرور";
 "forget_lable_subtitle" = "لاستعادة كلمة المرور نرجوا كتابة البريد الالكتروني، وسوف نرسل كود الاستعادة على البريد";
 "forget_tf_placeholder" = "البريد الالكتروني";
 "forget_btn_label" = "أرسل";
 "back_to_login" = "العودة لتسجيل الدخول";
-
 // NEW password
 "newpass_label_title" = "كلمة مرور جديدة";
 "newpass_label_subtitle" = "ضع كلمة المرور الجديدة وتأكد بأنك لن تنساها";
 "pass_tf_placeholder" = "كلمة المرور";
 "repeat_pass_tf_placeholder" = "تأكيد كلمة المرور";
 "pass_btn_label_confirm" = "تغيير";
-
 // Auth messages
 "success_title" = "تمت العملية بنجاح";
 "error_title" = "حدث خطأ ما";
@@ -83,7 +76,8 @@
 "mobile_message_sent" = "لقد تم إرسال رقم التفعيل لجوالك مرة أخرى";
 "activate_code_missing" = "تأكد من إدخال كود التفعيل";
 "activate_email_Phone" = "تأكد من إدخال رقم الجوال او البريد الالكتروني";
-// Auth messages
+
+// Visa Requiremnt
 "adult" = "بالغ";
 "child" = "طفل";
 "yes" = "نعم";
@@ -101,15 +95,14 @@
 "Ever you traveled to" = "هل سبق لك زيارة";
 "Before" = "من قبل؟";
 "Passangers Info" = "بيانات المسافرين";
-
 "adults" = "البالغين";
 "Passangers" = "المسافرين";
 "Passangers Count" = "عدد المسافرين";
 "Passport Count" = "عدد الجوازات";
 "childs" = "الاطفال";
 "Passport" = "جواز سفر";
-
 "Need Biometric" = "تتطلب بصمة";
 "Need Biometric Desc" = "";
 "time to get a visa" = "المدة المتوقعة لصدور التأشيرة";
 "time to get a visa desc" = "من 3 الى 15 يوم عمل من موعد التبصيم.";
+///

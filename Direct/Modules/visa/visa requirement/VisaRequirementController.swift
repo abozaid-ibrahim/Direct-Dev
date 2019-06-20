@@ -59,7 +59,7 @@ extension VisaRequirementController {
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
     private func appendStaticReq(){
-        let req = Requirement(title: Str.timeTogetVisa, desc: Str.timeTogetVisaDesc, image: "calender", icon: "calender", isInfo: nil)
+        let req = Requirement(title: Str.timeTogetVisa, desc: Str.timeTogetVisaDesc, image: "calendar", icon: "calendar", isInfo: nil)
         self.datalist.append(ReqDataSection(req))
 
     }
@@ -74,7 +74,7 @@ extension VisaRequirementController {
             self.data.onNext(req.requirementPage.first?.requirements ?? [])
             if let obj = req.requirementPage.first {
                 // set header data
-                self.headerIconView.setImage(url: obj.flagURL ?? "")
+                self.headerIconView.setImage(obj.flagURL ?? "")
                 self.countryNameLbl.text = obj.name
                 self.descLbl.text =  self.visaData?.visatypeText
 
