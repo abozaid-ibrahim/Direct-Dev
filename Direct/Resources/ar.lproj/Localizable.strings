@@ -105,5 +105,9 @@
 "Passangers Count" = "عدد المسافرين";
 "Passport Count" = "عدد الجوازات";
 "childs" = "الاطفال";
-"passport" = "جواز سفر";
+"Passport" = "جواز سفر";
+"Need Biometric" = "تتطلب بصمة";
+"Need Biometric Desc" = "";
+"time to get a visa" = "المدة المتوقعة لصدور التأشيرة";
+"time to get a visa desc" = "من 3 الى 15 يوم عمل من موعد التبصيم.";
 

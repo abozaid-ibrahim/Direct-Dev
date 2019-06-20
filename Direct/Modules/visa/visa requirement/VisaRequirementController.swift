@@ -54,10 +54,15 @@ extension VisaRequirementController {
         data.subscribe(onNext: { [unowned self] value in
             self.datalist.removeAll()
             self.datalist.append(contentsOf: value.map { ReqDataSection($0) })
+            self.appendStaticReq()
             self.tableView.reloadData()
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
+    private func appendStaticReq(){
+        let req = Requirement(title: Str.timeTogetVisa, desc: Str.timeTogetVisaDesc, image: "calender", icon: "calender", isInfo: nil)
+        self.datalist.append(ReqDataSection(req))
 
+    }
     private func getDataRemotely() {
         guard let id = visaData?.country_id else {
             return

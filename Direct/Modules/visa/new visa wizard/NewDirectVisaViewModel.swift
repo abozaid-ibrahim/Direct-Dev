@@ -263,12 +263,17 @@ class NewDirectVisaViewModel {
         try! AppNavigator().presentModally(countriesController!)
     }
 
-    private var visaPriceParams: VisaPriceParams {
-        return VisaPriceParams(cid: visaRequestData.country_id, cityid: visaRequestData.biometry_loc_id ?? "0", no_of_adult: visaRequestData.no_of_adult ?? "0", no_of_child: visaRequestData.no_of_child ?? "0", no_of_passport: visaRequestData.no_of_passport ?? "0", promo_code: 0.stringValue, visatype: visaRequestData.visatype)
+    private var visaPriceParams: VisaPriceParams? {
+        guard let cid = visaRequestData.country_id,
+            let vtype = visaRequestData.visatype else {
+            return nil
+        }
+        return VisaPriceParams(cid: cid, cityid: visaRequestData.biometry_loc_id ?? "0", no_of_adult: visaRequestData.no_of_adult ?? "0", no_of_child: visaRequestData.no_of_child ?? "0", no_of_passport: visaRequestData.no_of_passport ?? "0", promo_code: 0.stringValue, visatype: vtype)
     }
 
     private func callApiToUpdatePrices() {
-        network?.getVisaPrice(prm: visaPriceParams).subscribe(onNext: { [weak self] pr in
+        guard let prm = visaPriceParams else {return}
+        network?.getVisaPrice(prm: prm).subscribe(onNext: { [weak self] pr in
             print(pr)
             self?.updateTotalCost(with: PassangersCountController.totalPrice(from: pr))
 

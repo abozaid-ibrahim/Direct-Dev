@@ -38,5 +38,17 @@ struct Str{
     static var child:String{
         return "child".localized
     }
-    
+    static var needBiometric:String{
+        return "Need Biometric"
+    }
+    static var needBiometricDesc:String{
+        return "Need Biometric Desc"
+    }
+    static var timeTogetVisa:String{
+        return "time to get a visa"
+    }
+    static var timeTogetVisaDesc:String{
+        return "time to get a visa desc"
+    }
+
 }

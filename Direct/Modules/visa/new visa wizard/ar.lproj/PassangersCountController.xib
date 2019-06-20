@@ -43,8 +43,8 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kLW-V3-XCT" userLabel="counts">
                                     <rect key="frame" x="0.0" y="32.5" width="382" height="70"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5Cs-1I-KuU" userLabel="counts stack">
-                                            <rect key="frame" x="2" y="1" width="382" height="70"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5Cs-1I-KuU" userLabel="counts stack">
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="70"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="zgV-7P-XfO" userLabel="adults">
                                                     <rect key="frame" x="0.0" y="0.0" width="382" height="24"/>
@@ -91,6 +91,9 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="uJT-kI-Fbn"/>
+                                                    </constraints>
                                                 </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyV-Lf-dzO" userLabel="sep">
                                                     <rect key="frame" x="0.0" y="34.5" width="382" height="1"/>
@@ -144,6 +147,9 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="Nq6-Yr-fVh"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                         </stackView>
@@ -154,7 +160,6 @@
                                         <constraint firstItem="5Cs-1I-KuU" firstAttribute="leading" secondItem="kLW-V3-XCT" secondAttribute="leading" id="JtB-vk-u0e"/>
                                         <constraint firstAttribute="bottom" secondItem="5Cs-1I-KuU" secondAttribute="bottom" id="jy9-EP-35g"/>
                                         <constraint firstAttribute="trailing" secondItem="5Cs-1I-KuU" secondAttribute="trailing" id="o0K-kj-61h"/>
-                                        <constraint firstAttribute="height" constant="70" id="pcG-6o-0Wx"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" verticalHuggingPriority="245" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="bE9-Ii-Awg" userLabel="space">

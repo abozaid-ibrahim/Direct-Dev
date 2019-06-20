@@ -41,7 +41,7 @@ class PassangersCountController: UIViewController, PanModalPresentable {
             menCount = Int(info.no_of_passport) ?? 0
             childCount = 0
             childViewContainer.forEach { $0.isHidden = true }
-            adultsPlaceholderLbl.text = Str.passport
+            adultsPlaceholderLbl.text = Str.passportsCount
         }
     }
 
