@@ -8,14 +8,22 @@
 
 import Kingfisher
 import UIKit
+
 extension UIImageView {
-    func setImage(_ nameOrPath: String) {
-        guard let urlObj = URL(string: nameOrPath) else {
-            if let img = UIImage(named: nameOrPath) {
-                self.image = img
-            }
-            return
+    func setImage(with value: String, suffix: String? = nil, placeholder: UIImage? = nil, selected: Bool = false) {
+        if let localImage = UIImage(named: value) {
+            image = localImage
+        } else if let url = URL(string: value) {
+            kf.setImage(with: url)
+        } else {
+            image = nil
         }
-        kf.setImage(with: urlObj)
+    }
+
+    func addCircle(color: UIColor, border: CGFloat) {
+        self.layer.cornerRadius = (self.bounds.size.width / 2)
+        self.layer.borderWidth = border
+        self.layer.borderColor = color.cgColor
+        self.layer.masksToBounds = true
     }
 }

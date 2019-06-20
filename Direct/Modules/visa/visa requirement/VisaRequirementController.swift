@@ -74,7 +74,7 @@ extension VisaRequirementController {
             self.data.onNext(req.requirementPage.first?.requirements ?? [])
             if let obj = req.requirementPage.first {
                 // set header data
-                self.headerIconView.setImage(obj.flagURL ?? "")
+                self.headerIconView.setImage(with: obj.flagURL ?? "")
                 self.countryNameLbl.text = obj.name
                 self.descLbl.text =  self.visaData?.visatypeText
 

@@ -10,7 +10,7 @@ import UIKit
 
 class CountryTableCell: UITableViewCell, TableCell {
     func setCellData(_ model: CellDataModel) {
-        logoView.setImage(model.flag ?? "")
+        logoView.setImage(with: model.flag ?? "")
         textLbl.text = model.countryName
     }
 
