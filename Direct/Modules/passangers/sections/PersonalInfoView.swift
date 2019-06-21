@@ -11,6 +11,21 @@ import UIKit
 
 class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     var params: USRequestParams?
+    // Family
+    @IBOutlet var firstNamePInfoField: FloatingTextField!
+    @IBOutlet var familyNamePInfoField: FloatingTextField!
+    @IBOutlet var personalPhotoField: FloatingTextField!
+    @IBOutlet var statusPInfoField: FloatingTextField!
+    @IBOutlet var isHusbandWillTravelView: UIView!
+    @IBOutlet var husbundPInfoField: FloatingTextField!
+    @IBOutlet var familyIDView: UIView!
+    @IBOutlet var familyIDPInfoField: FloatingTextField!
+    @IBOutlet var passportImageField: FloatingTextField!
+    
+    @IBOutlet var martialStateView: UIView!
+    @IBOutlet var personalPictureView: UIView!
+    @IBOutlet var passportView: UIView!
+    private let dialogs = DialogBuilder()
     
     // ImagePicker
     var currentImageID: Int = 0
@@ -134,7 +149,6 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
             return false
         }
         if !validateNameAndIdentity() {
-           print("flse")
             return false
         }
         if params.martialStatus.isValidText {
@@ -170,29 +184,13 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
         return true
     }
     
-    // Family
-    @IBOutlet var firstNamePInfoField: FloatingTextField!
-    @IBOutlet var familyNamePInfoField: FloatingTextField!
-    @IBOutlet var personalPhotoField: FloatingTextField!
-    @IBOutlet var statusPInfoField: FloatingTextField!
-    @IBOutlet var isHusbandWillTravelView: UIView!
-    @IBOutlet var husbundPInfoField: FloatingTextField!
-    @IBOutlet var familyIDView: UIView!
-    @IBOutlet var familyIDPInfoField: FloatingTextField!
-    @IBOutlet var passportImageField: FloatingTextField!
-    
-    @IBOutlet var martialStateView: UIView!
-    @IBOutlet var personalPictureView: UIView!
-    @IBOutlet var passportView: UIView!
-    private let dialogs = DialogBuilder()
-    
+
     private func pInfoSetup() {
         familyIDView.isHidden = false
         isHusbandWillTravelView.isHidden = true
         statusPInfoField.rx.tapGesture().when(.recognized)
             .subscribe { _ in
                 let alert = self.dialogs.buildMatrialState(callback: { [weak self] state in
-                    print(state, state.string, state.apiValue)
                     guard let self = self else { return }
                     self.statusPInfoField.text = state.string
                     if state.apiValue == MartialState.single.apiValue {
@@ -223,11 +221,11 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
                     guard let self = self else { return }
                     self.params?.husbandOrWifeTravelWithYou = agreed.apiValue.stringValue
                     self.husbundPInfoField.text = agreed.string
-//                    if agreed.apiValue == AgreementValues.yes.apiValue {
-//                        self.familyIDView.isHidden = false
-//                    } else {
-//                        self.familyIDView.isHidden = true
-//                    }
+                    if agreed.apiValue == AgreementValues.yes.apiValue {
+                        self.familyIDView.isHidden = false
+                    } else {
+                        self.familyIDView.isHidden = true
+                    }
                     self.contentHeight.onNext(self.neededHeight)
                 })
                 try! AppNavigator().present(alert)

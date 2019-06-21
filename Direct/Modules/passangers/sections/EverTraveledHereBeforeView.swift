@@ -9,7 +9,7 @@
 import RxSwift
 import UIKit
 
-class PassangersQuestionsStepVC: UIViewController {
+class EverTraveledHereBeforeView: UIViewController {
     // MARK: IBuilder ====================================>>
 
     @IBOutlet private var contentView: UIView!

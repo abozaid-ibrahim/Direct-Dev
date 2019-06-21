@@ -8,7 +8,7 @@
 
 import Foundation
 import RxSwift
-class PassangerFormViewModel {
+class VisaQuestionsViewModel {
     private let network = ApiClientFacade()
     var selectedRelation = PublishSubject<String?>()
 
@@ -22,7 +22,6 @@ class PassangerFormViewModel {
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
     
-  
 
 }
 struct Segment {

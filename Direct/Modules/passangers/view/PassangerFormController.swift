@@ -23,39 +23,31 @@ class PassangerFormController: UIViewController {
 
     // MARK: IBuilder ====================================>>
 
-    @IBOutlet var visaCanceledBeforeView: UIView!
-    @IBOutlet var relativesView: UIView!
+    // containers
     @IBOutlet private var personalInfoContainer: UIView!
     @IBOutlet private var personalInfoHeight: NSLayoutConstraint!
     @IBOutlet private var motherInfoContainer: UIView!
     @IBOutlet private var motherInfoHeight: NSLayoutConstraint!
+    @IBOutlet private var visaQuestionsContainer: UIView!
+    @IBOutlet private var visaQuestionsHeight: NSLayoutConstraint!
 
     // Ever you had a vis
     @IBOutlet var everTraveledBeforeView: UIView!
-    @IBOutlet var previousVisaLbl: UILabel!
-    @IBOutlet var previousVisaImageField: FloatingTextField!
-    @IBOutlet var everHadVisaSegment: UISegmentedControl!
 
     // countries
-    @IBOutlet var relativeField: FloatingTextField!
     @IBOutlet private var previouslyTraveledCountriesView: UIView!
     @IBOutlet private var countriesContainerHeight: NSLayoutConstraint!
-    @IBOutlet private var rejetionReasonField: FloatingTextField!
-    @IBOutlet private var relativeInCountryLbl: UILabel!
-    @IBOutlet private var relativeINCountrySegment: UISegmentedControl!
-    @IBOutlet private var visaCancelationLbl: UILabel!
-    @IBOutlet private var visaCancelationSegment: UISegmentedControl!
     @IBOutlet private var traveledHereBeforeHConstrain: NSLayoutConstraint!
 
     //===================================================<<
     let motherView: MotherInfoView = MotherInfoView.loadNib()
     let travels = UIStoryboard.visa.controller(PreviousTraveledCountriesController.self)
-    let questionsVC = PassangersQuestionsStepVC()
+    let everTraveldView = EverTraveledHereBeforeView()
     let personalInfoView: PersonalInfoView = PersonalInfoView.loadNib()
+    let visaQuestionsView: VisaQuestionsView = VisaQuestionsView.loadNib()
 
     internal let disposeBag = DisposeBag()
     var receivedImage = PublishSubject<(String?, UIImage?)>()
-    let viewModel = PassangerFormViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         personalInfoSetup()
@@ -63,11 +55,6 @@ class PassangerFormController: UIViewController {
         questionsSetup()
         addPreviousCountries()
         addEverTraveledView()
-        setFonts()
-        relativeSwitchChanged()
-        cancelReasonSwitch()
-        viewModel.getRelatives()
-        onRecieveImageCallback()
     }
 
     private func motherSectionSetup() {
@@ -84,12 +71,6 @@ class PassangerFormController: UIViewController {
         }
     }
 
-    private func setFonts() {
-        visaCancelationSegment.appFont()
-        relativeINCountrySegment.appFont()
-        everHadVisaSegment.appFont()
-    }
-
     private func addPreviousCountries() {
         guard let travelVC = travels as? PreviousTraveledCountriesController else { return }
         addChild(travelVC)
@@ -99,14 +80,14 @@ class PassangerFormController: UIViewController {
     }
 
     private func addEverTraveledView() {
-        addChild(questionsVC)
-        questionsVC.countryText = countryString
-        everTraveledBeforeView.addSubview(questionsVC.view)
-        questionsVC.view.frame = everTraveledBeforeView.bounds
-        questionsVC.selectedDuration.filter { $0?.id != nil }.subscribe(onNext: { [unowned self] value in
+        addChild(everTraveldView)
+        everTraveldView.countryText = countryString
+        everTraveledBeforeView.addSubview(everTraveldView.view)
+        everTraveldView.view.frame = everTraveledBeforeView.bounds
+        everTraveldView.selectedDuration.filter { $0?.id != nil }.subscribe(onNext: { [unowned self] value in
             self.params.periodOfPreviousStay = value?.id ?? ""
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
-        questionsVC.contentHeight
+        everTraveldView.contentHeight
             .asDriver(onErrorJustReturn: 0)
             .debug()
             .drive(onNext: { value in
@@ -137,73 +118,21 @@ class PassangerFormController: UIViewController {
     }
 
     private func onRecieveImageCallback() {
-        receivedImage.filter { $0.0 != nil }.subscribe(onNext: { [unowned self] value in
-            if self.currentImageID == self.visaImageID {
-                self.params.visaReqID = value.1?.convertImageToBase64String()
-                self.previousVisaImageField.text = value.0
-            }
-
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+//        receivedImage.filter { $0.0 != nil }.subscribe(onNext: { [unowned self] value in
+//            if self.currentImageID == self.visaImageID {
+//                self.params.visaReqID = value.1?.convertImageToBase64String()
+//                self.previousVisaImageField.text = value.0
+//            }
+//
+//        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 
     private func questionsSetup() {
-        if formTypeValue == .TR {} else if formTypeValue != .US {}
-
-        switch formTypeValue {
-        case .US, .GB:
-            relativesView.isHidden = false
-            visaCanceledBeforeView.isHidden = false
-            everTraveledBeforeView.isHidden = false
-            previouslyTraveledCountriesView.isHidden = false
-        case .TR:
-            relativesView.isHidden = true
-            visaCanceledBeforeView.isHidden = true
-            everTraveledBeforeView.isHidden = true
-            previouslyTraveledCountriesView.isHidden = true
-        default:
-            relativesView.isHidden = true
-            visaCanceledBeforeView.isHidden = true
-        }
-        // ever you travedled
-        previousVisaLbl.text = "هل سبق وحصلت على تأشيرة " + countryString + Str.before
-        relativeInCountryLbl.text = "هل لديك اى اقارب فى " + countryString + "؟"
-        visaCancelationLbl.text = "هل تم رفض دخولك أو الغاء تأشيرتك الى " + countryString + Str.before
-        previousVisaImageField.neverShowKeypad()
-        previousVisaImageField.rx.tapGesture().when(.recognized)
-            .subscribe { _ in
-//                self.showImagePicker(id: self.visaImageID)
-            }.disposed(by: disposeBag)
-
-        relativeField.neverShowKeypad()
-        relativeField.rx.tapGesture().when(.recognized)
-            .subscribe { _ in
-                self.showRelationsSpinner()
-            }.disposed(by: disposeBag)
-        viewModel.selectedRelation.bind(to: relativeField.rx.text).disposed(by: disposeBag)
-    }
-
-    @IBAction func cancelReasonChanged(_: UISegmentedControl) {
-        cancelReasonSwitch()
-    }
-
-    private func cancelReasonSwitch() {
-        if visaCancelationSegment.selectedSegmentIndex == Segment.no {
-            rejetionReasonField.isHidden = true
-        } else {
-            rejetionReasonField.isHidden = false
-        }
-    }
-
-    @IBAction func hasRelativeDidChange(_: UISegmentedControl) {
-        relativeSwitchChanged()
-    }
-
-    private func relativeSwitchChanged() {
-        if relativeINCountrySegment.selectedSegmentIndex == Segment.no {
-            relativeField.isHidden = true
-        } else {
-            relativeField.isHidden = false
-        }
+        visaQuestionsView.formType = formTypeValue
+        visaQuestionsView.params = params
+        visaQuestionsContainer.addSubview(visaQuestionsView)
+        visaQuestionsView.frame = visaQuestionsContainer.bounds
+        visaQuestionsView.contentHeight.bind(to: visaQuestionsHeight.rx.constant).disposed(by: disposeBag)
     }
 
     func getPreviousVisaTypes() {
@@ -228,17 +157,13 @@ class PassangerFormController: UIViewController {
     }
 
     func fillParams() {
-        params.everIssuedVisaBefore = "\(visaCancelationSegment.selectedSegmentIndex)"
-        params.travelledBeforeHere = questionsVC.travelledBeforeHere.stringValue
+        params.travelledBeforeHere = everTraveldView.travelledBeforeHere.stringValue
 
         // Others PDF
         params.lang = AppLanguage.langCode
 
         params.travelledBeforeHere = prevTravelsJson
-        params.have_driver_license = questionsVC.haveLicense
-        params.any_relatives_here = relativeINCountrySegment.selectedSegmentIndex
-        params.visa_cancelled_before = visaCancelationSegment.selectedSegmentIndex
-        //
+        params.have_driver_license = everTraveldView.haveLicense
     }
 
     var prevTravelsJson: String {

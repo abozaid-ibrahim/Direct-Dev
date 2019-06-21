@@ -59,6 +59,27 @@ class DialogBuilder {
         }.disposed(by: disposeBag)
         try! AppNavigator().presentModally(vc)
     }
+
+    func buildRelationsSpinner(_ disposeBag: DisposeBag,_ relativesList: [Relative], selected: @escaping (Relative) -> Void) {
+        let bios = relativesList.map { $0.name ?? "" }
+        let dest = Destination.selectableSheet(data: bios, titleText: "relativity".localized, style: .textCenter)
+        let vc = dest.controller() as! SelectableTableSheet
+        vc.selectedItem.asObservable().subscribe { event in
+            switch event.event {
+            case let .next(value):
+
+                let bio = relativesList.filter { $0.name == value }
+                if let bioObj = bio.first {
+                    selected(bioObj)
+                }
+
+            default:
+                break
+            }
+
+        }.disposed(by: disposeBag)
+        try! AppNavigator().presentModally(vc)
+    }
 }
 
 extension PassangerFormController {
@@ -74,27 +95,5 @@ extension PassangerFormController {
         }
 
         present(alert, animated: true, completion: nil)
-    }
-
-    func showRelationsSpinner() {
-        let bios = viewModel.relativesList.map { $0.name ?? "" }
-        let dest = Destination.selectableSheet(data: bios, titleText: "relativity".localized, style: .textCenter)
-        let vc = dest.controller() as! SelectableTableSheet
-        vc.selectedItem.asObservable().subscribe { event in
-            switch event.event {
-            case let .next(value):
-                let bio = self.viewModel.relativesList.filter { $0.name == value }
-                if let bioObj = bio.first {
-                    self.params.relative_type = bioObj.id.int ?? 0
-                }
-
-                self.viewModel.selectedRelation.onNext(value)
-
-            default:
-                break
-            }
-
-        }.disposed(by: disposeBag)
-        try! AppNavigator().presentModally(vc)
     }
 }

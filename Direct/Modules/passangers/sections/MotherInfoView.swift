@@ -13,6 +13,7 @@ class MotherInfoView: UIView, PassangerInputsSection {
     @IBOutlet var firstNameMotherField: FloatingTextField!
     @IBOutlet var familyNameMotherField: FloatingTextField!
     @IBOutlet var nationalityMotherField: FloatingTextField!
+    
     var params: USRequestParams?
     var formType: CountriesIDs? {
         didSet {
@@ -22,6 +23,21 @@ class MotherInfoView: UIView, PassangerInputsSection {
     
     internal let disposeBag = DisposeBag()
     var contentHeight = BehaviorSubject<CGFloat>(value: 130)
+    
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        viewSetup()
+        contentHeight.onNext(neededHeight)
+    }
     
     func isInputsValid() -> Bool {
         if firstNameMotherField.text.isValidText {
@@ -36,10 +52,10 @@ class MotherInfoView: UIView, PassangerInputsSection {
             familyNameMotherField.setError.onNext(true)
             return false
         }
-       
+        
         params?.mothersFirstName = firstNameMotherField.text
         params?.mothersFamilyName = familyNameMotherField.text
-       
+        
         //validate id
         if formType! != CountriesIDs.TR{
             if nationalityMotherField.text.isValidText {
@@ -49,23 +65,9 @@ class MotherInfoView: UIView, PassangerInputsSection {
                 return false
             }
             params?.nationality = nationalityMotherField.text
-
+            
         }
         return true
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        viewSetup()
-        contentHeight.onNext(neededHeight)
     }
     func applyFormRules(){
         if formType! == .TR{
