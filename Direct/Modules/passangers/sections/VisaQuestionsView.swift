@@ -75,6 +75,9 @@ class VisaQuestionsView: UIView, ImagePicker {
         onRecieveImageCallback()
     }
     
+    @IBOutlet weak var cancelViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var relativesViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var previousVisaViewHeight: NSLayoutConstraint!
     func isInputsValid() -> Bool {
         guard let type = formType else {
             return false
@@ -200,8 +203,10 @@ class VisaQuestionsView: UIView, ImagePicker {
     private func changePreviousVisaSelection() {
         if hasPreviousVisaSegment.selectedSegmentIndex == Segment.no {
             previousVisaImageField.isHidden = true
+            previousVisaViewHeight.constant = 90
         } else {
             previousVisaImageField.isHidden = false
+            previousVisaViewHeight.constant = 135
         }
     }
     
@@ -213,8 +218,10 @@ class VisaQuestionsView: UIView, ImagePicker {
     private func cancelReasonSwitch() {
         if visaCancelationSegment.selectedSegmentIndex == Segment.no {
             cancelationReasonField.isHidden = true
+            cancelViewHeight.constant = 90
         } else {
             cancelationReasonField.isHidden = false
+            cancelViewHeight.constant = 135
         }
     }
     
@@ -226,8 +233,11 @@ class VisaQuestionsView: UIView, ImagePicker {
     private func relativeSwitchChanged() {
         if relativeINCountrySegment.selectedSegmentIndex == Segment.no {
             relativityField.isHidden = true
+            relativesViewHeight.constant = 90
         } else {
             relativityField.isHidden = false
+             relativesViewHeight.constant = 135
         }
+       
     }
 }

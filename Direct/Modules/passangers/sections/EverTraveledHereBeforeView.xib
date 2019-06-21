@@ -18,7 +18,6 @@
                 <outlet property="everYouTraveledLbl" destination="QsX-D7-pVx" id="jJc-kQ-n2a"/>
                 <outlet property="everYouTraveledSegment" destination="xB5-V6-UUH" id="kQ0-Em-I6y"/>
                 <outlet property="licenceSegment" destination="jb0-CY-BGA" id="kUF-xd-tYK"/>
-                <outlet property="previousVisaImageField" destination="S4U-22-dng" id="78X-D5-0bH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
