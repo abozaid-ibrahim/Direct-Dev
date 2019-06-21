@@ -30,7 +30,13 @@ class VisaQuestionsView: UIView, ImagePicker {
     //===================================================<<
     
     var params: USRequestParams?
-    var countryName: String!
+    var countryName: String!{
+        didSet{
+            previousVisaLbl.text = "هل سبق وحصلت على تأشيرة " + countryString + Str.before
+            relativeInCountryLbl.text = "هل لديك اى اقارب فى " + countryString + "؟"
+            visaCancelationLbl.text = "هل تم رفض دخولك أو الغاء تأشيرتك الى " + countryString + Str.before
+        }
+    }
     
     // ImagePicker
     var currentImageID: Int = 0
@@ -150,7 +156,10 @@ class VisaQuestionsView: UIView, ImagePicker {
         case .TR:
             relativesView.isHidden = true
             visaCanceledBeforeView.isHidden = true
-        case .IN, .CN, .JP, .IE:
+        case .IE:
+            relativesView.isHidden = true
+            visaCanceledBeforeView.isHidden = true
+        case .IN, .CN, .JP:
             relativesView.isHidden = true
             visaCanceledBeforeView.isHidden = true
         }
@@ -175,9 +184,7 @@ class VisaQuestionsView: UIView, ImagePicker {
     
     private func questionsSetup() {
         // ever you travedled
-        previousVisaLbl.text = "هل سبق وحصلت على تأشيرة " + countryString + Str.before
-        relativeInCountryLbl.text = "هل لديك اى اقارب فى " + countryString + "؟"
-        visaCancelationLbl.text = "هل تم رفض دخولك أو الغاء تأشيرتك الى " + countryString + Str.before
+
         previousVisaImageField.neverShowKeypad()
         previousVisaImageField.rx.tapGesture().when(.recognized)
             .subscribe { _ in

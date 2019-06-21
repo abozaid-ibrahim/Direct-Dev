@@ -98,7 +98,7 @@ class NewDirectVisaViewModel {
         } else if visaRequestData.visatype == nil {
             selectedVisaType.onNext(nil)
             return false
-        } else if visaRequestData.biometry_loc_id == nil, visaRequestData.country_id != turkeyCountryId, hasBioLocation {
+        } else if visaRequestData.biometry_loc_id == nil, !self.embassyLocations.isNilOrEmpty, hasBioLocation {
             selectedBio.onNext(nil)
             return false
         } else if visaRequestData.travel_date == nil {
