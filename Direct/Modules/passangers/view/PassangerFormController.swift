@@ -129,6 +129,7 @@ class PassangerFormController: UIViewController {
 
     private func questionsSetup() {
         visaQuestionsView.formType = formTypeValue
+        visaQuestionsView.countryName = countryName
         visaQuestionsView.params = params
         visaQuestionsContainer.addSubview(visaQuestionsView)
         visaQuestionsView.frame = visaQuestionsContainer.bounds

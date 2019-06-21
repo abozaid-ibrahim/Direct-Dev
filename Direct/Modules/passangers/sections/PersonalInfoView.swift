@@ -8,9 +8,13 @@
 
 import RxSwift
 import UIKit
+enum VisaType {
+    case study, torrerist
+}
 
 class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     var params: USRequestParams?
+    var visaType: VisaType?
     // Family
     @IBOutlet var firstNamePInfoField: FloatingTextField!
     @IBOutlet var familyNamePInfoField: FloatingTextField!
@@ -21,7 +25,9 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     @IBOutlet var familyIDView: UIView!
     @IBOutlet var familyIDPInfoField: FloatingTextField!
     @IBOutlet var passportImageField: FloatingTextField!
+    @IBOutlet var acceptanceImageField: FloatingTextField!
     
+    @IBOutlet var acceptanceVisaView: UIView!
     @IBOutlet var martialStateView: UIView!
     @IBOutlet var personalPictureView: UIView!
     @IBOutlet var passportView: UIView!
@@ -33,6 +39,8 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     private let passportImageID = 31
     private let visaImageID = 32
     private let personalPhotoID = 35
+    private let acceptanceUniversityID = 35
+    
     var receivedImage = PublishSubject<(String?, UIImage?)>()
     var formType: CountriesIDs? {
         didSet {
@@ -67,6 +75,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
         basic += martialStateView.isHidden ? 0 : unit
         basic += passportView.isHidden ? 0 : unit
         basic += personalPictureView.isHidden ? 0 : unit
+        basic += acceptanceVisaView.isHidden ? 0 : unit
         print("i>contentH \(basic)")
         return CGFloat(basic)
     }
@@ -141,6 +150,14 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
             passportImageField.setError.onNext(true)
             return false
         }
+        if visaType! == .study {
+            if params.universityAcceptanceImage.isValidText {
+                acceptanceImageField.setError.onNext(false)
+            } else {
+                acceptanceImageField.setError.onNext(true)
+                return false
+            }
+        }
         return true
     }
     
@@ -184,8 +201,12 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
         return true
     }
     
-
     private func pInfoSetup() {
+        if visaType! == .study {
+            acceptanceVisaView.isHidden = false
+        } else {
+            acceptanceVisaView.isHidden = true
+        }
         familyIDView.isHidden = false
         isHusbandWillTravelView.isHidden = true
         statusPInfoField.rx.tapGesture().when(.recognized)
@@ -237,6 +258,12 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
             .subscribe { _ in
                 self.showImagePicker(id: self.personalPhotoID)
             }.disposed(by: disposeBag)
+        
+        acceptanceImageField.neverShowKeypad()
+        acceptanceImageField.rx.tapGesture().when(.recognized)
+            .subscribe { _ in
+                self.showImagePicker(id: self.acceptanceUniversityID)
+            }.disposed(by: disposeBag)
     }
     
     func imagePickerController(_ picker: UIImagePickerController,
@@ -251,8 +278,8 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     private func onRecieveImageCallback() {
         receivedImage.filter { $0.0 != nil }.subscribe(onNext: { [unowned self] value in
             guard let img = value.1?.convertImageToBase64String() else {
-                
-                return }
+                return
+            }
             
             if self.currentImageID == self.familyImageID {
                 self.params?.familyIDCopy = img
@@ -264,6 +291,9 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
             } else if self.currentImageID == self.personalPhotoID {
                 self.params?.personalPhotoCopy = img
                 self.personalPhotoField.text = value.0
+            } else if self.currentImageID == self.acceptanceUniversityID {
+//            self.params? = img
+                self.acceptanceImageField.text = value.0
             }
             
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)

@@ -82,11 +82,10 @@ class VisaQuestionsView: UIView, ImagePicker {
     }
     
     var neededHeight: CGFloat {
-        var basic = 0
+        var basic = 10
         let unit = 140
         basic += visaCanceledBeforeView.isHidden ? 0 : unit
         basic += relativesView.isHidden ? 0 : unit
-        
         return CGFloat(basic)
     }
     

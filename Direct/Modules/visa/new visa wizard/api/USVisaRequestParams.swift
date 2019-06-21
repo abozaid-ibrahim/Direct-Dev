@@ -20,6 +20,8 @@ class USRequestParams: Codable {
     var have_driver_license: Int?
     var visa_cancelled_before: Int?
     var before_visa_cancelled_reason: String?
+    var universityAcceptanceImage: String?
+
     var any_relatives_here: Int?
     var relative_type: Int?
 
@@ -31,6 +33,7 @@ class USRequestParams: Codable {
         case visaReqApplicantID = "visa_req_applicant_id"
         case firstName = "first_name"
         case familyName = "family_name"
+        case universityAcceptanceImage = "l_20"
         case mothersFirstName = "mothers_first_name"
         case mothersFamilyName = "mothers_family_name"
         case nationality
@@ -83,13 +86,15 @@ class USRequestParams: Codable {
         before_visa_cancelled_reason = nil
         any_relatives_here = nil
         relative_type = nil
+        universityAcceptanceImage = nil
     }
 
     init(key: String?, lang: String?, userid: String?, visaReqID: String?, visaReqApplicantID: String?, firstName: String?, familyName: String?, mothersFirstName: String?, mothersFamilyName: String?, nationality: String?, passportCopy: String?, personalPhotoCopy: String?, visaLetterCopy: String?, everIssuedVisaBefore: String?, previousVisaCopy: String?, typeOfPreviousVisa: String?, travelledBeforeHere: String?, dateOfArrival: String?, periodOfPreviousStay: String?, martialStatus: String?, familyIDCopy: String?, husbandOrWifeTravelWithYou: String?, visits: [Visit]?, have_driver_license: Int?,
          visa_cancelled_before: Int?,
          before_visa_cancelled_reason: String?,
          any_relatives_here: Int?,
-         relative_type: Int?) {
+         relative_type: Int?,
+         universityAcceptanceImage:String?) {
         self.key = key
         self.lang = lang
         self.userid = userid
@@ -119,6 +124,7 @@ class USRequestParams: Codable {
         self.before_visa_cancelled_reason = before_visa_cancelled_reason
         self.any_relatives_here = any_relatives_here
         self.relative_type = relative_type
+        self.universityAcceptanceImage = universityAcceptanceImage
     }
 }
 
