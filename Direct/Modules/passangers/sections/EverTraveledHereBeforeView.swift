@@ -16,7 +16,6 @@ class EverTraveledHereBeforeView: UIViewController {
     @IBOutlet private var everYouTraveledLbl: UILabel!
     @IBOutlet private var everYouTraveledSegment: UISegmentedControl!
     @IBOutlet private var everTraveledDetailsSection: UIStackView!
-    @IBOutlet private var previousVisaImageField: FloatingTextField!
     @IBOutlet private var arrivalDateField: UITextField!
     @IBOutlet private var durationField: UITextField!
     @IBOutlet private var licenceSegment: UISegmentedControl!
@@ -78,7 +77,6 @@ class EverTraveledHereBeforeView: UIViewController {
 
     private let network = ApiClientFacade()
     var selectedRelation = PublishSubject<String?>()
-
     var relativesList: [USRelative] = []
     func getPeriod() {
         let rel = network.getStayPeriod()

@@ -34,7 +34,7 @@ class VisaQuestionsView: UIView, ImagePicker {
     
     // ImagePicker
     var currentImageID: Int = 0
-    private let visaImageID = 32
+    private let previousVisaImageID = 99
     var receivedImage = PublishSubject<(String?, UIImage?)>()
     var formType: CountriesIDs? {
         didSet {
@@ -63,33 +63,44 @@ class VisaQuestionsView: UIView, ImagePicker {
     override func awakeFromNib() {
         super.awakeFromNib()
         setup()
-       
-        onRecieveImageCallback()
         contentHeight.onNext(neededHeight)
-
     }
     
     private func setup() {
         setFonts()
         cancelReasonSwitch()
         relativeSwitchChanged()
-         changePreviousVisaSelection()
+        changePreviousVisaSelection()
         questionsSetup()
+        onRecieveImageCallback()
     }
     
     func isInputsValid() -> Bool {
         guard let type = formType else {
-            print("exit")
             return false
         }
-        
-        switch type {
-        case .US, CountriesIDs.GB:
-            return validateHasRelatives()
-            
-        default:
-            return validateVisaCancelation()
+        if !relativesView.isHidden {
+            guard relativityField.hasText else {
+                relativityField.setError.onNext(true)
+                return false
+            }
+            relativityField.setError.onNext(false)
         }
+        if !visaCanceledBeforeView.isHidden {
+            guard cancelationReasonField.hasText else {
+                cancelationReasonField.setError.onNext(true)
+                return false
+            }
+            cancelationReasonField.setError.onNext(false)
+        }
+        if !previousVisaView.isHidden {
+            guard previousVisaImageField.hasText else {
+                previousVisaImageField.setError.onNext(true)
+                return false
+            }
+            previousVisaImageField.setError.onNext(false)
+        }
+        return true
     }
     
     var neededHeight: CGFloat {
@@ -108,6 +119,14 @@ class VisaQuestionsView: UIView, ImagePicker {
             basic -= previousVisaImageField.isHidden ? 50 : 0
         }
         return CGFloat(basic)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        let image = info[.originalImage] as? UIImage
+        let fileUrl = info[.imageURL] as? URL
+        receivedImage.onNext((fileUrl?.lastPathComponent, image?.apiSize()))
+        picker.dismiss(animated: true, completion: nil)
     }
     
     private func applyFormRules() {
@@ -143,7 +162,7 @@ class VisaQuestionsView: UIView, ImagePicker {
     
     private func onRecieveImageCallback() {
         receivedImage.filter { $0.0 != nil }.subscribe(onNext: { [unowned self] value in
-            if self.currentImageID == self.visaImageID {
+            if self.currentImageID == self.previousVisaImageID {
                 self.params?.visaReqID = value.1?.convertImageToBase64String()
                 self.previousVisaImageField.text = value.0
             }
@@ -159,7 +178,7 @@ class VisaQuestionsView: UIView, ImagePicker {
         previousVisaImageField.neverShowKeypad()
         previousVisaImageField.rx.tapGesture().when(.recognized)
             .subscribe { _ in
-                self.showImagePicker(id: self.visaImageID)
+                self.showImagePicker(id: self.previousVisaImageID)
             }.disposed(by: disposeBag)
         
         relativityField.neverShowKeypad()
@@ -176,15 +195,16 @@ class VisaQuestionsView: UIView, ImagePicker {
     @IBAction func hasPreviousVisaChanged(_: UISegmentedControl) {
         changePreviousVisaSelection()
         contentHeight.onNext(neededHeight)
-
     }
-    private func changePreviousVisaSelection(){
+    
+    private func changePreviousVisaSelection() {
         if hasPreviousVisaSegment.selectedSegmentIndex == Segment.no {
             previousVisaImageField.isHidden = true
         } else {
             previousVisaImageField.isHidden = false
         }
     }
+    
     @IBAction func cancelReasonChanged(_: UISegmentedControl) {
         cancelReasonSwitch()
         contentHeight.onNext(neededHeight)
@@ -201,22 +221,6 @@ class VisaQuestionsView: UIView, ImagePicker {
     @IBAction func hasRelativeDidChange(_: UISegmentedControl) {
         relativeSwitchChanged()
         contentHeight.onNext(neededHeight)
-    }
-    
-    private func validateVisaCancelation() -> Bool {
-        if visaCancelationSegment.selectedSegmentIndex == Segment.no {
-            return true
-        } else {
-            return cancelationReasonField.hasText
-        }
-    }
-    
-    private func validateHasRelatives() -> Bool {
-        if relativeINCountrySegment.selectedSegmentIndex == Segment.no {
-            return true
-        } else {
-            return relativityField.hasText
-        }
     }
     
     private func relativeSwitchChanged() {

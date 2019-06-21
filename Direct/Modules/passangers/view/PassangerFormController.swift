@@ -162,12 +162,15 @@ class PassangerFormController: UIViewController {
         picker.dismiss(animated: true, completion: nil)
     }
 
-    func fillParams() {
-        params.travelledBeforeHere = everTraveldView.travelledBeforeHere.stringValue
-        // Others PDF
-        params.lang = AppLanguage.langCode
-        params.travelledBeforeHere = prevTravelsJson
-        params.have_driver_license = everTraveldView.haveLicense
+    func getEverTraveldParams() {
+        if !everTraveledBeforeContainer.isHidden{
+            params.travelledBeforeHere = everTraveldView.travelledBeforeHere.stringValue
+            // Others PDF
+            params.lang = AppLanguage.langCode
+            params.travelledBeforeHere = prevTravelsJson
+            params.have_driver_license = everTraveldView.haveLicense
+        }
+       
     }
 
     var prevTravelsJson: String {
@@ -179,12 +182,17 @@ class PassangerFormController: UIViewController {
     }
 
     func submit() {
-        fillParams()
+        getEverTraveldParams()
         guard personalInfoView.isInputsValid() else {
             return
         }
         if hasMotherView {
             guard motherView.isInputsValid() else {
+                return
+            }
+        }
+        if !visaQuestionsContainer.isHidden{
+            guard visaQuestionsView.isInputsValid() else{
                 return
             }
         }
