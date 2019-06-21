@@ -26,7 +26,7 @@ class VisaRequirementTableCell: UITableViewCell, TableCell {
 
     func setCellData(_ model: ReqInformation) {
         textlbl.text = model.title
-        if (model.image ?? "").isEmpty {
+        if (model.icon ?? "").isEmpty {
             widthConst.constant = 10
 
             imgView.layer.cornerRadius = 4.9
