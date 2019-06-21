@@ -56,6 +56,18 @@ class PassangerFormController: UIViewController {
         addEverTraveledView()
     }
 
+    private func addPersonalInfoSction() {
+        if visaType ?? "" == "2" {
+            personalInfoView.visaType = .study
+        } else {
+            personalInfoView.visaType = .torrerist
+        }
+        personalInfoView.params = params
+        personalInfoView.formType = formTypeValue
+        personalInfoContainer.addSubview(personalInfoView)
+        personalInfoView.frame = personalInfoContainer.bounds
+        personalInfoView.contentHeight.bind(to: personalInfoHeight.rx.constant).disposed(by: disposeBag)
+    }
     private func addMotherInfoSection() {
         if hasMotherView {
             motherView.formType = formTypeValue
@@ -67,6 +79,42 @@ class PassangerFormController: UIViewController {
             print("hide this section")
             motherInfoHeight.constant = 0
             motherInfoContainer.isHidden = true
+        }
+    }
+
+    private func addQuestionsSection() {
+        print(formTypeValue)
+        func add() {
+            visaQuestionsView.params = params
+            visaQuestionsContainer.addSubview(visaQuestionsView)
+            visaQuestionsView.frame = visaQuestionsContainer.bounds
+            visaQuestionsView.formType = formTypeValue
+            visaQuestionsView.contentHeight.bind(to: visaQuestionsHeight.rx.constant).disposed(by: disposeBag)
+        }
+        switch formTypeValue {
+        case .TR ,.IN :
+            visaQuestionsContainer.isHidden = true
+        case .SGN:
+            add()
+            visaQuestionsView.countryName = Str.schengen
+        case .CN, .US, .GB, .IE, .JP, .JP:
+            add()
+            visaQuestionsView.countryName = countryString
+        }
+    }
+    private func addEverTraveledView() {
+        switch formTypeValue {
+        case .SGN,.CN, .TR, .IE , .IN:
+            everTraveledBeforeContainer.isHidden = true
+        case  .US, .GB, .JP, .JP:
+            addChild(everTraveldView)
+            everTraveldView.countryText = countryString
+            everTraveledBeforeContainer.addSubview(everTraveldView.view)
+            everTraveldView.view.frame = everTraveledBeforeContainer.bounds
+            everTraveldView.selectedDuration.filter { $0?.id != nil }.subscribe(onNext: { [unowned self] value in
+                self.params.periodOfPreviousStay = value?.id ?? ""
+            }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+            everTraveldView.contentHeight.bind(to: traveledHereBeforeHConstrain.rx.constant).disposed(by: disposeBag)
         }
     }
 
@@ -82,64 +130,16 @@ class PassangerFormController: UIViewController {
             travelVC.tableHeight.asDriver(onErrorJustReturn: travelVC.headerHeight).asObservable().bind(to: countriesContainerHeight.rx.constant).disposed(by: disposeBag)
         }
     }
-
-    private func addEverTraveledView() {
-        switch formTypeValue {
-        case .SGN, .TR, .IE:
-            everTraveledBeforeContainer.isHidden = true
-        case .CN, .US, .GB, .IN, .JP, .JP:
-            addChild(everTraveldView)
-            everTraveldView.countryText = countryString
-            everTraveledBeforeContainer.addSubview(everTraveldView.view)
-            everTraveldView.view.frame = everTraveledBeforeContainer.bounds
-            everTraveldView.selectedDuration.filter { $0?.id != nil }.subscribe(onNext: { [unowned self] value in
-                self.params.periodOfPreviousStay = value?.id ?? ""
-            }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
-            everTraveldView.contentHeight.bind(to: traveledHereBeforeHConstrain.rx.constant).disposed(by: disposeBag)
-        }
-    }
-
     var formTypeValue: CountriesIDs {
         return CountriesIDs(formType: formType)
     }
 
-    private func addPersonalInfoSction() {
-        if visaType ?? "" == "2" {
-            personalInfoView.visaType = .study
-        } else {
-            personalInfoView.visaType = .torrerist
-        }
-        personalInfoView.params = params
-        personalInfoView.formType = formTypeValue
-        personalInfoContainer.addSubview(personalInfoView)
-        personalInfoView.frame = personalInfoContainer.bounds
-        personalInfoView.contentHeight.bind(to: personalInfoHeight.rx.constant).disposed(by: disposeBag)
-    }
 
     private var countryString: String {
         return countryName ?? ""
     }
 
-    private func addQuestionsSection() {
-        print(formTypeValue)
-        func add() {
-            visaQuestionsView.params = params
-            visaQuestionsContainer.addSubview(visaQuestionsView)
-            visaQuestionsView.frame = visaQuestionsContainer.bounds
-            visaQuestionsView.formType = formTypeValue
-            visaQuestionsView.contentHeight.bind(to: visaQuestionsHeight.rx.constant).disposed(by: disposeBag)
-        }
-        switch formTypeValue {
-        case .TR:
-            visaQuestionsContainer.isHidden = true
-        case .SGN:
-            add()
-            visaQuestionsView.countryName = Str.schengen
-        case .CN, .US, .GB, .IE, .IN, .JP, .JP:
-            add()
-             visaQuestionsView.countryName = countryString
-        }
-    }
+  
 
     func getPreviousVisaTypes() {
         network.getPreviousVisaType().retry(2).subscribe(onNext: { [unowned self] value in
