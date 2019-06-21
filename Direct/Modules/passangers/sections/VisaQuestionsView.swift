@@ -52,7 +52,7 @@ class VisaQuestionsView: UIView, ImagePicker {
     
     private let dialogs = DialogBuilder()
     private var countryString: String {
-        return countryName ?? ""
+        return " \(countryName ?? "") "
     }
     
     internal let disposeBag = DisposeBag()
