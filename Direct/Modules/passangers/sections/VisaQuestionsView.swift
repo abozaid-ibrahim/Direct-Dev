@@ -58,10 +58,13 @@ class VisaQuestionsView: UIView, ImagePicker {
         setup()
         contentHeight.onNext(neededHeight)
         onRecieveImageCallback()
+        
     }
     
     private func setup() {
         setFonts()
+        cancelReasonSwitch()
+        relativeSwitchChanged()
     }
     
     func fillParams(_: inout USRequestParams) {}
