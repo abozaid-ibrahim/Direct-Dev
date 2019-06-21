@@ -65,8 +65,8 @@ class EverTraveledHereBeforeView: UIViewController {
     }
 
     private func setupUI() {
-        everYouTraveledLbl.text = "Ever you traveled to".localized + " \( countryText!) " + "Before".localized
-            licenceSegment.appFont()
+        everYouTraveledLbl.text = "Ever you traveled to".localized + " \(countryText!) " + Str.before
+        licenceSegment.appFont()
         everYouTraveledSegment.appFont()
         arrivalDateField.neverShowKeypad()
         durationField.neverShowKeypad()

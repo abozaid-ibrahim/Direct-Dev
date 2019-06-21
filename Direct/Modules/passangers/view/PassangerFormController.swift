@@ -10,11 +10,9 @@ import RxSwift
 import UIKit
 
 class PassangerFormController: UIViewController {
-    // ImagePicker
     var currentImageID: Int = 0
     private let visaImageID = 32
     private let last10YearsVisaImageID = 33
-    // Inject FromOutSide
     var countryName: String!
     var countryId: String!
     var formType: String!
@@ -33,9 +31,7 @@ class PassangerFormController: UIViewController {
     @IBOutlet private var visaQuestionsHeight: NSLayoutConstraint!
 
     // Ever you had a vis
-    @IBOutlet var everTraveledBeforeView: UIView!
-
-    // countries
+    @IBOutlet var everTraveledBeforeContainer: UIView!
     @IBOutlet private var previouslyTraveledCountriesView: UIView!
     @IBOutlet private var countriesContainerHeight: NSLayoutConstraint!
     @IBOutlet private var traveledHereBeforeHConstrain: NSLayoutConstraint!
@@ -49,16 +45,18 @@ class PassangerFormController: UIViewController {
 
     internal let disposeBag = DisposeBag()
     var receivedImage = PublishSubject<(String?, UIImage?)>()
+    private var params = USRequestParams()
+    private let network = ApiClientFacade()
     override func viewDidLoad() {
         super.viewDidLoad()
-        personalInfoSetup()
-        motherSectionSetup()
-        questionsSetup()
+        addPersonalInfoSction()
+        addMotherInfoSection()
+        addQuestionsSection()
         addPreviousCountries()
         addEverTraveledView()
     }
 
-    private func motherSectionSetup() {
+    private func addMotherInfoSection() {
         if hasMotherView {
             motherView.formType = formTypeValue
             motherView.params = params
@@ -74,39 +72,38 @@ class PassangerFormController: UIViewController {
 
     private func addPreviousCountries() {
         guard let travelVC = travels as? PreviousTraveledCountriesController else { return }
-        addChild(travelVC)
-        previouslyTraveledCountriesView.addSubview(travelVC.view)
-        travelVC.view.sameBoundsTo(parentView: previouslyTraveledCountriesView)
-        travelVC.tableHeight.asDriver(onErrorJustReturn: travelVC.headerHeight).asObservable().bind(to: countriesContainerHeight.rx.constant).disposed(by: disposeBag)
+        switch formTypeValue {
+        case .SGN, .TR:
+            previouslyTraveledCountriesView.isHidden = true
+        case .CN, .US, .GB, .IE, .IN, .JP, .JP:
+            addChild(travelVC)
+            previouslyTraveledCountriesView.addSubview(travelVC.view)
+            travelVC.view.sameBoundsTo(parentView: previouslyTraveledCountriesView)
+            travelVC.tableHeight.asDriver(onErrorJustReturn: travelVC.headerHeight).asObservable().bind(to: countriesContainerHeight.rx.constant).disposed(by: disposeBag)
+        }
     }
 
     private func addEverTraveledView() {
-        addChild(everTraveldView)
-        everTraveldView.countryText = countryString
-        everTraveledBeforeView.addSubview(everTraveldView.view)
-        everTraveldView.view.frame = everTraveledBeforeView.bounds
-        everTraveldView.selectedDuration.filter { $0?.id != nil }.subscribe(onNext: { [unowned self] value in
-            self.params.periodOfPreviousStay = value?.id ?? ""
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
-        everTraveldView.contentHeight
-            .asDriver(onErrorJustReturn: 0)
-            .debug()
-            .drive(onNext: { value in
-                self.animateConstrain(value: value)
-            }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
-    }
-
-    private func animateConstrain(value: CGFloat) {
-        UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseOut], animations: {
-            self.traveledHereBeforeHConstrain.constant = value
-        }, completion: nil)
+        switch formTypeValue {
+        case .SGN, .TR:
+            everTraveledBeforeContainer.isHidden = true
+        case .CN, .US, .GB, .IE, .IN, .JP, .JP:
+            addChild(everTraveldView)
+            everTraveldView.countryText = countryString
+            everTraveledBeforeContainer.addSubview(everTraveldView.view)
+            everTraveldView.view.frame = everTraveledBeforeContainer.bounds
+            everTraveldView.selectedDuration.filter { $0?.id != nil }.subscribe(onNext: { [unowned self] value in
+                self.params.periodOfPreviousStay = value?.id ?? ""
+            }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+            everTraveldView.contentHeight.bind(to: traveledHereBeforeHConstrain.rx.constant).disposed(by: disposeBag)
+        }
     }
 
     var formTypeValue: CountriesIDs {
         return CountriesIDs(formType: formType)
     }
 
-    private func personalInfoSetup() {
+    private func addPersonalInfoSction() {
         if visaType ?? "" == "2" {
             personalInfoView.visaType = .study
         } else {
@@ -123,23 +120,25 @@ class PassangerFormController: UIViewController {
         return countryName ?? ""
     }
 
-    private func onRecieveImageCallback() {
-//        receivedImage.filter { $0.0 != nil }.subscribe(onNext: { [unowned self] value in
-//            if self.currentImageID == self.visaImageID {
-//                self.params.visaReqID = value.1?.convertImageToBase64String()
-//                self.previousVisaImageField.text = value.0
-//            }
-//
-//        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
-    }
-
-    private func questionsSetup() {
-        visaQuestionsView.formType = formTypeValue
-        visaQuestionsView.countryName = countryName
-        visaQuestionsView.params = params
-        visaQuestionsContainer.addSubview(visaQuestionsView)
-        visaQuestionsView.frame = visaQuestionsContainer.bounds
-        visaQuestionsView.contentHeight.bind(to: visaQuestionsHeight.rx.constant).disposed(by: disposeBag)
+    private func addQuestionsSection() {
+        print(formTypeValue)
+        func add() {
+            visaQuestionsView.params = params
+            visaQuestionsContainer.addSubview(visaQuestionsView)
+            visaQuestionsView.frame = visaQuestionsContainer.bounds
+            visaQuestionsView.formType = formTypeValue
+            visaQuestionsView.contentHeight.bind(to: visaQuestionsHeight.rx.constant).disposed(by: disposeBag)
+        }
+        switch formTypeValue {
+        case .TR:
+            visaQuestionsContainer.isHidden = true
+        case .SGN:
+            visaQuestionsView.countryName = Str.schengen
+            add()
+        case .CN, .US, .GB, .IE, .IN, .JP, .JP:
+            visaQuestionsView.countryName = countryString
+            add()
+        }
     }
 
     func getPreviousVisaTypes() {
@@ -165,10 +164,8 @@ class PassangerFormController: UIViewController {
 
     func fillParams() {
         params.travelledBeforeHere = everTraveldView.travelledBeforeHere.stringValue
-
         // Others PDF
         params.lang = AppLanguage.langCode
-
         params.travelledBeforeHere = prevTravelsJson
         params.have_driver_license = everTraveldView.haveLicense
     }
@@ -177,8 +174,6 @@ class PassangerFormController: UIViewController {
         return InputJsonBuilder().buildPassangers((travels as! PreviousTraveledCountriesController).items)
     }
 
-    var params = USRequestParams()
-    private let network = ApiClientFacade()
     var hasMotherView: Bool {
         return (formTypeValue == .US) || (formTypeValue == .IN) || (formTypeValue == CountriesIDs.GB) || (formTypeValue == CountriesIDs.TR)
     }

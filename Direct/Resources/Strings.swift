@@ -50,5 +50,8 @@ struct Str{
     static var timeTogetVisaDesc:String{
         return "time to get a visa desc".localized
     }
+    static var schengen:String{
+        return "Schengen".localized
+    }
 
 }

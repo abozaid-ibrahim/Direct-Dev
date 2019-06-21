@@ -816,8 +816,6 @@
 		6C431E0622B53A9B00DD140D /* sections */ = {
 			isa = PBXGroup;
 			children = (
-				6C6F361B22AF7C660045BAC8 /* EverTraveledHereBeforeView.swift */,
-				6C6F361C22AF7C660045BAC8 /* EverTraveledHereBeforeView.xib */,
 				6C431E0222B52E8B00DD140D /* PersonalInfoView.swift */,
 				6C431E0422B52E9D00DD140D /* PersonalInfoView.xib */,
 				6C431E0722B5807300DD140D /* MotherInfoView.swift */,
@@ -825,6 +823,8 @@
 				6CD5848122B25736005A2190 /* VisaQuestionsViewModel.swift */,
 				6C431E0B22B5A1F100DD140D /* VisaQuestionsView.swift */,
 				6C431E0D22B5A1FF00DD140D /* VisaQuestionsView.xib */,
+				6C6F361B22AF7C660045BAC8 /* EverTraveledHereBeforeView.swift */,
+				6C6F361C22AF7C660045BAC8 /* EverTraveledHereBeforeView.xib */,
 				6CF2514D22A6496200CDA47C /* PreviousTraveledCountriesController.swift */,
 			);
 			path = sections;

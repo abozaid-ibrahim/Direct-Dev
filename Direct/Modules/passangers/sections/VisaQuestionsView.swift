@@ -22,11 +22,16 @@ class VisaQuestionsView: UIView, ImagePicker {
     @IBOutlet private var cancelationReasonField: FloatingTextField!
     @IBOutlet private var visaCancelationLbl: UILabel!
     @IBOutlet private var visaCancelationSegment: UISegmentedControl!
+    // previous visa
+    @IBOutlet var hasPreviousVisaSegment: UISegmentedControl!
+    @IBOutlet var previousVisaLbl: UILabel!
+    @IBOutlet var previousVisaView: UIView!
+    @IBOutlet var previousVisaImageField: FloatingTextField!
     //===================================================<<
     
     var params: USRequestParams?
     var countryName: String!
-
+    
     // ImagePicker
     var currentImageID: Int = 0
     private let visaImageID = 32
@@ -36,12 +41,14 @@ class VisaQuestionsView: UIView, ImagePicker {
             applyFormRules()
         }
     }
+    
     let viewModel = VisaQuestionsViewModel()
-
+    
     private let dialogs = DialogBuilder()
     private var countryString: String {
         return countryName ?? ""
     }
+    
     internal let disposeBag = DisposeBag()
     var contentHeight = BehaviorSubject<CGFloat>(value: 200)
     
@@ -56,18 +63,19 @@ class VisaQuestionsView: UIView, ImagePicker {
     override func awakeFromNib() {
         super.awakeFromNib()
         setup()
-        contentHeight.onNext(neededHeight)
+       
         onRecieveImageCallback()
-        
+        contentHeight.onNext(neededHeight)
+
     }
     
     private func setup() {
         setFonts()
         cancelReasonSwitch()
         relativeSwitchChanged()
+         changePreviousVisaSelection()
+        questionsSetup()
     }
-    
-    func fillParams(_: inout USRequestParams) {}
     
     func isInputsValid() -> Bool {
         guard let type = formType else {
@@ -89,9 +97,16 @@ class VisaQuestionsView: UIView, ImagePicker {
         let unit = 140
         basic += visaCanceledBeforeView.isHidden ? 0 : unit
         basic += relativesView.isHidden ? 0 : unit
-        basic -= relativityField.isHidden ? 50 : 0
-        basic -= cancelationReasonField.isHidden ? 50 : 0
-        
+        basic += previousVisaView.isHidden ? 0 : unit
+        if !relativesView.isHidden {
+            basic -= relativityField.isHidden ? 50 : 0
+        }
+        if !visaCanceledBeforeView.isHidden {
+            basic -= cancelationReasonField.isHidden ? 50 : 0
+        }
+        if !previousVisaView.isHidden {
+            basic -= previousVisaImageField.isHidden ? 50 : 0
+        }
         return CGFloat(basic)
     }
     
@@ -103,57 +118,54 @@ class VisaQuestionsView: UIView, ImagePicker {
         
         switch type {
         case .US, .GB: // BR
-            print("show all items")
-        case .SGN, .TR:
-            print("hida all")
+            relativesView.isHidden = false
+            visaCanceledBeforeView.isHidden = false
+            previousVisaView.isHidden = true
+        case .SGN:
+            relativesView.isHidden = true
+            visaCanceledBeforeView.isHidden = true
+            
+        case .TR:
+            relativesView.isHidden = true
+            visaCanceledBeforeView.isHidden = true
         case .IN, .CN, .JP, .IE:
-            print("hida all")
+            relativesView.isHidden = true
+            visaCanceledBeforeView.isHidden = true
         }
+        contentHeight.onNext(neededHeight)
     }
     
     private func setFonts() {
         visaCancelationSegment.appFont()
         relativeINCountrySegment.appFont()
+        hasPreviousVisaSegment.appFont()
     }
     
     private func onRecieveImageCallback() {
         receivedImage.filter { $0.0 != nil }.subscribe(onNext: { [unowned self] value in
             if self.currentImageID == self.visaImageID {
                 self.params?.visaReqID = value.1?.convertImageToBase64String()
-//                self.previousVisaImageField.text = value.0
+                self.previousVisaImageField.text = value.0
             }
             
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
     
     private func questionsSetup() {
-        switch formType! {
-        case .US, .GB:
-            relativesView.isHidden = false
-            visaCanceledBeforeView.isHidden = false
-            
-        case .TR:
-            relativesView.isHidden = true
-            visaCanceledBeforeView.isHidden = true
-            
-        default:
-            relativesView.isHidden = true
-            visaCanceledBeforeView.isHidden = true
-        }
         // ever you travedled
-//        previousVisaLbl.text = "هل سبق وحصلت على تأشيرة " + countryString + Str.before
+        previousVisaLbl.text = "هل سبق وحصلت على تأشيرة " + countryString + Str.before
         relativeInCountryLbl.text = "هل لديك اى اقارب فى " + countryString + "؟"
         visaCancelationLbl.text = "هل تم رفض دخولك أو الغاء تأشيرتك الى " + countryString + Str.before
-//        previousVisaImageField.neverShowKeypad()
-//        previousVisaImageField.rx.tapGesture().when(.recognized)
-//            .subscribe { _ in
-//                //                self.showImagePicker(id: self.visaImageID)
-//            }.disposed(by: disposeBag)
-       
+        previousVisaImageField.neverShowKeypad()
+        previousVisaImageField.rx.tapGesture().when(.recognized)
+            .subscribe { _ in
+                self.showImagePicker(id: self.visaImageID)
+            }.disposed(by: disposeBag)
+        
         relativityField.neverShowKeypad()
         relativityField.rx.tapGesture().when(.recognized)
             .subscribe { _ in
-                self.dialogs.buildRelationsSpinner(self.disposeBag,self.viewModel.relativesList, selected: {relative in
+                self.dialogs.buildRelationsSpinner(self.disposeBag, self.viewModel.relativesList, selected: { relative in
                     self.params?.relative_type = relative.id.int ?? 0
                     self.relativityField.text = relative.name
                 })
@@ -161,9 +173,21 @@ class VisaQuestionsView: UIView, ImagePicker {
         viewModel.selectedRelation.bind(to: relativityField.rx.text).disposed(by: disposeBag)
     }
     
+    @IBAction func hasPreviousVisaChanged(_: UISegmentedControl) {
+        changePreviousVisaSelection()
+        contentHeight.onNext(neededHeight)
+
+    }
+    private func changePreviousVisaSelection(){
+        if hasPreviousVisaSegment.selectedSegmentIndex == Segment.no {
+            previousVisaImageField.isHidden = true
+        } else {
+            previousVisaImageField.isHidden = false
+        }
+    }
     @IBAction func cancelReasonChanged(_: UISegmentedControl) {
         cancelReasonSwitch()
-         contentHeight.onNext(neededHeight)
+        contentHeight.onNext(neededHeight)
     }
     
     private func cancelReasonSwitch() {
@@ -180,11 +204,19 @@ class VisaQuestionsView: UIView, ImagePicker {
     }
     
     private func validateVisaCancelation() -> Bool {
-        return false
+        if visaCancelationSegment.selectedSegmentIndex == Segment.no {
+            return true
+        } else {
+            return cancelationReasonField.hasText
+        }
     }
     
     private func validateHasRelatives() -> Bool {
-        return false
+        if relativeINCountrySegment.selectedSegmentIndex == Segment.no {
+            return true
+        } else {
+            return relativityField.hasText
+        }
     }
     
     private func relativeSwitchChanged() {

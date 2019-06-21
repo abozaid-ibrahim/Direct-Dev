@@ -41,7 +41,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7mX-0p-wxc">
-                    <rect key="frame" x="0.0" y="92" width="414" height="782"/>
+                    <rect key="frame" x="0.0" y="96" width="414" height="778"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
@@ -56,7 +56,7 @@
                 <constraint firstItem="7mX-0p-wxc" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="12" id="3Ad-Zu-QW6"/>
                 <constraint firstItem="RiB-4K-IAb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="VUt-V4-nul"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RiB-4K-IAb" secondAttribute="trailing" id="X0z-jR-QEP"/>
-                <constraint firstItem="7mX-0p-wxc" firstAttribute="top" secondItem="RiB-4K-IAb" secondAttribute="bottom" constant="8" id="Zzs-lP-Esa"/>
+                <constraint firstItem="7mX-0p-wxc" firstAttribute="top" secondItem="RiB-4K-IAb" secondAttribute="bottom" constant="12" id="Zzs-lP-Esa"/>
                 <constraint firstItem="7mX-0p-wxc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tvk-P2-VyE"/>
                 <constraint firstItem="RiB-4K-IAb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yrL-6R-UpW"/>
             </constraints>

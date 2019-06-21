@@ -13,7 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PassangerFormController" customModule="Direct" customModuleProvider="target">
             <connections>
                 <outlet property="countriesContainerHeight" destination="f3N-a3-cd0" id="RqR-iU-2uS"/>
-                <outlet property="everTraveledBeforeView" destination="TWF-e7-GMx" id="ecz-yP-AUe"/>
+                <outlet property="everTraveledBeforeContainer" destination="TWF-e7-GMx" id="PLB-5N-iVj"/>
                 <outlet property="motherInfoContainer" destination="o0n-mV-2My" id="PAl-da-y3C"/>
                 <outlet property="motherInfoHeight" destination="rJZ-TS-jfL" id="JjW-K6-FLj"/>
                 <outlet property="personalInfoContainer" destination="OGe-Ha-rxi" id="zCI-j7-bWS"/>
@@ -34,10 +34,10 @@
                     <rect key="frame" x="10.5" y="0.0" width="393" height="1238"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2xs-CW-hrx" userLabel="conent">
-                            <rect key="frame" x="10" y="0.0" width="373" height="1187"/>
+                            <rect key="frame" x="6" y="12" width="381" height="1187"/>
                             <subviews>
                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGe-Ha-rxi" userLabel="personal info">
-                                    <rect key="frame" x="0.0" y="0.0" width="373" height="402"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="381" height="402"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="402" id="Ga8-Lf-hEz"/>
@@ -55,7 +55,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o0n-mV-2My" userLabel="mother info">
-                                    <rect key="frame" x="0.0" y="417" width="373" height="166"/>
+                                    <rect key="frame" x="0.0" y="417" width="381" height="166"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="166" id="rJZ-TS-jfL"/>
@@ -73,7 +73,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="czo-D9-83s" userLabel="visa questions">
-                                    <rect key="frame" x="0.0" y="598" width="373" height="280"/>
+                                    <rect key="frame" x="0.0" y="598" width="381" height="280"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="280" id="EMw-Wz-jzD"/>
@@ -91,7 +91,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" verticalHuggingPriority="247" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="TWF-e7-GMx" userLabel="Ever you traveld before">
-                                    <rect key="frame" x="0.0" y="893" width="373" height="90"/>
+                                    <rect key="frame" x="0.0" y="893" width="381" height="90"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="90" id="qBR-ce-A7j"/>
@@ -109,7 +109,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="wwd-0y-oSK" userLabel="previous traveled countries">
-                                    <rect key="frame" x="0.0" y="998" width="373" height="140"/>
+                                    <rect key="frame" x="0.0" y="998" width="381" height="140"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="140" id="f3N-a3-cd0"/>
@@ -127,7 +127,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Tq-2F-bE9">
-                                    <rect key="frame" x="0.0" y="1153" width="373" height="34"/>
+                                    <rect key="frame" x="0.0" y="1153" width="381" height="34"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="34" id="1L4-Ys-hfN"/>
                                     </constraints>
@@ -145,11 +145,11 @@
                         </stackView>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="2xs-CW-hrx" secondAttribute="trailing" constant="10" id="Rgg-cs-iJ4"/>
-                        <constraint firstItem="2xs-CW-hrx" firstAttribute="top" secondItem="hSo-I5-dPz" secondAttribute="top" id="VP9-zy-ilI"/>
+                        <constraint firstAttribute="trailing" secondItem="2xs-CW-hrx" secondAttribute="trailing" constant="6" id="Rgg-cs-iJ4"/>
+                        <constraint firstItem="2xs-CW-hrx" firstAttribute="top" secondItem="hSo-I5-dPz" secondAttribute="top" constant="12" id="VP9-zy-ilI"/>
                         <constraint firstAttribute="bottom" secondItem="2xs-CW-hrx" secondAttribute="bottom" constant="80" id="Z1h-qv-nvK"/>
-                        <constraint firstItem="2xs-CW-hrx" firstAttribute="leading" secondItem="hSo-I5-dPz" secondAttribute="leading" constant="10" id="adK-Ad-zYg"/>
-                        <constraint firstItem="2xs-CW-hrx" firstAttribute="width" secondItem="hSo-I5-dPz" secondAttribute="width" constant="-20" id="yDD-3Q-9mf"/>
+                        <constraint firstItem="2xs-CW-hrx" firstAttribute="leading" secondItem="hSo-I5-dPz" secondAttribute="leading" constant="6" id="adK-Ad-zYg"/>
+                        <constraint firstItem="2xs-CW-hrx" firstAttribute="width" secondItem="hSo-I5-dPz" secondAttribute="width" constant="-12" id="yDD-3Q-9mf"/>
                     </constraints>
                 </scrollView>
             </subviews>
