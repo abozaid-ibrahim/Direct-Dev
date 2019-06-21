@@ -10,7 +10,7 @@ import RxSwift
 import UIKit
 
 class VisaRequirementTableCell: UITableViewCell, TableCell {
-    typealias CellDataModel = Requirement
+    typealias CellDataModel = ReqInformation
     @IBOutlet private var imgView: UIImageView!
     @IBOutlet var expandRow: UIImageView!
     @IBOutlet var textlbl: UILabel!
@@ -24,7 +24,7 @@ class VisaRequirementTableCell: UITableViewCell, TableCell {
         textlbl.font = UIFont.appBoldFontWith(size: 14)
     }
 
-    func setCellData(_ model: Requirement) {
+    func setCellData(_ model: ReqInformation) {
         textlbl.text = model.title
         if (model.image ?? "").isEmpty {
             widthConst.constant = 10
@@ -33,7 +33,7 @@ class VisaRequirementTableCell: UITableViewCell, TableCell {
             imgView.borderColorV = UIColor.appMango
             imgView.borderWidthV = 2
         } else {
-            imgView.setImage(with: model.image ?? "")
+            imgView.setImage(with: model.icon ?? "")
             widthConst.constant = 20
             imgView.backgroundColor = .clear
             imgView.rounded = false

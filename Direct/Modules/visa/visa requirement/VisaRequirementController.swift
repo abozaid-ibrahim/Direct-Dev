@@ -24,7 +24,7 @@ final class VisaRequirementController: UIViewController, PanModalPresentable, St
         return tableView
     }
 
-    private let data = PublishSubject<[Requirement]>()
+    private let data = PublishSubject<[ReqInformation]>()
     private var datalist: [ReqDataSection] = []
     var visaData: VisaRequestParams?
     internal let disposeBag = DisposeBag()
@@ -53,32 +53,28 @@ extension VisaRequirementController {
         tableView.delegate = self
         data.subscribe(onNext: { [unowned self] value in
             self.datalist.removeAll()
-            self.datalist.append(contentsOf: value.map { ReqDataSection($0) })
-            self.appendStaticReq()
+            self.datalist.append(contentsOf:value.map { ReqDataSection($0) })
             self.tableView.reloadData()
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
-    private func appendStaticReq(){
-        let req = Requirement(title: Str.timeTogetVisa, desc: Str.timeTogetVisaDesc, image: "calendar", icon: "calendar", isInfo: nil)
-        self.datalist.append(ReqDataSection(req))
 
-    }
     private func getDataRemotely() {
         guard let id = visaData?.country_id else {
             return
         }
         Progress.show()
 
-        network.getVisaRequirements(country: id).subscribe(onNext: { [unowned self] req in
+        network.getVisaRequirements(country: id).subscribe(onNext: { [unowned self] response in
 
-            self.data.onNext(req.requirementPage.first?.requirements ?? [])
-            if let obj = req.requirementPage.first {
-                // set header data
-                self.headerIconView.setImage(with: obj.flagURL ?? "")
-                self.countryNameLbl.text = obj.name
-                self.descLbl.text =  self.visaData?.visatypeText
+            guard let requirement = response.requirementPage?.first else { return }
+            var sum = requirement.requirements ?? []
+            sum.append(contentsOf: requirement.informations ?? [])
+            self.data.onNext(sum)
 
-            }
+            // set header data
+            self.headerIconView.setImage(with: requirement.flagURL ?? "")
+            self.countryNameLbl.text = requirement.name
+            self.descLbl.text = self.visaData?.visatypeText
 
             Progress.hide()
         }, onError: { _ in
@@ -111,7 +107,7 @@ extension VisaRequirementController: UITableViewDataSource {
         } else {
             //this is for expanded cells
             let cell = tableView.dequeueReusableCell(withIdentifier: ReqDescTableCell.cellId) as! ReqDescTableCell
-            cell.setCellData(datalist[indexPath.section].data.desc)
+            cell.setCellData(datalist[indexPath.section].data.desc ?? "")
             return cell
         }
     }
@@ -131,8 +127,8 @@ extension VisaRequirementController: UITableViewDelegate {
 
 class ReqDataSection {
     var opened: Bool = false
-    var data: Requirement
-    init(_ req: Requirement) {
+    var data: ReqInformation
+    init(_ req: ReqInformation) {
         data = req
         opened = false
     }
