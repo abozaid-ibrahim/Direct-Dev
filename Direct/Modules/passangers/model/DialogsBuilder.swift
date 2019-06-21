@@ -9,6 +9,8 @@
 import Foundation
 import RxSwift
 import UIKit
+import SwifterSwift
+
 class DialogBuilder {
     func buildAgreemnetDialog(callback: @escaping (AgreementValues) -> Void) -> UIAlertController {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)

@@ -39,7 +39,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     private let passportImageID = 31
     private let visaImageID = 32
     private let personalPhotoID = 35
-    private let acceptanceUniversityID = 35
+    private let acceptanceUniversityID = 36
     
     var receivedImage = PublishSubject<(String?, UIImage?)>()
     var formType: CountriesIDs? {
@@ -76,7 +76,6 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
         basic += passportView.isHidden ? 0 : unit
         basic += personalPictureView.isHidden ? 0 : unit
         basic += acceptanceVisaView.isHidden ? 0 : unit
-        print("i>contentH \(basic)")
         return CGFloat(basic)
     }
     
@@ -109,6 +108,12 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
         case .IN, .CN, .JP, .IE:
             hideIsHusbendWillTravelWithYou()
         }
+        if visaType! == .study {
+            acceptanceVisaView.isHidden = false
+        } else {
+            acceptanceVisaView.isHidden = true
+        }
+        contentHeight.onNext(neededHeight)
     }
     
     private func hideIsHusbendWillTravelWithYou() {
@@ -118,9 +123,9 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     
     private func hideAllExcepSelfIdentity() {
         isHusbandWillTravelView.isHidden = true
-        familyIDView.isHidden = true
         martialStateView.isHidden = true
         personalPictureView.isHidden = true
+        familyIDView.isHidden = false
         passportView.isHidden = false
         contentHeight.onNext(neededHeight)
     }
@@ -202,12 +207,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     }
     
     private func pInfoSetup() {
-        if visaType! == .study {
-            acceptanceVisaView.isHidden = false
-        } else {
-            acceptanceVisaView.isHidden = true
-        }
-        familyIDView.isHidden = false
+        familyIDView.isHidden = true
         isHusbandWillTravelView.isHidden = true
         statusPInfoField.rx.tapGesture().when(.recognized)
             .subscribe { _ in
@@ -216,9 +216,11 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
                     self.statusPInfoField.text = state.string
                     if state.apiValue == MartialState.single.apiValue {
                         self.isHusbandWillTravelView.isHidden = true
+                        self.familyIDView.isHidden = true
                     } else {
                         self.isHusbandWillTravelView.isHidden = false
                     }
+                    
                     self.params?.martialStatus = state.apiValue.stringValue
                     self.contentHeight.onNext(self.neededHeight)
                     
@@ -270,7 +272,8 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         let image = info[.originalImage] as? UIImage
         let fileUrl = info[.imageURL] as? URL
-        receivedImage.onNext((fileUrl?.lastPathComponent, image))
+       
+        receivedImage.onNext((fileUrl?.lastPathComponent, image?.apiSize()))
         
         picker.dismiss(animated: true, completion: nil)
     }
@@ -292,7 +295,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
                 self.params?.personalPhotoCopy = img
                 self.personalPhotoField.text = value.0
             } else if self.currentImageID == self.acceptanceUniversityID {
-//            self.params? = img
+                self.params?.universityAcceptanceImage = img
                 self.acceptanceImageField.text = value.0
             }
             

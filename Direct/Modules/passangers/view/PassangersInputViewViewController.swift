@@ -63,6 +63,7 @@ class PassangersInputViewViewController: UIViewController {
         tabController.countryId = info.country_id
         tabController.formType = info.form_type
         tabController.index = index
+        tabController.visaType = info.visatype
         let item = ViewPagerTab(title: "\(placeholder) \(1 + index )", image: #imageLiteral(resourceName: "rightGray"))
 
         tabController.successIndex.subscribe(onNext: { [unowned self] value in

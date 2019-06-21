@@ -86,6 +86,9 @@ class VisaQuestionsView: UIView, ImagePicker {
         let unit = 140
         basic += visaCanceledBeforeView.isHidden ? 0 : unit
         basic += relativesView.isHidden ? 0 : unit
+        basic -= relativityField.isHidden ? 50 : 0
+        basic -= cancelationReasonField.isHidden ? 50 : 0
+        
         return CGFloat(basic)
     }
     
@@ -157,6 +160,7 @@ class VisaQuestionsView: UIView, ImagePicker {
     
     @IBAction func cancelReasonChanged(_: UISegmentedControl) {
         cancelReasonSwitch()
+         contentHeight.onNext(neededHeight)
     }
     
     private func cancelReasonSwitch() {
@@ -169,6 +173,7 @@ class VisaQuestionsView: UIView, ImagePicker {
     
     @IBAction func hasRelativeDidChange(_: UISegmentedControl) {
         relativeSwitchChanged()
+        contentHeight.onNext(neededHeight)
     }
     
     private func validateVisaCancelation() -> Bool {

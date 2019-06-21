@@ -37,6 +37,9 @@
                                         <segment title="نعم "/>
                                     </segments>
                                     <color key="tintColor" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="cancelReasonChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="c9l-Lp-mIA"/>
+                                    </connections>
                                 </segmentedControl>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Exj-Yk-Z7M" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="70.5" width="398" height="44"/>
@@ -109,6 +112,9 @@
                                         <segment title="نعم "/>
                                     </segments>
                                     <color key="tintColor" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="hasRelativeDidChange:" destination="iN0-l3-epB" eventType="valueChanged" id="Umu-0a-x77"/>
+                                    </connections>
                                 </segmentedControl>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Awx-bK-Bvh" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="68.5" width="398" height="44"/>

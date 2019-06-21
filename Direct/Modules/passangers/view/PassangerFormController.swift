@@ -20,6 +20,7 @@ class PassangerFormController: UIViewController {
     var formType: String!
     var index: Int!
     var successIndex = PublishSubject<Int>()
+    var visaType: String?
 
     // MARK: IBuilder ====================================>>
 
@@ -106,8 +107,13 @@ class PassangerFormController: UIViewController {
     }
 
     private func personalInfoSetup() {
-        personalInfoView.formType = formTypeValue
+        if visaType ?? "" == "2" {
+            personalInfoView.visaType = .study
+        } else {
+            personalInfoView.visaType = .torrerist
+        }
         personalInfoView.params = params
+        personalInfoView.formType = formTypeValue
         personalInfoContainer.addSubview(personalInfoView)
         personalInfoView.frame = personalInfoContainer.bounds
         personalInfoView.contentHeight.bind(to: personalInfoHeight.rx.constant).disposed(by: disposeBag)
@@ -152,7 +158,7 @@ class PassangerFormController: UIViewController {
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         let image = info[.editedImage] as? UIImage
         let fileUrl = info[.imageURL] as? URL
-        receivedImage.onNext((fileUrl?.lastPathComponent, image))
+        receivedImage.onNext((fileUrl?.lastPathComponent, image?.apiSize()))
 
         picker.dismiss(animated: true, completion: nil)
     }
