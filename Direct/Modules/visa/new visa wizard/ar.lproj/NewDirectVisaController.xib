@@ -244,6 +244,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="KrG-Mc-amI"/>
                                                     </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <state key="normal" title="ابدأ الطلب"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">

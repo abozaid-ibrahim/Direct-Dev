@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3940FBE422B26CE400A801C0 /* MyAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3940FBE322B26CE400A801C0 /* MyAccount.storyboard */; };
 		3992B66722961B5F00BBB7F1 /* TagCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3992B66322961B5E00BBB7F1 /* TagCollectionCell.swift */; };
 		3992B66822961B5F00BBB7F1 /* TagCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3992B66422961B5E00BBB7F1 /* TagCollectionCell.xib */; };
 		3992B66922961B5F00BBB7F1 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3992B66522961B5E00BBB7F1 /* LeftAlignedCollectionViewFlowLayout.swift */; };
@@ -98,7 +99,6 @@
 		6C5DE87A22872A1E00F900AE /* SuccessPackageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE87822872A1E00F900AE /* SuccessPackageController.swift */; };
 		6C5DE88022872F0900F900AE /* TextTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5DE87E22872F0900F900AE /* TextTableCell.swift */; };
 		6C5FDA4D2270816B00ABA39B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5FDA4C2270816B00ABA39B /* AppDelegate.swift */; };
-		6C5FDA4F2270816B00ABA39B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5FDA4E2270816B00ABA39B /* ViewController.swift */; };
 		6C5FDA522270816B00ABA39B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C5FDA502270816B00ABA39B /* Main.storyboard */; };
 		6C5FDA542270816C00ABA39B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C5FDA532270816C00ABA39B /* Assets.xcassets */; };
 		6C5FDA572270816C00ABA39B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C5FDA552270816C00ABA39B /* LaunchScreen.storyboard */; };
@@ -258,6 +258,7 @@
 
 /* Begin PBXFileReference section */
 		25185037101CA582CE39A627 /* Pods_Direct.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Direct.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3940FBE322B26CE400A801C0 /* MyAccount.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyAccount.storyboard; sourceTree = "<group>"; };
 		3992B66322961B5E00BBB7F1 /* TagCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagCollectionCell.swift; sourceTree = "<group>"; };
 		3992B66422961B5E00BBB7F1 /* TagCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagCollectionCell.xib; sourceTree = "<group>"; };
 		3992B66522961B5E00BBB7F1 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
@@ -356,7 +357,6 @@
 		6C5DE87E22872F0900F900AE /* TextTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableCell.swift; sourceTree = "<group>"; };
 		6C5FDA492270816B00ABA39B /* Direct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Direct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C5FDA4C2270816B00ABA39B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6C5FDA4E2270816B00ABA39B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6C5FDA512270816B00ABA39B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6C5FDA532270816C00ABA39B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C5FDA562270816C00ABA39B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -909,7 +909,6 @@
 				6C55755A228BAC3F00BAE5E2 /* Resources */,
 				6C87FACF2270C1D500AFE485 /* Modules */,
 				6C5FDA4C2270816B00ABA39B /* AppDelegate.swift */,
-				6C5FDA4E2270816B00ABA39B /* ViewController.swift */,
 				6C5FDA502270816B00ABA39B /* Main.storyboard */,
 				6C5FDA532270816C00ABA39B /* Assets.xcassets */,
 				6C5FDA552270816C00ABA39B /* LaunchScreen.storyboard */,
@@ -956,6 +955,7 @@
 		6C778258227A3AE4001926B2 /* my account */ = {
 			isa = PBXGroup;
 			children = (
+				3940FBE322B26CE400A801C0 /* MyAccount.storyboard */,
 				6C778259227A3AFF001926B2 /* MyAccountController.swift */,
 				6CB2A8BA228CAD8200A78541 /* AboutUsTableCell.swift */,
 				6C9027E1228F95D200B41705 /* AboutUsTableCell.xib */,
@@ -1422,6 +1422,7 @@
 				6C9027DF228F95D200B41705 /* AboutUsTableCell.xib in Resources */,
 				6C9027A6228F955F00B41705 /* PaymentMethodsContainerController.xib in Resources */,
 				6C9027AC228F956B00B41705 /* PackageDetailsController.xib in Resources */,
+				3940FBE422B26CE400A801C0 /* MyAccount.storyboard in Resources */,
 				6CDEF78222A11EFC00BF5F0B /* Visa.storyboard in Resources */,
 				6C9027CA228F95AC00B41705 /* VisaRequirementController.xib in Resources */,
 				6C9027BB228F958C00B41705 /* TextTableCell.xib in Resources */,
@@ -1572,7 +1573,6 @@
 				6CA040B62281BE0300619B6F /* FloatingTextField.swift in Sources */,
 				6C29DD2622A6040E0047DF54 /* USVisaJsonResponse.swift in Sources */,
 				6C431DE022B4077F00DD140D /* Strings.swift in Sources */,
-				6C5FDA4F2270816B00ABA39B /* ViewController.swift in Sources */,
 				3992B66922961B5F00BBB7F1 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				6CF2514822A635E600CDA47C /* APIValues.swift in Sources */,
 				6CF2514A22A6374E00CDA47C /* DialogsBuilder.swift in Sources */,

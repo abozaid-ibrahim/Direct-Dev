@@ -3,9 +3,9 @@ PODS:
   - ARSLineProgress (3.1.0)
   - Differentiator (3.1.0)
   - GenericCellControllers (1.1.0)
-  - IQKeyboardManagerSwift (6.3.0)
+  - IQKeyboardManagerSwift (6.4.0)
   - JBDatePicker (1.2.5)
-  - Kingfisher (5.5.0)
+  - Kingfisher (5.6.0)
   - M13Checkbox (3.4.0)
   - Moya/Core (13.0.1):
     - Alamofire (~> 4.1)
@@ -13,7 +13,7 @@ PODS:
   - Moya/RxSwift (13.0.1):
     - Moya/Core
     - RxSwift (~> 4.0)
-  - PanModal (1.2.3)
+  - PanModal (1.2.4)
   - Result (4.1.0)
   - RxCocoa (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
@@ -106,12 +106,12 @@ SPEC CHECKSUMS:
   ARSLineProgress: 60778657c69491796c3faf5b834c72924c405833
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   GenericCellControllers: dfb84b8f74ed40fc85bba4bd9c0b2e0780fa6258
-  IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
+  IQKeyboardManagerSwift: ed9b04ee0e3067ffba543283462d619f944b05e5
   JBDatePicker: 0e791c8a79c49b0d37decea28ba147515bf5cfca
-  Kingfisher: 6fe5e67a90fd335e49b0f5c075ff55ac5ebedd94
+  Kingfisher: 1a50df6880a60bae26f3e21a0df3d17b892f5e0b
   M13Checkbox: 6f59404540ac98ba83a3d1afac335895a40c6a5d
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
-  PanModal: 021af5c40d501908529f17bde508b8b9ab1c322d
+  PanModal: 275f6d4d07565ddf4ed16d7be5d9cd275682d80d
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3

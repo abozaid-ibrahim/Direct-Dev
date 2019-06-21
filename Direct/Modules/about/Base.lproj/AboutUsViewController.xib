@@ -17,28 +17,38 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="752" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rA-UT-J3M">
-                    <rect key="frame" x="12" y="56" width="390" height="128"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" priority="100" constant="128" id="6TT-mM-XM5"/>
-                    </constraints>
-                    <mutableString key="text">دايركت فيزا أول تطبيق من نوعه يخدم المواطنينِ السعوديين الراغبين باستخراج تأشيرات سفر سياحية ودراسية لأكثر من 20 دولة حول العالم وذلك بتقديم طلب التأشيرة من خلال التطبيق أو الموقع بخطوات سهلة وبسيطة أو من خلال زيارة احد فروعنا المنتشرة حول المملكة. لدى دايركت فيزا 4 فروع واكثر من 60 موظف مؤهل لخدمة عملائها على مدار الساعة وذلك بوضع خبراتهم الطويلة في مجال التأشيرات بين يديك بكل رحابة صدر.
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LdT-k1-O22">
+                    <rect key="frame" x="16" y="16" width="382" height="205"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKo-s6-cZ3">
+                            <rect key="frame" x="4" y="4" width="374" height="197"/>
+                            <mutableString key="text">دايركت فيزا أول تطبيق من نوعه يخدم المواطنينِ السعوديين الراغبين باستخراج تأشيرات سفر سياحية ودراسية لأكثر من 20 دولة حول العالم وذلك بتقديم طلب التأشيرة من خلال التطبيق أو الموقع بخطوات سهلة وبسيطة أو من خلال زيارة احد فروعنا المنتشرة حول المملكة. لدى دايركت فيزا 4 فروع واكثر من 60 موظف مؤهل لخدمة عملائها على مدار الساعة وذلك بوضع خبراتهم الطويلة في مجال التأشيرات بين يديك بكل رحابة صدر.
 
 هدفنا هو أن نصبح الرائدين في مجالنا في منطقة الشرق الأوسط وأن نبقى الأفضل من خلال تنويع وتقديم خدمات جديدة وتوفير تجربة عملاء الأفضل من نوعها.</mutableString>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="JKo-s6-cZ3" firstAttribute="leading" secondItem="LdT-k1-O22" secondAttribute="leading" constant="4" id="FcD-rF-lFc"/>
+                        <constraint firstItem="JKo-s6-cZ3" firstAttribute="top" secondItem="LdT-k1-O22" secondAttribute="top" constant="4" id="GXe-tw-dhM"/>
+                        <constraint firstAttribute="bottom" secondItem="JKo-s6-cZ3" secondAttribute="bottom" constant="4" id="K3l-ZP-GUZ"/>
+                        <constraint firstAttribute="trailing" secondItem="JKo-s6-cZ3" secondAttribute="trailing" constant="4" id="e1O-xY-2zH"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="1rA-UT-J3M" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="5Qm-RY-I9t"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1rA-UT-J3M" secondAttribute="trailing" constant="12" id="8Rr-d2-2Rp"/>
-                <constraint firstItem="1rA-UT-J3M" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="lai-ff-GJt"/>
+                <constraint firstItem="LdT-k1-O22" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="3n0-25-YTJ"/>
+                <constraint firstAttribute="trailing" secondItem="LdT-k1-O22" secondAttribute="trailing" constant="16" id="XtI-hF-7j7"/>
+                <constraint firstItem="LdT-k1-O22" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="16" id="YzA-pj-qOc"/>
             </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>

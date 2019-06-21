@@ -101,8 +101,8 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Brd-he-eOY" customClass="JBDatePickerView" customModule="JBDatePicker">
-                            <rect key="frame" x="6" y="82" width="386" height="220"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Brd-he-eOY" customClass="JBDatePickerView" customModule="JBDatePicker">
+                            <rect key="frame" x="6" y="78.5" width="386" height="220"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="220" id="X9D-Tj-xff"/>
