@@ -11,6 +11,6 @@ import SwifterSwift
 
 extension UIImage{
     func apiSize()->UIImage?{
-        return self.compressed(quality: 0.5)
+        return self.compressed(quality: 0.15)
     }
 }

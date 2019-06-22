@@ -30,8 +30,8 @@ class VisaQuestionsView: UIView, ImagePicker {
     //===================================================<<
     
     var params: USRequestParams?
-    var countryName: String!{
-        didSet{
+    var countryName: String! {
+        didSet {
             previousVisaLbl.text = "هل سبق وحصلت على تأشيرة " + countryString + Str.before
             relativeInCountryLbl.text = "هل لديك اى اقارب فى " + countryString + "؟"
             visaCancelationLbl.text = "هل تم رفض دخولك أو الغاء تأشيرتك الى " + countryString + Str.before
@@ -81,9 +81,9 @@ class VisaQuestionsView: UIView, ImagePicker {
         onRecieveImageCallback()
     }
     
-    @IBOutlet weak var cancelViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var relativesViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var previousVisaViewHeight: NSLayoutConstraint!
+    @IBOutlet var cancelViewHeight: NSLayoutConstraint!
+    @IBOutlet var relativesViewHeight: NSLayoutConstraint!
+    @IBOutlet var previousVisaViewHeight: NSLayoutConstraint!
     func isInputsValid() -> Bool {
         guard let type = formType else {
             return false
@@ -145,7 +145,11 @@ class VisaQuestionsView: UIView, ImagePicker {
         }
         
         switch type {
-        case .US, .GB: // BR
+        case .US: // BR
+            relativesView.isHidden = false
+            visaCanceledBeforeView.isHidden = false
+            previousVisaView.isHidden = false
+        case .GB: // BR
             relativesView.isHidden = false
             visaCanceledBeforeView.isHidden = false
             previousVisaView.isHidden = true
@@ -159,10 +163,10 @@ class VisaQuestionsView: UIView, ImagePicker {
         case .IE:
             relativesView.isHidden = true
             visaCanceledBeforeView.isHidden = true
-        case .IN, .CN :
+        case .IN, .CN:
             relativesView.isHidden = true
             visaCanceledBeforeView.isHidden = true
-        case .JP :
+        case .JP:
             relativesView.isHidden = true
             visaCanceledBeforeView.isHidden = true
         }
@@ -187,7 +191,7 @@ class VisaQuestionsView: UIView, ImagePicker {
     
     private func questionsSetup() {
         // ever you travedled
-
+        
         previousVisaImageField.neverShowKeypad()
         previousVisaImageField.rx.tapGesture().when(.recognized)
             .subscribe { _ in
@@ -246,8 +250,7 @@ class VisaQuestionsView: UIView, ImagePicker {
             relativesViewHeight.constant = 90
         } else {
             relativityField.isHidden = false
-             relativesViewHeight.constant = 135
+            relativesViewHeight.constant = 135
         }
-       
     }
 }
