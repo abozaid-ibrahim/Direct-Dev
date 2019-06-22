@@ -53,5 +53,12 @@ struct Str{
     static var schengen:String{
         return "Schengen".localized
     }
+    static var firstSponser:String{
+        return "First Sponser"
+    }
+    static var sponser: String{
+        return "Sponser"
+    }
 
+    
 }

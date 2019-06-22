@@ -13,10 +13,29 @@ import UIKit
 /* if any contoller need any dependencies, it should passed in the destination item */
 
 enum Destination {
-    case loginView, signupView, homeScreen, visaRequirement(VisaRequestParams),
-        selectableSheet(data: [String], titleText: String?,
-                        style: CellStyle),
-        paymentMethod(VisaRequestParams), passangersCount, newInstitueVisa, datePicker(title: String?), hostsInfoScreen, passangersInfoScreen(VisaRequestParams), successVisaReqScreen(USVvisaRequestJSONResponse?), MyOrders, orderDetails, institutesList, instituteDetails, packageDetails, successPackage, banks, newDirectVisa, searchCountries, confirmatonVisa(VisaRequestParams)
+    case loginView,
+        signupView,
+        homeScreen,
+        visaRequirement(VisaRequestParams),
+        selectableSheet(data: [String], titleText: String?, style: CellStyle),
+        paymentMethod(VisaRequestParams),
+        passangersCount,
+        newInstitueVisa,
+        datePicker(title: String?),
+        sponsersInfoScreen(VisaRequestParams),
+        passangersInfoScreen(VisaRequestParams),
+        successVisaReqScreen(USVvisaRequestJSONResponse?),
+        MyOrders,
+        orderDetails,
+        institutesList,
+        instituteDetails,
+        packageDetails,
+        successPackage,
+        banks,
+        newDirectVisa,
+        searchCountries,
+        confirmatonVisa(VisaRequestParams)
+
     func controller() -> UIViewController {
         switch self {
         case .loginView:
@@ -44,12 +63,14 @@ enum Destination {
             return PassangersCountController()
         case .newInstitueVisa:
             return NewInstituteRequestController()
-        case .datePicker(let title):
+        case let .datePicker(title):
             let date = DatePickerController()
             date.pickerTitle = title
             return date
-        case .hostsInfoScreen:
-            return SponsersViewController()
+        case let .sponsersInfoScreen(visa):
+            let vc = SponsersViewController()
+            vc.visaInfo = visa
+            return vc
         case let .passangersInfoScreen(info):
             let vc = PassangersInputViewViewController()
             vc.visaInfo = info
@@ -97,9 +118,11 @@ final class AppNavigator: Navigator {
     func present(_ dest: Destination) {
         AppNavigator.rootController.present(dest.controller(), animated: true, completion: nil)
     }
+
     func present(_ vc: UIViewController) {
         AppNavigator.rootController.present(vc, animated: true, completion: nil)
     }
+
     func presentModally(_ dest: Destination) {
         AppNavigator.rootController.presentPanModal(dest.controller() as! UIViewController & PanModalPresentable)
     }

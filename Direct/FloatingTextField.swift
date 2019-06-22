@@ -24,6 +24,7 @@ class FloatingTextField: SkyFloatingLabelTextField {
     }
 
     func CommonInit() {
+    
         selectedLineColor = .lightGray
         selectedTitleColor = .lightGray
         cornerRadiusV = 8

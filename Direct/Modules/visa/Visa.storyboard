@@ -299,7 +299,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WH2-IX-88j">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WH2-IX-88j" userLabel="sp">
                                                 <rect key="frame" x="0.0" y="375" width="390" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2bF-qQ-rUC">
@@ -418,6 +418,7 @@
                         <outlet property="pckDateLbl" destination="SsY-RN-4BW" id="LPF-Vy-hPF"/>
                         <outlet property="pickDateView" destination="aKs-D1-LLb" id="uoZ-Jp-KWs"/>
                         <outlet property="relationlbl" destination="ejD-Hx-lWN" id="X9t-cL-Ij0"/>
+                        <outlet property="sponsersView" destination="WH2-IX-88j" id="W0B-zt-dHB"/>
                         <outlet property="tableHeightConstrain" destination="eby-jC-k8N" id="ZYa-of-woM"/>
                         <outlet property="visaTypeLbl" destination="a7T-le-4cT" id="CoD-m5-hQb"/>
                         <outletCollection property="placeHolderLbls" destination="d8b-Et-pAY" collectionClass="NSMutableArray" id="NUw-gF-pQt"/>
@@ -475,7 +476,7 @@
                                         <rect key="frame" x="0.0" y="28" width="398" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ljg-jk-ues" id="SCO-Og-M7j">
-                                            <rect key="frame" x="5" y="5" width="388" height="45"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="398" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="saB-OG-pZO">

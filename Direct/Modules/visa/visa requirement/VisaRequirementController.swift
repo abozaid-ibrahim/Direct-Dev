@@ -107,7 +107,8 @@ extension VisaRequirementController: UITableViewDataSource {
         } else {
             //this is for expanded cells
             let cell = tableView.dequeueReusableCell(withIdentifier: ReqDescTableCell.cellId) as! ReqDescTableCell
-            cell.setCellData(datalist[indexPath.section].data.desc ?? "")
+            let model = datalist[indexPath.section].data
+            cell.setCellData((model.desc ?? "",model.image))
             return cell
         }
     }

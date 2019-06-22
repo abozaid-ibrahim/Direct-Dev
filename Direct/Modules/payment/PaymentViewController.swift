@@ -26,7 +26,7 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
         super.viewDidLoad()
         title = "الدفع"
         checkoutFooter.action = { [weak self] in
-            try! AppNavigator().push(.hostsInfoScreen)
+//            try! AppNavigator().push(.sponsersInfoScreen(<#T##VisaRequestParams#>))
         }
         checkoutFooter.valueText = totalCost?.priced
         checkoutFooter.bg = UIColor.appOffWhite

@@ -245,6 +245,8 @@
 		6CF703DD2286F7E800B1C387 /* InstituteDetailsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF703DB2286F7E800B1C387 /* InstituteDetailsTableCell.swift */; };
 		6CF703E22286FBD700B1C387 /* InstituteDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF703E12286FBD700B1C387 /* InstituteDetailsHeaderView.swift */; };
 		6CF75E9F228BD8C900009BAB /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF75E9E228BD8C900009BAB /* Progress.swift */; };
+		6CF9F5D722BECD2700E45E8A /* SponserFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF9F5D522BECD2700E45E8A /* SponserFormController.swift */; };
+		6CF9F5D822BECD2700E45E8A /* SponserFormController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF9F5D622BECD2700E45E8A /* SponserFormController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -509,6 +511,8 @@
 		6CF703DB2286F7E800B1C387 /* InstituteDetailsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstituteDetailsTableCell.swift; sourceTree = "<group>"; };
 		6CF703E12286FBD700B1C387 /* InstituteDetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstituteDetailsHeaderView.swift; sourceTree = "<group>"; };
 		6CF75E9E228BD8C900009BAB /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
+		6CF9F5D522BECD2700E45E8A /* SponserFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponserFormController.swift; sourceTree = "<group>"; };
+		6CF9F5D622BECD2700E45E8A /* SponserFormController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SponserFormController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -767,8 +771,6 @@
 				6C9027CC228F95AC00B41705 /* VisaRequirementController.xib */,
 				6C5DE7662275EC49001A9FB6 /* VisaRequirementTableCell.swift */,
 				6C9027CF228F95B100B41705 /* VisaRequirementTableCell.xib */,
-				6CDEF77D22A11DDA00BF5F0B /* VisaReqConfirmationController.swift */,
-				6CDEF78122A11EFC00BF5F0B /* Visa.storyboard */,
 				6C6A0C1B22ABF17E00150FF6 /* ReqDescTableCell.swift */,
 				6C6A0C1C22ABF17E00150FF6 /* ReqDescTableCell.xib */,
 			);
@@ -970,6 +972,8 @@
 			children = (
 				6C778268227A9F64001926B2 /* SponsersViewController.swift */,
 				6C902796228F952500B41705 /* SponsersViewController.xib */,
+				6CF9F5D522BECD2700E45E8A /* SponserFormController.swift */,
+				6CF9F5D622BECD2700E45E8A /* SponserFormController.xib */,
 			);
 			path = sponsers;
 			sourceTree = "<group>";
@@ -1178,6 +1182,8 @@
 		6CE722E82274F9F700E095DC /* visa */ = {
 			isa = PBXGroup;
 			children = (
+				6CDEF78122A11EFC00BF5F0B /* Visa.storyboard */,
+				6CF9F5D422BECCAE00E45E8A /* confirmation */,
 				6C3885C3229B1B4F00CA168A /* visa requirement */,
 				6C3885C2229B1B4100CA168A /* new visa wizard */,
 			);
@@ -1277,6 +1283,14 @@
 				6CF3E1B7227268CF007488BA /* HomeCollectionSectionHeader.xib */,
 			);
 			path = cells;
+			sourceTree = "<group>";
+		};
+		6CF9F5D422BECCAE00E45E8A /* confirmation */ = {
+			isa = PBXGroup;
+			children = (
+				6CDEF77D22A11DDA00BF5F0B /* VisaReqConfirmationController.swift */,
+			);
+			path = confirmation;
 			sourceTree = "<group>";
 		};
 		C90B9680D0CBA3B7A036164C /* Frameworks */ = {
@@ -1416,6 +1430,7 @@
 				6C6A0C1122AB81F800150FF6 /* Cairo-Bold.ttf in Resources */,
 				6CF3E19D22725430007488BA /* VisaCollectionViewCell.xib in Resources */,
 				6C902785228F950400B41705 /* InstitutesListController.xib in Resources */,
+				6CF9F5D822BECD2700E45E8A /* SponserFormController.xib in Resources */,
 				6C6A0C1E22ABF17E00150FF6 /* ReqDescTableCell.xib in Resources */,
 				6C9027C7228F95A600B41705 /* OrderTableCell.xib in Resources */,
 				6C6A0C0E22AB81F800150FF6 /* Cairo-Regular.ttf in Resources */,
@@ -1510,6 +1525,7 @@
 				6C8286EB228B9C96009FB5FF /* View+App.swift in Sources */,
 				3992B66722961B5F00BBB7F1 /* TagCollectionCell.swift in Sources */,
 				6CF2515322A660A000CDA47C /* PassangerFormController.swift in Sources */,
+				6CF9F5D722BECD2700E45E8A /* SponserFormController.swift in Sources */,
 				6CF0E3772285D78900149910 /* OrderDetailsController.swift in Sources */,
 				6C77827C227AA2C1001926B2 /* SuccessRequestInstituteController.swift in Sources */,
 				6C6EED6F22A24C680091B82F /* UpdatePaymentResponse.swift in Sources */,

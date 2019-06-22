@@ -6,6 +6,7 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
+import RxGesture
 import RxSwift
 import UIKit
 
@@ -34,8 +35,8 @@ class VisaReqConfirmationController: UIViewController {
     @IBOutlet var tableHeightConstrain: NSLayoutConstraint!
     @IBOutlet var passangersTable: UITableView!
     @IBOutlet private var pickDateView: UIView!
-    
-    
+    @IBOutlet private var sponsersView: UIView!
+
     //===================================================<<
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,9 +62,11 @@ class VisaReqConfirmationController: UIViewController {
                 self.tableHeightConstrain.constant = value?.height ?? 100
             }
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        sponsersView.rx.tapGesture().when(.recognized)
+            .subscribe(onNext: { _ in
+                try! AppNavigator().push(.sponsersInfoScreen(self.visaRequestData!))
+            }).disposed(by: disposeBag)
     }
-    
-    
 
     private func fillUIWithData() {
         guard let info = visaRequestData else {
@@ -91,8 +94,6 @@ class VisaReqConfirmationController: UIViewController {
             })
             .disposed(by: disposeBag)
     }
-    
-    
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
