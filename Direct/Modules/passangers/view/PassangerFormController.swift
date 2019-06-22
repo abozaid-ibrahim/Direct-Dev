@@ -204,7 +204,7 @@ class PassangerFormController: UIViewController {
     }
 
     func sendDataToServer(_ api: Observable<USVvisaRequestJSONResponse>) {
-        api.observeOn(MainScheduler.instance).subscribeOn(SerialDispatchQueueScheduler(qos: .background)).subscribe(onNext: { [unowned self] _ in
+        api.subscribe(onNext: { [unowned self] _ in
             Progress.hide()
             self.successIndex.onNext(self.index ?? 0)
         }, onError: { _ in
