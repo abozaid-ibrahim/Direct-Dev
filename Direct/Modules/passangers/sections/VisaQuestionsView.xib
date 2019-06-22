@@ -15,8 +15,8 @@
             <rect key="frame" x="0.0" y="0.0" width="391" height="429"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="UL7-8F-Sle">
-                    <rect key="frame" x="0.0" y="0.0" width="391" height="429"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="UL7-8F-Sle">
+                    <rect key="frame" x="0.0" y="0.0" width="391" height="413"/>
                     <subviews>
                         <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="aDO-c3-L3t" userLabel="visa canceled">
                             <rect key="frame" x="0.0" y="0.0" width="391" height="135"/>
@@ -93,7 +93,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z0E-05-JSS" userLabel="relaives">
-                            <rect key="frame" x="0.0" y="147" width="391" height="135"/>
+                            <rect key="frame" x="0.0" y="139" width="391" height="135"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="هل لديك اى اقارب فى امريكا؟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Kg-Ed-IbD">
                                     <rect key="frame" x="8" y="8" width="375" height="23"/>
@@ -167,7 +167,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="8Uz-6x-mh1" userLabel="previous visa">
-                            <rect key="frame" x="0.0" y="294" width="391" height="135"/>
+                            <rect key="frame" x="0.0" y="278" width="391" height="135"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EvN-mb-5AY">
                                     <rect key="frame" x="8" y="8" width="375" height="119"/>

@@ -79,30 +79,31 @@ class VisaQuestionsView: UIView, ImagePicker {
         changePreviousVisaSelection()
         questionsSetup()
         onRecieveImageCallback()
+        viewModel.getRelatives()
     }
     
     @IBOutlet var cancelViewHeight: NSLayoutConstraint!
     @IBOutlet var relativesViewHeight: NSLayoutConstraint!
     @IBOutlet var previousVisaViewHeight: NSLayoutConstraint!
     func isInputsValid() -> Bool {
-        guard let type = formType else {
+        guard formType != nil else {
             return false
         }
-        if !relativesView.isHidden {
+        if !relativityField.isHidden {
             guard relativityField.hasText else {
                 relativityField.setError.onNext(true)
                 return false
             }
             relativityField.setError.onNext(false)
         }
-        if !visaCanceledBeforeView.isHidden {
+        if !cancelationReasonField.isHidden {
             guard cancelationReasonField.hasText else {
                 cancelationReasonField.setError.onNext(true)
                 return false
             }
             cancelationReasonField.setError.onNext(false)
         }
-        if !previousVisaView.isHidden {
+        if !previousVisaImageField.isHidden {
             guard previousVisaImageField.hasText else {
                 previousVisaImageField.setError.onNext(true)
                 return false
@@ -125,7 +126,7 @@ class VisaQuestionsView: UIView, ImagePicker {
             basic -= cancelationReasonField.isHidden ? 50 : 0
         }
         if !previousVisaView.isHidden {
-            basic -= previousVisaImageField.isHidden ? 50 : 0
+            basic -= previousVisaImageField.isHidden ? 45 : 0
         }
         return CGFloat(basic)
     }
