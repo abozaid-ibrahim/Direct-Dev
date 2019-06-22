@@ -12,6 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SponserFormController" customModule="Direct" customModuleProvider="target">
             <connections>
+                <outlet property="AccountImageView" destination="CcA-1X-MO2" id="FpS-sU-iEt"/>
+                <outlet property="accountImageField" destination="LnN-fo-Uz5" id="lYE-HF-JIZ"/>
+                <outlet property="accountOwnerField" destination="5f0-yg-og2" id="SwI-sd-G6j"/>
+                <outlet property="accountPageField" destination="ALc-VA-OBv" id="6Cc-ED-W8G"/>
+                <outlet property="submitBtn" destination="Gn8-yd-BGn" id="oyo-H1-VvZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -67,57 +72,194 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9V-b3-aRc">
                             <rect key="frame" x="12" y="105" width="374" height="729"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uBh-3W-1Sd">
-                                    <rect key="frame" x="20" y="12" width="334" height="310"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uBh-3W-1Sd">
+                                    <rect key="frame" x="12" y="12" width="350" height="255"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بيانات المتكفل بمصاريف المسافر ( عامر )" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5X0-56-fdW">
-                                            <rect key="frame" x="0.0" y="0.0" width="334" height="43.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8MK-PV-4Jg" customClass="UploadField" customModule="Direct" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="53.5" width="334" height="43"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOz-Ol-uJd" userLabel="field 1">
+                                            <rect key="frame" x="0.0" y="31.5" width="350" height="46"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5f0-yg-og2" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="46"/>
+                                                    <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="من صاحب كشف الحساب والتعريف بالراتب ؟"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="من صاحب كشف الحساب والتعريف بالراتب ؟"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                            <color key="value" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="lineErrorColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                            </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="hint" value="من صاحب كشف الحساب والتعريف بالراتب ؟"/>
-                                                <userDefinedRuntimeAttribute type="image" keyPath="image" value="group10"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="من صاحب كشف الحساب والتعريف بالراتب ؟"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="من صاحب كشف الحساب والتعريف بالراتب ؟"/>
-                                            </userDefinedRuntimeAttributes>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="5f0-yg-og2" secondAttribute="trailing" id="3Uv-ar-OYd"/>
+                                                <constraint firstAttribute="height" constant="46" id="ARI-Xo-yqU"/>
+                                                <constraint firstItem="5f0-yg-og2" firstAttribute="top" secondItem="eOz-Ol-uJd" secondAttribute="top" id="IRw-Ib-7bB"/>
+                                                <constraint firstItem="5f0-yg-og2" firstAttribute="leading" secondItem="eOz-Ol-uJd" secondAttribute="leading" id="dQ6-vr-e2g"/>
+                                                <constraint firstAttribute="bottom" secondItem="5f0-yg-og2" secondAttribute="bottom" id="hYA-Nh-C7D"/>
+                                            </constraints>
                                         </view>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="كشف الحساب (اخر صفحة من الكشف)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KS5-Uv-SAq" customClass="UploadField" customModule="Direct" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="106.5" width="334" height="43.5"/>
-                                            <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سأقوم بتجهيزه لاحقًا" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4P-Zz-oGC">
-                                            <rect key="frame" x="0.0" y="160" width="334" height="43.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPv-Pv-kyS" customClass="UploadField" customModule="Direct" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="213.5" width="334" height="43"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgJ-gj-L26" userLabel="f">
+                                            <rect key="frame" x="0.0" y="87.5" width="350" height="46"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ALc-VA-OBv" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="46"/>
+                                                    <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="كشف الحساب (اخر صفحة من الكشف)"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="كشف الحساب (اخر صفحة من الكشف)"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                            <color key="value" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="lineErrorColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_dots" translatesAutoresizingMaskIntoConstraints="NO" id="WRo-Z3-Th3">
+                                                    <rect key="frame" x="313" y="15.5" width="25" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="moy-wg-Rnc"/>
+                                                        <constraint firstAttribute="height" constant="15" id="o3H-1d-Th2"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="hint" value="ارفق صورة التعريف بالراتب"/>
-                                                <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="group8"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="ارفق صورة التعريف بالراتب"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="ارفق صورة التعريف بالراتب"/>
-                                            </userDefinedRuntimeAttributes>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="46" id="8SJ-by-nCm"/>
+                                                <constraint firstItem="WRo-Z3-Th3" firstAttribute="centerY" secondItem="hgJ-gj-L26" secondAttribute="centerY" id="MfR-qM-dbG"/>
+                                                <constraint firstAttribute="bottom" secondItem="ALc-VA-OBv" secondAttribute="bottom" id="YNI-ud-EOh"/>
+                                                <constraint firstAttribute="trailing" secondItem="ALc-VA-OBv" secondAttribute="trailing" id="YTb-fJ-q8c"/>
+                                                <constraint firstAttribute="trailing" secondItem="WRo-Z3-Th3" secondAttribute="trailing" constant="12" id="em4-Ce-8JR"/>
+                                                <constraint firstItem="ALc-VA-OBv" firstAttribute="leading" secondItem="hgJ-gj-L26" secondAttribute="leading" id="iS2-vO-2Dd"/>
+                                                <constraint firstItem="ALc-VA-OBv" firstAttribute="top" secondItem="hgJ-gj-L26" secondAttribute="top" id="rAN-LR-0RM"/>
+                                            </constraints>
+                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="5eT-sF-1Of">
+                                            <rect key="frame" x="0.0" y="143.5" width="350" height="25"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yXb-Rl-dTq" customClass="M13Checkbox">
+                                                    <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="yXb-Rl-dTq" secondAttribute="height" id="jul-Qo-Mhw"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_IBBoxType" value="square"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_IBMarkType" value="checkmark"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="accountPageCheckBoxChanged:" destination="-1" eventType="valueChanged" id="7qt-U7-W01"/>
+                                                    </connections>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سأقوم بتجهيزه لاحقًا" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4P-Zz-oGC">
+                                                    <rect key="frame" x="39" y="0.0" width="311" height="25"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="Bgl-ie-S9P"/>
+                                            </constraints>
+                                        </stackView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CcA-1X-MO2" userLabel="f" customClass="AccountImageView" customModule="Direct" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="178.5" width="350" height="46"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LnN-fo-Uz5" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="46"/>
+                                                    <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="ارفق صورة التعريف بالراتب"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="ارفق صورة التعريف بالراتب"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                            <color key="value" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="lineErrorColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uploadArrow" translatesAutoresizingMaskIntoConstraints="NO" id="7oq-IP-5Ff">
+                                                    <rect key="frame" x="313" y="15.5" width="25" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="4V7-OI-GjG"/>
+                                                        <constraint firstAttribute="height" constant="15" id="Y8T-aV-Mbn"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="7oq-IP-5Ff" firstAttribute="centerY" secondItem="CcA-1X-MO2" secondAttribute="centerY" id="0fx-m0-sE3"/>
+                                                <constraint firstAttribute="height" constant="46" id="7yT-Ty-Z50"/>
+                                                <constraint firstAttribute="trailing" secondItem="7oq-IP-5Ff" secondAttribute="trailing" constant="12" id="EVp-Pu-f9C"/>
+                                                <constraint firstItem="LnN-fo-Uz5" firstAttribute="top" secondItem="CcA-1X-MO2" secondAttribute="top" id="F9z-6i-3wn"/>
+                                                <constraint firstAttribute="trailing" secondItem="LnN-fo-Uz5" secondAttribute="trailing" id="FDJ-cm-2Ox"/>
+                                                <constraint firstItem="LnN-fo-Uz5" firstAttribute="leading" secondItem="CcA-1X-MO2" secondAttribute="leading" id="YCn-c6-gQU"/>
+                                                <constraint firstAttribute="bottom" secondItem="LnN-fo-Uz5" secondAttribute="bottom" id="ioq-Ho-BFp"/>
+                                            </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سأقوم بتجهيزه لاحقًا" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnm-3d-EZ8">
-                                            <rect key="frame" x="0.0" y="266.5" width="334" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="234.5" width="350" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="310" id="CmT-MO-2Yt"/>
-                                    </constraints>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gn8-yd-BGn">
                                     <rect key="frame" x="12" y="687" width="350" height="30"/>
@@ -127,14 +269,17 @@
                                             <integer key="value" value="1"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="checkoutNextAction:" destination="-1" eventType="touchUpInside" id="CAZ-Mr-W6L"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="Gn8-yd-BGn" secondAttribute="bottom" constant="12" id="17S-Pv-rk3"/>
-                                <constraint firstItem="uBh-3W-1Sd" firstAttribute="leading" secondItem="X9V-b3-aRc" secondAttribute="leading" constant="20" id="6Lf-2R-0NB"/>
+                                <constraint firstItem="uBh-3W-1Sd" firstAttribute="leading" secondItem="X9V-b3-aRc" secondAttribute="leading" constant="12" id="6Lf-2R-0NB"/>
                                 <constraint firstItem="uBh-3W-1Sd" firstAttribute="top" secondItem="X9V-b3-aRc" secondAttribute="top" constant="12" id="QeU-uT-TgN"/>
-                                <constraint firstAttribute="trailing" secondItem="uBh-3W-1Sd" secondAttribute="trailing" constant="20" id="WUh-Dk-xTS"/>
+                                <constraint firstAttribute="trailing" secondItem="uBh-3W-1Sd" secondAttribute="trailing" constant="12" id="WUh-Dk-xTS"/>
                                 <constraint firstItem="Gn8-yd-BGn" firstAttribute="leading" secondItem="X9V-b3-aRc" secondAttribute="leading" constant="12" id="aCR-b2-VPV"/>
                                 <constraint firstAttribute="trailing" secondItem="Gn8-yd-BGn" secondAttribute="trailing" constant="12" id="n7d-xq-6p3"/>
                             </constraints>
@@ -174,7 +319,7 @@
     </objects>
     <resources>
         <image name="alert" width="6" height="24"/>
-        <image name="group10" width="23" height="17"/>
-        <image name="group8" width="13" height="13"/>
+        <image name="orange_dots" width="17" height="4"/>
+        <image name="uploadArrow" width="10" height="20"/>
     </resources>
 </document>
