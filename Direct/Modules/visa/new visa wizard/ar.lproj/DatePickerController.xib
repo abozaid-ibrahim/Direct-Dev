@@ -15,6 +15,7 @@
                 <outlet property="currentMonthLbl" destination="oDW-MK-0Y4" id="X3W-ED-NRw"/>
                 <outlet property="dateLbl" destination="GnT-2P-hab" id="6w3-Gl-8En"/>
                 <outlet property="datePicker" destination="Brd-he-eOY" id="QUR-pe-L2N"/>
+                <outlet property="submitBtn" destination="BIE-4N-jxb" id="cfZ-B9-SuO"/>
                 <outlet property="tilteLbl" destination="kfu-iw-Q79" id="GcW-MX-fZD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

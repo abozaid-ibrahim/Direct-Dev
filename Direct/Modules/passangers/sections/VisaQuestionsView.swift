@@ -162,7 +162,7 @@ class VisaQuestionsView: UIView, ImagePicker {
         case .IN, .CN :
             relativesView.isHidden = true
             visaCanceledBeforeView.isHidden = true
-        case .JP :
+        case .JP :
             relativesView.isHidden = true
             visaCanceledBeforeView.isHidden = true
         }

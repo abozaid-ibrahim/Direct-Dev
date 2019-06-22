@@ -9,6 +9,7 @@
 import JBDatePicker
 import PanModal
 import RxSwift
+import SwifterSwift
 import UIKit
 
 class DatePickerController: UIViewController, PanModalPresentable {
@@ -21,12 +22,16 @@ class DatePickerController: UIViewController, PanModalPresentable {
     override func viewDidLoad() {
         super.viewDidLoad()
         datePicker.delegate = self
+        dateChanged.map { $0 > Date() }.bind(to: submitBtn.rx.isEnabled).disposed(by: disposeBag)
+        dateChanged.map { $0 > Date() ? UIColor.appPumpkinOrange : UIColor.lightGray }.bind(to: submitBtn.rx.backgroundColor).disposed(by: disposeBag)
+
         if let title = self.pickerTitle {
             tilteLbl.text = title
         }
     }
 
-    private func setDate(date: Date) {
+    private let disposeBag = DisposeBag()
+    private func setDatetoHeaderLbl(date: Date) {
         let str = "تاريخ السفر" + ": " + date.displayFormat
         let attributedString = NSMutableAttributedString(string: str, attributes: [
             .font: UIFont(name: AppFonts.regularFont, size: 14.0)!,
@@ -37,11 +42,20 @@ class DatePickerController: UIViewController, PanModalPresentable {
     }
 
     var selectedDate = PublishSubject<Date?>()
+    var dateChanged = PublishSubject<Date>()
 
     @IBAction func confirmAction(_: Any) {
+        guard let pickedDate = date else {
+            return
+        }
+        guard pickedDate > Date() else {
+            return
+        }
+        selectedDate.onNext(date)
         dismiss(animated: true, completion: nil)
     }
 
+    @IBOutlet var submitBtn: UIButton!
     @IBOutlet var currentMonthLbl: UILabel!
     @IBAction func loadNextMonth(_: Any) {
         datePicker.loadNextView()
@@ -50,6 +64,8 @@ class DatePickerController: UIViewController, PanModalPresentable {
     @IBAction func loadPreviousMonth(_: Any) {
         datePicker.loadPreviousView()
     }
+
+    private var date: Date!
 }
 
 extension DatePickerController: JBDatePickerViewDelegate {
@@ -66,8 +82,9 @@ extension DatePickerController: JBDatePickerViewDelegate {
 
     func didSelectDay(_ dayView: JBDatePickerDayView) {
         if let date = dayView.date {
-            selectedDate.onNext(date)
-            setDate(date: date)
+            dateChanged.onNext(date)
+            self.date = date
+            setDatetoHeaderLbl(date: date)
         }
     }
 
