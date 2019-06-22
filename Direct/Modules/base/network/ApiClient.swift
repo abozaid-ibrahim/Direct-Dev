@@ -21,6 +21,8 @@ class ApiClientFacade {
     let paymentProvider = MoyaProvider<PaymentAPIs>(plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: APIDateFromatter().JSONResponseDataFormatter)])
     
     lazy var visaProvider = MoyaProvider<VisaAPIs>(plugins: [])
+    lazy var sponsersProvider = MoyaProvider<SponsersAPIs>(plugins: [])
+
     
     //    func downloadRepositories(_ username: String) {
     //        provider.request(.zen) { result in
