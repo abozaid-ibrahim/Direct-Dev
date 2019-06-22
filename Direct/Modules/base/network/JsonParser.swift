@@ -12,11 +12,14 @@ import Moya
 import RxSwift
 class JsonParser {
     func emitDataModelfromResponse<T: Codable>(event: SingleEvent<Response>, observer: AnyObserver<T>) {
+
         switch event {
+
         case let .success(response):
+            Logger.log(">>>response \(String(data: response.data, encoding: .utf8) )")
+
             do {
                 let object = try JSONDecoder().decode(T.self, from: response.data)
-                Logger.log(object)
                 observer.onNext(object)
             } catch {
                 Logger.log(">>> parsing error \(error)")

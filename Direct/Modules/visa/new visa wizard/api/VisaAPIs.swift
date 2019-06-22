@@ -34,7 +34,7 @@ extension VisaAPIs: TargetType {
             return "to-apply-us"
         case .getPreviousVisaType:
             return "get-previous-visa-type"
-        case .applyToVisa(let prm):
+        case let .applyToVisa(prm):
             return prm.path
         case .getVisaReqRelation:
             return "get-visa-req-relation"
@@ -89,9 +89,40 @@ extension VisaAPIs: TargetType {
         case let .applyToUS(req):
             let data = try! prmEncoder.encode(req)
             return .requestData(data)
-        case let .applyToVisa(req):
-            let data = try! prmEncoder.encode(req.1)
-            return .requestData(data)
+        case let .applyToVisa(_, req):
+            var dic1: [String: Any] = ["key": tokenKeyValue,
+                                       "lang": appLang,
+                                       "userid": 703,
+                                       "visa_req_id": req.visaReqID ?? "",
+                                       "visa_req_applicant_id": req.visaReqApplicantID ?? "",
+                                       "first_name": req.firstName ?? "",
+                                       "family_name": req.familyName ?? "",
+                                       "mothers_first_name": req.mothersFirstName ?? "",
+                                       "mothers_family_name": req.mothersFamilyName ?? "",
+                                       "nationality": req.nationality ?? "",
+                                       "passport_copy": req.passportCopy ?? "",
+                                       "personal_photo_copy": req.personalPhotoCopy ?? ""]
+
+            let dic2: [String: Any] = ["I_20_copy": req.universityAcceptanceImage ?? "",
+                                       "ever_issued_visa": req.everIssuedVisaBefore ?? "",
+                                       "previous_visa_copy": req.previousVisaCopy ?? "",
+                                       "type_of_previous_visa": req.typeOfPreviousVisa ?? "",
+                                       "date_of_issuing_previous_visa": req.dateOfArrival ?? "",//check
+                                       "Place_of_issue_previous_visa": "",
+                                       "travelled_before": req.travelledBeforeHere ?? "",
+                                       "date_of_arrival": req.dateOfArrival ?? "",
+                                       "period_of_previous_stay": req.periodOfPreviousStay ?? "",
+                                       "have_driver_license": req.have_driver_license ?? "",
+                                       "visa_cancelled_before": req.visa_cancelled_before ?? "",
+                                       "before_visa_cancelled_reason": req.before_visa_cancelled_reason ?? "",
+                                       "martial_status": req.martialStatus ?? "",
+                                       "family_id_copy": req.familyIDCopy ?? "",
+                                       "any_relatives_here": req.any_relatives_here ?? "",
+                                       "relative_type": req.relative_type ?? "",
+                                       "visits": req.visits ?? ""]
+            dic1.merge(dic2, uniquingKeysWith: { _, new in new })
+
+            return .requestParameters(parameters: dic1, encoding: URLEncoding.default)
         case .getPreviousVisaType:
             let prmDic = ["key": tokenKeyValue,
                           "lang": appLang] as [String: Any]

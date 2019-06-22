@@ -166,17 +166,17 @@ class PassangerFormController: UIViewController {
         if !everTraveledBeforeContainer.isHidden{
             params.travelledBeforeHere = everTraveldView.travelledBeforeHere.stringValue
             // Others PDF
-            params.lang = AppLanguage.langCode
             params.travelledBeforeHere = prevTravelsJson
             params.have_driver_license = everTraveldView.haveLicense
         }
-       
+        params.lang = AppLanguage.langCode
+
     }
 
     var prevTravelsJson: String {
         let countries = (travels as! PreviousTraveledCountriesController).items
         if countries.isEmpty{
-            return ""
+            return "[]"
         }
         return InputJsonBuilder().buildPassangers(countries)
     }
@@ -213,6 +213,6 @@ class PassangerFormController: UIViewController {
             self.successIndex.onNext(self.index ?? 0)
         }, onError: { _ in
             Progress.hide()
-        }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
     }
 }
