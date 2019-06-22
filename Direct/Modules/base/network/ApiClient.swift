@@ -16,12 +16,12 @@ import RxSwift
 class ApiClientFacade {
     let parser = JsonParser()
     let disposeBag = DisposeBag()
-
-    let commonProvider = MoyaProvider<CommonAPIs>(plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: APIDateFromatter().JSONResponseDataFormatter)])
+    let moyaLogger = NetworkLoggerPlugin(verbose: true, responseDataFormatter: APIDateFromatter().JSONResponseDataFormatter)
+    let commonProvider = MoyaProvider<CommonAPIs>(plugins: [])
     let paymentProvider = MoyaProvider<PaymentAPIs>(plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: APIDateFromatter().JSONResponseDataFormatter)])
-
-    let visaProvider = MoyaProvider<VisaAPIs>(plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: APIDateFromatter().JSONResponseDataFormatter)])
-
+    
+    let visaProvider = MoyaProvider<VisaAPIs>(plugins: [])
+    
     //    func downloadRepositories(_ username: String) {
     //        provider.request(.zen) { result in
     //            do {
@@ -35,50 +35,45 @@ class ApiClientFacade {
     //        }
 }
 
-func log(_ value: Any) {
-    #if DEBUG
-        print("\n\n>>>logger:\(value)")
-    #endif
-}
 
 // MARK: Common Apis
 
 extension ApiClientFacade {
     //    }
-
+    
     func getCountries() -> Observable<NewVisaCountriesResponse> {
         return Observable<NewVisaCountriesResponse>.create { (observer) -> Disposable in
             self.commonProvider.rx.request(.getAllCountries).observeOn(MainScheduler.instance).subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
-            }.disposed(by: self.disposeBag)
+                }.disposed(by: self.disposeBag)
             return Disposables.create()
-        }
-        .share(replay: 0, scope: .whileConnected)
+            }
+            .share(replay: 0, scope: .whileConnected)
     }
-
+    
     func getBiometricChoices() -> Observable<BioChoicesResponse> {
         return Observable<BioChoicesResponse>.create { (observer) -> Disposable in
             self.commonProvider.rx.request(.biometricChoices).subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
-            }.disposed(by: self.disposeBag)
+                }.disposed(by: self.disposeBag)
             return Disposables.create()
         }
     }
-
+    
     func getCities(country: String) -> Observable<CountryCitiesResponse> {
         return Observable<CountryCitiesResponse>.create { (observer) -> Disposable in
             self.commonProvider.rx.request(CommonAPIs.getCities(cid: country)).subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
-            }.disposed(by: self.disposeBag)
+                }.disposed(by: self.disposeBag)
             return Disposables.create()
         }
     }
-
+    
     func getRelationList() -> Observable<RelativesResponse> {
         return Observable<RelativesResponse>.create { (observer) -> Disposable in
             self.commonProvider.rx.request(.relationsList).subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
-            }.disposed(by: self.disposeBag)
+                }.disposed(by: self.disposeBag)
             return Disposables.create()
         }
     }

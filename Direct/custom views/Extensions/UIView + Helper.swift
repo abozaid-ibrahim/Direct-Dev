@@ -18,7 +18,6 @@ extension UITextField {
 
 extension UIStoryboard {
     func controller(_ type: UIViewController.Type) -> UIViewController {
-        print(type)
         return instantiateViewController(withIdentifier: "\(type)")
     }
 }

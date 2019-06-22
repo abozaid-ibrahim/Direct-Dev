@@ -174,7 +174,11 @@ class PassangerFormController: UIViewController {
     }
 
     var prevTravelsJson: String {
-        return InputJsonBuilder().buildPassangers((travels as! PreviousTraveledCountriesController).items)
+        let countries = (travels as! PreviousTraveledCountriesController).items
+        if countries.isEmpty{
+            return ""
+        }
+        return InputJsonBuilder().buildPassangers(countries)
     }
 
     var hasMotherView: Bool {

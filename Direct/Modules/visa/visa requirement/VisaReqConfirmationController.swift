@@ -51,9 +51,6 @@ class VisaReqConfirmationController: UIViewController {
         }
 
         passangersTable.rx.observeWeakly(CGSize.self, contentSizeKey).subscribe(onNext: { [unowned self] value in
-            print(self.checkoutFooter.frame.minY)
-            print(self.pickDateView.frame.maxY)
-            print(self.checkoutFooter.frame.minY - self.pickDateView.frame.maxY)
             let vertical = self.checkoutFooter.frame.minY - self.pickDateView.frame.maxY
             if vertical <= 20 {
                 self.passangersTable.isScrollEnabled = true

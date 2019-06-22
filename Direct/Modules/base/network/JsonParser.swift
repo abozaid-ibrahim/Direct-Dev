@@ -16,15 +16,22 @@ class JsonParser {
         case let .success(response):
             do {
                 let object = try JSONDecoder().decode(T.self, from: response.data)
-                print(object)
+                Logger.log(object)
                 observer.onNext(object)
             } catch {
-                print(">>> parsing error \(error)")
+                Logger.log(">>> parsing error \(error)")
                 observer.onError(NetworkFailure.failedToParseData)
             }
         case let .error(error):
-            print(">>> error: error \(error)")
+            Logger.log(">>> error: error \(error)")
             observer.onError(error)
+        }
+    }
+}
+class Logger{
+    static func log(_ value:Any) {
+        DispatchQueue.global().async {
+            print(value)
         }
     }
 }
