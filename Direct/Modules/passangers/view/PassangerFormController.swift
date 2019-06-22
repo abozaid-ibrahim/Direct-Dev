@@ -97,16 +97,16 @@ class PassangerFormController: UIViewController {
         case .SGN:
             add()
             visaQuestionsView.countryName = Str.schengen
-        case .CN, .US, .GB, .IE, .JP, .JP:
+        case .CN, .US, .GB, .IE, .JP:
             add()
             visaQuestionsView.countryName = countryString
         }
     }
     private func addEverTraveledView() {
         switch formTypeValue {
-        case .SGN,.CN, .TR, .IE , .IN:
+        case .SGN,.CN, .TR, .IE , .IN, .JP:
             everTraveledBeforeContainer.isHidden = true
-        case  .US, .GB, .JP, .JP:
+        case  .US, .GB:
             addChild(everTraveldView)
             everTraveldView.countryText = countryString
             everTraveledBeforeContainer.addSubview(everTraveldView.view)
@@ -121,9 +121,9 @@ class PassangerFormController: UIViewController {
     private func addPreviousCountries() {
         guard let travelVC = travels as? PreviousTraveledCountriesController else { return }
         switch formTypeValue {
-        case .SGN, .TR, .IE:
+        case .SGN, .TR, .IE, .JP:
             previouslyTraveledCountriesView.isHidden = true
-        case .CN, .US, .GB, .IN, .JP, .JP:
+        case .CN, .US, .GB, .IN:
             addChild(travelVC)
             previouslyTraveledCountriesView.addSubview(travelVC.view)
             travelVC.view.sameBoundsTo(parentView: previouslyTraveledCountriesView)
