@@ -8,10 +8,10 @@
 
 import Foundation
 class SponserFormParams: Codable {
-    let key, lang: String?
-    let userid, visaReqID, sponserNo, ownerOfBankStmt: Int?
-    let someoneElse: Int?
-    let someoneElseAttachment, bankStmtAttachment, jobLetterAttachment: String?
+    var key, lang: String?
+    var userid, visaReqID, sponserNo, ownerOfBankStmt: Int?
+    var someoneElse: Int?
+    var someoneElseAttachment, bankStmtAttachment, jobLetterAttachment: String?
     
     enum CodingKeys: String, CodingKey {
         case key, lang, userid

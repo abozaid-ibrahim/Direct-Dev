@@ -8,6 +8,7 @@
 
 import M13Checkbox
 import RxCocoa
+import RxOptional
 import RxSwift
 import UIKit
 
@@ -22,28 +23,42 @@ class SponserFormController: UIViewController {
     let viewModel = SponserFormViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureBinding()
+    }
+
+    private func configureBinding() {
         Observable.combineLatest(viewModel.nameSubject,
                                  viewModel.imageSubject,
-                                 viewModel.pageSubject,
-                                 resultSelector: { _, _, _ in
+                                 viewModel.pageSubject)
+            .debug()
+            .map { ($0 != nil) && ($1 != nil) && ($2 != nil) }
+            .debug()
+            .bind(to: submitBtn.rx.isEnabled)
+            .disposed(by: disposeBag)
 
-        })
-
-        accountImageField.rx.tapGesture().when(.recognized)
+        accountImageField.rx
+            .tapGesture()
+            .when(.recognized)
             .subscribe(onNext: { _ in
                 self.accountImageView.showImagePicker()
             }).disposed(by: disposeBag)
+        accountOwnerField.rx.text.bind(to: viewModel.nameSubject).disposed(by: disposeBag)
+        accountPageField.rx.text.bind(to: viewModel.pageSubject).disposed(by: disposeBag)
+        accountImageField.rx.text.bind(to: viewModel.imageSubject).disposed(by: disposeBag)
 
-        accountImageView.receivedImage.filter { $0.0 != nil }.subscribe(onNext: { [unowned self] value in
-            guard let img = value.1?.convertImageToBase64String() else {
-                return
-            }
-//                self.params?.familyIDCopy = img
-            self.accountImageField.text = value.0
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        accountImageView.receivedImage.filter { $0.0 != nil }
+            .subscribe(onNext: { [unowned self] value in
+                guard let img = value.1?.convertImageToBase64String() else {
+                    return
+                }
+                self.viewModel.params.bankStmtAttachment = img
+                self.viewModel.imageSubject.onNext(value.0)
+            }).disposed(by: disposeBag)
     }
 
-    @IBAction func checkoutNextAction(_: Any) {}
+    @IBAction func checkoutNextAction(_: Any) {
+        try! AppNavigator().push(.successPackage)
+    }
 
     @IBAction func accountPageCheckBoxChanged(_: M13Checkbox) {}
 
@@ -56,8 +71,6 @@ class SponserFormController: UIViewController {
         attributedString.addAttribute(.foregroundColor, value: UIColor(red: 253.0 / 255.0, green: 133.0 / 255.0, blue: 13.0 / 255.0, alpha: 1.0), range: NSRange(location: 31, length: 8))
     }
 }
-
-
 
 class AccountImageView: UIView, ImagePicker {
     var disposeBag = DisposeBag()

@@ -27,7 +27,8 @@ class SponserFormViewModel {
 
     let network = ApiClientFacade()
     private let disposeBag = DisposeBag()
-    
+    func configureBinding(){
+    }
     func submitData() {
         network.uploadSponserInfo(params: params).subscribe(onNext: { [unowned self] value in
             print(value)
