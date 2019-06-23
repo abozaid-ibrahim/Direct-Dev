@@ -11,8 +11,26 @@ import RxCocoa
 import RxOptional
 import RxSwift
 import UIKit
+protocol BaseViewController {
+    var disposeBag: DisposeBag { get }
+    var showProgress: BehaviorRelay<Bool> { get }
+}
 
-class SponserFormController: UIViewController {
+extension BaseViewController {
+    func subscribeToProgress() {
+        showProgress.subscribe(onNext: { value in
+
+            if value {
+                Progress.show()
+            } else {
+                Progress.hide()
+            }
+
+        }).disposed(by: disposeBag)
+    }
+}
+
+class SponserFormController: UIViewController, BaseViewController {
 //
     @IBOutlet private var accountOwnerField: FloatingTextField!
     @IBOutlet private var accountSalaryLetterImageView: ImagePickerView!
@@ -24,8 +42,9 @@ class SponserFormController: UIViewController {
     @IBOutlet private var accountImageField: FloatingTextField!
     @IBOutlet private var detailsView: UIStackView!
     @IBOutlet private var submitBtn: UIButton!
-    private let disposeBag = DisposeBag()
+    internal let disposeBag = DisposeBag()
     private let viewModel = SponserFormViewModel()
+    var showProgress = BehaviorRelay<Bool>(value: false)
 
     // MARK: dependencies
 
@@ -33,6 +52,8 @@ class SponserFormController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.getSponsorOwners()
+        viewModel.showProgress.bind(to: showProgress).disposed(by: disposeBag)
+        subscribeToProgress()
         configureBinding()
     }
 
@@ -135,12 +156,14 @@ class SponserFormController: UIViewController {
     @IBAction func checkoutNextAction(_: Any) {
         try! AppNavigator().push(.successPackage)
     }
+
     @IBAction func accountStatementBoxChanged(_ sender: M13Checkbox) {
-        accountStatementPageView.isHidden  = sender.checkState == .checked
+        accountStatementPageView.isHidden = sender.checkState == .checked
     }
-    //image
+
+    // image
     @IBAction func accountLetterCheckBoxChanged(sender: M13Checkbox) {
-        accountSalaryLetterImageView.isHidden  =  sender.checkState == .checked
+        accountSalaryLetterImageView.isHidden = sender.checkState == .checked
     }
 
     func setSponserName() {

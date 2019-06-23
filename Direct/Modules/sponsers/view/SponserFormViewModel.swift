@@ -9,7 +9,9 @@
 import Foundation
 import RxSwift
 
-class SponserFormViewModel {
+class SponserFormViewModel:BaseViewModel {
+    var showProgress =  PublishSubject<Bool>()
+    
     lazy var params: SponserFormParams = SponserFormParams(key: nil,
                                                            lang: nil,
                                                            userid: nil,
@@ -31,7 +33,9 @@ class SponserFormViewModel {
     func configureBinding() {}
 
     func submitData() {
+        showProgress.onNext(true)
         network.uploadSponserInfo(params: params).subscribe(onNext: { [unowned self] value in
+             self.showProgress.onNext(false)
             print(value)
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
@@ -41,4 +45,21 @@ class SponserFormViewModel {
             self.sponserOwnersSubject.onNext(value.sponsorOweners ?? [])
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
+    func validateAndSubmit(sponserIndex:Int)->Bool{
+        Observable.combineLatest(selectedSponsor,pageSubject,imageSubject, resultSelector: {sponser,sletter,statement in
+            if (sponser.id ?? "").isEmpty  || sletter.isNilOrEmpty || statement.isNilOrEmpty {
+                //is invalid
+            }else{
+                //
+                self.params.sponserNo = sponserIndex
+                self.submitData()
+            }
+            
+        })
+       return true
+    }
+}
+protocol BaseViewModel {
+    var showProgress: PublishSubject<Bool>{get}
+
 }
