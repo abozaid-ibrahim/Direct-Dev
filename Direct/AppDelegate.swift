@@ -53,18 +53,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = root
         window?.makeKeyAndVisible()
         navigator = AppNavigator(root: root)
-//        shortcut()
+        shortcut()
     }
 
     private func shortcut() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            let x = VisaRequestParams()
-            x.no_of_adult = "5"
-            x.country_id = "1"
-            x.form_type = "gb"
-            x.no_of_child = "0"
-            x.countryName = "امريكا"
-            try? AppNavigator().push(.passangersInfoScreen(x))
+            let info = VisaRequestParams()
+            info.no_of_adult = "5"
+            info.country_id = "1"
+            info.form_type = "gb"
+            info.no_of_child = "0"
+            info.countryName = "امريكا"
+            info.no_of_passport = "3"
+            info.relation_with_travelers = RelationIDS.friends.rawValue
+            try? AppNavigator().push(.sponsersInfoScreen(info))
         }
     }
 }

@@ -59,6 +59,11 @@ struct Str{
     static var sponser: String{
         return "Sponser"
     }
-
+    static var cancel:String{
+        return "Cancel".localized
+    }
+    static var choose: String{
+        return "Choose".localized
+    }
     
 }

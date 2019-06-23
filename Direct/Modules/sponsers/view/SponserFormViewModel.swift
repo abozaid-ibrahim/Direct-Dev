@@ -21,17 +21,24 @@ class SponserFormViewModel {
                                                            bankStmtAttachment: nil,
                                                            jobLetterAttachment: nil)
 
-    var nameSubject = PublishSubject<String?>()
     var pageSubject = PublishSubject<String?>()
     var imageSubject = PublishSubject<String?>()
+    var sponserOwnersSubject = PublishSubject<[SponsorOwener]>()
+    var selectedSponsor = PublishSubject<SponsorOwener>()
 
     let network = ApiClientFacade()
     private let disposeBag = DisposeBag()
-    func configureBinding(){
-    }
+    func configureBinding() {}
+
     func submitData() {
         network.uploadSponserInfo(params: params).subscribe(onNext: { [unowned self] value in
             print(value)
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+    }
+
+    func getSponsorOwners() {
+        network.getOwners(uid: 709, reqid: "30736", cid: "1").subscribe(onNext: { [unowned self] value in
+            self.sponserOwnersSubject.onNext(value.sponsorOweners ?? [])
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 }

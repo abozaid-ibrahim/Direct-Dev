@@ -49,20 +49,16 @@ final class SponsersViewController: UIViewController {
         tabs.append((item, tabController))
     }
     
-    enum RIDS: String {
-        case family = "1", friends = "2", others = "3"
-    }
-    
     private func setupTabbar(_ info: VisaRequestParams) {
         guard let id = info.relation_with_travelers else { return }
-        if id == RIDS.family.rawValue { // family
+        if id == RelationIDS.family.rawValue { // family
             addTabItemAndController(Str.firstSponser, info, index: 0)
-        } else if id == RIDS.friends.rawValue { // friends
+        } else if id == RelationIDS.friends.rawValue { // friends
             for index in 0 ..< Int(info.no_of_passport)! {
                 addTabItemAndController(Str.sponser, info, index: index)
             }
             
-        } else if id == RIDS.others.rawValue { // others
+        } else if id == RelationIDS.others.rawValue { // others
             for index in 0 ..< Int(info.no_of_passport)! {
                 addTabItemAndController(Str.sponser, info, index: index)
             }

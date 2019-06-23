@@ -10,7 +10,8 @@ import Foundation
 import Moya
 
 enum SponsersAPIs {
-    case uploadSponserForm(prm: SponserFormParams)
+    case uploadSponserForm(prm: SponserFormParams),
+        getSponserOwner(userid: Int, reqid: String, cid: String)
 }
 
 extension SponsersAPIs: TargetType {
@@ -18,12 +19,14 @@ extension SponsersAPIs: TargetType {
         switch self {
         case .uploadSponserForm:
             return "to-apply-sponsor"
+        case .getSponserOwner:
+            return "get-sponser-owner"
         }
     }
     
     public var method: Moya.Method {
         switch self {
-        case .uploadSponserForm:
+        case .uploadSponserForm, .getSponserOwner:
             return .post
         }
     }
@@ -41,6 +44,14 @@ extension SponsersAPIs: TargetType {
                           "someone_else_attachment": prm.someoneElseAttachment ?? "",
                           "bank_stmt_attachment": prm.bankStmtAttachment ?? "",
                           "job_letter_attachment": prm.jobLetterAttachment ?? ""] as [String: Any]
+            return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
+            
+        case .getSponserOwner(let prm):
+            let prmDic = ["key": tokenKeyValue,
+                          "lang": appLang,
+                          "userid": 709,
+                          "reqid": prm.reqid,
+                          "cid": prm.cid] as [String: Any]
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
         }
     }
