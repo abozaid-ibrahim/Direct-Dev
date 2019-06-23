@@ -34,7 +34,7 @@ class SponserFormViewModel:BaseViewModel {
 
     func submitData() {
         showProgress.onNext(true)
-        network.uploadSponserInfo(params: params).subscribe(onNext: { [unowned self] value in
+        network.uploadSponserInfo(params: params).subscribeOn(MainScheduler.instance).subscribe(onNext: { [unowned self] value in
              self.showProgress.onNext(false)
             print(value)
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
@@ -46,16 +46,8 @@ class SponserFormViewModel:BaseViewModel {
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
     func validateAndSubmit(sponserIndex:Int)->Bool{
-        Observable.combineLatest(selectedSponsor,pageSubject,imageSubject, resultSelector: {sponser,sletter,statement in
-            if (sponser.id ?? "").isEmpty  || sletter.isNilOrEmpty || statement.isNilOrEmpty {
-                //is invalid
-            }else{
-                //
-                self.params.sponserNo = sponserIndex
-                self.submitData()
-            }
-            
-        })
+        self.params.sponserNo = sponserIndex
+        self.submitData()
        return true
     }
 }

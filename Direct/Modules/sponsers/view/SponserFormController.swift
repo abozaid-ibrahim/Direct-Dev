@@ -154,7 +154,7 @@ class SponserFormController: UIViewController, BaseViewController {
     }
 
     @IBAction func checkoutNextAction(_: Any) {
-        try! AppNavigator().push(.successPackage)
+        viewModel.validateAndSubmit(sponserIndex: index ?? 0)
     }
 
     @IBAction func accountStatementBoxChanged(_ sender: M13Checkbox) {
