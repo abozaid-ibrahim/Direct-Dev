@@ -11,8 +11,6 @@ import UIKit
 class PassangersInputViewViewController: UIViewController {
     /// Description
 
-   
-
     @IBOutlet private var containerView: UIView!
     private let disposeBag = DisposeBag()
 
@@ -21,6 +19,7 @@ class PassangersInputViewViewController: UIViewController {
     private var pager: ViewPager?
     var visaInfo: VisaRequestParams?
     var successInputIndexes: [Int] = []
+    var sucessIndex = PublishSubject<Int>()
     var defaultTabSelection = PublishSubject<Int>()
 
     override func viewDidLoad() {
@@ -34,7 +33,7 @@ class PassangersInputViewViewController: UIViewController {
     }
 
     func setupPager() {
-        pager = ViewPager(viewController: self,containerView: containerView)
+        pager = ViewPager(viewController: self, containerView: containerView)
         let options = ViewPagerOptions()
         options.tabType = .imageWithText
         options.distribution = .normal
@@ -64,12 +63,12 @@ class PassangersInputViewViewController: UIViewController {
         tabController.formType = info.form_type
         tabController.index = index
         tabController.visaType = info.visatype
-        let item = ViewPagerTab(title: "\(placeholder) \(1 + index )", image: #imageLiteral(resourceName: "rightGray"))
+        let item = ViewPagerTab(title: "\(placeholder) \(1 + index)", image: #imageLiteral(resourceName: "rightGray"))
 
         tabController.successIndex.subscribe(onNext: { [unowned self] value in
             self.successInputIndexes.append(value)
             self.pager?.updateTabViewImage(of: index, with: #imageLiteral(resourceName: "rightGreenIcon"))
-
+            self.sucessIndex.onNext(index)
             if !self.selectNextTab() {
                 try! AppNavigator().push(.successVisaReqScreen(nil))
             }
@@ -84,7 +83,6 @@ class PassangersInputViewViewController: UIViewController {
         for index in 0 ..< Int(info.no_of_child)! {
             addTabItemAndController(Str.child, info, index: index)
         }
-
     }
 
     private func selectNextTab() -> Bool {
@@ -93,13 +91,12 @@ class PassangersInputViewViewController: UIViewController {
             if successInputIndexes.contains(index) {
                 tabs[index].0.image = #imageLiteral(resourceName: "path4")
             } else {
-                self.willMoveToControllerAtIndex(index: index)
+                willMoveToControllerAtIndex(index: index)
                 return true
             }
         }
         return false
     }
-
 }
 
 extension PassangersInputViewViewController: ViewPagerDataSource {

@@ -153,7 +153,7 @@ class SponserFormController: UIViewController, BaseViewController {
                 }else{
                     self.accountOwnerField.inputView = nil
                     self.accountOwnerField.becomeFirstResponder()
-                    let sp = SponsorOwener(name: "test", id: nil, status: nil, success: nil)
+                    let sp = SponsorOwener(name: " ", id: nil, status: nil, success: nil)
                     self.viewModel.selectedSponsor.onNext(sp)
                 }
             }).disposed(by: disposeBag)
