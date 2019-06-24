@@ -11,24 +11,6 @@ import RxCocoa
 import RxOptional
 import RxSwift
 import UIKit
-protocol BaseViewController {
-    var disposeBag: DisposeBag { get }
-    var showProgress: BehaviorRelay<Bool> { get }
-}
-
-extension BaseViewController {
-    func subscribeToProgress() {
-        showProgress.subscribe(onNext: { value in
-
-            if value {
-                Progress.show()
-            } else {
-                Progress.hide()
-            }
-
-        }).disposed(by: disposeBag)
-    }
-}
 
 class SponserFormController: UIViewController, BaseViewController {
 //
@@ -43,12 +25,15 @@ class SponserFormController: UIViewController, BaseViewController {
     @IBOutlet private var detailsView: UIStackView!
     @IBOutlet private var submitBtn: UIButton!
     internal let disposeBag = DisposeBag()
-    private let viewModel = SponserFormViewModel()
+    private lazy var viewModel = SponserFormViewModel(index: index!, type: relationType!, visaReqID: reqID!, cid: cid!)
     var showProgress = BehaviorRelay<Bool>(value: false)
 
     // MARK: dependencies
 
     var index: Int?
+    var reqID: String?
+    var relationType: String?
+    var cid:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.getSponsorOwners()
@@ -154,7 +139,7 @@ class SponserFormController: UIViewController, BaseViewController {
     }
 
     @IBAction func checkoutNextAction(_: Any) {
-        viewModel.validateAndSubmit(sponserIndex: index ?? 0)
+        viewModel.validateAndSubmit()
     }
 
     @IBAction func accountStatementBoxChanged(_ sender: M13Checkbox) {
@@ -164,28 +149,5 @@ class SponserFormController: UIViewController, BaseViewController {
     // image
     @IBAction func accountLetterCheckBoxChanged(sender: M13Checkbox) {
         accountSalaryLetterImageView.isHidden = sender.checkState == .checked
-    }
-
-    func setSponserName() {
-        let attributedString = NSMutableAttributedString(string: "بيانات المتكفل بمصاريف المسافر ( عامر )", attributes: [
-            .font: UIFont(name: "Cairo-Bold", size: 15.0)!,
-            .foregroundColor: UIColor(white: 66.0 / 255.0, alpha: 1.0),
-            .kern: 0.0,
-        ])
-        attributedString.addAttribute(.foregroundColor, value: UIColor(red: 253.0 / 255.0, green: 133.0 / 255.0, blue: 13.0 / 255.0, alpha: 1.0), range: NSRange(location: 31, length: 8))
-    }
-}
-
-class ImagePickerView: UIView, ImagePicker {
-    var disposeBag = DisposeBag()
-    var currentImageID: Int = 0
-
-    var receivedImage = PublishSubject<(String?, UIImage?)>()
-    func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-        let image = info[.originalImage] as? UIImage
-        let fileUrl = info[.imageURL] as? URL
-        receivedImage.onNext((fileUrl?.lastPathComponent, image?.apiSize()))
-        picker.dismiss(animated: true, completion: nil)
     }
 }

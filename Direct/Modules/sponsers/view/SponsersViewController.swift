@@ -15,7 +15,7 @@ final class SponsersViewController: UIViewController {
     private var pager: ViewPager?
     var visaInfo: VisaRequestParams?
     var successInputIndexes: [Int] = [] /// friends all is must, other one is must
-    
+    var reqID:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "معلومات المتكفلين"
@@ -42,9 +42,12 @@ final class SponsersViewController: UIViewController {
         pager?.build()
     }
     
-    private func addTabItemAndController(_ placeholder: String, _ info: VisaRequestParams, index: Int) {
+    private func addTabItemAndController(_ placeholder: String, _ info: VisaRequestParams, index: Int, _ relation: String) {
         let tabController = SponserFormController()
+        tabController.relationType = relation
         tabController.index = index
+        tabController.reqID = reqID
+        tabController.cid = info.country_id
         let item = ViewPagerTab(title: "\(placeholder) \(1 + index)", image: #imageLiteral(resourceName: "rightGray"))
         tabs.append((item, tabController))
     }
@@ -52,15 +55,15 @@ final class SponsersViewController: UIViewController {
     private func setupTabbar(_ info: VisaRequestParams) {
         guard let id = info.relation_with_travelers else { return }
         if id == RelationIDS.family.rawValue { // family
-            addTabItemAndController(Str.firstSponser, info, index: 0)
+            addTabItemAndController(Str.firstSponser, info, index: 0, id)
         } else if id == RelationIDS.friends.rawValue { // friends
             for index in 0 ..< Int(info.no_of_passport)! {
-                addTabItemAndController(Str.sponser, info, index: index)
+                addTabItemAndController(Str.sponser, info, index: index, id)
             }
             
         } else if id == RelationIDS.others.rawValue { // others
             for index in 0 ..< Int(info.no_of_passport)! {
-                addTabItemAndController(Str.sponser, info, index: index)
+                addTabItemAndController(Str.sponser, info, index: index, id)
             }
         }
     }

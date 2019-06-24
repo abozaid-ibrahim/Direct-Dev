@@ -9,9 +9,21 @@
 import Foundation
 import RxSwift
 
-class SponserFormViewModel:BaseViewModel {
-    var showProgress =  PublishSubject<Bool>()
-    
+class SponserFormViewModel: BaseViewModel {
+    var showProgress = PublishSubject<Bool>()
+    var index: Int
+    var reqID: String
+    var relationType: String
+    var cid: String
+    init(index: Int, type: String, visaReqID: String, cid: String) {
+        self.index = index
+        self.cid = cid
+        self.relationType = type
+        self.reqID = visaReqID
+        params.visaReqID = visaReqID.int ?? 0
+        params.sponserNo = index
+    }
+
     lazy var params: SponserFormParams = SponserFormParams(key: nil,
                                                            lang: nil,
                                                            userid: nil,
@@ -35,23 +47,23 @@ class SponserFormViewModel:BaseViewModel {
     func submitData() {
         showProgress.onNext(true)
         network.uploadSponserInfo(params: params).subscribeOn(MainScheduler.instance).subscribe(onNext: { [unowned self] value in
-             self.showProgress.onNext(false)
+            self.showProgress.onNext(false)
             print(value)
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 
     func getSponsorOwners() {
-        network.getOwners(uid: 709, reqid: "30736", cid: "1").subscribe(onNext: { [unowned self] value in
+        network.getOwners(uid: 709, reqid: reqID, cid: cid).subscribe(onNext: { [unowned self] value in
             self.sponserOwnersSubject.onNext(value.sponsorOweners ?? [])
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
-    func validateAndSubmit(sponserIndex:Int)->Bool{
-        self.params.sponserNo = sponserIndex
-        self.submitData()
-       return true
+
+    func validateAndSubmit() -> Bool {
+        submitData()
+        return true
     }
 }
-protocol BaseViewModel {
-    var showProgress: PublishSubject<Bool>{get}
 
+protocol BaseViewModel {
+    var showProgress: PublishSubject<Bool> { get }
 }

@@ -32,13 +32,14 @@ final class VisaRequirementController: UIViewController, PanModalPresentable, St
     private let network = ApiClientFacade()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupActionBar(.withTitleAndX("متطلبات التأشيرة"))
         setDatasource()
         getDataRemotely()
     }
 
     @IBAction func requestAction(_: Any) {
-        try! AppNavigator().push(.confirmatonVisa(visaData!))
+        try! AppNavigator().push(.confirmatonVisa(visaData!, reqID: visaData?.requestID ?? ""))
     }
 }
 

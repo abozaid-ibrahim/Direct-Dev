@@ -208,7 +208,7 @@ class PassangerFormController: UIViewController {
     }
 
     func sendDataToServer(_ api: Observable<USVvisaRequestJSONResponse>) {
-        api.subscribe(onNext: { [unowned self] _ in
+        api.subscribe(onNext: { [unowned self] response in
             Progress.hide()
             self.successIndex.onNext(self.index ?? 0)
         }, onError: { _ in

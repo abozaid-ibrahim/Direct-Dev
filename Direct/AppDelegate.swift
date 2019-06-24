@@ -66,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             info.countryName = "امريكا"
             info.no_of_passport = "3"
             info.relation_with_travelers = RelationIDS.friends.rawValue
-            try? AppNavigator().push(.sponsersInfoScreen(info))
+            try? AppNavigator().push(.sponsersInfoScreen(info, reqID: "30736"))
         }
     }
 }

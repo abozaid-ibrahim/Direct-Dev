@@ -19,7 +19,7 @@ class VisaReqConfirmationController: UIViewController {
     typealias TypeIndex = Int
     typealias ConfrimTableRow = (String, Bool, Int, TypeIndex)
     var passangers: [ConfrimTableRow] = []
-
+    var reqID:String?
     // MARK: IBuilder ====================================>>
 
     @IBOutlet var placeHolderLbls: [UILabel]!
@@ -62,9 +62,11 @@ class VisaReqConfirmationController: UIViewController {
                 self.tableHeightConstrain.constant = value?.height ?? 100
             }
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+
         sponsersView.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
-                try! AppNavigator().push(.sponsersInfoScreen(self.visaRequestData!))
+                try! AppNavigator().push(.sponsersInfoScreen(self.visaRequestData!,reqID: self.reqID ?? ""))
+
             }).disposed(by: disposeBag)
     }
 
