@@ -53,12 +53,12 @@ final class SponsersViewController: UIViewController {
     }
     
     private func addTabItemAndController(_ placeholder: String, _ info: VisaRequestParams, index: Int, _ relation: String) {
-        let tabController = SponserFormController()
-        tabController.relationType = relation
-        tabController.index = index
-        tabController.reqID = reqID
-        tabController.cid = info.country_id
-        tabController.formResult
+        let sponsorVC = SponserFormController()
+        sponsorVC.relationType = relation
+        sponsorVC.index = index
+        sponsorVC.reqID = reqID
+        sponsorVC.cid = info.country_id
+        sponsorVC.formResult
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] value in
                 self.successInputIndexes.append(index)
@@ -68,7 +68,7 @@ final class SponsersViewController: UIViewController {
             }).disposed(by: disposeBag)
         
         let item = ViewPagerTab(title: "\(placeholder) \(1 + index)", image: #imageLiteral(resourceName: "rightGray"))
-        tabs.append((item, tabController))
+        tabs.append((item, sponsorVC))
     }
     
     private func onCompleteForm(with result: UploadSponserInfoResponse, for type: String) {
@@ -118,8 +118,10 @@ final class SponsersViewController: UIViewController {
             let index = (tab.1.index!)
             if successInputIndexes.contains(index) {
                 tabs[index].0.image = #imageLiteral(resourceName: "path4")
+                pager?.updateTabViewImage(of: index, with: #imageLiteral(resourceName: "rightGreenIcon"))
+                
             } else {
-                willMoveToControllerAtIndex(index: index)
+                pager?.displayViewController(atIndex: index)
                 return true
             }
         }
@@ -133,8 +135,7 @@ extension SponsersViewController: ViewPagerDataSource {
     }
     
     func viewControllerAtPosition(position: Int) -> UIViewController {
-        let vc = tabs[position].1
-        return vc
+        return  tabs[position].1
     }
     
     func tabsForPages() -> [ViewPagerTab] {

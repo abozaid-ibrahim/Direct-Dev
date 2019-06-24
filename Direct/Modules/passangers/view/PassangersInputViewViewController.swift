@@ -15,12 +15,12 @@ class PassangersInputViewViewController: UIViewController {
     private let disposeBag = DisposeBag()
 
     @IBOutlet var headerLbl: UILabel!
-    private var tabs = [(ViewPagerTab, PassangerFormController)]()
+    private var tabs = [(tab: ViewPagerTab, vc: PassangerFormController)]()
     private var pager: ViewPager?
     var visaInfo: VisaRequestParams?
     var successInputIndexes: [Int] = []
     var sucessIndex = PublishSubject<Int>()
-    var defaultTabSelection = PublishSubject<Int>()
+    var defaultTabSelection: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +46,7 @@ class PassangersInputViewViewController: UIViewController {
         options.tabViewHeight = 50
         pager?.setOptions(options: options)
         pager?.setDataSource(dataSource: self)
-        pager?.setDelegate(delegate: self)
+//        pager?.setDelegate(delegate: self)
         pager?.build()
     }
 
@@ -86,12 +86,13 @@ class PassangersInputViewViewController: UIViewController {
     }
 
     private func selectNextTab() -> Bool {
-        for tab in tabs {
-            let index = (tab.1.index!)
+        for tabView in tabs {
+            let index = (tabView.vc.index!)
             if successInputIndexes.contains(index) {
-                tabs[index].0.image = #imageLiteral(resourceName: "path4")
+                tabs[index].tab.image = #imageLiteral(resourceName: "path4")
+                pager?.updateTabViewImage(of: index, with: #imageLiteral(resourceName: "rightGreenIcon"))
             } else {
-                willMoveToControllerAtIndex(index: index)
+                pager?.displayViewController(atIndex: index)
                 return true
             }
         }
@@ -105,27 +106,14 @@ extension PassangersInputViewViewController: ViewPagerDataSource {
     }
 
     func viewControllerAtPosition(position: Int) -> UIViewController {
-        let vc = tabs[position].1
-//            vc.itemText = "\(tabs[position].0.title)"
-
-        return vc
+        return tabs[position].vc
     }
 
     func tabsForPages() -> [ViewPagerTab] {
-        return tabs.map { $0.0 }
+        return tabs.map { $0.tab }
     }
 
     func startViewPagerAtIndex() -> Int {
-        return 0
-    }
-}
-
-extension PassangersInputViewViewController: ViewPagerDelegate {
-    func willMoveToControllerAtIndex(index: Int) {
-        print("Moving to page \(index)")
-    }
-
-    func didMoveToControllerAtIndex(index: Int) {
-        print("Moved to page \(index)")
+        return defaultTabSelection
     }
 }
