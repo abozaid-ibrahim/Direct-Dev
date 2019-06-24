@@ -37,6 +37,7 @@ class SponserFormViewModel: BaseViewModel {
 
     var pageSubject = PublishSubject<String?>()
     var imageSubject = PublishSubject<String?>()
+    var formResult = PublishSubject<UploadSponserInfoResponse>()
     var sponserOwnersSubject = PublishSubject<[SponsorOwener]>()
     var selectedSponsor = PublishSubject<SponsorOwener>()
 
@@ -49,8 +50,11 @@ class SponserFormViewModel: BaseViewModel {
         network.uploadSponserInfo(params: params).subscribeOn(MainScheduler.instance).subscribe(onNext: { [unowned self] value in
             self.showProgress.onNext(false)
             print(value)
+         self.formResult.onNext(value)
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
+
+
 
     func getSponsorOwners() {
         network.getOwners(uid: 709, reqid: reqID, cid: cid).subscribe(onNext: { [unowned self] value in

@@ -15,7 +15,8 @@ final class SponsersViewController: UIViewController {
     private var pager: ViewPager?
     var visaInfo: VisaRequestParams?
     var successInputIndexes: [Int] = [] /// friends all is must, other one is must
-    var reqID:String?
+    var reqID: String?
+    var sponsorsIConStatus = PublishSubject<Bool>()
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "معلومات المتكفلين"
@@ -42,14 +43,50 @@ final class SponsersViewController: UIViewController {
         pager?.build()
     }
     
+    var sponsorsNumber: Int {
+        guard let info = visaInfo else { return 0 }
+        return Int(info.no_of_passport)!
+    }
+    
     private func addTabItemAndController(_ placeholder: String, _ info: VisaRequestParams, index: Int, _ relation: String) {
         let tabController = SponserFormController()
         tabController.relationType = relation
         tabController.index = index
         tabController.reqID = reqID
         tabController.cid = info.country_id
+        tabController.formResult.subscribe(onNext: { [unowned self] value in
+            self.successInputIndexes.append(index)
+            self.onCompleteForm(with: value, for: relation)
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        
         let item = ViewPagerTab(title: "\(placeholder) \(1 + index)", image: #imageLiteral(resourceName: "rightGray"))
         tabs.append((item, tabController))
+    }
+    
+    private func onCompleteForm(with result: UploadSponserInfoResponse, for type: String) {
+        switch type {
+        case RelationIDS.family.rawValue:
+            sponsorsIConStatus.onNext(true)
+            navigationController?.popViewController()
+        case RelationIDS.others.rawValue:
+            sponsorsIConStatus.onNext(true)
+            let formsIsCompleted = selectNextTab()
+            if formsIsCompleted {
+                navigationController?.popViewController()
+            }
+            
+        case RelationIDS.friends.rawValue:
+            if sponsorsNumber == successInputIndexes.count {
+                sponsorsIConStatus.onNext(true)
+                navigationController?.popViewController()
+            } else {
+                if !selectNextTab() {
+                    navigationController?.popViewController()
+                }
+            }
+        default:
+            print("unHandled case")
+        }
     }
     
     private func setupTabbar(_ info: VisaRequestParams) {

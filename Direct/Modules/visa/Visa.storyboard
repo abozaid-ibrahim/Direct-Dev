@@ -412,13 +412,14 @@
                         <outlet property="checkoutFooter" destination="I4m-Fh-s2U" id="dOZ-by-50g"/>
                         <outlet property="countryLbl" destination="eqL-hM-hBI" id="iv1-VH-9Yw"/>
                         <outlet property="datelbl" destination="qcU-Kc-oSZ" id="v1u-My-TaN"/>
-                        <outlet property="hostsLbl" destination="QMe-RP-DN6" id="chc-yX-2ZN"/>
                         <outlet property="pasangerCountLbl" destination="t8H-mk-MHH" id="htq-FW-G8X"/>
                         <outlet property="passangersTable" destination="FJQ-Qm-LFe" id="WBa-hB-zpJ"/>
                         <outlet property="pckDateLbl" destination="SsY-RN-4BW" id="LPF-Vy-hPF"/>
                         <outlet property="pickDateView" destination="aKs-D1-LLb" id="uoZ-Jp-KWs"/>
                         <outlet property="relationlbl" destination="ejD-Hx-lWN" id="X9t-cL-Ij0"/>
                         <outlet property="sponsersView" destination="WH2-IX-88j" id="W0B-zt-dHB"/>
+                        <outlet property="sponsorsLbl" destination="QMe-RP-DN6" id="7Iz-O3-GQe"/>
+                        <outlet property="sponsorsStatusIV" destination="ocl-n5-yxb" id="PJp-ib-xIz"/>
                         <outlet property="tableHeightConstrain" destination="eby-jC-k8N" id="ZYa-of-woM"/>
                         <outlet property="visaTypeLbl" destination="a7T-le-4cT" id="CoD-m5-hQb"/>
                         <outletCollection property="placeHolderLbls" destination="d8b-Et-pAY" collectionClass="NSMutableArray" id="NUw-gF-pQt"/>

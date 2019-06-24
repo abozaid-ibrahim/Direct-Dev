@@ -14,6 +14,7 @@ import UIKit
 
 class SponserFormController: UIViewController, BaseViewController {
 //
+
     @IBOutlet private var accountOwnerField: FloatingTextField!
     @IBOutlet private var accountSalaryLetterImageView: ImagePickerView!
     @IBOutlet private var accountStatementPageView: ImagePickerView!
@@ -25,6 +26,8 @@ class SponserFormController: UIViewController, BaseViewController {
     @IBOutlet private var detailsView: UIStackView!
     @IBOutlet private var submitBtn: UIButton!
     internal let disposeBag = DisposeBag()
+    var formResult = PublishSubject<UploadSponserInfoResponse>()
+
     private lazy var viewModel = SponserFormViewModel(index: index!, type: relationType!, visaReqID: reqID!, cid: cid!)
     var showProgress = BehaviorRelay<Bool>(value: false)
 
@@ -33,7 +36,7 @@ class SponserFormController: UIViewController, BaseViewController {
     var index: Int?
     var reqID: String?
     var relationType: String?
-    var cid:String?
+    var cid: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.getSponsorOwners()
@@ -47,6 +50,7 @@ class SponserFormController: UIViewController, BaseViewController {
         bindSpName()
         bindImage()
         bindLastPage()
+        viewModel.formResult.bind(to: formResult).disposed(by: disposeBag)
     }
 
     private func bindImage() {

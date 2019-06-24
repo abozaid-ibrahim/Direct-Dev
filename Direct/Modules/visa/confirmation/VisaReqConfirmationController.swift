@@ -11,7 +11,7 @@ import RxSwift
 import UIKit
 
 class VisaReqConfirmationController: UIViewController {
-    let ids = ["cell1", "cell22", "cell3", "cell4"]
+    private let ids = ["cell1", "cell22", "cell3", "cell4"]
     var visaRequestData: VisaRequestParams?
     private let disposeBag = DisposeBag()
     var tableHeight = PublishSubject<CGFloat>()
@@ -19,7 +19,8 @@ class VisaReqConfirmationController: UIViewController {
     typealias TypeIndex = Int
     typealias ConfrimTableRow = (String, Bool, Int, TypeIndex)
     var passangers: [ConfrimTableRow] = []
-    var reqID:String?
+    var reqID: String?
+
     // MARK: IBuilder ====================================>>
 
     @IBOutlet var placeHolderLbls: [UILabel]!
@@ -29,8 +30,9 @@ class VisaReqConfirmationController: UIViewController {
     @IBOutlet var relationlbl: UILabel!
     @IBOutlet var pasangerCountLbl: UILabel!
     @IBOutlet var datelbl: UILabel!
-    @IBOutlet var hostsLbl: UILabel!
+    @IBOutlet var sponsorsLbl: UILabel!
     @IBOutlet var pckDateLbl: UILabel!
+    @IBOutlet var sponsorsStatusIV: UIImageView!
     @IBOutlet var checkoutFooter: CheckoutFooter!
     @IBOutlet var tableHeightConstrain: NSLayoutConstraint!
     @IBOutlet var passangersTable: UITableView!
@@ -63,12 +65,22 @@ class VisaReqConfirmationController: UIViewController {
             }
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
 
-        sponsersView.rx.tapGesture().when(.recognized)
+        sponsersView.rx.tapGesture()
+            .when(.recognized)
             .subscribe(onNext: { _ in
-                try! AppNavigator().push(.sponsersInfoScreen(self.visaRequestData!,reqID: self.reqID ?? ""))
+                try! AppNavigator().push(self.sponsorsConfrimation)
 
             }).disposed(by: disposeBag)
     }
+
+    private lazy var sponsorsConfrimation: SponsersViewController = {
+        let dest = Destination.sponsersInfoScreen(self.visaRequestData!, reqID: self.reqID ?? "")
+        let vc = dest.controller() as! SponsersViewController
+        vc.sponsorsIConStatus.map { $0 ? #imageLiteral(resourceName: "successCircle") : #imageLiteral(resourceName: "group11") }.bind(to: sponsorsStatusIV.rx.image).disposed(by: disposeBag)
+
+        return vc
+    }()
+
 
     private func fillUIWithData() {
         guard let info = visaRequestData else {
@@ -78,15 +90,15 @@ class VisaReqConfirmationController: UIViewController {
         datelbl.text = info.travel_date
         visaTypeLbl.text = info.visatypeText
         bioLocLbl.text = info.biometry_loc
-        pasangerCountLbl.text = info.no_of_adult + " " + "adult".localized + ", " + info.no_of_child + " " + "child".localized
+        pasangerCountLbl.text = info.no_of_adult + " " + Str.adult + ", " + info.no_of_child + " " + Str.child
         relationlbl.text = info.relation_with_travelersText
         checkoutFooter.valueText = info.totalCost ?? "".priced
 
         for index in 0 ..< (info.no_of_adult ?? "0").intValue {
-            passangers.append(("adult".localized, false, 1, index + 1))
+            passangers.append((Str.adult, false, 1, index + 1))
         }
         for index in 0 ..< (info.no_of_child ?? "0").intValue {
-            passangers.append(("child".localized, false, 0, index + 1))
+            passangers.append((Str.child, false, 0, index + 1))
         }
         setupTable()
         passangersTable.rx
@@ -128,22 +140,5 @@ class VisaReqConfirmationController: UIViewController {
     func gotoFormsScreen(index: Int = 0) {
         navigationController?.pushViewController(passangersInfoScreen, animated: true)
         passangersInfoScreen.defaultTabSelection.onNext(index)
-    }
-}
-
-class VisaConfrimationPassangerCell: UITableViewCell {
-    let disposeBag = DisposeBag()
-    static let id = "VisaConfrimationPassangerCell"
-    @IBOutlet var textLbl: UILabel!
-    @IBOutlet var statuxIcon: UIImageView!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        selectionStyle = .none
-    }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5))
     }
 }

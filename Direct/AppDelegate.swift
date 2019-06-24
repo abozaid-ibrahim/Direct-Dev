@@ -65,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             info.no_of_child = "0"
             info.countryName = "امريكا"
             info.no_of_passport = "3"
-            info.relation_with_travelers = RelationIDS.friends.rawValue
+            info.relation_with_travelers = RelationIDS.family.rawValue
             try? AppNavigator().push(.sponsersInfoScreen(info, reqID: "30736"))
         }
     }

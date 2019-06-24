@@ -136,7 +136,9 @@ final class AppNavigator: Navigator {
     func push(_ dest: Destination) {
         AppNavigator.rootController.pushViewController(dest.controller(), animated: true)
     }
-
+    func push(_ vc: UIViewController) {
+        AppNavigator.rootController.pushViewController(vc, animated: true)
+    }
     func startNewRoot(root: UINavigationController, _: Destination) {
         AppNavigator.rootController = root
     }
