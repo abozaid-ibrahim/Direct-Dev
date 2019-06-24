@@ -59,6 +59,7 @@
 		6C1C6065228E4729006490CB /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1C6064228E4729006490CB /* TabBar.swift */; };
 		6C244FCB229212E600B205B9 /* HelpTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C244FC9229212E600B205B9 /* HelpTableCell.swift */; };
 		6C244FCC229212E600B205B9 /* HelpTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C244FCA229212E600B205B9 /* HelpTableCell.xib */; };
+		6C256CCC22C15DBE007A5C81 /* UIView +Any.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C256CCB22C15DBE007A5C81 /* UIView +Any.swift */; };
 		6C29DD2422A5F66C0047DF54 /* USVisaRequestParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C29DD2322A5F66C0047DF54 /* USVisaRequestParams.swift */; };
 		6C29DD2622A6040E0047DF54 /* USVisaJsonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C29DD2522A6040E0047DF54 /* USVisaJsonResponse.swift */; };
 		6C2CFB84227734E700D23CF4 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CFB83227734E700D23CF4 /* TableCell.swift */; };
@@ -324,6 +325,7 @@
 		6C1C6064228E4729006490CB /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		6C244FC9229212E600B205B9 /* HelpTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpTableCell.swift; sourceTree = "<group>"; };
 		6C244FCA229212E600B205B9 /* HelpTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpTableCell.xib; sourceTree = "<group>"; };
+		6C256CCB22C15DBE007A5C81 /* UIView +Any.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView +Any.swift"; sourceTree = "<group>"; };
 		6C29DD2322A5F66C0047DF54 /* USVisaRequestParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USVisaRequestParams.swift; sourceTree = "<group>"; };
 		6C29DD2522A6040E0047DF54 /* USVisaJsonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USVisaJsonResponse.swift; sourceTree = "<group>"; };
 		6C2CFB83227734E700D23CF4 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
@@ -1086,6 +1088,7 @@
 				6CF3E17F2271F303007488BA /* ViewControllerActionBarStyle.swift */,
 				6C2CFB9722779AFD00D23CF4 /* UIButton+App.swift */,
 				6C8286EA228B9C96009FB5FF /* View+App.swift */,
+				6C256CCB22C15DBE007A5C81 /* UIView +Any.swift */,
 			);
 			path = style;
 			sourceTree = "<group>";
@@ -1573,6 +1576,7 @@
 				6CF2515322A660A000CDA47C /* PassangerFormController.swift in Sources */,
 				6CF9F5D722BECD2700E45E8A /* SponserFormController.swift in Sources */,
 				6CF0E3772285D78900149910 /* OrderDetailsController.swift in Sources */,
+				6C256CCC22C15DBE007A5C81 /* UIView +Any.swift in Sources */,
 				6C77827C227AA2C1001926B2 /* SuccessRequestInstituteController.swift in Sources */,
 				6C6EED6F22A24C680091B82F /* UpdatePaymentResponse.swift in Sources */,
 				6C778278227AA26F001926B2 /* InstituteDetailsController.swift in Sources */,

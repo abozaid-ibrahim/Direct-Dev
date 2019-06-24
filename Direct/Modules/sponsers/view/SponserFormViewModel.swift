@@ -8,7 +8,6 @@
 
 import Foundation
 import RxSwift
-
 class SponserFormViewModel: BaseViewModel {
     var showProgress = PublishSubject<Bool>()
     var index: Int
@@ -34,8 +33,9 @@ class SponserFormViewModel: BaseViewModel {
                                                            someoneElseAttachment: nil,
                                                            bankStmtAttachment: nil,
                                                            jobLetterAttachment: nil)
-
-    var pageSubject = PublishSubject<String?>()
+    var setAccountStatementLater = PublishSubject<Bool>()
+    var setSalaryLetterLater = PublishSubject<Bool>()
+    var lastAccountStatment = PublishSubject<String?>()
     var imageSubject = PublishSubject<String?>()
     var formResult = PublishSubject<UploadSponserInfoResponse>()
     var sponserOwnersSubject = PublishSubject<[SponsorOwener]>()
@@ -50,7 +50,7 @@ class SponserFormViewModel: BaseViewModel {
         network.uploadSponserInfo(params: params)
             .subscribeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] value in
-                print(Thread.current.name)
+                print(Thread.current.name ?? "\(Thread.current)")
                 self.showProgress.onNext(false)
                 self.formResult.onNext(value)
             }, onError: { _ in
@@ -64,7 +64,7 @@ class SponserFormViewModel: BaseViewModel {
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 
-    func validateAndSubmit(name: String?)  {
+    func validateAndSubmit(name: String?) {
         if name.isNilOrEmpty {
             return
         }

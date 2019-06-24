@@ -18,14 +18,14 @@ class SponserFormController: UIViewController, BaseViewController {
     @IBOutlet private var accountOwnerField: FloatingTextField!
     @IBOutlet private var accountSalaryLetterImageView: ImagePickerView!
     @IBOutlet private var accountStatementPageView: ImagePickerView!
-    @IBOutlet private var setPageLaterBox: M13Checkbox!
-    @IBOutlet private var setAccountImageLaterBox: M13Checkbox!
-
-    @IBOutlet private var accountPageField: FloatingTextField!
-    @IBOutlet private var accountImageField: FloatingTextField!
+    @IBOutlet private var setAccountStateLaterBox: M13Checkbox!
+    @IBOutlet private var setSalaryLetterLaterBox: M13Checkbox!
+    @IBOutlet private var accountStatementField: FloatingTextField!
+    @IBOutlet private var accountSalaryLetterField: FloatingTextField!
     @IBOutlet private var detailsView: UIStackView!
     @IBOutlet private var submitBtn: UIButton!
     internal let disposeBag = DisposeBag()
+    private var enableSubmit = PublishSubject<Bool>()
     var formResult = PublishSubject<UploadSponserInfoResponse>()
 
     private lazy var viewModel = SponserFormViewModel(index: index!, type: relationType!, visaReqID: reqID!, cid: cid!)
@@ -47,45 +47,58 @@ class SponserFormController: UIViewController, BaseViewController {
     }
 
     private func setupUI() {
-        setPageLaterBox.applyAppCheckBoxStyle()
-        setAccountImageLaterBox.applyAppCheckBoxStyle()
+        setAccountStateLaterBox.applyAppCheckBoxStyle()
+        setSalaryLetterLaterBox.applyAppCheckBoxStyle()
     }
 
     private func configureBinding() {
         // sponser name
         bindSpName()
-        bindImage()
-        bindLastPage()
+        bindSalaryLetter()
+        bindLastAccountStatementPage()
         viewModel.formResult.bind(to: formResult).disposed(by: disposeBag)
         // disable button until text is valid
         disableBtnUntilValidate()
     }
-    private func disableBtnUntilValidate(){
-        viewModel.selectedSponsor.map {
-            ($0.name ?? "").isEmpty
-            }
-            .startWith(true)
-            .bind(to: self.submitBtn.rx.isEnabled)
+
+    private func disableBtnUntilValidate() {
+        // set button state
+        enableSubmit.startWith(false)
+            .bind(to: submitBtn.rx.isEnabled)
             .disposed(by: disposeBag)
-        
-        
-        viewModel.selectedSponsor.map {
-            ($0.name ?? "").isEmpty
-            }.startWith(true)
-            .map{$0 ? UIColor.disabledBtnBg : UIColor.appPumpkinOrange }
-            .bind(to: self.submitBtn.rx.backgroundColor)
+        enableSubmit.startWith(false)
+            .map { $0 ? UIColor.appPumpkinOrange : UIColor.disabledBtnBg }
+            .bind(to: submitBtn.rx.backgroundColor)
+            .disposed(by: disposeBag)
+        // validate items
+        let validName = viewModel.selectedSponsor
+            .map { $0.name.isValidText }
+            .startWith(false)
+
+        let validAccStatement = Observable.combineLatest(accountStatementField.rx.text, viewModel.setAccountStatementLater)
+            .map { $0.0.isValidText || $0.1 }
+
+        let salaryValidation = Observable.combineLatest(accountSalaryLetterField.rx.text, viewModel.setSalaryLetterLater)
+            .map { $0.0.isValidText || $0.1 }
+        Observable.combineLatest(validName, validAccStatement, salaryValidation)
+            .map { $0.0 && $0.1 && $0.2 }
+            .bind(to: enableSubmit)
             .disposed(by: disposeBag)
     }
-    private func bindImage() {
-        accountImageField.neverShowKeypad()
-        accountImageField.rx
+
+    private func bindSalaryLetter() {
+        viewModel.imageSubject.bind(to: accountSalaryLetterField.rx.text)
+            .disposed(by: disposeBag)
+        viewModel.setSalaryLetterLater.bind(to: accountSalaryLetterImageView.rx.isHidden)
+            .disposed(by: disposeBag)
+
+        accountSalaryLetterField.neverShowKeypad()
+        accountSalaryLetterField.rx
             .tapGesture()
             .when(.recognized)
             .subscribe(onNext: { _ in
                 self.accountSalaryLetterImageView.showImagePicker()
             }).disposed(by: disposeBag)
-
-        viewModel.imageSubject.bind(to: accountImageField.rx.text).disposed(by: disposeBag)
 
         accountSalaryLetterImageView.receivedImage.filter { $0.0 != nil }
             .subscribe(onNext: { [unowned self] value in
@@ -99,9 +112,11 @@ class SponserFormController: UIViewController, BaseViewController {
             }).disposed(by: disposeBag)
     }
 
-    private func bindLastPage() {
-        accountPageField.neverShowKeypad()
-        accountPageField.rx
+    private func bindLastAccountStatementPage() {
+        viewModel.lastAccountStatment.bind(to: accountStatementField.rx.text).disposed(by: disposeBag)
+        viewModel.setAccountStatementLater.bind(to: accountStatementPageView.rx.isHidden).disposed(by: disposeBag)
+        accountStatementField.neverShowKeypad()
+        accountStatementField.rx
             .tapGesture()
             .when(.recognized)
             .subscribe(onNext: { _ in
@@ -113,11 +128,9 @@ class SponserFormController: UIViewController, BaseViewController {
                     return
                 }
                 self.viewModel.params.jobLetterAttachment = img
-                self.viewModel.pageSubject.onNext(value.0)
+                self.viewModel.lastAccountStatment.onNext(value.0)
 
             }).disposed(by: disposeBag)
-
-        viewModel.pageSubject.bind(to: accountPageField.rx.text).disposed(by: disposeBag)
     }
 
     private func bindSpName() {
@@ -166,29 +179,15 @@ class SponserFormController: UIViewController, BaseViewController {
     }
 
     @IBAction func checkoutNextAction(_: Any) {
-        viewModel.validateAndSubmit(name: self.accountOwnerField.text )
+        viewModel.validateAndSubmit(name: accountOwnerField.text)
     }
 
     @IBAction func accountStatementBoxChanged(_ sender: M13Checkbox) {
-        accountStatementPageView.isHidden = sender.checkState == .checked
+        viewModel.setAccountStatementLater.onNext(sender.checkState == .checked)
     }
 
     // image
     @IBAction func accountLetterCheckBoxChanged(sender: M13Checkbox) {
-        accountSalaryLetterImageView.isHidden = sender.checkState == .checked
-    }
-}
-
-extension M13Checkbox {
-    func applyAppCheckBoxStyle() {
-        boxType = .square
-        checkState = .unchecked
-        hideBox = false
-        secondaryCheckmarkTintColor = UIColor.appPumpkinOrange
-        secondaryTintColor = UIColor.gray
-        markType = .checkmark
-        boxLineWidth = 1.5
-        checkmarkLineWidth = 1.5
-        stateChangeAnimation = .fill
+        viewModel.setSalaryLetterLater.onNext(sender.checkState == .checked)
     }
 }

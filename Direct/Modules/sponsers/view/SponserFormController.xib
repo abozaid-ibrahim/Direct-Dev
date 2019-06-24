@@ -12,14 +12,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SponserFormController" customModule="Direct" customModuleProvider="target">
             <connections>
-                <outlet property="accountImageField" destination="WaU-HG-VFm" id="2f5-jR-wSK"/>
                 <outlet property="accountOwnerField" destination="5f0-yg-og2" id="SwI-sd-G6j"/>
-                <outlet property="accountPageField" destination="Sth-8H-dc0" id="Za8-JX-xiB"/>
+                <outlet property="accountSalaryLetterField" destination="WaU-HG-VFm" id="ceN-cR-5do"/>
                 <outlet property="accountSalaryLetterImageView" destination="nzR-xf-PAE" id="eLB-cd-W9n"/>
+                <outlet property="accountStatementField" destination="Sth-8H-dc0" id="5uy-qS-wbe"/>
                 <outlet property="accountStatementPageView" destination="9SA-dn-e6g" id="acH-16-J2Q"/>
                 <outlet property="detailsView" destination="Euy-2O-j3x" id="lIx-pm-T4k"/>
-                <outlet property="setAccountImageLaterBox" destination="46d-mc-lIH" id="H2T-ng-cY4"/>
-                <outlet property="setPageLaterBox" destination="n9L-NT-4BI" id="fJY-ko-AQS"/>
+                <outlet property="setAccountStateLaterBox" destination="n9L-NT-4BI" id="Obt-wl-Nhp"/>
+                <outlet property="setSalaryLetterLaterBox" destination="46d-mc-lIH" id="7y2-gk-M6n"/>
                 <outlet property="submitBtn" destination="Gn8-yd-BGn" id="oyo-H1-VvZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -30,7 +30,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Amf-lD-zmI" userLabel="content">
-                    <rect key="frame" x="8" y="8" width="398" height="846"/>
+                    <rect key="frame" x="8" y="44" width="398" height="810"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZ1-5D-x4J" userLabel="alert">
                             <rect key="frame" x="12" y="12" width="374" height="73"/>
@@ -74,7 +74,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9V-b3-aRc">
-                            <rect key="frame" x="12" y="105" width="374" height="729"/>
+                            <rect key="frame" x="12" y="105" width="374" height="693"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uBh-3W-1Sd" userLabel="first spinner">
                                     <rect key="frame" x="12" y="12" width="350" height="77.5"/>
@@ -139,7 +139,7 @@
                                     </subviews>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gn8-yd-BGn">
-                                    <rect key="frame" x="12" y="687" width="350" height="30"/>
+                                    <rect key="frame" x="12" y="651" width="350" height="30"/>
                                     <state key="normal" title="تابع للمتكفل الثاني "/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">
@@ -150,8 +150,8 @@
                                         <action selector="checkoutNextAction:" destination="-1" eventType="touchUpInside" id="CAZ-Mr-W6L"/>
                                     </connections>
                                 </button>
-                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Euy-2O-j3x">
-                                    <rect key="frame" x="12" y="97" width="350" height="172"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Euy-2O-j3x">
+                                    <rect key="frame" x="12" y="99.5" width="350" height="172"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9SA-dn-e6g" userLabel="ImagePickerView" customClass="ImagePickerView" customModule="Direct" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="46"/>
@@ -346,7 +346,7 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Amf-lD-zmI" secondAttribute="trailing" constant="8" id="A11-Ts-vzt"/>
                 <constraint firstItem="Amf-lD-zmI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Fp1-XG-XEY"/>
-                <constraint firstItem="Amf-lD-zmI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="XHv-2S-Qyi"/>
+                <constraint firstItem="Amf-lD-zmI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="XHv-2S-Qyi"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Amf-lD-zmI" secondAttribute="bottom" constant="8" id="y6l-Zu-1Z9"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
