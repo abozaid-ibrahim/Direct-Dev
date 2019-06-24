@@ -17,7 +17,7 @@ class VisaReqConfirmationController: UIViewController {
     private var tableHeight = PublishSubject<CGFloat>()
     private let contentSizeKey = "contentSize"
     typealias TypeIndex = Int
-    var passangers: [ConfirmPassangerItem] = []
+    private var passangers: [ConfirmPassangerItem] = []
     var reqID: String?
 
     // MARK: IBuilder ====================================>>
