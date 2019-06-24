@@ -140,7 +140,7 @@
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gn8-yd-BGn">
                                     <rect key="frame" x="12" y="651" width="350" height="30"/>
-                                    <state key="normal" title="تابع للمتكفل الثاني "/>
+                                    <state key="normal" title="تابع "/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">
                                             <integer key="value" value="1"/>

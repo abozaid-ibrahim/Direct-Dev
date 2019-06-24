@@ -71,23 +71,29 @@ class SponserFormController: UIViewController, BaseViewController {
             .bind(to: submitBtn.rx.backgroundColor)
             .disposed(by: disposeBag)
         // validate items
+        bindFieldsToButton()
+    }
+
+    private func bindFieldsToButton() {
         let validName = viewModel.selectedSponsor
             .map { $0.name.isValidText }
             .startWith(false)
 
-        let validAccStatement = Observable.combineLatest(accountStatementField.rx.text, viewModel.setAccountStatementLater)
+        let validAccStatement = Observable.combineLatest(viewModel.lastAccountStatment, viewModel.setAccountStatementLater)
             .map { $0.0.isValidText || $0.1 }
-
-        let salaryValidation = Observable.combineLatest(accountSalaryLetterField.rx.text, viewModel.setSalaryLetterLater)
+            .debug()
+        let validLetter = Observable.combineLatest(viewModel.sallaryLetterSubject, viewModel.setSalaryLetterLater)
             .map { $0.0.isValidText || $0.1 }
-        Observable.combineLatest(validName, validAccStatement, salaryValidation)
+            .debug()
+        Observable.combineLatest(validName, validAccStatement, validLetter)
             .map { $0.0 && $0.1 && $0.2 }
+            .debug()
             .bind(to: enableSubmit)
             .disposed(by: disposeBag)
     }
 
     private func bindSalaryLetter() {
-        viewModel.imageSubject.bind(to: accountSalaryLetterField.rx.text)
+        viewModel.sallaryLetterSubject.bind(to: accountSalaryLetterField.rx.text)
             .disposed(by: disposeBag)
         viewModel.setSalaryLetterLater.bind(to: accountSalaryLetterImageView.rx.isHidden)
             .disposed(by: disposeBag)
@@ -107,7 +113,7 @@ class SponserFormController: UIViewController, BaseViewController {
                 }
 
                 self.viewModel.params.bankStmtAttachment = img
-                self.viewModel.imageSubject.onNext(value.0)
+                self.viewModel.sallaryLetterSubject.onNext(value.0)
 
             }).disposed(by: disposeBag)
     }
@@ -141,7 +147,15 @@ class SponserFormController: UIViewController, BaseViewController {
         Observable.combineLatest(onClick, viewModel.sponserOwnersSubject)
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] value in
-                self.showAccountOwnerDialog(sponsers: value.1)
+                if value.1.count > 0{
+                    self.showAccountOwnerDialog(sponsers: value.1)
+                    
+                }else{
+                    self.accountOwnerField.inputView = nil
+                    self.accountOwnerField.becomeFirstResponder()
+                    let sp = SponsorOwener(name: "test", id: nil, status: nil, success: nil)
+                    self.viewModel.selectedSponsor.onNext(sp)
+                }
             }).disposed(by: disposeBag)
 
         viewModel.selectedSponsor.map { $0.name }.filterNil().bind(to: accountOwnerField.rx.text).disposed(by: disposeBag)

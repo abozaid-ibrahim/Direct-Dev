@@ -68,6 +68,8 @@ class PassangersInputViewViewController: UIViewController {
 
         tabController.successIndex.subscribe(onNext: { [unowned self] value in
             self.successInputIndexes.append(value)
+            self.pager?.updateTabViewImage(of: index, with: #imageLiteral(resourceName: "rightGreenIcon"))
+
             if !self.selectNextTab() {
                 try! AppNavigator().push(.successVisaReqScreen(nil))
             }

@@ -58,10 +58,14 @@ final class SponsersViewController: UIViewController {
         tabController.index = index
         tabController.reqID = reqID
         tabController.cid = info.country_id
-        tabController.formResult.subscribe(onNext: { [unowned self] value in
-            self.successInputIndexes.append(index)
-            self.onCompleteForm(with: value, for: relation)
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        tabController.formResult
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] value in
+                self.successInputIndexes.append(index)
+                self.tabs[index].0.image = #imageLiteral(resourceName: "rightGreenIcon")
+                self.pager?.updateTabViewImage(of: index, with: #imageLiteral(resourceName: "rightGreenIcon"))
+                self.onCompleteForm(with: value, for: relation)
+            }).disposed(by: disposeBag)
         
         let item = ViewPagerTab(title: "\(placeholder) \(1 + index)", image: #imageLiteral(resourceName: "rightGray"))
         tabs.append((item, tabController))

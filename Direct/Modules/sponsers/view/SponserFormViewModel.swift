@@ -35,8 +35,8 @@ class SponserFormViewModel: BaseViewModel {
                                                            jobLetterAttachment: nil)
     var setAccountStatementLater = PublishSubject<Bool>()
     var setSalaryLetterLater = PublishSubject<Bool>()
-    var lastAccountStatment = PublishSubject<String?>()
-    var imageSubject = PublishSubject<String?>()
+    var lastAccountStatment = BehaviorSubject<String?>(value: nil)
+    var sallaryLetterSubject = BehaviorSubject<String?>(value: nil)
     var formResult = PublishSubject<UploadSponserInfoResponse>()
     var sponserOwnersSubject = PublishSubject<[SponsorOwener]>()
     var selectedSponsor = PublishSubject<SponsorOwener>()
@@ -61,7 +61,7 @@ class SponserFormViewModel: BaseViewModel {
         network.getOwners(uid: 709, reqid: reqID, cid: cid)
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] value in
-            self.sponserOwnersSubject.onNext(value.sponsorOweners ?? [])
+                self.sponserOwnersSubject.onNext(value.sponsorOweners?.filter{$0.name.isValidText} ?? [])
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 
