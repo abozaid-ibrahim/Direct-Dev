@@ -32,4 +32,7 @@ extension UIColor {
     @nonobjc class var whiteHalfAlpha: UIColor {
         return UIColor.white.withAlphaComponent(0.5)
     }
+    @nonobjc class var disabledBtnBg: UIColor {
+        return UIColor(white: 0.0, alpha: 0.08)
+    }
 }

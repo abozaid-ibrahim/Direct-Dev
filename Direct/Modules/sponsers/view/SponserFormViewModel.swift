@@ -47,14 +47,16 @@ class SponserFormViewModel: BaseViewModel {
 
     func submitData() {
         showProgress.onNext(true)
-        network.uploadSponserInfo(params: params).subscribeOn(MainScheduler.instance).subscribe(onNext: { [unowned self] value in
-            self.showProgress.onNext(false)
-            print(value)
-         self.formResult.onNext(value)
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        network.uploadSponserInfo(params: params)
+            .subscribeOn(MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] value in
+                print(Thread.current.name)
+                self.showProgress.onNext(false)
+                self.formResult.onNext(value)
+            }, onError: { _ in
+                self.showProgress.onNext(false)
+            }).disposed(by: disposeBag)
     }
-
-
 
     func getSponsorOwners() {
         network.getOwners(uid: 709, reqid: reqID, cid: cid).subscribe(onNext: { [unowned self] value in
@@ -62,9 +64,11 @@ class SponserFormViewModel: BaseViewModel {
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 
-    func validateAndSubmit() -> Bool {
+    func validateAndSubmit(name: String?)  {
+        if name.isNilOrEmpty {
+            return
+        }
         submitData()
-        return true
     }
 }
 

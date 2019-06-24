@@ -57,8 +57,25 @@ class SponserFormController: UIViewController, BaseViewController {
         bindImage()
         bindLastPage()
         viewModel.formResult.bind(to: formResult).disposed(by: disposeBag)
+        // disable button until text is valid
+        disableBtnUntilValidate()
     }
-
+    private func disableBtnUntilValidate(){
+        viewModel.selectedSponsor.map {
+            ($0.name ?? "").isEmpty
+            }
+            .startWith(true)
+            .bind(to: self.submitBtn.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        
+        viewModel.selectedSponsor.map {
+            ($0.name ?? "").isEmpty
+            }.startWith(true)
+            .map{$0 ? UIColor.disabledBtnBg : UIColor.appPumpkinOrange }
+            .bind(to: self.submitBtn.rx.backgroundColor)
+            .disposed(by: disposeBag)
+    }
     private func bindImage() {
         accountImageField.neverShowKeypad()
         accountImageField.rx
@@ -149,7 +166,7 @@ class SponserFormController: UIViewController, BaseViewController {
     }
 
     @IBAction func checkoutNextAction(_: Any) {
-        viewModel.validateAndSubmit()
+        viewModel.validateAndSubmit(name: self.accountOwnerField.text )
     }
 
     @IBAction func accountStatementBoxChanged(_ sender: M13Checkbox) {
