@@ -52,7 +52,7 @@
                                     </constraints>
                                 </imageView>
                             </subviews>
-                            <color key="backgroundColor" red="0.99607843139999996" green="0.58039215690000001" blue="0.14901960780000001" alpha="0.5" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.99607843139999996" green="0.58039215690000001" blue="0.14901960780000001" alpha="0.12676056338028169" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="H2d-UZ-aNh" secondAttribute="trailing" constant="12" id="1OJ-F0-h1M"/>
                                 <constraint firstItem="H2d-UZ-aNh" firstAttribute="top" secondItem="jZ1-5D-x4J" secondAttribute="top" constant="6" id="5fe-WB-E2a"/>
@@ -118,10 +118,10 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomArrow" translatesAutoresizingMaskIntoConstraints="NO" id="N82-9j-oCQ">
-                                                    <rect key="frame" x="317" y="12.5" width="21" height="21"/>
+                                                    <rect key="frame" x="323" y="12.5" width="15" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="UTK-bv-CUU"/>
-                                                        <constraint firstAttribute="width" constant="21" id="hEf-2e-IZg"/>
+                                                        <constraint firstAttribute="width" constant="15" id="hEf-2e-IZg"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -138,8 +138,20 @@
                                         </view>
                                     </subviews>
                                 </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Euy-2O-j3x">
-                                    <rect key="frame" x="12" y="99.5" width="350" height="172"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gn8-yd-BGn">
+                                    <rect key="frame" x="12" y="687" width="350" height="30"/>
+                                    <state key="normal" title="تابع للمتكفل الثاني "/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">
+                                            <integer key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="checkoutNextAction:" destination="-1" eventType="touchUpInside" id="CAZ-Mr-W6L"/>
+                                    </connections>
+                                </button>
+                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Euy-2O-j3x">
+                                    <rect key="frame" x="12" y="97" width="350" height="172"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9SA-dn-e6g" userLabel="ImagePickerView" customClass="ImagePickerView" customModule="Direct" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="46"/>
@@ -201,20 +213,6 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="n9L-NT-4BI" secondAttribute="height" id="Zsy-Re-ZKb"/>
                                                     </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="_IBBoxType" value="Square"/>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="_IBMarkType" value="Checkmark"/>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="checkmarkLineWidth">
-                                                            <real key="value" value="0.0"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="secondaryTintColor">
-                                                            <color key="value" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="_IBCheckState" value="checked"/>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="secondaryCheckmarkTintColor">
-                                                            <color key="value" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="accountStatementBoxChanged:" destination="-1" eventType="valueChanged" id="3dN-5w-OTK"/>
                                                     </connections>
@@ -290,20 +288,6 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="46d-mc-lIH" secondAttribute="height" id="NDW-bS-YE3"/>
                                                     </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="_IBBoxType" value="Square"/>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="_IBMarkType" value="Checkmark"/>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="checkmarkLineWidth">
-                                                            <real key="value" value="0.0"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="secondaryTintColor">
-                                                            <color key="value" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="_IBCheckState" value="checked"/>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="secondaryCheckmarkTintColor">
-                                                            <color key="value" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="accountLetterCheckBoxChangedWithSender:" destination="-1" eventType="valueChanged" id="f7T-cv-Dn0"/>
                                                     </connections>
@@ -321,18 +305,6 @@
                                         </stackView>
                                     </subviews>
                                 </stackView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gn8-yd-BGn">
-                                    <rect key="frame" x="12" y="687" width="350" height="30"/>
-                                    <state key="normal" title="تابع للمتكفل الثاني "/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">
-                                            <integer key="value" value="1"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="checkoutNextAction:" destination="-1" eventType="touchUpInside" id="CAZ-Mr-W6L"/>
-                                    </connections>
-                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>

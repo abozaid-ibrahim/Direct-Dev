@@ -43,6 +43,12 @@ class SponserFormController: UIViewController, BaseViewController {
         viewModel.showProgress.bind(to: showProgress).disposed(by: disposeBag)
         subscribeToProgress()
         configureBinding()
+        setupUI()
+    }
+
+    private func setupUI() {
+        setPageLaterBox.applyAppCheckBoxStyle()
+        setAccountImageLaterBox.applyAppCheckBoxStyle()
     }
 
     private func configureBinding() {
@@ -153,5 +159,19 @@ class SponserFormController: UIViewController, BaseViewController {
     // image
     @IBAction func accountLetterCheckBoxChanged(sender: M13Checkbox) {
         accountSalaryLetterImageView.isHidden = sender.checkState == .checked
+    }
+}
+
+extension M13Checkbox {
+    func applyAppCheckBoxStyle() {
+        boxType = .square
+        checkState = .unchecked
+        hideBox = false
+        secondaryCheckmarkTintColor = UIColor.appPumpkinOrange
+        secondaryTintColor = UIColor.gray
+        markType = .checkmark
+        boxLineWidth = 1.5
+        checkmarkLineWidth = 1.5
+        stateChangeAnimation = .fill
     }
 }
