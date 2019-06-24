@@ -13,19 +13,23 @@ final class SponsersViewController: UIViewController {
     private let disposeBag = DisposeBag()
     private var tabs = [(ViewPagerTab, SponserFormController)]()
     private var pager: ViewPager?
+    
+    // MARK: Dependencies
+    
     var visaInfo: VisaRequestParams?
-    var successInputIndexes: [Int] = [] /// friends all is must, other one is must
+    var successInputIndexes: [Int] = []
     var reqID: String?
     var sponsorsIConStatus = PublishSubject<Bool>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "معلومات المتكفلين"
+        title = Str.sponsorsInfo
         guard let info = visaInfo else { return }
         setupTabbar(info)
         setupPager()
     }
     
-    func setupPager() {
+    private func setupPager() {
         pager = ViewPager(viewController: self)
         let options = ViewPagerOptions()
         options.tabType = .imageWithText
@@ -43,7 +47,7 @@ final class SponsersViewController: UIViewController {
         pager?.build()
     }
     
-    var sponsorsNumber: Int {
+    private var sponsorsNumber: Int {
         guard let info = visaInfo else { return 0 }
         return Int(info.no_of_passport)!
     }
@@ -85,14 +89,14 @@ final class SponsersViewController: UIViewController {
                 }
             }
         default:
-            print("unHandled case")
+            print("unregistered relation type")
         }
     }
     
     private func setupTabbar(_ info: VisaRequestParams) {
         guard let id = info.relation_with_travelers else { return }
         if id == RelationIDS.family.rawValue { // family
-            addTabItemAndController(Str.firstSponser, info, index: 0, id)
+            addTabItemAndController(Str.sponser, info, index: 0, id)
         } else if id == RelationIDS.friends.rawValue { // friends
             for index in 0 ..< Int(info.no_of_passport)! {
                 addTabItemAndController(Str.sponser, info, index: index, id)

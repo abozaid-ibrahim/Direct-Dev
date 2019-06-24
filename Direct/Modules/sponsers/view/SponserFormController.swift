@@ -138,17 +138,13 @@ class SponserFormController: UIViewController, BaseViewController {
         let onClick = accountOwnerField.rx
             .tapGesture()
             .when(.recognized)
-        Observable.combineLatest(
-            onClick, viewModel.sponserOwnersSubject,
-            resultSelector: { value1, value2 in
-                print("\(value1) \(value2)")
-                self.showAccountOwnerDialog(sponsers: value2)
-        }).observeOn(MainScheduler.instance)
-            .subscribe()
-            .disposed(by: disposeBag)
+        Observable.combineLatest(onClick, viewModel.sponserOwnersSubject)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] value in
+                self.showAccountOwnerDialog(sponsers: value.1)
+            }).disposed(by: disposeBag)
 
         viewModel.selectedSponsor.map { $0.name }.filterNil().bind(to: accountOwnerField.rx.text).disposed(by: disposeBag)
-
         viewModel.selectedSponsor.map {
             ($0.name ?? "").isEmpty
         }

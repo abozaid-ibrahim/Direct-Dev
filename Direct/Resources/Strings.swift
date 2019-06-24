@@ -65,5 +65,8 @@ struct Str{
     static var choose: String{
         return "Choose".localized
     }
+    static var sponsorsInfo:String{
+        return "معلومات المتكفلين"
+    }
     
 }

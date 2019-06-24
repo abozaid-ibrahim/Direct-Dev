@@ -48,9 +48,8 @@ class SponserFormViewModel: BaseViewModel {
     func submitData() {
         showProgress.onNext(true)
         network.uploadSponserInfo(params: params)
-            .subscribeOn(MainScheduler.instance)
+            .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] value in
-                print(Thread.current.name ?? "\(Thread.current)")
                 self.showProgress.onNext(false)
                 self.formResult.onNext(value)
             }, onError: { _ in
@@ -59,7 +58,9 @@ class SponserFormViewModel: BaseViewModel {
     }
 
     func getSponsorOwners() {
-        network.getOwners(uid: 709, reqid: reqID, cid: cid).subscribe(onNext: { [unowned self] value in
+        network.getOwners(uid: 709, reqid: reqID, cid: cid)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] value in
             self.sponserOwnersSubject.onNext(value.sponsorOweners ?? [])
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
