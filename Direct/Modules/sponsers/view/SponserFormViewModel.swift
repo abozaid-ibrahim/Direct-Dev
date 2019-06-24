@@ -33,8 +33,8 @@ class SponserFormViewModel: BaseViewModel {
                                                            someoneElseAttachment: nil,
                                                            bankStmtAttachment: nil,
                                                            jobLetterAttachment: nil)
-    var setAccountStatementLater = PublishSubject<Bool>()
-    var setSalaryLetterLater = PublishSubject<Bool>()
+    var setAccountStatementLater = BehaviorSubject<Bool>(value:false)
+    var setSalaryLetterLater = BehaviorSubject<Bool>(value:false)
     var lastAccountStatment = BehaviorSubject<String?>(value: nil)
     var sallaryLetterSubject = BehaviorSubject<String?>(value: nil)
     var formResult = PublishSubject<UploadSponserInfoResponse>()
