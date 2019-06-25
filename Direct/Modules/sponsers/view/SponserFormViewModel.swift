@@ -23,9 +23,7 @@ class SponserFormViewModel: BaseViewModel {
         params.sponserNo = index
     }
 
-    lazy var params: SponserFormParams = SponserFormParams(key: nil,
-                                                           lang: nil,
-                                                           userid: nil,
+    lazy var params: SponserFormParams = SponserFormParams(userid: nil,
                                                            visaReqID: nil,
                                                            sponserNo: nil,
                                                            ownerOfBankStmt: nil,
@@ -71,8 +69,4 @@ class SponserFormViewModel: BaseViewModel {
         }
         submitData()
     }
-}
-
-protocol BaseViewModel {
-    var showProgress: PublishSubject<Bool> { get }
 }

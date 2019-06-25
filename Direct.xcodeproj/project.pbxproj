@@ -213,6 +213,7 @@
 		6CDEF77F22A11DDA00BF5F0B /* VisaReqConfirmationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEF77D22A11DDA00BF5F0B /* VisaReqConfirmationController.swift */; };
 		6CDEF78222A11EFC00BF5F0B /* Visa.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CDEF78122A11EFC00BF5F0B /* Visa.storyboard */; };
 		6CE722ED2274FA1B00E095DC /* VisaRequirementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */; };
+		6CEE827322C2BFD900EC713C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEE827222C2BFD900EC713C /* BaseViewModel.swift */; };
 		6CF0E3672285BB1000149910 /* SwipeUpToDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0E3662285BB1000149910 /* SwipeUpToDismiss.swift */; };
 		6CF0E36C2285BE6800149910 /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0E36A2285BE6800149910 /* DatePickerController.swift */; };
 		6CF0E3712285D70900149910 /* OrdersHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0E36F2285D70900149910 /* OrdersHistoryController.swift */; };
@@ -490,6 +491,7 @@
 		6CDEF77D22A11DDA00BF5F0B /* VisaReqConfirmationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaReqConfirmationController.swift; sourceTree = "<group>"; };
 		6CDEF78122A11EFC00BF5F0B /* Visa.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Visa.storyboard; sourceTree = "<group>"; };
 		6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaRequirementController.swift; sourceTree = "<group>"; };
+		6CEE827222C2BFD900EC713C /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		6CF0E3662285BB1000149910 /* SwipeUpToDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeUpToDismiss.swift; sourceTree = "<group>"; };
 		6CF0E36A2285BE6800149910 /* DatePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
 		6CF0E36F2285D70900149910 /* OrdersHistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersHistoryController.swift; sourceTree = "<group>"; };
@@ -1151,6 +1153,7 @@
 			isa = PBXGroup;
 			children = (
 				6C5964B522C0F257007D81C6 /* BaseController.swift */,
+				6CEE827222C2BFD900EC713C /* BaseViewModel.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -1669,6 +1672,7 @@
 				39EE2AB022A09A0000A9A501 /* AuthButtonCellController.swift in Sources */,
 				6CB2A8BC228CAD8200A78541 /* AboutUsTableCell.swift in Sources */,
 				39EE2AB822A09A0000A9A501 /* TextLabelConfigurator.swift in Sources */,
+				6CEE827322C2BFD900EC713C /* BaseViewModel.swift in Sources */,
 				6CBD17DB228BCB7300144B6C /* PaddingLabel.swift in Sources */,
 				6C2CFB84227734E700D23CF4 /* TableCell.swift in Sources */,
 				6C5DE7682275EC49001A9FB6 /* VisaRequirementTableCell.swift in Sources */,

@@ -8,13 +8,12 @@
 
 import Foundation
 class SponserFormParams: Codable {
-    var key, lang: String?
     var userid, visaReqID, sponserNo, ownerOfBankStmt: Int?
     var someoneElse: Int?
     var someoneElseAttachment, bankStmtAttachment, jobLetterAttachment: String?
     
     enum CodingKeys: String, CodingKey {
-        case key, lang, userid
+        case  userid
         case visaReqID = "visa_req_id"
         case sponserNo = "sponser_no"
         case ownerOfBankStmt = "owner_of_bank_stmt"
@@ -24,9 +23,7 @@ class SponserFormParams: Codable {
         case jobLetterAttachment = "job_letter_attachment"
     }
     
-    init(key: String?, lang: String?, userid: Int?, visaReqID: Int?, sponserNo: Int?, ownerOfBankStmt: Int?, someoneElse: Int?, someoneElseAttachment: String?, bankStmtAttachment: String?, jobLetterAttachment: String?) {
-        self.key = key
-        self.lang = lang
+    init(userid: Int?, visaReqID: Int?, sponserNo: Int?, ownerOfBankStmt: Int?, someoneElse: Int?, someoneElseAttachment: String?, bankStmtAttachment: String?, jobLetterAttachment: String?) {
         self.userid = userid
         self.visaReqID = visaReqID
         self.sponserNo = sponserNo
