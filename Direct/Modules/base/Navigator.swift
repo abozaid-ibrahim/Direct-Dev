@@ -22,7 +22,7 @@ enum Destination {
         passangersCount,
         newInstitueVisa,
         datePicker(title: String?),
-        sponsersInfoScreen(VisaRequestParams),
+        sponsersInfoScreen(VisaRequestParams, reqID: String),
         passangersInfoScreen(VisaRequestParams),
         successVisaReqScreen(USVvisaRequestJSONResponse?),
         MyOrders,
@@ -34,7 +34,7 @@ enum Destination {
         banks,
         newDirectVisa,
         searchCountries,
-        confirmatonVisa(VisaRequestParams)
+        confirmatonVisa(VisaRequestParams, reqID: String)
 
     func controller() -> UIViewController {
         switch self {
@@ -67,8 +67,9 @@ enum Destination {
             let date = DatePickerController()
             date.pickerTitle = title
             return date
-        case let .sponsersInfoScreen(visa):
+        case let .sponsersInfoScreen(visa, reqid):
             let vc = SponsersViewController()
+            vc.reqID = reqid
             vc.visaInfo = visa
             return vc
         case let .passangersInfoScreen(info):
@@ -98,9 +99,10 @@ enum Destination {
             return NewDirectVisaController()
         case .searchCountries:
             return UIStoryboard.main.instantiateViewController(withIdentifier: "SearchViewController")
-        case let .confirmatonVisa(cost):
+        case let .confirmatonVisa(cost, reqID):
             let vc = UIStoryboard.visa.instantiateViewController(withIdentifier: "VisaReqConfirmationController") as! VisaReqConfirmationController
             vc.visaRequestData = cost
+            vc.reqID = reqID
             return vc
         }
     }
@@ -134,7 +136,9 @@ final class AppNavigator: Navigator {
     func push(_ dest: Destination) {
         AppNavigator.rootController.pushViewController(dest.controller(), animated: true)
     }
-
+    func push(_ vc: UIViewController) {
+        AppNavigator.rootController.pushViewController(vc, animated: true)
+    }
     func startNewRoot(root: UINavigationController, _: Destination) {
         AppNavigator.rootController = root
     }

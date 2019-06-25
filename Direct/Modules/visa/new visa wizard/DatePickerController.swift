@@ -23,7 +23,7 @@ class DatePickerController: UIViewController, PanModalPresentable {
         super.viewDidLoad()
         datePicker.delegate = self
         dateChanged.map { $0 > Date() }.bind(to: submitBtn.rx.isEnabled).disposed(by: disposeBag)
-        dateChanged.map { $0 > Date() ? UIColor.appPumpkinOrange : UIColor.appVeryLightGray }.bind(to: submitBtn.rx.backgroundColor).disposed(by: disposeBag)
+        dateChanged.map { $0 > Date() ? UIColor.appPumpkinOrange : UIColor.disabledBtnBg }.bind(to: submitBtn.rx.backgroundColor).disposed(by: disposeBag)
 
         if let title = self.pickerTitle {
             tilteLbl.text = title

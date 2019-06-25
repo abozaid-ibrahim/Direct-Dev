@@ -8,13 +8,13 @@
 
 import Foundation
 import RxSwift
-import UIKit
 import SwifterSwift
+import UIKit
 
 class DialogBuilder {
     func buildAgreemnetDialog(callback: @escaping (AgreementValues) -> Void) -> UIAlertController {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        alert.setTint(color: .appMango)
+        alert.applyAppStyle()
         let noAction = UIAlertAction(title: AgreementValues.no.string, style: .default, handler: { _ in
             callback(AgreementValues.no)
 
@@ -32,7 +32,7 @@ class DialogBuilder {
 
     func buildMatrialState(callback: @escaping (MartialState) -> Void) -> UIAlertController {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        alert.setTint(color: .appMango)
+        alert.applyAppStyle()
         let action = UIAlertAction(title: MartialState.married.string, style: .default, handler: { _ in
             callback(MartialState.married)
         })
@@ -62,7 +62,7 @@ class DialogBuilder {
         try! AppNavigator().presentModally(vc)
     }
 
-    func buildRelationsSpinner(_ disposeBag: DisposeBag,_ relativesList: [Relative], selected: @escaping (Relative) -> Void) {
+    func buildRelationsSpinner(_ disposeBag: DisposeBag, _ relativesList: [Relative], selected: @escaping (Relative) -> Void) {
         let bios = relativesList.map { $0.name ?? "" }
         let dest = Destination.selectableSheet(data: bios, titleText: "relativity".localized, style: .textCenter)
         let vc = dest.controller() as! SelectableTableSheet
@@ -87,7 +87,7 @@ class DialogBuilder {
 extension PassangerFormController {
     func showOptions(_ values: [PreviousVisaType]) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        alert.setTint(color: .appMango)
+        alert.applyAppStyle()
         for type in values {
             let action = UIAlertAction(title: type.name, style: .default, handler: { [weak self] _ in
                 guard let `self` = self else { return }
@@ -97,5 +97,13 @@ extension PassangerFormController {
         }
 
         present(alert, animated: true, completion: nil)
+    }
+}
+
+extension UIAlertController {
+    func applyAppStyle() {
+        self.setTint(color: .appMango)
+//        self.setTitle(font: .appRegularFontWith(size: 14), color: UIColor.appMango)
+
     }
 }

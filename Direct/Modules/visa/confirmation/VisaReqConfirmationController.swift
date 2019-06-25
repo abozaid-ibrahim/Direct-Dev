@@ -11,29 +11,30 @@ import RxSwift
 import UIKit
 
 class VisaReqConfirmationController: UIViewController {
-    let ids = ["cell1", "cell22", "cell3", "cell4"]
+    private let ids = ["cell1", "cell22", "cell3", "cell4"]
     var visaRequestData: VisaRequestParams?
     private let disposeBag = DisposeBag()
-    var tableHeight = PublishSubject<CGFloat>()
+    private var tableHeight = PublishSubject<CGFloat>()
     private let contentSizeKey = "contentSize"
     typealias TypeIndex = Int
-    typealias ConfrimTableRow = (String, Bool, Int, TypeIndex)
-    var passangers: [ConfrimTableRow] = []
+    private var passangers: [ConfirmPassangerItem] = []
+    var reqID: String?
 
     // MARK: IBuilder ====================================>>
 
-    @IBOutlet var placeHolderLbls: [UILabel]!
-    @IBOutlet var countryLbl: UILabel!
-    @IBOutlet var visaTypeLbl: UILabel!
-    @IBOutlet var bioLocLbl: UILabel!
-    @IBOutlet var relationlbl: UILabel!
-    @IBOutlet var pasangerCountLbl: UILabel!
-    @IBOutlet var datelbl: UILabel!
-    @IBOutlet var hostsLbl: UILabel!
-    @IBOutlet var pckDateLbl: UILabel!
-    @IBOutlet var checkoutFooter: CheckoutFooter!
-    @IBOutlet var tableHeightConstrain: NSLayoutConstraint!
-    @IBOutlet var passangersTable: UITableView!
+    @IBOutlet private var placeHolderLbls: [UILabel]!
+    @IBOutlet private var countryLbl: UILabel!
+    @IBOutlet private var visaTypeLbl: UILabel!
+    @IBOutlet private var bioLocLbl: UILabel!
+    @IBOutlet private var relationlbl: UILabel!
+    @IBOutlet private var pasangerCountLbl: UILabel!
+    @IBOutlet private var datelbl: UILabel!
+    @IBOutlet private var sponsorsLbl: UILabel!
+    @IBOutlet private var pckDateLbl: UILabel!
+    @IBOutlet private var sponsorsStatusIV: UIImageView!
+    @IBOutlet private var checkoutFooter: CheckoutFooter!
+    @IBOutlet private var tableHeightConstrain: NSLayoutConstraint!
+    @IBOutlet private var passangersTable: UITableView!
     @IBOutlet private var pickDateView: UIView!
     @IBOutlet private var sponsersView: UIView!
 
@@ -51,22 +52,43 @@ class VisaReqConfirmationController: UIViewController {
             try! AppNavigator().push(.paymentMethod(self.visaRequestData!))
         }
 
-        passangersTable.rx.observeWeakly(CGSize.self, contentSizeKey).subscribe(onNext: { [unowned self] value in
-            let vertical = self.checkoutFooter.frame.minY - self.pickDateView.frame.maxY
-            if vertical <= 20 {
-                self.passangersTable.isScrollEnabled = true
-                self.passangersTable.bounces = true
-                self.passangersTable.bouncesZoom = true
-                self.tableHeightConstrain.constant = 250
-            } else {
-                self.tableHeightConstrain.constant = value?.height ?? 100
-            }
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
-        sponsersView.rx.tapGesture().when(.recognized)
+        passangersTable.rx.observeWeakly(CGSize.self, contentSizeKey)
+            .subscribe(onNext: { [unowned self] value in
+                let vertical = self.checkoutFooter.frame.minY - self.pickDateView.frame.maxY
+                if vertical <= 20 {
+                    self.passangersTable.isScrollEnabled = true
+                    self.passangersTable.bounces = true
+                    self.passangersTable.bouncesZoom = true
+                    self.tableHeightConstrain.constant = 250
+                } else {
+                    self.tableHeightConstrain.constant = value?.height ?? 100
+                }
+            }).disposed(by: disposeBag)
+
+        sponsersView.rx.tapGesture()
+            .when(.recognized)
             .subscribe(onNext: { _ in
-                try! AppNavigator().push(.sponsersInfoScreen(self.visaRequestData!))
+                try! AppNavigator().push(self.sponsorsConfrimation)
+
             }).disposed(by: disposeBag)
     }
+
+    private lazy var sponsorsConfrimation: SponsersViewController = {
+        let dest = Destination.sponsersInfoScreen(self.visaRequestData!, reqID: self.reqID ?? "")
+        let vc = dest.controller() as! SponsersViewController
+        vc.sponsorsIConStatus.map { $0 ? #imageLiteral(resourceName: "successCircle") : #imageLiteral(resourceName: "group11") }.bind(to: sponsorsStatusIV.rx.image).disposed(by: disposeBag)
+
+        return vc
+    }()
+
+    lazy var passangersInfoScreen: PassangersInputViewViewController = {
+        let vc = Destination.passangersInfoScreen(visaRequestData!).controller() as! PassangersInputViewViewController
+        vc.sucessIndex.subscribe(onNext: { [unowned self] _ in
+            self.updateTableWithSuccessInputs()
+        }).disposed(by: disposeBag)
+
+        return vc
+    }()
 
     private func fillUIWithData() {
         guard let info = visaRequestData else {
@@ -76,15 +98,15 @@ class VisaReqConfirmationController: UIViewController {
         datelbl.text = info.travel_date
         visaTypeLbl.text = info.visatypeText
         bioLocLbl.text = info.biometry_loc
-        pasangerCountLbl.text = info.no_of_adult + " " + "adult".localized + ", " + info.no_of_child + " " + "child".localized
+        pasangerCountLbl.text = info.no_of_adult + " " + Str.adult + ", " + info.no_of_child + " " + Str.child
         relationlbl.text = info.relation_with_travelersText
         checkoutFooter.valueText = info.totalCost ?? "".priced
 
         for index in 0 ..< (info.no_of_adult ?? "0").intValue {
-            passangers.append(("adult".localized, false, 1, index + 1))
+            passangers.append(ConfirmPassangerItem(text: Str.adult, isFormFilled: false, index: index + 1, userType: .adult))
         }
         for index in 0 ..< (info.no_of_child ?? "0").intValue {
-            passangers.append(("child".localized, false, 0, index + 1))
+            passangers.append(ConfirmPassangerItem(text: Str.child, isFormFilled: false, index: index + 1, userType: .child))
         }
         setupTable()
         passangersTable.rx
@@ -95,15 +117,10 @@ class VisaReqConfirmationController: UIViewController {
             .disposed(by: disposeBag)
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        updateTableWithSuccessInputs()
-    }
-
     func updateTableWithSuccessInputs() {
         let filled = passangersInfoScreen.successInputIndexes
         for item in filled.enumerated() {
-            passangers[item.element].1 = true
+            passangers[item.element].isFormFilled = true
         }
         setupTable()
     }
@@ -111,37 +128,30 @@ class VisaReqConfirmationController: UIViewController {
     func setupTable() {
         Observable.just(passangers)
             .bind(to: passangersTable.rx.items(cellIdentifier: VisaConfrimationPassangerCell.id, cellType: VisaConfrimationPassangerCell.self)) { _, element, cell in
-                cell.textLbl.text = element.0 + " \(element.3)"
-                cell.statuxIcon.image = element.1 ? #imageLiteral(resourceName: "path4") : #imageLiteral(resourceName: "rightGreen")
+                cell.textLbl.text = element.text + " \(element.index)"
+                cell.statuxIcon.image = element.isFormFilled ? #imageLiteral(resourceName: "path4") : #imageLiteral(resourceName: "rightGreen")
             }
             .disposed(by: disposeBag)
     }
-
-    lazy var passangersInfoScreen = Destination.passangersInfoScreen(visaRequestData!).controller() as! PassangersInputViewViewController
 
     @IBAction func passangersInfoAction(_: Any) {
         gotoFormsScreen()
     }
 
     func gotoFormsScreen(index: Int = 0) {
+        passangersInfoScreen.defaultTabSelection = index
         navigationController?.pushViewController(passangersInfoScreen, animated: true)
-        passangersInfoScreen.defaultTabSelection.onNext(index)
     }
 }
 
-class VisaConfrimationPassangerCell: UITableViewCell {
-    let disposeBag = DisposeBag()
-    static let id = "VisaConfrimationPassangerCell"
-    @IBOutlet var textLbl: UILabel!
-    @IBOutlet var statuxIcon: UIImageView!
+struct ConfirmPassangerItem {
+    let text: String
+    var isFormFilled: Bool
+    var index: Int
+    var userType: UserAge // child or adult
+}
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        selectionStyle = .none
-    }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5))
-    }
+enum UserAge: Int {
+    case adult = 1
+    case child = 2
 }

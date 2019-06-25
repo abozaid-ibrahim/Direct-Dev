@@ -32,6 +32,7 @@ class VisaRequestParams {
         visatypeText: String?,
         relation_with_travelersText: String?
     var form_type:String?
+    var requestID:String?
     
 }
 

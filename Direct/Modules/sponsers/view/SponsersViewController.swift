@@ -13,18 +13,23 @@ final class SponsersViewController: UIViewController {
     private let disposeBag = DisposeBag()
     private var tabs = [(ViewPagerTab, SponserFormController)]()
     private var pager: ViewPager?
+    
+    // MARK: Dependencies
+    
     var visaInfo: VisaRequestParams?
-    var successInputIndexes: [Int] = [] /// friends all is must, other one is must
+    var successInputIndexes: [Int] = []
+    var reqID: String?
+    var sponsorsIConStatus = PublishSubject<Bool>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "معلومات المتكفلين"
+        title = Str.sponsorsInfo
         guard let info = visaInfo else { return }
         setupTabbar(info)
         setupPager()
     }
     
-    func setupPager() {
+    private func setupPager() {
         pager = ViewPager(viewController: self)
         let options = ViewPagerOptions()
         options.tabType = .imageWithText
@@ -42,29 +47,68 @@ final class SponsersViewController: UIViewController {
         pager?.build()
     }
     
-    private func addTabItemAndController(_ placeholder: String, _ info: VisaRequestParams, index: Int) {
-        let tabController = SponserFormController()
-        tabController.index = index
-        let item = ViewPagerTab(title: "\(placeholder) \(1 + index)", image: #imageLiteral(resourceName: "rightGray"))
-        tabs.append((item, tabController))
+    private var sponsorsNumber: Int {
+        guard let info = visaInfo else { return 0 }
+        return Int(info.no_of_passport)!
     }
     
-    enum RIDS: String {
-        case family = "1", friends = "2", others = "3"
+    private func addTabItemAndController(_ placeholder: String, _ info: VisaRequestParams, index: Int, _ relation: String) {
+        let sponsorVC = SponserFormController()
+        sponsorVC.relationType = relation
+        sponsorVC.index = index
+        sponsorVC.reqID = reqID
+        sponsorVC.cid = info.country_id
+        sponsorVC.formResult
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] value in
+                self.successInputIndexes.append(index)
+                self.tabs[index].0.image = #imageLiteral(resourceName: "rightGreenIcon")
+                self.pager?.updateTabViewImage(of: index, with: #imageLiteral(resourceName: "rightGreenIcon"))
+                self.onCompleteForm(with: value, for: relation)
+            }).disposed(by: disposeBag)
+        
+        let item = ViewPagerTab(title: "\(placeholder) \(1 + index)", image: #imageLiteral(resourceName: "rightGray"))
+        tabs.append((item, sponsorVC))
+    }
+    
+    private func onCompleteForm(with result: UploadSponserInfoResponse, for type: String) {
+        switch type {
+        case RelationIDS.family.rawValue:
+            sponsorsIConStatus.onNext(true)
+            navigationController?.popViewController()
+        case RelationIDS.others.rawValue:
+            sponsorsIConStatus.onNext(true)
+            let formsIsCompleted = selectNextTab()
+            if formsIsCompleted {
+                navigationController?.popViewController()
+            }
+            
+        case RelationIDS.friends.rawValue:
+            if sponsorsNumber == successInputIndexes.count {
+                sponsorsIConStatus.onNext(true)
+                navigationController?.popViewController()
+            } else {
+                if !selectNextTab() {
+                    navigationController?.popViewController()
+                }
+            }
+        default:
+            print("unregistered relation type")
+        }
     }
     
     private func setupTabbar(_ info: VisaRequestParams) {
         guard let id = info.relation_with_travelers else { return }
-        if id == RIDS.family.rawValue { // family
-            addTabItemAndController(Str.firstSponser, info, index: 0)
-        } else if id == RIDS.friends.rawValue { // friends
+        if id == RelationIDS.family.rawValue { // family
+            addTabItemAndController(Str.sponser, info, index: 0, id)
+        } else if id == RelationIDS.friends.rawValue { // friends
             for index in 0 ..< Int(info.no_of_passport)! {
-                addTabItemAndController(Str.sponser, info, index: index)
+                addTabItemAndController(Str.sponser, info, index: index, id)
             }
             
-        } else if id == RIDS.others.rawValue { // others
+        } else if id == RelationIDS.others.rawValue { // others
             for index in 0 ..< Int(info.no_of_passport)! {
-                addTabItemAndController(Str.sponser, info, index: index)
+                addTabItemAndController(Str.sponser, info, index: index, id)
             }
         }
     }
@@ -74,8 +118,10 @@ final class SponsersViewController: UIViewController {
             let index = (tab.1.index!)
             if successInputIndexes.contains(index) {
                 tabs[index].0.image = #imageLiteral(resourceName: "path4")
+                pager?.updateTabViewImage(of: index, with: #imageLiteral(resourceName: "rightGreenIcon"))
+                
             } else {
-                willMoveToControllerAtIndex(index: index)
+                pager?.displayViewController(atIndex: index)
                 return true
             }
         }
@@ -89,8 +135,7 @@ extension SponsersViewController: ViewPagerDataSource {
     }
     
     func viewControllerAtPosition(position: Int) -> UIViewController {
-        let vc = tabs[position].1
-        return vc
+        return  tabs[position].1
     }
     
     func tabsForPages() -> [ViewPagerTab] {

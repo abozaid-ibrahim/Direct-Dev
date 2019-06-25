@@ -98,7 +98,7 @@ class NewDirectVisaViewModel {
         } else if visaRequestData.visatype == nil {
             selectedVisaType.onNext(nil)
             return false
-        } else if visaRequestData.biometry_loc_id == nil, !self.embassyLocations.isNilOrEmpty, hasBioLocation {
+        } else if visaRequestData.biometry_loc_id == nil, !embassyLocations.isNilOrEmpty, hasBioLocation {
             selectedBio.onNext(nil)
             return false
         } else if visaRequestData.travel_date == nil {
@@ -137,7 +137,10 @@ class NewDirectVisaViewModel {
         }
 
         showProgress.onNext(true)
-        network?.sendVisaRequest(params: visaRequestData).subscribe(onNext: { [unowned self] _ in
+        network?.sendVisaRequest(params: visaRequestData).subscribe(onNext: { [unowned self] res in
+            if let req = res.visaServices.first?.requestID {
+                self.visaRequestData.requestID = req.stringValue
+            }
             try! AppNavigator().push(.visaRequirement(self.visaRequestData)
             )
         }, onError: { _ in
@@ -272,7 +275,7 @@ class NewDirectVisaViewModel {
     }
 
     private func callApiToUpdatePrices() {
-        guard let prm = visaPriceParams else {return}
+        guard let prm = visaPriceParams else { return }
         network?.getVisaPrice(prm: prm).subscribe(onNext: { [weak self] pr in
             print(pr)
             self?.updateTotalCost(with: PassangersCountController.totalPrice(from: pr))

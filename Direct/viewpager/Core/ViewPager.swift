@@ -87,7 +87,9 @@ public class ViewPager: NSObject {
         setupPageViewController()
         setupTabAndIndicator()
     }
-    
+    func updateTabViewImage(of index:Int,with image:UIImage){
+        tabsViewList[index].imageView?.image = image
+    }
     // MARK: - Private Helpers
     
     fileprivate func setupTabContainerView() {

@@ -54,11 +54,19 @@ struct Str{
         return "Schengen".localized
     }
     static var firstSponser:String{
-        return "First Sponser"
+        return "First Sponser".localized
     }
     static var sponser: String{
-        return "Sponser"
+        return "Sponser".localized
     }
-
+    static var cancel:String{
+        return "Cancel".localized
+    }
+    static var choose: String{
+        return "Choose".localized
+    }
+    static var sponsorsInfo:String{
+        return "معلومات المتكفلين"
+    }
     
 }

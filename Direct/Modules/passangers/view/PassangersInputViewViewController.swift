@@ -11,17 +11,16 @@ import UIKit
 class PassangersInputViewViewController: UIViewController {
     /// Description
 
-   
-
     @IBOutlet private var containerView: UIView!
     private let disposeBag = DisposeBag()
 
     @IBOutlet var headerLbl: UILabel!
-    private var tabs = [(ViewPagerTab, PassangerFormController)]()
+    private var tabs = [(tab: ViewPagerTab, vc: PassangerFormController)]()
     private var pager: ViewPager?
     var visaInfo: VisaRequestParams?
     var successInputIndexes: [Int] = []
-    var defaultTabSelection = PublishSubject<Int>()
+    var sucessIndex = PublishSubject<Int>()
+    var defaultTabSelection: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +33,7 @@ class PassangersInputViewViewController: UIViewController {
     }
 
     func setupPager() {
-        pager = ViewPager(viewController: self,containerView: containerView)
+        pager = ViewPager(viewController: self, containerView: containerView)
         let options = ViewPagerOptions()
         options.tabType = .imageWithText
         options.distribution = .normal
@@ -47,7 +46,7 @@ class PassangersInputViewViewController: UIViewController {
         options.tabViewHeight = 50
         pager?.setOptions(options: options)
         pager?.setDataSource(dataSource: self)
-        pager?.setDelegate(delegate: self)
+//        pager?.setDelegate(delegate: self)
         pager?.build()
     }
 
@@ -64,10 +63,12 @@ class PassangersInputViewViewController: UIViewController {
         tabController.formType = info.form_type
         tabController.index = index
         tabController.visaType = info.visatype
-        let item = ViewPagerTab(title: "\(placeholder) \(1 + index )", image: #imageLiteral(resourceName: "rightGray"))
+        let item = ViewPagerTab(title: "\(placeholder) \(1 + index)", image: #imageLiteral(resourceName: "rightGray"))
 
         tabController.successIndex.subscribe(onNext: { [unowned self] value in
             self.successInputIndexes.append(value)
+            self.pager?.updateTabViewImage(of: index, with: #imageLiteral(resourceName: "rightGreenIcon"))
+            self.sucessIndex.onNext(index)
             if !self.selectNextTab() {
                 try! AppNavigator().push(.successVisaReqScreen(nil))
             }
@@ -82,22 +83,21 @@ class PassangersInputViewViewController: UIViewController {
         for index in 0 ..< Int(info.no_of_child)! {
             addTabItemAndController(Str.child, info, index: index)
         }
-
     }
 
     private func selectNextTab() -> Bool {
-        for tab in tabs {
-            let index = (tab.1.index!)
+        for tabView in tabs {
+            let index = (tabView.vc.index!)
             if successInputIndexes.contains(index) {
-                tabs[index].0.image = #imageLiteral(resourceName: "path4")
+                tabs[index].tab.image = #imageLiteral(resourceName: "path4")
+                pager?.updateTabViewImage(of: index, with: #imageLiteral(resourceName: "rightGreenIcon"))
             } else {
-                self.willMoveToControllerAtIndex(index: index)
+                pager?.displayViewController(atIndex: index)
                 return true
             }
         }
         return false
     }
-
 }
 
 extension PassangersInputViewViewController: ViewPagerDataSource {
@@ -106,27 +106,14 @@ extension PassangersInputViewViewController: ViewPagerDataSource {
     }
 
     func viewControllerAtPosition(position: Int) -> UIViewController {
-        let vc = tabs[position].1
-//            vc.itemText = "\(tabs[position].0.title)"
-
-        return vc
+        return tabs[position].vc
     }
 
     func tabsForPages() -> [ViewPagerTab] {
-        return tabs.map { $0.0 }
+        return tabs.map { $0.tab }
     }
 
     func startViewPagerAtIndex() -> Int {
-        return 0
-    }
-}
-
-extension PassangersInputViewViewController: ViewPagerDelegate {
-    func willMoveToControllerAtIndex(index: Int) {
-        print("Moving to page \(index)")
-    }
-
-    func didMoveToControllerAtIndex(index: Int) {
-        print("Moved to page \(index)")
+        return defaultTabSelection
     }
 }
