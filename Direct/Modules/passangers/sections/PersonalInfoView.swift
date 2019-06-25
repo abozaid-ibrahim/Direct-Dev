@@ -53,10 +53,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     func fillParams(_ prm: inout USRequestParams) {}
     
     func isInputsValid() -> Bool {
-        guard let type = formType else {
-            print("exit")
-            return false
-        }
+        let type = formType!
         
         switch type {
         case .US, CountriesIDs.GB:

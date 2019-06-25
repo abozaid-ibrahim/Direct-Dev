@@ -16,7 +16,7 @@ class JsonParser {
         switch event {
 
         case let .success(response):
-            Logger.log(">>>response \(String(data: response.data, encoding: .utf8) )")
+            Logger.log(">>>response \(String(describing: String(data: response.data, encoding: .utf8)) )")
 
             do {
                 let object = try JSONDecoder().decode(T.self, from: response.data)

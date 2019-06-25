@@ -19,7 +19,7 @@ class PassangerFormController: UIViewController {
     var index: Int!
     var successIndex = PublishSubject<Int>()
     var visaType: String?
-
+    var visaReqID:String?
     // MARK: IBuilder ====================================>>
 
     // containers
@@ -31,17 +31,17 @@ class PassangerFormController: UIViewController {
     @IBOutlet private var visaQuestionsHeight: NSLayoutConstraint!
 
     // Ever you had a vis
-    @IBOutlet var everTraveledBeforeContainer: UIView!
+    @IBOutlet private var everTraveledBeforeContainer: UIView!
     @IBOutlet private var previouslyTraveledCountriesView: UIView!
     @IBOutlet private var countriesContainerHeight: NSLayoutConstraint!
     @IBOutlet private var traveledHereBeforeHConstrain: NSLayoutConstraint!
 
     //===================================================<<
-    let motherView: MotherInfoView = MotherInfoView.loadNib()
-    let travels = UIStoryboard.visa.controller(PreviousTraveledCountriesController.self)
-    let everTraveldView = EverTraveledHereBeforeView()
-    let personalInfoView: PersonalInfoView = PersonalInfoView.loadNib()
-    let visaQuestionsView: VisaQuestionsView = VisaQuestionsView.loadNib()
+    private let motherView: MotherInfoView = MotherInfoView.loadNib()
+    private let travels = UIStoryboard.visa.controller(PreviousTraveledCountriesController.self)
+    private let everTraveldView = EverTraveledHereBeforeView()
+    private let personalInfoView: PersonalInfoView = PersonalInfoView.loadNib()
+    private let visaQuestionsView: VisaQuestionsView = VisaQuestionsView.loadNib()
 
     internal let disposeBag = DisposeBag()
     var receivedImage = PublishSubject<(String?, UIImage?)>()
@@ -49,6 +49,7 @@ class PassangerFormController: UIViewController {
     private let network = ApiClientFacade()
     override func viewDidLoad() {
         super.viewDidLoad()
+        params.visaReqID = visaReqID
         addPersonalInfoSction()
         addMotherInfoSection()
         addQuestionsSection()
@@ -186,15 +187,20 @@ class PassangerFormController: UIViewController {
 
     func validateAndSubmit() {
         getEverTraveldParams()
+        print(personalInfoView.isInputsValid())
         guard personalInfoView.isInputsValid() else {
             return
         }
+        print(hasMotherView)
         if hasMotherView {
+           print(motherView.isInputsValid())
             guard motherView.isInputsValid() else {
                 return
             }
         }
+       print(visaQuestionsContainer.isHidden)
         if !visaQuestionsContainer.isHidden {
+             print(visaQuestionsView.isInputsValid())
             guard visaQuestionsView.isInputsValid() else {
                 return
             }
@@ -210,6 +216,7 @@ class PassangerFormController: UIViewController {
          Progress.show()
         network
             .applyToVisa(path: cnt.endPointPath, params: params)
+            .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] _ in
                 Progress.hide()
                 self.successIndex.onNext(self.index ?? 0)

@@ -7,10 +7,16 @@
 //
 
 import XCTest
-
+@testable import Direct
 class PassangersTests: XCTestCase {
     func testJsonBuilder() {
         let input = ["egypt-2011", "saudi-2010"]
         XCTAssertEqual(InputJsonBuilder().buildPassangers(input), "[{\"egypt\":\"2011\"},{\"saudi\":\"2010\"}]")
+    }
+}
+class TestPassangersInputForms:XCTestCase{
+    func testWhenFillFormGoToNextOne(){
+        let inputsController = PassangersInputViewViewController()
+        
     }
 }

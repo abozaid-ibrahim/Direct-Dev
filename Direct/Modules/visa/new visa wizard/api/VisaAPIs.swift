@@ -13,7 +13,6 @@ enum VisaAPIs {
     case visaRequest(prm: VisaRequestParams),
         visaRequirementForCountry(cid: String),
         getVisaPrice(prm: VisaPriceParams),
-        applyToUS(USRequestParams),
         applyToVisa(path: String, USRequestParams),
         getPreviousVisaType,
         getVisaReqRelation,
@@ -30,8 +29,6 @@ extension VisaAPIs: TargetType {
             return "get-visa-requirement-page"
         case .getVisaPrice:
             return "get-visa-price"
-        case .applyToUS:
-            return "to-apply-us"
         case .getPreviousVisaType:
             return "get-previous-visa-type"
         case let .applyToVisa(prm):
@@ -47,7 +44,7 @@ extension VisaAPIs: TargetType {
 
     public var method: Moya.Method {
         switch self {
-        case .visaRequest, .visaRequirementForCountry, .getVisaPrice, .applyToVisa, .applyToUS, .getPreviousVisaType, .getVisaReqRelation, .getPeriodOfPrevStay, .getUSLivingRelatives:
+        case .visaRequest, .visaRequirementForCountry, .getVisaPrice, .applyToVisa, .getPreviousVisaType, .getVisaReqRelation, .getPeriodOfPrevStay, .getUSLivingRelatives:
             return .post
         }
     }
@@ -86,9 +83,6 @@ extension VisaAPIs: TargetType {
                           "visatype": prm.visatype,
                           "promo_code": ""] as [String: Any]
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
-        case let .applyToUS(req):
-            let data = try! prmEncoder.encode(req)
-            return .requestData(data)
         case let .applyToVisa(_, req):
             var dic1: [String: Any] = ["key": tokenKeyValue,
                                        "lang": appLang,

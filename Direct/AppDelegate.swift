@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func setLanguage() {
-        UserDefaults.standard.set(["ar"], forKey: "AppleLanguages")
+        UserDefaults.standard.set([AppLanguage.langCode], forKey: "AppleLanguages")
         UserDefaults.standard.synchronize()
     }
 

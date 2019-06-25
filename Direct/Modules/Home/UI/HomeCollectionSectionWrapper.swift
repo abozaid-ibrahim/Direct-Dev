@@ -14,7 +14,7 @@ class HomeCollectionSectionWrapper: UICollectionViewCell {
     var cellWidth: CGFloat!
     var cellId: String! {
         didSet {
-            self.collectionView.register(UINib(nibName: cellId, bundle: nil), forCellWithReuseIdentifier: cellId)
+            self.collectionView.register(UINib(nibName: cellId, bundle:Bundle(for: type(of: self)) ), forCellWithReuseIdentifier: cellId)
         }
     }
 

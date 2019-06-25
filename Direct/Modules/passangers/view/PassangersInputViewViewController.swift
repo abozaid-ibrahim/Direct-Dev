@@ -62,17 +62,20 @@ class PassangersInputViewViewController: UIViewController {
         tabController.countryId = info.country_id
         tabController.formType = info.form_type
         tabController.index = index
+        tabController.visaReqID = info.requestID
         tabController.visaType = info.visatype
         let item = ViewPagerTab(title: "\(placeholder) \(1 + index)", image: #imageLiteral(resourceName: "rightGray"))
 
-        tabController.successIndex.subscribe(onNext: { [unowned self] value in
-            self.successInputIndexes.append(value)
-            self.pager?.updateTabViewImage(of: index, with: #imageLiteral(resourceName: "rightGreenIcon"))
-            self.sucessIndex.onNext(index)
-            if !self.selectNextTab() {
-                try! AppNavigator().push(.successVisaReqScreen(nil))
-            }
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        tabController.successIndex
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] value in
+                self.successInputIndexes.append(value)
+                self.pager?.updateTabViewImage(of: index, with: #imageLiteral(resourceName: "rightGreenIcon"))
+                self.sucessIndex.onNext(index)
+                if !self.selectNextTab() {
+                    try! AppNavigator().push(.successVisaReqScreen(nil))
+                }
+            }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         tabs.append((item, tabController))
     }
 
@@ -86,8 +89,7 @@ class PassangersInputViewViewController: UIViewController {
     }
 
     private func selectNextTab() -> Bool {
-        for tabView in tabs {
-            let index = (tabView.vc.index!)
+        for index in 0..<tabs.count {
             if successInputIndexes.contains(index) {
                 tabs[index].tab.image = #imageLiteral(resourceName: "path4")
                 pager?.updateTabViewImage(of: index, with: #imageLiteral(resourceName: "rightGreenIcon"))

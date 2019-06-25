@@ -74,20 +74,12 @@ extension ApiClientFacade {
             return Disposables.create()
         }
     }
-    func applyToUSVisa(params: USRequestParams) -> Observable<USVvisaRequestJSONResponse> {
-        return Observable<USVvisaRequestJSONResponse>.create { (observer) -> Disposable in
-            self.visaProvider.rx.request(VisaAPIs.applyToUS(params)).subscribe { [weak self] event in
-                self?.parser.emitDataModelfromResponse(event: event, observer: observer)
-            }.disposed(by: self.disposeBag)
-            return Disposables.create()
-        }
-    }
+  
 
     func applyToVisa(path:String,params: USRequestParams) -> Observable<USVvisaRequestJSONResponse> {
         return Observable<USVvisaRequestJSONResponse>.create { (observer) -> Disposable in
             self.visaProvider.rx.request(VisaAPIs.applyToVisa(path: path, params)).observeOn( ConcurrentDispatchQueueScheduler(qos: .background)).subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
-                Logger.log(Thread.current)
             }.disposed(by: self.disposeBag)
             return Disposables.create()
         }

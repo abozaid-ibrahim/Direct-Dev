@@ -43,7 +43,7 @@ final class SponsersViewController: UIViewController {
         options.tabViewHeight = 50
         pager?.setOptions(options: options)
         pager?.setDataSource(dataSource: self)
-        pager?.setDelegate(delegate: self)
+//        pager?.setDelegate(delegate: self)
         pager?.build()
     }
     
@@ -147,12 +147,12 @@ extension SponsersViewController: ViewPagerDataSource {
     }
 }
 
-extension SponsersViewController: ViewPagerDelegate {
-    func willMoveToControllerAtIndex(index: Int) {
-        print("Moving to page \(index)")
-    }
-    
-    func didMoveToControllerAtIndex(index: Int) {
-        print("Moved to page \(index)")
-    }
-}
+//extension SponsersViewController: ViewPagerDelegate {
+//    func willMoveToControllerAtIndex(index: Int) {
+//        print("Moving to page \(index)")
+//    }
+//
+//    func didMoveToControllerAtIndex(index: Int) {
+//        print("Moved to page \(index)")
+//    }
+//}

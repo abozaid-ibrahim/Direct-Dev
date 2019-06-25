@@ -11,6 +11,6 @@ import SwifterSwift
 
 extension UIImage{
     func apiSize()->UIImage?{
-        return self.scaled(toHeight: 1000,opaque: false)?.compressed(quality: 0.5)
+        return self.scaled(toHeight: 250,opaque: false)?.compressed(quality: 0.25)
     }
 }
