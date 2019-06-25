@@ -68,6 +68,7 @@ class PassangerFormController: UIViewController {
         personalInfoView.frame = personalInfoContainer.bounds
         personalInfoView.contentHeight.bind(to: personalInfoHeight.rx.constant).disposed(by: disposeBag)
     }
+
     private func addMotherInfoSection() {
         if hasMotherView {
             motherView.formType = formTypeValue
@@ -92,7 +93,7 @@ class PassangerFormController: UIViewController {
             visaQuestionsView.contentHeight.bind(to: visaQuestionsHeight.rx.constant).disposed(by: disposeBag)
         }
         switch formTypeValue {
-        case .TR ,.IN :
+        case .TR, .IN:
             visaQuestionsContainer.isHidden = true
         case .SGN:
             add()
@@ -102,11 +103,12 @@ class PassangerFormController: UIViewController {
             visaQuestionsView.countryName = countryString
         }
     }
+
     private func addEverTraveledView() {
         switch formTypeValue {
-        case .SGN,.CN, .TR, .IE , .IN, .JP:
+        case .SGN, .CN, .TR, .IE, .IN, .JP:
             everTraveledBeforeContainer.isHidden = true
-        case  .US, .GB:
+        case .US, .GB:
             addChild(everTraveldView)
             everTraveldView.countryText = countryString
             everTraveledBeforeContainer.addSubview(everTraveldView.view)
@@ -130,16 +132,14 @@ class PassangerFormController: UIViewController {
             travelVC.tableHeight.asDriver(onErrorJustReturn: travelVC.headerHeight).asObservable().bind(to: countriesContainerHeight.rx.constant).disposed(by: disposeBag)
         }
     }
+
     var formTypeValue: CountriesIDs {
         return CountriesIDs(formType: formType)
     }
 
-
     private var countryString: String {
         return countryName ?? ""
     }
-
-  
 
     func getPreviousVisaTypes() {
         network.getPreviousVisaType().retry(2).subscribe(onNext: { [unowned self] value in
@@ -150,7 +150,7 @@ class PassangerFormController: UIViewController {
     }
 
     @IBAction func submitData(_: Any) {
-        submit()
+        validateAndSubmit()
     }
 
     func imagePickerController(_ picker: UIImagePickerController,
@@ -163,19 +163,18 @@ class PassangerFormController: UIViewController {
     }
 
     func getEverTraveldParams() {
-        if !everTraveledBeforeContainer.isHidden{
+        if !everTraveledBeforeContainer.isHidden {
             params.travelledBeforeHere = everTraveldView.travelledBeforeHere.stringValue
             // Others PDF
             params.travelledBeforeHere = prevTravelsJson
             params.have_driver_license = everTraveldView.haveLicense
         }
         params.lang = AppLanguage.langCode
-
     }
 
     var prevTravelsJson: String {
         let countries = (travels as! PreviousTraveledCountriesController).items
-        if countries.isEmpty{
+        if countries.isEmpty {
             return "[]"
         }
         return InputJsonBuilder().buildPassangers(countries)
@@ -185,7 +184,7 @@ class PassangerFormController: UIViewController {
         return (formTypeValue == .US) || (formTypeValue == .IN) || (formTypeValue == CountriesIDs.GB) || (formTypeValue == CountriesIDs.TR)
     }
 
-    func submit() {
+    func validateAndSubmit() {
         getEverTraveldParams()
         guard personalInfoView.isInputsValid() else {
             return
@@ -195,24 +194,27 @@ class PassangerFormController: UIViewController {
                 return
             }
         }
-        if !visaQuestionsContainer.isHidden{
-            guard visaQuestionsView.isInputsValid() else{
+        if !visaQuestionsContainer.isHidden {
+            guard visaQuestionsView.isInputsValid() else {
                 return
             }
         }
-        Progress.show()
+       
         guard let cnt = CountriesIDs(rawValue: countryId.intValue) else {
             return
         }
-        sendDataToServer(network.applyToVisa(path: cnt.endPointPath, params: params))
+        sendDataToServer(cnt)
     }
 
-    func sendDataToServer(_ api: Observable<USVvisaRequestJSONResponse>) {
-        api.subscribe(onNext: { [unowned self] response in
-            Progress.hide()
-            self.successIndex.onNext(self.index ?? 0)
-        }, onError: { _ in
-            Progress.hide()
-        }).disposed(by: disposeBag)
+    func sendDataToServer(_ cnt: CountriesIDs) {
+         Progress.show()
+        network
+            .applyToVisa(path: cnt.endPointPath, params: params)
+            .subscribe(onNext: { [unowned self] _ in
+                Progress.hide()
+                self.successIndex.onNext(self.index ?? 0)
+            }, onError: { _ in
+                Progress.hide()
+            }).disposed(by: disposeBag)
     }
 }
