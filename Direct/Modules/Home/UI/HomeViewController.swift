@@ -34,13 +34,10 @@ final class HomeViewController: UIViewController, StyledActionBar {
     let newInstitue = NewInstituteRequestController()
     let packagesVC = UIStoryboard.main.instantiateViewController(withIdentifier: "PackagesViewController")
 
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.appVeryLightGray
         collectionView.backgroundColor = UIColor.appVeryLightGray
-
         collectionView.delegate = self
         registerCollectionNibs()
         setupActionBar(.withTitle("بحث"))

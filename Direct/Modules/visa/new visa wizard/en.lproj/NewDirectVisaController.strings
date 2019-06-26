@@ -1,0 +1,15 @@
+
+/* Class = "UILabel"; text = "إجمالي التكلفة"; ObjectID = "AxB-2E-2Jb"; */
+"AxB-2E-2Jb.text" = "إجمالي التكلفة";
+
+/* Class = "UITextField"; placeholder = "أدخل كوبون الخصم"; ObjectID = "otR-yt-3sQ"; */
+"otR-yt-3sQ.placeholder" = "أدخل كوبون الخصم";
+
+/* Class = "UIButton"; normalTitle = "ابدأ الطلب"; ObjectID = "pLt-Sf-gQ7"; */
+"pLt-Sf-gQ7.normalTitle" = "ابدأ الطلب";
+
+/* Class = "UIButton"; normalTitle = "إضافة"; ObjectID = "ppj-2R-IpL"; */
+"ppj-2R-IpL.normalTitle" = "إضافة";
+
+/* Class = "UILabel"; text = "احصل على تأشيرة بسهولة"; ObjectID = "tCo-e0-D7e"; */
+"tCo-e0-D7e.text" = "احصل على تأشيرة بسهولة";

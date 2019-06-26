@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setRootController()
         setupGlobalAppearance()
         setLanguage()
-
         setupKeyboardManager()
         return true
     }

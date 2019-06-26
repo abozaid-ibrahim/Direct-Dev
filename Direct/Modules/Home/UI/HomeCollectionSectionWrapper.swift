@@ -14,19 +14,16 @@ class HomeCollectionSectionWrapper: UICollectionViewCell {
     var cellWidth: CGFloat!
     var cellId: String! {
         didSet {
-            self.collectionView.register(UINib(nibName: cellId, bundle:Bundle(for: type(of: self)) ), forCellWithReuseIdentifier: cellId)
+            self.collectionView.register(UINib(nibName: cellId, bundle:nil ), forCellWithReuseIdentifier: cellId)
         }
     }
 
-//
     override func awakeFromNib() {
         super.awakeFromNib()
         collectionView.dataSource = self
         collectionView.delegate = self //
         collectionView.backgroundColor = UIColor.appVeryLightGray
         backgroundColor = UIColor.appVeryLightGray
-
-        // getdata//
     }
 
     func getData(params _: Any) {
@@ -38,19 +35,12 @@ extension HomeCollectionSectionWrapper: UICollectionViewDataSource, UICollection
     func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize {
         return CGSize(width: cellWidth, height: bounds.height - 4)
     }
-
     func numberOfSections(in _: UICollectionView) -> Int {
         return 1
     }
-
     func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
         return dataList.count
     }
-
-    func collectionView(_: UICollectionView, didSelectItemAt _: IndexPath) {
-//        try! AppNavigator().push(Destination.visaRequirement)
-    }
-
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
         cell.cornerRadiusV = 10
