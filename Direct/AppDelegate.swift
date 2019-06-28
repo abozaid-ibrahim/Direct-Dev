@@ -52,11 +52,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = root
         window?.makeKeyAndVisible()
         navigator = AppNavigator(root: root)
-//        shortcut()
+        shortcut()
     }
 
     private func shortcut() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             let info = VisaRequestParams()
             info.no_of_adult = "5"
             info.country_id = "1"
@@ -65,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             info.countryName = "امريكا"
             info.no_of_passport = "3"
             info.relation_with_travelers = RelationIDS.family.rawValue
-            try? AppNavigator().push(.sponsersInfoScreen(info, reqID: "30736"))
+            try? AppNavigator().push(Destination.paymentMethod(requestID: 1,totalCost: "22"))
         }
     }
 }

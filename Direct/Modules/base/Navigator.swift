@@ -18,7 +18,7 @@ enum Destination {
         homeScreen,
         visaRequirement(VisaRequestParams),
         selectableSheet(data: [String], titleText: String?, style: CellStyle),
-        paymentMethod(VisaRequestParams),
+        paymentMethod(requestID: Int, totalCost: String),
         passangersCount,
         newInstitueVisa,
         datePicker(title: String?),
@@ -55,9 +55,10 @@ enum Destination {
             vc.style = style
             vc.titleText = title
             return vc
-        case let .paymentMethod(cost):
+        case .paymentMethod(let reqid, let cost):
             let vc = PaymentViewController()
-            vc.totalCost = cost.totalCost ?? ""
+            vc.totalCost = cost
+            vc.requestId = reqid
             return vc
         case .passangersCount:
             return PassangersCountController()
@@ -136,9 +137,11 @@ final class AppNavigator: Navigator {
     func push(_ dest: Destination) {
         AppNavigator.rootController.pushViewController(dest.controller(), animated: true)
     }
+
     func push(_ vc: UIViewController) {
         AppNavigator.rootController.pushViewController(vc, animated: true)
     }
+
     func startNewRoot(root: UINavigationController, _: Destination) {
         AppNavigator.rootController = root
     }

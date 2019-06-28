@@ -30,9 +30,9 @@ extension ApiClientFacade {
         }
     }
 
-    func updatePaymentDetails(country _: String) -> Observable<UpdatePaymentResponse> {
+    func updatePaymentDetails(_ prm: SubmitPaymentParams) -> Observable<UpdatePaymentResponse> {
         return Observable<UpdatePaymentResponse>.create { (observer) -> Disposable in
-            self.paymentProvider.rx.request(PaymentAPIs.updatePaymentDetails(prm: "")).subscribe { [weak self] event in
+            self.paymentProvider.rx.request(PaymentAPIs.updatePaymentDetails(prm: prm)).subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
             }.disposed(by: self.disposeBag)
             return Disposables.create()

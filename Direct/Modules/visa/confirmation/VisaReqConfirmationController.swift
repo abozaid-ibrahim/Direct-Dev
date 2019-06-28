@@ -49,7 +49,12 @@ class VisaReqConfirmationController: UIViewController {
         fillUIWithData()
         checkoutFooter.action = { [weak self] in
             guard let self = self else { return }
-            try! AppNavigator().push(.paymentMethod(self.visaRequestData!))
+            guard let info = self.visaRequestData,
+                let id = Int(info.requestID ?? "0"),
+                let cost = info.totalCost else {
+                return
+            }
+            try! AppNavigator().push(Destination.paymentMethod(requestID: id, totalCost: cost))
         }
 
         passangersTable.rx.observeWeakly(CGSize.self, contentSizeKey)

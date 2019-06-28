@@ -48,6 +48,6 @@ struct VisaPriceParams {
 
 class AppLanguage {
     static var langCode: String {
-        return "en"
+        return "ar"
     }
 }

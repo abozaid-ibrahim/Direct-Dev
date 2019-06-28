@@ -18,15 +18,18 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
 
     @IBOutlet var branchsTable: UITableView!
     @IBOutlet var paymentMethodTable: UITableView!
-
+    var prm = SubmitPaymentParams()
     private let disposeBag = DisposeBag()
     let network = ApiClientFacade()
     var totalCost: String?
+    var requestId:Int?
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "الدفع"
+        prm.reqid = requestId
         checkoutFooter.action = { [weak self] in
-//            try! AppNavigator().push(.sponsersInfoScreen(<#T##VisaRequestParams#>))
+             guard let self = self else {return}
+            self.network.updatePaymentDetails(self.prm)
         }
         checkoutFooter.valueText = totalCost?.priced
         checkoutFooter.bg = UIColor.appOffWhite
