@@ -100,10 +100,11 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
             }.disposed(by: disposeBag)
 
         paymentMethodTable.rx.modelSelected(PaymentMethod.self).startWith(first).subscribe(onNext: { value in
-            self.setPaymentMethodBranchsDataSource(value)
             self.prm.parent_payment_id = value.id.int
             self.prm.child_payment_id = nil
-            self.submitEnabled.accept(false)
+           
+            self.setPaymentMethodBranchsDataSource(value)
+
         }).disposed(by: disposeBag)
     }
 
@@ -115,6 +116,7 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
     }
 
     private func setPaymentMethodBranchsDataSource(_ method: PaymentMethod) {
+         self.submitEnabled.accept(false)
         if (method.id.int ?? 0) == PaymentMethodsIDs.creditCard.rawValue {
             setBranches([])
             submitEnabled.accept(true)
