@@ -171,7 +171,7 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
         request.setValue(updatedAmount, forKey: "amount")
         request.setValue("PURCHASE", forKey: "command") // PURCHASE - AUTHORIZATION
         request.setValue("SAR", forKey: "currency")
-        request.setValue("test@gmail.com", forKey: "customer_email")
+        request.setValue("saeed@direct-trvl.com", forKey: "customer_email")
         request.setValue("ar", forKey: "language")
         request.setValue(order.id, forKey: "merchant_reference")
         request.setValue(sdkToken, forKey: "sdk_token")
