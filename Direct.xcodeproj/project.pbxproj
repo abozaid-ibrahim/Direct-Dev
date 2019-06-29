@@ -251,6 +251,8 @@
 		6CF3E1CC2274BBE5007488BA /* HomeCollectionSectionWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1CA2274BBE5007488BA /* HomeCollectionSectionWrapper.swift */; };
 		6CF427FC22C7E603000A9646 /* CreditCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF427FA22C7E603000A9646 /* CreditCardController.swift */; };
 		6CF427FD22C7E603000A9646 /* CreditCardController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF427FB22C7E603000A9646 /* CreditCardController.xib */; };
+		6CF4280B22C81297000A9646 /* PayFortSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6CF4280922C81296000A9646 /* PayFortSDK.bundle */; };
+		6CF4280C22C81297000A9646 /* PayFortSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF4280A22C81297000A9646 /* PayFortSDK.framework */; };
 		6CF703DD2286F7E800B1C387 /* InstituteDetailsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF703DB2286F7E800B1C387 /* InstituteDetailsTableCell.swift */; };
 		6CF703E22286FBD700B1C387 /* InstituteDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF703E12286FBD700B1C387 /* InstituteDetailsHeaderView.swift */; };
 		6CF75E9F228BD8C900009BAB /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF75E9E228BD8C900009BAB /* Progress.swift */; };
@@ -558,6 +560,9 @@
 		6CF3E1CA2274BBE5007488BA /* HomeCollectionSectionWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionSectionWrapper.swift; sourceTree = "<group>"; };
 		6CF427FA22C7E603000A9646 /* CreditCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardController.swift; sourceTree = "<group>"; };
 		6CF427FB22C7E603000A9646 /* CreditCardController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditCardController.xib; sourceTree = "<group>"; };
+		6CF4280522C8107D000A9646 /* Direct-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Direct-Bridging-Header.h"; sourceTree = "<group>"; };
+		6CF4280922C81296000A9646 /* PayFortSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PayFortSDK.bundle; sourceTree = "<group>"; };
+		6CF4280A22C81297000A9646 /* PayFortSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PayFortSDK.framework; sourceTree = "<group>"; };
 		6CF703DB2286F7E800B1C387 /* InstituteDetailsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstituteDetailsTableCell.swift; sourceTree = "<group>"; };
 		6CF703E12286FBD700B1C387 /* InstituteDetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstituteDetailsHeaderView.swift; sourceTree = "<group>"; };
 		6CF75E9E228BD8C900009BAB /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
@@ -576,6 +581,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6530614424650A4028841976 /* Pods_Direct.framework in Frameworks */,
+				6CF4280C22C81297000A9646 /* PayFortSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -879,6 +885,8 @@
 		6C55755A228BAC3F00BAE5E2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6CF4280922C81296000A9646 /* PayFortSDK.bundle */,
+				6CF4280A22C81297000A9646 /* PayFortSDK.framework */,
 				39EE2AC922A09E7000A9A501 /* Command */,
 				39EE2AC222A09DF100A9A501 /* UIKit */,
 				6C55755B228BAC4500BAE5E2 /* fonts */,
@@ -962,6 +970,7 @@
 				6C5FDA552270816C00ABA39B /* LaunchScreen.storyboard */,
 				6C5FDA582270816C00ABA39B /* Info.plist */,
 				6CA040B52281BE0300619B6F /* FloatingTextField.swift */,
+				6CF4280522C8107D000A9646 /* Direct-Bridging-Header.h */,
 			);
 			path = Direct;
 			sourceTree = "<group>";
@@ -1447,6 +1456,7 @@
 				TargetAttributes = {
 					6C5FDA482270816A00ABA39B = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					6CDB3C8F22AA67DC00C0165C = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -1529,6 +1539,7 @@
 				6C9027C7228F95A600B41705 /* OrderTableCell.xib in Resources */,
 				6C6A0C0E22AB81F800150FF6 /* Cairo-Regular.ttf in Resources */,
 				6C6F361E22AF7C660045BAC8 /* EverTraveledHereBeforeView.xib in Resources */,
+				6CF4280B22C81297000A9646 /* PayFortSDK.bundle in Resources */,
 				6C9027AF228F957100B41705 /* SuccessPackageController.xib in Resources */,
 				6C9027A3228F955800B41705 /* BankTableCell.xib in Resources */,
 				6C9027DF228F95D200B41705 /* AboutUsTableCell.xib in Resources */,
@@ -2230,6 +2241,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2X23S7YDK4;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2243,6 +2255,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mcc.directvisa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Direct/Direct-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
