@@ -28,6 +28,8 @@ class PaymentMethodTableCell: UITableViewCell, TableCell {
         for iv in cardImageViews {
             iv.isHidden = true
         }
+        cardImageViews.first?.isHidden = false
+        cardImageViews.first?.setImage(with: model.imageName ?? "")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

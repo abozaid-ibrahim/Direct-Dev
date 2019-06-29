@@ -69,4 +69,8 @@ struct Str{
         return "معلومات المتكفلين"
     }
     
+    static var payment:String{
+        return "الدفع"
+    }
+    
 }

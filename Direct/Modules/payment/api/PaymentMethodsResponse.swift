@@ -26,7 +26,7 @@ class PaymentMethodsResponse: Codable {
 
 class PaymentMethod: Codable {
     let id, paymentName, status, success: String
-
+    var imageName:String?
     enum CodingKeys: String, CodingKey {
         case id
         case paymentName = "PaymentName"

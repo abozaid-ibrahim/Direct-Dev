@@ -34,7 +34,8 @@ enum Destination {
         banks,
         newDirectVisa,
         searchCountries,
-        confirmatonVisa(VisaRequestParams, reqID: String)
+        confirmatonVisa(VisaRequestParams, reqID: String),
+    gotoPayByCreditCard
 
     func controller() -> UIViewController {
         switch self {
@@ -104,6 +105,9 @@ enum Destination {
             let vc = UIStoryboard.visa.instantiateViewController(withIdentifier: "VisaReqConfirmationController") as! VisaReqConfirmationController
             vc.visaRequestData = cost
             vc.reqID = reqID
+            return vc
+        case .gotoPayByCreditCard:
+            let vc = CreditCardController()
             return vc
         }
     }

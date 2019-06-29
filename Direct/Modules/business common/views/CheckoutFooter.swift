@@ -13,8 +13,10 @@ class CheckoutFooter: UIView {
     var footer: CheckoutBottomView!
     typealias Action = () -> Void
     var action: Action?
-    
-    
+    var btn: UIButton {
+        return footer.actionBtn
+    }
+
     @IBInspectable var btnTitle: String? {
         didSet {
             footer.actionBtn.setTitle(btnTitle ?? "", for: .normal)
@@ -40,7 +42,6 @@ class CheckoutFooter: UIView {
         }
     }
 
-  
     func setOnclick(ac: @escaping Action) {
         action = ac
     }

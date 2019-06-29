@@ -46,6 +46,9 @@ class VisaReqConfirmationController: UIViewController {
         for lbl in placeHolderLbls {
             lbl.font = UIFont.appRegularFontWith(size: 10)
         }
+       
+        checkoutFooter.btn
+        
         fillUIWithData()
         checkoutFooter.action = { [weak self] in
             guard let self = self else { return }
