@@ -68,4 +68,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             try? AppNavigator().push(Destination.paymentMethod(requestID: 1,totalCost: "22"))
         }
     }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        var bgTask: UIBackgroundTaskIdentifier = UIBackgroundTaskIdentifier(rawValue: 0)
+        bgTask = application.beginBackgroundTask(expirationHandler: {
+            application.endBackgroundTask(bgTask)
+            bgTask = UIBackgroundTaskIdentifier.invalid
+        })
+    }
+
 }

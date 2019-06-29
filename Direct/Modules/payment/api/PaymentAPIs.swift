@@ -14,7 +14,8 @@ import Moya
 enum PaymentAPIs {
     case getAllParentPaymentMethod,
         getChildsOfPayment(cid: String),
-        updatePaymentDetails(prm: SubmitPaymentParams)
+        updatePaymentDetails(prm: SubmitPaymentParams),
+        initPayfort(PayFortCredintials)
 }
 
 extension PaymentAPIs: TargetType {
@@ -22,10 +23,13 @@ extension PaymentAPIs: TargetType {
         switch self {
         case .getAllParentPaymentMethod:
             return "get-master-payment-method"
-        case let .getChildsOfPayment(pid):
+        case .getChildsOfPayment:
             return "get-payment-method"
-        case let .updatePaymentDetails(prm):
+        case .updatePaymentDetails:
             return "update-payment-details"
+        case .initPayfort(let cr):
+            return cr.path
+
         }
     }
 
@@ -61,6 +65,9 @@ extension PaymentAPIs: TargetType {
                         "userid": prm.userid ?? 0] as [String: Any]
             prmDic.merge(dic2, uniquingKeysWith: { _, new in new })
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
+        
+        case .initPayfort(let  crd):
+            return crd.task
         }
     }
 
@@ -77,24 +84,3 @@ extension PaymentAPIs: TargetType {
     }
 }
 
-//
-class SubmitPaymentParams {
-    var online_payment_respose_code,
-        online_payment_respose_fortid,
-        online_payment_respose_msg,
-        online_payment_respose_status: String?
-    var parent_payment_id, child_payment_id, payment_status,
-        reqid,
-        userid: Int?
-    init() {
-        online_payment_respose_code = nil
-        online_payment_respose_fortid = nil
-        online_payment_respose_msg = nil
-        online_payment_respose_status = nil
-        parent_payment_id = nil
-        child_payment_id = nil
-        payment_status = nil
-        reqid = nil
-        userid = nil
-    }
-}

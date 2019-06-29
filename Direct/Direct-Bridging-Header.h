@@ -3,3 +3,4 @@
 //
 
 #import <PayFortSDK/PayFortSDK.h>
+#import <CommonCrypto/CommonHMAC.h>

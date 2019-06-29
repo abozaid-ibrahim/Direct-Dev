@@ -14,7 +14,7 @@ class UpdatePaymentResponse: Codable {
     let updatePayment: [UpdatePayment]
 
     enum CodingKeys: String, CodingKey {
-        case updatePayment = "Update Payment "
+        case updatePayment = "Update_Payment"
     }
 
     init(updatePayment: [UpdatePayment]) {

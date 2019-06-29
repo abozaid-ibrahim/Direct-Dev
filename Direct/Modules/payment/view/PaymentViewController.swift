@@ -67,7 +67,11 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
     }
 
     private func validateAndSubmit() {
-        if prm.child_payment_id == nil || prm.parent_payment_id == nil {
+        if prm.parent_payment_id == nil {
+            return
+        }
+         guard let id = PaymentMethodsIDs(rawValue: prm.parent_payment_id ?? 0) else {return}
+        if prm.child_payment_id == nil && (PaymentMethodsIDs.creditCard !=  id){
             return
         }
 
@@ -76,7 +80,7 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
             Progress.hide()
 
             if (self.prm.parent_payment_id ?? 0) == PaymentMethodsIDs.creditCard.rawValue {
-                try! AppNavigator().push(.gotoPayByCreditCard)
+                self.showPaymentController()
             } else {
                 try! AppNavigator().push(.successVisaReqScreen(nil))
             }
@@ -102,7 +106,7 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
         paymentMethodTable.rx.modelSelected(PaymentMethod.self).startWith(first).subscribe(onNext: { value in
             self.prm.parent_payment_id = value.id.int
             self.prm.child_payment_id = nil
-           
+
             self.setPaymentMethodBranchsDataSource(value)
 
         }).disposed(by: disposeBag)
@@ -116,7 +120,7 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
     }
 
     private func setPaymentMethodBranchsDataSource(_ method: PaymentMethod) {
-         self.submitEnabled.accept(false)
+        submitEnabled.accept(false)
         if (method.id.int ?? 0) == PaymentMethodsIDs.creditCard.rawValue {
             setBranches([])
             submitEnabled.accept(true)
@@ -145,24 +149,52 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
                 mycell.setCellData(model)
             }.disposed(by: disposeBag)
     }
+
+    private func showPaymentController() {
+        guard let payFortController = PayFortController(enviroment: KPayFortEnviromentSandBox) else { return }
+        let crd = PayFortCredintials.development(udid: payFortController.getUDID()!)
+        network.initPayfort(crd).subscribe(onNext: { [unowned self] results in
+            if let token = results.sdkToken {
+                self.ShowPayfort(controller: payFortController, with: CurrentOrder(orderTotalSar: 90, id: 2341), token: token)
+            } else {
+                //                    self.showError(sub: key.responseMessage)
+            }
+
+        }).disposed(by: disposeBag)
+    }
+
+    private func ShowPayfort(controller: PayFortController, with order: CurrentOrder, token sdkToken: String) {
+        //        let user = UserManager.shared.currentUserInfo
+        let request = NSMutableDictionary()
+        let updatedAmount: Float = Float(order.orderTotalSar * 100)
+
+        request.setValue(updatedAmount, forKey: "amount")
+        request.setValue("PURCHASE", forKey: "command") // PURCHASE - AUTHORIZATION
+        request.setValue("SAR", forKey: "currency")
+        request.setValue("test@gmail.com", forKey: "customer_email")
+        request.setValue("ar", forKey: "language")
+        request.setValue(order.id, forKey: "merchant_reference")
+        request.setValue(sdkToken, forKey: "sdk_token")
+
+        controller.callPayFort(withRequest: request,
+                               currentViewController: self,
+                               success: { _, _ in
+                                   //                                self.sendPayfortToServer(response)
+                                   // handle payfort response after success aka send it to your server
+                                   print("Success")
+
+                               }, canceled: { _, _ in
+                                   //                self.showError(sub: response[""])
+                                   print("Canceled")
+                               }, faild: { _, _, _ in
+                                   //            self.showError(sub: message)
+                                   print("Failed")
+        })
+    }
 }
 
 extension UITableView {
     func registerNib(_ id: String) {
         register(UINib(nibName: id, bundle: nil), forCellReuseIdentifier: id)
-    }
-}
-
-enum PaymentMethodsIDs: Int {
-    case bankTransfer = 8, cach = 3, creditCard = 2
-    var icons: String {
-        switch self {
-        case .bankTransfer:
-            return "bankTransfer"
-        case .cach:
-            return "cashInHand"
-        case .creditCard:
-            return "icons8StackOfMoney"
-        }
     }
 }
