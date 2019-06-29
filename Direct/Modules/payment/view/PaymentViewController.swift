@@ -76,7 +76,7 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
             Progress.hide()
 
             if (self.prm.parent_payment_id ?? 0) == PaymentMethodsIDs.creditCard.rawValue {
-                 try! AppNavigator().push(.gotoPayByCreditCard)
+                try! AppNavigator().push(.gotoPayByCreditCard)
             } else {
                 try! AppNavigator().push(.successVisaReqScreen(nil))
             }
@@ -115,16 +115,16 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
     }
 
     private func setPaymentMethodBranchsDataSource(_ method: PaymentMethod) {
+        if (method.id.int ?? 0) == PaymentMethodsIDs.creditCard.rawValue {
+            setBranches([])
+            submitEnabled.accept(true)
+            return
+        }
         Progress.show()
         network.getChildPayment(method: method.id).subscribe(onNext: { [unowned self] value in
             Progress.hide()
-            Observable<[ChildPaymentMethod]>.just(value.paymentMethods)
-                .bind(to: self.branchsTable.rx.items(cellIdentifier: PaymentBranchTableCell.cellId)) { _, model, cell in
-                    let mycell = (cell as! PaymentBranchTableCell)
-
-                    mycell.setCellData(model)
-                }.disposed(by: self.disposeBag)
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+            self.setBranches(value.paymentMethods)
+        }).disposed(by: disposeBag)
 
         branchsTable.rx
             .modelSelected(ChildPaymentMethod.self)
@@ -133,6 +133,15 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
                 self.submitEnabled.accept(true)
             })
             .disposed(by: disposeBag)
+    }
+
+    private func setBranches(_ br: [ChildPaymentMethod]) {
+        Observable<[ChildPaymentMethod]>.just(br)
+            .bind(to: branchsTable.rx.items(cellIdentifier: PaymentBranchTableCell.cellId)) { _, model, cell in
+                let mycell = (cell as! PaymentBranchTableCell)
+
+                mycell.setCellData(model)
+            }.disposed(by: disposeBag)
     }
 }
 
