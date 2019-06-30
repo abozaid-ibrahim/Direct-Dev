@@ -73,9 +73,9 @@ extension PayFortCredintials: TargetType {
     public var task: Task {
         switch self {
         case .development:
-            return .requestParameters(parameters: self.parameters!, encoding: URLEncoding.default)
+            return .requestParameters(parameters: self.parameters!, encoding: JSONEncoding.default)
         default:
-            return .requestParameters(parameters: self.parameters!, encoding: URLEncoding.default)
+            return .requestParameters(parameters: self.parameters!, encoding: JSONEncoding.default)
         }
     }
     

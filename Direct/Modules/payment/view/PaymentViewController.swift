@@ -158,13 +158,15 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
 
         let crd = PayFortCredintials.development(udid: deviceID)
         network.getSdkToken(crd).subscribe(onNext: { [unowned self] results in
-            print("start from here")
+            
             if let token = results.sdkToken {
                 print(token)
                 self.ShowPayfort(controller: payFortController, with: CurrentOrder(orderTotalSar: 90, id: 2341), token: token)
+                print(">>start from here")
 
             } else {
-                //                    self.showError(sub: key.responseMessage)
+                print(">>start from ")
+
             }
 
         }).disposed(by: disposeBag)

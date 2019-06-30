@@ -17,14 +17,15 @@ class FloatingTextField: SkyFloatingLabelTextField {
         super.init(frame: frame)
         CommonInit()
     }
-
+  
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         CommonInit()
     }
 
     func CommonInit() {
-    
+        self.bounds = self.frame.inset(by: padding)
+
         selectedLineColor = .lightGray
         selectedTitleColor = .lightGray
         cornerRadiusV = 8
@@ -54,7 +55,7 @@ class FloatingTextField: SkyFloatingLabelTextField {
                 self.errorMessage = nil
             }
 
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     let padding = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)
