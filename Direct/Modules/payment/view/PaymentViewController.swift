@@ -38,16 +38,12 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
         registerCells()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        ShowPayfort()
-    }
-
+ 
     private func setupCheckoutFooter() {
         checkoutFooter.action = { [weak self] in
             guard let self = self else { return }
 //            self.validateAndSubmit()
-            self.ShowPayfort()
+            self.showPaymentController()
         }
         submitEnabled
             .map { $0 ? UIColor.appPumpkinOrange : UIColor.disabledBtnBg }
@@ -158,23 +154,23 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
 
     private func showPaymentController() {
         guard let payFortController = PayFortController(enviroment: KPayFortEnviromentSandBox) else { return }
-        let crd = PayFortCredintials.development(udid: payFortController.getUDID()!)
-//            self.ShowPayfort(controller: payFortController, with: CurrentOrder(orderTotalSar: 90, id: 2341), token: token)
-//        network.initPayfort(crd).subscribe(onNext: { [unowned self] results in
-//            if let token = results.sdkToken {
-//                print(token)
-//                self.ShowPayfort(controller: payFortController, with: CurrentOrder(orderTotalSar: 90, id: 2341), token: token)
-//            } else {
-//                //                    self.showError(sub: key.responseMessage)
-//            }
-//
-//        }).disposed(by: disposeBag)
+        let deviceID = UIDevice.current.identifierForVendor!.uuidString
+
+        let crd = PayFortCredintials.development(udid: deviceID)
+        network.getSdkToken(crd).subscribe(onNext: { [unowned self] results in
+            print("start from here")
+            if let token = results.sdkToken {
+                print(token)
+                self.ShowPayfort(controller: payFortController, with: CurrentOrder(orderTotalSar: 90, id: 2341), token: token)
+
+            } else {
+                //                    self.showError(sub: key.responseMessage)
+            }
+
+        }).disposed(by: disposeBag)
     }
 
-    private func ShowPayfort() {
-        guard let payFortController = PayFortController(enviroment: KPayFortEnviromentSandBox) else { return }
-        let order = CurrentOrder(orderTotalSar: 90, id: 2341)
-        let sdkToken = "8C151ADECBA871B0E053321E320AC2C9"
+    private func ShowPayfort(controller: PayFortController, with order: CurrentOrder, token: String) {
         //        let user = UserManager.shared.currentUserInfo
         let request = NSMutableDictionary()
         let updatedAmount: Float = Float(order.orderTotalSar * 100)
@@ -185,22 +181,21 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
         request.setValue("saeed@direct-trvl.com", forKey: "customer_email")
         request.setValue("ar", forKey: "language")
         request.setValue(order.id, forKey: "merchant_reference")
-        request.setValue(sdkToken, forKey: "sdk_token")
-        request.setValue("8C151ADECBA871B0E053321E320AC2C9", forKey: "token")
-        payFortController.callPayFort(withRequest: request,
-                                      currentViewController: self,
-                                      success: { _, _ in
-                                          //                                self.sendPayfortToServer(response)
-                                          // handle payfort response after success aka send it to your server
-                                          print("Success")
+        request.setValue(token, forKey: "sdk_token")
+        controller.callPayFort(withRequest: request,
+                               currentViewController: self,
+                               success: { _, _ in
+                                   //                                self.sendPayfortToServer(response)
+                                   // handle payfort response after success aka send it to your server
+                                   print("Success")
 
-                                      }, canceled: { _, _ in
-                                          //                self.showError(sub: response[""])
-                                          print("Canceled")
-                                      }, faild: { _, _, f in
-                                          print(f)
-                                          //            self.showError(sub: message)
-                                          print("Failed")
+                               }, canceled: { _, _ in
+                                   //                self.showError(sub: response[""])
+                                   print("Canceled")
+                               }, faild: { _, _, f in
+                                   print(f)
+                                   //            self.showError(sub: message)
+                                   print("Failed")
         })
     }
 }

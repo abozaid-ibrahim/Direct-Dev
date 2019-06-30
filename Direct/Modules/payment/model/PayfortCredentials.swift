@@ -26,7 +26,7 @@ enum PayFortCredintials {
     var accessCode: String {
         switch self {
         case .development:
-            return "4P2u0fJzpgA39txKOYxe"
+            return "g7I1s8T76rFltT3jVv6W"
         default:
             return "g7I1s8T76rFltT3jVv6W"
         }
@@ -37,7 +37,7 @@ enum PayFortCredintials {
         case .development:
             return "dssaerfsfe"
         default:
-            return "dadsf3*4$T#^$@&g"
+            return "dssaerfsfe"
         }
     }
     
@@ -62,7 +62,7 @@ enum PayFortCredintials {
 }
 
 enum ServerPaths: String {
-    case payfortSDKToken = "FortAPI/paymentPage"
+    case payfortSDKToken = "FortAPI/paymentApi"
 }
 
 extension PayFortCredintials: TargetType {

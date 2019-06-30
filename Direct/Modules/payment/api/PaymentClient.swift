@@ -38,7 +38,7 @@ extension ApiClientFacade {
             return Disposables.create()
         }
     }
-    func initPayfort(_ crd: PayFortCredintials) -> Observable<PayfortResponse> {
+    func getSdkToken(_ crd: PayFortCredintials) -> Observable<PayfortResponse> {
         return Observable<PayfortResponse>.create { (observer) -> Disposable in
             self.paymentProvider.rx.request(PaymentAPIs.initPayfort(crd)).subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
