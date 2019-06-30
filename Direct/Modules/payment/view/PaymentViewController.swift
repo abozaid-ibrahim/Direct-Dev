@@ -112,8 +112,8 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
                 self.prm.parent_payment_id = value.id.int
                 self.prm.child_payment_id = nil
                 self.setBranchsDataSource(value)
-                let firstIndex =
-                (self.paymentMethodTable.cellForRow(at: fi) as! PaymentMethodTableCell).selectStyle(selected: true)
+                let firstIndex = IndexPath(item: 0, section: 0)
+                (self.paymentMethodTable.cellForRow(at: firstIndex) as! PaymentMethodTableCell).selectStyle(selected: true)
 
             }).disposed(by: disposeBag)
     }
