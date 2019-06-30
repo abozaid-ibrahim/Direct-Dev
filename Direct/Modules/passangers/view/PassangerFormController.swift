@@ -158,7 +158,7 @@ class PassangerFormController: UIViewController {
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         let image = info[.editedImage] as? UIImage
         let fileUrl = info[.imageURL] as? URL
-        receivedImage.onNext((fileUrl?.lastPathComponent, image?.apiSize()))
+        receivedImage.onNext((fileUrl?.lastPathComponent.attachName(), image?.apiSize()))
 
         picker.dismiss(animated: true, completion: nil)
     }

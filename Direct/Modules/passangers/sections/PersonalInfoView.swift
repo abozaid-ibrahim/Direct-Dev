@@ -265,14 +265,15 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
                 self.showImagePicker(id: self.acceptanceUniversityID)
             }.disposed(by: disposeBag)
     }
-    private func showFamilyIDView(isSingle:Bool){
-        guard let type = self.formType else {return}
+    
+    private func showFamilyIDView(isSingle: Bool) {
+        guard let type = self.formType else { return }
         switch type {
         case .US:
-            self.familyIDView.isHidden = isSingle
-
+            familyIDView.isHidden = isSingle
+            
         default:
-             self.familyIDView.isHidden = true
+            familyIDView.isHidden = true
         }
     }
     
@@ -280,8 +281,8 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         let image = info[.originalImage] as? UIImage
         let fileUrl = info[.imageURL] as? URL
-       
-        receivedImage.onNext((fileUrl?.lastPathComponent, image?.apiSize()))
+        
+        receivedImage.onNext((fileUrl?.lastPathComponent.attachName(), image?.apiSize()))
         
         picker.dismiss(animated: true, completion: nil)
     }
@@ -308,5 +309,15 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
             }
             
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+    }
+}
+
+extension String {
+    func attachName() -> String {
+        let fileName = self
+        let startFrom = fileName.count > 40 ? fileName.count - 40 : 0
+        
+        let showedName = fileName.charactersArray[startFrom..<fileName.count]
+        return String(showedName)
     }
 }
