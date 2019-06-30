@@ -107,14 +107,15 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
                 let mycell = (cell as! PaymentMethodTableCell)
                 mycell.setCellData(model)
             }.disposed(by: disposeBag)
+        paymentMethodTable.rx.modelSelected(PaymentMethod.self)
+            .startWith(first).subscribe(onNext: { value in
+                self.prm.parent_payment_id = value.id.int
+                self.prm.child_payment_id = nil
+                self.setBranchsDataSource(value)
+                let firstIndex =
+                (self.paymentMethodTable.cellForRow(at: fi) as! PaymentMethodTableCell).selectStyle(selected: true)
 
-        paymentMethodTable.rx.modelSelected(PaymentMethod.self).startWith(first).subscribe(onNext: { value in
-            self.prm.parent_payment_id = value.id.int
-            self.prm.child_payment_id = nil
-
-            self.setBranchsDataSource(value)
-
-        }).disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
     }
 
     private func getImageFor(id: Int) -> String {
@@ -154,7 +155,6 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
         Observable<[ChildPaymentMethod]>.just(br)
             .bind(to: branchsTable.rx.items(cellIdentifier: PaymentBranchTableCell.cellId)) { _, model, cell in
                 let mycell = (cell as! PaymentBranchTableCell)
-
                 mycell.setCellData(model)
             }.disposed(by: disposeBag)
     }
@@ -167,14 +167,12 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
         network.getSdkToken(crd).subscribe(onNext: { [unowned self] results in
 
             if let token = results.sdkToken {
-                print(token)
                 guard let cost = self.totalCost?.double(),
                     let id = self.requestId else { return }
                 self.ShowPayfort(controller: payFortController, with: CurrentOrder(orderTotalSar: cost, id: id), token: token)
-                print(">>start from here")
 
             } else {
-                print(">>start from ")
+                self.showAlert(with: "Failed to initialize your payment gateway")
             }
 
         }).disposed(by: disposeBag)
@@ -199,6 +197,7 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
                                        let msg = result["response_message"] as? String,
                                        let code = result["response_code"] as? String,
                                        let fortId = result["fort_id"] as? String else {
+                                       self.showAlert(with: Str.technicalDifficults)
                                        return
                                    }
 

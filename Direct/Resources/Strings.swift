@@ -8,6 +8,9 @@
 
 import Foundation
 struct Str{
+    static var technicalDifficults:String{
+        return "Sorry, we get a technical difficults!"
+    }
     static var before:String{
         return "Before".localized
     }
