@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="branchsTable" destination="Uid-t3-Jrf" id="CUs-ux-TlC"/>
                 <outlet property="checkoutFooter" destination="xJJ-VS-hAg" id="IKa-hZ-hVN"/>
+                <outlet property="chooseBranchLbl" destination="YAh-cE-K7k" id="BJe-Hu-QNA"/>
                 <outlet property="paymentMethodTable" destination="ygq-bA-IRy" id="uP9-HL-f4O"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

@@ -24,6 +24,7 @@ class FloatingTextField: SkyFloatingLabelTextField {
     }
 
     func CommonInit() {
+        self.layoutMargins = padding
         self.bounds = self.frame.inset(by: padding)
 
         selectedLineColor = .lightGray

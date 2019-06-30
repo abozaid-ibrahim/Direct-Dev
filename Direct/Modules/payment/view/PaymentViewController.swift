@@ -16,6 +16,7 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
 
     @IBOutlet var branchsTable: UITableView!
     @IBOutlet var paymentMethodTable: UITableView!
+    @IBOutlet var chooseBranchLbl: UILabel!
     @IBOutlet var checkoutFooter: CheckoutFooter!
     //===================================================<<
     private var submitEnabled = BehaviorRelay<Bool>(value: false)
@@ -38,12 +39,19 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
         registerCells()
     }
 
- 
+    var paymentType: PaymentMethodsIDs? {
+        return PaymentMethodsIDs(rawValue: prm.parent_payment_id ?? 0)
+    }
+
     private func setupCheckoutFooter() {
         checkoutFooter.action = { [weak self] in
-            guard let self = self else { return }
-//            self.validateAndSubmit()
-            self.showPaymentController()
+            guard let self = self,
+                let type = self.paymentType else { return }
+            if type == PaymentMethodsIDs.creditCard {
+                self.showPaymentController()
+            } else {
+                self.validateAndSubmit()
+            }
         }
         submitEnabled
             .map { $0 ? UIColor.appPumpkinOrange : UIColor.disabledBtnBg }
@@ -80,12 +88,7 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
         Progress.show()
         network.updatePaymentDetails(prm).subscribe(onNext: { _ in
             Progress.hide()
-
-            if (self.prm.parent_payment_id ?? 0) == PaymentMethodsIDs.creditCard.rawValue {
-                self.showPaymentController()
-            } else {
-                try! AppNavigator().push(.successVisaReqScreen(nil))
-            }
+            try! AppNavigator().push(.successVisaReqScreen(nil))
         }).disposed(by: disposeBag)
     }
 
@@ -109,7 +112,7 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
             self.prm.parent_payment_id = value.id.int
             self.prm.child_payment_id = nil
 
-            self.setPaymentMethodBranchsDataSource(value)
+            self.setBranchsDataSource(value)
 
         }).disposed(by: disposeBag)
     }
@@ -121,13 +124,17 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
         return idMap.icons
     }
 
-    private func setPaymentMethodBranchsDataSource(_ method: PaymentMethod) {
+    private func setBranchsDataSource(_ method: PaymentMethod) {
         submitEnabled.accept(false)
         if (method.id.int ?? 0) == PaymentMethodsIDs.creditCard.rawValue {
             setBranches([])
             submitEnabled.accept(true)
+            branchsTable.alpha = 0
+            chooseBranchLbl.alpha = 0
             return
         }
+        branchsTable.alpha = 1
+        chooseBranchLbl.alpha = 1
         Progress.show()
         network.getChildPayment(method: method.id).subscribe(onNext: { [unowned self] value in
             Progress.hide()
@@ -158,15 +165,16 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
 
         let crd = PayFortCredintials.development(udid: deviceID)
         network.getSdkToken(crd).subscribe(onNext: { [unowned self] results in
-            
+
             if let token = results.sdkToken {
                 print(token)
-                self.ShowPayfort(controller: payFortController, with: CurrentOrder(orderTotalSar: 90, id: 2341), token: token)
+                guard let cost = self.totalCost?.double(),
+                    let id = self.requestId else { return }
+                self.ShowPayfort(controller: payFortController, with: CurrentOrder(orderTotalSar: cost, id: id), token: token)
                 print(">>start from here")
 
             } else {
                 print(">>start from ")
-
             }
 
         }).disposed(by: disposeBag)
@@ -186,18 +194,42 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
         request.setValue(token, forKey: "sdk_token")
         controller.callPayFort(withRequest: request,
                                currentViewController: self,
-                               success: { _, _ in
-                                   //                                self.sendPayfortToServer(response)
-                                   // handle payfort response after success aka send it to your server
-                                   print("Success")
+                               success: { _, operationResult in
+                                   guard let result = operationResult,
+                                       let msg = result["response_message"] as? String,
+                                       let code = result["response_code"] as? String,
+                                       let fortId = result["fort_id"] as? String else {
+                                       return
+                                   }
+
+                                   let status = result["status"]
+                                   self.prm.online_payment_respose_msg = String(msg)
+                                   self.prm.online_payment_respose_code = code
+                                   self.prm.online_payment_respose_status = "\(status!)"
+                                   self.prm.online_payment_respose_fortid = fortId
+                                   self.validateAndSubmit()
 
                                }, canceled: { _, _ in
-                                   //                self.showError(sub: response[""])
+                                   self.showAlert(with: "Payment has been canceled")
                                    print("Canceled")
-                               }, faild: { _, _, f in
-                                   print(f)
-                                   //            self.showError(sub: message)
+                               }, faild: { _, _, error in
+                                   self.showAlert(with: error ?? "")
                                    print("Failed")
         })
     }
+
+    func showAlert(with msg: String) {
+        let alert = UIAlertController(title: "Error", message: msg, preferredStyle: .alert)
+
+        let cancel = UIAlertAction(title: Str.cancel, style: .cancel, handler: nil)
+        alert.addAction(cancel)
+
+        present(alert, animated: true, completion: nil)
+    }
+}
+
+enum PaymentStatus: Int {
+    case success = 2,
+        pending = 1,
+        failed = 0
 }

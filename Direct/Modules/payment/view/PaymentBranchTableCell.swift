@@ -39,7 +39,7 @@ class PaymentBranchTableCell: UITableViewCell, TableCell {
             containerLayout.borderColorV = UIColor.appPumpkinOrange
             containerLayout.backgroundColor = UIColor.tangerine7
         } else {
-            containerLayout.borderColorV = UIColor.lightGray
+            containerLayout.borderColorV = UIColor.appVeryLightGray
             containerLayout.backgroundColor = UIColor.white
         }
     }
