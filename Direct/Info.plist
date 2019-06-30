@@ -65,7 +65,11 @@
     
     <key> NSLocationWhenInUseUsageDescription</key>
     <string> location description.</string>
-    
-    
+<!--   payfort -->
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSAllowsArbitraryLoads</key><true/>
+</dict>
+
 </dict>
 </plist>

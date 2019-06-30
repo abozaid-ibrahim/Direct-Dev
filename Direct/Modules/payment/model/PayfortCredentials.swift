@@ -17,25 +17,25 @@ enum PayFortCredintials {
     var merchantId: String {
         switch self {
         case .development:
-            return "dfadf23"
+            return "krkOMyEe"
         default:
-            return "dsafq34r"
+            return "krkOMyEe"
         }
     }
     
     var accessCode: String {
         switch self {
         case .development:
-            return "wO5asdfasdzw57vUbYE1"
+            return "4P2u0fJzpgA39txKOYxe"
         default:
-            return "adsfadsfAMIP3qewH9hrtm"
+            return "g7I1s8T76rFltT3jVv6W"
         }
     }
     
     var shaRequest: String {
         switch self {
         case .development:
-            return "adsfajytjijht"
+            return "dssaerfsfe"
         default:
             return "dadsf3*4$T#^$@&g"
         }
@@ -62,7 +62,7 @@ enum PayFortCredintials {
 }
 
 enum ServerPaths: String {
-    case payfortSDKToken = "FortAPI/paymentApi"
+    case payfortSDKToken = "FortAPI/paymentPage"
 }
 
 extension PayFortCredintials: TargetType {
@@ -72,10 +72,10 @@ extension PayFortCredintials: TargetType {
     
     public var task: Task {
         switch self {
-        case .development(let uuid):
-            return .requestParameters(parameters: ["cid": uuid, "key": tokenKeyValue, "lang": appLang], encoding: URLEncoding.default)
+        case .development:
+            return .requestParameters(parameters: self.parameters!, encoding: URLEncoding.default)
         default:
-            return .requestParameters(parameters: ["key": tokenKeyValue, "lang": appLang], encoding: URLEncoding.default)
+            return .requestParameters(parameters: self.parameters!, encoding: URLEncoding.default)
         }
     }
     

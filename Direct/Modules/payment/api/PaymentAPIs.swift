@@ -29,12 +29,20 @@ extension PaymentAPIs: TargetType {
             return "update-payment-details"
         case .initPayfort(let cr):
             return cr.path
-
         }
     }
 
     public var method: Moya.Method {
         return .post
+    }
+
+    public var baseURL: URL {
+        switch self {
+        case .initPayfort(let crd):
+            return crd.mainURL
+        default:
+            return URL(string: "https://dev.visa.directksa.com/backend/api/")!
+        }
     }
 
     public var task: Task {
@@ -45,28 +53,27 @@ extension PaymentAPIs: TargetType {
                           "lang": appLang,
                           "promo_code": ""] as [String: Any]
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
-        case let .getChildsOfPayment(pid):
+        case .getChildsOfPayment(let pid):
             let prmDic = ["key": tokenKeyValue,
                           "lang": appLang,
                           "pid": pid] as [String: Any]
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
 
-        case let .updatePaymentDetails(prm):
+        case .updatePaymentDetails(let prm):
             var prmDic = ["key": tokenKeyValue,
                           "lang": appLang,
                           "parent_payment_id": prm.parent_payment_id ?? 0,
                           "child_payment_id": prm.child_payment_id ?? 0,
                           "online_payment_respose_code": prm.online_payment_respose_code ?? "",
                           "online_payment_respose_fortid": prm.online_payment_respose_fortid ?? ""] as [String: Any]
-            let dic2 = ["online_payment_respose_msg": prm.online_payment_respose_msg ?? "",
-                        "online_payment_respose_status": prm.online_payment_respose_status ?? "",
-                        "payment_status": prm.payment_status ?? 0,
-                        "reqid": prm.reqid ?? 0,
-                        "userid": prm.userid ?? 0] as [String: Any]
-            prmDic.merge(dic2, uniquingKeysWith: { _, new in new })
+            prmDic["online_payment_respose_msg"] = prm.online_payment_respose_msg ?? ""
+            prmDic["online_payment_respose_status"] = prm.online_payment_respose_status ?? ""
+            prmDic["payment_status"] = prm.payment_status ?? 0
+            prmDic["reqid"] = prm.reqid ?? 0
+            prmDic["userid"] = prm.userid ?? 0
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
-        
-        case .initPayfort(let  crd):
+
+        case .initPayfort(let crd):
             return crd.task
         }
     }
@@ -80,7 +87,11 @@ extension PaymentAPIs: TargetType {
     }
 
     public var headers: [String: String]? {
-        return ["Content-Type": "application/x-www-form-urlencoded"]
+        switch self {
+        case .initPayfort(let crd):
+            return crd.headers
+        default:
+            return ["Content-Type": "application/x-www-form-urlencoded"]
+        }
     }
 }
-

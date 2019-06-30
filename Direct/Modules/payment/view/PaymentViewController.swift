@@ -38,10 +38,16 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
         registerCells()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        ShowPayfort()
+    }
+
     private func setupCheckoutFooter() {
         checkoutFooter.action = { [weak self] in
             guard let self = self else { return }
-            self.validateAndSubmit()
+//            self.validateAndSubmit()
+            self.ShowPayfort()
         }
         submitEnabled
             .map { $0 ? UIColor.appPumpkinOrange : UIColor.disabledBtnBg }
@@ -70,8 +76,8 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
         if prm.parent_payment_id == nil {
             return
         }
-         guard let id = PaymentMethodsIDs(rawValue: prm.parent_payment_id ?? 0) else {return}
-        if prm.child_payment_id == nil && (PaymentMethodsIDs.creditCard !=  id){
+        guard let id = PaymentMethodsIDs(rawValue: prm.parent_payment_id ?? 0) else { return }
+        if prm.child_payment_id == nil, PaymentMethodsIDs.creditCard != id {
             return
         }
 
@@ -153,17 +159,22 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
     private func showPaymentController() {
         guard let payFortController = PayFortController(enviroment: KPayFortEnviromentSandBox) else { return }
         let crd = PayFortCredintials.development(udid: payFortController.getUDID()!)
-        network.initPayfort(crd).subscribe(onNext: { [unowned self] results in
-            if let token = results.sdkToken {
-                self.ShowPayfort(controller: payFortController, with: CurrentOrder(orderTotalSar: 90, id: 2341), token: token)
-            } else {
-                //                    self.showError(sub: key.responseMessage)
-            }
-
-        }).disposed(by: disposeBag)
+//            self.ShowPayfort(controller: payFortController, with: CurrentOrder(orderTotalSar: 90, id: 2341), token: token)
+//        network.initPayfort(crd).subscribe(onNext: { [unowned self] results in
+//            if let token = results.sdkToken {
+//                print(token)
+//                self.ShowPayfort(controller: payFortController, with: CurrentOrder(orderTotalSar: 90, id: 2341), token: token)
+//            } else {
+//                //                    self.showError(sub: key.responseMessage)
+//            }
+//
+//        }).disposed(by: disposeBag)
     }
 
-    private func ShowPayfort(controller: PayFortController, with order: CurrentOrder, token sdkToken: String) {
+    private func ShowPayfort() {
+        guard let payFortController = PayFortController(enviroment: KPayFortEnviromentSandBox) else { return }
+        let order = CurrentOrder(orderTotalSar: 90, id: 2341)
+        let sdkToken = "8C151ADECBA871B0E053321E320AC2C9"
         //        let user = UserManager.shared.currentUserInfo
         let request = NSMutableDictionary()
         let updatedAmount: Float = Float(order.orderTotalSar * 100)
@@ -175,26 +186,21 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
         request.setValue("ar", forKey: "language")
         request.setValue(order.id, forKey: "merchant_reference")
         request.setValue(sdkToken, forKey: "sdk_token")
+        request.setValue("8C151ADECBA871B0E053321E320AC2C9", forKey: "token")
+        payFortController.callPayFort(withRequest: request,
+                                      currentViewController: self,
+                                      success: { _, _ in
+                                          //                                self.sendPayfortToServer(response)
+                                          // handle payfort response after success aka send it to your server
+                                          print("Success")
 
-        controller.callPayFort(withRequest: request,
-                               currentViewController: self,
-                               success: { _, _ in
-                                   //                                self.sendPayfortToServer(response)
-                                   // handle payfort response after success aka send it to your server
-                                   print("Success")
-
-                               }, canceled: { _, _ in
-                                   //                self.showError(sub: response[""])
-                                   print("Canceled")
-                               }, faild: { _, _, _ in
-                                   //            self.showError(sub: message)
-                                   print("Failed")
+                                      }, canceled: { _, _ in
+                                          //                self.showError(sub: response[""])
+                                          print("Canceled")
+                                      }, faild: { _, _, f in
+                                          print(f)
+                                          //            self.showError(sub: message)
+                                          print("Failed")
         })
-    }
-}
-
-extension UITableView {
-    func registerNib(_ id: String) {
-        register(UINib(nibName: id, bundle: nil), forCellReuseIdentifier: id)
     }
 }

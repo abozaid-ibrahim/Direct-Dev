@@ -92,7 +92,12 @@ extension CommonAPIs: TargetType {
     }
 
     public var headers: [String: String]? {
-        return nil
+        var header:[String:String] = [:]
+        header["Content-type"] = "application/x-www-form-urlencoded; charset=utf-8"
+//        header["Content-type"] = "application/json"
+//        header["Accept"] = "application/json"
+        return header
+    
     }
 }
 
