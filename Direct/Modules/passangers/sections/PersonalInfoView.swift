@@ -213,9 +213,10 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
                     self.statusPInfoField.text = state.string
                     if state.apiValue == MartialState.single.apiValue {
                         self.isHusbandWillTravelView.isHidden = true
-                        self.familyIDView.isHidden = true
+                        self.showFamilyIDView(isSingle: true)
                     } else {
                         self.isHusbandWillTravelView.isHidden = false
+                        self.showFamilyIDView(isSingle: false)
                     }
                     
                     self.params?.martialStatus = state.apiValue.stringValue
@@ -263,6 +264,16 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
             .subscribe { _ in
                 self.showImagePicker(id: self.acceptanceUniversityID)
             }.disposed(by: disposeBag)
+    }
+    private func showFamilyIDView(isSingle:Bool){
+        guard let type = self.formType else {return}
+        switch type {
+        case .US:
+            self.familyIDView.isHidden = isSingle
+
+        default:
+             self.familyIDView.isHidden = true
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController,
