@@ -15,7 +15,6 @@ target 'Direct' do
   pod 'RxGesture', '~> 2.1'
   pod 'YALField'
   pod 'SwifterSwift'
-  pod 'ARSLineProgress', '~> 3.1'
   pod 'Kingfisher', '~> 5.0'
   pod 'JBDatePicker'
   pod 'ViewPager-Swift'
