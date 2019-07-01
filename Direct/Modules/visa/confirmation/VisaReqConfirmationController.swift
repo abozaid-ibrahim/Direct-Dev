@@ -46,9 +46,9 @@ class VisaReqConfirmationController: UIViewController {
         for lbl in placeHolderLbls {
             lbl.font = UIFont.appRegularFontWith(size: 10)
         }
-       
-        checkoutFooter.btn
-        
+
+//        checkoutFooter.btn
+
         fillUIWithData()
         checkoutFooter.action = { [weak self] in
             guard let self = self else { return }
@@ -73,12 +73,21 @@ class VisaReqConfirmationController: UIViewController {
                 }
             }).disposed(by: disposeBag)
 
-        sponsersView.rx.tapGesture()
-            .when(.recognized)
-            .subscribe(onNext: { _ in
-                try! AppNavigator().push(self.sponsorsConfrimation)
+        setSponsorsView()
+    }
 
-            }).disposed(by: disposeBag)
+    private func setSponsorsView() {
+        guard let id = self.visaRequestData?.country_id.intValue else { return }
+        if id == CountriesIDs.TR.rawValue {
+            sponsersView.isHidden = true
+        } else {
+            sponsersView.rx.tapGesture()
+                .when(.recognized)
+                .subscribe(onNext: { _ in
+                    try! AppNavigator().push(self.sponsorsConfrimation)
+
+                }).disposed(by: disposeBag)
+        }
     }
 
     private lazy var sponsorsConfrimation: SponsersViewController = {
