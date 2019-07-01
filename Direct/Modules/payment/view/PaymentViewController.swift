@@ -14,6 +14,7 @@ import UIKit
 final class PaymentViewController: UIViewController, PanModalPresentable {
     // MARK: IBuilder ====================================>>
 
+    @IBOutlet weak var detailsView: UIView!
     @IBOutlet var branchsTable: UITableView!
     @IBOutlet var paymentMethodTable: UITableView!
     @IBOutlet var chooseBranchLbl: UILabel!
@@ -108,14 +109,25 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
                 mycell.setCellData(model)
             }.disposed(by: disposeBag)
         paymentMethodTable.rx.modelSelected(PaymentMethod.self)
-            .startWith(first).subscribe(onNext: { value in
+//            .startWith(first)
+            .subscribe(onNext: { value in
                 self.prm.parent_payment_id = value.id.int
                 self.prm.child_payment_id = nil
                 self.setBranchsDataSource(value)
-                let firstIndex = IndexPath(item: 0, section: 0)
-                (self.paymentMethodTable.cellForRow(at: firstIndex) as! PaymentMethodTableCell).selectStyle(selected: true)
-
             }).disposed(by: disposeBag)
+//        let firstIndex = IndexPath(item: 0, section: 0)
+////        (self.paymentMethodTable.cellForRow(at: firstIndex) as! PaymentMethodTableCell).setSelected(true, animated: true)
+////        self.pay
+//        paymentMethodTable.rx.itemDeselected
+//            .subscribe(onNext: { [unowned self] value in
+//                (self.paymentMethodTable.cellForRow(at: value) as! PaymentMethodTableCell).setSelected(false, animated: true)
+//
+//            }).disposed(by: disposeBag)
+//        paymentMethodTable.rx.itemSelected
+//            .startWith(firstIndex)
+//            .subscribe(onNext: { [unowned self] value in
+//                (self.paymentMethodTable.cellForRow(at: value) as! PaymentMethodTableCell).setSelected(true, animated: true)
+//            }).disposed(by: disposeBag)
     }
 
     private func getImageFor(id: Int) -> String {
@@ -130,12 +142,10 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
         if (method.id.int ?? 0) == PaymentMethodsIDs.creditCard.rawValue {
             setBranches([])
             submitEnabled.accept(true)
-            branchsTable.alpha = 0
-            chooseBranchLbl.alpha = 0
+            detailsView.alpha = 0
             return
         }
-        branchsTable.alpha = 1
-        chooseBranchLbl.alpha = 1
+        detailsView.alpha = 1
         Progress.show()
         network.getChildPayment(method: method.id).subscribe(onNext: { [unowned self] value in
             Progress.hide()
