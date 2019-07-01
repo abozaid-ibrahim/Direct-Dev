@@ -13,9 +13,6 @@
         <array key="Cairo-Regular.ttf">
             <string>Cairo-Regular</string>
         </array>
-        <array key="Cairo-SemiBold.ttf">
-            <string>Cairo-SemiBold</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Item-->
@@ -288,7 +285,7 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="18" id="78N-zh-2sO"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="13"/>
+                                                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="13"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
