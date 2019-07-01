@@ -66,12 +66,12 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="Uid-t3-Jrf" secondAttribute="trailing" id="53j-6o-UjT"/>
-                                <constraint firstAttribute="trailing" secondItem="YAh-cE-K7k" secondAttribute="trailing" id="BZ0-M1-XaO"/>
+                                <constraint firstAttribute="trailing" secondItem="YAh-cE-K7k" secondAttribute="trailing" constant="12" id="BZ0-M1-XaO"/>
                                 <constraint firstItem="YAh-cE-K7k" firstAttribute="top" secondItem="qY6-ru-kmI" secondAttribute="top" constant="12" id="NDG-Mt-89X"/>
                                 <constraint firstAttribute="bottom" secondItem="Uid-t3-Jrf" secondAttribute="bottom" id="bSd-a7-o5v"/>
                                 <constraint firstItem="Uid-t3-Jrf" firstAttribute="top" secondItem="YAh-cE-K7k" secondAttribute="bottom" constant="10" id="ddZ-OY-CRb"/>
                                 <constraint firstItem="Uid-t3-Jrf" firstAttribute="leading" secondItem="qY6-ru-kmI" secondAttribute="leading" id="dkE-uQ-O8n"/>
-                                <constraint firstItem="YAh-cE-K7k" firstAttribute="leading" secondItem="qY6-ru-kmI" secondAttribute="leading" id="kyI-FS-6rQ"/>
+                                <constraint firstItem="YAh-cE-K7k" firstAttribute="leading" secondItem="qY6-ru-kmI" secondAttribute="leading" constant="12" id="kyI-FS-6rQ"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
