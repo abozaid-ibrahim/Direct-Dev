@@ -69,6 +69,7 @@ class EverTraveledHereBeforeView: UIViewController {
         everYouTraveledSegment.appFont()
         arrivalDateField.neverShowKeypad()
         durationField.neverShowKeypad()
+        everYouTraveledLbl.font =  .appBoldFontWith(size: 15)
     }
 
     @IBAction func everTraveledChanged(_ sender: UISegmentedControl) {

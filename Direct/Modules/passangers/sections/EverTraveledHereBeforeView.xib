@@ -8,6 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cairo-Bold.ttf">
+            <string>Cairo-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EverTraveledHereBeforeView">
             <connections>
@@ -27,13 +32,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="هل سافرت الى بريطانيا في العشر سنوات الاخيرة ؟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsX-D7-pVx">
-                    <rect key="frame" x="8" y="8" width="392" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="8" y="8" width="392" height="28.5"/>
+                    <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xB5-V6-UUH">
-                    <rect key="frame" x="8" y="36.5" width="73" height="31"/>
+                    <rect key="frame" x="8" y="44.5" width="73" height="31"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="ab5-yX-PwX"/>
                     </constraints>
@@ -47,7 +52,7 @@
                     </connections>
                 </segmentedControl>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3M-WP-iLy" userLabel="p3">
-                    <rect key="frame" x="8" y="74.5" width="392" height="171.5"/>
+                    <rect key="frame" x="8" y="82.5" width="392" height="163.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="808-EJ-i0X">
                             <rect key="frame" x="8" y="0.0" width="376" height="90"/>

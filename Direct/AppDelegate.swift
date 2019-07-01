@@ -19,6 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupGlobalAppearance()
         setLanguage()
         setupKeyboardManager()
+        UIFont.familyNames.forEach {
+           print( UIFont.fontNames(forFamilyName: $0))
+            
+        }
         return true
     }
 
@@ -52,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = root
         window?.makeKeyAndVisible()
         navigator = AppNavigator(root: root)
-//        shortcut()
+        shortcut()
     }
 
     private func shortcut() {
@@ -65,10 +69,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             info.countryName = "امريكا"
             info.no_of_passport = "3"
             info.relation_with_travelers = RelationIDS.family.rawValue
-            try? AppNavigator().push(Destination.confirmatonVisa(info, reqID: "3"))
+            try? AppNavigator().push(Destination.confirmatonVisa(info, reqID: "23"))
         }
     }
-    
+
     func applicationDidEnterBackground(_ application: UIApplication) {
         var bgTask: UIBackgroundTaskIdentifier = UIBackgroundTaskIdentifier(rawValue: 0)
         bgTask = application.beginBackgroundTask(expirationHandler: {
@@ -76,5 +80,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             bgTask = UIBackgroundTaskIdentifier.invalid
         })
     }
-
 }

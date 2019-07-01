@@ -14,6 +14,7 @@ class MotherInfoView: UIView, PassangerInputsSection {
     @IBOutlet var familyNameMotherField: FloatingTextField!
     @IBOutlet var nationalityMotherField: FloatingTextField!
     
+    @IBOutlet weak var titleLbl: UILabel!
     var params: USRequestParams?
     var formType: CountriesIDs? {
         didSet {
@@ -37,6 +38,8 @@ class MotherInfoView: UIView, PassangerInputsSection {
         super.awakeFromNib()
         viewSetup()
         contentHeight.onNext(neededHeight)
+        titleLbl.font = .appBoldFontWith(size: 15)
+        titleLbl.textColor = UIColor.appBlack
     }
     
     func isInputsValid() -> Bool {

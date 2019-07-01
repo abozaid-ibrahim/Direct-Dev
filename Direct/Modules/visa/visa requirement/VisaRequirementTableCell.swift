@@ -28,7 +28,6 @@ class VisaRequirementTableCell: UITableViewCell, TableCell {
         textlbl.text = model.title
         if (model.icon ?? "").isEmpty {
             widthConst.constant = 5
-
             imgView.layer.cornerRadius = 2.4
             imgView.borderColorV = UIColor.appMango
             imgView.borderWidthV = 2.4

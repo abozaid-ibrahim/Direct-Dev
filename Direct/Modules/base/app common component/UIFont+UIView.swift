@@ -42,7 +42,7 @@ extension UILabel {
     var substituteFontNameBold: String {
         get { return font.fontName }
         set {
-            if font.fontName.range(of: "-Bd") != nil {
+             if font.fontName.range(of: "-Bd") != nil {
                 font = UIFont(name: newValue, size: font.pointSize)
             }
         }

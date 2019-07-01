@@ -34,7 +34,7 @@
                     <rect key="frame" x="10.5" y="0.0" width="393" height="1238"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2xs-CW-hrx" userLabel="conent">
-                            <rect key="frame" x="6" y="12" width="381" height="1187"/>
+                            <rect key="frame" x="6" y="12" width="381" height="1203"/>
                             <subviews>
                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGe-Ha-rxi" userLabel="personal info">
                                     <rect key="frame" x="0.0" y="0.0" width="381" height="402"/>
@@ -127,9 +127,9 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Tq-2F-bE9">
-                                    <rect key="frame" x="0.0" y="1153" width="381" height="34"/>
+                                    <rect key="frame" x="0.0" y="1153" width="381" height="50"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="34" id="1L4-Ys-hfN"/>
+                                        <constraint firstAttribute="height" constant="50" id="1L4-Ys-hfN"/>
                                     </constraints>
                                     <state key="normal" title="تابع "/>
                                     <userDefinedRuntimeAttributes>

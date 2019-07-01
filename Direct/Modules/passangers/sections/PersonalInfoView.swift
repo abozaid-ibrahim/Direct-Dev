@@ -26,6 +26,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     @IBOutlet var familyIDPInfoField: FloatingTextField!
     @IBOutlet var passportImageField: FloatingTextField!
     @IBOutlet var acceptanceImageField: FloatingTextField!
+    @IBOutlet weak var titleLbl: UILabel!
     
     @IBOutlet var acceptanceVisaView: UIView!
     @IBOutlet var martialStateView: UIView!
@@ -89,6 +90,8 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
         pInfoSetup()
         contentHeight.onNext(neededHeight)
         onRecieveImageCallback()
+        titleLbl.font = .appBoldFontWith(size: 15)
+        titleLbl.textColor = UIColor.appBlack
     }
     
     private func applyFormRules() {
@@ -315,7 +318,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
 extension String {
     func attachName() -> String {
         let fileName = self
-        let startFrom = fileName.count > 40 ? fileName.count - 40 : 0
+        let startFrom = fileName.count > 30 ? fileName.count - 30 : 0
         
         let showedName = fileName.charactersArray[startFrom..<fileName.count]
         return String(showedName)

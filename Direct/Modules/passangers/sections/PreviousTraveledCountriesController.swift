@@ -11,6 +11,7 @@ import UIKit
 
 class PreviousTraveledCountriesController: UIViewController {
     @IBOutlet private var tableView: UITableView!
+    @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet private var addButton: UIButton! {
         didSet {
             addButton.titleLabel?.font = UIFont.appRegularFontWith(size: 15)
@@ -24,6 +25,7 @@ class PreviousTraveledCountriesController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleLbl.font =  .appBoldFontWith(size: 15)
         setupTable()
         addButton.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in

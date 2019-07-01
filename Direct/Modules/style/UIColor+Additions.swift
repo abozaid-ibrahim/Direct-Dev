@@ -35,4 +35,8 @@ extension UIColor {
     @nonobjc class var disabledBtnBg: UIColor {
         return UIColor(white: 0.0, alpha: 0.08)
     }
+    
+    @nonobjc class var appBlack: UIColor {
+        return UIColor(white: 50.0 / 255.0, alpha: 1.0)
+    }
 }

@@ -49,12 +49,13 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
         super.viewDidLoad()
         enableSwipeUpToDismiss()
         titleLbl.font = UIFont(name: AppFonts.boldFont, size: 20)
+        titleLbl.textColor = UIColor.appBlack
         totalCostPlaceholder.font = UIFont(name: AppFonts.boldFont, size: 15)
         totalCostField.font = UIFont(name: AppFonts.boldFont, size: 15)
         title = "دايركت فيزا"
         viewModel.showProgress.subscribe(onNext: { [weak self] value in
             self?.showProgress = value
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
         bindDataToUI()
         setONClickViews()
         viewModel.viewDidLoad()

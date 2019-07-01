@@ -16,20 +16,24 @@ extension UITableView {
 }
 
 extension UIView {
-    
     // OUTPUT 1
-    func dropShadow(scale: Bool = true) {
-        layer.masksToBounds = false
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.5
-        layer.shadowOffset = CGSize(width: -1, height: 1)
-        layer.shadowRadius = 1
-        
-        layer.shadowPath = UIBezierPath(rect: bounds).cgPath
-        layer.shouldRasterize = true
-        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+
+    func dropShadow() {
+//        let shadowSize: CGFloat = 15
+//        let contactRect = CGRect(x: -shadowSize, y: bounds.height - (shadowSize * 0.2), width: bounds.width + shadowSize * 2, height: shadowSize)
+//        self.layer.shadowPath = UIBezierPath(ovalIn: contactRect).cgPath
+//        self.layer.shadowRadius = self.layer.cornerRadius
+//        self.layer.shadowColor = UIColor.black.cgColor
+//        self.layer.shadowOpacity = 0.6
+
+        //
+        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+        self.layer.shadowRadius = 5
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = .zero
+        self.layer.shadowOpacity = 1
     }
-    
+
     // OUTPUT 2
     func dropShadow(color: UIColor, opacity: Float = 0.5, offSet: CGSize, radius: CGFloat = 1, scale: Bool = true) {
         layer.masksToBounds = false
@@ -37,7 +41,7 @@ extension UIView {
         layer.shadowOpacity = opacity
         layer.shadowOffset = offSet
         layer.shadowRadius = radius
-        
+
         layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
         layer.shouldRasterize = true
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1

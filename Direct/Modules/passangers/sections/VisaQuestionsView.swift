@@ -178,6 +178,12 @@ class VisaQuestionsView: UIView, ImagePicker {
         visaCancelationSegment.appFont()
         relativeINCountrySegment.appFont()
         hasPreviousVisaSegment.appFont()
+        visaCancelationLbl.font =  .appBoldFontWith(size: 15)
+        relativeInCountryLbl.font =  .appBoldFontWith(size: 15)
+        previousVisaLbl.font =  .appBoldFontWith(size: 15)
+        visaCancelationLbl.textColor = UIColor.appBlack
+        relativeInCountryLbl.textColor = UIColor.appBlack
+        previousVisaLbl.textColor = UIColor.appBlack
     }
     
     private func onRecieveImageCallback() {

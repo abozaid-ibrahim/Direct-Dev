@@ -20,7 +20,7 @@
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="معلومات الأم" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3U-tJ-ciI">
                             <rect key="frame" x="0.0" y="0.0" width="398" height="42"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -101,6 +101,7 @@
                 <outlet property="familyNameMotherField" destination="o8V-0m-WzR" id="P6k-qx-HvR"/>
                 <outlet property="firstNameMotherField" destination="H2Q-sk-bvN" id="oWx-pg-j60"/>
                 <outlet property="nationalityMotherField" destination="OZa-xr-nVx" id="Hd8-Vc-Mcx"/>
+                <outlet property="titleLbl" destination="K3U-tJ-ciI" id="TTv-1k-xmU"/>
             </connections>
             <point key="canvasLocation" x="144.92753623188406" y="-150.66964285714286"/>
         </view>
