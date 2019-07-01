@@ -32,8 +32,9 @@ final class VisaRequirementController: UIViewController, PanModalPresentable, St
     private let network = ApiClientFacade()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        countryNameLbl.font = UIFont.appBoldFontWith(size: 17)
         setupActionBar(.withTitleAndX("متطلبات التأشيرة"))
+        tableView.separatorColor = UIColor.appVeryLightGray
         setDatasource()
         getDataRemotely()
     }
@@ -54,7 +55,7 @@ extension VisaRequirementController {
         tableView.delegate = self
         data.subscribe(onNext: { [unowned self] value in
             self.datalist.removeAll()
-            self.datalist.append(contentsOf:value.map { ReqDataSection($0) })
+            self.datalist.append(contentsOf: value.map { ReqDataSection($0) })
             self.tableView.reloadData()
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
@@ -109,7 +110,7 @@ extension VisaRequirementController: UITableViewDataSource {
             //this is for expanded cells
             let cell = tableView.dequeueReusableCell(withIdentifier: ReqDescTableCell.cellId) as! ReqDescTableCell
             let model = datalist[indexPath.section].data
-            cell.setCellData((model.desc ?? "",model.image))
+            cell.setCellData((model.desc ?? "", model.image))
             return cell
         }
     }

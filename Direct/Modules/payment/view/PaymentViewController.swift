@@ -97,6 +97,7 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
     private func registerCells() {
         paymentMethodTable.registerNib(PaymentMethodTableCell.cellId)
         branchsTable.registerNib(PaymentBranchTableCell.cellId)
+        paymentMethodTable.dropShadow()
     }
 
     private func setupPaymentMethodDataSource(_ methods: [PaymentMethod]) {

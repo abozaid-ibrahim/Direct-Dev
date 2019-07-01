@@ -27,22 +27,16 @@ class VisaRequirementTableCell: UITableViewCell, TableCell {
     func setCellData(_ model: ReqInformation) {
         textlbl.text = model.title
         if (model.icon ?? "").isEmpty {
-            widthConst.constant = 10
+            widthConst.constant = 5
 
-            imgView.layer.cornerRadius = 4.9
+            imgView.layer.cornerRadius = 2.4
             imgView.borderColorV = UIColor.appMango
-            imgView.borderWidthV = 2
+            imgView.borderWidthV = 2.4
         } else {
             imgView.setImage(with: model.icon ?? "")
             widthConst.constant = 20
             imgView.backgroundColor = .clear
-            imgView.rounded = false
+            imgView.borderWidthV = 0
         }
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 }
