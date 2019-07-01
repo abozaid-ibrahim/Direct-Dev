@@ -2292,8 +2292,6 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
-					"\"ARSLineProgress\"",
-					"-framework",
 					"\"Accelerate\"",
 					"-framework",
 					"\"Alamofire\"",

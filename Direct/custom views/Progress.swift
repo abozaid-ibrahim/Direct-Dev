@@ -6,7 +6,6 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
-import ARSLineProgress
 import UIKit
 
 protocol Loader {
@@ -16,10 +15,10 @@ protocol Loader {
 
 final class Progress: Loader {
     static func show() {
-        ARSLineProgress.show()
+        
     }
 
     static func hide() {
-        ARSLineProgress.hide()
+        
     }
 }
