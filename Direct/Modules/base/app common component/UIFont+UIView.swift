@@ -25,52 +25,38 @@ extension UIFont {
 }
 
 extension UILabel {
-    var substituteFontName: String {
+    @objc var substituteFontName: String {
         get { return font.fontName }
         set {
-            if font != nil {
-                let fontNameToTest = self.font.fontName.lowercased()
-                var fontName = newValue
-                if fontNameToTest.range(of: "bold") != nil {
-                    fontName = AppFonts.boldFont
-                } else if fontNameToTest.range(of: "medium") != nil {
-                    fontName = AppFonts.regularFont
-                } else if fontNameToTest.range(of: "light") != nil {
-                    fontName = AppFonts.regularFont
-                } else if fontNameToTest.range(of: "ultralight") != nil {
-                    fontName = AppFonts.regularFont
+            if let fnt = self.font {
+                print("xxr>\(self.font.fontName.lowercased())")
+                if self.font.fontName.lowercased().range(of: "bold") == nil {
+                    print("xxx>r")
+                    self.font = UIFont(name: AppFonts.regularFont, size: fnt.pointSize)
                 } else {
-                    fontName = AppFonts.regularFont
+                    print("xxx>b")
+
+                    self.font = UIFont(name: AppFonts.boldFont, size: self.font.pointSize)
                 }
-                self.font = UIFont(name: fontName, size: self.font.pointSize)
-
             } else {
-                font = UIFont(name: newValue, size: 14)
+                self.font = UIFont(name: newValue, size: 14)
             }
         }
     }
 
-    var substituteFontNameBold: String {
-        get { return font.fontName }
-        set {
-            let fontNameToTest = self.font.fontName.lowercased()
-            var fontName = newValue
-            if fontNameToTest.range(of: "bold") != nil {
-                fontName = newValue
-            } else if fontNameToTest.range(of: "medium") != nil {
-                fontName = newValue
-            } else if fontNameToTest.range(of: "light") != nil {
-                fontName = newValue
-            } else if fontNameToTest.range(of: "ultralight") != nil {
-                fontName = newValue
-            }
-            self.font = UIFont(name: fontName, size: self.font.pointSize)
-        }
-    }
+//    @objc var substituteFontNameBold: String {
+//        get { return font.fontName }
+//        set {
+//            print("xxb>\(self.font.fontName.lowercased())")
+//            if self.font.fontName.lowercased().range(of: "bold") != nil {
+//                self.font = UIFont(name: newValue, size: self.font.pointSize)
+//            }
+//        }
+//    }
 }
 
 extension UITextField {
-    var substituteFontName: String {
+    @objc var substituteFontName: String {
         get { return font!.fontName }
         set {
             font = UIFont(name: newValue, size: (font?.pointSize) ?? 13)

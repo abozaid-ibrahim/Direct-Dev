@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont], for: .normal)
         UITextField.appearance().substituteFontName = AppFonts.regularFont
         UILabel.appearance().substituteFontName = AppFonts.regularFont
-        UILabel.appearance().substituteFontNameBold = AppFonts.boldFont
+//        UILabel.appearance().substituteFontNameBold = AppFonts.boldFont
     
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: AppFonts.regularFont, size: 11)!, NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
     }
@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = root
         window?.makeKeyAndVisible()
         navigator = AppNavigator(root: root)
-        shortcut()
+//        shortcut()
     }
 
     private func shortcut() {
