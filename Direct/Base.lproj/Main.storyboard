@@ -210,7 +210,7 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="18" id="1mH-QC-yPn"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
