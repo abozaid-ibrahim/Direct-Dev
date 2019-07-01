@@ -56,7 +56,8 @@ class SpinnerTextField: UIView {
     }
 
     private func createUI() {
-        txtField.font = UIFont(name: UIFont.familyNames.first!, size: 13)
+        txtField.font = UIFont.appRegularFontWith(size: 13)
+        txtField.minimumFontSize = 0.7
         let stack = UIStackView()
         stack.alignment = .center
         stack.axis = .horizontal
