@@ -54,10 +54,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="zAP-DG-0MM" firstAttribute="leading" secondItem="4Kt-Ii-P47" secondAttribute="leading" constant="8" id="Py2-Nv-slx"/>
-                            <constraint firstAttribute="trailing" secondItem="zAP-DG-0MM" secondAttribute="trailing" constant="4" id="TSh-Gx-mAF"/>
+                            <constraint firstItem="zAP-DG-0MM" firstAttribute="leading" secondItem="4Kt-Ii-P47" secondAttribute="leading" constant="12" id="Py2-Nv-slx"/>
+                            <constraint firstAttribute="trailing" secondItem="zAP-DG-0MM" secondAttribute="trailing" constant="12" id="TSh-Gx-mAF"/>
                             <constraint firstAttribute="bottom" secondItem="zAP-DG-0MM" secondAttribute="bottom" constant="4" id="ai4-hN-6Q6"/>
-                            <constraint firstItem="zAP-DG-0MM" firstAttribute="top" secondItem="4Kt-Ii-P47" secondAttribute="top" constant="8" id="dml-dm-PJp"/>
+                            <constraint firstItem="zAP-DG-0MM" firstAttribute="top" secondItem="4Kt-Ii-P47" secondAttribute="top" constant="4" id="dml-dm-PJp"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">

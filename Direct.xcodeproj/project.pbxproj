@@ -116,6 +116,7 @@
 		6C6A0C1D22ABF17E00150FF6 /* ReqDescTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6A0C1B22ABF17E00150FF6 /* ReqDescTableCell.swift */; };
 		6C6A0C1E22ABF17E00150FF6 /* ReqDescTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C6A0C1C22ABF17E00150FF6 /* ReqDescTableCell.xib */; };
 		6C6A0C2022ACC16F00150FF6 /* UIImage+Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6A0C1F22ACC16F00150FF6 /* UIImage+Encoding.swift */; };
+		6C6D95DD22CAA1C1001E4951 /* UILabel+APP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6D95DC22CAA1C1001E4951 /* UILabel+APP.swift */; };
 		6C6EED6922A248BA0091B82F /* PaymentAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6EED6822A248BA0091B82F /* PaymentAPIs.swift */; };
 		6C6EED6B22A24C190091B82F /* PaymentMethodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6EED6A22A24C190091B82F /* PaymentMethodsResponse.swift */; };
 		6C6EED6D22A24C560091B82F /* PaymentChildsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6EED6C22A24C560091B82F /* PaymentChildsResponse.swift */; };
@@ -401,6 +402,7 @@
 		6C6A0C1B22ABF17E00150FF6 /* ReqDescTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReqDescTableCell.swift; sourceTree = "<group>"; };
 		6C6A0C1C22ABF17E00150FF6 /* ReqDescTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReqDescTableCell.xib; sourceTree = "<group>"; };
 		6C6A0C1F22ACC16F00150FF6 /* UIImage+Encoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Encoding.swift"; sourceTree = "<group>"; };
+		6C6D95DC22CAA1C1001E4951 /* UILabel+APP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+APP.swift"; sourceTree = "<group>"; };
 		6C6EED6822A248BA0091B82F /* PaymentAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAPIs.swift; sourceTree = "<group>"; };
 		6C6EED6A22A24C190091B82F /* PaymentMethodsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodsResponse.swift; sourceTree = "<group>"; };
 		6C6EED6C22A24C560091B82F /* PaymentChildsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentChildsResponse.swift; sourceTree = "<group>"; };
@@ -1136,6 +1138,7 @@
 				6C2CFB9722779AFD00D23CF4 /* UIButton+App.swift */,
 				6C8286EA228B9C96009FB5FF /* View+App.swift */,
 				6C256CCB22C15DBE007A5C81 /* UIView +Any.swift */,
+				6C6D95DC22CAA1C1001E4951 /* UILabel+APP.swift */,
 			);
 			path = style;
 			sourceTree = "<group>";
@@ -1653,6 +1656,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C6D95DD22CAA1C1001E4951 /* UILabel+APP.swift in Sources */,
 				6CD2CE5722A0C77200FB308A /* UITableView+Appearance.swift in Sources */,
 				6CF3E1AF2272558A007488BA /* InstitutesSectionVM.swift in Sources */,
 				6C6A0C2022ACC16F00150FF6 /* UIImage+Encoding.swift in Sources */,

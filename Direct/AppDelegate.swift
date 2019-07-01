@@ -43,11 +43,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setupGlobalAppearance() {
         window?.tintColor = UIColor.white
         // global Appearance settings
-        let customFont = UIFont.appRegularFontWith(size: 17)
+        let customFont = UIFont.appRegularFontWith(size: 15)
         UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont], for: .normal)
         UITextField.appearance().substituteFontName = AppFonts.regularFont
         UILabel.appearance().substituteFontName = AppFonts.regularFont
         UILabel.appearance().substituteFontNameBold = AppFonts.boldFont
+    
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: AppFonts.regularFont, size: 11)!, NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
     }
 

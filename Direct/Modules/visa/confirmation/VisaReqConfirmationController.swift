@@ -42,6 +42,8 @@ class VisaReqConfirmationController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "طلب تأشيرة"
+        relationlbl.applyStyle(.normalBoldText)
+        pasangerCountLbl.applyStyle(.normalBoldText)
         view.backgroundColor = UIColor.appVeryLightGray
         for lbl in placeHolderLbls {
             lbl.font = UIFont.appRegularFontWith(size: 10)
