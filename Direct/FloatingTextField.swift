@@ -24,8 +24,7 @@ class FloatingTextField: SkyFloatingLabelTextField {
     }
 
     func CommonInit() {
-        self.layoutMargins = padding
-        self.bounds = self.frame.inset(by: padding)
+//        bounds = CGRect(x: bounds.minX + 10, y: 0, width: bounds.width - 10, height: bounds.height)
 
         selectedLineColor = .lightGray
         selectedTitleColor = .lightGray
@@ -70,5 +69,12 @@ class FloatingTextField: SkyFloatingLabelTextField {
 
     open override func editingRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: padding)
+    }
+    
+    open override func titleLabelRectForBounds(_ bounds: CGRect, editing: Bool) -> CGRect {
+        if editing {
+            return CGRect(x: -8, y: 0, width: bounds.size.width, height: titleHeight())
+        }
+        return CGRect(x: -8 ,y: titleHeight(), width: bounds.size.width, height: titleHeight())
     }
 }
