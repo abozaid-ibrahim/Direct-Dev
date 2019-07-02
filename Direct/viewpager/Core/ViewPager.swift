@@ -87,9 +87,11 @@ public class ViewPager: NSObject {
         setupPageViewController()
         setupTabAndIndicator()
     }
-    func updateTabViewImage(of index:Int,with image:UIImage){
+    
+    func updateTabViewImage(of index: Int, with image: UIImage) {
         tabsViewList[index].imageView?.image = image
     }
+    
     // MARK: - Private Helpers
     
     fileprivate func setupTabContainerView() {
@@ -149,7 +151,9 @@ public class ViewPager: NSObject {
     fileprivate func setupTabAndIndicator() {
         guard let tabs = dataSource?.tabsForPages() else { return }
         tabsList = tabs
-        
+        if tabs.count < 1{
+            return
+        }
         switch options.distribution {
         case .segmented:
             setupTabsForSegmentedDistribution()
@@ -166,11 +170,11 @@ public class ViewPager: NSObject {
             tabIndicator.backgroundColor = options.tabIndicatorViewBackgroundColor
             tabIndicator.heightAnchor.constraint(equalToConstant: options.tabIndicatorViewHeight).isActive = true
             tabIndicator.bottomAnchor.constraint(equalTo: tabContainer.bottomAnchor).isActive = true
-            
-            let activeTab = tabsViewList[currentPageIndex]
-            
-            tabIndicatorLeadingConstraint = tabIndicator.leadingAnchor.constraint(equalTo: activeTab.leadingAnchor)
-            tabIndicatorWidthConstraint = tabIndicator.widthAnchor.constraint(equalTo: activeTab.widthAnchor)
+            if tabsViewList.count > currentPageIndex {
+                let activeTab = tabsViewList[currentPageIndex]
+                tabIndicatorLeadingConstraint = tabIndicator.leadingAnchor.constraint(equalTo: activeTab.leadingAnchor)
+                tabIndicatorWidthConstraint = tabIndicator.widthAnchor.constraint(equalTo: activeTab.widthAnchor)
+            }
             
             tabIndicatorLeadingConstraint?.isActive = true
             tabIndicatorWidthConstraint?.isActive = true
@@ -224,7 +228,7 @@ public class ViewPager: NSObject {
         //
         let diff = view.bounds.width - usedTapWidthSpace
         let inset = usedTapWidthSpace >= view.bounds.width ? 0 : diff
-        lastTab?.trailingAnchor.constraint(equalTo: tabContainer.trailingAnchor, constant:-inset).isActive = true
+        lastTab?.trailingAnchor.constraint(equalTo: tabContainer.trailingAnchor, constant: -inset).isActive = true
         
         // Second pass to set Width for all tabs
         tabsViewList.forEach { tabView in

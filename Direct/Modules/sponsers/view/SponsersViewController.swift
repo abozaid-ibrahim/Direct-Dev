@@ -98,8 +98,10 @@ final class SponsersViewController: UIViewController {
     }
     
     private func setupTabbar(_ info: VisaRequestParams) {
+        let  travelersNO = Int(info.no_of_passport)!
+        print(Int(info.no_of_passport)!)
         guard let id = info.relation_with_travelers else { return }
-        if id == RelationIDS.family.rawValue { // family
+        if id == RelationIDS.family.rawValue || travelersNO == 1{ // family
             addTabItemAndController(Str.sponser, info, index: 0, id)
         } else if id == RelationIDS.friends.rawValue { // friends
             for index in 0 ..< Int(info.no_of_passport)! {
