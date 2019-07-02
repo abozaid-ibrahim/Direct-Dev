@@ -29,13 +29,9 @@ extension UILabel {
         get { return font.fontName }
         set {
             if let fnt = self.font {
-                print("xxr>\(self.font.fontName.lowercased())")
                 if self.font.fontName.lowercased().range(of: "bold") == nil {
-                    print("xxx>r")
                     self.font = UIFont(name: AppFonts.regularFont, size: fnt.pointSize)
                 } else {
-                    print("xxx>b")
-
                     self.font = UIFont(name: AppFonts.boldFont, size: self.font.pointSize)
                 }
             } else {

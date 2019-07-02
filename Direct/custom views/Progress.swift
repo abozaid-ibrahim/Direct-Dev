@@ -15,10 +15,11 @@ protocol Loader {
 
 final class Progress: Loader {
     static func show() {
-        
+        print("loader>> start")
     }
 
     static func hide() {
-        
+        print("loader>> end")
+
     }
 }

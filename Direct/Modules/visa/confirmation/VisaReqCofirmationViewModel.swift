@@ -38,6 +38,7 @@ class VisaReqCofirmationViewModel {
         for index in 0 ..< (info.no_of_child ?? "0").intValue {
             passangers.append(ConfirmPassangerItem(text: Str.child, isFormFilled: false, index: index + 1, userType: .child))
         }
+        self.passangers.onNext(passangers)
     }
 
     func bindTableWithSuccessInputs() {
@@ -47,6 +48,7 @@ class VisaReqCofirmationViewModel {
             for index in succ {
                 updatedPasses[index].isFormFilled = true
             }
+            print(Thread.current)
             self.passangers.onNext(updatedPasses)
 
         }).observeOn(MainScheduler.instance)

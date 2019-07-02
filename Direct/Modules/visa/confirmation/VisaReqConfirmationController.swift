@@ -43,24 +43,15 @@ class VisaReqConfirmationController: UIViewController {
     let viewModel = VisaReqCofirmationViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "طلب تأشيرة"
-        relationlbl.applyStyle(.normalBoldText)
-        pasangerCountLbl.applyStyle(.normalBoldText)
-        view.backgroundColor = UIColor.appVeryLightGray
-        for lbl in placeHolderLbls {
-            lbl.font = UIFont.appRegularFontWith(size: 10)
-        }
+        setupUI()
+        setupCheckoutFooter()
+        bindPassangersTable()
         fillUIWithData()
-        checkoutFooter.action = { [weak self] in
-            guard let self = self else { return }
-            guard let info = self.visaRequestData,
-                let id = Int(info.requestID ?? "0"),
-                let cost = info.totalCost else {
-                return
-            }
-            try! AppNavigator().push(Destination.paymentMethod(requestID: id, totalCost: cost))
-        }
+        setTablViewHeight()
+        setSponsorsView()
+    }
 
+    private func setTablViewHeight() {
         passangersTable.rx.observeWeakly(CGSize.self, contentSizeKey)
             .subscribe(onNext: { [unowned self] value in
                 let vertical = self.checkoutFooter.frame.minY - self.pickDateView.frame.maxY
@@ -73,8 +64,29 @@ class VisaReqConfirmationController: UIViewController {
                     self.tableHeightConstrain.constant = value?.height ?? 100
                 }
             }).disposed(by: disposeBag)
+    }
 
-        setSponsorsView()
+    private func setupUI() {
+        title = "طلب تأشيرة"
+        relationlbl.applyStyle(.normalBoldText)
+        pasangerCountLbl.applyStyle(.normalBoldText)
+        view.backgroundColor = UIColor.appVeryLightGray
+        for lbl in placeHolderLbls {
+            lbl.font = UIFont.appRegularFontWith(size: 10)
+        }
+    }
+
+    private func setupCheckoutFooter() {
+        bindEnableButton()
+        checkoutFooter.action = { [weak self] in
+            guard let self = self else { return }
+            guard let info = self.visaRequestData,
+                let id = Int(info.requestID ?? "0"),
+                let cost = info.totalCost else {
+                return
+            }
+            try! AppNavigator().push(Destination.paymentMethod(requestID: id, totalCost: cost))
+        }
     }
 
     private func bindEnableButton() {
@@ -89,6 +101,7 @@ class VisaReqConfirmationController: UIViewController {
         guard let id = self.visaRequestData?.country_id.intValue else { return }
         if id == CountriesIDs.TR.rawValue {
             sponsersView.isHidden = true
+            viewModel.validSponsors.onNext(true)
         } else {
             sponsersView.rx.tapGesture()
                 .when(.recognized)
@@ -103,7 +116,7 @@ class VisaReqConfirmationController: UIViewController {
         let dest = Destination.sponsersInfoScreen(self.visaRequestData!, reqID: self.reqID ?? "")
         let vc = dest.controller() as! SponsersViewController
         vc.sponsorsIConStatus.map { $0 ? #imageLiteral(resourceName: "successCircle") : #imageLiteral(resourceName: "group11") }.bind(to: sponsorsStatusIV.rx.image).disposed(by: disposeBag)
-
+        vc.sponsorsIConStatus.bind(to: self.viewModel.validSponsors).disposed(by: disposeBag)
         return vc
     }()
 
@@ -117,6 +130,8 @@ class VisaReqConfirmationController: UIViewController {
         guard let info = visaRequestData else {
             return
         }
+        viewModel.loadPassangers(with: info)
+
         countryLbl.text = info.countryName
         datelbl.text = info.travel_date
         visaTypeLbl.text = info.visatypeText
@@ -125,8 +140,6 @@ class VisaReqConfirmationController: UIViewController {
         relationlbl.text = info.relation_with_travelersText
         checkoutFooter.valueText = info.totalCost ?? "".priced
 
-        viewModel.loadPassangers(with: info)
-        bindPassangersTable()
         passangersTable.rx
             .itemSelected
             .subscribe(onNext: { indexPath in
@@ -136,7 +149,7 @@ class VisaReqConfirmationController: UIViewController {
     }
 
     func bindPassangersTable() {
-        viewModel.passangers
+        viewModel.passangers.observeOn(MainScheduler.instance)
             .bind(to: passangersTable.rx.items(cellIdentifier: VisaConfrimationPassangerCell.id, cellType: VisaConfrimationPassangerCell.self)) { _, element, cell in
                 cell.textLbl.text = element.text + " \(element.index)"
                 cell.statuxIcon.image = element.isFormFilled ? #imageLiteral(resourceName: "path4") : #imageLiteral(resourceName: "rightGreen")
