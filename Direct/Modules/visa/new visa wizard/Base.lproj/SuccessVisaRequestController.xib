@@ -22,9 +22,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EDu-ab-YSd">
-                    <rect key="frame" x="15" y="69" width="384" height="593"/>
+                    <rect key="frame" x="15" y="99" width="384" height="593"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group5" translatesAutoresizingMaskIntoConstraints="NO" id="fda-jY-bwc">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="successCircle" translatesAutoresizingMaskIntoConstraints="NO" id="fda-jY-bwc">
                             <rect key="frame" x="152" y="0.0" width="80" height="80"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="80" id="8Ii-Qb-AOa"/>
@@ -100,10 +100,28 @@
                         </button>
                     </subviews>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1D-Ps-2Tn">
+                    <rect key="frame" x="12" y="56" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="4of-60-Mc1"/>
+                        <constraint firstAttribute="height" constant="44" id="cWE-92-z7j"/>
+                    </constraints>
+                    <state key="normal" image="cancelGray"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                            <real key="value" value="14.800000000000001"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="dismissAction:" destination="-1" eventType="touchUpInside" id="FMM-lV-4GL"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="EDu-ab-YSd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="Pnl-0c-gSp"/>
+                <constraint firstItem="r1D-Ps-2Tn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="ChA-mQ-oG9"/>
+                <constraint firstItem="r1D-Ps-2Tn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12" id="Ho7-wG-Xr6"/>
+                <constraint firstItem="EDu-ab-YSd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="55" id="Pnl-0c-gSp"/>
                 <constraint firstItem="EDu-ab-YSd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="lOF-xB-LFe"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EDu-ab-YSd" secondAttribute="trailing" constant="15" id="xHs-0H-DYV"/>
             </constraints>
@@ -111,6 +129,7 @@
         </view>
     </objects>
     <resources>
-        <image name="group5" width="74" height="74"/>
+        <image name="cancelGray" width="10" height="9"/>
+        <image name="successCircle" width="74" height="74"/>
     </resources>
 </document>

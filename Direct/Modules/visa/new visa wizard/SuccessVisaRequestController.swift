@@ -11,13 +11,17 @@ import UIKit
 class SuccessVisaRequestController: UIViewController, StyledActionBar {
     @IBOutlet var requestNumberLbl: UILabel!
     internal let disposeBag = DisposeBag()
+    
     var orderId: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupActionBar(.withX)
+//        setupActionBar(.withX)
         requestNumberLbl.text = orderId
     }
 
+    @IBAction func dismissAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func followMyOrder(_: Any) {
         try! AppNavigator().push(.MyOrders)
     }
