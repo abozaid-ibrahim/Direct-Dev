@@ -98,19 +98,21 @@ final class SponsersViewController: UIViewController {
     }
     
     private func setupTabbar(_ info: VisaRequestParams) {
-        let  travelersNO = Int(info.no_of_passport)!
         print(Int(info.no_of_passport)!)
-        guard let id = info.relation_with_travelers else { return }
-        if id == RelationIDS.family.rawValue || travelersNO == 1{ // family
-            addTabItemAndController(Str.sponser, info, index: 0, id)
-        } else if id == RelationIDS.friends.rawValue { // friends
+        guard let travelersRelationId = info.relation_with_travelers else {
+            addTabItemAndController(Str.sponser, info, index: 0, RelationIDS.family.rawValue)
+            return
+        }
+        if travelersRelationId == RelationIDS.family.rawValue { // family
+            addTabItemAndController(Str.sponser, info, index: 0, travelersRelationId)
+        } else if travelersRelationId == RelationIDS.friends.rawValue { // friends
             for index in 0 ..< Int(info.no_of_passport)! {
-                addTabItemAndController(Str.sponser, info, index: index, id)
+                addTabItemAndController(Str.sponser, info, index: index, travelersRelationId)
             }
             
-        } else if id == RelationIDS.others.rawValue { // others
+        } else if travelersRelationId == RelationIDS.others.rawValue { // others
             for index in 0 ..< Int(info.no_of_passport)! {
-                addTabItemAndController(Str.sponser, info, index: index, id)
+                addTabItemAndController(Str.sponser, info, index: index, travelersRelationId)
             }
         }
     }
@@ -137,7 +139,7 @@ extension SponsersViewController: ViewPagerDataSource {
     }
     
     func viewControllerAtPosition(position: Int) -> UIViewController {
-        return  tabs[position].1
+        return tabs[position].1
     }
     
     func tabsForPages() -> [ViewPagerTab] {
@@ -149,7 +151,7 @@ extension SponsersViewController: ViewPagerDataSource {
     }
 }
 
-//extension SponsersViewController: ViewPagerDelegate {
+// extension SponsersViewController: ViewPagerDelegate {
 //    func willMoveToControllerAtIndex(index: Int) {
 //        print("Moving to page \(index)")
 //    }
@@ -157,4 +159,4 @@ extension SponsersViewController: ViewPagerDataSource {
 //    func didMoveToControllerAtIndex(index: Int) {
 //        print("Moved to page \(index)")
 //    }
-//}
+// }
