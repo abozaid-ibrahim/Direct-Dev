@@ -149,7 +149,7 @@ class VisaReqConfirmationController: UIViewController {
     }
 
     func bindPassangersTable() {
-        viewModel.passangers.observeOn(MainScheduler.instance)
+        viewModel.tablePassangers.observeOn(MainScheduler.instance)
             .bind(to: passangersTable.rx.items(cellIdentifier: VisaConfrimationPassangerCell.id, cellType: VisaConfrimationPassangerCell.self)) { _, element, cell in
                 cell.textLbl.text = element.text + " \(element.index)"
                 cell.statuxIcon.image = element.isFormFilled ? #imageLiteral(resourceName: "path4") : #imageLiteral(resourceName: "rightGreen")

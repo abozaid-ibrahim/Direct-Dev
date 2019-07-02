@@ -205,12 +205,7 @@ class PassangerFormController: UIViewController {
                 return
             }
         }
-
-        guard let cnt = CountriesIDs(rawValue: countryId.intValue) else {
-            print("validation: unvalid countrry id")
-            return
-        }
-        sendDataToServer(cnt)
+        sendDataToServer(formTypeValue)
     }
 
     func sendDataToServer(_ cnt: CountriesIDs) {
@@ -220,7 +215,8 @@ class PassangerFormController: UIViewController {
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] _ in
                 Progress.hide()
-                self.successIndex.onNext(self.index ?? 0)
+                print(self.index!)
+                self.successIndex.onNext(self.index!)
             }, onError: { _ in
                 Progress.hide()
             }).disposed(by: disposeBag)

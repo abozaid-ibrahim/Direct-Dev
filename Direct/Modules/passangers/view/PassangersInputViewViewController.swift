@@ -56,21 +56,21 @@ class PassangersInputViewViewController: UIViewController {
         }
     }
 
-    private func addTabItemAndController(_ placeholder: String, _ info: VisaRequestParams, index: Int) {
+    private func addTabItemAndController(_ placeholder: String, _ info: VisaRequestParams, writingIndex: Int,totalIndex:Int) {
         let tabController = PassangerFormController()
         tabController.countryName = info.countryName
         tabController.countryId = info.country_id
         tabController.formType = info.form_type
-        tabController.index = index
+        tabController.index = totalIndex
         tabController.visaReqID = info.requestID
         tabController.visaType = info.visatype
-        let item = ViewPagerTab(title: "\(placeholder) \(1 + index)", image: #imageLiteral(resourceName: "rightGray"))
+        let item = ViewPagerTab(title: "\(placeholder) \(1 + writingIndex)", image: #imageLiteral(resourceName: "rightGray"))
 
         tabController.successIndex
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] value in
                 self.successInputIndexes.append(value)
-                self.pager?.updateTabViewImage(of: index, with: #imageLiteral(resourceName: "rightGreenIcon"))
+                self.pager?.updateTabViewImage(of: value, with: #imageLiteral(resourceName: "rightGreenIcon"))
                 self.sucessIndex.onNext(self.successInputIndexes)
                 if !self.selectNextTab() {
                     self.navigationController?.popViewController()
@@ -80,11 +80,14 @@ class PassangersInputViewViewController: UIViewController {
     }
 
     private func setupTabbar(_ info: VisaRequestParams) {
+        var globalIndex = -1
         for index in 0 ..< Int(info.no_of_adult)! {
-            addTabItemAndController(Str.adult, info, index: index)
+            globalIndex += 1
+            addTabItemAndController(Str.adult, info, writingIndex: index, totalIndex: globalIndex)
         }
         for index in 0 ..< Int(info.no_of_child)! {
-            addTabItemAndController(Str.child, info, index: index)
+            globalIndex += 1
+            addTabItemAndController(Str.child, info, writingIndex: index, totalIndex: globalIndex)
         }
     }
 
