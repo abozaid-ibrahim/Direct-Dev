@@ -6,6 +6,7 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
+import RxCocoa
 import RxGesture
 import RxSwift
 import UIKit
@@ -17,7 +18,7 @@ class VisaReqConfirmationController: UIViewController {
     private var tableHeight = PublishSubject<CGFloat>()
     private let contentSizeKey = "contentSize"
     typealias TypeIndex = Int
-    private var passangers: [ConfirmPassangerItem] = []
+//    private var passangers: [ConfirmPassangerItem] = []
     var reqID: String?
 
     // MARK: IBuilder ====================================>>
@@ -39,6 +40,7 @@ class VisaReqConfirmationController: UIViewController {
     @IBOutlet private var sponsersView: UIView!
 
     //===================================================<<
+    let viewModel = VisaReqCofirmationViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "طلب تأشيرة"
@@ -48,9 +50,6 @@ class VisaReqConfirmationController: UIViewController {
         for lbl in placeHolderLbls {
             lbl.font = UIFont.appRegularFontWith(size: 10)
         }
-
-//        checkoutFooter.btn
-
         fillUIWithData()
         checkoutFooter.action = { [weak self] in
             guard let self = self else { return }
@@ -78,6 +77,14 @@ class VisaReqConfirmationController: UIViewController {
         setSponsorsView()
     }
 
+    private func bindEnableButton() {
+        viewModel.enablePayment.bind(to: checkoutFooter.btn.rx.isEnabled).disposed(by: disposeBag)
+        viewModel.enablePayment
+            .map { $0 ? UIColor.appPumpkinOrange : UIColor.disabledBtnBg }
+            .bind(to: checkoutFooter.btn.rx.backgroundColor)
+            .disposed(by: disposeBag)
+    }
+
     private func setSponsorsView() {
         guard let id = self.visaRequestData?.country_id.intValue else { return }
         if id == CountriesIDs.TR.rawValue {
@@ -102,10 +109,7 @@ class VisaReqConfirmationController: UIViewController {
 
     lazy var passangersInfoScreen: PassangersInputViewViewController = {
         let vc = Destination.passangersInfoScreen(visaRequestData!).controller() as! PassangersInputViewViewController
-        vc.sucessIndex.subscribe(onNext: { [unowned self] _ in
-            self.updateTableWithSuccessInputs()
-        }).disposed(by: disposeBag)
-
+        vc.sucessIndex.bind(to: self.viewModel.successIndices).disposed(by: disposeBag)
         return vc
     }()
 
@@ -121,13 +125,8 @@ class VisaReqConfirmationController: UIViewController {
         relationlbl.text = info.relation_with_travelersText
         checkoutFooter.valueText = info.totalCost ?? "".priced
 
-        for index in 0 ..< (info.no_of_adult ?? "0").intValue {
-            passangers.append(ConfirmPassangerItem(text: Str.adult, isFormFilled: false, index: index + 1, userType: .adult))
-        }
-        for index in 0 ..< (info.no_of_child ?? "0").intValue {
-            passangers.append(ConfirmPassangerItem(text: Str.child, isFormFilled: false, index: index + 1, userType: .child))
-        }
-        setupTable()
+        viewModel.loadPassangers(with: info)
+        bindPassangersTable()
         passangersTable.rx
             .itemSelected
             .subscribe(onNext: { indexPath in
@@ -136,16 +135,8 @@ class VisaReqConfirmationController: UIViewController {
             .disposed(by: disposeBag)
     }
 
-    func updateTableWithSuccessInputs() {
-        let filled = passangersInfoScreen.successInputIndexes
-        for item in filled.enumerated() {
-            passangers[item.element].isFormFilled = true
-        }
-        setupTable()
-    }
-
-    func setupTable() {
-        Observable.just(passangers)
+    func bindPassangersTable() {
+        viewModel.passangers
             .bind(to: passangersTable.rx.items(cellIdentifier: VisaConfrimationPassangerCell.id, cellType: VisaConfrimationPassangerCell.self)) { _, element, cell in
                 cell.textLbl.text = element.text + " \(element.index)"
                 cell.statuxIcon.image = element.isFormFilled ? #imageLiteral(resourceName: "path4") : #imageLiteral(resourceName: "rightGreen")
@@ -161,16 +152,4 @@ class VisaReqConfirmationController: UIViewController {
         passangersInfoScreen.defaultTabSelection = index
         navigationController?.pushViewController(passangersInfoScreen, animated: true)
     }
-}
-
-struct ConfirmPassangerItem {
-    let text: String
-    var isFormFilled: Bool
-    var index: Int
-    var userType: UserAge // child or adult
-}
-
-enum UserAge: Int {
-    case adult = 1
-    case child = 2
 }

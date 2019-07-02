@@ -19,7 +19,7 @@ class PassangersInputViewViewController: UIViewController {
     private var pager: ViewPager?
     var visaInfo: VisaRequestParams?
     var successInputIndexes: [Int] = []
-    var sucessIndex = PublishSubject<Int>()
+    var sucessIndex = PublishSubject<[Int]>()
     var defaultTabSelection: Int = 0
 
     override func viewDidLoad() {
@@ -71,9 +71,9 @@ class PassangersInputViewViewController: UIViewController {
             .subscribe(onNext: { [unowned self] value in
                 self.successInputIndexes.append(value)
                 self.pager?.updateTabViewImage(of: index, with: #imageLiteral(resourceName: "rightGreenIcon"))
-                self.sucessIndex.onNext(index)
+                self.sucessIndex.onNext(self.successInputIndexes)
                 if !self.selectNextTab() {
-                    try! AppNavigator().push(.successVisaReqScreen(nil))
+                    self.navigationController?.popViewController()
                 }
             }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         tabs.append((item, tabController))

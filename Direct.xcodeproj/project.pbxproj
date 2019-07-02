@@ -124,6 +124,8 @@
 		6C6EED7122A24DEF0091B82F /* PaymentClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6EED7022A24DEF0091B82F /* PaymentClient.swift */; };
 		6C6F361D22AF7C660045BAC8 /* EverTraveledHereBeforeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F361B22AF7C660045BAC8 /* EverTraveledHereBeforeView.swift */; };
 		6C6F361E22AF7C660045BAC8 /* EverTraveledHereBeforeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F361C22AF7C660045BAC8 /* EverTraveledHereBeforeView.xib */; };
+		6C73A65022CBBD010044546D /* ConfirmationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C73A64F22CBBD010044546D /* ConfirmationModel.swift */; };
+		6C73A65222CBBE210044546D /* VisaReqCofirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C73A65122CBBE210044546D /* VisaReqCofirmationViewModel.swift */; };
 		6C7782472278A54A001926B2 /* CheckoutFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7782462278A54A001926B2 /* CheckoutFooter.swift */; };
 		6C77824F2278ABDC001926B2 /* CheckoutBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C77824E2278ABDC001926B2 /* CheckoutBottomView.swift */; };
 		6C778257227A36F7001926B2 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C778256227A36F7001926B2 /* HelpViewController.swift */; };
@@ -410,6 +412,8 @@
 		6C6EED7022A24DEF0091B82F /* PaymentClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentClient.swift; sourceTree = "<group>"; };
 		6C6F361B22AF7C660045BAC8 /* EverTraveledHereBeforeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverTraveledHereBeforeView.swift; sourceTree = "<group>"; };
 		6C6F361C22AF7C660045BAC8 /* EverTraveledHereBeforeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EverTraveledHereBeforeView.xib; sourceTree = "<group>"; };
+		6C73A64F22CBBD010044546D /* ConfirmationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationModel.swift; sourceTree = "<group>"; };
+		6C73A65122CBBE210044546D /* VisaReqCofirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaReqCofirmationViewModel.swift; sourceTree = "<group>"; };
 		6C7782462278A54A001926B2 /* CheckoutFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutFooter.swift; sourceTree = "<group>"; };
 		6C77824E2278ABDC001926B2 /* CheckoutBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutBottomView.swift; sourceTree = "<group>"; };
 		6C778256227A36F7001926B2 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
@@ -1396,7 +1400,9 @@
 			isa = PBXGroup;
 			children = (
 				6CDEF77D22A11DDA00BF5F0B /* VisaReqConfirmationController.swift */,
+				6C73A65122CBBE210044546D /* VisaReqCofirmationViewModel.swift */,
 				6C5964B722C11F54007D81C6 /* VisaConfrimationPassangerCell.swift */,
+				6C73A64F22CBBD010044546D /* ConfirmationModel.swift */,
 			);
 			path = confirmation;
 			sourceTree = "<group>";
@@ -1726,6 +1732,7 @@
 				39EE2ABC22A09D1400A9A501 /* Font+Helpers.swift in Sources */,
 				3992B66D22961BA800BBB7F1 /* TagView.swift in Sources */,
 				39EE2AC722A09E6C00A9A501 /* Command.swift in Sources */,
+				6C73A65022CBBD010044546D /* ConfirmationModel.swift in Sources */,
 				6C3885C9229B207500CA168A /* Country.swift in Sources */,
 				6CF4280F22C81402000A9646 /* PayfortCredentials.swift in Sources */,
 				6CF3E1A4227254A1007488BA /* InstituteCollectionViewCell.swift in Sources */,
@@ -1789,6 +1796,7 @@
 				39EE2AAD22A09A0000A9A501 /* TextFieldConfigurator.swift in Sources */,
 				39EE2A9D22A0984200A9A501 /* LoginRequestCommand.swift in Sources */,
 				6C2CFB9F22789E0200D23CF4 /* PaymentViewController.swift in Sources */,
+				6C73A65222CBBE210044546D /* VisaReqCofirmationViewModel.swift in Sources */,
 				6CD2CE5922A0C85F00FB308A /* VisaPriceResponse.swift in Sources */,
 				6CF0E36C2285BE6800149910 /* DatePickerController.swift in Sources */,
 				6CF9F5E222BEDE3200E45E8A /* UploadSponserInfoResponse.swift in Sources */,

@@ -77,7 +77,7 @@ class NewDirectVisaViewModel {
             self?.relativesList.append(contentsOf: bios.usRelatives ?? [])
         }, onError: { [weak self] _ in
             self?.showProgress.onNext(false)
-        }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
 
         Observable.zip(
             countries, bios, rel,

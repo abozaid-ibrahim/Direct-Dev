@@ -90,7 +90,7 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
         Progress.show()
         network.updatePaymentDetails(prm).subscribe(onNext: { _ in
             Progress.hide()
-            try! AppNavigator().push(.successVisaReqScreen(nil))
+            try! AppNavigator().present(.successVisaReqScreen(nil))
         }).disposed(by: disposeBag)
     }
 
@@ -111,25 +111,11 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
                 mycell.setCellData(model)
             }.disposed(by: disposeBag)
         paymentMethodTable.rx.modelSelected(PaymentMethod.self)
-//            .startWith(first)
             .subscribe(onNext: { value in
                 self.prm.parent_payment_id = value.id.int
                 self.prm.child_payment_id = nil
                 self.setBranchsDataSource(value)
             }).disposed(by: disposeBag)
-//        let firstIndex = IndexPath(item: 0, section: 0)
-////        (self.paymentMethodTable.cellForRow(at: firstIndex) as! PaymentMethodTableCell).setSelected(true, animated: true)
-////        self.pay
-//        paymentMethodTable.rx.itemDeselected
-//            .subscribe(onNext: { [unowned self] value in
-//                (self.paymentMethodTable.cellForRow(at: value) as! PaymentMethodTableCell).setSelected(false, animated: true)
-//
-//            }).disposed(by: disposeBag)
-//        paymentMethodTable.rx.itemSelected
-//            .startWith(firstIndex)
-//            .subscribe(onNext: { [unowned self] value in
-//                (self.paymentMethodTable.cellForRow(at: value) as! PaymentMethodTableCell).setSelected(true, animated: true)
-//            }).disposed(by: disposeBag)
     }
 
     private func getImageFor(id: Int) -> String {
