@@ -13,6 +13,7 @@ class VisaReqCofirmationViewModel {
     private var passangersBuffer: [ConfirmPassangerItem] = []
     // updated one
     var tablePassangers = PublishSubject<[ConfirmPassangerItem]>()
+    var validDate = BehaviorSubject<Bool>(value: false)
 
     var validSponsors = BehaviorSubject<Bool>(value: false)
     var enablePayment = BehaviorSubject<Bool>(value: false)
@@ -24,9 +25,9 @@ class VisaReqCofirmationViewModel {
     }
 
     func configure() {
-        Observable.combineLatest(tablePassangers, validSponsors, resultSelector: { psngrs, validSponsor in
+        Observable.combineLatest(tablePassangers, validSponsors,validDate, resultSelector: { psngrs, validSponsor, _validDate in
             let allItemFilled = (psngrs.indices(where: { $0.isFormFilled }) ?? []).count == psngrs.count
-            self.enablePayment.onNext(allItemFilled && validSponsor)
+            self.enablePayment.onNext(allItemFilled && validSponsor && _validDate)
 
         }).subscribe()
             .disposed(by: disposeBag)

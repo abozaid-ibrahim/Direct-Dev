@@ -38,8 +38,9 @@ class VisaReqConfirmationController: UIViewController {
     @IBOutlet private var passangersTable: UITableView!
     @IBOutlet private var pickDateView: UIView!
     @IBOutlet private var sponsersView: UIView!
-
+    @IBOutlet private var dateStatusIcon: UIImageView!
     //===================================================<<
+
     let viewModel = VisaReqCofirmationViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,33 @@ class VisaReqConfirmationController: UIViewController {
         fillUIWithData()
         setTablViewHeight()
         setSponsorsView()
+        setupPickingDate()
+    }
+
+    private func setupPickingDate() {
+        pckDateLbl.rx.tapGesture().when(.recognized)
+            .subscribe(onNext: { _ in
+
+                self.showDatePickerDialog()
+            }).disposed(by: disposeBag)
+    }
+
+    private func showDatePickerDialog() {
+        let hint = "Choose".localized
+        let dest = Destination.datePicker(title: hint)
+        let vc = dest.controller() as! DatePickerController
+        vc.selectedDate.asObservable().subscribe { event in
+            switch event.event {
+            case let .next(value):
+                self.dateStatusIcon.image = #imageLiteral(resourceName: "successCircle")
+                self.viewModel.validDate.onNext(true)
+                self.pckDateLbl.text = value?.displayFormat
+            default:
+                break
+            }
+
+        }.disposed(by: disposeBag)
+        try! AppNavigator().presentModally(vc)
     }
 
     private func setTablViewHeight() {
