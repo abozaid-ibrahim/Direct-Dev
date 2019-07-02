@@ -51,9 +51,7 @@ class VisaReqCofirmationViewModel {
             print(Thread.current)
             self.passangers.onNext(updatedPasses)
 
-        }).observeOn(MainScheduler.instance)
-            .subscribe()
-            .disposed(by: disposeBag)
+        })
 
     }
 }

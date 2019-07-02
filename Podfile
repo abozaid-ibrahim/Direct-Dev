@@ -18,6 +18,7 @@ target 'Direct' do
   pod 'Kingfisher', '~> 5.0'
   pod 'JBDatePicker'
   pod 'ViewPager-Swift'
+  pod 'NVActivityIndicatorView'
 
   pod 'GenericCellControllers'
   pod 'SnapKit'

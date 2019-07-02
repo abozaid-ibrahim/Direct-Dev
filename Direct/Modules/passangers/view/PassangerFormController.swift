@@ -19,7 +19,8 @@ class PassangerFormController: UIViewController {
     var index: Int!
     var successIndex = PublishSubject<Int>()
     var visaType: String?
-    var visaReqID:String?
+    var visaReqID: String?
+
     // MARK: IBuilder ====================================>>
 
     // containers
@@ -187,33 +188,33 @@ class PassangerFormController: UIViewController {
 
     func validateAndSubmit() {
         getEverTraveldParams()
-        print(personalInfoView.isInputsValid())
         guard personalInfoView.isInputsValid() else {
+            print("validation: enter your personal info")
+
             return
         }
-        print(hasMotherView)
         if hasMotherView {
-           print(motherView.isInputsValid())
             guard motherView.isInputsValid() else {
+                print("validation: enter your mother info")
                 return
             }
         }
-       print(visaQuestionsContainer.isHidden)
         if !visaQuestionsContainer.isHidden {
-             print(visaQuestionsView.isInputsValid())
             guard visaQuestionsView.isInputsValid() else {
+                print("validation: enter the questions info")
                 return
             }
         }
-       
+
         guard let cnt = CountriesIDs(rawValue: countryId.intValue) else {
+            print("validation: unvalid countrry id")
             return
         }
         sendDataToServer(cnt)
     }
 
     func sendDataToServer(_ cnt: CountriesIDs) {
-         Progress.show()
+        Progress.show()
         network
             .applyToVisa(path: cnt.endPointPath, params: params)
             .observeOn(MainScheduler.instance)

@@ -12,6 +12,9 @@ PODS:
   - Moya/RxSwift (13.0.1):
     - Moya/Core
     - RxSwift (~> 4.0)
+  - NVActivityIndicatorView (4.7.0):
+    - NVActivityIndicatorView/Presenter (= 4.7.0)
+  - NVActivityIndicatorView/Presenter (4.7.0)
   - PanModal (1.2.4)
   - Result (4.1.0)
   - RxCocoa (4.5.0):
@@ -61,6 +64,7 @@ DEPENDENCIES:
   - Kingfisher (~> 5.0)
   - M13Checkbox
   - Moya/RxSwift (~> 13.0)
+  - NVActivityIndicatorView
   - PanModal
   - RxCocoa (~> 4.0)
   - RxDataSources
@@ -84,6 +88,7 @@ SPEC REPOS:
     - Kingfisher
     - M13Checkbox
     - Moya
+    - NVActivityIndicatorView
     - PanModal
     - Result
     - RxCocoa
@@ -107,6 +112,7 @@ SPEC CHECKSUMS:
   Kingfisher: 1a50df6880a60bae26f3e21a0df3d17b892f5e0b
   M13Checkbox: 6f59404540ac98ba83a3d1afac335895a40c6a5d
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
   PanModal: 275f6d4d07565ddf4ed16d7be5d9cd275682d80d
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
@@ -121,6 +127,6 @@ SPEC CHECKSUMS:
   ViewPager-Swift: 7d83f5d4888a0fa808c08c8405ba84e603a2eb58
   YALField: f80f986de790bb13690264422437fa4e0593af0a
 
-PODFILE CHECKSUM: 6fd3a289a127d4e3cf11a7b3c53317c17e6db886
+PODFILE CHECKSUM: ef014457c3c2b2b3e421c7cf137e2bd6f4c1af6a
 
 COCOAPODS: 1.7.2
