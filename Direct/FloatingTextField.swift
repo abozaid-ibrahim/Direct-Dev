@@ -34,7 +34,7 @@ class FloatingTextField: SkyFloatingLabelTextField {
         backgroundColor = UIColor.appVeryLightGray
         titleFont = UIFont.appRegularFontWith(size: 10)
         titleLabel.font = UIFont.appRegularFontWith(size: 10)
-        placeholderFont = UIFont.appRegularFontWith(size: 10)
+        placeholderFont = UIFont.appRegularFontWith(size: 14)
         errorColor = UIColor.appMango
 
         font = UIFont.appRegularFontWith(size: 14)
