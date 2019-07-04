@@ -29,6 +29,7 @@ class ReqDescTableCell: UITableViewCell, TableCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
+        txtLbl.font = .appRegularFontWith(size: 12)
     }
 
 

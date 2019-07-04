@@ -10,7 +10,7 @@ import RxSwift
 import UIKit
 
 class VisaRequirementTableCell: UITableViewCell, TableCell {
-    typealias CellDataModel = ReqInformation
+    typealias CellDataModel = (ReqInformation,isSection:Bool)
     @IBOutlet private var imgView: UIImageView!
     @IBOutlet var expandRow: UIImageView!
     @IBOutlet var textlbl: UILabel!
@@ -21,11 +21,14 @@ class VisaRequirementTableCell: UITableViewCell, TableCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        textlbl.font = UIFont.appBoldFontWith(size: 14)
     }
 
-    func setCellData(_ model: ReqInformation) {
+    func setCellData(_ obj: CellDataModel) {
+        textlbl.font = obj.isSection ? UIFont.appBoldFontWith(size:  14) : UIFont.appRegularFontWith(size:  14)
+
+        let model = obj.0
         textlbl.text = model.title
+        
         if (model.icon ?? "").isEmpty {
             widthConst.constant = 5
             imgView.layer.cornerRadius = 2.4

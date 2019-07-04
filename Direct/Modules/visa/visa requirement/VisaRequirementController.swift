@@ -24,19 +24,20 @@ final class VisaRequirementController: UIViewController, PanModalPresentable, St
         return tableView
     }
 
-    private let data = PublishSubject<[ReqInformation]>()
+    private let viewModel = VisaRequirementsViewModel()
     private var datalist: [ReqDataSection] = []
     var visaData: VisaRequestParams?
     internal let disposeBag = DisposeBag()
-
-    private let network = ApiClientFacade()
     override func viewDidLoad() {
         super.viewDidLoad()
         countryNameLbl.font = UIFont.appBoldFontWith(size: 17)
-        setupActionBar(.withTitleAndX("متطلبات التأشيرة"))
+        setupActionBar(.withTitleAndX(Str.visaRequirement))
         tableView.separatorColor = UIColor.appVeryLightGray
         setDatasource()
-        getDataRemotely()
+        viewModel.getDataRemotely(for: visaData?.country_id)
+        viewModel.headerData.subscribe(onNext: { [unowned self] value in
+            self.setHeaderData(with: value)
+        }).disposed(by: disposeBag)
     }
 
     @IBAction func requestAction(_: Any) {
@@ -53,35 +54,17 @@ extension VisaRequirementController {
         tableView.registerNib(ReqDescTableCell.cellId)
         tableView.dataSource = self
         tableView.delegate = self
-        data.subscribe(onNext: { [unowned self] value in
+        viewModel.data.subscribe(onNext: { [unowned self] value in
             self.datalist.removeAll()
-            self.datalist.append(contentsOf: value.map { ReqDataSection($0) })
+            self.datalist.append(contentsOf: value)
             self.tableView.reloadData()
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
     }
 
-    private func getDataRemotely() {
-        guard let id = visaData?.country_id else {
-            return
-        }
-        Progress.show()
-
-        network.getVisaRequirements(country: id).subscribe(onNext: { [unowned self] response in
-
-            guard let requirement = response.requirementPage?.first else { return }
-            var sum = requirement.requirements ?? []
-            sum.append(contentsOf: requirement.informations ?? [])
-            self.data.onNext(sum)
-
-            // set header data
-            self.headerIconView.setImage(with: requirement.flagURL ?? "")
-            self.countryNameLbl.text = requirement.name
-            self.descLbl.text = self.visaData?.visatypeText
-
-            Progress.hide()
-        }, onError: { _ in
-            Progress.hide()
-        }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+    private func setHeaderData(with requirement: RequirementPage) {
+        headerIconView.setImage(with: requirement.flagURL ?? "")
+        countryNameLbl.text = requirement.name
+        descLbl.text = visaData?.visatypeText
     }
 }
 
@@ -98,12 +81,12 @@ extension VisaRequirementController: UITableViewDataSource {
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
+        if indexPath.row == 0 { //this is always the header
             guard let cell = tableView.dequeueReusableCell(withIdentifier: VisaRequirementTableCell.cellId) as? VisaRequirementTableCell else {
                 return UITableViewCell()
             }
-
-            cell.setCellData(datalist[indexPath.section].data)
+            cell.expandRow.isHidden = datalist[indexPath.section].hideAccessory
+            cell.setCellData((datalist[indexPath.section].data, datalist[indexPath.section].hideAccessory))
 
             return cell
         } else {
@@ -118,6 +101,9 @@ extension VisaRequirementController: UITableViewDataSource {
 
 extension VisaRequirementController: UITableViewDelegate {
     public func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if datalist[indexPath.section].hideAccessory {
+            return
+        }
         if datalist[indexPath.section].opened {
             datalist[indexPath.section].opened = false
         } else {
@@ -125,14 +111,5 @@ extension VisaRequirementController: UITableViewDelegate {
         }
         let set = IndexSet(integer: indexPath.section)
         tableView.reloadSections(set, with: .none)
-    }
-}
-
-class ReqDataSection {
-    var opened: Bool = false
-    var data: ReqInformation
-    init(_ req: ReqInformation) {
-        data = req
-        opened = false
     }
 }

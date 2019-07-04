@@ -7,73 +7,100 @@
 //
 
 import Foundation
-struct Str{
-    static var technicalDifficults:String{
+struct Str {
+    static var technicalDifficults: String {
         return "Sorry, we get a technical difficults!"
     }
-    static var before:String{
+
+    static var before: String {
         return "Before".localized
     }
-    static var passangersInfo:String{
+
+    static var passangersInfo: String {
         return "Passangers Info".localized
     }
-    static var adult:String{
+
+    static var adult: String {
         return "adult".localized
     }
-    static var adults:String{
+
+    static var adults: String {
         return "adults".localized
     }
-    static var passangers:String{
+
+    static var passangers: String {
         return "Passangers".localized
     }
-    static var passangersCount:String{
+
+    static var passangersCount: String {
         return "Passangers Count".localized
     }
-    static var passportsCount:String{
+
+    static var passportsCount: String {
         return "Passport Count".localized
     }
-    static var childs:String{
+
+    static var childs: String {
         return "childs".localized
     }
-    static var passport:String{
+
+    static var passport: String {
         return "Passport".localized
     }
-    static var child:String{
+
+    static var child: String {
         return "child".localized
     }
-    static var needBiometric:String{
+
+    static var needBiometric: String {
         return "Need Biometric".localized
     }
-    static var needBiometricDesc:String{
+
+    static var needBiometricDesc: String {
         return "Need Biometric Desc".localized
     }
-    static var timeTogetVisa:String{
+
+    static var timeTogetVisa: String {
         return "time to get a visa".localized
     }
-    static var timeTogetVisaDesc:String{
+
+    static var timeTogetVisaDesc: String {
         return "time to get a visa desc".localized
     }
-    static var schengen:String{
+
+    static var schengen: String {
         return "Schengen".localized
     }
-    static var firstSponser:String{
+
+    static var firstSponser: String {
         return "First Sponser".localized
     }
-    static var sponser: String{
+
+    static var sponser: String {
         return "Sponser".localized
     }
-    static var cancel:String{
+
+    static var cancel: String {
         return "Cancel".localized
     }
-    static var choose: String{
+
+    static var choose: String {
         return "Choose".localized
     }
-    static var sponsorsInfo:String{
+
+    static var sponsorsInfo: String {
         return "معلومات المتكفلين"
     }
-    
-    static var payment:String{
+
+    static var payment: String {
         return "الدفع"
     }
-    
+
+    static var reqPapers: String {
+        return "الأوراق المطلوبة"
+    }
+
+    static var visaRequirement: String {
+        return "Visa Requirement".localized
+    }
 }

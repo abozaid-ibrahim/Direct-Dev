@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = root
         window?.makeKeyAndVisible()
         navigator = AppNavigator(root: root)
-//        shortcut()
+        shortcut()
     }
 
     private func shortcut() {
@@ -70,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             info.countryName = "امريكا"
             info.no_of_passport = "3"
             info.relation_with_travelers = RelationIDS.family.rawValue
-            try? AppNavigator().push(Destination.confirmatonVisa(info, reqID: "23"))
+            try? AppNavigator().push(Destination.visaRequirement(info))
         }
     }
 
