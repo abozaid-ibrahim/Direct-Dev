@@ -438,6 +438,7 @@
                         <outlet property="pckDateLbl" destination="SsY-RN-4BW" id="LPF-Vy-hPF"/>
                         <outlet property="pickDateView" destination="aKs-D1-LLb" id="uoZ-Jp-KWs"/>
                         <outlet property="relationlbl" destination="ejD-Hx-lWN" id="X9t-cL-Ij0"/>
+                        <outlet property="relationsPlaceholderLbl" destination="5eF-pt-raM" id="owJ-PH-lqM"/>
                         <outlet property="sponsersView" destination="WH2-IX-88j" id="W0B-zt-dHB"/>
                         <outlet property="sponsorsLbl" destination="QMe-RP-DN6" id="7Iz-O3-GQe"/>
                         <outlet property="sponsorsStatusIV" destination="ocl-n5-yxb" id="PJp-ib-xIz"/>
@@ -498,7 +499,7 @@
                                         <rect key="frame" x="0.0" y="28" width="398" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ljg-jk-ues" id="SCO-Og-M7j">
-                                            <rect key="frame" x="5" y="5" width="388" height="44.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="398" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="saB-OG-pZO">

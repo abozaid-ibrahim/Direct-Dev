@@ -12,7 +12,6 @@ import RxSwift
 class NewDirectVisaViewModel {
     var disposeBag = DisposeBag()
     var screenData = PublishSubject<[NewVisaServices]>()
-    var bioOptions: [BioOption] = []
     var relativesList: [USRelative] = []
     var selectedDate = PublishSubject<Date?>()
     var showProgress = PublishSubject<Bool>()
@@ -63,12 +62,6 @@ class NewDirectVisaViewModel {
             self?.showProgress.onNext(false)
         }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         // get biou
-        let bios = network.getBiometricChoices()
-        bios.subscribe(onNext: { [weak self] bios in
-            self?.bioOptions.append(contentsOf: bios.bioOption)
-        }, onError: { [weak self] _ in
-            self?.showProgress.onNext(false)
-        }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
 
         // get relatives
         let rel = network.getVisaRelations().retry(2)
@@ -79,14 +72,11 @@ class NewDirectVisaViewModel {
             self?.showProgress.onNext(false)
         }).disposed(by: disposeBag)
 
-        Observable.zip(
-            countries, bios, rel,
-            resultSelector: { _, _, _ in
+        Observable.zip(countries, rel)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] _ in
                 self.showProgress.onNext(false)
-            }
-        ).observeOn(MainScheduler.instance)
-            .subscribe()
-            .disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
     }
 
     var visaRequestData = VisaRequestParams()

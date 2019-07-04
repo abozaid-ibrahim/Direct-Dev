@@ -20,8 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setLanguage()
         setupKeyboardManager()
         UIFont.familyNames.forEach {
-           print( UIFont.fontNames(forFamilyName: $0))
-            
+            print(UIFont.fontNames(forFamilyName: $0))
         }
         return true
     }
@@ -48,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITextField.appearance().substituteFontName = AppFonts.regularFont
         UILabel.appearance().substituteFontName = AppFonts.regularFont
 //        UILabel.appearance().substituteFontNameBold = AppFonts.boldFont
-    
+
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: AppFonts.regularFont, size: 11)!, NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
     }
 
@@ -70,10 +69,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             info.countryName = "امريكا"
             info.no_of_passport = "3"
             info.relation_with_travelers = RelationIDS.family.rawValue
-            try? AppNavigator().push(Destination.visaRequirement(info))
+            try? AppNavigator().push(Destination.confirmatonVisa(info, reqID: "125"))
         }
     }
 
+    /// Payfort
     func applicationDidEnterBackground(_ application: UIApplication) {
         var bgTask: UIBackgroundTaskIdentifier = UIBackgroundTaskIdentifier(rawValue: 0)
         bgTask = application.beginBackgroundTask(expirationHandler: {

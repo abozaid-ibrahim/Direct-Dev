@@ -103,4 +103,8 @@ struct Str {
     static var visaRequirement: String {
         return "Visa Requirement".localized
     }
+
+    static var requestingVisa: String {
+        return "طلب تأشيرة"
+    }
 }

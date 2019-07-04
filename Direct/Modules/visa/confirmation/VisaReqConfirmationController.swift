@@ -23,6 +23,7 @@ class VisaReqConfirmationController: UIViewController {
 
     // MARK: IBuilder ====================================>>
 
+    @IBOutlet weak var relationsPlaceholderLbl: UILabel!
     @IBOutlet private var placeHolderLbls: [UILabel]!
     @IBOutlet private var countryLbl: UILabel!
     @IBOutlet private var visaTypeLbl: UILabel!
@@ -54,29 +55,12 @@ class VisaReqConfirmationController: UIViewController {
     }
 
     private func setupPickingDate() {
-        pckDateLbl.rx.tapGesture().when(.recognized)
-            .subscribe(onNext: { _ in
+        viewModel.showBioOptions(click: pckDateLbl.rx.tapGesture().when(.recognized))
+        viewModel.selectedBioOption.map { _ in #imageLiteral(resourceName: "successCircle") }
+            .bind(to: dateStatusIcon.rx.image).disposed(by: disposeBag)
+        viewModel.selectedBioOption.map {$0.name}
+            .bind(to: datelbl.rx.text).disposed(by: disposeBag)
 
-                self.showDatePickerDialog()
-            }).disposed(by: disposeBag)
-    }
-
-    private func showDatePickerDialog() {
-        let hint = "Choose".localized
-        let dest = Destination.datePicker(title: hint)
-        let vc = dest.controller() as! DatePickerController
-        vc.selectedDate.asObservable().subscribe { event in
-            switch event.event {
-            case let .next(value):
-                self.dateStatusIcon.image = #imageLiteral(resourceName: "successCircle")
-                self.viewModel.validDate.onNext(true)
-                self.pckDateLbl.text = value?.displayFormat
-            default:
-                break
-            }
-
-        }.disposed(by: disposeBag)
-        try! AppNavigator().presentModally(vc)
     }
 
     private func setTablViewHeight() {
@@ -95,7 +79,7 @@ class VisaReqConfirmationController: UIViewController {
     }
 
     private func setupUI() {
-        title = "طلب تأشيرة"
+        title = Str.requestingVisa
         relationlbl.applyStyle(.normalBoldText)
         pasangerCountLbl.applyStyle(.normalBoldText)
         view.backgroundColor = UIColor.appVeryLightGray
@@ -165,7 +149,15 @@ class VisaReqConfirmationController: UIViewController {
         visaTypeLbl.text = info.visatypeText
         bioLocLbl.text = info.biometry_loc
         pasangerCountLbl.text = info.no_of_adult + " " + Str.adult + ", " + info.no_of_child + " " + Str.child
-        relationlbl.text = info.relation_with_travelersText
+        if info.relation_with_travelersText.isValidText{
+            relationlbl.text = info.relation_with_travelersText
+            relationlbl.alpha = 1.0
+            relationsPlaceholderLbl.alpha = 1.0
+        }else{
+            relationlbl.alpha = 0.0
+            relationsPlaceholderLbl.alpha = 0.0
+        }
+        
         checkoutFooter.valueText = info.totalCost ?? "".priced
 
         passangersTable.rx

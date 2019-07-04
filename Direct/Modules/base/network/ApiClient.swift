@@ -59,7 +59,7 @@ extension ApiClientFacade {
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
                 }.disposed(by: self.disposeBag)
             return Disposables.create()
-        }
+        }.share()
     }
     
     func getCities(country: String) -> Observable<CountryCitiesResponse> {
@@ -68,7 +68,7 @@ extension ApiClientFacade {
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
                 }.disposed(by: self.disposeBag)
             return Disposables.create()
-        }
+        }.share()
     }
     
     func getRelationList() -> Observable<RelativesResponse> {
@@ -77,6 +77,6 @@ extension ApiClientFacade {
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
                 }.disposed(by: self.disposeBag)
             return Disposables.create()
-        }
+        }.share()
     }
 }
