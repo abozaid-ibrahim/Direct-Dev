@@ -186,6 +186,8 @@
 		6C9027EB228F95EB00B41705 /* HomeCollectionSectionWrapper.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9027ED228F95EB00B41705 /* HomeCollectionSectionWrapper.xib */; };
 		6C96B9CB22CE3CBE00EF4861 /* VisaRequirementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C96B9CA22CE3CBE00EF4861 /* VisaRequirementViewModel.swift */; };
 		6CA040B62281BE0300619B6F /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA040B52281BE0300619B6F /* FloatingTextField.swift */; };
+		6CB1857022CEB2E7009485CD /* EverYouHaveVisaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB1856F22CEB2E7009485CD /* EverYouHaveVisaView.xib */; };
+		6CB1857222CEB301009485CD /* EverYouHaveVisaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1857122CEB301009485CD /* EverYouHaveVisaView.swift */; };
 		6CB2A8BC228CAD8200A78541 /* AboutUsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB2A8BA228CAD8200A78541 /* AboutUsTableCell.swift */; };
 		6CBD17DB228BCB7300144B6C /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD17DA228BCB7300144B6C /* PaddingLabel.swift */; };
 		6CC94EDD228BE5BA002F3464 /* CommonAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC94EDC228BE5BA002F3464 /* CommonAPIs.swift */; };
@@ -505,6 +507,8 @@
 		6C9027CE228F95B100B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/VisaRequirementTableCell.xib; sourceTree = "<group>"; };
 		6C96B9CA22CE3CBE00EF4861 /* VisaRequirementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaRequirementViewModel.swift; sourceTree = "<group>"; };
 		6CA040B52281BE0300619B6F /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
+		6CB1856F22CEB2E7009485CD /* EverYouHaveVisaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EverYouHaveVisaView.xib; sourceTree = "<group>"; };
+		6CB1857122CEB301009485CD /* EverYouHaveVisaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverYouHaveVisaView.swift; sourceTree = "<group>"; };
 		6CB2A8BA228CAD8200A78541 /* AboutUsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsTableCell.swift; sourceTree = "<group>"; };
 		6CBD17DA228BCB7300144B6C /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		6CC94EDC228BE5BA002F3464 /* CommonAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAPIs.swift; sourceTree = "<group>"; };
@@ -896,12 +900,14 @@
 				6C431E0422B52E9D00DD140D /* PersonalInfoView.xib */,
 				6C431E0722B5807300DD140D /* MotherInfoView.swift */,
 				6C431E0922B5808900DD140D /* MotherInfoView.xib */,
-				6CD5848122B25736005A2190 /* VisaQuestionsViewModel.swift */,
 				6C431E0B22B5A1F100DD140D /* VisaQuestionsView.swift */,
 				6C431E0D22B5A1FF00DD140D /* VisaQuestionsView.xib */,
+				6CD5848122B25736005A2190 /* VisaQuestionsViewModel.swift */,
 				6C6F361B22AF7C660045BAC8 /* EverTraveledHereBeforeView.swift */,
 				6C6F361C22AF7C660045BAC8 /* EverTraveledHereBeforeView.xib */,
 				6CF2514D22A6496200CDA47C /* PreviousTraveledCountriesController.swift */,
+				6CB1856F22CEB2E7009485CD /* EverYouHaveVisaView.xib */,
+				6CB1857122CEB301009485CD /* EverYouHaveVisaView.swift */,
 			);
 			path = sections;
 			sourceTree = "<group>";
@@ -1585,6 +1591,7 @@
 				6C9027A3228F955800B41705 /* BankTableCell.xib in Resources */,
 				6C9027DF228F95D200B41705 /* AboutUsTableCell.xib in Resources */,
 				6C9027A6228F955F00B41705 /* PaymentMethodsContainerController.xib in Resources */,
+				6CB1857022CEB2E7009485CD /* EverYouHaveVisaView.xib in Resources */,
 				6C9027AC228F956B00B41705 /* PackageDetailsController.xib in Resources */,
 				3940FBE422B26CE400A801C0 /* MyAccount.storyboard in Resources */,
 				6CDEF78222A11EFC00BF5F0B /* Visa.storyboard in Resources */,
@@ -1826,6 +1833,7 @@
 				6C5964B822C11F54007D81C6 /* VisaConfrimationPassangerCell.swift in Sources */,
 				39EE2AB522A09A0000A9A501 /* AuthTextFieldTableViewCell.swift in Sources */,
 				6C77828C227C715A001926B2 /* ImageLabel.swift in Sources */,
+				6CB1857222CEB301009485CD /* EverYouHaveVisaView.swift in Sources */,
 				6C3885D1229B6CD700CA168A /* UIIMage + Kingfisher.swift in Sources */,
 				6C797520228BC82D000807D4 /* UILabelExtension.swift in Sources */,
 				6C1C605E228E3D15006490CB /* AboutUsViewController.swift in Sources */,

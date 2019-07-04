@@ -89,6 +89,12 @@ struct Visatypes: Codable {
         status = try values.decodeIfPresent(String.self, forKey: .status)
         success = try values.decodeIfPresent(String.self, forKey: .success)
     }
+    init(name:String,id:String) {
+        self.visaTypeName = name
+        self.visaTypeId = id
+        self.status = nil
+        self.success = nil
+    }
 }
 
 struct Price_notes: Codable {

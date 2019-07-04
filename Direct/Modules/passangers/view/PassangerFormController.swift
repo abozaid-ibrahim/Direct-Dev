@@ -148,7 +148,7 @@ class PassangerFormController: UIViewController {
             if let types = value.previousVisaType {
                 self.showOptions(types)
             }
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     @IBAction func submitData(_: Any) {

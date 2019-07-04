@@ -107,4 +107,12 @@ struct Str {
     static var requestingVisa: String {
         return "طلب تأشيرة"
     }
+
+    static var travel: String {
+        return "Travel"
+    }
+
+    static var study: String {
+        return "Study"
+    }
 }

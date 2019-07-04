@@ -6,7 +6,9 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
+import M13Checkbox
 import RxCocoa
+import RxGesture
 import RxSwift
 import UIKit
 
@@ -27,6 +29,12 @@ class VisaQuestionsView: UIView, ImagePicker {
     @IBOutlet var previousVisaLbl: UILabel!
     @IBOutlet var previousVisaView: UIView!
     @IBOutlet var previousVisaImageField: FloatingTextField!
+    @IBOutlet private var previousVisaIsAvaliableBox: M13Checkbox!
+    @IBOutlet private var previousVisaNoImageContainer: UIView!
+    @IBOutlet private var previousVisaCountryField: FloatingTextField!
+    @IBOutlet private var previousVisaTypeField: FloatingTextField!
+    @IBOutlet private var previousVisaDateField: FloatingTextField!
+    @IBOutlet private var checkboxContainer: UIView!
     //===================================================<<
     
     var params: USRequestParams?
@@ -56,7 +64,7 @@ class VisaQuestionsView: UIView, ImagePicker {
     }
     
     internal let disposeBag = DisposeBag()
-    var contentHeight = BehaviorSubject<CGFloat>(value: 200)
+    var contentHeight = BehaviorSubject<CGFloat>(value: 618)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -80,6 +88,7 @@ class VisaQuestionsView: UIView, ImagePicker {
         questionsSetup()
         onRecieveImageCallback()
         viewModel.getRelatives()
+        viewModel.getPreviousVisaTypes()
     }
     
     @IBOutlet var cancelViewHeight: NSLayoutConstraint!
@@ -103,31 +112,61 @@ class VisaQuestionsView: UIView, ImagePicker {
             }
             cancelationReasonField.setError.onNext(false)
         }
-        if !previousVisaImageField.isHidden {
+        if (!previousVisaImageField.isHidden) && self.previousVisaIsAvaliableBox.checkState == .unchecked{
             guard previousVisaImageField.hasText else {
                 previousVisaImageField.setError.onNext(true)
                 return false
             }
             previousVisaImageField.setError.onNext(false)
         }
+        if previousVisaIsAvaliableBox.checkState == .checked {
+            guard previousVisaTypeField.hasText else {
+                previousVisaTypeField.setError.onNext(true)
+                return false
+            }
+            previousVisaTypeField.setError.onNext(false)
+            
+            guard previousVisaDateField.hasText else {
+                previousVisaDateField.setError.onNext(true)
+                return false
+            }
+            previousVisaDateField.setError.onNext(false)
+            
+            guard previousVisaCountryField.hasText else {
+                previousVisaCountryField.setError.onNext(true)
+                return false
+            }
+            previousVisaCountryField.setError.onNext(false)
+        }
         return true
     }
     
     var neededHeight: CGFloat {
         var basic = 10
-        let unit = 140
-        basic += visaCanceledBeforeView.isHidden ? 0 : unit
-        basic += relativesView.isHidden ? 0 : unit
-        basic += previousVisaView.isHidden ? 0 : unit
-        if !relativesView.isHidden {
-            basic -= relativityField.isHidden ? 50 : 0
-        }
         if !visaCanceledBeforeView.isHidden {
-            basic -= cancelationReasonField.isHidden ? 50 : 0
+            basic += 90
+            if visaCancelationSegment.selectedSegmentIndex == Segment.yes {
+                basic += 49
+            }
         }
+        if !relativesView.isHidden {
+            basic += 90
+            if relativeINCountrySegment.selectedSegmentIndex == Segment.yes {
+                basic += 49
+            }
+        }
+        
         if !previousVisaView.isHidden {
-            basic -= previousVisaImageField.isHidden ? 45 : 0
+            basic += 90
+            if hasPreviousVisaSegment.selectedSegmentIndex == Segment.yes { 
+                basic += 89
+            }
+            // add bottom view
+            if previousVisaIsAvaliableBox.checkState == .checked { //textfield appear
+                basic += 145
+            }
         }
+        
         return CGFloat(basic)
     }
     
@@ -137,6 +176,12 @@ class VisaQuestionsView: UIView, ImagePicker {
         let fileUrl = info[.imageURL] as? URL
         receivedImage.onNext((fileUrl?.lastPathComponent.attachName(), image?.apiSize()))
         picker.dismiss(animated: true, completion: nil)
+    }
+    
+    var prevVisaImageAvaliable = BehaviorRelay<Bool>(value: true)
+    @IBAction func onVisaAvaliableChanged(_ sender: M13Checkbox) {
+        prevVisaImageAvaliable.accept(sender.checkState != .checked)
+        contentHeight.onNext(neededHeight)
     }
     
     private func applyFormRules() {
@@ -150,6 +195,7 @@ class VisaQuestionsView: UIView, ImagePicker {
             relativesView.isHidden = false
             visaCanceledBeforeView.isHidden = false
             previousVisaView.isHidden = false
+            
         case .GB: // BR
             relativesView.isHidden = false
             visaCanceledBeforeView.isHidden = false
@@ -178,9 +224,9 @@ class VisaQuestionsView: UIView, ImagePicker {
         visaCancelationSegment.appFont()
         relativeINCountrySegment.appFont()
         hasPreviousVisaSegment.appFont()
-        visaCancelationLbl.font =  .appBoldFontWith(size: 15)
-        relativeInCountryLbl.font =  .appBoldFontWith(size: 15)
-        previousVisaLbl.font =  .appBoldFontWith(size: 15)
+        visaCancelationLbl.font = .appBoldFontWith(size: 15)
+        relativeInCountryLbl.font = .appBoldFontWith(size: 15)
+        previousVisaLbl.font = .appBoldFontWith(size: 15)
         visaCancelationLbl.textColor = UIColor.appBlack
         relativeInCountryLbl.textColor = UIColor.appBlack
         previousVisaLbl.textColor = UIColor.appBlack
@@ -192,13 +238,11 @@ class VisaQuestionsView: UIView, ImagePicker {
                 self.params?.visaReqID = value.1?.convertImageToBase64String()
                 self.previousVisaImageField.text = value.0
             }
-            
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
     }
     
     private func questionsSetup() {
         // ever you travedled
-        
         previousVisaImageField.neverShowKeypad()
         previousVisaImageField.rx.tapGesture().when(.recognized)
             .subscribe { _ in
@@ -213,7 +257,41 @@ class VisaQuestionsView: UIView, ImagePicker {
                     self.relativityField.text = relative.name
                 })
             }.disposed(by: disposeBag)
+        
         viewModel.selectedRelation.bind(to: relativityField.rx.text).disposed(by: disposeBag)
+        previousVisaSetup()
+    }
+    
+    private func previousVisaSetup() {
+//        date
+        previousVisaIsAvaliableBox.applyAppCheckBoxStyle()
+        prevVisaImageAvaliable.bind(to: previousVisaNoImageContainer.rx.isHidden).disposed(by: disposeBag)
+        viewModel.selectedDate.map { $0?.displayFormat }.bind(to: previousVisaDateField.rx.text).disposed(by: disposeBag)
+        viewModel.selectedDate.map { $0?.apiFormat }.subscribe(onNext: {[unowned self] value in
+            self.params?.periodOfPreviousStay  = value
+        }).disposed(by: disposeBag)
+
+        previousVisaDateField.neverShowKeypad()
+        previousVisaDateField.rx.tapGesture().when(.recognized)
+            .subscribe(onNext: { _ in
+                self.viewModel.showDatePickerDialog()
+            }).disposed(by: disposeBag)
+// type
+        previousVisaTypeField.neverShowKeypad()
+        viewModel.selectedVisaType.subscribe(onNext: { [unowned self] value in
+            self.params?.typeOfPreviousVisa = value.id
+        }).disposed(by: disposeBag)
+        viewModel.selectedVisaType.map { $0.name }.bind(to: previousVisaTypeField.rx.text).disposed(by: disposeBag)
+        previousVisaTypeField.rx.tapGesture().when(.recognized)
+            .subscribe(onNext: { _ in
+                self.viewModel.showVisaTypes()
+            }).disposed(by: disposeBag)
+        
+        
+        //country
+//        previousVisaCountryField.rx.text.subscribe(onNext: {[unowned self] value in
+//            self.params.cou
+//        }).disposed(by: disposeBag)
     }
     
     @IBAction func hasPreviousVisaChanged(_: UISegmentedControl) {
@@ -224,10 +302,12 @@ class VisaQuestionsView: UIView, ImagePicker {
     private func changePreviousVisaSelection() {
         if hasPreviousVisaSegment.selectedSegmentIndex == Segment.no {
             previousVisaImageField.isHidden = true
+            checkboxContainer.isHidden = true
             previousVisaViewHeight.constant = 90
         } else {
             previousVisaImageField.isHidden = false
             previousVisaViewHeight.constant = 135
+            checkboxContainer.isHidden = false
         }
     }
     
