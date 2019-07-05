@@ -54,7 +54,7 @@ extension VisaAPIs: TargetType {
         case let .visaRequest(prm):
             let prmDic = ["key": tokenKeyValue,
                           "lang": appLang,
-                          "userid": 703,
+                          "userid": User.id,
                           "country_id": prm.country_id!,
                           "biometry_loc_id": prm.biometry_loc_id ?? "0",
                           "no_of_adult": prm.no_of_adult!,
@@ -86,7 +86,7 @@ extension VisaAPIs: TargetType {
         case let .applyToVisa(_, req):
             var dic1: [String: Any] = ["key": tokenKeyValue,
                                        "lang": appLang,
-                                       "userid": 703,
+                                       "userid":  User.id,
                                        "visa_req_id": req.visaReqID ?? "",
                                        "visa_req_applicant_id": req.visaReqApplicantID ?? "",
                                        "first_name": req.firstName ?? "",

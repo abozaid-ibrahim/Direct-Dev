@@ -188,6 +188,7 @@
 		6CA040B62281BE0300619B6F /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA040B52281BE0300619B6F /* FloatingTextField.swift */; };
 		6CB1857522CEC811009485CD /* AddCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1857322CEC811009485CD /* AddCountryViewController.swift */; };
 		6CB1857622CEC811009485CD /* AddCountryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB1857422CEC811009485CD /* AddCountryViewController.xib */; };
+		6CB1857822CFA275009485CD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1857722CFA275009485CD /* User.swift */; };
 		6CB2A8BC228CAD8200A78541 /* AboutUsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB2A8BA228CAD8200A78541 /* AboutUsTableCell.swift */; };
 		6CBD17DB228BCB7300144B6C /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD17DA228BCB7300144B6C /* PaddingLabel.swift */; };
 		6CC94EDD228BE5BA002F3464 /* CommonAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC94EDC228BE5BA002F3464 /* CommonAPIs.swift */; };
@@ -509,6 +510,7 @@
 		6CA040B52281BE0300619B6F /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
 		6CB1857322CEC811009485CD /* AddCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCountryViewController.swift; sourceTree = "<group>"; };
 		6CB1857422CEC811009485CD /* AddCountryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCountryViewController.xib; sourceTree = "<group>"; };
+		6CB1857722CFA275009485CD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6CB2A8BA228CAD8200A78541 /* AboutUsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsTableCell.swift; sourceTree = "<group>"; };
 		6CBD17DA228BCB7300144B6C /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		6CC94EDC228BE5BA002F3464 /* CommonAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAPIs.swift; sourceTree = "<group>"; };
@@ -642,6 +644,7 @@
 				39EE2ADC22A3C82F00A9A501 /* Model */,
 				39EE2ADE22A3C84200A9A501 /* ViewController */,
 				39EE2ADF22A3C8D900A9A501 /* AuthAPI.swift */,
+				6CB1857722CFA275009485CD /* User.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -1761,6 +1764,7 @@
 				3992B66922961B5F00BBB7F1 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				6CF2514822A635E600CDA47C /* APIValues.swift in Sources */,
 				6CF2514A22A6374E00CDA47C /* DialogsBuilder.swift in Sources */,
+				6CB1857822CFA275009485CD /* User.swift in Sources */,
 				6C557557228BA52900BAE5E2 /* View+Colors.swift in Sources */,
 				6C5DE87A22872A1E00F900AE /* SuccessPackageController.swift in Sources */,
 				6CE722ED2274FA1B00E095DC /* VisaRequirementController.swift in Sources */,

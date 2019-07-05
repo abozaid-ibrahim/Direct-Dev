@@ -319,7 +319,6 @@ extension String {
     func attachName() -> String {
         let fileName = self
         let startFrom = fileName.count > 30 ? fileName.count - 30 : 0
-        
         let showedName = fileName.charactersArray[startFrom..<fileName.count]
         return String(showedName)
     }

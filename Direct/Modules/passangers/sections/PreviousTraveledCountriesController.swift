@@ -13,12 +13,7 @@ import UIKit
 class PreviousTraveledCountriesController: UIViewController {
     @IBOutlet private var tableView: UITableView!
     @IBOutlet var titleLbl: UILabel!
-    @IBOutlet private var addButton: UIButton! {
-        didSet {
-            addButton.titleLabel?.font = UIFont.appRegularFontWith(size: 15)
-        }
-    }
-
+    @IBOutlet private var addButton: UIButton!
     private let disposeBag = DisposeBag()
     var tableHeight = PublishSubject<CGFloat>()
     var countries = PublishSubject<[String]>()
@@ -26,6 +21,8 @@ class PreviousTraveledCountriesController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLbl.font = .appBoldFontWith(size: 15)
+        addButton.titleLabel?.font = UIFont.appRegularFontWith(size: 15)
+
         setupTable()
         addButton.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in

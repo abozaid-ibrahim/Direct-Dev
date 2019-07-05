@@ -36,7 +36,6 @@ class AddCountryViewController: UIViewController {
                 vc.selectedItem.subscribe(onNext: { value in
                     self.yearField.text = value
                 }).disposed(by: self.disposeBag)
-
                 try! AppNavigator().presentModally(vc)
             }.disposed(by: disposeBag)
     }

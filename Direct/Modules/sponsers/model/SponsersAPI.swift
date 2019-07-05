@@ -36,7 +36,7 @@ extension SponsersAPIs: TargetType {
         case .uploadSponserForm(let prm):
             let prmDic = ["key": tokenKeyValue,
                           "lang": appLang,
-                          "userid": 73,
+                          "userid": User.id,
                           "visa_req_id": prm.visaReqID ?? 0,
                           "sponser_no": prm.sponserNo ?? 0,
                           "owner_of_bank_stmt": prm.ownerOfBankStmt ?? 0,
@@ -49,7 +49,7 @@ extension SponsersAPIs: TargetType {
         case .getSponserOwner(let prm):
             let prmDic = ["key": tokenKeyValue,
                           "lang": appLang,
-                          "userid": 709,
+                          "userid": User.id,
                           "reqid": prm.reqid,
                           "cid": prm.cid] as [String: Any]
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
