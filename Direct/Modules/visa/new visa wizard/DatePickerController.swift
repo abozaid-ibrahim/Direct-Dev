@@ -16,7 +16,7 @@ class DatePickerController: UIViewController, PanModalPresentable {
     @IBOutlet var datePicker: JBDatePickerView!
     @IBOutlet private var tilteLbl: UILabel!
     var panScrollable: UIScrollView?
-    var shortFormHeight: PanModalHeight = .contentHeight(400)
+    var shortFormHeight: PanModalHeight = .contentHeight(420)
     @IBOutlet private var dateLbl: UILabel!
     var pickerTitle: String?
     override func viewDidLoad() {

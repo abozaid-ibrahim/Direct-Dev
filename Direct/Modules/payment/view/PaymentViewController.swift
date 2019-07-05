@@ -31,6 +31,7 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
     private let network = ApiClientFacade()
     var totalCost: String?
     var requestId: Int?
+    var thanksUrl:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         title = Str.payment
@@ -88,9 +89,9 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
         }
 
         Progress.show()
-        network.updatePaymentDetails(prm).subscribe(onNext: { _ in
+        network.updatePaymentDetails(prm).subscribe(onNext: { response in
             Progress.hide()
-            try! AppNavigator().present(.successVisaReqScreen(nil))
+            try! AppNavigator().present(.successVisaReqScreen(nil,thanksUrl:self.thanksUrl))
         }).disposed(by: disposeBag)
     }
 

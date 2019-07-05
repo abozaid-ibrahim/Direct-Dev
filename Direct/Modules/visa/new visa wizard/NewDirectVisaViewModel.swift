@@ -125,8 +125,9 @@ class NewDirectVisaViewModel {
         guard validateInputs() else {
             return
         }
-
+visaRequestData.thankYouUrl = selectedCountry?.thank_you_video_url
         showProgress.onNext(true)
+        
         network?.sendVisaRequest(params: visaRequestData).subscribe(onNext: { [unowned self] res in
             if let req = res.visaServices.first?.requestID {
                 self.visaRequestData.requestID = req.stringValue
@@ -218,6 +219,7 @@ class NewDirectVisaViewModel {
                 switch event.event {
                 case let .next(value):
                     self.selectedCountry = value
+                    print(">>\(Thread.current)")
                     print("i> id \(value.country_id) form type: \(value.form_type!)")
                     self.visaRequestData.form_type = value.form_type
                     self.visaRequestData.country_id = value.country_id!

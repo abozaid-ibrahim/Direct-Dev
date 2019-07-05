@@ -88,7 +88,7 @@ public final class ViewPagerTabView: UIView {
         let distribution = options.distribution
         
         let imageSize = options.tabViewImageSize
-        
+        imageView?.contentMode = .center
         switch distribution {
         case .segmented:
             

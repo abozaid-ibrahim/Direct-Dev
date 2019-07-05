@@ -6,23 +6,43 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
+import RxCocoa
 import RxSwift
 import UIKit
+
 class SuccessVisaRequestController: UIViewController, StyledActionBar {
-    @IBOutlet var requestNumberLbl: UILabel!
+    @IBOutlet private var requestNumberLbl: UILabel!
     internal let disposeBag = DisposeBag()
     
+//    depenencies
+    var thanksUrl: String?
     var orderId: String?
+    
+    @IBOutlet private var videoPlayerContainer: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        setupActionBar(.withX)
-        requestNumberLbl.text = orderId
+        self.requestNumberLbl.text = self.orderId
+        self.addPlayer()
     }
-
-    @IBAction func dismissAction(_ sender: Any) {
+    
+    private func addPlayer() {
+        let player = VideoController(url: self.thanksUrl!)
+        addChild(player)
+        self.videoPlayerContainer.addSubview(player.view)
+        player.view.snp.makeConstraints{make in
+            make.edges.equalToSuperview()
+        }
+    }
+    
+    @IBAction func dismissAction(_: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func followMyOrder(_: Any) {
         try! AppNavigator().push(.MyOrders)
     }
 }
+
+class SuccessViewModel {}

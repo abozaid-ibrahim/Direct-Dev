@@ -33,6 +33,7 @@ class VisaRequestParams {
         relation_with_travelersText: String?
     var form_type:String?
     var requestID:String?
+    var thankYouUrl:String?
     
 }
 
@@ -48,6 +49,6 @@ struct VisaPriceParams {
 
 class AppLanguage {
     static var langCode: String {
-        return "ar"
+        return "en"
     }
 }

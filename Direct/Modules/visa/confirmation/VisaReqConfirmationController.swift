@@ -23,7 +23,7 @@ class VisaReqConfirmationController: UIViewController {
 
     // MARK: IBuilder ====================================>>
 
-    @IBOutlet weak var relationsPlaceholderLbl: UILabel!
+    @IBOutlet var relationsPlaceholderLbl: UILabel!
     @IBOutlet private var placeHolderLbls: [UILabel]!
     @IBOutlet private var countryLbl: UILabel!
     @IBOutlet private var visaTypeLbl: UILabel!
@@ -58,9 +58,8 @@ class VisaReqConfirmationController: UIViewController {
         viewModel.showBioOptions(click: pckDateLbl.rx.tapGesture().when(.recognized))
         viewModel.selectedBioOption.map { _ in #imageLiteral(resourceName: "successCircle") }
             .bind(to: dateStatusIcon.rx.image).disposed(by: disposeBag)
-        viewModel.selectedBioOption.map {$0.name}
+        viewModel.selectedBioOption.map { $0.name }.debug()
             .bind(to: datelbl.rx.text).disposed(by: disposeBag)
-
     }
 
     private func setTablViewHeight() {
@@ -97,7 +96,7 @@ class VisaReqConfirmationController: UIViewController {
                 let cost = info.totalCost else {
                 return
             }
-            try! AppNavigator().push(Destination.paymentMethod(requestID: id, totalCost: cost))
+            try! AppNavigator().push(Destination.paymentMethod(thanksUrl: info.thankYouUrl, requestID: id, totalCost: cost))
         }
     }
 
@@ -149,15 +148,15 @@ class VisaReqConfirmationController: UIViewController {
         visaTypeLbl.text = info.visatypeText
         bioLocLbl.text = info.biometry_loc
         pasangerCountLbl.text = info.no_of_adult + " " + Str.adult + ", " + info.no_of_child + " " + Str.child
-        if info.relation_with_travelersText.isValidText{
+        if info.relation_with_travelersText.isValidText {
             relationlbl.text = info.relation_with_travelersText
             relationlbl.alpha = 1.0
             relationsPlaceholderLbl.alpha = 1.0
-        }else{
+        } else {
             relationlbl.alpha = 0.0
             relationsPlaceholderLbl.alpha = 0.0
         }
-        
+
         checkoutFooter.valueText = info.totalCost ?? "".priced
 
         passangersTable.rx

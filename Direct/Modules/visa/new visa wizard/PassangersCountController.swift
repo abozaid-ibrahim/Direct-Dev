@@ -13,7 +13,7 @@ typealias PassangerCount = (Int, Int, String)
 
 class PassangersCountController: UIViewController, PanModalPresentable {
     var panScrollable: UIScrollView?
-    var shortFormHeight: PanModalHeight = .contentHeight(350)
+    var shortFormHeight: PanModalHeight = .contentHeight(280)
     private let disposeBag = DisposeBag()
 
     // MARK: IBuilder ====================================>>

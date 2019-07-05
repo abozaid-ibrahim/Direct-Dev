@@ -29,7 +29,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WKY-FB-hIQ">
-                    <rect key="frame" x="4" y="64" width="406" height="798"/>
+                    <rect key="frame" x="4" y="64" width="406" height="265"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="vST-hH-yJb">
                             <rect key="frame" x="12" y="12" width="382" height="233"/>
@@ -193,6 +193,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="vST-hH-yJb" firstAttribute="leading" secondItem="WKY-FB-hIQ" secondAttribute="leading" constant="12" id="2pr-vu-1up"/>
+                        <constraint firstAttribute="height" constant="265" id="Cfv-Si-Bfh"/>
                         <constraint firstAttribute="trailing" secondItem="vST-hH-yJb" secondAttribute="trailing" constant="12" id="eu7-ck-XYd"/>
                         <constraint firstItem="vST-hH-yJb" firstAttribute="top" secondItem="WKY-FB-hIQ" secondAttribute="top" constant="12" id="fFN-Wu-fcK"/>
                     </constraints>
@@ -202,7 +203,6 @@
             <constraints>
                 <constraint firstItem="WKY-FB-hIQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="0yj-5y-2wR"/>
                 <constraint firstItem="WKY-FB-hIQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="4" id="7bD-1K-LlV"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WKY-FB-hIQ" secondAttribute="bottom" id="Lbs-nw-w2q"/>
                 <constraint firstAttribute="trailing" secondItem="WKY-FB-hIQ" secondAttribute="trailing" constant="4" id="N6c-we-kAm"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

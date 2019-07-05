@@ -18,13 +18,13 @@ enum Destination {
         homeScreen,
         visaRequirement(VisaRequestParams),
         selectableSheet(data: [String], titleText: String?, style: CellStyle),
-        paymentMethod(requestID: Int, totalCost: String),
+        paymentMethod(thanksUrl: String?, requestID: Int, totalCost: String),
         passangersCount,
         newInstitueVisa,
         datePicker(title: String?),
         sponsersInfoScreen(VisaRequestParams, reqID: String),
         passangersInfoScreen(VisaRequestParams),
-        successVisaReqScreen(USVvisaRequestJSONResponse?),
+        successVisaReqScreen(USVvisaRequestJSONResponse?, thanksUrl: String?),
         MyOrders,
         orderDetails,
         institutesList,
@@ -35,7 +35,7 @@ enum Destination {
         newDirectVisa,
         searchCountries,
         confirmatonVisa(VisaRequestParams, reqID: String),
-    gotoPayByCreditCard
+        gotoPayByCreditCard
 
     func controller() -> UIViewController {
         switch self {
@@ -56,10 +56,11 @@ enum Destination {
             vc.style = style
             vc.titleText = title
             return vc
-        case .paymentMethod(let reqid, let cost):
+        case let .paymentMethod(url, reqid, cost):
             let vc = PaymentViewController()
             vc.totalCost = cost
             vc.requestId = reqid
+            vc.thanksUrl = url
             return vc
         case .passangersCount:
             return PassangersCountController()
@@ -80,7 +81,8 @@ enum Destination {
             return vc
         case let .successVisaReqScreen(prm):
             let vc = SuccessVisaRequestController()
-//            vc.orderId = prm.applyGB?.first?.success
+//            vc.orderId = prm.
+            vc.thanksUrl = prm.thanksUrl
             return vc
         case .MyOrders:
             return OrdersHistoryController()

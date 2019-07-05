@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SuccessVisaRequestController" customModule="Direct" customModuleProvider="target">
             <connections>
                 <outlet property="requestNumberLbl" destination="Hco-a4-6na" id="OjW-ue-hl2"/>
+                <outlet property="videoPlayerContainer" destination="FdS-kZ-3RX" id="lHp-es-jcY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

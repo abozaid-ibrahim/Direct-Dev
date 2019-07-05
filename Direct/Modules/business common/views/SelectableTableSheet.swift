@@ -14,6 +14,11 @@ import UIKit
 enum CellStyle {
     case textCenter, textWithArrow
 }
+protocol Selectable {
+    associatedtype DataModel
+    associatedtype TableCell
+    func setTableDataAndCell(data: [DataModel], cell: TableCell)
+}
 
 final class SelectableTableSheet: UIViewController, PanModalPresentable {
     var panScrollable: UIScrollView? {
@@ -21,16 +26,15 @@ final class SelectableTableSheet: UIViewController, PanModalPresentable {
     }
 
     var shortFormHeight: PanModalHeight = .contentHeight(330)
-
-    // set these var from outside
     var data: [String]?
     var titleText: String?
     var style: CellStyle = .textWithArrow
-    // listen to selected
     var selectedItem = PublishSubject<String>()
     @IBOutlet var tableView: UITableView!
     @IBOutlet private var titleLbl: UILabel!
     private let disposeBag = DisposeBag()
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLbl.text = titleText ?? "عدد المسافرين"
@@ -40,14 +44,9 @@ final class SelectableTableSheet: UIViewController, PanModalPresentable {
     }
 
     private func setONSelect() {
-        tableView.rx.itemSelected.asObservable().subscribe { [unowned self] event in
-            switch event.event {
-            case let .next(indexPath):
-                self.selectedItem.onNext(self.data?[indexPath.row] ?? "")
-            default:
-                break
-            }
-        }.disposed(by: disposeBag)
+        tableView.rx.itemSelected.subscribe(onNext: {[unowned self] value in
+                self.selectedItem.onNext(self.data?[value.row] ?? "")
+        }).disposed(by: disposeBag)
     }
 
     private func setTableDataSource() {
@@ -79,8 +78,3 @@ final class SelectableTableSheet: UIViewController, PanModalPresentable {
     }
 }
 
-protocol Selectable {
-    associatedtype DataModel
-    associatedtype TableCell
-    func setTableDataAndCell(data: [DataModel], cell: TableCell)
-}

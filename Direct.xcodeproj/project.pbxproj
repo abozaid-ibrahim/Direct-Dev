@@ -189,6 +189,8 @@
 		6CB1857522CEC811009485CD /* AddCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1857322CEC811009485CD /* AddCountryViewController.swift */; };
 		6CB1857622CEC811009485CD /* AddCountryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB1857422CEC811009485CD /* AddCountryViewController.xib */; };
 		6CB1857822CFA275009485CD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1857722CFA275009485CD /* User.swift */; };
+		6CB1857D22CFABC7009485CD /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1857B22CFABC7009485CD /* VideoController.swift */; };
+		6CB1857E22CFABC7009485CD /* VideoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB1857C22CFABC7009485CD /* VideoController.xib */; };
 		6CB2A8BC228CAD8200A78541 /* AboutUsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB2A8BA228CAD8200A78541 /* AboutUsTableCell.swift */; };
 		6CBD17DB228BCB7300144B6C /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD17DA228BCB7300144B6C /* PaddingLabel.swift */; };
 		6CC94EDD228BE5BA002F3464 /* CommonAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC94EDC228BE5BA002F3464 /* CommonAPIs.swift */; };
@@ -484,33 +486,57 @@
 		6C902771228F93BE00B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		6C902772228F93BE00B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		6C902774228F94BF00B41705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AboutUsViewController.xib; sourceTree = "<group>"; };
-		6C902786228F950400B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/InstitutesListController.xib; sourceTree = "<group>"; };
-		6C902789228F950A00B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/InstituteTableCell.xib; sourceTree = "<group>"; };
-		6C90278C228F951000B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/InstituteDetailsTableCell.xib; sourceTree = "<group>"; };
-		6C90278F228F951700B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/InstituteDetailsHeaderView.xib; sourceTree = "<group>"; };
-		6C902792228F951E00B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/ReserveCourseInstitueController.xib; sourceTree = "<group>"; };
-		6C902795228F952500B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/SponsersViewController.xib; sourceTree = "<group>"; };
-		6C902798228F953A00B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/PaymentViewController.xib; sourceTree = "<group>"; };
-		6C90279B228F954000B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/BanksViewController.xib; sourceTree = "<group>"; };
-		6C90279E228F954C00B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/PaymentMethodTableCell.xib; sourceTree = "<group>"; };
-		6C9027A1228F955200B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/PaymentBranchTableCell.xib; sourceTree = "<group>"; };
-		6C9027A4228F955800B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/BankTableCell.xib; sourceTree = "<group>"; };
-		6C9027A7228F955F00B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/PaymentMethodsContainerController.xib; sourceTree = "<group>"; };
-		6C9027AD228F956B00B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/PackageDetailsController.xib; sourceTree = "<group>"; };
-		6C9027B3228F957700B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/SingleRowTableCell.xib; sourceTree = "<group>"; };
-		6C9027B6228F958000B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/SelectableTableSheet.xib; sourceTree = "<group>"; };
-		6C9027B9228F958600B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/CheckoutBottomView.xib; sourceTree = "<group>"; };
-		6C9027BC228F958C00B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/TextTableCell.xib; sourceTree = "<group>"; };
-		6C9027C2228F959900B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/OrdersHistoryController.xib; sourceTree = "<group>"; };
-		6C9027C5228F95A000B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/OrderDetailsController.xib; sourceTree = "<group>"; };
-		6C9027C8228F95A600B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/OrderTableCell.xib; sourceTree = "<group>"; };
-		6C9027CB228F95AC00B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/VisaRequirementController.xib; sourceTree = "<group>"; };
-		6C9027CE228F95B100B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/VisaRequirementTableCell.xib; sourceTree = "<group>"; };
 		6C96B9CA22CE3CBE00EF4861 /* VisaRequirementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaRequirementViewModel.swift; sourceTree = "<group>"; };
 		6CA040B52281BE0300619B6F /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
 		6CB1857322CEC811009485CD /* AddCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCountryViewController.swift; sourceTree = "<group>"; };
 		6CB1857422CEC811009485CD /* AddCountryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCountryViewController.xib; sourceTree = "<group>"; };
 		6CB1857722CFA275009485CD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6CB1857B22CFABC7009485CD /* VideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
+		6CB1857C22CFABC7009485CD /* VideoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoController.xib; sourceTree = "<group>"; };
+		6CB1857F22CFB05A009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CheckoutBottomView.xib; sourceTree = "<group>"; };
+		6CB1858822CFB233009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SelectableTableSheet.xib; sourceTree = "<group>"; };
+		6CB1858A22CFB243009485CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SelectableTableSheet.strings; sourceTree = "<group>"; };
+		6CB1858C22CFB245009485CD /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/SelectableTableSheet.strings; sourceTree = "<group>"; };
+		6CB1858D22CFB285009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TextTableCell.xib; sourceTree = "<group>"; };
+		6CB1858F22CFB28F009485CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TextTableCell.strings; sourceTree = "<group>"; };
+		6CB1859122CFB292009485CD /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/TextTableCell.strings; sourceTree = "<group>"; };
+		6CB1859222CFB318009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/VisaRequirementController.xib; sourceTree = "<group>"; };
+		6CB1859422CFB31F009485CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/VisaRequirementController.strings; sourceTree = "<group>"; };
+		6CB1859622CFB323009485CD /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/VisaRequirementController.strings; sourceTree = "<group>"; };
+		6CB1859722CFB341009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/VisaRequirementTableCell.xib; sourceTree = "<group>"; };
+		6CB1859922CFB35B009485CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/VisaRequirementTableCell.strings; sourceTree = "<group>"; };
+		6CB1859B22CFB35C009485CD /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/VisaRequirementTableCell.strings; sourceTree = "<group>"; };
+		6CB1859C22CFB38A009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/InstitutesListController.xib; sourceTree = "<group>"; };
+		6CB1859E22CFB390009485CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InstitutesListController.strings; sourceTree = "<group>"; };
+		6CB185A022CFB392009485CD /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InstitutesListController.strings; sourceTree = "<group>"; };
+		6CB185A122CFB397009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/InstituteTableCell.xib; sourceTree = "<group>"; };
+		6CB185A322CFB39A009485CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InstituteTableCell.strings; sourceTree = "<group>"; };
+		6CB185A522CFB39F009485CD /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InstituteTableCell.strings; sourceTree = "<group>"; };
+		6CB185A622CFB3A4009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/InstituteDetailsTableCell.xib; sourceTree = "<group>"; };
+		6CB185A822CFB3AA009485CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InstituteDetailsTableCell.strings; sourceTree = "<group>"; };
+		6CB185AA22CFB3AB009485CD /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InstituteDetailsTableCell.strings; sourceTree = "<group>"; };
+		6CB185AB22CFB3B1009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/InstituteDetailsHeaderView.xib; sourceTree = "<group>"; };
+		6CB185AD22CFB3B7009485CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InstituteDetailsHeaderView.strings; sourceTree = "<group>"; };
+		6CB185AF22CFB3B9009485CD /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InstituteDetailsHeaderView.strings; sourceTree = "<group>"; };
+		6CB185B022CFB3BE009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ReserveCourseInstitueController.xib; sourceTree = "<group>"; };
+		6CB185B222CFB3C6009485CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ReserveCourseInstitueController.strings; sourceTree = "<group>"; };
+		6CB185B422CFB3C8009485CD /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/ReserveCourseInstitueController.strings; sourceTree = "<group>"; };
+		6CB185B522CFB3CE009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SponsersViewController.xib; sourceTree = "<group>"; };
+		6CB185B722CFB3D4009485CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SponsersViewController.strings; sourceTree = "<group>"; };
+		6CB185B922CFB3D6009485CD /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/SponsersViewController.strings; sourceTree = "<group>"; };
+		6CB185BA22CFB3E3009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PaymentViewController.xib; sourceTree = "<group>"; };
+		6CB185BB22CFB3EE009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BanksViewController.xib; sourceTree = "<group>"; };
+		6CB185BC22CFB3F6009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PaymentMethodTableCell.xib; sourceTree = "<group>"; };
+		6CB185BD22CFB3FD009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PaymentBranchTableCell.xib; sourceTree = "<group>"; };
+		6CB185BE22CFB405009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BankTableCell.xib; sourceTree = "<group>"; };
+		6CB185BF22CFB433009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/OrderTableCell.xib; sourceTree = "<group>"; };
+		6CB185C022CFB43D009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/OrderDetailsController.xib; sourceTree = "<group>"; };
+		6CB185C122CFB444009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/OrdersHistoryController.xib; sourceTree = "<group>"; };
+		6CB185C322CFB453009485CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/CheckoutBottomView.strings; sourceTree = "<group>"; };
+		6CB185C522CFB454009485CD /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/CheckoutBottomView.strings; sourceTree = "<group>"; };
+		6CB185C622CFB457009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SingleRowTableCell.xib; sourceTree = "<group>"; };
+		6CB185C722CFB462009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PackageDetailsController.xib; sourceTree = "<group>"; };
+		6CB185C822CFB46E009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PaymentMethodsContainerController.xib; sourceTree = "<group>"; };
 		6CB2A8BA228CAD8200A78541 /* AboutUsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsTableCell.swift; sourceTree = "<group>"; };
 		6CBD17DA228BCB7300144B6C /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		6CC94EDC228BE5BA002F3464 /* CommonAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAPIs.swift; sourceTree = "<group>"; };
@@ -991,6 +1017,7 @@
 		6C5FDA4B2270816B00ABA39B /* Direct */ = {
 			isa = PBXGroup;
 			children = (
+				6CB1857922CFAB92009485CD /* Seperate Components */,
 				6C431DF022B51BB200DD140D /* viewpager */,
 				6CBD17D7228BCB5A00144B6C /* custom views */,
 				6C55755A228BAC3F00BAE5E2 /* Resources */,
@@ -1155,6 +1182,23 @@
 				6C6D95DC22CAA1C1001E4951 /* UILabel+APP.swift */,
 			);
 			path = style;
+			sourceTree = "<group>";
+		};
+		6CB1857922CFAB92009485CD /* Seperate Components */ = {
+			isa = PBXGroup;
+			children = (
+				6CB1857A22CFABAC009485CD /* video player */,
+			);
+			path = "Seperate Components";
+			sourceTree = "<group>";
+		};
+		6CB1857A22CFABAC009485CD /* video player */ = {
+			isa = PBXGroup;
+			children = (
+				6CB1857B22CFABC7009485CD /* VideoController.swift */,
+				6CB1857C22CFABC7009485CD /* VideoController.xib */,
+			);
+			path = "video player";
 			sourceTree = "<group>";
 		};
 		6CBD17D7228BCB5A00144B6C /* custom views */ = {
@@ -1558,6 +1602,7 @@
 				6C90279D228F954C00B41705 /* PaymentMethodTableCell.xib in Resources */,
 				6C9027CD228F95B100B41705 /* VisaRequirementTableCell.xib in Resources */,
 				6C9027D9228F95C800B41705 /* PassangersCountController.xib in Resources */,
+				6CB1857E22CFABC7009485CD /* VideoController.xib in Resources */,
 				6C90277C228F94D700B41705 /* NewInstituteRequestController.xib in Resources */,
 				6C431DD922B3C90400DD140D /* PassangersInputViewViewController.xib in Resources */,
 				6C9027EB228F95EB00B41705 /* HomeCollectionSectionWrapper.xib in Resources */,
@@ -1830,6 +1875,7 @@
 				6CD84B5922A46D8100E3CAD3 /* VisaHttpClient.swift in Sources */,
 				6C778264227A9902001926B2 /* StoryBoardIDs.swift in Sources */,
 				6C778266227A9B97001926B2 /* UIViewController+Helpers.swift in Sources */,
+				6CB1857D22CFABC7009485CD /* VideoController.swift in Sources */,
 				6C2CFB962277996500D23CF4 /* SpinnerTextField.swift in Sources */,
 				6CF9F5E422BEDEE000E45E8A /* SponserFormViewModel.swift in Sources */,
 				6CF75E9F228BD8C900009BAB /* Progress.swift in Sources */,
@@ -1987,7 +2033,9 @@
 		6C902787228F950400B41705 /* InstitutesListController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6C902786228F950400B41705 /* ar */,
+				6CB1859C22CFB38A009485CD /* Base */,
+				6CB1859E22CFB390009485CD /* en */,
+				6CB185A022CFB392009485CD /* ar */,
 			);
 			name = InstitutesListController.xib;
 			sourceTree = "<group>";
@@ -1995,7 +2043,9 @@
 		6C90278A228F950A00B41705 /* InstituteTableCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6C902789228F950A00B41705 /* ar */,
+				6CB185A122CFB397009485CD /* Base */,
+				6CB185A322CFB39A009485CD /* en */,
+				6CB185A522CFB39F009485CD /* ar */,
 			);
 			name = InstituteTableCell.xib;
 			sourceTree = "<group>";
@@ -2003,7 +2053,9 @@
 		6C90278D228F951000B41705 /* InstituteDetailsTableCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6C90278C228F951000B41705 /* ar */,
+				6CB185A622CFB3A4009485CD /* Base */,
+				6CB185A822CFB3AA009485CD /* en */,
+				6CB185AA22CFB3AB009485CD /* ar */,
 			);
 			name = InstituteDetailsTableCell.xib;
 			sourceTree = "<group>";
@@ -2011,7 +2063,9 @@
 		6C902790228F951700B41705 /* InstituteDetailsHeaderView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6C90278F228F951700B41705 /* ar */,
+				6CB185AB22CFB3B1009485CD /* Base */,
+				6CB185AD22CFB3B7009485CD /* en */,
+				6CB185AF22CFB3B9009485CD /* ar */,
 			);
 			name = InstituteDetailsHeaderView.xib;
 			sourceTree = "<group>";
@@ -2019,7 +2073,9 @@
 		6C902793228F951E00B41705 /* ReserveCourseInstitueController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6C902792228F951E00B41705 /* ar */,
+				6CB185B022CFB3BE009485CD /* Base */,
+				6CB185B222CFB3C6009485CD /* en */,
+				6CB185B422CFB3C8009485CD /* ar */,
 			);
 			name = ReserveCourseInstitueController.xib;
 			sourceTree = "<group>";
@@ -2027,7 +2083,9 @@
 		6C902796228F952500B41705 /* SponsersViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6C902795228F952500B41705 /* ar */,
+				6CB185B522CFB3CE009485CD /* Base */,
+				6CB185B722CFB3D4009485CD /* en */,
+				6CB185B922CFB3D6009485CD /* ar */,
 			);
 			name = SponsersViewController.xib;
 			sourceTree = "<group>";
@@ -2035,7 +2093,7 @@
 		6C902799228F953A00B41705 /* PaymentViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6C902798228F953A00B41705 /* ar */,
+				6CB185BA22CFB3E3009485CD /* Base */,
 			);
 			name = PaymentViewController.xib;
 			sourceTree = "<group>";
@@ -2043,7 +2101,7 @@
 		6C90279C228F954000B41705 /* BanksViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6C90279B228F954000B41705 /* ar */,
+				6CB185BB22CFB3EE009485CD /* Base */,
 			);
 			name = BanksViewController.xib;
 			sourceTree = "<group>";
@@ -2051,7 +2109,7 @@
 		6C90279F228F954C00B41705 /* PaymentMethodTableCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6C90279E228F954C00B41705 /* ar */,
+				6CB185BC22CFB3F6009485CD /* Base */,
 			);
 			name = PaymentMethodTableCell.xib;
 			sourceTree = "<group>";
@@ -2059,7 +2117,7 @@
 		6C9027A2228F955200B41705 /* PaymentBranchTableCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6C9027A1228F955200B41705 /* ar */,
+				6CB185BD22CFB3FD009485CD /* Base */,
 			);
 			name = PaymentBranchTableCell.xib;
 			sourceTree = "<group>";
@@ -2067,7 +2125,7 @@
 		6C9027A5228F955800B41705 /* BankTableCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6C9027A4228F955800B41705 /* ar */,
+				6CB185BE22CFB405009485CD /* Base */,
 			);
 			name = BankTableCell.xib;
 			sourceTree = "<group>";
@@ -2075,7 +2133,7 @@
 		6C9027A8228F955F00B41705 /* PaymentMethodsContainerController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6C9027A7228F955F00B41705 /* ar */,
+				6CB185C822CFB46E009485CD /* Base */,
 			);
 			name = PaymentMethodsContainerController.xib;
 			sourceTree = "<group>";
@@ -2093,7 +2151,7 @@
 		6C9027AE228F956B00B41705 /* PackageDetailsController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6C9027AD228F956B00B41705 /* ar */,
+				6CB185C722CFB462009485CD /* Base */,
 			);
 			name = PackageDetailsController.xib;
 			sourceTree = "<group>";
@@ -2111,7 +2169,7 @@
 		6C9027B4228F957700B41705 /* SingleRowTableCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6C9027B3228F957700B41705 /* ar */,
+				6CB185C622CFB457009485CD /* Base */,
 			);
 			name = SingleRowTableCell.xib;
 			sourceTree = "<group>";
@@ -2119,7 +2177,9 @@
 		6C9027B7228F958000B41705 /* SelectableTableSheet.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6C9027B6228F958000B41705 /* ar */,
+				6CB1858822CFB233009485CD /* Base */,
+				6CB1858A22CFB243009485CD /* en */,
+				6CB1858C22CFB245009485CD /* ar */,
 			);
 			name = SelectableTableSheet.xib;
 			sourceTree = "<group>";
@@ -2127,7 +2187,9 @@
 		6C9027BA228F958600B41705 /* CheckoutBottomView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6C9027B9228F958600B41705 /* ar */,
+				6CB1857F22CFB05A009485CD /* Base */,
+				6CB185C322CFB453009485CD /* en */,
+				6CB185C522CFB454009485CD /* ar */,
 			);
 			name = CheckoutBottomView.xib;
 			sourceTree = "<group>";
@@ -2135,7 +2197,9 @@
 		6C9027BD228F958C00B41705 /* TextTableCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6C9027BC228F958C00B41705 /* ar */,
+				6CB1858D22CFB285009485CD /* Base */,
+				6CB1858F22CFB28F009485CD /* en */,
+				6CB1859122CFB292009485CD /* ar */,
 			);
 			name = TextTableCell.xib;
 			sourceTree = "<group>";
@@ -2143,7 +2207,7 @@
 		6C9027C3228F959900B41705 /* OrdersHistoryController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6C9027C2228F959900B41705 /* ar */,
+				6CB185C122CFB444009485CD /* Base */,
 			);
 			name = OrdersHistoryController.xib;
 			sourceTree = "<group>";
@@ -2151,7 +2215,7 @@
 		6C9027C6228F95A000B41705 /* OrderDetailsController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6C9027C5228F95A000B41705 /* ar */,
+				6CB185C022CFB43D009485CD /* Base */,
 			);
 			name = OrderDetailsController.xib;
 			sourceTree = "<group>";
@@ -2159,7 +2223,7 @@
 		6C9027C9228F95A600B41705 /* OrderTableCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6C9027C8228F95A600B41705 /* ar */,
+				6CB185BF22CFB433009485CD /* Base */,
 			);
 			name = OrderTableCell.xib;
 			sourceTree = "<group>";
@@ -2167,7 +2231,9 @@
 		6C9027CC228F95AC00B41705 /* VisaRequirementController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6C9027CB228F95AC00B41705 /* ar */,
+				6CB1859222CFB318009485CD /* Base */,
+				6CB1859422CFB31F009485CD /* en */,
+				6CB1859622CFB323009485CD /* ar */,
 			);
 			name = VisaRequirementController.xib;
 			sourceTree = "<group>";
@@ -2175,7 +2241,9 @@
 		6C9027CF228F95B100B41705 /* VisaRequirementTableCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6C9027CE228F95B100B41705 /* ar */,
+				6CB1859722CFB341009485CD /* Base */,
+				6CB1859922CFB35B009485CD /* en */,
+				6CB1859B22CFB35C009485CD /* ar */,
 			);
 			name = VisaRequirementTableCell.xib;
 			sourceTree = "<group>";
