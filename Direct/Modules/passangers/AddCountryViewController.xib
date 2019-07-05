@@ -22,41 +22,33 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="gqi-TZ-UYt">
-                    <rect key="frame" x="12" y="56" width="390" height="136"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gqi-TZ-UYt">
+                    <rect key="frame" x="12" y="56" width="390" height="130"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الدولة" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PcD-uK-LxL">
-                            <rect key="frame" x="0.0" y="0.0" width="390" height="30"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الدولة" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PcD-uK-LxL" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="o8T-IL-X1s"/>
+                            </constraints>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="السنة" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h7N-IE-CXC">
-                            <rect key="frame" x="0.0" y="53" width="390" height="30"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="السنة" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h7N-IE-CXC" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="50" width="390" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="Nab-2Q-8Iv"/>
+                            </constraints>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hXR-EP-L2i">
-                            <rect key="frame" x="0.0" y="106" width="390" height="30"/>
+                            <rect key="frame" x="0.0" y="100" width="390" height="30"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1o-Ag-ybK">
-                                    <rect key="frame" x="0.0" y="0.0" width="191" height="30"/>
-                                    <state key="normal" title="Cancel">
-                                        <color key="titleColor" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">
-                                            <integer key="value" value="1"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="cancel:" destination="-1" eventType="touchUpInside" id="17G-Cc-kPf"/>
-                                    </connections>
-                                </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyM-t6-VOr">
-                                    <rect key="frame" x="199" y="0.0" width="191" height="30"/>
-                                    <state key="normal" title="add">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="30"/>
+                                    <state key="normal" title="تاكيد">
                                         <color key="titleColor" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <userDefinedRuntimeAttributes>

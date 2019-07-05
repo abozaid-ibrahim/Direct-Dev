@@ -115,4 +115,8 @@ struct Str {
     static var study: String {
         return "Study"
     }
+
+    static var chooseCountryAndYear: String {
+        return "اختر اسم الدولة وعام السفر"
+    }
 }

@@ -10,33 +10,18 @@ import PanModal
 import RxSwift
 import UIKit
 
-class AddCountryViewController: UIViewController, PanModalPresentable {
-    var panScrollable: UIScrollView? {
-        return nil //tableView
-    }
-
+class AddCountryViewController: UIViewController {
     var shortFormHeight: PanModalHeight = .contentHeight(180)
-
-    @IBOutlet var countryNameField: UITextField!
-    @IBOutlet var yearField: UITextField!
+    @IBOutlet private var countryNameField: FloatingTextField!
+    @IBOutlet private var yearField: FloatingTextField!
     private let disposeBag = DisposeBag()
+    var country = PublishSubject<String>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let title = "اختر اسم الدولة وعام السفر"
-        self.title = title
-        view.backgroundColor = UIColor.appVeryLightGray
-        countryNameField.textColor = UIColor.appVeryLightGray
+        title = Str.chooseCountryAndYear 
         countryNameField.placeholder = "the_country".localized
-        countryNameField.textColor = UIColor.black
-        countryNameField.font = UIFont.appRegularFontWith(size: 14)
-
-        yearField.textColor = UIColor.appVeryLightGray
         yearField.placeholder = "the_year".localized
-        yearField.textColor = UIColor.black
-        yearField.font = UIFont.appRegularFontWith(size: 14)
-
         yearField.rx.tapGesture().when(.recognized)
             .debug()
             .subscribe { _ in
@@ -56,20 +41,21 @@ class AddCountryViewController: UIViewController, PanModalPresentable {
             }.disposed(by: disposeBag)
     }
 
-    @IBAction func cancel(_ sender: Any) {
-        navigationController?.popViewController()
-    }
-
-    var country = PublishSubject<String>()
     @IBAction func add(_ sender: Any) {
-        if countryNameField.hasText, yearField.hasText {
-            let row = "\(countryNameField.text ?? "")-\(yearField.text ?? "")"
-            country.onNext(row)
-
-        } else {
-            //            alert.message = "ادخل الصيغه الصحيحه"
+        guard countryNameField.hasText else {
+            countryNameField.setError.onNext(true)
+            return
         }
+        countryNameField.setError.onNext(false)
 
+        guard yearField.hasText else {
+            yearField.setError.onNext(true)
+            return
+        }
+        yearField.setError.onNext(false)
+
+        let row = "\(countryNameField.text ?? "")-\(yearField.text ?? "")"
+        country.onNext(row)
         navigationController?.popViewController()
     }
 }
