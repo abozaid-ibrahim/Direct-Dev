@@ -69,7 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             info.countryName = "امريكا"
             info.no_of_passport = "3"
             info.relation_with_travelers = RelationIDS.family.rawValue
-            try? AppNavigator().push(Destination.confirmatonVisa(info, reqID: "125"))
+            try? AppNavigator().push(Destination.successVisaReqScreen(nil, thanksUrl: "https://www.youtube.com/watch?v=hbDcZiT825Q"))
         }
     }
 

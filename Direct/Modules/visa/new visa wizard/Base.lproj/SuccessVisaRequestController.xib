@@ -59,7 +59,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FdS-kZ-3RX">
-                            <rect key="frame" x="47" y="272.33333333333331" width="290" height="220"/>
+                            <rect key="frame" x="25" y="272.33333333333331" width="334" height="220"/>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="220" id="rOW-YM-Ddx"/>
@@ -100,6 +100,10 @@
                             </connections>
                         </button>
                     </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="FdS-kZ-3RX" secondAttribute="trailing" constant="25" id="FhB-lG-14I"/>
+                        <constraint firstItem="FdS-kZ-3RX" firstAttribute="leading" secondItem="EDu-ab-YSd" secondAttribute="leading" constant="25" id="dtd-ym-lav"/>
+                    </constraints>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1D-Ps-2Tn">
                     <rect key="frame" x="12" y="56" width="44" height="44"/>

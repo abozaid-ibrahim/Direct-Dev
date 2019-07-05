@@ -12,33 +12,34 @@ enum APIConstant: String {
     case Key = "bf930e30-8c28-42d6-bf8e-f4cbd0b83774"
 }
 
-enum CountriesIDs: Int,Equatable {
-    init(formType:String){
+enum CountriesIDs: Int, Equatable {
+    init(formType: String) {
         switch formType {
         case CountriesIDs.US.formType:
             self = CountriesIDs.US
         case CountriesIDs.GB.formType:
-           self = CountriesIDs.GB
+            self = CountriesIDs.GB
         case CountriesIDs.SGN.formType:
             self = CountriesIDs.SGN
         case CountriesIDs.IN.formType:
-             self = CountriesIDs.IN
+            self = CountriesIDs.IN
         case CountriesIDs.CN.formType:
             self = CountriesIDs.CN
         case CountriesIDs.JP.formType:
-           self = CountriesIDs.JP
+            self = CountriesIDs.JP
         case CountriesIDs.IE.formType:
             self = CountriesIDs.IE
         case CountriesIDs.TR.formType:
-             self = CountriesIDs.TR
+            self = CountriesIDs.TR
         default:
-            
-              self = CountriesIDs.US
+
+            self = CountriesIDs.US
         }
     }
+
     case US = 1,
-        GB = 2,//UK
-        SGN = 3,//FR
+        GB = 2, // UK
+        SGN = 3, // FR
         IN = 4,
         CN = 5,
         JP = 6,
@@ -65,6 +66,7 @@ enum CountriesIDs: Int,Equatable {
             return "to-apply-tr"
         }
     }
+
     var formType: String {
         switch self {
         case .US:
@@ -85,15 +87,18 @@ enum CountriesIDs: Int,Equatable {
             return "tr"
         }
     }
-    
-    
-   
 
-   
+//    var responseModel: Codable {
+//        switch self {
+//        case .US:
+//            return USVvisaRequestJSONResponse.self
+//        default:
+//            return USVvisaRequestJSONResponse.self /// return type
+//        }
+//    }
 }
 
-
-//enum FormType{
+// enum FormType{
 //    var formType: String {
 //        switch self {
 //        case .US:
@@ -114,4 +119,4 @@ enum CountriesIDs: Int,Equatable {
 //            return "tr"
 //        }
 //    }
-//}
+// }

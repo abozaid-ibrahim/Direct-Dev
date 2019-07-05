@@ -24,9 +24,12 @@ class SuccessVisaRequestController: UIViewController, StyledActionBar {
         super.viewDidLoad()
 //        setupActionBar(.withX)
         self.requestNumberLbl.text = self.orderId
-        self.addPlayer()
+       
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+         self.addPlayer()
+    }
     private func addPlayer() {
         let player = VideoController(url: self.thanksUrl!)
         addChild(player)

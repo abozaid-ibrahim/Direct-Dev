@@ -205,6 +205,7 @@ class PassangerFormController: UIViewController {
                 return
             }
         }
+        params.visaReqApplicantID = User.id.stringValue
         sendDataToServer(formTypeValue)
     }
 
@@ -212,11 +213,13 @@ class PassangerFormController: UIViewController {
         Progress.show()
         network
             .applyToVisa(path: cnt.endPointPath, params: params)
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [unowned self] _ in
+            .subscribe(onNext: { [unowned self] response in
                 Progress.hide()
                 print(self.index!)
-                self.successIndex.onNext(self.index!)
+                guard let status = response.data?.success.intValue else { return }
+                if status == 1 {
+                    self.successIndex.onNext(self.index!)
+                }
             }, onError: { _ in
                 Progress.hide()
             }).disposed(by: disposeBag)

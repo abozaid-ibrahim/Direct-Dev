@@ -47,6 +47,10 @@ class VideoController: UIViewController {
         playervc.view.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.9, execute: {[weak self] in
+            self?.player.play()
+
+        })
     }
 }
 

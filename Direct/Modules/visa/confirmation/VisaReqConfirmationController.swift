@@ -59,7 +59,7 @@ class VisaReqConfirmationController: UIViewController {
         viewModel.selectedBioOption.map { _ in #imageLiteral(resourceName: "successCircle") }
             .bind(to: dateStatusIcon.rx.image).disposed(by: disposeBag)
         viewModel.selectedBioOption.map { $0.name }.debug()
-            .bind(to: datelbl.rx.text).disposed(by: disposeBag)
+            .bind(to: pckDateLbl.rx.text).disposed(by: disposeBag)
     }
 
     private func setTablViewHeight() {
