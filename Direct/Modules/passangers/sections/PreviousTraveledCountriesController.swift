@@ -6,12 +6,13 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
+import RxGesture
 import RxSwift
 import UIKit
 
 class PreviousTraveledCountriesController: UIViewController {
     @IBOutlet private var tableView: UITableView!
-    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet var titleLbl: UILabel!
     @IBOutlet private var addButton: UIButton! {
         didSet {
             addButton.titleLabel?.font = UIFont.appRegularFontWith(size: 15)
@@ -22,10 +23,9 @@ class PreviousTraveledCountriesController: UIViewController {
     var tableHeight = PublishSubject<CGFloat>()
     var countries = PublishSubject<[String]>()
     var items: [String] = []
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLbl.font =  .appBoldFontWith(size: 15)
+        titleLbl.font = .appBoldFontWith(size: 15)
         setupTable()
         addButton.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
@@ -53,45 +53,12 @@ class PreviousTraveledCountriesController: UIViewController {
     }
 
     func showEnterField() {
-        let alert = UIAlertController(title: "اختر اسم الدولة وعام السفر", message: nil, preferredStyle: .alert)
-        alert.setTint(color: UIColor.appMango)
-        alert.setBackgroudColor(color: UIColor.appVeryLightGray)
-        alert.addTextField { (textField) -> Void in
-            textField.textColor = UIColor.appVeryLightGray
-            textField.placeholder = "the_country".localized
-            textField.textColor = UIColor.black
-            textField.font = UIFont.appRegularFontWith(size: 14)
-        }
-        alert.addTextField { (textField) -> Void in
-            textField.textColor = UIColor.appVeryLightGray
-            textField.placeholder = "the_year".localized
-            textField.textColor = UIColor.black
-            textField.font = UIFont.appRegularFontWith(size: 14)
-        }
-        let add = UIAlertAction(title: "تم", style: .default, handler: { [weak self, unowned alert] _ in
-            guard let self = self else { return }
-            let country = alert.textFields?.first!.text ?? ""
-            let year = alert.textFields?[1].text ?? ""
-//            let regex = try! NSRegularExpression(pattern: #"^[\\u0621-\u064A\u0660-\u0669 ]"#)
-
-//            let results = regex.matches(in: text,
-//                                        range: NSRange(text.startIndex..., in: text))
-            if country.isNotEmpty, year.isNotEmpty {
-                self.items.append("\(country)-\(year)")
-                self.countries.onNext(self.items)
-
-            } else {
-                alert.message = "ادخل الصيغه الصحيحه"
-            }
-
-        })
-
-        let cancel = UIAlertAction(title: "الغاء", style: .cancel, handler: nil)
-        alert.addAction(add)
-
-        alert.addAction(cancel)
-
-        present(alert, animated: true, completion: nil)
+        let picker = AddCountryViewController()
+        picker.country.subscribe(onNext: {[unowned self] value in
+            self.items.append(value)
+            self.countries.onNext(self.items)
+        }).disposed(by: disposeBag)
+        try! AppNavigator().push(picker)
     }
 }
 
@@ -106,7 +73,6 @@ class CountryCell: UITableViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5))
     }
 }
