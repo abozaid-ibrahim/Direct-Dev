@@ -18,12 +18,21 @@ class OrdersHistoryViewModel {
     private let disposeBag = DisposeBag()
 //    var showProgress = PublishSubject<Bool>()
     private let network = ApiClientFacade()
-    var completedVisa: Observable<[CompletedVisa]> {
-        return Observable<[CompletedVisa]>.create { observer in
-            self.network.getCompletedOrders(trackNo: self.trackNo).subscribe(onNext: { [unowned self] value in
-                observer.onNext(value.completedVisa ?? [])
-            }).disposed(by: self.disposeBag)
-            return Disposables.create()
-        }
+
+    var completedVisa = PublishSubject<[CompletedVisa]>() // {
+//
+//        return Observable<[CompletedVisa]>.create { observer in
+//            self.network.getCompletedOrders(trackNo: self.trackNo).subscribe(onNext: { [unowned self] value in
+//                observer.onNext(value.completedVisa ?? [])
+//            }).disposed(by: self.disposeBag)
+//            return Disposables.create()
+//        }
+//    }
+
+    func getCompletedVisa() {
+        self.network.getCompletedOrders(trackNo: self.trackNo).subscribe(onNext: { [unowned self] value in
+            self.completedVisa.onNext(value.completedVisa ?? [])
+
+        }).disposed(by: self.disposeBag)
     }
 }

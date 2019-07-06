@@ -13,14 +13,13 @@ final class OrdersHistoryController: UIViewController, StyledActionBar {
     @IBOutlet var tableView: UITableView!
     internal let disposeBag = DisposeBag()
     var trackNo: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.appVeryLightGray
         setupTableData()
         setupActionBar(.withTitle("طلباتي"))
-        viewModel.completedVisa.subscribe(onNext: { [unowned self] value in
-            print(value)
-
-        }).disposed(by: disposeBag)
+        viewModel.getCompletedVisa()
     }
 
     @IBAction func followStateAction(_: Any) {
@@ -29,7 +28,7 @@ final class OrdersHistoryController: UIViewController, StyledActionBar {
 
     private func setupTableData() {
         tableView.registerNib(OrderTableCell.cellId)
-        viewModel.completedVisa
+        viewModel.completedVisa.debug()
             .bind(to: tableView.rx.items(cellIdentifier: OrderTableCell.cellId, cellType: OrderTableCell.self)) { _, model, cell in
                 cell.setCellData(model)
             }.disposed(by: disposeBag)

@@ -8,10 +8,10 @@
 
 import Foundation
 struct CompletedOrdersJsonResponse: Codable {
-    public let completedVisa: [CompletedVisa]?
+    public var completedVisa: [CompletedVisa]?
     
     enum CodingKeys: String, CodingKey {
-        case completedVisa
+        case completedVisa = "Completed Visa "
     }
     
     public init(completedVisa: [CompletedVisa]?) {
@@ -20,7 +20,6 @@ struct CompletedOrdersJsonResponse: Codable {
 }
 
 // MARK: - CompletedVisa
-
 public struct CompletedVisa: Codable {
     public let visaReqID: String?
     public let trackNo: String?
@@ -39,21 +38,21 @@ public struct CompletedVisa: Codable {
     public let status: String?
     
     enum CodingKeys: String, CodingKey {
-        case visaReqID
-        case trackNo
-        case visaStatusLog
-        case pendingDocs
-        case downloadDocs
-        case paymentStatus
-        case visaCountryID
-        case paymentMethod
-        case paymentChildMethod
-        case total
-        case byemailName
-        case byemailAddress
-        case byemailPhone
-        case bybranch
-        case status
+        case visaReqID = "visa_req_id"
+        case trackNo = "track_no"
+        case visaStatusLog = "visa_status_log"
+        case pendingDocs = "pending_docs"
+        case downloadDocs = "download_docs"
+        case paymentStatus = "payment_status"
+        case visaCountryID = "visa_country_id"
+        case paymentMethod = "payment_method"
+        case paymentChildMethod = "payment_child_method"
+        case total = "total"
+        case byemailName = "byemail_name"
+        case byemailAddress = "byemail_address"
+        case byemailPhone = "byemail_phone"
+        case bybranch = "bybranch"
+        case status = "status"
     }
     
     public init(visaReqID: String?, trackNo: String?, visaStatusLog: [VisaStatusLog]?, pendingDocs: [PendingDoc]?, downloadDocs: [String]?, paymentStatus: String?, visaCountryID: String?, paymentMethod: String?, paymentChildMethod: String?, total: String?, byemailName: String?, byemailAddress: String?, byemailPhone: String?, bybranch: String?, status: String?) {
@@ -76,7 +75,6 @@ public struct CompletedVisa: Codable {
 }
 
 // MARK: - PendingDoc
-
 public struct PendingDoc: Codable {
     public let documentName: String?
     public let variableName: String?
@@ -87,13 +85,13 @@ public struct PendingDoc: Codable {
     public let documentFor: String?
     
     enum CodingKeys: String, CodingKey {
-        case documentName
-        case variableName
-        case visaReqID
-        case visaReqApplicantID
-        case isSponser
-        case cid
-        case documentFor
+        case documentName = "document_name"
+        case variableName = "variable_name"
+        case visaReqID = "visa_req_id"
+        case visaReqApplicantID = "visa_req_applicant_id"
+        case isSponser = "is_sponser"
+        case cid = "cid"
+        case documentFor = "document_for"
     }
     
     public init(documentName: String?, variableName: String?, visaReqID: String?, visaReqApplicantID: String?, isSponser: Int?, cid: String?, documentFor: String?) {
@@ -108,7 +106,6 @@ public struct PendingDoc: Codable {
 }
 
 // MARK: - VisaStatusLog
-
 public struct VisaStatusLog: Codable {
     public let visaReqID: String?
     public let statusID: String?
@@ -117,11 +114,11 @@ public struct VisaStatusLog: Codable {
     public let status: String?
     
     enum CodingKeys: String, CodingKey {
-        case visaReqID
-        case statusID
-        case message
-        case visaStatus
-        case status
+        case visaReqID = "visa_req_id"
+        case statusID = "status_id"
+        case message = "message"
+        case visaStatus = "visa_status"
+        case status = "status"
     }
     
     public init(visaReqID: String?, statusID: String?, message: String?, visaStatus: String?, status: String?) {
@@ -132,3 +129,4 @@ public struct VisaStatusLog: Codable {
         self.status = status
     }
 }
+

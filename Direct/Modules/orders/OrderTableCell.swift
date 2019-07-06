@@ -17,6 +17,7 @@ class OrderTableCell: UITableViewCell, TableCell {
     func setCellData(_ model: CellDataModel) {
         titleLbl.text = model.visaStatusLog?.first?.message
         dateLbl.text = model.visaStatusLog?.first?.visaStatus
+        print(model)
     }
 
     typealias CellDataModel = CompletedVisa
@@ -24,11 +25,5 @@ class OrderTableCell: UITableViewCell, TableCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 }
