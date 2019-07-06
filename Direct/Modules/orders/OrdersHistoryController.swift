@@ -9,6 +9,7 @@
 import RxSwift
 import UIKit
 final class OrdersHistoryController: UIViewController, StyledActionBar {
+    private lazy var viewModel = OrdersHistoryViewModel(trackNo: self.trackNo ?? "")
     @IBOutlet var tableView: UITableView!
     internal let disposeBag = DisposeBag()
     var trackNo: String?
@@ -16,6 +17,10 @@ final class OrdersHistoryController: UIViewController, StyledActionBar {
         super.viewDidLoad()
         setupTableData()
         setupActionBar(.withTitle("طلباتي"))
+        viewModel.dataSubject.subscribe(onNext: {[unowned self] value in
+       print(value)
+            
+        }).disposed(by: disposeBag)
     }
 
     @IBAction func followStateAction(_: Any) {
@@ -23,11 +28,11 @@ final class OrdersHistoryController: UIViewController, StyledActionBar {
     }
 
     private func setupTableData() {
-        tableView.registerNib(OrderTableCell.cellId)
-        Observable<[String]>.just(dataList)
-            .bind(to: tableView.rx.items(cellIdentifier: OrderTableCell.cellId)) { _, _, _ in
-//                let mycell = (cell as! SingleRowTableCell)
-                ///                mycell.setCellData(model)
-            }.disposed(by: disposeBag)
+//        tableView.registerNib(OrderTableCell.cellId)
+//        viewModel.dataSubject
+//            .bind(to: tableView.rx.items(cellIdentifier: OrderTableCell.cellId)) { _, _, _ in
+////                let mycell = (cell as! SingleRowTableCell)
+//                ///                mycell.setCellData(model)
+//            }.disposed(by: disposeBag)
     }
 }

@@ -73,6 +73,9 @@
 		6C2CFBA322789F6100D23CF4 /* PaymentMethodTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CFBA122789F6100D23CF4 /* PaymentMethodTableCell.swift */; };
 		6C2CFBA72278A1C600D23CF4 /* PaymentBranchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CFBA52278A1C600D23CF4 /* PaymentBranchTableCell.swift */; };
 		6C33A5E322D0DD7100D2B611 /* OrderApis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C33A5E222D0DD7100D2B611 /* OrderApis.swift */; };
+		6C33A5E522D0DE8600D2B611 /* OrdersHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C33A5E422D0DE8600D2B611 /* OrdersHttpClient.swift */; };
+		6C33A5E722D0DEAA00D2B611 /* CompletedOrdersJsonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C33A5E622D0DEAA00D2B611 /* CompletedOrdersJsonResponse.swift */; };
+		6C33A5E922D0DF4900D2B611 /* OrdersHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C33A5E822D0DF4900D2B611 /* OrdersHistoryViewModel.swift */; };
 		6C3885C5229B1C6000CA168A /* NewDirectVisaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3885C4229B1C6000CA168A /* NewDirectVisaViewModel.swift */; };
 		6C3885C9229B207500CA168A /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3885C8229B207500CA168A /* Country.swift */; };
 		6C3885CB229B24D300CA168A /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3885CA229B24D300CA168A /* NetworkErrors.swift */; };
@@ -360,6 +363,9 @@
 		6C2CFBA122789F6100D23CF4 /* PaymentMethodTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodTableCell.swift; sourceTree = "<group>"; };
 		6C2CFBA52278A1C600D23CF4 /* PaymentBranchTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentBranchTableCell.swift; sourceTree = "<group>"; };
 		6C33A5E222D0DD7100D2B611 /* OrderApis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderApis.swift; sourceTree = "<group>"; };
+		6C33A5E422D0DE8600D2B611 /* OrdersHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersHttpClient.swift; sourceTree = "<group>"; };
+		6C33A5E622D0DEAA00D2B611 /* CompletedOrdersJsonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedOrdersJsonResponse.swift; sourceTree = "<group>"; };
+		6C33A5E822D0DF4900D2B611 /* OrdersHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersHistoryViewModel.swift; sourceTree = "<group>"; };
 		6C3885C4229B1C6000CA168A /* NewDirectVisaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDirectVisaViewModel.swift; sourceTree = "<group>"; };
 		6C3885C8229B207500CA168A /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		6C3885CA229B24D300CA168A /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
@@ -856,6 +862,8 @@
 			isa = PBXGroup;
 			children = (
 				6C33A5E222D0DD7100D2B611 /* OrderApis.swift */,
+				6C33A5E422D0DE8600D2B611 /* OrdersHttpClient.swift */,
+				6C33A5E622D0DEAA00D2B611 /* CompletedOrdersJsonResponse.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -981,6 +989,7 @@
 			isa = PBXGroup;
 			children = (
 				6C33A5E122D0DD6300D2B611 /* model */,
+				6C33A5E822D0DF4900D2B611 /* OrdersHistoryViewModel.swift */,
 				6CF0E36F2285D70900149910 /* OrdersHistoryController.swift */,
 				6C9027C3228F959900B41705 /* OrdersHistoryController.xib */,
 				6CF0E3752285D78900149910 /* OrderDetailsController.swift */,
@@ -1819,6 +1828,7 @@
 				6CF2514A22A6374E00CDA47C /* DialogsBuilder.swift in Sources */,
 				6CB1857822CFA275009485CD /* User.swift in Sources */,
 				6C557557228BA52900BAE5E2 /* View+Colors.swift in Sources */,
+				6C33A5E922D0DF4900D2B611 /* OrdersHistoryViewModel.swift in Sources */,
 				6C5DE87A22872A1E00F900AE /* SuccessPackageController.swift in Sources */,
 				6CE722ED2274FA1B00E095DC /* VisaRequirementController.swift in Sources */,
 				6C6EED6B22A24C190091B82F /* PaymentMethodsResponse.swift in Sources */,
@@ -1918,6 +1928,7 @@
 				6CDEF77F22A11DDA00BF5F0B /* VisaReqConfirmationController.swift in Sources */,
 				39EE2AC022A09DC700A9A501 /* String+Email.swift in Sources */,
 				6C2CFBA72278A1C600D23CF4 /* PaymentBranchTableCell.swift in Sources */,
+				6C33A5E722D0DEAA00D2B611 /* CompletedOrdersJsonResponse.swift in Sources */,
 				6C3885CB229B24D300CA168A /* NetworkErrors.swift in Sources */,
 				39EE2AB922A09A0000A9A501 /* TextLabelTableViewCell.swift in Sources */,
 				6C29DD2422A5F66C0047DF54 /* USVisaRequestParams.swift in Sources */,
@@ -1926,6 +1937,7 @@
 				6CDB3C9A22AA683D00C0165C /* InputsJsonBuilder.swift in Sources */,
 				6CF4281322C8149A000A9646 /* PayfortResponse.swift in Sources */,
 				6CF0E37B2285DA8900149910 /* OrderTableCell.swift in Sources */,
+				6C33A5E522D0DE8600D2B611 /* OrdersHttpClient.swift in Sources */,
 				39EE2ACB22A09FBE00A9A501 /* UIViewController+Messages.swift in Sources */,
 				39EE2AAE22A09A0000A9A501 /* AuthButtonTableViewCell.swift in Sources */,
 			);
