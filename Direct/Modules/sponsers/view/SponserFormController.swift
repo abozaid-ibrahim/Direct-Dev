@@ -14,16 +14,21 @@ import UIKit
 
 class SponserFormController: UIViewController, BaseViewController {
 //
-
+    var currentImageID: Int = 0
+    private let familyImageID = 30
     @IBOutlet private var accountOwnerField: FloatingTextField!
     @IBOutlet private var accountSalaryLetterImageView: ImagePickerView!
     @IBOutlet private var accountStatementPageView: ImagePickerView!
+    @IBOutlet private var passportView: ImagePickerView!
     @IBOutlet private var setAccountStateLaterBox: M13Checkbox!
     @IBOutlet private var setSalaryLetterLaterBox: M13Checkbox!
     @IBOutlet private var accountStatementField: FloatingTextField!
     @IBOutlet private var accountSalaryLetterField: FloatingTextField!
     @IBOutlet private var detailsView: UIStackView!
     @IBOutlet private var submitBtn: UIButton!
+    @IBOutlet private var someoneElseContainer: UIView!
+    @IBOutlet private var someoneElseRealtivityField: FloatingTextField!
+    @IBOutlet private var someoneElsePassportField: FloatingTextField!
     internal let disposeBag = DisposeBag()
     private var enableSubmit = PublishSubject<Bool>()
     var formResult = PublishSubject<UploadSponserInfoResponse>()
@@ -44,6 +49,9 @@ class SponserFormController: UIViewController, BaseViewController {
         subscribeToProgress()
         configureBinding()
         setupUI()
+        _ = viewModel.getRelatives() // caching relatives
+        onRecieveImageCallback()
+        someOneElseSetup()
     }
 
     private func setupUI() {
@@ -147,10 +155,10 @@ class SponserFormController: UIViewController, BaseViewController {
         Observable.combineLatest(onClick, viewModel.sponserOwnersSubject)
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] value in
-                if value.1.count > 0{
+                if value.1.count > 0 {
                     self.showAccountOwnerDialog(sponsers: value.1)
-                    
-                }else{
+
+                } else {
                     self.accountOwnerField.inputView = nil
                     self.accountOwnerField.becomeFirstResponder()
                     let sp = SponsorOwener(name: " ", id: nil, status: nil, success: nil)
@@ -166,6 +174,22 @@ class SponserFormController: UIViewController, BaseViewController {
         .debug()
         .bind(to: detailsView.rx.isHidden)
         .disposed(by: disposeBag)
+    }
+
+    private let dialogs = DialogBuilder()
+    private func someOneElseSetup() {
+        let onClick = someoneElseRealtivityField.rx.tapGesture().when(.recognized)
+        Observable.combineLatest(onClick, viewModel.getRelatives())
+            .subscribe(onNext: { [unowned self] value in
+                self.dialogs.buildRelationsSpinner(self.disposeBag, value.1.relatives, selected: { relative in
+                    self.viewModel.relationType = relative.id
+                    self.someoneElseRealtivityField.text = relative.name
+                })
+            }).disposed(by: disposeBag)
+        viewModel.sponserOwnersSubject.map { $0.first?.id }.filterNil()
+            .map { $0 != "0" }
+            .bind(to: someoneElseContainer.rx.isHidden)
+            .disposed(by: disposeBag)
     }
 
     func showAccountOwnerDialog(sponsers: [SponsorOwener]) {
@@ -189,6 +213,7 @@ class SponserFormController: UIViewController, BaseViewController {
     }
 
     @IBAction func checkoutNextAction(_: Any) {
+        viewModel.params.someoneElse = 1
         viewModel.validateAndSubmit(name: accountOwnerField.text)
     }
 
@@ -199,5 +224,21 @@ class SponserFormController: UIViewController, BaseViewController {
     // image
     @IBAction func accountLetterCheckBoxChanged(sender: M13Checkbox) {
         viewModel.setSalaryLetterLater.onNext(sender.checkState == .checked)
+    }
+
+    private func onRecieveImageCallback() {
+        passportView.receivedImage.filter { $0.0 != nil }.subscribe(onNext: { [unowned self] value in
+            guard let img = value.1?.convertImageToBase64String() else {
+                return
+            }
+
+            if self.currentImageID == self.familyImageID {
+//                self.params.?.familyIDCopy = img
+//                self.
+                self.viewModel.params.someoneElseAttachment = img
+                self.someoneElsePassportField.text = value.0
+            }
+
+        }).disposed(by: disposeBag)
     }
 }

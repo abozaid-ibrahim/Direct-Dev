@@ -31,17 +31,16 @@ class SponserFormViewModel: BaseViewModel {
                                                            someoneElseAttachment: nil,
                                                            bankStmtAttachment: nil,
                                                            jobLetterAttachment: nil)
-    var setAccountStatementLater = BehaviorSubject<Bool>(value:false)
-    var setSalaryLetterLater = BehaviorSubject<Bool>(value:false)
+    var setAccountStatementLater = BehaviorSubject<Bool>(value: false)
+    var setSalaryLetterLater = BehaviorSubject<Bool>(value: false)
     var lastAccountStatment = BehaviorSubject<String?>(value: nil)
     var sallaryLetterSubject = BehaviorSubject<String?>(value: nil)
     var formResult = PublishSubject<UploadSponserInfoResponse>()
     var sponserOwnersSubject = PublishSubject<[SponsorOwener]>()
     var selectedSponsor = PublishSubject<SponsorOwener>()
 
-    let network = ApiClientFacade()
+    private let network = ApiClientFacade()
     private let disposeBag = DisposeBag()
-    func configureBinding() {}
 
     func submitData() {
         showProgress.onNext(true)
@@ -55,12 +54,18 @@ class SponserFormViewModel: BaseViewModel {
             }).disposed(by: disposeBag)
     }
 
+    private var someoneElse: SponsorOwener {
+        return SponsorOwener(name: "Someone Else", id: "0", status: nil, success: nil)
+    }
+  
     func getSponsorOwners() {
-        network.getOwners(uid: 709, reqid: reqID, cid: cid)
+        network.getOwners(uid: User.id, reqid: reqID, cid: cid)
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] value in
-                self.sponserOwnersSubject.onNext(value.sponsorOweners?.filter{$0.name.isValidText} ?? [])
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+                var list = value.sponsorOweners?.filter { $0.name.isValidText } ?? []
+                list.append(self.someoneElse)
+                self.sponserOwnersSubject.onNext(list)
+            }).disposed(by: disposeBag)
     }
 
     func validateAndSubmit(name: String?) {
@@ -69,4 +74,12 @@ class SponserFormViewModel: BaseViewModel {
         }
         submitData()
     }
+    
+    var selectedRelation = PublishSubject<String?>()
+    
+    func getRelatives()  -> Observable<RelativesResponse> {
+        return network.getRelationList().retry(1)
+    }
+    
+
 }

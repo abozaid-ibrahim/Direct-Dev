@@ -94,7 +94,7 @@ class SpinnerTextField: UIView {
                 self.txtField.text = value
             }
 
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     override init(frame: CGRect) {

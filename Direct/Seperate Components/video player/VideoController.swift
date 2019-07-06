@@ -40,17 +40,29 @@ class VideoController: UIViewController {
     }
 
     func playVideo(url: URL) {
-        let playervc = AVPlayerViewController()
-        playervc.player = self.player
-        self.addChild(playervc)
-        self.view.addSubview(playervc.view)
-        playervc.view.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+        let player = AVPlayer(url: URL(string: videoUrl)!)
+        let vc = AVPlayerViewController()
+        vc.player = player
+        
+        present(vc, animated: true) {
+            vc.player?.play()
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.9, execute: {[weak self] in
-            self?.player.play()
-
-        })
+        
+        
+//        let playervc = AVPlayerViewController()
+//        playervc.player = self.player
+//        self.present(playervc, animated: true, completion: {
+//            playervc.player?.play()
+//        })
+//        self.addChild(playervc)
+//        self.view.addSubview(playervc.view)
+//        playervc.view.snp.makeConstraints { make in
+//            make.edges.equalToSuperview()
+//        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.9, execute: {[weak self] in
+//            self?.player.play()
+//
+//        })
     }
 }
 

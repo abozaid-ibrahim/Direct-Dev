@@ -243,7 +243,7 @@ visaRequestData.thankYouUrl = selectedCountry?.thank_you_video_url
                         self?.hideBioLocation.onNext(cities.dtEmbassyLocations.isNilOrEmpty)
                         self?.hasBioLocation = cities.dtEmbassyLocations.isNilOrEmpty
 
-                    }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: self.disposeBag)
+                    }).disposed(by: self.disposeBag)
 
                 default:
                     break

@@ -82,7 +82,7 @@ class PassangersCountController: UIViewController, PanModalPresentable {
                 self?.childTotalLbl.text = pr.visaPrice.first?.childPrice.priced
                 self?.adultTotalLbl.text = pr.visaPrice.first?.adultPrice.priced
                 self?.totolCost = PassangersCountController.totalPrice(from: pr)
-            }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
     }
 
     @IBAction func childPlusAction(_: Any) {

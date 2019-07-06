@@ -117,7 +117,7 @@ class PassangerFormController: UIViewController {
             everTraveldView.view.frame = everTraveledBeforeContainer.bounds
             everTraveldView.selectedDuration.filter { $0?.id != nil }.subscribe(onNext: { [unowned self] value in
                 self.params.periodOfPreviousStay = value?.id ?? ""
-            }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
             everTraveldView.contentHeight.bind(to: traveledHereBeforeHConstrain.rx.constant).disposed(by: disposeBag)
         }
     }

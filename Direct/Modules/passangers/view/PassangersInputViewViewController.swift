@@ -75,7 +75,7 @@ class PassangersInputViewViewController: UIViewController {
                 if !self.selectNextTab() {
                     self.navigationController?.popViewController()
                 }
-            }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
         tabs.append((item, tabController))
     }
 

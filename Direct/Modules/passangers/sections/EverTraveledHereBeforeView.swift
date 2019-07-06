@@ -84,7 +84,7 @@ class EverTraveledHereBeforeView: UIViewController {
         rel.debug().subscribe(onNext: { [weak self] bios in
             self?.stayPeriod.removeAll()
             self?.stayPeriod.append(contentsOf: bios.periods ?? [])
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     private func showDurationSpinner() {

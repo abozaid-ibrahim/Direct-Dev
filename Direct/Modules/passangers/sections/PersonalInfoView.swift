@@ -311,7 +311,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
                 self.acceptanceImageField.text = value.0
             }
             
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
     }
 }
 

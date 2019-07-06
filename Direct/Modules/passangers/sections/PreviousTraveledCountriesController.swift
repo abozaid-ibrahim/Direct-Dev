@@ -30,7 +30,7 @@ class PreviousTraveledCountriesController: UIViewController {
             }).disposed(by: disposeBag)
         tableView.rx.observeWeakly(CGSize.self, contentSizeKey).subscribe(onNext: { [unowned self] _ in
             self.tableHeight.onNext(self.tableView.contentSize.height + self.headerHeight)
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     let headerHeight = CGFloat(90)

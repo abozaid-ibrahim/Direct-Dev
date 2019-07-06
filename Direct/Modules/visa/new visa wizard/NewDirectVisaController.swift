@@ -72,7 +72,7 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
                 self.rightNotesContainer.isHidden = false
                 self.doNotesLbl.text = value
             }
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
         viewModel.dontNotesText.subscribe(onNext: { [unowned self] value in
             if (value ?? "").isEmpty {
                 self.wrongNotesContainer.isHidden = true
@@ -80,7 +80,7 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
                 self.wrongNotesContainer.isHidden = false
                 self.dontNotesLbl.text = value
             }
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
         viewModel.totalCost.bind(to: totalCostField.rx.text).disposed(by: disposeBag)
         viewModel.selectedCountryName.bind(to: countryField.text).disposed(by: disposeBag)
         viewModel.passangersCount.map { $0 == nil ? nil : "\($0!.0 + $0!.1)" }.bind(to: passangersCountField.text).disposed(by: disposeBag)

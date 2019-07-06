@@ -21,7 +21,7 @@ class VisaQuestionsViewModel {
         let rel = network.getRelationList().retry(2)
         rel.subscribe(onNext: { [weak self] bios in
             self?.relativesList.append(contentsOf: bios.relatives )
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     func showDatePickerDialog() {
