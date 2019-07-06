@@ -10,10 +10,16 @@ import UIKit
 
 class OrderTableCell: UITableViewCell, TableCell {
     static var cellId: String = "OrderTableCell"
+    @IBOutlet private var titleLbl: UILabel!
+    @IBOutlet private var dateLbl: UILabel!
+    @IBOutlet private var statusView: UIImageView!
 
-    func setCellData(_: String) {}
+    func setCellData(_ model: CellDataModel) {
+        titleLbl.text = model.visaStatusLog?.first?.message
+        dateLbl.text = model.visaStatusLog?.first?.visaStatus
+    }
 
-    typealias CellDataModel = String
+    typealias CellDataModel = CompletedVisa
 
     override func awakeFromNib() {
         super.awakeFromNib()

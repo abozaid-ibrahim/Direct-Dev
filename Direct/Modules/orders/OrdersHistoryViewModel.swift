@@ -15,9 +15,15 @@ class OrdersHistoryViewModel {
         self.trackNo = trackNo
     }
 
+    private let disposeBag = DisposeBag()
 //    var showProgress = PublishSubject<Bool>()
     private let network = ApiClientFacade()
-    var dataSubject: Observable<CompletedOrdersJsonResponse> {
-        return self.network.getCompletedOrders(trackNo: self.trackNo)
+    var completedVisa: Observable<[CompletedVisa]> {
+        return Observable<[CompletedVisa]>.create { observer in
+            self.network.getCompletedOrders(trackNo: self.trackNo).subscribe(onNext: { [unowned self] value in
+                observer.onNext(value.completedVisa ?? [])
+            }).disposed(by: self.disposeBag)
+            return Disposables.create()
+        }
     }
 }

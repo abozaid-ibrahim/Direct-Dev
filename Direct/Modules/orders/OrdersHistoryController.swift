@@ -17,9 +17,9 @@ final class OrdersHistoryController: UIViewController, StyledActionBar {
         super.viewDidLoad()
         setupTableData()
         setupActionBar(.withTitle("طلباتي"))
-        viewModel.dataSubject.subscribe(onNext: {[unowned self] value in
-       print(value)
-            
+        viewModel.completedVisa.subscribe(onNext: { [unowned self] value in
+            print(value)
+
         }).disposed(by: disposeBag)
     }
 
@@ -28,11 +28,10 @@ final class OrdersHistoryController: UIViewController, StyledActionBar {
     }
 
     private func setupTableData() {
-//        tableView.registerNib(OrderTableCell.cellId)
-//        viewModel.dataSubject
-//            .bind(to: tableView.rx.items(cellIdentifier: OrderTableCell.cellId)) { _, _, _ in
-////                let mycell = (cell as! SingleRowTableCell)
-//                ///                mycell.setCellData(model)
-//            }.disposed(by: disposeBag)
+        tableView.registerNib(OrderTableCell.cellId)
+        viewModel.completedVisa
+            .bind(to: tableView.rx.items(cellIdentifier: OrderTableCell.cellId, cellType: OrderTableCell.self)) { _, model, cell in
+                cell.setCellData(model)
+            }.disposed(by: disposeBag)
     }
 }
