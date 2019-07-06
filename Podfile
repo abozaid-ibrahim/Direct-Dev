@@ -19,6 +19,7 @@ target 'Direct' do
   pod 'JBDatePicker'
   pod 'ViewPager-Swift'
   pod 'NVActivityIndicatorView'
+  pod "Player", "~> 0.13.0"
 
   pod 'GenericCellControllers'
   pod 'SnapKit'

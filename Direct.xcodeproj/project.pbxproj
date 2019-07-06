@@ -190,7 +190,6 @@
 		6CB1857622CEC811009485CD /* AddCountryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB1857422CEC811009485CD /* AddCountryViewController.xib */; };
 		6CB1857822CFA275009485CD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1857722CFA275009485CD /* User.swift */; };
 		6CB1857D22CFABC7009485CD /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1857B22CFABC7009485CD /* VideoController.swift */; };
-		6CB1857E22CFABC7009485CD /* VideoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB1857C22CFABC7009485CD /* VideoController.xib */; };
 		6CB2A8BC228CAD8200A78541 /* AboutUsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB2A8BA228CAD8200A78541 /* AboutUsTableCell.swift */; };
 		6CBD17DB228BCB7300144B6C /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD17DA228BCB7300144B6C /* PaddingLabel.swift */; };
 		6CC94EDD228BE5BA002F3464 /* CommonAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC94EDC228BE5BA002F3464 /* CommonAPIs.swift */; };
@@ -492,7 +491,6 @@
 		6CB1857422CEC811009485CD /* AddCountryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCountryViewController.xib; sourceTree = "<group>"; };
 		6CB1857722CFA275009485CD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6CB1857B22CFABC7009485CD /* VideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
-		6CB1857C22CFABC7009485CD /* VideoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoController.xib; sourceTree = "<group>"; };
 		6CB1857F22CFB05A009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CheckoutBottomView.xib; sourceTree = "<group>"; };
 		6CB1858822CFB233009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SelectableTableSheet.xib; sourceTree = "<group>"; };
 		6CB1858A22CFB243009485CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SelectableTableSheet.strings; sourceTree = "<group>"; };
@@ -1196,7 +1194,6 @@
 			isa = PBXGroup;
 			children = (
 				6CB1857B22CFABC7009485CD /* VideoController.swift */,
-				6CB1857C22CFABC7009485CD /* VideoController.xib */,
 			);
 			path = "video player";
 			sourceTree = "<group>";
@@ -1602,7 +1599,6 @@
 				6C90279D228F954C00B41705 /* PaymentMethodTableCell.xib in Resources */,
 				6C9027CD228F95B100B41705 /* VisaRequirementTableCell.xib in Resources */,
 				6C9027D9228F95C800B41705 /* PassangersCountController.xib in Resources */,
-				6CB1857E22CFABC7009485CD /* VideoController.xib in Resources */,
 				6C90277C228F94D700B41705 /* NewInstituteRequestController.xib in Resources */,
 				6C431DD922B3C90400DD140D /* PassangersInputViewViewController.xib in Resources */,
 				6C9027EB228F95EB00B41705 /* HomeCollectionSectionWrapper.xib in Resources */,

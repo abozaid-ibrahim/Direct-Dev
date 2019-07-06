@@ -22,6 +22,7 @@
                 <outlet property="setAccountStateLaterBox" destination="n9L-NT-4BI" id="Obt-wl-Nhp"/>
                 <outlet property="setSalaryLetterLaterBox" destination="46d-mc-lIH" id="7y2-gk-M6n"/>
                 <outlet property="someoneElseContainer" destination="OWe-6k-B3N" id="GZe-BP-zIl"/>
+                <outlet property="someoneElseHeight" destination="nsO-Ie-yHc" id="FTZ-fr-dpd"/>
                 <outlet property="someoneElsePassportField" destination="Xky-GQ-yIm" id="QIX-ex-qIa"/>
                 <outlet property="someoneElseRealtivityField" destination="drn-4C-1hA" id="WFh-OR-zPE"/>
                 <outlet property="submitBtn" destination="Gn8-yd-BGn" id="oyo-H1-VvZ"/>

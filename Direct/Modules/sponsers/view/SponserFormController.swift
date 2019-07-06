@@ -15,7 +15,7 @@ import UIKit
 class SponserFormController: UIViewController, BaseViewController {
 //
     var currentImageID: Int = 0
-    private let familyImageID = 30
+    private let passportCopyId = 30
     @IBOutlet private var accountOwnerField: FloatingTextField!
     @IBOutlet private var accountSalaryLetterImageView: ImagePickerView!
     @IBOutlet private var accountStatementPageView: ImagePickerView!
@@ -29,6 +29,7 @@ class SponserFormController: UIViewController, BaseViewController {
     @IBOutlet private var someoneElseContainer: UIView!
     @IBOutlet private var someoneElseRealtivityField: FloatingTextField!
     @IBOutlet private var someoneElsePassportField: FloatingTextField!
+    @IBOutlet private var someoneElseHeight: NSLayoutConstraint!
     internal let disposeBag = DisposeBag()
     private var enableSubmit = PublishSubject<Bool>()
     var formResult = PublishSubject<UploadSponserInfoResponse>()
@@ -50,7 +51,6 @@ class SponserFormController: UIViewController, BaseViewController {
         configureBinding()
         setupUI()
         _ = viewModel.getRelatives() // caching relatives
-        onRecieveImageCallback()
         someOneElseSetup()
     }
 
@@ -89,13 +89,10 @@ class SponserFormController: UIViewController, BaseViewController {
 
         let validAccStatement = Observable.combineLatest(viewModel.lastAccountStatment, viewModel.setAccountStatementLater)
             .map { $0.0.isValidText || $0.1 }
-            .debug()
         let validLetter = Observable.combineLatest(viewModel.sallaryLetterSubject, viewModel.setSalaryLetterLater)
             .map { $0.0.isValidText || $0.1 }
-            .debug()
         Observable.combineLatest(validName, validAccStatement, validLetter)
             .map { $0.0 && $0.1 && $0.2 }
-            .debug()
             .bind(to: enableSubmit)
             .disposed(by: disposeBag)
     }
@@ -119,7 +116,6 @@ class SponserFormController: UIViewController, BaseViewController {
                 guard let img = value.1?.convertImageToBase64String() else {
                     return
                 }
-
                 self.viewModel.params.bankStmtAttachment = img
                 self.viewModel.sallaryLetterSubject.onNext(value.0)
 
@@ -171,7 +167,6 @@ class SponserFormController: UIViewController, BaseViewController {
             ($0.name ?? "").isEmpty
         }
         .startWith(true)
-        .debug()
         .bind(to: detailsView.rx.isHidden)
         .disposed(by: disposeBag)
     }
@@ -186,10 +181,17 @@ class SponserFormController: UIViewController, BaseViewController {
                     self.someoneElseRealtivityField.text = relative.name
                 })
             }).disposed(by: disposeBag)
-        viewModel.sponserOwnersSubject.map { $0.first?.id }.filterNil()
-            .map { $0 != "0" }
-            .bind(to: someoneElseContainer.rx.isHidden)
+
+        viewModel.selectedSponsor.map { $0.id }
+            .filterNil()
+            .map { $0 == "0" ? 100 : 0 }
+            .bind(to: someoneElseHeight.rx.constant)
             .disposed(by: disposeBag)
+        someoneElsePassportField.rx.tapGesture().when(.recognized)
+            .subscribe(onNext: { _ in
+                self.passportView.showImagePicker(id: self.passportCopyId)
+            }).disposed(by: disposeBag)
+        onRecieveImageCallback()
     }
 
     func showAccountOwnerDialog(sponsers: [SponsorOwener]) {
@@ -231,14 +233,8 @@ class SponserFormController: UIViewController, BaseViewController {
             guard let img = value.1?.convertImageToBase64String() else {
                 return
             }
-
-            if self.currentImageID == self.familyImageID {
-//                self.params.?.familyIDCopy = img
-//                self.
-                self.viewModel.params.someoneElseAttachment = img
-                self.someoneElsePassportField.text = value.0
-            }
-
+            self.viewModel.params.someoneElseAttachment = img
+            self.someoneElsePassportField.text = value.0
         }).disposed(by: disposeBag)
     }
 }

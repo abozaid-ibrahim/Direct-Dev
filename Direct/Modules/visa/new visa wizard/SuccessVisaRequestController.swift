@@ -6,6 +6,7 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
+import Player
 import RxCocoa
 import RxSwift
 import UIKit
@@ -24,19 +25,42 @@ class SuccessVisaRequestController: UIViewController, StyledActionBar {
         super.viewDidLoad()
 //        setupActionBar(.withX)
         self.requestNumberLbl.text = self.orderId
-       
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-         self.addPlayer()
+        self.addPlayer()
     }
+    
+    lazy var playerVC = UIStoryboard.main.controller(VideoController.self) as! VideoController
+    var player: Player!
     private func addPlayer() {
-        let player = VideoController(url: self.thanksUrl!)
-        addChild(player)
-        self.videoPlayerContainer.addSubview(player.view)
-        player.view.snp.makeConstraints{make in
+        self.playerVC.videoUrl = self.thanksUrl!
+        //        player.viewDidLoad()
+        addChild(self.playerVC)
+        self.videoPlayerContainer.addSubview(self.playerVC.view)
+        self.playerVC.view.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        guard let url = URL(string: thanksUrl!) else {
+            return
+        }
+        
+//        self.player = Player()
+////        self.player.playerDelegate = self
+////        self.player.playbackDelegate = self
+////        self.player.view.frame = self.view.bounds
+//
+//        self.addChild(self.player)
+//        self.videoPlayerContainer.addSubview(self.player.view)
+//        player.view.frame = videoPlayerContainer.bounds
+////        self.player.view.snp.makeConstraints { make in
+////            make.edges.equalToSuperview()
+////        }
+//        self.player.url = url
+//        player.autoplay = true
+//        self.player.didMove(toParent: self)
+//        self.player.playFromBeginning()
     }
     
     @IBAction func dismissAction(_: Any) {
@@ -47,5 +71,3 @@ class SuccessVisaRequestController: UIViewController, StyledActionBar {
         try! AppNavigator().push(.MyOrders)
     }
 }
-
-class SuccessViewModel {}

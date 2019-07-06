@@ -146,6 +146,14 @@
             </objects>
             <point key="canvasLocation" x="-502" y="1530"/>
         </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="zcf-ii-0OH">
+            <objects>
+                <avPlayerViewController storyboardIdentifier="VideoController" videoGravity="AVLayerVideoGravityResizeAspect" id="ZsU-Hh-LRO" customClass="VideoController" customModule="Direct" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uxn-Ji-Wba" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-56" y="2191"/>
+        </scene>
         <!--بحث-->
         <scene sceneID="GFv-uH-MDV">
             <objects>
