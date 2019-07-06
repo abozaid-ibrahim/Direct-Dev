@@ -16,7 +16,6 @@ PODS:
     - NVActivityIndicatorView/Presenter (= 4.7.0)
   - NVActivityIndicatorView/Presenter (4.7.0)
   - PanModal (1.2.4)
-  - Player (0.13.1)
   - Result (4.1.0)
   - RxCocoa (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
@@ -55,19 +54,17 @@ PODS:
   - SwiftMessages (7.0.0):
     - SwiftMessages/App (= 7.0.0)
   - SwiftMessages/App (7.0.0)
-  - ViewPager-Swift (2.0.1)
   - YALField (1.0.1)
 
 DEPENDENCIES:
   - GenericCellControllers
   - IQKeyboardManagerSwift
-  - JBDatePicker
+  - JBDatePicker (~> 1.2.5)
   - Kingfisher (~> 5.0)
   - M13Checkbox
   - Moya/RxSwift (~> 13.0)
   - NVActivityIndicatorView
   - PanModal
-  - Player (~> 0.13.0)
   - RxCocoa (~> 4.0)
   - RxDataSources
   - RxGesture (~> 2.1)
@@ -77,7 +74,6 @@ DEPENDENCIES:
   - SnapKit
   - SwifterSwift
   - SwiftMessages
-  - ViewPager-Swift
   - YALField
 
 SPEC REPOS:
@@ -92,7 +88,6 @@ SPEC REPOS:
     - Moya
     - NVActivityIndicatorView
     - PanModal
-    - Player
     - Result
     - RxCocoa
     - RxDataSources
@@ -103,7 +98,6 @@ SPEC REPOS:
     - SnapKit
     - SwifterSwift
     - SwiftMessages
-    - ViewPager-Swift
     - YALField
 
 SPEC CHECKSUMS:
@@ -117,7 +111,6 @@ SPEC CHECKSUMS:
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
   PanModal: 275f6d4d07565ddf4ed16d7be5d9cd275682d80d
-  Player: 29186e0d557898b0ebdab42d2e1b47e615838156
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
@@ -128,9 +121,8 @@ SPEC CHECKSUMS:
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
   SwifterSwift: 96f90594b370802f01647c2b1229c74a84ffafee
   SwiftMessages: a952f7a9103d9aeab93730a2861d2d8fcdd8758f
-  ViewPager-Swift: 7d83f5d4888a0fa808c08c8405ba84e603a2eb58
   YALField: f80f986de790bb13690264422437fa4e0593af0a
 
-PODFILE CHECKSUM: b0cf60da2ec126b1131ca853d076a1a70fc3cc55
+PODFILE CHECKSUM: 5ce7f86dd5130549893003aa476be7752530946c
 
 COCOAPODS: 1.7.2

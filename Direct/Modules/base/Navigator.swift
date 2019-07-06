@@ -24,8 +24,8 @@ enum Destination {
         datePicker(title: String?),
         sponsersInfoScreen(VisaRequestParams, reqID: String),
         passangersInfoScreen(VisaRequestParams),
-        successVisaReqScreen(USVvisaRequestJSONResponse?, thanksUrl: String?),
-        MyOrders,
+        successVisaReqScreen(trackNo: String?, thanksUrl: String?),
+        MyOrders(trackNo: String?),
         orderDetails,
         institutesList,
         instituteDetails,
@@ -81,11 +81,13 @@ enum Destination {
             return vc
         case let .successVisaReqScreen(prm):
             let vc = SuccessVisaRequestController()
-//            vc.orderId = prm.
+            vc.trackNo = prm.trackNo
             vc.thanksUrl = prm.thanksUrl
             return vc
-        case .MyOrders:
-            return OrdersHistoryController()
+        case let .MyOrders(prm):
+            let orders = OrdersHistoryController()
+            orders.trackNo = prm
+            return orders
         case .orderDetails:
             return OrderDetailsController()
 

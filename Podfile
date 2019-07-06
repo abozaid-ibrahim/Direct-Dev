@@ -16,10 +16,8 @@ target 'Direct' do
   pod 'YALField'
   pod 'SwifterSwift'
   pod 'Kingfisher', '~> 5.0'
-  pod 'JBDatePicker'
-  pod 'ViewPager-Swift'
+  pod 'JBDatePicker',  '~> 1.2.5'
   pod 'NVActivityIndicatorView'
-  pod "Player", "~> 0.13.0"
 
   pod 'GenericCellControllers'
   pod 'SnapKit'

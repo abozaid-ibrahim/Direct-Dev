@@ -11,6 +11,7 @@ import UIKit
 final class OrdersHistoryController: UIViewController, StyledActionBar {
     @IBOutlet var tableView: UITableView!
     internal let disposeBag = DisposeBag()
+    var trackNo: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableData()

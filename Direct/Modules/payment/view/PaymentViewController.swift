@@ -91,7 +91,7 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
         Progress.show()
         network.updatePaymentDetails(prm).subscribe(onNext: { response in
             Progress.hide()
-            try! AppNavigator().present(.successVisaReqScreen(nil,thanksUrl:self.thanksUrl))
+            try! AppNavigator().present(.successVisaReqScreen(trackNo:self.requestId?.stringValue ,thanksUrl:self.thanksUrl))
         }).disposed(by: disposeBag)
     }
 

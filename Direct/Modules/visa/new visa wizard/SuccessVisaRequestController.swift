@@ -6,7 +6,6 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
-import Player
 import RxCocoa
 import RxSwift
 import UIKit
@@ -17,14 +16,14 @@ class SuccessVisaRequestController: UIViewController, StyledActionBar {
     
 //    depenencies
     var thanksUrl: String?
-    var orderId: String?
+    var trackNo: String?
     
     @IBOutlet private var videoPlayerContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 //        setupActionBar(.withX)
-        self.requestNumberLbl.text = self.orderId
+        self.requestNumberLbl.text = self.trackNo
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -33,7 +32,6 @@ class SuccessVisaRequestController: UIViewController, StyledActionBar {
     }
     
     lazy var playerVC = UIStoryboard.main.controller(VideoController.self) as! VideoController
-    var player: Player!
     private func addPlayer() {
         self.playerVC.videoUrl = self.thanksUrl!
         //        player.viewDidLoad()
@@ -68,6 +66,6 @@ class SuccessVisaRequestController: UIViewController, StyledActionBar {
     }
     
     @IBAction func followMyOrder(_: Any) {
-        try! AppNavigator().push(.MyOrders)
+        try! AppNavigator().push(.MyOrders(trackNo: trackNo))
     }
 }
