@@ -43,16 +43,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9as-zx-Siy">
-                                <rect key="frame" x="0.0" y="64" width="375" height="546"/>
+                                <rect key="frame" x="8" y="64" width="359" height="546"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vag-7t-pul">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="456"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="100" sectionHeaderHeight="8" sectionFooterHeight="8" translatesAutoresizingMaskIntoConstraints="NO" id="vag-7t-pul">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="456"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKa-Rx-tj4">
-                                        <rect key="frame" x="0.0" y="466" width="375" height="35"/>
+                                        <rect key="frame" x="0.0" y="466" width="359" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="mIK-sq-ZMf"/>
                                         </constraints>
@@ -73,7 +73,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BiF-ky-5Mv">
-                                        <rect key="frame" x="0.0" y="511" width="375" height="35"/>
+                                        <rect key="frame" x="0.0" y="511" width="359" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="Hbi-Sy-B4r"/>
                                         </constraints>
@@ -91,8 +91,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9as-zx-Siy" firstAttribute="top" secondItem="cMs-lq-j8J" secondAttribute="top" id="HOa-2H-0bH"/>
-                            <constraint firstItem="9as-zx-Siy" firstAttribute="leading" secondItem="SUH-xD-SIh" secondAttribute="leading" id="fqM-kH-QI7"/>
-                            <constraint firstItem="cMs-lq-j8J" firstAttribute="trailing" secondItem="9as-zx-Siy" secondAttribute="trailing" id="opx-3Y-sYC"/>
+                            <constraint firstItem="9as-zx-Siy" firstAttribute="leading" secondItem="SUH-xD-SIh" secondAttribute="leading" constant="8" id="fqM-kH-QI7"/>
+                            <constraint firstItem="cMs-lq-j8J" firstAttribute="trailing" secondItem="9as-zx-Siy" secondAttribute="trailing" constant="8" id="opx-3Y-sYC"/>
                             <constraint firstItem="cMs-lq-j8J" firstAttribute="bottom" secondItem="9as-zx-Siy" secondAttribute="bottom" constant="8" id="wvK-vW-grZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cMs-lq-j8J"/>

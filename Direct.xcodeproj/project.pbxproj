@@ -201,6 +201,8 @@
 		6CB1857822CFA275009485CD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1857722CFA275009485CD /* User.swift */; };
 		6CB1857D22CFABC7009485CD /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1857B22CFABC7009485CD /* VideoController.swift */; };
 		6CB2A8BC228CAD8200A78541 /* AboutUsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB2A8BA228CAD8200A78541 /* AboutUsTableCell.swift */; };
+		6CBA06F622D270A300F36353 /* PendingDocTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBA06F422D270A300F36353 /* PendingDocTableCell.swift */; };
+		6CBA06F722D270A300F36353 /* PendingDocTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CBA06F522D270A300F36353 /* PendingDocTableCell.xib */; };
 		6CBD17DB228BCB7300144B6C /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD17DA228BCB7300144B6C /* PaddingLabel.swift */; };
 		6CC94EDD228BE5BA002F3464 /* CommonAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC94EDC228BE5BA002F3464 /* CommonAPIs.swift */; };
 		6CC94EE2228BE7FC002F3464 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC94EE1228BE7FC002F3464 /* ApiClient.swift */; };
@@ -555,6 +557,8 @@
 		6CB185C722CFB462009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PackageDetailsController.xib; sourceTree = "<group>"; };
 		6CB185C822CFB46E009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PaymentMethodsContainerController.xib; sourceTree = "<group>"; };
 		6CB2A8BA228CAD8200A78541 /* AboutUsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsTableCell.swift; sourceTree = "<group>"; };
+		6CBA06F422D270A300F36353 /* PendingDocTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingDocTableCell.swift; sourceTree = "<group>"; };
+		6CBA06F522D270A300F36353 /* PendingDocTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PendingDocTableCell.xib; sourceTree = "<group>"; };
 		6CBD17DA228BCB7300144B6C /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		6CC94EDC228BE5BA002F3464 /* CommonAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAPIs.swift; sourceTree = "<group>"; };
 		6CC94EE1228BE7FC002F3464 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -1008,6 +1012,8 @@
 				6CF0E3792285DA8900149910 /* OrderTableCell.swift */,
 				6C9027C9228F95A600B41705 /* OrderTableCell.xib */,
 				6C99797222D2061C003CE0FF /* OrderModel.swift */,
+				6CBA06F422D270A300F36353 /* PendingDocTableCell.swift */,
+				6CBA06F522D270A300F36353 /* PendingDocTableCell.xib */,
 			);
 			path = orders;
 			sourceTree = "<group>";
@@ -1660,6 +1666,7 @@
 				6C902797228F953A00B41705 /* PaymentViewController.xib in Resources */,
 				6C244FCC229212E600B205B9 /* HelpTableCell.xib in Resources */,
 				6C431E0E22B5A1FF00DD140D /* VisaQuestionsView.xib in Resources */,
+				6CBA06F722D270A300F36353 /* PendingDocTableCell.xib in Resources */,
 				6C90278B228F951000B41705 /* InstituteDetailsTableCell.xib in Resources */,
 				6C5FDA572270816C00ABA39B /* LaunchScreen.storyboard in Resources */,
 				6C5FDA542270816C00ABA39B /* Assets.xcassets in Resources */,
@@ -1920,6 +1927,7 @@
 				6CF3E1CC2274BBE5007488BA /* HomeCollectionSectionWrapper.swift in Sources */,
 				39EE2AB122A09A0000A9A501 /* TitleCellController.swift in Sources */,
 				6C3885CD229B2B4900CA168A /* NewVisaCountriesResponse.swift in Sources */,
+				6CBA06F622D270A300F36353 /* PendingDocTableCell.swift in Sources */,
 				6C77825D227A3E23001926B2 /* BanksViewController.swift in Sources */,
 				6CD84B5922A46D8100E3CAD3 /* VisaHttpClient.swift in Sources */,
 				6C778264227A9902001926B2 /* StoryBoardIDs.swift in Sources */,

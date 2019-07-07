@@ -17,14 +17,16 @@ final class OrdersHistoryController: UIViewController, HaveLoading, StyledAction
     internal let disposeBag = DisposeBag()
     var trackNo: String?
 
+    var datalist: [CompletedVisa] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.appVeryLightGray
         tableView.registerNib(OrderTableCell.cellId)
         subscribeToProgress(viewModel.showProgress)
-        bindDataToTable()
+//        bindDataToTable()
         setupActionBar(.withTitle("طلباتي"))
         setONItemSelected()
+        setDatasource()
     }
 
     private func setONItemSelected() {
@@ -37,11 +39,67 @@ final class OrdersHistoryController: UIViewController, HaveLoading, StyledAction
 
     @IBAction func followStateAction(_: Any) {}
 
-    private func bindDataToTable() {
-        viewModel.completedVisa
-            .bind(to: tableView.rx.items(cellIdentifier: OrderTableCell.cellId, cellType: OrderTableCell.self)) { _, model, cell in
-                cell.setCellData(model)
-            }.disposed(by: disposeBag)
+
+}
+
+extension OrdersHistoryController {
+    func setDatasource() {
+        tableView.defaultSeperator()
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 70
+        tableView.registerNib(OrderTableCell.cellId)
+        tableView.registerNib(PendingDocTableCell.cellId)
+        tableView.dataSource = self
+        tableView.delegate = self
+        viewModel.completedVisa.subscribe(onNext: { [unowned self] value in
+            self.datalist = value//.map{VisaOrderDataSection}
+            self.tableView.reloadData()
+        }).disposed(by: disposeBag)
+    }
+}
+
+extension OrdersHistoryController: UITableViewDataSource {
+    public func numberOfSections(in _: UITableView) -> Int {
+        return datalist.count
+    }
+
+    public func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let pending =  datalist[section].pendingDocs else {
+            return 1
+        }
+        return pending.count
+    }
+
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 { //this is always the header
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: OrderTableCell.cellId) as? OrderTableCell else {
+                return UITableViewCell()
+            }
+            cell.setCellData(datalist[indexPath.section])
+
+            return cell
+        } else {
+            //this is for expanded cells
+            let cell = tableView.dequeueReusableCell(withIdentifier: PendingDocTableCell.cellId) as! PendingDocTableCell
+            let model = datalist[indexPath.section].pendingDocs?[indexPath.row]
+            cell.setCellData(model?.documentFor ?? model?.documentName ?? model?.variableName ?? "")
+            return cell
+        }
+    }
+}
+
+extension OrdersHistoryController: UITableViewDelegate {
+    public func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if datalist[indexPath.section].hideAccessory {
+//            return
+//        }
+//        if datalist[indexPath.section].opened {
+//            datalist[indexPath.section].opened = false
+//        } else {
+//            datalist[indexPath.section].opened = true
+//        }
+//        let set = IndexSet(integer: indexPath.section)
+//        tableView.reloadSections(set, with: .none)
     }
 }
 
