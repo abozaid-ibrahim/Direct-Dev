@@ -17,7 +17,6 @@ class OrderTableCell: UITableViewCell, TableCell {
     func setCellData(_ model: CellDataModel) {
         titleLbl.text = model.visaStatusLog?.first?.message
         dateLbl.text = model.visaStatusLog?.first?.visaStatus
-        print(model)
     }
 
     typealias CellDataModel = CompletedVisa

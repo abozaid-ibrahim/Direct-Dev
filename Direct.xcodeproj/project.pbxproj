@@ -76,6 +76,10 @@
 		6C33A5E522D0DE8600D2B611 /* OrdersHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C33A5E422D0DE8600D2B611 /* OrdersHttpClient.swift */; };
 		6C33A5E722D0DEAA00D2B611 /* CompletedOrdersJsonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C33A5E622D0DEAA00D2B611 /* CompletedOrdersJsonResponse.swift */; };
 		6C33A5E922D0DF4900D2B611 /* OrdersHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C33A5E822D0DF4900D2B611 /* OrdersHistoryViewModel.swift */; };
+		6C33A5EB22D11F5100D2B611 /* ViaRequirementsTabsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C33A5EA22D11F5100D2B611 /* ViaRequirementsTabsController.swift */; };
+		6C33A5EE22D1257D00D2B611 /* VisaRequirementTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C33A5EC22D1257D00D2B611 /* VisaRequirementTabCell.swift */; };
+		6C33A5EF22D1257D00D2B611 /* VisaRequirementTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C33A5ED22D1257D00D2B611 /* VisaRequirementTabCell.xib */; };
+		6C33A5F122D12BBC00D2B611 /* ViaRequirementsTabsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C33A5F022D12BBC00D2B611 /* ViaRequirementsTabsViewModel.swift */; };
 		6C3885C5229B1C6000CA168A /* NewDirectVisaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3885C4229B1C6000CA168A /* NewDirectVisaViewModel.swift */; };
 		6C3885C9229B207500CA168A /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3885C8229B207500CA168A /* Country.swift */; };
 		6C3885CB229B24D300CA168A /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3885CA229B24D300CA168A /* NetworkErrors.swift */; };
@@ -189,6 +193,8 @@
 		6C9027DF228F95D200B41705 /* AboutUsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9027E1228F95D200B41705 /* AboutUsTableCell.xib */; };
 		6C9027EB228F95EB00B41705 /* HomeCollectionSectionWrapper.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9027ED228F95EB00B41705 /* HomeCollectionSectionWrapper.xib */; };
 		6C96B9CB22CE3CBE00EF4861 /* VisaRequirementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C96B9CA22CE3CBE00EF4861 /* VisaRequirementViewModel.swift */; };
+		6C99796F22D1F67B003CE0FF /* TabItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C99796E22D1F67B003CE0FF /* TabItemController.swift */; };
+		6C99797122D1F6B2003CE0FF /* ReqTabsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C99797022D1F6B2003CE0FF /* ReqTabsController.swift */; };
 		6CA040B62281BE0300619B6F /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA040B52281BE0300619B6F /* FloatingTextField.swift */; };
 		6CB1857522CEC811009485CD /* AddCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1857322CEC811009485CD /* AddCountryViewController.swift */; };
 		6CB1857622CEC811009485CD /* AddCountryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB1857422CEC811009485CD /* AddCountryViewController.xib */; };
@@ -366,6 +372,10 @@
 		6C33A5E422D0DE8600D2B611 /* OrdersHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersHttpClient.swift; sourceTree = "<group>"; };
 		6C33A5E622D0DEAA00D2B611 /* CompletedOrdersJsonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedOrdersJsonResponse.swift; sourceTree = "<group>"; };
 		6C33A5E822D0DF4900D2B611 /* OrdersHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersHistoryViewModel.swift; sourceTree = "<group>"; };
+		6C33A5EA22D11F5100D2B611 /* ViaRequirementsTabsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViaRequirementsTabsController.swift; sourceTree = "<group>"; };
+		6C33A5EC22D1257D00D2B611 /* VisaRequirementTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaRequirementTabCell.swift; sourceTree = "<group>"; };
+		6C33A5ED22D1257D00D2B611 /* VisaRequirementTabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisaRequirementTabCell.xib; sourceTree = "<group>"; };
+		6C33A5F022D12BBC00D2B611 /* ViaRequirementsTabsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViaRequirementsTabsViewModel.swift; sourceTree = "<group>"; };
 		6C3885C4229B1C6000CA168A /* NewDirectVisaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDirectVisaViewModel.swift; sourceTree = "<group>"; };
 		6C3885C8229B207500CA168A /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		6C3885CA229B24D300CA168A /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
@@ -490,10 +500,11 @@
 		6C8503B2229DDB5F004FE346 /* VisaAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaAPIs.swift; sourceTree = "<group>"; };
 		6C87FAD82270C6D800AFE485 /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		6C90276D228F88CC00B41705 /* UploadField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadField.swift; sourceTree = "<group>"; };
-		6C902771228F93BE00B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		6C902772228F93BE00B41705 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		6C902774228F94BF00B41705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AboutUsViewController.xib; sourceTree = "<group>"; };
 		6C96B9CA22CE3CBE00EF4861 /* VisaRequirementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaRequirementViewModel.swift; sourceTree = "<group>"; };
+		6C99796E22D1F67B003CE0FF /* TabItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemController.swift; sourceTree = "<group>"; };
+		6C99797022D1F6B2003CE0FF /* ReqTabsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReqTabsController.swift; sourceTree = "<group>"; };
 		6CA040B52281BE0300619B6F /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
 		6CB1857322CEC811009485CD /* AddCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCountryViewController.swift; sourceTree = "<group>"; };
 		6CB1857422CEC811009485CD /* AddCountryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCountryViewController.xib; sourceTree = "<group>"; };
@@ -888,6 +899,7 @@
 		6C3885C3229B1B4F00CA168A /* visa requirement */ = {
 			isa = PBXGroup;
 			children = (
+				6C99796D22D1F662003CE0FF /* tabs */,
 				6CDEF77C22A11B3700BF5F0B /* api */,
 				6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */,
 				6C9027CC228F95AC00B41705 /* VisaRequirementController.xib */,
@@ -1200,6 +1212,19 @@
 				6C6D95DC22CAA1C1001E4951 /* UILabel+APP.swift */,
 			);
 			path = style;
+			sourceTree = "<group>";
+		};
+		6C99796D22D1F662003CE0FF /* tabs */ = {
+			isa = PBXGroup;
+			children = (
+				6C33A5EA22D11F5100D2B611 /* ViaRequirementsTabsController.swift */,
+				6C33A5F022D12BBC00D2B611 /* ViaRequirementsTabsViewModel.swift */,
+				6C33A5EC22D1257D00D2B611 /* VisaRequirementTabCell.swift */,
+				6C33A5ED22D1257D00D2B611 /* VisaRequirementTabCell.xib */,
+				6C99796E22D1F67B003CE0FF /* TabItemController.swift */,
+				6C99797022D1F6B2003CE0FF /* ReqTabsController.swift */,
+			);
+			path = tabs;
 			sourceTree = "<group>";
 		};
 		6CB1857922CFAB92009485CD /* Seperate Components */ = {
@@ -1658,6 +1683,7 @@
 				6C9027A6228F955F00B41705 /* PaymentMethodsContainerController.xib in Resources */,
 				6C9027AC228F956B00B41705 /* PackageDetailsController.xib in Resources */,
 				3940FBE422B26CE400A801C0 /* MyAccount.storyboard in Resources */,
+				6C33A5EF22D1257D00D2B611 /* VisaRequirementTabCell.xib in Resources */,
 				6CDEF78222A11EFC00BF5F0B /* Visa.storyboard in Resources */,
 				6C9027CA228F95AC00B41705 /* VisaRequirementController.xib in Resources */,
 				6C9027BB228F958C00B41705 /* TextTableCell.xib in Resources */,
@@ -1761,9 +1787,11 @@
 				39EE2A8E22A0982700A9A501 /* AuthTableViewController.swift in Sources */,
 				39EE2A9E22A0984200A9A501 /* AuthenticateError.swift in Sources */,
 				39EE2AAF22A09A0000A9A501 /* PhoneNumberTableViewCell.swift in Sources */,
+				6C99797122D1F6B2003CE0FF /* ReqTabsController.swift in Sources */,
 				39EE2AB622A09A0000A9A501 /* AuthTextFieldCellController.swift in Sources */,
 				39EE2A9922A0984200A9A501 /* AuthCoordinator.swift in Sources */,
 				6CF3E1762271E598007488BA /* RootNavigationViewController.swift in Sources */,
+				6C99796F22D1F67B003CE0FF /* TabItemController.swift in Sources */,
 				6CF703E22286FBD700B1C387 /* InstituteDetailsHeaderView.swift in Sources */,
 				6C77825A227A3AFF001926B2 /* MyAccountController.swift in Sources */,
 				6C6EED6922A248BA0091B82F /* PaymentAPIs.swift in Sources */,
@@ -1776,6 +1804,7 @@
 				6C7782472278A54A001926B2 /* CheckoutFooter.swift in Sources */,
 				39EE2ACD22A0A0F400A9A501 /* UIViewController+ChildControllers.swift in Sources */,
 				6C778257227A36F7001926B2 /* HelpViewController.swift in Sources */,
+				6C33A5EE22D1257D00D2B611 /* VisaRequirementTabCell.swift in Sources */,
 				6C06E81222BD392F006A48DD /* UIImage+ Resizing.swift in Sources */,
 				6CF0E3672285BB1000149910 /* SwipeUpToDismiss.swift in Sources */,
 				6CB1857522CEC811009485CD /* AddCountryViewController.swift in Sources */,
@@ -1816,6 +1845,7 @@
 				39EE2AE022A3C8D900A9A501 /* AuthAPI.swift in Sources */,
 				6CF9F5DE22BEDCBE00E45E8A /* SponserFormParams.swift in Sources */,
 				6C2CFB932277902400D23CF4 /* NewDirectVisaController.swift in Sources */,
+				6C33A5F122D12BBC00D2B611 /* ViaRequirementsTabsViewModel.swift in Sources */,
 				6CF1C9B122A5DBEE0034DB39 /* PassangersInputViewViewController.swift in Sources */,
 				6C6EED6D22A24C560091B82F /* PaymentChildsResponse.swift in Sources */,
 				6C6EED7122A24DEF0091B82F /* PaymentClient.swift in Sources */,
@@ -1861,6 +1891,7 @@
 				6CF3E1A022725478007488BA /* OfferCollectionViewCell.swift in Sources */,
 				6C77826A227A9F64001926B2 /* SponsersViewController.swift in Sources */,
 				6CF3E1AB227254DB007488BA /* NewsSectionVM.swift in Sources */,
+				6C33A5EB22D11F5100D2B611 /* ViaRequirementsTabsController.swift in Sources */,
 				6CF4281122C8146E000A9646 /* Encryption.swift in Sources */,
 				39EE2A9C22A0984200A9A501 /* LoginCommandsFactory.swift in Sources */,
 				39EE2AB722A09A0000A9A501 /* ButtonCellConfigurator.swift in Sources */,
@@ -1986,7 +2017,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				6C5FDA512270816B00ABA39B /* Base */,
-				6C902771228F93BE00B41705 /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

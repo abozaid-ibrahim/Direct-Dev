@@ -57,10 +57,10 @@ class NewDirectVisaViewModel {
         let countries = network.getCountries()
         countries.subscribe(onNext: { [weak self] countries in
             self?.screenData.onNext(countries.newVisaServices ?? [])
-            }, onError: { [weak self] err in
-                self?.screenData.onError(err)
-                self?.showProgress.onNext(false)
-            }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }, onError: { [weak self] err in
+            self?.screenData.onError(err)
+            self?.showProgress.onNext(false)
+        }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         // get biou
         
         // get relatives
@@ -68,8 +68,8 @@ class NewDirectVisaViewModel {
         rel.subscribe(onNext: { [weak self] bios in
             
             self?.relativesList.append(contentsOf: bios.usRelatives ?? [])
-            }, onError: { [weak self] _ in
-                self?.showProgress.onNext(false)
+        }, onError: { [weak self] _ in
+            self?.showProgress.onNext(false)
         }).disposed(by: disposeBag)
         
         Observable.zip(countries, rel)
@@ -132,11 +132,11 @@ class NewDirectVisaViewModel {
             if let req = res.visaServices.first?.requestID {
                 self.visaRequestData.requestID = req.stringValue
             }
-            try! AppNavigator().push(.visaRequirement(self.visaRequestData)
+            try! AppNavigator().push(.visaRequirement(.mainView(self.visaRequestData))
             )
-            }, onError: { _ in
-                self.showProgress.onNext(false)
-        }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }, onError: { _ in
+            self.showProgress.onNext(false)
+        }).disposed(by: disposeBag)
     }
     
     func showVisaTypes() {
@@ -232,7 +232,7 @@ class NewDirectVisaViewModel {
     private var visaPriceParams: VisaPriceParams? {
         guard let cid = visaRequestData.country_id,
             let vtype = visaRequestData.visatype else {
-                return nil
+            return nil
         }
         return VisaPriceParams(cid: cid, cityid: visaRequestData.biometry_loc_id ?? "0", no_of_adult: visaRequestData.no_of_adult ?? "0", no_of_child: visaRequestData.no_of_child ?? "0", no_of_passport: visaRequestData.no_of_passport ?? "0", promo_code: 0.stringValue, visatype: vtype)
     }
@@ -267,7 +267,7 @@ class NewDirectVisaViewModel {
                 break
             }
             
-            }.disposed(by: disposeBag)
+        }.disposed(by: disposeBag)
         try! AppNavigator().presentModally(passangersCountVC)
     }
     
@@ -296,6 +296,3 @@ class NewDirectVisaViewModel {
 enum InputsError: Error {
     case missingInput
 }
-
-
-

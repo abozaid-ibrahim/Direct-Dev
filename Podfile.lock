@@ -54,6 +54,7 @@ PODS:
   - SwiftMessages (7.0.0):
     - SwiftMessages/App (= 7.0.0)
   - SwiftMessages/App (7.0.0)
+  - XLPagerTabStrip (9.0.0)
   - YALField (1.0.1)
 
 DEPENDENCIES:
@@ -74,6 +75,7 @@ DEPENDENCIES:
   - SnapKit
   - SwifterSwift
   - SwiftMessages
+  - XLPagerTabStrip (~> 9.0)
   - YALField
 
 SPEC REPOS:
@@ -98,6 +100,7 @@ SPEC REPOS:
     - SnapKit
     - SwifterSwift
     - SwiftMessages
+    - XLPagerTabStrip
     - YALField
 
 SPEC CHECKSUMS:
@@ -121,8 +124,9 @@ SPEC CHECKSUMS:
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
   SwifterSwift: 96f90594b370802f01647c2b1229c74a84ffafee
   SwiftMessages: a952f7a9103d9aeab93730a2861d2d8fcdd8758f
+  XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
   YALField: f80f986de790bb13690264422437fa4e0593af0a
 
-PODFILE CHECKSUM: 5ce7f86dd5130549893003aa476be7752530946c
+PODFILE CHECKSUM: 6b072b1d25a2751f1c7c8643da008df53a42ea14
 
 COCOAPODS: 1.7.2

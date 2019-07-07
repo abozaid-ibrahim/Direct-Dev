@@ -19,6 +19,7 @@ final class VisaRequirementController: UIViewController, PanModalPresentable, St
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var countryNameLbl: UILabel!
     @IBOutlet private var descLbl: UILabel!
+    @IBOutlet private var submitHeight: NSLayoutConstraint!
     //===================================================<<
     var panScrollable: UIScrollView? {
         return tableView
@@ -26,15 +27,25 @@ final class VisaRequirementController: UIViewController, PanModalPresentable, St
 
     private let viewModel = VisaRequirementsViewModel()
     private var datalist: [ReqDataSection] = []
+    var inputs: VisaRequirementType?
     var visaData: VisaRequestParams?
     internal let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
+        switch inputs! {
+        case let .asAtab(country):
+            loadData(for: country)
+            submitHeight.constant = 0
+
+        case let .mainView(prm):
+            visaData = prm
+            loadData(for: visaData?.country_id)
+            submitHeight.constant = 70
+        }
         countryNameLbl.font = UIFont.appBoldFontWith(size: 17)
         setupActionBar(.withTitleAndX(Str.visaRequirement))
         tableView.separatorColor = UIColor.appVeryLightGray
         setDatasource()
-        viewModel.getDataRemotely(for: visaData?.country_id)
         viewModel.headerData.subscribe(onNext: { [unowned self] value in
             self.setHeaderData(with: value)
         }).disposed(by: disposeBag)
@@ -42,6 +53,10 @@ final class VisaRequirementController: UIViewController, PanModalPresentable, St
 
     @IBAction func requestAction(_: Any) {
         try! AppNavigator().push(.confirmatonVisa(visaData!, reqID: visaData?.requestID ?? ""))
+    }
+
+    func loadData(for country: String?) {
+        viewModel.getDataRemotely(for: country)
     }
 }
 

@@ -22,6 +22,7 @@ target 'Direct' do
   pod 'GenericCellControllers'
   pod 'SnapKit'
   pod 'SwiftMessages'
+  pod 'XLPagerTabStrip', '~> 9.0'
 
   	pod 'IQKeyboardManagerSwift' #, '~> 6.1.1'
 

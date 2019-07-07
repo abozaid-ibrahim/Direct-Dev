@@ -11,12 +11,15 @@ import RxSwift
 import UIKit
 
 /* if any contoller need any dependencies, it should passed in the destination item */
-
+enum VisaRequirementType{
+    case asAtab(country:String)
+    case mainView(VisaRequestParams)
+}
 enum Destination {
     case loginView,
         signupView,
         homeScreen,
-        visaRequirement(VisaRequestParams),
+        visaRequirement(VisaRequirementType),
         selectableSheet(data: [String], titleText: String?, style: CellStyle),
         paymentMethod(thanksUrl: String?, requestID: Int, totalCost: String),
         passangersCount,
@@ -48,7 +51,7 @@ enum Destination {
             return home
         case let .visaRequirement(data):
             let controller = VisaRequirementController()
-            controller.visaData = data
+            controller.inputs = data
             return controller
         case let .selectableSheet(data, title, style):
             let vc = SelectableTableSheet()
