@@ -203,6 +203,8 @@
 		6CB2A8BC228CAD8200A78541 /* AboutUsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB2A8BA228CAD8200A78541 /* AboutUsTableCell.swift */; };
 		6CBA06F622D270A300F36353 /* PendingDocTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBA06F422D270A300F36353 /* PendingDocTableCell.swift */; };
 		6CBA06F722D270A300F36353 /* PendingDocTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CBA06F522D270A300F36353 /* PendingDocTableCell.xib */; };
+		6CBA06FA22D2741100F36353 /* OrderDetailsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBA06F822D2741100F36353 /* OrderDetailsTableCell.swift */; };
+		6CBA06FB22D2741100F36353 /* OrderDetailsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CBA06F922D2741100F36353 /* OrderDetailsTableCell.xib */; };
 		6CBD17DB228BCB7300144B6C /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD17DA228BCB7300144B6C /* PaddingLabel.swift */; };
 		6CC94EDD228BE5BA002F3464 /* CommonAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC94EDC228BE5BA002F3464 /* CommonAPIs.swift */; };
 		6CC94EE2228BE7FC002F3464 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC94EE1228BE7FC002F3464 /* ApiClient.swift */; };
@@ -559,6 +561,8 @@
 		6CB2A8BA228CAD8200A78541 /* AboutUsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsTableCell.swift; sourceTree = "<group>"; };
 		6CBA06F422D270A300F36353 /* PendingDocTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingDocTableCell.swift; sourceTree = "<group>"; };
 		6CBA06F522D270A300F36353 /* PendingDocTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PendingDocTableCell.xib; sourceTree = "<group>"; };
+		6CBA06F822D2741100F36353 /* OrderDetailsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsTableCell.swift; sourceTree = "<group>"; };
+		6CBA06F922D2741100F36353 /* OrderDetailsTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailsTableCell.xib; sourceTree = "<group>"; };
 		6CBD17DA228BCB7300144B6C /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		6CC94EDC228BE5BA002F3464 /* CommonAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAPIs.swift; sourceTree = "<group>"; };
 		6CC94EE1228BE7FC002F3464 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -1004,11 +1008,10 @@
 		6C5DE7582275C742001A9FB6 /* orders */ = {
 			isa = PBXGroup;
 			children = (
+				6CBA06FC22D2A11B00F36353 /* details */,
 				6C33A5E122D0DD6300D2B611 /* model */,
 				6C33A5E822D0DF4900D2B611 /* OrdersHistoryViewModel.swift */,
 				6CF0E36F2285D70900149910 /* OrdersHistoryController.swift */,
-				6CF0E3752285D78900149910 /* OrderDetailsController.swift */,
-				6C9027C6228F95A000B41705 /* OrderDetailsController.xib */,
 				6CF0E3792285DA8900149910 /* OrderTableCell.swift */,
 				6C9027C9228F95A600B41705 /* OrderTableCell.xib */,
 				6C99797222D2061C003CE0FF /* OrderModel.swift */,
@@ -1247,6 +1250,17 @@
 				6CB1857B22CFABC7009485CD /* VideoController.swift */,
 			);
 			path = "video player";
+			sourceTree = "<group>";
+		};
+		6CBA06FC22D2A11B00F36353 /* details */ = {
+			isa = PBXGroup;
+			children = (
+				6CF0E3752285D78900149910 /* OrderDetailsController.swift */,
+				6C9027C6228F95A000B41705 /* OrderDetailsController.xib */,
+				6CBA06F822D2741100F36353 /* OrderDetailsTableCell.swift */,
+				6CBA06F922D2741100F36353 /* OrderDetailsTableCell.xib */,
+			);
+			path = details;
 			sourceTree = "<group>";
 		};
 		6CBD17D7228BCB5A00144B6C /* custom views */ = {
@@ -1657,6 +1671,7 @@
 				6C9027A0228F955200B41705 /* PaymentBranchTableCell.xib in Resources */,
 				6C9027D3228F95BD00B41705 /* NewDirectVisaController.xib in Resources */,
 				6C9027D6228F95C300B41705 /* SuccessVisaRequestController.xib in Resources */,
+				6CBA06FB22D2741100F36353 /* OrderDetailsTableCell.xib in Resources */,
 				6C6A0C0C22AB81F800150FF6 /* Cairo-ExtraLight.ttf in Resources */,
 				6CF3E1A122725478007488BA /* OfferCollectionViewCell.xib in Resources */,
 				39EE2AD322A0B80900A9A501 /* Authentication.xcassets in Resources */,
@@ -1956,6 +1971,7 @@
 				6CF2514622A62F1000CDA47C /* PreviousVisaTypeJson.swift in Sources */,
 				39EE2A9B22A0984200A9A501 /* AuthViewsBuilder.swift in Sources */,
 				39EE2AE222A3CB4000A9A501 /* APIConstant.swift in Sources */,
+				6CBA06FA22D2741100F36353 /* OrderDetailsTableCell.swift in Sources */,
 				6C8503B3229DDB5F004FE346 /* VisaAPIs.swift in Sources */,
 				6C87FAD92270C6D800AFE485 /* UIColor+Additions.swift in Sources */,
 				6C778284227AA33D001926B2 /* InstituteTableCell.swift in Sources */,

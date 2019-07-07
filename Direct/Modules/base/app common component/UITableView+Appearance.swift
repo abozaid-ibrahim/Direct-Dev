@@ -10,5 +10,7 @@ import UIKit
 extension UITableView {
     func defaultSeperator() {
         tableFooterView = UIView()
+        separatorColor = UIColor.appVeryLightGray
+        separatorStyle = .singleLine
     }
 }

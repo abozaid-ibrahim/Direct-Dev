@@ -20,39 +20,29 @@ final class OrdersHistoryController: UIViewController, HaveLoading, StyledAction
     var datalist: [CompletedVisa] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.defaultSeperator()
         view.backgroundColor = UIColor.appVeryLightGray
         tableView.registerNib(OrderTableCell.cellId)
         subscribeToProgress(viewModel.showProgress)
 //        bindDataToTable()
         setupActionBar(.withTitle("طلباتي"))
-        setONItemSelected()
         setDatasource()
     }
 
-    private func setONItemSelected() {
-        tableView.rx.modelSelected(CompletedVisa.self)
-            .subscribe(onNext: { [unowned self] value in
-                print(value)
-                try! AppNavigator().push(.orderDetails)
-            }).disposed(by: disposeBag)
-    }
-
     @IBAction func followStateAction(_: Any) {}
-
-
 }
 
 extension OrdersHistoryController {
     func setDatasource() {
         tableView.defaultSeperator()
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 70
+        tableView.estimatedRowHeight = 60
         tableView.registerNib(OrderTableCell.cellId)
         tableView.registerNib(PendingDocTableCell.cellId)
         tableView.dataSource = self
         tableView.delegate = self
         viewModel.completedVisa.subscribe(onNext: { [unowned self] value in
-            self.datalist = value//.map{VisaOrderDataSection}
+            self.datalist = value // .map{VisaOrderDataSection}
             self.tableView.reloadData()
         }).disposed(by: disposeBag)
     }
@@ -64,7 +54,7 @@ extension OrdersHistoryController: UITableViewDataSource {
     }
 
     public func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let pending =  datalist[section].pendingDocs else {
+        guard let pending = datalist[section].pendingDocs else {
             return 1
         }
         return pending.count
@@ -89,17 +79,7 @@ extension OrdersHistoryController: UITableViewDataSource {
 }
 
 extension OrdersHistoryController: UITableViewDelegate {
-    public func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if datalist[indexPath.section].hideAccessory {
-//            return
-//        }
-//        if datalist[indexPath.section].opened {
-//            datalist[indexPath.section].opened = false
-//        } else {
-//            datalist[indexPath.section].opened = true
-//        }
-//        let set = IndexSet(integer: indexPath.section)
-//        tableView.reloadSections(set, with: .none)
+    public func tableView(_: UITableView, didSelectRowAt _: IndexPath) {
+        try! AppNavigator().push(.orderDetails)
     }
 }
-

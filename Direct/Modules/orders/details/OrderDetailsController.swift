@@ -13,15 +13,17 @@ final class OrderDetailsController: UIViewController, StyledActionBar {
     internal let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .appVeryLightGray
+        tableView.defaultSeperator()
         setupActionBar(.withTitle("2344"))
         setupTableData()
     }
 
     private func setupTableData() {
-        tableView.registerNib(OrderTableCell.cellId)
+        tableView.registerNib(OrderDetailsTableCell.cellId)
         Observable<[String]>.just(dataList)
-            .bind(to: tableView.rx.items(cellIdentifier: OrderTableCell.cellId)) { _, _, cell in
-                let mycell = (cell as! OrderTableCell)
+            .bind(to: tableView.rx.items(cellIdentifier: OrderDetailsTableCell.cellId,cellType: OrderDetailsTableCell.self)) { _, _, cell in
+//                cell.setCellData(<#T##model: OrderDetailsTableCell.CellDataModel##OrderDetailsTableCell.CellDataModel#>)
             }.disposed(by: disposeBag)
     }
 
