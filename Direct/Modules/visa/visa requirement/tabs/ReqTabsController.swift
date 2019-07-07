@@ -34,13 +34,13 @@ class VisaTabsController: BaseButtonBarPagerTabStripViewController<VisaRequireme
         settings.style.buttonBarBackgroundColor = .white
         settings.style.buttonBarItemBackgroundColor = .clear
         settings.style.selectedBarBackgroundColor = UIColor.appMango
-        settings.style.selectedBarHeight = 4.0
+        settings.style.selectedBarHeight = 3.0
         settings.style.buttonBarMinimumLineSpacing = 5
         settings.style.buttonBarItemTitleColor = .black
         settings.style.buttonBarItemsShouldFillAvailableWidth = false
         settings.style.buttonBarLeftContentInset = 10
         settings.style.buttonBarRightContentInset = 10
-        settings.style.buttonBarHeight = 65
+        settings.style.buttonBarHeight = 75
 //        settings.style.
         super.viewDidLoad()
         view.backgroundColor = .white
