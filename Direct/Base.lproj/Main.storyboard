@@ -32,38 +32,106 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fj4-2S-Ftw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1271" y="-113"/>
+            <point key="canvasLocation" x="-1788" y="-115"/>
         </scene>
         <!--طلباتي-->
         <scene sceneID="zJh-OH-16J">
             <objects>
-                <viewController storyboardIdentifier="HelpViewController" id="De0-aQ-EfP" customClass="HelpViewController" customModule="Direct" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrdersHistoryController" id="De0-aQ-EfP" customClass="OrdersHistoryController" customModule="Direct" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SUH-xD-SIh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EZD-3Q-xMd">
-                                <rect key="frame" x="4" y="68" width="367" height="546"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="9as-zx-Siy">
+                                <rect key="frame" x="0.0" y="64" width="375" height="546"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vag-7t-pul">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="474"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKa-Rx-tj4">
+                                        <rect key="frame" x="0.0" y="475" width="375" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="mIK-sq-ZMf"/>
+                                        </constraints>
+                                        <state key="normal" title="الإبلاغ عن حوالة بنكية"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColorV">
+                                                <color key="value" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BiF-ky-5Mv">
+                                        <rect key="frame" x="0.0" y="511" width="375" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="Hbi-Sy-B4r"/>
+                                        </constraints>
+                                        <state key="normal" title="تتبع حالة الطلب"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cMs-lq-j8J" firstAttribute="bottom" secondItem="EZD-3Q-xMd" secondAttribute="bottom" constant="4" id="OD0-P3-iqW"/>
-                            <constraint firstItem="EZD-3Q-xMd" firstAttribute="top" secondItem="cMs-lq-j8J" secondAttribute="top" constant="4" id="Quw-3g-PkE"/>
-                            <constraint firstItem="EZD-3Q-xMd" firstAttribute="leading" secondItem="cMs-lq-j8J" secondAttribute="leading" constant="4" id="lwP-AB-mRn"/>
-                            <constraint firstItem="cMs-lq-j8J" firstAttribute="trailing" secondItem="EZD-3Q-xMd" secondAttribute="trailing" constant="4" id="wEz-zh-t8w"/>
+                            <constraint firstItem="9as-zx-Siy" firstAttribute="top" secondItem="cMs-lq-j8J" secondAttribute="top" id="HOa-2H-0bH"/>
+                            <constraint firstItem="9as-zx-Siy" firstAttribute="leading" secondItem="SUH-xD-SIh" secondAttribute="leading" id="fqM-kH-QI7"/>
+                            <constraint firstItem="cMs-lq-j8J" firstAttribute="trailing" secondItem="9as-zx-Siy" secondAttribute="trailing" id="opx-3Y-sYC"/>
+                            <constraint firstItem="cMs-lq-j8J" firstAttribute="bottom" secondItem="9as-zx-Siy" secondAttribute="bottom" constant="8" id="wvK-vW-grZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cMs-lq-j8J"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="طلباتي" image="myordersImage" id="QVa-gB-goh"/>
                     <connections>
-                        <outlet property="tableView" destination="EZD-3Q-xMd" id="fnz-nd-plQ"/>
+                        <outlet property="tableView" destination="vag-7t-pul" id="pRF-Jy-bhZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5bn-9s-L7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-951" y="765"/>
+            <point key="canvasLocation" x="-730.39999999999998" y="973.76311844077964"/>
+        </scene>
+        <!--Help View Controller-->
+        <scene sceneID="Hm0-0j-vOJ">
+            <objects>
+                <viewController storyboardIdentifier="HelpViewController" id="t3U-Jd-s58" customClass="HelpViewController" customModule="Direct" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zje-Dm-6GO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JWE-P3-cZL">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JWE-P3-cZL" firstAttribute="top" secondItem="ZFJ-f5-ssV" secondAttribute="top" id="MJV-tN-NGv"/>
+                            <constraint firstItem="JWE-P3-cZL" firstAttribute="leading" secondItem="ZFJ-f5-ssV" secondAttribute="leading" id="Qrd-mi-9ZG"/>
+                            <constraint firstAttribute="trailing" secondItem="JWE-P3-cZL" secondAttribute="trailing" id="lZ6-11-5LF"/>
+                            <constraint firstItem="ZFJ-f5-ssV" firstAttribute="bottom" secondItem="JWE-P3-cZL" secondAttribute="bottom" id="seZ-gf-Kxf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZFJ-f5-ssV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ck-S2-q69" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="156" y="938"/>
         </scene>
         <!--Packages View Controller-->
         <scene sceneID="f2G-sx-Dks">
@@ -107,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Z9-zC-fdK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1052" y="-438"/>
+            <point key="canvasLocation" x="1050" y="-44"/>
         </scene>
         <!--بحث-->
         <scene sceneID="HA0-1n-dWo">
@@ -156,7 +224,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="46a-WO-utY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-502" y="1530"/>
+            <point key="canvasLocation" x="-282" y="1739"/>
         </scene>
         <!--AV Player View Controller-->
         <scene sceneID="zcf-ii-0OH">
@@ -164,7 +232,7 @@
                 <avPlayerViewController storyboardIdentifier="VideoController" videoGravity="AVLayerVideoGravityResizeAspect" id="ZsU-Hh-LRO" customClass="VideoController" customModule="Direct" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uxn-Ji-Wba" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-56" y="2191"/>
+            <point key="canvasLocation" x="966" y="1176"/>
         </scene>
         <!--بحث-->
         <scene sceneID="GFv-uH-MDV">
@@ -548,7 +616,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i9O-88-3FJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-601" y="-114"/>
+            <point key="canvasLocation" x="-730" y="-116"/>
         </scene>
         <!--MyAccountController-->
         <scene sceneID="h3v-Qg-iJA">
