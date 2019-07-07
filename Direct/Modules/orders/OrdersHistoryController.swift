@@ -79,7 +79,8 @@ extension OrdersHistoryController: UITableViewDataSource {
 }
 
 extension OrdersHistoryController: UITableViewDelegate {
-    public func tableView(_: UITableView, didSelectRowAt _: IndexPath) {
-        try! AppNavigator().push(.orderDetails)
+    public func tableView(_: UITableView, didSelectRowAt index: IndexPath) {
+        let obj = datalist[index.section]
+        try! AppNavigator().push(Destination.orderDetails(logs: obj.visaStatusLog ?? [],id:obj.visaReqID ?? "" ))
     }
 }

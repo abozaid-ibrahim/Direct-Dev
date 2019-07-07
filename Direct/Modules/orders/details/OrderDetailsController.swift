@@ -11,19 +11,21 @@ import UIKit
 final class OrderDetailsController: UIViewController, StyledActionBar {
     @IBOutlet var tableView: UITableView!
     internal let disposeBag = DisposeBag()
+    var logs:[VisaStatusLog] = []
+    var id:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .appVeryLightGray
         tableView.defaultSeperator()
-        setupActionBar(.withTitle("2344"))
+        setupActionBar(.withTitle(id ?? ""))
         setupTableData()
     }
 
     private func setupTableData() {
         tableView.registerNib(OrderDetailsTableCell.cellId)
-        Observable<[String]>.just(dataList)
-            .bind(to: tableView.rx.items(cellIdentifier: OrderDetailsTableCell.cellId,cellType: OrderDetailsTableCell.self)) { _, _, cell in
-//                cell.setCellData(<#T##model: OrderDetailsTableCell.CellDataModel##OrderDetailsTableCell.CellDataModel#>)
+        Observable<[VisaStatusLog]>.just(logs)
+            .bind(to: tableView.rx.items(cellIdentifier: OrderDetailsTableCell.cellId,cellType: OrderDetailsTableCell.self)) { _, model, cell in
+                cell.setCellData(model)
             }.disposed(by: disposeBag)
     }
 

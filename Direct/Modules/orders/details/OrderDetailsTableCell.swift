@@ -15,11 +15,12 @@ class OrderDetailsTableCell: UITableViewCell, TableCell {
         @IBOutlet private var statusView: UIImageView!
         
         func setCellData(_ model: CellDataModel) {
-            titleLbl.text = model.visaStatusLog?.first?.message
-            dateLbl.text = model.visaStatusLog?.first?.visaStatus
+            titleLbl.text = model.message
+            dateLbl.text = model.visaStatus
+//            model.sta
         }
         
-        typealias CellDataModel = CompletedVisa
+        typealias CellDataModel = VisaStatusLog
         
         override func awakeFromNib() {
             super.awakeFromNib()

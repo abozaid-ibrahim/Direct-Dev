@@ -34,7 +34,7 @@ enum Destination {
         passangersInfoScreen(VisaRequestParams),
         successVisaReqScreen(trackNo: String?, thanksUrl: String?),
         MyOrders(trackNo: String?),
-        orderDetails,
+    orderDetails(logs:[VisaStatusLog],id:String),
         institutesList,
         instituteDetails,
         packageDetails,
@@ -96,8 +96,11 @@ enum Destination {
             let orders = UIStoryboard.main.controller(OrdersHistoryController.self) as! OrdersHistoryController
             orders.trackNo = prm
             return orders
-        case .orderDetails:
-            return OrderDetailsController()
+        case let .orderDetails(logs):
+            let vc = OrderDetailsController()
+            vc.logs = logs.logs
+            vc.id = logs.id
+            return vc
 
         case .institutesList:
             return InstitutesListController()
