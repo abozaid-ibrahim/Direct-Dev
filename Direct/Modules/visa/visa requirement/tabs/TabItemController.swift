@@ -31,7 +31,7 @@ class ReqTabItemViewController: UIViewController, IndicatorInfoProvider {
         addChild(vc)
         view.addSubview(vc.view)
         vc.view.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.equalToSuperview().inset(8)
         }
     }
     

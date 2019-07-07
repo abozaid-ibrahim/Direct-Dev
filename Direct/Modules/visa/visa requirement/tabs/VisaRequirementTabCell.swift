@@ -11,9 +11,9 @@ import UIKit
 class VisaRequirementTabCell: UICollectionViewCell {
     static let id = "VisaRequirementTabCell"
     @IBOutlet var iconImage: UIImageView!
-    @IBOutlet  var titleLbl: UILabel!
+    @IBOutlet var titleLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        titleLbl.font = .appRegularFontWith(size: 14)
     }
 }
