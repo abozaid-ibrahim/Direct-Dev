@@ -11,10 +11,15 @@ import RxSwift
 import UIKit
 
 /* if any contoller need any dependencies, it should passed in the destination item */
-enum VisaRequirementType{
-    case asAtab(country:String)
+enum VisaRequirementType {
+    case asAtab(country: String)
     case mainView(VisaRequestParams)
 }
+enum OrderDetails {
+    case sourceA(trackNO:String)
+    case mainView(VisaRequestParams)
+}
+
 enum Destination {
     case loginView,
         signupView,
@@ -88,7 +93,7 @@ enum Destination {
             vc.thanksUrl = prm.thanksUrl
             return vc
         case let .MyOrders(prm):
-            let orders = OrdersHistoryController()
+            let orders = UIStoryboard.main.controller(OrdersHistoryController.self) as! OrdersHistoryController
             orders.trackNo = prm
             return orders
         case .orderDetails:

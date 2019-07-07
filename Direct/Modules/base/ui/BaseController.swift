@@ -7,25 +7,23 @@
 //
 
 import Foundation
-import RxSwift
 import RxCocoa
+import RxSwift
 import UIKit
 
-protocol BaseViewController {
+protocol HaveLoading {
     var disposeBag: DisposeBag { get }
-    var showProgress: BehaviorRelay<Bool> { get }
+    func subscribeToProgress(_ showProgress: Observable<Bool>)
 }
 
-extension BaseViewController {
-    func subscribeToProgress() {
+extension HaveLoading {
+    func subscribeToProgress(_ showProgress: Observable<Bool>) {
         showProgress.subscribe(onNext: { value in
-
             if value {
                 Progress.show()
             } else {
                 Progress.hide()
             }
-
         }).disposed(by: disposeBag)
     }
 }

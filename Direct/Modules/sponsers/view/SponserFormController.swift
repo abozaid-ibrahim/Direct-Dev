@@ -12,7 +12,7 @@ import RxOptional
 import RxSwift
 import UIKit
 
-class SponserFormController: UIViewController, BaseViewController {
+class SponserFormController: UIViewController, HaveLoading {
 //
     var currentImageID: Int = 0
     private let passportCopyId = 30
@@ -35,7 +35,6 @@ class SponserFormController: UIViewController, BaseViewController {
     var formResult = PublishSubject<UploadSponserInfoResponse>()
 
     private lazy var viewModel = SponserFormViewModel(index: index!, type: relationType!, visaReqID: reqID!, cid: cid!)
-    var showProgress = BehaviorRelay<Bool>(value: false)
 
     // MARK: dependencies
 
@@ -46,8 +45,7 @@ class SponserFormController: UIViewController, BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.getSponsorOwners()
-        viewModel.showProgress.bind(to: showProgress).disposed(by: disposeBag)
-        subscribeToProgress()
+        subscribeToProgress(viewModel.showProgress)
         configureBinding()
         setupUI()
         _ = viewModel.getRelatives() // caching relatives
