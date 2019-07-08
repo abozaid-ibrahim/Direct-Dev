@@ -20,10 +20,10 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gKk-Ur-3hS">
-                        <rect key="frame" x="8" y="8" width="293" height="60"/>
+                        <rect key="frame" x="8" y="8" width="293" height="56"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="8xs-N4-xqq">
-                        <rect key="frame" x="4" y="72" width="301" height="20"/>
+                        <rect key="frame" x="4" y="68" width="301" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="kKa-9P-75L"/>
                         </constraints>
@@ -36,7 +36,7 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="gKk-Ur-3hS" secondAttribute="trailing" constant="8" id="20e-fT-ZKW"/>
                 <constraint firstItem="gKk-Ur-3hS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="5q1-1H-btN"/>
-                <constraint firstAttribute="bottom" secondItem="8xs-N4-xqq" secondAttribute="bottom" constant="8" id="LvG-GR-JHf"/>
+                <constraint firstAttribute="bottom" secondItem="8xs-N4-xqq" secondAttribute="bottom" constant="12" id="LvG-GR-JHf"/>
                 <constraint firstItem="8xs-N4-xqq" firstAttribute="top" secondItem="gKk-Ur-3hS" secondAttribute="bottom" constant="4" id="Sah-v2-w22"/>
                 <constraint firstItem="gKk-Ur-3hS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="cfC-Eh-BNV"/>
                 <constraint firstItem="8xs-N4-xqq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="lHl-xX-SqZ"/>
