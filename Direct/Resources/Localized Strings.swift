@@ -122,4 +122,10 @@ struct Str {
     static var someoneElse:String{
         return "Someone Else"
     }
+    static var followOrder:String{
+        return "Follow Order"
+    }
+    static var reportBankTransfer:String{
+        return "Report Bank Transfer"
+    }
 }

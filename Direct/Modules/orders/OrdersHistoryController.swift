@@ -39,10 +39,10 @@ extension OrdersHistoryController {
         tableView.estimatedRowHeight = 60
         tableView.registerNib(OrderTableCell.cellId)
         tableView.registerNib(PendingDocTableCell.cellId)
+        tableView.registerNib(ActionTableCell.cellId)
         tableView.dataSource = self
-        tableView.delegate = self
         viewModel.completedVisa.subscribe(onNext: { [unowned self] value in
-            self.datalist = value // .map{VisaOrderDataSection}
+            self.datalist = value
             self.tableView.reloadData()
         }).disposed(by: disposeBag)
     }
@@ -53,14 +53,29 @@ extension OrdersHistoryController: UITableViewDataSource {
         return datalist.count
     }
 
-    public func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func hasTransferBtn(section: Int) -> Bool {
+        let method = datalist[section].paymentMethod?.int ?? -1
+        let status = datalist[section].paymentStatus?.int ?? -1
+        return (method == PaymentMethodsIDs.bankTransfer.rawValue) && (status == 0)
+    }
+
+    func getRowsCount(of section: Int) -> Int {
+        let actionsCount = hasTransferBtn(section: section) ? 2 : 1
         guard let pending = datalist[section].pendingDocs else {
-            return 1
+            return actionsCount
         }
-        return pending.count
+        return pending.count + actionsCount
+    }
+
+    public func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return getRowsCount(of: section)
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let sectionSize = getRowsCount(of: indexPath.section)
+        let lastRow = (indexPath.row + 1) == sectionSize
+        let BeforelastRow = hasTransferBtn(section: indexPath.section) && ((indexPath.row + 2) == sectionSize )
+
         if indexPath.row == 0 { //this is always the header
             guard let cell = tableView.dequeueReusableCell(withIdentifier: OrderTableCell.cellId) as? OrderTableCell else {
                 return UITableViewCell()
@@ -68,19 +83,32 @@ extension OrdersHistoryController: UITableViewDataSource {
             cell.setCellData(datalist[indexPath.section])
 
             return cell
+        } else if BeforelastRow {
+            let cell = tableView.dequeueReusableCell(withIdentifier: ActionTableCell.cellId) as! ActionTableCell
+            cell.setCellData((Str.reportBankTransfer, style: .secondary))
+            cell.submitBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { [unowned self] _ in
+                let obj = self.datalist[indexPath.section]
+//                try! AppNavigator().push(Destination.orderDetails(logs: obj.visaStatusLog ?? [], id: obj.visaReqID ?? ""))
+
+            }).disposed(by: cell.disposeBag)
+
+            return cell
+        } else if lastRow {
+            let cell = tableView.dequeueReusableCell(withIdentifier: ActionTableCell.cellId) as! ActionTableCell
+            cell.setCellData((Str.followOrder, style: .primary))
+            cell.submitBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { [unowned self] _ in
+                let obj = self.datalist[indexPath.section]
+                try! AppNavigator().push(Destination.orderDetails(logs: obj.visaStatusLog ?? [], id: obj.visaReqID ?? ""))
+                
+            }).disposed(by: cell.disposeBag)
+            return cell
+
         } else {
-            //this is for expanded cells
             let cell = tableView.dequeueReusableCell(withIdentifier: PendingDocTableCell.cellId) as! PendingDocTableCell
-            let model = datalist[indexPath.section].pendingDocs?[indexPath.row]
+            print(sectionSize, indexPath)
+            let model = datalist[indexPath.section].pendingDocs?[indexPath.row - 1]
             cell.setCellData(model?.documentFor ?? model?.documentName ?? model?.variableName ?? "")
             return cell
         }
-    }
-}
-
-extension OrdersHistoryController: UITableViewDelegate {
-    public func tableView(_: UITableView, didSelectRowAt index: IndexPath) {
-        let obj = datalist[index.section]
-        try! AppNavigator().push(Destination.orderDetails(logs: obj.visaStatusLog ?? [],id:obj.visaReqID ?? "" ))
     }
 }
