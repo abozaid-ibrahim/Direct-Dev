@@ -14,6 +14,7 @@ import UIKit
 enum CellStyle {
     case textCenter, textWithArrow
 }
+
 protocol Selectable {
     associatedtype DataModel
     associatedtype TableCell
@@ -21,11 +22,7 @@ protocol Selectable {
 }
 
 final class SelectableTableSheet: UIViewController, PanModalPresentable {
-    var panScrollable: UIScrollView? {
-        return nil //tableView
-    }
-
-    var shortFormHeight: PanModalHeight = .contentHeight(330)
+  
     var data: [String]?
     var titleText: String?
     var style: CellStyle = .textWithArrow
@@ -33,7 +30,6 @@ final class SelectableTableSheet: UIViewController, PanModalPresentable {
     @IBOutlet var tableView: UITableView!
     @IBOutlet private var titleLbl: UILabel!
     private let disposeBag = DisposeBag()
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +40,8 @@ final class SelectableTableSheet: UIViewController, PanModalPresentable {
     }
 
     private func setONSelect() {
-        tableView.rx.itemSelected.subscribe(onNext: {[unowned self] value in
-                self.selectedItem.onNext(self.data?[value.row] ?? "")
+        tableView.rx.itemSelected.subscribe(onNext: { [unowned self] value in
+            self.selectedItem.onNext(self.data?[value.row] ?? "")
         }).disposed(by: disposeBag)
     }
 
@@ -71,10 +67,27 @@ final class SelectableTableSheet: UIViewController, PanModalPresentable {
                     mycell.setCellData(model)
                 }.disposed(by: disposeBag)
         }
+
     }
 
     @IBAction func confirmAction(_: Any) {
         dismiss(animated: true, completion: nil)
     }
-}
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+  
+    // MARK: - Pan Modal Presentable
+        var panScrollable: UIScrollView? {
+        return nil
+    }
+    
+    var shortFormHeight: PanModalHeight {
+        print(tableView.contentSize.height)
+        return .contentHeight(125 + tableView.contentSize.height)
+    }
+    
 
+
+}

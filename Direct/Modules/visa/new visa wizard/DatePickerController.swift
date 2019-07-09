@@ -87,7 +87,9 @@ extension DatePickerController: JBDatePickerViewDelegate {
             setDatetoHeaderLbl(date: date)
         }
     }
-
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     func didPresentOtherMonth(_ monthView: JBDatePickerMonthView) {
         currentMonthLbl.text = monthView.monthDescription
     }

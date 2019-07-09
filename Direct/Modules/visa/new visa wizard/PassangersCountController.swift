@@ -14,6 +14,9 @@ typealias PassangerCount = (Int, Int, String)
 class PassangersCountController: UIViewController, PanModalPresentable {
     var panScrollable: UIScrollView?
     var shortFormHeight: PanModalHeight = .contentHeight(280)
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     private let disposeBag = DisposeBag()
 
     // MARK: IBuilder ====================================>>

@@ -231,6 +231,7 @@
 		6CDB3C9B22AA6A1700C0165C /* InputsJsonBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDB3C9922AA683D00C0165C /* InputsJsonBuilder.swift */; };
 		6CDB3C9D22AA6DF200C0165C /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDB3C9C22AA6DF200C0165C /* APIConstants.swift */; };
 		6CDB3C9F22AA7B6000C0165C /* UISegment +APP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDB3C9E22AA7B6000C0165C /* UISegment +APP.swift */; };
+		6CDD3DDB22D505EC006F0084 /* ContentSizeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD3DDA22D505EC006F0084 /* ContentSizeTableView.swift */; };
 		6CDEBBE62284C55800EC3E6F /* PassangersCountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEBBE42284C55800EC3E6F /* PassangersCountController.swift */; };
 		6CDEBBEC2284FDA000EC3E6F /* PackagesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEBBEA2284FDA000EC3E6F /* PackagesTableCell.swift */; };
 		6CDEBBF02285012400EC3E6F /* PackageDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEBBEE2285012400EC3E6F /* PackageDetailsController.swift */; };
@@ -598,6 +599,7 @@
 		6CDB3C9922AA683D00C0165C /* InputsJsonBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputsJsonBuilder.swift; sourceTree = "<group>"; };
 		6CDB3C9C22AA6DF200C0165C /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		6CDB3C9E22AA7B6000C0165C /* UISegment +APP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegment +APP.swift"; sourceTree = "<group>"; };
+		6CDD3DDA22D505EC006F0084 /* ContentSizeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSizeTableView.swift; sourceTree = "<group>"; };
 		6CDEBBE42284C55800EC3E6F /* PassangersCountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangersCountController.swift; sourceTree = "<group>"; };
 		6CDEBBEA2284FDA000EC3E6F /* PackagesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesTableCell.swift; sourceTree = "<group>"; };
 		6CDEBBEE2285012400EC3E6F /* PackageDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailsController.swift; sourceTree = "<group>"; };
@@ -1293,6 +1295,7 @@
 				6CF75E9E228BD8C900009BAB /* Progress.swift */,
 				6C1C6064228E4729006490CB /* TabBar.swift */,
 				6C90276D228F88CC00B41705 /* UploadField.swift */,
+				6CDD3DDA22D505EC006F0084 /* ContentSizeTableView.swift */,
 			);
 			path = "custom views";
 			sourceTree = "<group>";
@@ -1818,6 +1821,7 @@
 			files = (
 				6C6D95DD22CAA1C1001E4951 /* UILabel+APP.swift in Sources */,
 				6CD2CE5722A0C77200FB308A /* UITableView+Appearance.swift in Sources */,
+				6CDD3DDB22D505EC006F0084 /* ContentSizeTableView.swift in Sources */,
 				6CF3E1AF2272558A007488BA /* InstitutesSectionVM.swift in Sources */,
 				6C6A0C2022ACC16F00150FF6 /* UIImage+Encoding.swift in Sources */,
 				6C8286EB228B9C96009FB5FF /* View+App.swift in Sources */,
