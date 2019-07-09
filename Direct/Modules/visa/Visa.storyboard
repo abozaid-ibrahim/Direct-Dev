@@ -98,6 +98,9 @@
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تاريخ السفر" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgr-s7-yfA">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="91.5" height="12"/>
+                                                                                        <constraints>
+                                                                                            <constraint firstAttribute="height" constant="12" id="eBl-9g-UNE"/>
+                                                                                        </constraints>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
@@ -238,20 +241,20 @@
                                                                                 <rect key="frame" x="0.0" y="28" width="390" height="55"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uZi-54-3zD" id="iFO-Wa-KaN">
-                                                                                    <rect key="frame" x="5" y="5" width="342" height="44.5"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="352" height="54.5"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                     <subviews>
                                                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="XSK-HS-9M8">
-                                                                                            <rect key="frame" x="6" y="6" width="330" height="32.5"/>
+                                                                                            <rect key="frame" x="6" y="6" width="340" height="42.5"/>
                                                                                             <subviews>
                                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightGreenIcon" translatesAutoresizingMaskIntoConstraints="NO" id="fgK-RB-nWQ">
-                                                                                                    <rect key="frame" x="0.0" y="0.0" width="25" height="32.5"/>
+                                                                                                    <rect key="frame" x="0.0" y="0.0" width="25" height="42.5"/>
                                                                                                     <constraints>
                                                                                                         <constraint firstAttribute="width" constant="25" id="H5K-gV-BHu"/>
                                                                                                     </constraints>
                                                                                                 </imageView>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXf-ie-qOy">
-                                                                                                    <rect key="frame" x="37" y="0.0" width="293" height="32.5"/>
+                                                                                                    <rect key="frame" x="37" y="0.0" width="303" height="42.5"/>
                                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                                     <nil key="textColor"/>
                                                                                                     <nil key="highlightedColor"/>
@@ -465,12 +468,6 @@
                         <outlet property="sponsorsLbl" destination="QMe-RP-DN6" id="7Iz-O3-GQe"/>
                         <outlet property="sponsorsStatusIV" destination="ocl-n5-yxb" id="PJp-ib-xIz"/>
                         <outlet property="visaTypeLbl" destination="a7T-le-4cT" id="CoD-m5-hQb"/>
-                        <outletCollection property="placeHolderLbls" destination="d8b-Et-pAY" collectionClass="NSMutableArray" id="NUw-gF-pQt"/>
-                        <outletCollection property="placeHolderLbls" destination="zPg-aM-EB4" collectionClass="NSMutableArray" id="hsH-VW-463"/>
-                        <outletCollection property="placeHolderLbls" destination="8wU-zg-3MJ" collectionClass="NSMutableArray" id="fob-Wc-HeE"/>
-                        <outletCollection property="placeHolderLbls" destination="5eF-pt-raM" collectionClass="NSMutableArray" id="UZ4-Z5-Jbb"/>
-                        <outletCollection property="placeHolderLbls" destination="EXs-hn-WZA" collectionClass="NSMutableArray" id="hvk-5n-Va5"/>
-                        <outletCollection property="placeHolderLbls" destination="Pgr-s7-yfA" collectionClass="NSMutableArray" id="Wyo-aO-8ps"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mpt-Dk-pAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -520,7 +517,7 @@
                                         <rect key="frame" x="0.0" y="28" width="398" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ljg-jk-ues" id="SCO-Og-M7j">
-                                            <rect key="frame" x="5" y="5" width="388" height="45"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="398" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="saB-OG-pZO">

@@ -15,7 +15,19 @@ class UploadAttachController: UIViewController, PanModalPresentable {
     @IBOutlet private var nameField: FloatingTextField!
     @IBOutlet private var idField: FloatingTextField!
     @IBOutlet private var personalDocView: ImagePickerView!
-    var panScrollable: UIScrollView?
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    // MARK: - Pan Modal Presentable
+    var panScrollable: UIScrollView? {
+        return nil
+    }
+    
+    var shortFormHeight: PanModalHeight {
+        return .contentHeight(220)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

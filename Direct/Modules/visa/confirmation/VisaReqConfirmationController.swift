@@ -24,7 +24,6 @@ class VisaReqConfirmationController: UIViewController {
     // MARK: IBuilder ====================================>>
 
     @IBOutlet var relationsPlaceholderLbl: UILabel!
-    @IBOutlet private var placeHolderLbls: [UILabel]!
     @IBOutlet private var countryLbl: UILabel!
     @IBOutlet private var visaTypeLbl: UILabel!
     @IBOutlet private var bioLocLbl: UILabel!
@@ -80,9 +79,6 @@ class VisaReqConfirmationController: UIViewController {
         relationlbl.applyStyle(.normalBoldText)
         pasangerCountLbl.applyStyle(.normalBoldText)
         view.backgroundColor = UIColor.appVeryLightGray
-        for lbl in placeHolderLbls {
-            lbl.font = UIFont.appRegularFontWith(size: 10)
-        }
     }
 
     private func setupCheckoutFooter() {
