@@ -106,7 +106,9 @@ extension OrdersHistoryController: UITableViewDataSource {
                 try! AppNavigator().push(Destination.orderDetails(logs: obj.visaStatusLog ?? [], id: obj.visaReqID ?? ""))
 
             }).disposed(by: cell.disposeBag)
-            cell.roundedBottom(with: tableView.bounds.width)
+            DispatchQueue.main.async {//adding delay until know wha'ts wrong with my table cell size
+                cell.roundedBottom(with: tableView.bounds.width)
+            }
             return cell
 
         } else {

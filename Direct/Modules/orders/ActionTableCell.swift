@@ -16,14 +16,12 @@ class ActionTableCell: UITableViewCell, TableCell {
     func setCellData(_ model: CellDataModel) {
         submitBtn.setTitle(model.0, for: .normal)
         submitBtn.applyStyle(model.style)
-        print("nib set data")
     }
 
     @IBOutlet var submitBtn: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
-        print("nib awake")
-        self.roundedBottom()
+        selectionStyle = .none
 
     }
 

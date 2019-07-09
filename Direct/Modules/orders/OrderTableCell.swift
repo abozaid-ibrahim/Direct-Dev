@@ -25,9 +25,9 @@ class OrderTableCell: UITableViewCell, TableCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        titleLbl.font = .boldSystemFont(ofSize: 20)
+        titleLbl.font = .appBoldFontWith(size: 20)
         descLbl.font = .appRegularFontWith(size: 12)
-        pendingDocsLbl.font = .appRegularFontWith(size: 14)
+        pendingDocsLbl.font = .appBoldFontWith(size: 14)
 
     }
 }
