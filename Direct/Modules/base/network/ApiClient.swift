@@ -21,7 +21,7 @@ class ApiClientFacade {
     let commonProvider = MoyaProvider<CommonAPIs>(plugins: [])
     let paymentProvider = MoyaProvider<PaymentAPIs>(plugins: [])
     lazy var ordersProvider = MoyaProvider<OrdersAPIs>(plugins: [self.moyaLogger])
-    lazy var visaProvider = MoyaProvider<VisaAPIs>(plugins: [])
+    lazy var visaProvider = MoyaProvider<VisaAPIs>(plugins: [self.moyaLogger])
     lazy var sponsersProvider = MoyaProvider<SponsersAPIs>(plugins: [])
 }
 
