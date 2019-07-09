@@ -10,6 +10,39 @@ import Foundation
 
 // MARK: - USRequestParams
 
+
+struct CountriesParamsKeysBuilder {
+    enum CodingKeys: String, CodingKey {
+        case key, lang, userid
+        case visaReqID = "visa_req_id"
+        case visaReqApplicantID = "visa_req_applicant_id"
+        case firstName = "first_name"
+        case familyName = "family_name"
+        case universityAcceptanceImage = "I_20_copy"
+        case mothersFirstName = "mothers_first_name"
+        case mothersFamilyName = "mothers_family_name"
+        case nationality
+        case passportCopy = "passport_copy"
+        case personalPhotoCopy = "personal_photo_copy"
+        case visaLetterCopy = "visa_letter_copy"
+        case everIssuedVisaBefore = "ever_issued_visa"
+        case previousVisaCopy = "previous_visa_copy"
+        case typeOfPreviousVisa = "type_of_previous_visa"
+        case travelledBeforeHere = "travelled_before_here"
+        case dateOfArrival = "date_of_arrival"
+        case periodOfPreviousStay = "period_of_previous_stay"
+        case martialStatus = "martial_status"
+        case familyIDCopy = "family_id_copy"
+        case husbandOrWifeTravelWithYou = "husband_or_wife_travel_with_you"
+        case visits
+        case have_driver_license
+        case visa_cancelled_before
+        case before_visa_cancelled_reason
+        case any_relatives_here
+        case relative_type
+    }
+}
+
 class USRequestParams: Codable {
     var key, lang, userid, visaReqID: String?
     var visaReqApplicantID, firstName, familyName, mothersFirstName: String?

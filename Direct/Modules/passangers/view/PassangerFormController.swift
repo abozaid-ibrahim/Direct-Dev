@@ -220,7 +220,8 @@ class PassangerFormController: UIViewController {
                 if status == 1 {
                     self.successIndex.onNext(self.index!)
                 }
-            }, onError: { _ in
+            }, onError: { error in
+                print(error)
                 Progress.hide()
             }).disposed(by: disposeBag)
     }
