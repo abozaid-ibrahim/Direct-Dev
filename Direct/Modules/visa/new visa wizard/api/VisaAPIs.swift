@@ -84,35 +84,56 @@ extension VisaAPIs: TargetType {
                           "promo_code": ""] as [String: Any]
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
         case let .applyToVisa(_, req):
+
             var dictionary: [String: Any] = ["key": tokenKeyValue]
             dictionary["lang"] = appLang
             dictionary["userid"] = User.id
-            dictionary["visa_req_id"] = req.visaReqID ?? ""
-            dictionary["visa_req_applicant_id"] = req.visaReqApplicantID ?? ""
-            dictionary["first_name"] = req.firstName ?? ""
-            dictionary["family_name"] = req.familyName ?? ""
-            dictionary["mothers_first_name"] = req.mothersFirstName ?? ""
-            dictionary["mothers_family_name"] = req.mothersFamilyName ?? ""
-            dictionary["nationality"] = req.nationality ?? ""
-            dictionary["passport_copy"] = req.passportCopy ?? ""
-            dictionary["personal_photo_copy"] = req.personalPhotoCopy ?? ""
-            dictionary["I_20_copy"] = req.universityAcceptanceImage ?? ""
-            dictionary["ever_issued_visa"] = req.everIssuedVisaBefore ?? ""
-            dictionary["previous_visa_copy"] = req.previousVisaCopy ?? ""
-            dictionary["type_of_previous_visa"] = req.typeOfPreviousVisa ?? ""
-            dictionary["date_of_issuing_previous_visa"] = req.dateOfArrival ?? ""
-            dictionary["Place_of_issue_previous_visa"] = ""
-            dictionary["travelled_before"] = req.travelledBeforeHere ?? ""
-            dictionary["date_of_arrival"] = req.dateOfArrival ?? ""
-            dictionary["period_of_previous_stay"] = req.periodOfPreviousStay ?? ""
-            dictionary["have_driver_license"] = req.have_driver_license ?? ""
-            dictionary["visa_cancelled_before"] = req.visa_cancelled_before ?? ""
-            dictionary["before_visa_cancelled_reason"] = req.before_visa_cancelled_reason ?? ""
-            dictionary["martial_status"] = req.martialStatus ?? ""
-            dictionary["family_id_copy"] = req.familyIDCopy ?? ""
-            dictionary["any_relatives_here"] = req.any_relatives_here ?? ""
-            dictionary["relative_type"] = req.relative_type ?? ""
-            dictionary["visits"] = req.visits ?? ""
+
+            let form = CountriesIDs.US
+            switch form {
+            case .US:
+                dictionary["visa_req_id"] = req.visaReqID ?? ""
+                dictionary["visa_req_applicant_id"] = req.visaReqApplicantID ?? ""
+                dictionary["first_name"] = req.firstName ?? ""
+                dictionary["family_name"] = req.familyName ?? ""
+                dictionary["mothers_first_name"] = req.mothersFirstName ?? ""
+                dictionary["mothers_family_name"] = req.mothersFamilyName ?? ""
+                dictionary["nationality"] = req.nationality ?? ""
+                dictionary["passport_copy"] = req.passportCopy ?? ""
+                dictionary["personal_photo_copy"] = req.personalPhotoCopy ?? ""
+                dictionary["I_20_copy"] = req.universityAcceptanceImage ?? ""
+                dictionary["ever_issued_visa"] = req.everIssuedVisaBefore ?? ""
+                dictionary["previous_visa_copy"] = req.previousVisaCopy ?? ""
+                dictionary["type_of_previous_visa"] = req.typeOfPreviousVisa ?? ""
+                dictionary["date_of_issuing_previous_visa"] = req.dateOfArrival ?? ""
+                dictionary["Place_of_issue_previous_visa"] = ""
+                dictionary["travelled_before"] = req.travelledBeforeHere ?? ""
+                dictionary["date_of_arrival"] = req.dateOfArrival ?? ""
+                dictionary["period_of_previous_stay"] = req.periodOfPreviousStay ?? ""
+                dictionary["have_driver_license"] = req.have_driver_license ?? ""
+                dictionary["visa_cancelled_before"] = req.visa_cancelled_before ?? ""
+                dictionary["before_visa_cancelled_reason"] = req.before_visa_cancelled_reason ?? ""
+                dictionary["martial_status"] = req.martialStatus ?? ""
+                dictionary["family_id_copy"] = req.familyIDCopy ?? ""
+                dictionary["any_relatives_here"] = req.any_relatives_here ?? ""
+                dictionary["relative_type"] = req.relative_type ?? ""
+                dictionary["visits"] = req.visits ?? ""
+            case .GB:
+                dictionary["visits"] = req.visits ?? ""
+            case .SGN:
+                dictionary["visits"] = req.visits ?? ""
+            case .IN:
+                dictionary["visits"] = req.visits ?? ""
+            case .CN:
+                dictionary["visits"] = req.visits ?? ""
+            case .JP:
+                dictionary["visits"] = req.visits ?? ""
+            case .IE:
+                dictionary["visits"] = req.visits ?? ""
+            case .TR:
+                dictionary["visits"] = req.visits ?? ""
+            }
+
             return .requestParameters(parameters: dictionary, encoding: URLEncoding.default)
         case .getPreviousVisaType:
             let prmDic = ["key": tokenKeyValue,
