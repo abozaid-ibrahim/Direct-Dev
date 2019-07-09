@@ -151,7 +151,6 @@ class USRequestParams: Codable {
         self.familyIDCopy = familyIDCopy
         self.husbandOrWifeTravelWithYou = husbandOrWifeTravelWithYou
         self.visits = visits
-
         self.have_driver_license = have_driver_license
         self.visa_cancelled_before = visa_cancelled_before
         self.before_visa_cancelled_reason = before_visa_cancelled_reason
@@ -160,88 +159,6 @@ class USRequestParams: Codable {
         self.universityAcceptanceImage = universityAcceptanceImage
     }
 }
-
-//
-//// MARK: USRequestParams convenience initializers and mutators
-//
-// extension USRequestParams {
-//    convenience init(data: Data) throws {
-//        let me = try newJSONDecoder().decode(USRequestParams.self, from: data)
-//        self.init(key: me.key, lang: me.lang, userid: me.userid, visaReqID: me.visaReqID, visaReqApplicantID: me.visaReqApplicantID, firstName: me.firstName, familyName: me.familyName, mothersFirstName: me.mothersFirstName, mothersFamilyName: me.mothersFamilyName, nationality: me.nationality, passportCopy: me.passportCopy, personalPhotoCopy: me.personalPhotoCopy, visaLetterCopy: me.visaLetterCopy, everIssuedVisaBefore: me.everIssuedVisaBefore, previousVisaCopy: me.previousVisaCopy, typeOfPreviousVisa: me.typeOfPreviousVisa, travelledBeforeHere: me.travelledBeforeHere, dateOfArrival: me.dateOfArrival, periodOfPreviousStay: me.periodOfPreviousStay, martialStatus: me.martialStatus, familyIDCopy: me.familyIDCopy, husbandOrWifeTravelWithYou: me.husbandOrWifeTravelWithYou, visits: me.visits)
-//    }
-//
-//    convenience init(_ json: String, using encoding: String.Encoding = .utf8) throws {
-//        guard let data = json.data(using: encoding) else {
-//            throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
-//        }
-//        try self.init(data: data)
-//    }
-//
-//    convenience init(fromURL url: URL) throws {
-//        try self.init(data: try Data(contentsOf: url))
-//    }
-//
-//    func with(
-//        key: String?? = nil,
-//        lang: String?? = nil,
-//        userid: String?? = nil,
-//        visaReqID: String?? = nil,
-//        visaReqApplicantID: String?? = nil,
-//        firstName: String?? = nil,
-//        familyName: String?? = nil,
-//        mothersFirstName: String?? = nil,
-//        mothersFamilyName: String?? = nil,
-//        nationality: String?? = nil,
-//        passportCopy: String?? = nil,
-//        personalPhotoCopy: String?? = nil,
-//        visaLetterCopy: String?? = nil,
-//        everIssuedVisaBefore: String?? = nil,
-//        previousVisaCopy: String?? = nil,
-//        typeOfPreviousVisa: String?? = nil,
-//        travelledBeforeHere: String?? = nil,
-//        dateOfArrival: String?? = nil,
-//        periodOfPreviousStay: String?? = nil,
-//        martialStatus: String?? = nil,
-//        familyIDCopy: String?? = nil,
-//        husbandOrWifeTravelWithYou: String?? = nil,
-//        visits: [Visit]?? = nil
-//        ) -> USRequestParams {
-//        return USRequestParams(
-//            key: key ?? self.key,
-//            lang: lang ?? self.lang,
-//            userid: userid ?? self.userid,
-//            visaReqID: visaReqID ?? self.visaReqID,
-//            visaReqApplicantID: visaReqApplicantID ?? self.visaReqApplicantID,
-//            firstName: firstName ?? self.firstName,
-//            familyName: familyName ?? self.familyName,
-//            mothersFirstName: mothersFirstName ?? self.mothersFirstName,
-//            mothersFamilyName: mothersFamilyName ?? self.mothersFamilyName,
-//            nationality: nationality ?? self.nationality,
-//            passportCopy: passportCopy ?? self.passportCopy,
-//            personalPhotoCopy: personalPhotoCopy ?? self.personalPhotoCopy,
-//            visaLetterCopy: visaLetterCopy ?? self.visaLetterCopy,
-//            everIssuedVisaBefore: everIssuedVisaBefore ?? self.everIssuedVisaBefore,
-//            previousVisaCopy: previousVisaCopy ?? self.previousVisaCopy,
-//            typeOfPreviousVisa: typeOfPreviousVisa ?? self.typeOfPreviousVisa,
-//            travelledBeforeHere: travelledBeforeHere ?? self.travelledBeforeHere,
-//            dateOfArrival: dateOfArrival ?? self.dateOfArrival,
-//            periodOfPreviousStay: periodOfPreviousStay ?? self.periodOfPreviousStay,
-//            martialStatus: martialStatus ?? self.martialStatus,
-//            familyIDCopy: familyIDCopy ?? self.familyIDCopy,
-//            husbandOrWifeTravelWithYou: husbandOrWifeTravelWithYou ?? self.husbandOrWifeTravelWithYou,
-//            visits: visits ?? self.visits
-//        )
-//    }
-//
-//    func jsonData() throws -> Data {
-//        return try newJSONEncoder().encode(self)
-//    }
-//
-//    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
-//        return String(data: try self.jsonData(), encoding: encoding)
-//    }
-// }
-
 // MARK: - Visit
 
 class Visit: Codable {
@@ -252,59 +169,3 @@ class Visit: Codable {
         self.year = year
     }
 }
-
-// MARK: Visit convenience initializers and mutators
-
-// extension Visit {
-//    convenience init(data: Data) throws {
-//        let me = try newJSONDecoder().decode(Visit.self, from: data)
-//        self.init(cname: me.cname, year: me.year)
-//    }
-//
-//    convenience init(_ json: String, using encoding: String.Encoding = .utf8) throws {
-//        guard let data = json.data(using: encoding) else {
-//            throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
-//        }
-//        try self.init(data: data)
-//    }
-//
-//    convenience init(fromURL url: URL) throws {
-//        try self.init(data: try Data(contentsOf: url))
-//    }
-//
-//    func with(
-//        cname: String?? = nil,
-//        year: String?? = nil
-//        ) -> Visit {
-//        return Visit(
-//            cname: cname ?? self.cname,
-//            year: year ?? self.year
-//        )
-//    }
-//
-//    func jsonData() throws -> Data {
-//        return try newJSONEncoder().encode(self)
-//    }
-//
-//    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
-//        return String(data: try self.jsonData(), encoding: encoding)
-//    }
-// }
-//
-//// MARK: - Helper functions for creating encoders and decoders
-//
-// func newJSONDecoder() -> JSONDecoder {
-//    let decoder = JSONDecoder()
-//    if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
-//        decoder.dateDecodingStrategy = .iso8601
-//    }
-//    return decoder
-// }
-//
-// func newJSONEncoder() -> JSONEncoder {
-//    let encoder = JSONEncoder()
-//    if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
-//        encoder.dateEncodingStrategy = .iso8601
-//    }
-//    return encoder
-// }
