@@ -4,7 +4,7 @@ PODS:
   - GenericCellControllers (1.1.0)
   - IQKeyboardManagerSwift (6.4.0)
   - JBDatePicker (1.2.5)
-  - Kingfisher (5.6.0)
+  - Kingfisher (5.7.0)
   - M13Checkbox (3.4.0)
   - Moya/Core (13.0.1):
     - Alamofire (~> 4.1)
@@ -112,7 +112,7 @@ SPEC CHECKSUMS:
   GenericCellControllers: dfb84b8f74ed40fc85bba4bd9c0b2e0780fa6258
   IQKeyboardManagerSwift: ed9b04ee0e3067ffba543283462d619f944b05e5
   JBDatePicker: 0e791c8a79c49b0d37decea28ba147515bf5cfca
-  Kingfisher: 1a50df6880a60bae26f3e21a0df3d17b892f5e0b
+  Kingfisher: c7d211b54f1f30d8060aadab177d52b4349c825b
   M13Checkbox: 6f59404540ac98ba83a3d1afac335895a40c6a5d
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
@@ -133,4 +133,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 48c122037eebcbfb2babf53612d16ee72f20a830
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.7.3

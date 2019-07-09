@@ -1605,7 +1605,6 @@
 				6C5FDA452270816A00ABA39B /* Sources */,
 				6C5FDA462270816A00ABA39B /* Frameworks */,
 				6C5FDA472270816A00ABA39B /* Resources */,
-				6CA040B12281AFBB00619B6F /* IBAnalyzer */,
 				CA3028B15072E156ED676CC3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -1763,20 +1762,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6CA040B12281AFBB00619B6F /* IBAnalyzer */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = IBAnalyzer;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/IBAnalyzer/bin/ibanalyzer\" ./\n";
-		};
 		CA3028B15072E156ED676CC3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2484,7 +2469,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2X23S7YDK4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2553,6 +2539,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mcc.directvisa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.mcc.directvisa";
 				SWIFT_OBJC_BRIDGING_HEADER = "Direct/Direct-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

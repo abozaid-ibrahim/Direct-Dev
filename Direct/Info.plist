@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key> NSLocationWhenInUseUsageDescription</key>
+	<string> location description.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -19,9 +21,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>3.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
+	<string>2</string>
 	<key>Fonts provided by application</key>
 	<array>
 		<string>Cairo-SemiBold.ttf</string>
@@ -31,6 +31,19 @@
 		<string>Cairo-Light.ttf</string>
 		<string>Cairo-ExtraLight.ttf</string>
 	</array>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>camera description.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string> photos add description.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string> photos description.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -50,28 +63,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    
-    <key>NSCameraUsageDescription</key>
-    <string>camera description.</string>
-<!--    Photos-->
-
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string> photos description.</string>
-<!--    Save Photos-->
-
-    <key>NSPhotoLibraryAddUsageDescription</key>
-    <string> photos add description.</string>
-<!--    Location-->
-    
-    <key> NSLocationWhenInUseUsageDescription</key>
-    <string> location description.</string>
-<!--   payfort -->
-<key>NSAppTransportSecurity</key>
-<dict>
-    <key>NSAllowsArbitraryLoads</key><true/>
-</dict>
-
-
-
 </dict>
 </plist>
