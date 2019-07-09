@@ -25,7 +25,7 @@ class UploadAttachController: UIViewController, PanModalPresentable {
     }
     
     var shortFormHeight: PanModalHeight {
-        return .contentHeight(220)
+        return .contentHeight(240)
     }
     
     
