@@ -83,12 +83,11 @@ extension VisaAPIs: TargetType {
                           "visatype": prm.visatype,
                           "promo_code": ""] as [String: Any]
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
-        case let .applyToVisa(_, req):
-
+        case let .applyToVisa(path, req):
+//CountriesIDs of this path
             var dictionary: [String: Any] = ["key": tokenKeyValue]
             dictionary["lang"] = appLang
             dictionary["userid"] = User.id
-
             let form = CountriesIDs.US
             switch form {
             case .US:
