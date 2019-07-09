@@ -51,6 +51,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     
     internal let disposeBag = DisposeBag()
     var contentHeight = BehaviorSubject<CGFloat>(value: 300)
+    
     func fillParams(_ prm: inout USRequestParams) {}
     
     func isInputsValid() -> Bool {
