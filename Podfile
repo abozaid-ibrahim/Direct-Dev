@@ -25,6 +25,7 @@ target 'Direct' do
   pod 'XLPagerTabStrip', '~> 9.0'
 
   	pod 'IQKeyboardManagerSwift' #, '~> 6.1.1'
+    pod "Player", "~> 0.13.0"
 
 end
 post_install do |installer|

@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = root
         window?.makeKeyAndVisible()
         navigator = AppNavigator(root: root)
-//        shortcut()
+        shortcut()
     }
 
     private func shortcut() {
@@ -67,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             info.countryName = "امريكا"
             info.no_of_passport = "3"
             info.relation_with_travelers = RelationIDS.family.rawValue
-            try? AppNavigator().push(Destination.successVisaReqScreen(trackNo: "500757", thanksUrl: "https://www.youtube.com/watch?v=hbDcZiT825Q")) //.successVisaReqScreen(nil, thanksUrl: "https://www.youtube.com/watch?v=hbDcZiT825Q"))
+            try? AppNavigator().push(Destination.successVisaReqScreen(trackNo: "500757", thanksUrl: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")) //.successVisaReqScreen(nil, thanksUrl: "https://www.youtube.com/watch?v=hbDcZiT825Q"))
         }
     }
 

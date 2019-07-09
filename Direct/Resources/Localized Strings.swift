@@ -128,4 +128,6 @@ struct Str {
     static var reportBankTransfer:String{
         return "Report Bank Transfer"
     }
+    static var more:String{
+        return "more_tab_item".localized}
 }
