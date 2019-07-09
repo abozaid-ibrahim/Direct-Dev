@@ -35,7 +35,6 @@ class VisaReqConfirmationController: UIViewController {
     @IBOutlet private var pckDateLbl: UILabel!
     @IBOutlet private var sponsorsStatusIV: UIImageView!
     @IBOutlet private var checkoutFooter: CheckoutFooter!
-    @IBOutlet private var tableHeightConstrain: NSLayoutConstraint!
     @IBOutlet private var passangersTable: UITableView!
     @IBOutlet private var pickDateView: UIView!
     @IBOutlet private var sponsersView: UIView!
@@ -49,7 +48,7 @@ class VisaReqConfirmationController: UIViewController {
         setupCheckoutFooter()
         bindPassangersTable()
         fillUIWithData()
-        setTablViewHeight()
+       // setTablViewHeight()
         setSponsorsView()
         setupPickingDate()
     }
@@ -70,9 +69,8 @@ class VisaReqConfirmationController: UIViewController {
                     self.passangersTable.isScrollEnabled = true
                     self.passangersTable.bounces = true
                     self.passangersTable.bouncesZoom = true
-                    self.tableHeightConstrain.constant = 250
                 } else {
-                    self.tableHeightConstrain.constant = value?.height ?? 100
+                    self.passangersTable.isScrollEnabled = false
                 }
             }).disposed(by: disposeBag)
     }

@@ -209,6 +209,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     private func pInfoSetup() {
         familyIDView.isHidden = true
         isHusbandWillTravelView.isHidden = true
+        statusPInfoField.neverShowKeypad()
         statusPInfoField.rx.tapGesture().when(.recognized)
             .subscribe { _ in
                 let alert = self.dialogs.buildMatrialState(callback: { [weak self] state in

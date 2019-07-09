@@ -13,7 +13,7 @@ typealias PassangerCount = (Int, Int, String)
 
 class PassangersCountController: UIViewController, PanModalPresentable {
     var panScrollable: UIScrollView?
-    var shortFormHeight: PanModalHeight = .contentHeight(280)
+    var shortFormHeight: PanModalHeight = .contentHeight(300)
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
