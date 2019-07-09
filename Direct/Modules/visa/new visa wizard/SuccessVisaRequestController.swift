@@ -41,9 +41,14 @@ class SuccessVisaRequestController: UIViewController, StyledActionBar {
         try! AppNavigator().push(.MyOrders(trackNo: self.trackNo))
     }
     
+    private var videoPlayer: YouTubePlayerView?
+    
     private func playFromYoutube() {
-        var videoPlayer = YouTubePlayerView(frame: videoPlayerContainer.bounds)
-        let myVideoURL = URL(string: self.thanksUrl!)
-        videoPlayer.loadVideoURL(myVideoURL!)
+        self.videoPlayer = YouTubePlayerView(frame: self.videoPlayerContainer.bounds)
+        guard let myVideoURL = URL(string: self.thanksUrl ?? "") else {return}
+        self.videoPlayerContainer.addSubview(self.videoPlayer!)
+        self.videoPlayer?.frame = self.videoPlayerContainer.bounds
+        self.videoPlayer?.loadVideoURL(myVideoURL)
+        self.videoPlayer?.play()
     }
 }
