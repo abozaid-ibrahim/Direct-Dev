@@ -12,15 +12,19 @@ class ActionTableCell: UITableViewCell, TableCell {
     typealias CellDataModel = (String, style: ButtonStyles)
     static var cellId: String = "ActionTableCell"
     var disposeBag = DisposeBag()
-    
+
     func setCellData(_ model: CellDataModel) {
         submitBtn.setTitle(model.0, for: .normal)
         submitBtn.applyStyle(model.style)
+        print("nib set data")
     }
 
     @IBOutlet var submitBtn: UIButton!
-override func awakeFromNib() {
+    override func awakeFromNib() {
         super.awakeFromNib()
+        print("nib awake")
+        self.roundedBottom()
+
     }
 
     override func prepareForReuse() {

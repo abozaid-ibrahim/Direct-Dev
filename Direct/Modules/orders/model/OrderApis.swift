@@ -11,7 +11,8 @@ import Foundation
 import Moya
 
 enum OrdersAPIs {
-    case getCompletedVisa(trackNo: String)
+    case getCompletedVisa(trackNo: String),
+        updatePendingDoc(reqNo: String, vName: String, applicantId: String, personalDoc: String)
 }
 
 extension OrdersAPIs: TargetType {
@@ -19,12 +20,16 @@ extension OrdersAPIs: TargetType {
         switch self {
         case .getCompletedVisa:
             return "get-completed-visa"
+        case .updatePendingDoc:
+            return "update-pending-doc"
         }
     }
     
     public var method: Moya.Method {
         switch self {
         case .getCompletedVisa:
+            return .post
+        case .updatePendingDoc:
             return .post
         }
     }
@@ -36,6 +41,16 @@ extension OrdersAPIs: TargetType {
                           "lang": appLang,
                           "userid": User.id,
                           "track_no": trNo] as [String: Any]
+            return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
+            
+        case let .updatePendingDoc(prm):
+            let prmDic = ["key": tokenKeyValue,
+                          "lang": appLang,
+                          "userid": User.id,
+                          "visa_req_id": prm.reqNo,
+                          "vname": prm.vName,
+                          "visa_req_applicant_id": prm.applicantId,
+                          "personal_doc": prm.personalDoc] as [String: Any]
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
         }
     }
@@ -57,6 +72,3 @@ extension OrdersAPIs: TargetType {
         return ["Content-Type": "application/x-www-form-urlencoded"]
     }
 }
-
-
-

@@ -11,7 +11,7 @@ import Moya
 
 enum SponsersAPIs {
     case uploadSponserForm(prm: SponserFormParams),
-        getSponserOwner(userid: Int, reqid: String, cid: String)
+        getSponserOwner(userid: String, reqid: String, cid: String)
 }
 
 extension SponsersAPIs: TargetType {

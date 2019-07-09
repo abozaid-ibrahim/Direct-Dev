@@ -22,7 +22,7 @@ extension ApiClientFacade {
         }
     }
 
-    func getOwners(uid: Int, reqid: String, cid: String) -> Observable<EligableSponserResponse> {
+    func getOwners(uid: String, reqid: String, cid: String) -> Observable<EligableSponserResponse> {
         return Observable<EligableSponserResponse>.create { (observer) -> Disposable in
             self.sponsersProvider.rx
                 .request(SponsersAPIs.getSponserOwner(userid: uid, reqid: reqid, cid: cid))

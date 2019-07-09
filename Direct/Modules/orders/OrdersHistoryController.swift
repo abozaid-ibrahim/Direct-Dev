@@ -9,6 +9,7 @@
 import RxCocoa
 import RxDataSources
 import RxSwift
+import SwifterSwift
 import UIKit
 
 final class OrdersHistoryController: UIViewController, HaveLoading, StyledActionBar {
@@ -74,21 +75,25 @@ extension OrdersHistoryController: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let sectionSize = getRowsCount(of: indexPath.section)
         let lastRow = (indexPath.row + 1) == sectionSize
-        let BeforelastRow = hasTransferBtn(section: indexPath.section) && ((indexPath.row + 2) == sectionSize )
+        let BeforelastRow = hasTransferBtn(section: indexPath.section) && ((indexPath.row + 2) == sectionSize)
 
         if indexPath.row == 0 { //this is always the header
             guard let cell = tableView.dequeueReusableCell(withIdentifier: OrderTableCell.cellId) as? OrderTableCell else {
                 return UITableViewCell()
             }
-            cell.setCellData(datalist[indexPath.section])
 
+            cell.setCellData(datalist[indexPath.section])
+            cell.roundedTop(with: tableView.bounds.width)
             return cell
         } else if BeforelastRow {
             let cell = tableView.dequeueReusableCell(withIdentifier: ActionTableCell.cellId) as! ActionTableCell
             cell.setCellData((Str.reportBankTransfer, style: .secondary))
             cell.submitBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { [unowned self] _ in
                 let obj = self.datalist[indexPath.section]
-//                try! AppNavigator().push(Destination.orderDetails(logs: obj.visaStatusLog ?? [], id: obj.visaReqID ?? ""))
+
+                let uploadVC = UploadAttachController()
+
+                try! AppNavigator().presentModally(uploadVC)
 
             }).disposed(by: cell.disposeBag)
 
@@ -99,8 +104,9 @@ extension OrdersHistoryController: UITableViewDataSource {
             cell.submitBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { [unowned self] _ in
                 let obj = self.datalist[indexPath.section]
                 try! AppNavigator().push(Destination.orderDetails(logs: obj.visaStatusLog ?? [], id: obj.visaReqID ?? ""))
-                
+
             }).disposed(by: cell.disposeBag)
+            cell.roundedBottom(with: tableView.bounds.width)
             return cell
 
         } else {
@@ -108,6 +114,7 @@ extension OrdersHistoryController: UITableViewDataSource {
             print(sectionSize, indexPath)
             let model = datalist[indexPath.section].pendingDocs?[indexPath.row - 1]
             cell.setCellData(model?.documentFor ?? model?.documentName ?? model?.variableName ?? "")
+
             return cell
         }
     }

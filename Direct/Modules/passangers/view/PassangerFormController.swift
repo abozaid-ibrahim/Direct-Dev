@@ -205,7 +205,7 @@ class PassangerFormController: UIViewController {
                 return
             }
         }
-        params.visaReqApplicantID = User.id.stringValue
+        params.visaReqApplicantID = User.id
         sendDataToServer(formTypeValue)
     }
 

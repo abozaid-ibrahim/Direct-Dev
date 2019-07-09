@@ -239,6 +239,10 @@
 		6CE722ED2274FA1B00E095DC /* VisaRequirementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */; };
 		6CE8D26A22D4DAD000BD86D1 /* AboutUsJsonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8D26922D4DAD000BD86D1 /* AboutUsJsonResponse.swift */; };
 		6CE8D26C22D4DB7800BD86D1 /* AboutUsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8D26B22D4DB7800BD86D1 /* AboutUsViewModel.swift */; };
+		6CE8D27022D4E52600BD86D1 /* UploadAttachController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8D26E22D4E52600BD86D1 /* UploadAttachController.swift */; };
+		6CE8D27122D4E52600BD86D1 /* UploadAttachController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CE8D26F22D4E52600BD86D1 /* UploadAttachController.xib */; };
+		6CE8D27322D4E6F300BD86D1 /* UpdatePendingDocsREsponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8D27222D4E6F300BD86D1 /* UpdatePendingDocsREsponse.swift */; };
+		6CE8D27522D4E7B200BD86D1 /* UploadAttachViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8D27422D4E7B200BD86D1 /* UploadAttachViewModel.swift */; };
 		6CEE827322C2BFD900EC713C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEE827222C2BFD900EC713C /* BaseViewModel.swift */; };
 		6CF0E3672285BB1000149910 /* SwipeUpToDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0E3662285BB1000149910 /* SwipeUpToDismiss.swift */; };
 		6CF0E36C2285BE6800149910 /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0E36A2285BE6800149910 /* DatePickerController.swift */; };
@@ -602,6 +606,10 @@
 		6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaRequirementController.swift; sourceTree = "<group>"; };
 		6CE8D26922D4DAD000BD86D1 /* AboutUsJsonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsJsonResponse.swift; sourceTree = "<group>"; };
 		6CE8D26B22D4DB7800BD86D1 /* AboutUsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewModel.swift; sourceTree = "<group>"; };
+		6CE8D26E22D4E52600BD86D1 /* UploadAttachController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAttachController.swift; sourceTree = "<group>"; };
+		6CE8D26F22D4E52600BD86D1 /* UploadAttachController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UploadAttachController.xib; sourceTree = "<group>"; };
+		6CE8D27222D4E6F300BD86D1 /* UpdatePendingDocsREsponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePendingDocsREsponse.swift; sourceTree = "<group>"; };
+		6CE8D27422D4E7B200BD86D1 /* UploadAttachViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAttachViewModel.swift; sourceTree = "<group>"; };
 		6CEE827222C2BFD900EC713C /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		6CF0E3662285BB1000149910 /* SwipeUpToDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeUpToDismiss.swift; sourceTree = "<group>"; };
 		6CF0E36A2285BE6800149910 /* DatePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
@@ -1018,6 +1026,7 @@
 		6C5DE7582275C742001A9FB6 /* orders */ = {
 			isa = PBXGroup;
 			children = (
+				6CE8D26D22D4E4F400BD86D1 /* add attach */,
 				6CBA06FC22D2A11B00F36353 /* details */,
 				6C33A5E122D0DD6300D2B611 /* model */,
 				6C33A5E822D0DF4900D2B611 /* OrdersHistoryViewModel.swift */,
@@ -1397,6 +1406,17 @@
 			path = visa;
 			sourceTree = "<group>";
 		};
+		6CE8D26D22D4E4F400BD86D1 /* add attach */ = {
+			isa = PBXGroup;
+			children = (
+				6CE8D26E22D4E52600BD86D1 /* UploadAttachController.swift */,
+				6CE8D26F22D4E52600BD86D1 /* UploadAttachController.xib */,
+				6CE8D27222D4E6F300BD86D1 /* UpdatePendingDocsREsponse.swift */,
+				6CE8D27422D4E7B200BD86D1 /* UploadAttachViewModel.swift */,
+			);
+			path = "add attach";
+			sourceTree = "<group>";
+		};
 		6CF2514222A6107400CDA47C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -1716,6 +1736,7 @@
 				6C9027DF228F95D200B41705 /* AboutUsTableCell.xib in Resources */,
 				6C9027A6228F955F00B41705 /* PaymentMethodsContainerController.xib in Resources */,
 				6C9027AC228F956B00B41705 /* PackageDetailsController.xib in Resources */,
+				6CE8D27122D4E52600BD86D1 /* UploadAttachController.xib in Resources */,
 				6C33A5EF22D1257D00D2B611 /* VisaRequirementTabCell.xib in Resources */,
 				6CDEF78222A11EFC00BF5F0B /* Visa.storyboard in Resources */,
 				6C9027CA228F95AC00B41705 /* VisaRequirementController.xib in Resources */,
@@ -1806,6 +1827,7 @@
 				6CF0E3772285D78900149910 /* OrderDetailsController.swift in Sources */,
 				6C256CCC22C15DBE007A5C81 /* UIView +Any.swift in Sources */,
 				6C77827C227AA2C1001926B2 /* SuccessRequestInstituteController.swift in Sources */,
+				6CE8D27522D4E7B200BD86D1 /* UploadAttachViewModel.swift in Sources */,
 				6C6EED6F22A24C680091B82F /* UpdatePaymentResponse.swift in Sources */,
 				6C778278227AA26F001926B2 /* InstituteDetailsController.swift in Sources */,
 				6C778261227A3E3D001926B2 /* BankTableCell.swift in Sources */,
@@ -1847,6 +1869,7 @@
 				6C431E0322B52E8B00DD140D /* PersonalInfoView.swift in Sources */,
 				6C55756F228BAEB700BAE5E2 /* UIFont+UIView.swift in Sources */,
 				6C8C535322D3E66A00B5572B /* MoreDataRep.swift in Sources */,
+				6CE8D27322D4E6F300BD86D1 /* UpdatePendingDocsREsponse.swift in Sources */,
 				6C2CFBA322789F6100D23CF4 /* PaymentMethodTableCell.swift in Sources */,
 				6C99797322D2061C003CE0FF /* OrderModel.swift in Sources */,
 				6C778274227AA196001926B2 /* NewInstituteRequestController.swift in Sources */,
@@ -1941,6 +1964,7 @@
 				6CCE032B229CA5A2003523FE /* RelativesResponse.swift in Sources */,
 				6CD2CE5522A0C32300FB308A /* APIsParams.swift in Sources */,
 				39EE2AAD22A09A0000A9A501 /* TextFieldConfigurator.swift in Sources */,
+				6CE8D27022D4E52600BD86D1 /* UploadAttachController.swift in Sources */,
 				39EE2A9D22A0984200A9A501 /* LoginRequestCommand.swift in Sources */,
 				6C2CFB9F22789E0200D23CF4 /* PaymentViewController.swift in Sources */,
 				6C73A65222CBBE210044546D /* VisaReqCofirmationViewModel.swift in Sources */,

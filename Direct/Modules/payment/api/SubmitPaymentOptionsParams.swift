@@ -13,8 +13,8 @@ class SubmitPaymentParams: Codable {
         online_payment_respose_msg,
         online_payment_respose_status: String?
     var parent_payment_id, child_payment_id, payment_status,
-        reqid,
-        userid: Int?
+    reqid:Int?
+    var userid: String?
 
     init() {
         online_payment_respose_code = nil

@@ -116,6 +116,28 @@ public extension UIView {
         layer.mask = maskLayer1
     }
 
+    func roundedBottom(with width: CGFloat) {
+        let newBounds = CGRect(origin: bounds.origin, size: CGSize(width: width, height: bounds.height))
+        let maskPath1 = UIBezierPath(roundedRect: newBounds,
+                                     byRoundingCorners: [.bottomRight, .bottomLeft],
+                                     cornerRadii: CGSize(width: 15, height: 15))
+        let maskLayer1 = CAShapeLayer()
+        maskLayer1.frame = newBounds
+        maskLayer1.path = maskPath1.cgPath
+        layer.mask = maskLayer1
+    }
+
+    func roundedTop(with width: CGFloat) {
+        let newBounds = CGRect(origin: bounds.origin, size: CGSize(width: width, height: bounds.height))
+        let maskPath1 = UIBezierPath(roundedRect: newBounds,
+                                     byRoundingCorners: [.topRight, .topLeft],
+                                     cornerRadii: CGSize(width: 15, height: 15))
+        let maskLayer1 = CAShapeLayer()
+        maskLayer1.frame = newBounds
+        maskLayer1.path = maskPath1.cgPath
+        layer.mask = maskLayer1
+    }
+
     func roundedLeft() {
         let maskPath1 = UIBezierPath(roundedRect: bounds,
                                      byRoundingCorners: [.topLeft, .bottomLeft],

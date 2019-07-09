@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let info = VisaRequestParams()
             info.no_of_adult = "5"
             info.country_id = "1"
-            info.userid = User.id.stringValue
+            info.userid = User.id
             info.form_type = "us"
             info.no_of_child = "0"
             info.countryName = "امريكا"
