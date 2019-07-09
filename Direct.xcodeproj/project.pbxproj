@@ -237,6 +237,8 @@
 		6CDEF77F22A11DDA00BF5F0B /* VisaReqConfirmationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEF77D22A11DDA00BF5F0B /* VisaReqConfirmationController.swift */; };
 		6CDEF78222A11EFC00BF5F0B /* Visa.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CDEF78122A11EFC00BF5F0B /* Visa.storyboard */; };
 		6CE722ED2274FA1B00E095DC /* VisaRequirementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */; };
+		6CE8D26A22D4DAD000BD86D1 /* AboutUsJsonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8D26922D4DAD000BD86D1 /* AboutUsJsonResponse.swift */; };
+		6CE8D26C22D4DB7800BD86D1 /* AboutUsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8D26B22D4DB7800BD86D1 /* AboutUsViewModel.swift */; };
 		6CEE827322C2BFD900EC713C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEE827222C2BFD900EC713C /* BaseViewModel.swift */; };
 		6CF0E3672285BB1000149910 /* SwipeUpToDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0E3662285BB1000149910 /* SwipeUpToDismiss.swift */; };
 		6CF0E36C2285BE6800149910 /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0E36A2285BE6800149910 /* DatePickerController.swift */; };
@@ -598,6 +600,8 @@
 		6CDEF77D22A11DDA00BF5F0B /* VisaReqConfirmationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaReqConfirmationController.swift; sourceTree = "<group>"; };
 		6CDEF78122A11EFC00BF5F0B /* Visa.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Visa.storyboard; sourceTree = "<group>"; };
 		6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaRequirementController.swift; sourceTree = "<group>"; };
+		6CE8D26922D4DAD000BD86D1 /* AboutUsJsonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsJsonResponse.swift; sourceTree = "<group>"; };
+		6CE8D26B22D4DB7800BD86D1 /* AboutUsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewModel.swift; sourceTree = "<group>"; };
 		6CEE827222C2BFD900EC713C /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		6CF0E3662285BB1000149910 /* SwipeUpToDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeUpToDismiss.swift; sourceTree = "<group>"; };
 		6CF0E36A2285BE6800149910 /* DatePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
@@ -843,6 +847,8 @@
 			children = (
 				6C1C605C228E3D15006490CB /* AboutUsViewController.swift */,
 				6C902775228F94BF00B41705 /* AboutUsViewController.xib */,
+				6CE8D26922D4DAD000BD86D1 /* AboutUsJsonResponse.swift */,
+				6CE8D26B22D4DB7800BD86D1 /* AboutUsViewModel.swift */,
 			);
 			path = about;
 			sourceTree = "<group>";
@@ -1877,6 +1883,7 @@
 				6C2CFB932277902400D23CF4 /* NewDirectVisaController.swift in Sources */,
 				6C33A5F122D12BBC00D2B611 /* ViaRequirementsTabsViewModel.swift in Sources */,
 				6CF1C9B122A5DBEE0034DB39 /* PassangersInputViewViewController.swift in Sources */,
+				6CE8D26C22D4DB7800BD86D1 /* AboutUsViewModel.swift in Sources */,
 				6C6EED6D22A24C560091B82F /* PaymentChildsResponse.swift in Sources */,
 				6C6EED7122A24DEF0091B82F /* PaymentClient.swift in Sources */,
 				6CA040B62281BE0300619B6F /* FloatingTextField.swift in Sources */,
@@ -1948,6 +1955,7 @@
 				6CC94EDD228BE5BA002F3464 /* CommonAPIs.swift in Sources */,
 				6C6F361D22AF7C660045BAC8 /* EverTraveledHereBeforeView.swift in Sources */,
 				6CF3E1CC2274BBE5007488BA /* HomeCollectionSectionWrapper.swift in Sources */,
+				6CE8D26A22D4DAD000BD86D1 /* AboutUsJsonResponse.swift in Sources */,
 				39EE2AB122A09A0000A9A501 /* TitleCellController.swift in Sources */,
 				6C3885CD229B2B4900CA168A /* NewVisaCountriesResponse.swift in Sources */,
 				6CBA06F622D270A300F36353 /* PendingDocTableCell.swift in Sources */,
