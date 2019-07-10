@@ -12,5 +12,5 @@ protocol PassangerInputsSection: UIView {
     var contentHeight: BehaviorSubject<CGFloat> { get set }
     func isInputsValid() -> Bool
     var formType: CountriesIDs? { get set }
-    var params: USRequestParams? { get set }
+    var params: VisaRequirementsParams? { get set }
 }

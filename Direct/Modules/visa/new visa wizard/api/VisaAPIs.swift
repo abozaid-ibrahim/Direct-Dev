@@ -8,12 +8,12 @@
 
 import Foundation
 import Moya
-
+import SwifterSwift
 enum VisaAPIs {
     case visaRequest(prm: VisaRequestParams),
         visaRequirementForCountry(cid: String),
         getVisaPrice(prm: VisaPriceParams),
-        applyToVisa(path: String, USRequestParams),
+        applyToVisa(path: String, VisaRequirementsParams),
         getPreviousVisaType,
         getVisaReqRelation,
         getUSLivingRelatives,
@@ -83,62 +83,20 @@ extension VisaAPIs: TargetType {
                           "visatype": prm.visatype,
                           "promo_code": ""] as [String: Any]
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
-        case let .applyToVisa(path, req):
-//CountriesIDs of this path
+        case let .applyToVisa(_, params):
             var dictionary: [String: Any] = ["key": tokenKeyValue]
             dictionary["lang"] = appLang
             dictionary["userid"] = User.id
-            let form = CountriesIDs.US
-            switch form {
-            case .US:
-                dictionary["visa_req_id"] = req.visaReqID ?? ""
-                dictionary["visa_req_applicant_id"] = req.visaReqApplicantID ?? ""
-                dictionary["first_name"] = req.firstName ?? ""
-                dictionary["family_name"] = req.familyName ?? ""
-                dictionary["mothers_first_name"] = req.mothersFirstName ?? ""
-                dictionary["mothers_family_name"] = req.mothersFamilyName ?? ""
-                dictionary["nationality"] = req.nationality ?? ""
-                dictionary["passport_copy"] = req.passportCopy ?? ""
-                dictionary["personal_photo_copy"] = req.personalPhotoCopy ?? ""
-                dictionary["I_20_copy"] = req.universityAcceptanceImage ?? ""
-                dictionary["ever_issued_visa"] = req.everIssuedVisaBefore ?? ""
-                dictionary["previous_visa_copy"] = req.previousVisaCopy ?? ""
-                dictionary["type_of_previous_visa"] = req.typeOfPreviousVisa ?? ""
-                dictionary["date_of_issuing_previous_visa"] = req.dateOfArrival ?? ""
-                dictionary["Place_of_issue_previous_visa"] = ""
-                dictionary["travelled_before"] = req.travelledBeforeHere ?? ""
-                dictionary["date_of_arrival"] = req.dateOfArrival ?? ""
-                dictionary["period_of_previous_stay"] = req.periodOfPreviousStay ?? ""
-                dictionary["have_driver_license"] = req.have_driver_license ?? ""
-                dictionary["visa_cancelled_before"] = req.visa_cancelled_before ?? ""
-                dictionary["before_visa_cancelled_reason"] = req.before_visa_cancelled_reason ?? ""
-                dictionary["martial_status"] = req.martialStatus ?? ""
-                dictionary["family_id_copy"] = req.familyIDCopy ?? ""
-                dictionary["any_relatives_here"] = req.any_relatives_here ?? ""
-                dictionary["relative_type"] = req.relative_type ?? ""
-                dictionary["visits"] = req.visits ?? ""
-            case .GB:
-                dictionary["visits"] = req.visits ?? ""
-            case .SGN:
-                dictionary["visits"] = req.visits ?? ""
-            case .IN:
-                dictionary["visits"] = req.visits ?? ""
-            case .CN:
-                dictionary["visits"] = req.visits ?? ""
-            case .JP:
-                dictionary["visits"] = req.visits ?? ""
-            case .IE:
-                dictionary["visits"] = req.visits ?? ""
-            case .TR:
-                dictionary["visits"] = req.visits ?? ""
+            guard let pramsdic = try? params.asDictionary() else {
+                return .requestParameters(parameters: dictionary, encoding: URLEncoding.default)
             }
-
-            return .requestParameters(parameters: dictionary, encoding: URLEncoding.default)
+            dictionary.merge(dict: pramsdic)
+            
+            return .requestParameters(parameters: dictionary, encoding: URLEncoding.httpBody)
         case .getPreviousVisaType:
             let prmDic = ["key": tokenKeyValue,
                           "lang": appLang] as [String: Any]
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
-
         case .getVisaReqRelation:
             let prmDic = ["key": tokenKeyValue,
                           "lang": appLang] as [String: Any]
@@ -169,5 +127,23 @@ extension VisaAPIs: TargetType {
 
     public var headers: [String: String]? {
         return ["Content-Type": "application/x-www-form-urlencoded"]
+    }
+}
+
+extension Encodable {
+    func asDictionary() throws -> [String: Any] {
+        let data = try JSONEncoder().encode(self)
+        guard let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
+            throw NSError()
+        }
+        return dictionary
+    }
+}
+
+extension Dictionary {
+    mutating func merge(dict: [Key: Value]){
+        for (k, v) in dict {
+            updateValue(v, forKey: k)
+        }
     }
 }

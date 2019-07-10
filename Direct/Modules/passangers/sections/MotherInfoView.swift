@@ -15,7 +15,7 @@ class MotherInfoView: UIView, PassangerInputsSection {
     @IBOutlet var nationalityMotherField: FloatingTextField!
     
     @IBOutlet weak var titleLbl: UILabel!
-    var params: USRequestParams?
+    var params: VisaRequirementsParams?
     var formType: CountriesIDs? {
         didSet {
             applyFormRules()

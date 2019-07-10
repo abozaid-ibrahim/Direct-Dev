@@ -44,7 +44,6 @@ class SponserFormController: UIViewController, HaveLoading {
     var cid: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.getSponsorOwners()
         subscribeToProgress(viewModel.showProgress)
         configureBinding()
         setupUI()
@@ -52,6 +51,10 @@ class SponserFormController: UIViewController, HaveLoading {
         someOneElseSetup()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.getSponsorOwners()
+    }
     private func setupUI() {
         setAccountStateLaterBox.applyAppCheckBoxStyle()
         setSalaryLetterLaterBox.applyAppCheckBoxStyle()

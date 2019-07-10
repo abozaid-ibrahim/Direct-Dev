@@ -43,7 +43,7 @@ class PassangerFormController: UIViewController {
 
     internal let disposeBag = DisposeBag()
     var receivedImage = PublishSubject<(String?, UIImage?)>()
-    private var params = USRequestParams()
+    private var params = VisaRequirementsParams()
     private let network = ApiClientFacade()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -159,7 +159,6 @@ class PassangerFormController: UIViewController {
             params.travelledBeforeHere = prevTravelsJson
             params.have_driver_license = everTraveldView.haveLicense
         }
-        params.lang = AppLanguage.langCode
     }
 
     var prevTravelsJson: String {
@@ -194,6 +193,7 @@ class PassangerFormController: UIViewController {
             }
         }
         params.visaReqApplicantID = User.id
+        params.country = formTypeValue
         sendDataToServer(formTypeValue)
     }
 

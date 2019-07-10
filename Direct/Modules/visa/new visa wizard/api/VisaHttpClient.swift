@@ -76,7 +76,7 @@ extension ApiClientFacade {
     }
   
 
-    func applyToVisa(path:String,params: USRequestParams) -> Observable<USVvisaRequestJSONResponse> {
+    func applyToVisa(path:String,params: VisaRequirementsParams) -> Observable<USVvisaRequestJSONResponse> {
         return Observable<USVvisaRequestJSONResponse>.create { (observer) -> Disposable in
             self.visaProvider.rx.request(VisaAPIs.applyToVisa(path: path, params)).observeOn( ConcurrentDispatchQueueScheduler(qos: .background)).subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)

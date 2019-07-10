@@ -10,90 +10,57 @@ import Foundation
 
 // MARK: - USRequestParams
 
-
-struct CountriesParamsKeysBuilder {
-    enum CodingKeys: String, CodingKey {
-        case key, lang, userid
-        case visaReqID = "visa_req_id"
-        case visaReqApplicantID = "visa_req_applicant_id"
-        case firstName = "first_name"
-        case familyName = "family_name"
-        case universityAcceptanceImage = "I_20_copy"
-        case mothersFirstName = "mothers_first_name"
-        case mothersFamilyName = "mothers_family_name"
-        case nationality
-        case passportCopy = "passport_copy"
-        case personalPhotoCopy = "personal_photo_copy"
-        case visaLetterCopy = "visa_letter_copy"
-        case everIssuedVisaBefore = "ever_issued_visa"
-        case previousVisaCopy = "previous_visa_copy"
-        case typeOfPreviousVisa = "type_of_previous_visa"
-        case travelledBeforeHere = "travelled_before_here"
-        case dateOfArrival = "date_of_arrival"
-        case periodOfPreviousStay = "period_of_previous_stay"
-        case martialStatus = "martial_status"
-        case familyIDCopy = "family_id_copy"
-        case husbandOrWifeTravelWithYou = "husband_or_wife_travel_with_you"
-        case visits
-        case have_driver_license
-        case visa_cancelled_before
-        case before_visa_cancelled_reason
-        case any_relatives_here
-        case relative_type
-    }
-}
-
-class USRequestParams: Codable {
-    var key, lang, userid, visaReqID: String?
+class VisaRequirementsParams: Encodable {
+    var visaReqID: String?
     var visaReqApplicantID, firstName, familyName, mothersFirstName: String?
     var mothersFamilyName, nationality, passportCopy, personalPhotoCopy: String?
     var visaLetterCopy, everIssuedVisaBefore, previousVisaCopy, typeOfPreviousVisa: String?
+    
     var travelledBeforeHere, dateOfArrival, periodOfPreviousStay, martialStatus: String?
     var familyIDCopy, husbandOrWifeTravelWithYou: String?
+    
+ 
+    
     var have_driver_license: Int?
     var visa_cancelled_before: Int?
     var before_visa_cancelled_reason: String?
     var universityAcceptanceImage: String?
 
+    var dateOfIssuingPreviousVisa: String?
+    var placeOfIssuingPreviousVisa: String?
+    
     var any_relatives_here: Int?
     var relative_type: Int?
 
     var visits: [Visit]?
-
-    enum CodingKeys: String, CodingKey {
-        case key, lang, userid
-        case visaReqID = "visa_req_id"
-        case visaReqApplicantID = "visa_req_applicant_id"
-        case firstName = "first_name"
-        case familyName = "family_name"
-        case universityAcceptanceImage = "l_20"
-        case mothersFirstName = "mothers_first_name"
-        case mothersFamilyName = "mothers_family_name"
-        case nationality
-        case passportCopy = "passport_copy"
-        case personalPhotoCopy = "personal_photo_copy"
-        case visaLetterCopy = "visa_letter_copy"
-        case everIssuedVisaBefore = "ever_issued_visa_before"
-        case previousVisaCopy = "previous_visa_copy"
-        case typeOfPreviousVisa = "type_of_previous_visa"
-        case travelledBeforeHere = "travelled_before_here"
-        case dateOfArrival = "date_of_arrival"
-        case periodOfPreviousStay = "period_of_previous_stay"
-        case martialStatus = "martial_status"
-        case familyIDCopy = "family_id_copy"
-        case husbandOrWifeTravelWithYou = "husband_or_wife_travel_with_you"
-        case visits
-        case have_driver_license
-        case visa_cancelled_before
-        case before_visa_cancelled_reason
-        case any_relatives_here
-        case relative_type
+    
+    var country: CountriesIDs?
+    
+    // unimplemented before
+    var nationalIdCopy: String?
+    var mothersPlaceOfBirth: String?
+    
+    func encode(to encoder: Encoder) throws {
+        
+        switch country! {
+        case .US:
+            try encodeUs(encoder)
+        case .GB:
+            try encodeGB(encoder)
+        case .SGN:
+            try encodeSGN(encoder)
+        case .CN:
+            try encodeCN(encoder)
+        case .JP, .IE:
+            try encodeJapan_Ireland(encoder)
+        case .IN:
+            try encodeIndia(encoder)
+        case .TR:
+            try encodeTR(encoder)
+        }
     }
 
     init() {
-        key = nil
-        lang = nil
-        userid = nil
         visaReqID = nil
         visaReqApplicantID = nil
         firstName = nil
@@ -128,9 +95,6 @@ class USRequestParams: Codable {
          any_relatives_here: Int?,
          relative_type: Int?,
          universityAcceptanceImage:String?) {
-        self.key = key
-        self.lang = lang
-        self.userid = userid
         self.visaReqID = visaReqID
         self.visaReqApplicantID = visaReqApplicantID
         self.firstName = firstName
@@ -158,6 +122,144 @@ class USRequestParams: Codable {
         self.relative_type = relative_type
         self.universityAcceptanceImage = universityAcceptanceImage
     }
+    
+    
+    
+    // encoding helpers
+    func encodeUs(_ encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CountriesParamsFactory.USCodingKeys.self)
+        try container.encode(visaReqID, forKey: .visaReqId)
+        try container.encode(visaReqApplicantID, forKey: .visaReqApplicantId)
+        try container.encode(firstName, forKey: .firstName)
+        try container.encode(familyName, forKey: .familyName)
+        try container.encode(mothersFirstName, forKey: .mothersFirstName)
+        try container.encode(nationality, forKey: .nationality)
+//        try container.encode(passportCopy, forKey: .passportCopy)
+//        try container.encode(previousVisaCopy, forKey: .previousVisaCopy)
+        try container.encode(typeOfPreviousVisa, forKey: .typeOfPreviousVisa)
+        try container.encode(travelledBeforeHere, forKey: .travelledBefore)
+        
+        try container.encode(dateOfArrival, forKey: .dateOfArrival)
+        try container.encode(periodOfPreviousStay, forKey: .periodOfPreviousStay)
+        try container.encode(martialStatus, forKey: .martialStatus)
+//        try container.encode(familyIDCopy, forKey: .familyIdCopy)
+        
+        try container.encode(have_driver_license, forKey: .haveDriverLicense)
+        try container.encode(visa_cancelled_before, forKey: .visaCancelledBefore)
+        try container.encode(before_visa_cancelled_reason, forKey: .beforeVisaCancelledReason)
+//        try container.encode(universityAcceptanceImage, forKey: .i20_Copy)
+        try container.encode(dateOfIssuingPreviousVisa, forKey: .dateOfIssuingPreviousVisa)
+        
+        try container.encode(placeOfIssuingPreviousVisa, forKey: .placeOfIssuePreviousVisa)
+        try container.encode(any_relatives_here, forKey: .anyRelativesHere)
+        try container.encode(relative_type, forKey: .relativeType)
+        try container.encode(visits, forKey: .visits)
+    }
+    
+    
+    func encodeGB(_ encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CountriesParamsFactory.GBCodingKeys.self)
+        try container.encode(visaReqID, forKey: .visaReqId)
+        try container.encode(visaReqApplicantID, forKey: .visaReqApplicantId)
+        try container.encode(firstName, forKey: .firstName)
+        try container.encode(familyName, forKey: .familyName)
+        try container.encode(mothersFirstName, forKey: .mothersFirstName)
+        try container.encode(mothersFamilyName, forKey: .mothersFamilyName)
+        try container.encode(nationality, forKey: .nationality)
+        try container.encode(passportCopy, forKey: .passportCopy)
+        try container.encode(personalPhotoCopy, forKey: .personalPhotoCopy)
+        try container.encode(visaLetterCopy, forKey: .visaLetterCopy)
+        try container.encode(everIssuedVisaBefore, forKey: .everIssuedVisaBefore)
+        try container.encode(previousVisaCopy, forKey: .previousVisaCopy)
+        try container.encode(typeOfPreviousVisa, forKey: .typeOfPreviousVisa)
+        try container.encode(travelledBeforeHere, forKey: .travelledBeforeHere)
+        try container.encode(dateOfArrival, forKey: .dateOfArrival)
+        try container.encode(periodOfPreviousStay, forKey: .periodOfPreviousStay)
+        try container.encode(martialStatus, forKey: .martialStatus)
+        try container.encode(familyIDCopy, forKey: .familyIdCopy)
+        try container.encode(husbandOrWifeTravelWithYou, forKey: .husbandOrWifeTravelWithYou)
+        try container.encode(visits, forKey: .visits)
+    }
+    
+    func encodeSGN(_ encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CountriesParamsFactory.SGNCodingKeys.self)
+        try container.encode(visaReqID, forKey: .visaReqId)
+        try container.encode(visaReqApplicantID, forKey: .visaReqApplicantId)
+        try container.encode(firstName, forKey: .firstName)
+        try container.encode(familyName, forKey: .familyName)
+        try container.encode(passportCopy, forKey: .travelersPassportCopy)
+        try container.encode(nationalIdCopy, forKey: .nationalIdCopy)
+        try container.encode(visaLetterCopy, forKey: .visaLetterCopy)
+        try container.encode(everIssuedVisaBefore, forKey: .everIssuedVisa)
+        try container.encode(previousVisaCopy, forKey: .previousVisaCopy)
+        try container.encode(martialStatus, forKey: .socialStatus)
+        try container.encode(familyIDCopy, forKey: .familyCardCopy)
+    }
+    
+    
+    func encodeCN(_ encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CountriesParamsFactory.ChainaCodingKeys.self)
+        try container.encode(visaReqID, forKey: .visaReqId)
+        try container.encode(visaReqApplicantID, forKey: .visaReqApplicantId)
+        try container.encode(firstName, forKey: .firstName)
+        try container.encode(familyName, forKey: .familyName)
+        try container.encode(passportCopy, forKey: .passportCopy)
+        try container.encode(nationalIdCopy, forKey: .nationalIdCopy)
+        try container.encode(visaLetterCopy, forKey: .visaLetterCopy)
+        try container.encode(everIssuedVisaBefore, forKey: .everIssuedVisaBefore)
+        try container.encode(previousVisaCopy, forKey: .previousVisaCopy)
+        try container.encode(martialStatus, forKey: .martialStatus)
+        try container.encode(familyIDCopy, forKey: .familyIdCopy)
+        try container.encode(visits, forKey: .visits)
+    }
+    
+    
+    
+    
+    func encodeJapan_Ireland(_ encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CountriesParamsFactory.Japan_IrelandCodingKeys.self)
+        try container.encode(visaReqID, forKey: .visaReqId)
+        try container.encode(visaReqApplicantID, forKey: .visaReqApplicantId)
+        try container.encode(firstName, forKey: .firstName)
+        try container.encode(familyName, forKey: .familyName)
+        try container.encode(passportCopy, forKey: .passportCopy)
+        try container.encode(nationalIdCopy, forKey: .nationalIdCopy)
+        try container.encode(visaLetterCopy, forKey: .visaLetterCopy)
+        try container.encode(everIssuedVisaBefore, forKey: .everIssuedVisaBefore)
+        try container.encode(previousVisaCopy, forKey: .previousVisaCopy)
+        try container.encode(martialStatus, forKey: .martialStatus)
+        try container.encode(familyIDCopy, forKey: .familyIdCopy)
+    }
+
+    
+    func encodeIndia(_ encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CountriesParamsFactory.IndiaCodingKeys.self)
+        try container.encode(visaReqID, forKey: .visaReqId)
+        try container.encode(visaReqApplicantID, forKey: .visaReqApplicantId)
+        try container.encode(firstName, forKey: .firstName)
+        try container.encode(familyName, forKey: .familyName)
+        try container.encode(mothersFirstName, forKey: .mothersFirstName)
+        try container.encode(mothersFamilyName, forKey: .mothersFamilyName)
+        try container.encode(mothersPlaceOfBirth, forKey: .mothersPlaceOfBirth)
+        try container.encode(passportCopy, forKey: .passportCopy)
+        try container.encode(nationalIdCopy, forKey: .nationalIdCopy)
+        try container.encode(martialStatus, forKey: .socialStatus)
+        try container.encode(familyIDCopy, forKey: .familyIdCopy)
+        try container.encode(visits, forKey: .visits)
+    }
+    
+    func encodeTR(_ encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CountriesParamsFactory.TRCodingKeys.self)
+        try container.encode(visaReqID, forKey: .visaReqId)
+        try container.encode(visaReqApplicantID, forKey: .visaReqApplicantId)
+        try container.encode(firstName, forKey: .firstName)
+        try container.encode(familyName, forKey: .familyName)
+        try container.encode(mothersFirstName, forKey: .mothersFirstName)
+        try container.encode(mothersFamilyName, forKey: .mothersFamilyName)
+        try container.encode(passportCopy, forKey: .passportCopy)
+    }
+    
+
 }
 // MARK: - Visit
 

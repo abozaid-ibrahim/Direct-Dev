@@ -37,7 +37,7 @@ class VisaQuestionsView: UIView, ImagePicker {
     @IBOutlet private var checkboxContainer: UIView!
     //===================================================<<
     
-    var params: USRequestParams?
+    var params: VisaRequirementsParams?
     var countryName: String! {
         didSet {
             previousVisaLbl.text = "هل سبق وحصلت على تأشيرة " + countryString + Str.before
