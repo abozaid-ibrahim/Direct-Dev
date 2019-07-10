@@ -91,12 +91,12 @@ extension VisaAPIs: TargetType {
                 return .requestParameters(parameters: dictionary, encoding: URLEncoding.default)
             }
             dictionary.merge(dict: pramsdic)
-            return .requestParameters(parameters: dictionary.compactMapValues { $0}, encoding: URLEncoding.default)
+            
+            return .requestParameters(parameters: dictionary, encoding: URLEncoding.httpBody)
         case .getPreviousVisaType:
             let prmDic = ["key": tokenKeyValue,
                           "lang": appLang] as [String: Any]
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
-
         case .getVisaReqRelation:
             let prmDic = ["key": tokenKeyValue,
                           "lang": appLang] as [String: Any]
