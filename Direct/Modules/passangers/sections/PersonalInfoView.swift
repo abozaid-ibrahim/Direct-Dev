@@ -13,7 +13,7 @@ enum VisaType {
 }
 
 class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
-    var params: USRequestParams?
+    var params: VisaRequirementsParams?
     var visaType: VisaType?
     // Family
     @IBOutlet var firstNamePInfoField: FloatingTextField!
@@ -52,7 +52,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     internal let disposeBag = DisposeBag()
     var contentHeight = BehaviorSubject<CGFloat>(value: 300)
     
-    func fillParams(_ prm: inout USRequestParams) {}
+    func fillParams(_ prm: inout VisaRequirementsParams) {}
     
     func isInputsValid() -> Bool {
         let type = formType!
