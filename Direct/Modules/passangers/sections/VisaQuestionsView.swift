@@ -172,10 +172,7 @@ class VisaQuestionsView: UIView, ImagePicker {
     
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-        let image = info[.originalImage] as? UIImage
-        let fileUrl = info[.imageURL] as? URL
-        receivedImage.onNext((fileUrl?.lastPathComponent.attachName(), image?.apiSize()))
-        picker.dismiss(animated: true, completion: nil)
+        emitImageInfo(receivedImage, picker, didFinishPickingMediaWithInfo: info)
     }
     
     var prevVisaImageAvaliable = BehaviorRelay<Bool>(value: true)
