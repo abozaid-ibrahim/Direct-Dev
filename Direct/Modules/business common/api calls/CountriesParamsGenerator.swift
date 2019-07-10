@@ -10,7 +10,6 @@ import Foundation
 
 struct CountriesParamsFactory{
     enum USCodingKeys: String, CodingKey {
-        case key, lang, userid
         case visaReqId = "visa_req_id"
         case visaReqApplicantId = "visa_req_applicant_id"
         case firstName = "first_name"
@@ -42,7 +41,6 @@ struct CountriesParamsFactory{
     
     
     enum GBCodingKeys: String, CodingKey {
-        case key, lang, userid
         case visaReqId = "visa_req_id"
         case visaReqApplicantId = "visa_req_applicant_id"
         case firstName = "first_name"
@@ -67,7 +65,6 @@ struct CountriesParamsFactory{
     
     
     enum SGNCodingKeys: String, CodingKey {
-        case key, lang, userid
         case visaReqId = "visa_req_id"
         case visaReqApplicantId = "visa_req_applicant_id"
         case firstName = "first_name"
@@ -82,7 +79,6 @@ struct CountriesParamsFactory{
     }
     
     enum ChainaCodingKeys: String, CodingKey {
-        case key, lang, userid
         case visaReqId = "visa_req_id"
         case visaReqApplicantId = "visa_req_applicant_id"
         case firstName = "first_name"
@@ -99,7 +95,6 @@ struct CountriesParamsFactory{
     
     
     enum Japan_IrelandCodingKeys: String, CodingKey {
-        case key, lang, userid
         case visaReqId = "visa_req_id"
         case visaReqApplicantId = "visa_req_applicant_id"
         case firstName = "first_name"
@@ -115,7 +110,6 @@ struct CountriesParamsFactory{
     
     
     enum IndiaCodingKeys: String, CodingKey {
-        case key, lang, userid
         case visaReqId = "visa_req_id"
         case visaReqApplicantId = "visa_req_applicant_id"
         case firstName = "first_name"
@@ -131,7 +125,6 @@ struct CountriesParamsFactory{
     }
     
     enum TRCodingKeys: String, CodingKey {
-        case key, lang, userid
         case visaReqId = "visa_req_id"
         case visaReqApplicantId = "visa_req_applicant_id"
         case firstName = "first_name"
