@@ -127,29 +127,27 @@ class VisaRequirementsParams: Encodable {
     
     // encoding helpers
     func encodeUs(_ encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CountriesParamsFactory.USCodingKeys.self)
+        var container = encoder.container(keyedBy: CpersonalPhotoCopyountriesParamsFactory.USCodingKeys.self)
         try container.encode(visaReqID, forKey: .visaReqId)
         try container.encode(visaReqApplicantID, forKey: .visaReqApplicantId)
         try container.encode(firstName, forKey: .firstName)
         try container.encode(familyName, forKey: .familyName)
         try container.encode(mothersFirstName, forKey: .mothersFirstName)
         try container.encode(nationality, forKey: .nationality)
-//        try container.encode(passportCopy, forKey: .passportCopy)
-//        try container.encode(previousVisaCopy, forKey: .previousVisaCopy)
+        try container.encode(personalPhotoCopy, forKey: .personalPhotoCopy)
+        try container.encode(passportCopy, forKey: .passportCopy)
+        try container.encode(previousVisaCopy, forKey: .previousVisaCopy)
         try container.encode(typeOfPreviousVisa, forKey: .typeOfPreviousVisa)
         try container.encode(travelledBeforeHere, forKey: .travelledBefore)
-        
         try container.encode(dateOfArrival, forKey: .dateOfArrival)
         try container.encode(periodOfPreviousStay, forKey: .periodOfPreviousStay)
         try container.encode(martialStatus, forKey: .martialStatus)
-//        try container.encode(familyIDCopy, forKey: .familyIdCopy)
-        
+        try container.encode(familyIDCopy, forKey: .familyIdCopy)
         try container.encode(have_driver_license, forKey: .haveDriverLicense)
         try container.encode(visa_cancelled_before, forKey: .visaCancelledBefore)
         try container.encode(before_visa_cancelled_reason, forKey: .beforeVisaCancelledReason)
-//        try container.encode(universityAcceptanceImage, forKey: .i20_Copy)
+        try container.encode(universityAcceptanceImage, forKey: .i20_Copy)
         try container.encode(dateOfIssuingPreviousVisa, forKey: .dateOfIssuingPreviousVisa)
-        
         try container.encode(placeOfIssuingPreviousVisa, forKey: .placeOfIssuePreviousVisa)
         try container.encode(any_relatives_here, forKey: .anyRelativesHere)
         try container.encode(relative_type, forKey: .relativeType)
@@ -194,6 +192,7 @@ class VisaRequirementsParams: Encodable {
         try container.encode(previousVisaCopy, forKey: .previousVisaCopy)
         try container.encode(martialStatus, forKey: .socialStatus)
         try container.encode(familyIDCopy, forKey: .familyCardCopy)
+        
     }
     
     

@@ -48,9 +48,12 @@ class PassangerFormController: UIViewController {
     var receivedImage = PublishSubject<(String?, UIImage?)>()
     private var params = VisaRequirementsParams()
     private let network = ApiClientFacade()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         params.visaReqID = visaReqID
+        params.visaReqApplicantID = "1"
         addPersonalInfoSction()
         addMotherInfoSection()
         addQuestionsSection()
@@ -204,7 +207,6 @@ class PassangerFormController: UIViewController {
                 return
             }
         }
-        params.visaReqApplicantID = User.id
         params.country = formTypeValue
         sendDataToServer(formTypeValue)
     }
