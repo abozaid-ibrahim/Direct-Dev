@@ -6,8 +6,10 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
+import Photos
 import RxSwift
 import UIKit
+
 enum VisaType {
     case study, torrerist
 }
@@ -26,7 +28,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     @IBOutlet var familyIDPInfoField: FloatingTextField!
     @IBOutlet var passportImageField: FloatingTextField!
     @IBOutlet var acceptanceImageField: FloatingTextField!
-    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet var titleLbl: UILabel!
     
     @IBOutlet var acceptanceVisaView: UIView!
     @IBOutlet var martialStateView: UIView!
@@ -284,12 +286,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-        let image = info[.originalImage] as? UIImage
-        let fileUrl = info[.imageURL] as? URL
-        
-        receivedImage.onNext((fileUrl?.lastPathComponent.attachName(), image?.apiSize()))
-        
-        picker.dismiss(animated: true, completion: nil)
+        emitImageInfo(receivedImage, picker, didFinishPickingMediaWithInfo: info)
     }
     
     private func onRecieveImageCallback() {
@@ -317,11 +314,3 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     }
 }
 
-extension String {
-    func attachName() -> String {
-        let fileName = self
-        let startFrom = fileName.count > 30 ? fileName.count - 30 : 0
-        let showedName = fileName.charactersArray[startFrom..<fileName.count]
-        return String(showedName)
-    }
-}

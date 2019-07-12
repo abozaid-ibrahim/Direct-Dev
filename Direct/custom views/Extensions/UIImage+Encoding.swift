@@ -43,7 +43,7 @@ class DSCameraHandler: NSObject {
         delegate = delegate_
     }
 
-    func getPhotoLibraryOn( canEdit: Bool) {
+    func getPhotoLibraryOn(canEdit: Bool) {
         if !isPhotoLibraryAvailable, !isSavedPhotoAlbumAvailable { return }
         let type = kUTTypeImage as String
 
@@ -71,7 +71,7 @@ class DSCameraHandler: NSObject {
         try! AppNavigator().present(imagePicker)
     }
 
-    func getCameraOn( canEdit: Bool) {
+    func getCameraOn(canEdit: Bool) {
         if !isCameraAvailable { return }
         let type1 = kUTTypeImage as String
 
@@ -92,7 +92,7 @@ class DSCameraHandler: NSObject {
             return
         }
 
-        imagePicker.allowsEditing = canEdit
+        imagePicker.allowsEditing = false
         imagePicker.showsCameraControls = true
         imagePicker.delegate = delegate
         try! AppNavigator().present(imagePicker)
@@ -120,6 +120,8 @@ extension ImagePicker {
 
         try! AppNavigator().present(optionMenu)
     }
+
+  
 
 //
 //    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
@@ -184,5 +186,35 @@ extension UIAlertController {
     // Set tint color of UIAlertController
     func setTint(color: UIColor) {
         view.tintColor = color
+    }
+}
+extension String {
+    func attachName() -> String {
+        let fileName = self
+        let startFrom = fileName.count > 30 ? fileName.count - 30 : 0
+        let showedName = fileName.charactersArray[startFrom..<fileName.count]
+        return String(showedName)
+    }
+}
+
+extension ImagePicker {
+    func emitImageInfo(_ receivedImage: PublishSubject<(String?, UIImage?)>, _ picker: UIImagePickerController,
+                       didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        let image = info[.originalImage] as? UIImage
+        var pickedImageName: URL!
+        if let data = image?.pngData() {
+            let path = "\(String.random(ofLength: 35)).png"
+            pickedImageName = getDocumentsDirectory().appendingPathComponent(path)
+            try? data.write(to: pickedImageName)
+        }
+        let fileUrl = info[.imageURL] as? URL
+        let name = fileUrl?.lastPathComponent.attachName() ?? pickedImageName.lastPathComponent.attachName()
+        receivedImage.onNext((name, image?.apiSize()))
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    private func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
     }
 }

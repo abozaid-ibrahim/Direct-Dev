@@ -10,9 +10,6 @@ import RxSwift
 import UIKit
 
 class PassangerFormController: UIViewController {
-    var currentImageID: Int = 0
-    private let visaImageID = 32
-    private let last10YearsVisaImageID = 33
     var countryName: String!
     var countryId: String!
     var formType: String!
@@ -156,15 +153,6 @@ class PassangerFormController: UIViewController {
 
     @IBAction func submitData(_: Any) {
         validateAndSubmit()
-    }
-
-    func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-        let image = info[.editedImage] as? UIImage
-        let fileUrl = info[.imageURL] as? URL
-        receivedImage.onNext((fileUrl?.lastPathComponent.attachName(), image?.apiSize()))
-
-        picker.dismiss(animated: true, completion: nil)
     }
 
     func getEverTraveldParams() {
