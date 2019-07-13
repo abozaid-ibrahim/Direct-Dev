@@ -51,7 +51,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group19" translatesAutoresizingMaskIntoConstraints="NO" id="W1M-XR-Da2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomOrangeArrow" translatesAutoresizingMaskIntoConstraints="NO" id="W1M-XR-Da2">
                                 <rect key="frame" x="280" y="0.0" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="W1M-XR-Da2" secondAttribute="height" id="20K-a8-p5d"/>
@@ -83,6 +83,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="group19" width="18" height="18"/>
+        <image name="bottomOrangeArrow" width="18" height="18"/>
     </resources>
 </document>
