@@ -10,8 +10,8 @@ import RxSwift
 import UIKit
 import XLPagerTabStrip
 
-class ViaRequirementsTabsController: UIViewController {
-    private let disposeBag = DisposeBag()
+class ViaRequirementsTabsController: UIViewController,StyledActionBar {
+    internal let disposeBag = DisposeBag()
     private let viewModel = ViaRequirementsTabsViewModel()
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -22,6 +22,7 @@ class ViaRequirementsTabsController: UIViewController {
     }
     
     override func viewDidLoad() {
+       self.setupActionBar(.withTitle( Str.visaRequirement))
         viewModel.countriesList.subscribe(onNext: { [unowned self] value in
             let tb = value.map {
                 ReqTabItemViewController(itemInfo: IndicatorInfo(title: $0.countryName, image: nil, userInfo: $0.flag),
