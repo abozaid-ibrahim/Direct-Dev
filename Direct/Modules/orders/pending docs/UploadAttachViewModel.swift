@@ -38,7 +38,7 @@ class UploadAttachViewModel: BaseViewModel {
     }
     
     func showDatePickerDialog() {
-        let dest = Destination.datePicker(title: nil)
+        let dest = Destination.datePicker(title: Str.choose)
         let vc = dest.controller() as! DatePickerController
         vc.selectedDate.subscribe(onNext: { [unowned self] value in
             self.selectedDate.onNext(value)
@@ -48,7 +48,7 @@ class UploadAttachViewModel: BaseViewModel {
     
     func showBanksListDialog() {
         let items = banksListBuffer.map { $0.paymentName }
-        let dest = Destination.selectableSheet(data: items, titleText: nil, style: .textCenter)
+        let dest = Destination.selectableSheet(data: items, titleText: Str.choose, style: .textCenter)
         let vc = dest.controller() as! SelectableTableSheet
         vc.selectedItem.subscribe(onNext: { [unowned self] value in
             let selected = self.banksListBuffer.filter { $0.paymentName == value }.first
