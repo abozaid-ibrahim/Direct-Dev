@@ -1,0 +1,90 @@
+//
+//  BranchesController.swift
+//  Direct
+//
+//  Created by abuzeid on 7/13/19.
+//  Copyright © 2019 abuzeid. All rights reserved.
+//
+
+import RxCocoa
+import RxSwift
+import UIKit
+
+class BranchesController: UIViewController, StyledActionBar {
+    internal let disposeBag = DisposeBag()
+    @IBOutlet private var tableView: UITableView!
+    private let viewModel = BranchesViewModel()
+    fileprivate var datalist: [BranchesSection] = []
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupActionBar(.withTitle(Str.branches))
+        tableView.registerNib(BranchesDescTableCell.cellId)
+        tableView.registerNib(BranchesTableCell.cellId)
+        viewModel.branches.map { $0?.branch }.filterNil()
+            .subscribe(onNext: { [unowned self] value in
+                self.datalist = value.map { BranchesSection($0, shouldCollapse: false, hideAccessory: true) }
+                self.tableView.reloadData()
+            }).disposed(by: disposeBag)
+        tableView.dataSource = self
+        tableView.dataSource = self
+    }
+}
+
+extension BranchesController: UITableViewDataSource {
+    public func numberOfSections(in _: UITableView) -> Int {
+        return datalist.count
+    }
+
+    public func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if datalist[section].opened {
+            return 2 // 2
+        }
+        return 1
+    }
+
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 { //this is always the header
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: BranchesTableCell.cellId) as? BranchesTableCell else {
+                return UITableViewCell()
+            }
+            let model = datalist[indexPath.section]
+            cell.setCellData(model.data.name ?? "")
+
+            return cell
+        } else {
+            //this is for expanded cells
+            let cell = tableView.dequeueReusableCell(withIdentifier: BranchesDescTableCell.cellId) as! BranchesDescTableCell
+            let model = datalist[indexPath.section]
+            cell.setCellData(model)
+            return cell
+        }
+    }
+}
+
+extension BranchesController: UITableViewDelegate {
+    public func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if datalist[indexPath.section].hideAccessory {
+            return
+        }
+        if datalist[indexPath.section].opened {
+            datalist[indexPath.section].opened = false
+        } else {
+            datalist[indexPath.section].opened = true
+        }
+        let set = IndexSet(integer: indexPath.section)
+        tableView.reloadSections(set, with: .none)
+    }
+}
+
+class BranchesSection {
+    var shouldCollapse = false
+    var opened: Bool = false
+    var data: Branch
+    var hideAccessory: Bool
+    init(_ req: Branch, shouldCollapse: Bool = false, hideAccessory: Bool = false) {
+        data = req
+        opened = shouldCollapse ? false : true
+        self.shouldCollapse = shouldCollapse
+        self.hideAccessory = hideAccessory
+    }
+}

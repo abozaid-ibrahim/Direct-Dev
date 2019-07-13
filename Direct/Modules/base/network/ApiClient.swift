@@ -50,7 +50,15 @@ extension ApiClientFacade {
             .share(replay: 0, scope: .whileConnected)
     }
 
-    
+    func getBranches() -> Observable<BranchesResponse> {
+        return Observable<BranchesResponse>.create { (observer) -> Disposable in
+            self.commonProvider.rx.request(.getBranches).subscribe { [weak self] event in
+                self?.parser.emitDataModelfromResponse(event: event, observer: observer)
+                }.disposed(by: self.disposeBag)
+            return Disposables.create()
+            }
+            .share(replay: 0, scope: .whileConnected)
+    }
     func getBiometricChoices() -> Observable<BioChoicesResponse> {
         return Observable<BioChoicesResponse>.create { (observer) -> Disposable in
             self.commonProvider.rx.request(.biometricChoices).subscribe { [weak self] event in

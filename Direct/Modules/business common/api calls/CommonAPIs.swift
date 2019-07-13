@@ -17,6 +17,7 @@ public enum CommonAPIs {
     case userProfile(String)
     case userRepositories(String)
     case getAboutUs
+    case getBranches
 }
 
 // share base url cross all of the APIs∑
@@ -54,12 +55,14 @@ extension CommonAPIs: TargetType {
             return "get-city"
         case .getAboutUs:
             return "get-about-page"
+        case .getBranches:
+            return "get-branch"
         }
     }
 
     public var method: Moya.Method {
         switch self {
-        case .getAllCountries, .biometricChoices, .relationsList, .getCities, .getAboutUs:
+        case .getAllCountries, .biometricChoices, .relationsList, .getCities, .getAboutUs,.getBranches:
             return .post
 
         default:

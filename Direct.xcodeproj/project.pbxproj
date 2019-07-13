@@ -88,6 +88,14 @@
 		6C3885D1229B6CD700CA168A /* UIIMage + Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3885D0229B6CD700CA168A /* UIIMage + Kingfisher.swift */; };
 		6C3DA72E22D90299003B65DD /* HaveDonePaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3DA72D22D90299003B65DD /* HaveDonePaymentResponse.swift */; };
 		6C3DA73022DA266A003B65DD /* UpdatePendingDocsParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3DA72F22DA266A003B65DD /* UpdatePendingDocsParams.swift */; };
+		6C3DA73222DA478A003B65DD /* BranchesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3DA73122DA478A003B65DD /* BranchesResponse.swift */; };
+		6C3DA73522DA47DE003B65DD /* BranchesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3DA73322DA47DE003B65DD /* BranchesController.swift */; };
+		6C3DA73622DA47DE003B65DD /* BranchesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3DA73422DA47DE003B65DD /* BranchesController.xib */; };
+		6C3DA73922DA49BE003B65DD /* BranchesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3DA73722DA49BE003B65DD /* BranchesTableCell.swift */; };
+		6C3DA73A22DA49BE003B65DD /* BranchesTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3DA73822DA49BE003B65DD /* BranchesTableCell.xib */; };
+		6C3DA73D22DA49CF003B65DD /* BranchesDescTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3DA73B22DA49CF003B65DD /* BranchesDescTableCell.swift */; };
+		6C3DA73E22DA49CF003B65DD /* BranchesDescTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3DA73C22DA49CF003B65DD /* BranchesDescTableCell.xib */; };
+		6C3DA74022DA4B27003B65DD /* BranchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3DA73F22DA4B27003B65DD /* BranchesViewModel.swift */; };
 		6C431DD822B3C69000DD140D /* UIView + Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C431DD722B3C69000DD140D /* UIView + Helper.swift */; };
 		6C431DD922B3C90400DD140D /* PassangersInputViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C431DDB22B3C90400DD140D /* PassangersInputViewViewController.xib */; };
 		6C431DE022B4077F00DD140D /* Localized Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C431DDF22B4077F00DD140D /* Localized Strings.swift */; };
@@ -404,6 +412,14 @@
 		6C3A62F922A5033500DD6DD8 /* Cairo-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-ExtraLight.ttf"; sourceTree = "<group>"; };
 		6C3DA72D22D90299003B65DD /* HaveDonePaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveDonePaymentResponse.swift; sourceTree = "<group>"; };
 		6C3DA72F22DA266A003B65DD /* UpdatePendingDocsParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePendingDocsParams.swift; sourceTree = "<group>"; };
+		6C3DA73122DA478A003B65DD /* BranchesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BranchesResponse.swift; path = Direct/Modules/orders/model/BranchesResponse.swift; sourceTree = SOURCE_ROOT; };
+		6C3DA73322DA47DE003B65DD /* BranchesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BranchesController.swift; path = Direct/Modules/orders/model/BranchesController.swift; sourceTree = SOURCE_ROOT; };
+		6C3DA73422DA47DE003B65DD /* BranchesController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BranchesController.xib; path = Direct/Modules/orders/model/BranchesController.xib; sourceTree = SOURCE_ROOT; };
+		6C3DA73722DA49BE003B65DD /* BranchesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BranchesTableCell.swift; path = Direct/Modules/orders/model/BranchesTableCell.swift; sourceTree = SOURCE_ROOT; };
+		6C3DA73822DA49BE003B65DD /* BranchesTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BranchesTableCell.xib; path = Direct/Modules/orders/model/BranchesTableCell.xib; sourceTree = SOURCE_ROOT; };
+		6C3DA73B22DA49CF003B65DD /* BranchesDescTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BranchesDescTableCell.swift; path = Direct/Modules/orders/model/BranchesDescTableCell.swift; sourceTree = SOURCE_ROOT; };
+		6C3DA73C22DA49CF003B65DD /* BranchesDescTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BranchesDescTableCell.xib; path = Direct/Modules/orders/model/BranchesDescTableCell.xib; sourceTree = SOURCE_ROOT; };
+		6C3DA73F22DA4B27003B65DD /* BranchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BranchesViewModel.swift; path = Direct/Modules/orders/model/BranchesViewModel.swift; sourceTree = SOURCE_ROOT; };
 		6C431DD722B3C69000DD140D /* UIView + Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Helper.swift"; sourceTree = "<group>"; };
 		6C431DDC22B3D09B00DD140D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PassangersInputViewViewController.xib; sourceTree = "<group>"; };
 		6C431DDF22B4077F00DD140D /* Localized Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Localized Strings.swift"; sourceTree = "<group>"; };
@@ -1440,6 +1456,7 @@
 		6CF3E1782271E6A1007488BA /* model */ = {
 			isa = PBXGroup;
 			children = (
+				6C3DA73122DA478A003B65DD /* BranchesResponse.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1447,6 +1464,13 @@
 		6CF3E17A2271E6B6007488BA /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				6C3DA73F22DA4B27003B65DD /* BranchesViewModel.swift */,
+				6C3DA73322DA47DE003B65DD /* BranchesController.swift */,
+				6C3DA73422DA47DE003B65DD /* BranchesController.xib */,
+				6C3DA73722DA49BE003B65DD /* BranchesTableCell.swift */,
+				6C3DA73822DA49BE003B65DD /* BranchesTableCell.xib */,
+				6C3DA73B22DA49CF003B65DD /* BranchesDescTableCell.swift */,
+				6C3DA73C22DA49CF003B65DD /* BranchesDescTableCell.xib */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -1702,6 +1726,7 @@
 				6CF3E1A5227254A1007488BA /* InstituteCollectionViewCell.xib in Resources */,
 				39EE2AD622A0BD6700A9A501 /* Localizable.strings in Resources */,
 				6C90279D228F954C00B41705 /* PaymentMethodTableCell.xib in Resources */,
+				6C3DA73622DA47DE003B65DD /* BranchesController.xib in Resources */,
 				6C9027CD228F95B100B41705 /* VisaRequirementTableCell.xib in Resources */,
 				6C9027D9228F95C800B41705 /* PassangersCountController.xib in Resources */,
 				6C90277C228F94D700B41705 /* NewInstituteRequestController.xib in Resources */,
@@ -1724,10 +1749,12 @@
 				6C431E0E22B5A1FF00DD140D /* VisaQuestionsView.xib in Resources */,
 				6CBA06F722D270A300F36353 /* PendingDocTableCell.xib in Resources */,
 				6C90278B228F951000B41705 /* InstituteDetailsTableCell.xib in Resources */,
+				6C3DA73E22DA49CF003B65DD /* BranchesDescTableCell.xib in Resources */,
 				6C5FDA572270816C00ABA39B /* LaunchScreen.storyboard in Resources */,
 				6C5FDA542270816C00ABA39B /* Assets.xcassets in Resources */,
 				6C431E0A22B5808900DD140D /* MotherInfoView.xib in Resources */,
 				6C902791228F951E00B41705 /* ReserveCourseInstitueController.xib in Resources */,
+				6C3DA73A22DA49BE003B65DD /* BranchesTableCell.xib in Resources */,
 				6C5FDA522270816B00ABA39B /* Main.storyboard in Resources */,
 				6CF3E1B9227268CF007488BA /* HomeCollectionSectionHeader.xib in Resources */,
 				6C6A0C1122AB81F800150FF6 /* Cairo-Bold.ttf in Resources */,
@@ -1829,8 +1856,10 @@
 				6C33A5E322D0DD7100D2B611 /* OrderApis.swift in Sources */,
 				6CF703DD2286F7E800B1C387 /* InstituteDetailsTableCell.swift in Sources */,
 				6CF9F5DC22BEDB6800E45E8A /* SponsersAPI.swift in Sources */,
+				6C3DA73D22DA49CF003B65DD /* BranchesDescTableCell.swift in Sources */,
 				6CD5848422B2633B005A2190 /* VisaRelationsJsonResponse.swift in Sources */,
 				39EE2A9822A0984200A9A501 /* SignupUserData.swift in Sources */,
+				6C3DA73222DA478A003B65DD /* BranchesResponse.swift in Sources */,
 				6C5964B622C0F257007D81C6 /* BaseController.swift in Sources */,
 				6C431DF822B51C0C00DD140D /* ViewPagerTab.swift in Sources */,
 				6C778280227AA2EC001926B2 /* InstitutesListController.swift in Sources */,
@@ -1928,6 +1957,7 @@
 				6C431E0822B5807300DD140D /* MotherInfoView.swift in Sources */,
 				6C90276E228F88CC00B41705 /* UploadField.swift in Sources */,
 				6CF3E19422724D0C007488BA /* HomeCollectionSection.swift in Sources */,
+				6C3DA73922DA49BE003B65DD /* BranchesTableCell.swift in Sources */,
 				6C77826E227A9FB2001926B2 /* SuccessVisaRequestController.swift in Sources */,
 				39EE2AB022A09A0000A9A501 /* AuthButtonCellController.swift in Sources */,
 				6CB2A8BC228CAD8200A78541 /* AboutUsTableCell.swift in Sources */,
@@ -1958,6 +1988,7 @@
 				6CF4281B22C8D9EC000A9646 /* UIView + Any.swift in Sources */,
 				6CF4281522C81626000A9646 /* PaymentMethods.swift in Sources */,
 				6CCE032B229CA5A2003523FE /* RelativesResponse.swift in Sources */,
+				6C3DA74022DA4B27003B65DD /* BranchesViewModel.swift in Sources */,
 				6CD2CE5522A0C32300FB308A /* APIsParams.swift in Sources */,
 				39EE2AAD22A09A0000A9A501 /* TextFieldConfigurator.swift in Sources */,
 				6CE8D27022D4E52600BD86D1 /* UploadPendingDocsController.swift in Sources */,
@@ -2030,6 +2061,7 @@
 				6CF4281322C8149A000A9646 /* PayfortResponse.swift in Sources */,
 				6CF0E37B2285DA8900149910 /* OrderTableCell.swift in Sources */,
 				6C33A5E522D0DE8600D2B611 /* OrdersHttpClient.swift in Sources */,
+				6C3DA73522DA47DE003B65DD /* BranchesController.swift in Sources */,
 				39EE2ACB22A09FBE00A9A501 /* UIViewController+Messages.swift in Sources */,
 				39EE2AAE22A09A0000A9A501 /* AuthButtonTableViewCell.swift in Sources */,
 			);

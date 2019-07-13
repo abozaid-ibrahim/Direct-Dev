@@ -135,4 +135,13 @@ struct Str {
     static var uploadPendingDocsTitle:String{
         return "Update Pending Docs"
     }
+    static var address:String{
+        return "Address"
+    }
+    static var workingTime:String{
+        return "Working Time"
+    }
+    static var branches:String{
+        return "Branches"
+    }
 }
