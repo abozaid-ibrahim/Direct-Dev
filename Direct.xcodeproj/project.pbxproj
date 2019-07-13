@@ -86,6 +86,8 @@
 		6C3885CD229B2B4900CA168A /* NewVisaCountriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3885CC229B2B4900CA168A /* NewVisaCountriesResponse.swift */; };
 		6C3885CF229B672600CA168A /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3885CE229B672600CA168A /* SearchViewModel.swift */; };
 		6C3885D1229B6CD700CA168A /* UIIMage + Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3885D0229B6CD700CA168A /* UIIMage + Kingfisher.swift */; };
+		6C3DA72E22D90299003B65DD /* HaveDonePaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3DA72D22D90299003B65DD /* HaveDonePaymentResponse.swift */; };
+		6C3DA73022DA266A003B65DD /* UpdatePendingDocsParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3DA72F22DA266A003B65DD /* UpdatePendingDocsParams.swift */; };
 		6C431DD822B3C69000DD140D /* UIView + Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C431DD722B3C69000DD140D /* UIView + Helper.swift */; };
 		6C431DD922B3C90400DD140D /* PassangersInputViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C431DDB22B3C90400DD140D /* PassangersInputViewViewController.xib */; };
 		6C431DE022B4077F00DD140D /* Localized Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C431DDF22B4077F00DD140D /* Localized Strings.swift */; };
@@ -241,9 +243,8 @@
 		6CE722ED2274FA1B00E095DC /* VisaRequirementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */; };
 		6CE8D26A22D4DAD000BD86D1 /* AboutUsJsonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8D26922D4DAD000BD86D1 /* AboutUsJsonResponse.swift */; };
 		6CE8D26C22D4DB7800BD86D1 /* AboutUsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8D26B22D4DB7800BD86D1 /* AboutUsViewModel.swift */; };
-		6CE8D27022D4E52600BD86D1 /* UploadAttachController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8D26E22D4E52600BD86D1 /* UploadAttachController.swift */; };
-		6CE8D27122D4E52600BD86D1 /* UploadAttachController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CE8D26F22D4E52600BD86D1 /* UploadAttachController.xib */; };
-		6CE8D27322D4E6F300BD86D1 /* UpdatePendingDocsREsponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8D27222D4E6F300BD86D1 /* UpdatePendingDocsREsponse.swift */; };
+		6CE8D27022D4E52600BD86D1 /* UploadPendingDocsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8D26E22D4E52600BD86D1 /* UploadPendingDocsController.swift */; };
+		6CE8D27122D4E52600BD86D1 /* UploadPendingDocsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CE8D26F22D4E52600BD86D1 /* UploadPendingDocsController.xib */; };
 		6CE8D27522D4E7B200BD86D1 /* UploadAttachViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8D27422D4E7B200BD86D1 /* UploadAttachViewModel.swift */; };
 		6CEE827322C2BFD900EC713C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEE827222C2BFD900EC713C /* BaseViewModel.swift */; };
 		6CF0E3672285BB1000149910 /* SwipeUpToDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0E3662285BB1000149910 /* SwipeUpToDismiss.swift */; };
@@ -401,6 +402,8 @@
 		6C3A62F722A5033500DD6DD8 /* Cairo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Bold.ttf"; sourceTree = "<group>"; };
 		6C3A62F822A5033500DD6DD8 /* Cairo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Light.ttf"; sourceTree = "<group>"; };
 		6C3A62F922A5033500DD6DD8 /* Cairo-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-ExtraLight.ttf"; sourceTree = "<group>"; };
+		6C3DA72D22D90299003B65DD /* HaveDonePaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveDonePaymentResponse.swift; sourceTree = "<group>"; };
+		6C3DA72F22DA266A003B65DD /* UpdatePendingDocsParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePendingDocsParams.swift; sourceTree = "<group>"; };
 		6C431DD722B3C69000DD140D /* UIView + Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Helper.swift"; sourceTree = "<group>"; };
 		6C431DDC22B3D09B00DD140D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PassangersInputViewViewController.xib; sourceTree = "<group>"; };
 		6C431DDF22B4077F00DD140D /* Localized Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Localized Strings.swift"; sourceTree = "<group>"; };
@@ -610,9 +613,8 @@
 		6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaRequirementController.swift; sourceTree = "<group>"; };
 		6CE8D26922D4DAD000BD86D1 /* AboutUsJsonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsJsonResponse.swift; sourceTree = "<group>"; };
 		6CE8D26B22D4DB7800BD86D1 /* AboutUsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewModel.swift; sourceTree = "<group>"; };
-		6CE8D26E22D4E52600BD86D1 /* UploadAttachController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAttachController.swift; sourceTree = "<group>"; };
-		6CE8D26F22D4E52600BD86D1 /* UploadAttachController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UploadAttachController.xib; sourceTree = "<group>"; };
-		6CE8D27222D4E6F300BD86D1 /* UpdatePendingDocsREsponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePendingDocsREsponse.swift; sourceTree = "<group>"; };
+		6CE8D26E22D4E52600BD86D1 /* UploadPendingDocsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPendingDocsController.swift; sourceTree = "<group>"; };
+		6CE8D26F22D4E52600BD86D1 /* UploadPendingDocsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UploadPendingDocsController.xib; sourceTree = "<group>"; };
 		6CE8D27422D4E7B200BD86D1 /* UploadAttachViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAttachViewModel.swift; sourceTree = "<group>"; };
 		6CEE827222C2BFD900EC713C /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		6CF0E3662285BB1000149910 /* SwipeUpToDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeUpToDismiss.swift; sourceTree = "<group>"; };
@@ -905,6 +907,7 @@
 				6C33A5E222D0DD7100D2B611 /* OrderApis.swift */,
 				6C33A5E422D0DE8600D2B611 /* OrdersHttpClient.swift */,
 				6C33A5E622D0DEAA00D2B611 /* CompletedOrdersJsonResponse.swift */,
+				6C3DA72F22DA266A003B65DD /* UpdatePendingDocsParams.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1030,7 +1033,7 @@
 		6C5DE7582275C742001A9FB6 /* orders */ = {
 			isa = PBXGroup;
 			children = (
-				6CE8D26D22D4E4F400BD86D1 /* add attach */,
+				6CE8D26D22D4E4F400BD86D1 /* pending docs */,
 				6CBA06FC22D2A11B00F36353 /* details */,
 				6C33A5E122D0DD6300D2B611 /* model */,
 				6C33A5E822D0DF4900D2B611 /* OrdersHistoryViewModel.swift */,
@@ -1412,15 +1415,15 @@
 			path = visa;
 			sourceTree = "<group>";
 		};
-		6CE8D26D22D4E4F400BD86D1 /* add attach */ = {
+		6CE8D26D22D4E4F400BD86D1 /* pending docs */ = {
 			isa = PBXGroup;
 			children = (
-				6CE8D26E22D4E52600BD86D1 /* UploadAttachController.swift */,
-				6CE8D26F22D4E52600BD86D1 /* UploadAttachController.xib */,
-				6CE8D27222D4E6F300BD86D1 /* UpdatePendingDocsREsponse.swift */,
 				6CE8D27422D4E7B200BD86D1 /* UploadAttachViewModel.swift */,
+				6CE8D26E22D4E52600BD86D1 /* UploadPendingDocsController.swift */,
+				6CE8D26F22D4E52600BD86D1 /* UploadPendingDocsController.xib */,
+				6C3DA72D22D90299003B65DD /* HaveDonePaymentResponse.swift */,
 			);
-			path = "add attach";
+			path = "pending docs";
 			sourceTree = "<group>";
 		};
 		6CF2514222A6107400CDA47C /* Extensions */ = {
@@ -1741,7 +1744,7 @@
 				6C9027DF228F95D200B41705 /* AboutUsTableCell.xib in Resources */,
 				6C9027A6228F955F00B41705 /* PaymentMethodsContainerController.xib in Resources */,
 				6C9027AC228F956B00B41705 /* PackageDetailsController.xib in Resources */,
-				6CE8D27122D4E52600BD86D1 /* UploadAttachController.xib in Resources */,
+				6CE8D27122D4E52600BD86D1 /* UploadPendingDocsController.xib in Resources */,
 				6C33A5EF22D1257D00D2B611 /* VisaRequirementTabCell.xib in Resources */,
 				6CDEF78222A11EFC00BF5F0B /* Visa.storyboard in Resources */,
 				6C9027CA228F95AC00B41705 /* VisaRequirementController.xib in Resources */,
@@ -1839,6 +1842,7 @@
 				39EE2AB622A09A0000A9A501 /* AuthTextFieldCellController.swift in Sources */,
 				39EE2A9922A0984200A9A501 /* AuthCoordinator.swift in Sources */,
 				6CF3E1762271E598007488BA /* RootNavigationViewController.swift in Sources */,
+				6C3DA73022DA266A003B65DD /* UpdatePendingDocsParams.swift in Sources */,
 				6C99796F22D1F67B003CE0FF /* TabItemController.swift in Sources */,
 				6CF703E22286FBD700B1C387 /* InstituteDetailsHeaderView.swift in Sources */,
 				6C77825A227A3AFF001926B2 /* MyAccountController.swift in Sources */,
@@ -1862,7 +1866,6 @@
 				6C431E0322B52E8B00DD140D /* PersonalInfoView.swift in Sources */,
 				6C55756F228BAEB700BAE5E2 /* UIFont+UIView.swift in Sources */,
 				6C8C535322D3E66A00B5572B /* MoreDataRep.swift in Sources */,
-				6CE8D27322D4E6F300BD86D1 /* UpdatePendingDocsREsponse.swift in Sources */,
 				6C2CFBA322789F6100D23CF4 /* PaymentMethodTableCell.swift in Sources */,
 				6C99797322D2061C003CE0FF /* OrderModel.swift in Sources */,
 				6C778274227AA196001926B2 /* NewInstituteRequestController.swift in Sources */,
@@ -1957,7 +1960,7 @@
 				6CCE032B229CA5A2003523FE /* RelativesResponse.swift in Sources */,
 				6CD2CE5522A0C32300FB308A /* APIsParams.swift in Sources */,
 				39EE2AAD22A09A0000A9A501 /* TextFieldConfigurator.swift in Sources */,
-				6CE8D27022D4E52600BD86D1 /* UploadAttachController.swift in Sources */,
+				6CE8D27022D4E52600BD86D1 /* UploadPendingDocsController.swift in Sources */,
 				39EE2A9D22A0984200A9A501 /* LoginRequestCommand.swift in Sources */,
 				6C2CFB9F22789E0200D23CF4 /* PaymentViewController.swift in Sources */,
 				6C73A65222CBBE210044546D /* VisaReqCofirmationViewModel.swift in Sources */,
@@ -1998,6 +2001,7 @@
 				6C3885C5229B1C6000CA168A /* NewDirectVisaViewModel.swift in Sources */,
 				39EE2AC422A09DFE00A9A501 /* LoadingButton.swift in Sources */,
 				6C1C6059228E38D8006490CB /* ReserveCourseInstitueController.swift in Sources */,
+				6C3DA72E22D90299003B65DD /* HaveDonePaymentResponse.swift in Sources */,
 				6CF0E3712285D70900149910 /* OrdersHistoryController.swift in Sources */,
 				6CF3E1AD2272551E007488BA /* VisaRequirementsSectionVM.swift in Sources */,
 				6C5DE7652275DA99001A9FB6 /* UIView.swift in Sources */,

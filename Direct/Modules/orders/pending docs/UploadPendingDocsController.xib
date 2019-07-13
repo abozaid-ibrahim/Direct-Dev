@@ -10,8 +10,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UploadAttachController" customModule="Direct" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UploadPendingDocsController" customModule="Direct" customModuleProvider="target">
             <connections>
+                <outlet property="accountNameField" destination="2ky-VO-wBD" id="ONh-tc-Ktz"/>
+                <outlet property="ammountField" destination="EaI-ej-UP0" id="gJV-Xu-9A3"/>
+                <outlet property="bankField" destination="uwd-QS-pf1" id="UQp-gz-F8z"/>
+                <outlet property="submitBtn" destination="qqi-9B-jh9" id="8hu-PU-Ids"/>
+                <outlet property="transactionDateField" destination="xmZ-Sa-uHH" id="PFe-Ji-eJ7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,9 +26,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Emu-yi-ayL">
-                    <rect key="frame" x="12" y="56" width="390" height="195"/>
+                    <rect key="frame" x="12" y="56" width="390" height="250"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0xa-oW-Fbe" userLabel="st">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0xa-oW-Fbe" userLabel="bank">
                             <rect key="frame" x="0.0" y="0.0" width="390" height="46"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uwd-QS-pf1" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
@@ -33,8 +38,8 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="اسم صاحب الحواله"/>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="اسم صاحب الحواله"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="البنك"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="البنك"/>
                                         <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
                                             <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </userDefinedRuntimeAttribute>
@@ -71,7 +76,7 @@
                                 <constraint firstItem="j0L-MS-OB3" firstAttribute="centerY" secondItem="0xa-oW-Fbe" secondAttribute="centerY" id="jcR-JU-9ei"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D44-Rv-KJI" userLabel="is hus">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D44-Rv-KJI" userLabel="account name">
                             <rect key="frame" x="0.0" y="55" width="390" height="46"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ky-VO-wBD" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
@@ -81,8 +86,8 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="رقم الحواله"/>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="رقم الحواله"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="اسم صاحب الحساب"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="اسم صاحب الحساب الحواله"/>
                                         <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
                                             <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </userDefinedRuntimeAttribute>
@@ -100,41 +105,33 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </textField>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomArrow" translatesAutoresizingMaskIntoConstraints="NO" id="Yjf-xE-R0n">
-                                    <rect key="frame" x="363" y="15.5" width="15" height="15"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="15" id="auN-q3-mGT"/>
-                                        <constraint firstAttribute="height" constant="15" id="nmd-ya-bX9"/>
-                                    </constraints>
-                                </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="46" id="9Re-Wa-bAo"/>
                                 <constraint firstItem="2ky-VO-wBD" firstAttribute="width" secondItem="D44-Rv-KJI" secondAttribute="width" id="CuQ-Qt-5Iz"/>
-                                <constraint firstItem="Yjf-xE-R0n" firstAttribute="centerY" secondItem="D44-Rv-KJI" secondAttribute="centerY" id="WQU-kM-Nv8"/>
                                 <constraint firstItem="2ky-VO-wBD" firstAttribute="centerX" secondItem="D44-Rv-KJI" secondAttribute="centerX" id="ifb-bh-exG"/>
-                                <constraint firstAttribute="trailing" secondItem="Yjf-xE-R0n" secondAttribute="trailing" constant="12" id="l61-w8-8as"/>
                                 <constraint firstItem="2ky-VO-wBD" firstAttribute="centerY" secondItem="D44-Rv-KJI" secondAttribute="centerY" id="lZc-C6-JJZ"/>
                                 <constraint firstItem="2ky-VO-wBD" firstAttribute="height" secondItem="D44-Rv-KJI" secondAttribute="height" id="wxT-uo-xRU"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="irL-eQ-fFt" userLabel="acceptance study visa id" customClass="ImagePickerView" customModule="Direct" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Cs-HK-14g" userLabel="amount">
                             <rect key="frame" x="0.0" y="110" width="390" height="46"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hS6-bn-VA8" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EaI-ej-UP0" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="46"/>
                                     <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="الوثيقة الشخصية"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="المبلغ"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="المبلغ"/>
                                         <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
                                             <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                            <color key="value" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="lineErrorColor">
                                             <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -145,42 +142,74 @@
                                         <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                             <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
-                                            <real key="value" value="1"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="الوثيقة الشخصية"/>
                                     </userDefinedRuntimeAttributes>
                                 </textField>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_dots" translatesAutoresizingMaskIntoConstraints="NO" id="MyN-yz-2kn">
-                                    <rect key="frame" x="353" y="15.5" width="25" height="15"/>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="EaI-ej-UP0" firstAttribute="centerY" secondItem="0Cs-HK-14g" secondAttribute="centerY" id="9JM-rf-J8b"/>
+                                <constraint firstAttribute="height" constant="46" id="KzT-Z9-aB3"/>
+                                <constraint firstItem="EaI-ej-UP0" firstAttribute="centerX" secondItem="0Cs-HK-14g" secondAttribute="centerX" id="QtX-9q-F33"/>
+                                <constraint firstItem="EaI-ej-UP0" firstAttribute="width" secondItem="0Cs-HK-14g" secondAttribute="width" id="kd3-LR-PW6"/>
+                                <constraint firstItem="EaI-ej-UP0" firstAttribute="height" secondItem="0Cs-HK-14g" secondAttribute="height" id="rpc-Zl-fib"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rNK-7w-KL3" userLabel="transDate">
+                            <rect key="frame" x="0.0" y="165" width="390" height="46"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xmZ-Sa-uHH" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="46"/>
+                                    <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="تاريخ الارسال"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="تاريخ الارسال"/>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="lineErrorColor">
+                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomArrow" translatesAutoresizingMaskIntoConstraints="NO" id="5mb-xy-6Jy">
+                                    <rect key="frame" x="363" y="15.5" width="15" height="15"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="15" id="5GX-Dy-DMa"/>
-                                        <constraint firstAttribute="width" constant="25" id="Ywf-6Q-5uv"/>
+                                        <constraint firstAttribute="width" constant="15" id="pn4-nO-zZo"/>
+                                        <constraint firstAttribute="height" constant="15" id="t2V-L7-KAO"/>
                                     </constraints>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="46" id="9R4-r9-Cy5"/>
-                                <constraint firstItem="hS6-bn-VA8" firstAttribute="top" secondItem="irL-eQ-fFt" secondAttribute="top" id="DI5-cJ-vEj"/>
-                                <constraint firstAttribute="bottom" secondItem="hS6-bn-VA8" secondAttribute="bottom" id="aom-Kt-ayW"/>
-                                <constraint firstItem="hS6-bn-VA8" firstAttribute="leading" secondItem="irL-eQ-fFt" secondAttribute="leading" id="cK9-gZ-SOI"/>
-                                <constraint firstItem="MyN-yz-2kn" firstAttribute="centerY" secondItem="irL-eQ-fFt" secondAttribute="centerY" id="oIa-up-30K"/>
-                                <constraint firstAttribute="trailing" secondItem="hS6-bn-VA8" secondAttribute="trailing" id="qU2-Xd-Bkr"/>
-                                <constraint firstAttribute="trailing" secondItem="MyN-yz-2kn" secondAttribute="trailing" constant="12" id="w2u-GI-rG8"/>
+                                <constraint firstAttribute="height" constant="46" id="703-xb-uRk"/>
+                                <constraint firstItem="xmZ-Sa-uHH" firstAttribute="width" secondItem="rNK-7w-KL3" secondAttribute="width" id="9A3-Qq-rLZ"/>
+                                <constraint firstAttribute="trailing" secondItem="5mb-xy-6Jy" secondAttribute="trailing" constant="12" id="Xzk-kH-7BN"/>
+                                <constraint firstItem="xmZ-Sa-uHH" firstAttribute="centerY" secondItem="rNK-7w-KL3" secondAttribute="centerY" id="dIC-m6-DEN"/>
+                                <constraint firstItem="xmZ-Sa-uHH" firstAttribute="centerX" secondItem="rNK-7w-KL3" secondAttribute="centerX" id="t1n-No-YKL"/>
+                                <constraint firstItem="5mb-xy-6Jy" firstAttribute="centerY" secondItem="rNK-7w-KL3" secondAttribute="centerY" id="tDz-3N-Fa9"/>
+                                <constraint firstItem="xmZ-Sa-uHH" firstAttribute="height" secondItem="rNK-7w-KL3" secondAttribute="height" id="trF-Ng-NHg"/>
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqi-9B-jh9">
-                            <rect key="frame" x="0.0" y="165" width="390" height="30"/>
+                            <rect key="frame" x="0.0" y="220" width="390" height="30"/>
                             <state key="normal" title="ارســال"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">
                                     <integer key="value" value="1"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="submitAction:" destination="-1" eventType="touchUpInside" id="glD-iM-iAA"/>
-                            </connections>
                         </button>
                     </subviews>
                 </stackView>
@@ -196,6 +225,5 @@
     </objects>
     <resources>
         <image name="bottomArrow" width="11" height="6"/>
-        <image name="orange_dots" width="17" height="4"/>
     </resources>
 </document>

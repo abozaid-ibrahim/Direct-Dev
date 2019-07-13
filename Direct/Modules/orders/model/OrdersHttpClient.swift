@@ -22,13 +22,12 @@ extension ApiClientFacade {
             return Disposables.create()
         }
     }
-    
-    func getCompletedOrders(reqNo: String, vName: String, applicantId: String, personalDoc: String) -> Observable<UpdatePendingDocsResponse> {
-        return Observable<UpdatePendingDocsResponse>.create { (observer) -> Disposable in
+    func updatePendingDocs(prm: UpdatePendingDocsParams) -> Observable<HaveDonePaymentResponse> {
+        return Observable<HaveDonePaymentResponse>.create { (observer) -> Disposable in
             
-            self.ordersProvider.rx.request(OrdersAPIs.updatePendingDoc(reqNo: reqNo, vName: vName, applicantId: applicantId, personalDoc: personalDoc)).subscribe { [weak self] event in
+            self.ordersProvider.rx.request(OrdersAPIs.updateHaveDonePayment(prm)).subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
-            }.disposed(by: self.disposeBag)
+                }.disposed(by: self.disposeBag)
             return Disposables.create()
         }
     }

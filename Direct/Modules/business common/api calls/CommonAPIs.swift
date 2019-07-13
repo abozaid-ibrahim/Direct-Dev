@@ -27,7 +27,7 @@ extension TargetType {
     }
 
     var tokenKeyValue: String {
-        return "bf930e30-8c28-42d6-bf8e-f4cbd0b83774"
+        return User.authKey
     }
 
     var prmEncoder: JSONEncoder {

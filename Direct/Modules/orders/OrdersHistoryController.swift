@@ -90,10 +90,9 @@ extension OrdersHistoryController: UITableViewDataSource {
             cell.setCellData((Str.reportBankTransfer, style: .secondary))
             cell.submitBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { [unowned self] _ in
                 let obj = self.datalist[indexPath.section]
-
-                let uploadVC = UploadAttachController()
-
-                try! AppNavigator().presentModally(uploadVC)
+                let uploadVC = UploadPendingDocsController()
+                uploadVC.request = obj
+                try! AppNavigator().push(uploadVC)
 
             }).disposed(by: cell.disposeBag)
 

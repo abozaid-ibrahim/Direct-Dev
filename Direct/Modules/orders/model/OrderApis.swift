@@ -12,7 +12,8 @@ import Moya
 
 enum OrdersAPIs {
     case getCompletedVisa(trackNo: String),
-        updatePendingDoc(reqNo: String, vName: String, applicantId: String, personalDoc: String)
+        updatePendingDoc(reqNo: String, vName: String, applicantId: String, personalDoc: String),
+        updateHaveDonePayment(UpdatePendingDocsParams)
 }
 
 extension OrdersAPIs: TargetType {
@@ -22,14 +23,14 @@ extension OrdersAPIs: TargetType {
             return "get-completed-visa"
         case .updatePendingDoc:
             return "update-pending-doc"
+        case .updateHaveDonePayment:
+            return "update-have-done-payment"
         }
     }
     
     public var method: Moya.Method {
         switch self {
-        case .getCompletedVisa:
-            return .post
-        case .updatePendingDoc:
+        case .getCompletedVisa, .updatePendingDoc, .updateHaveDonePayment:
             return .post
         }
     }
@@ -52,6 +53,9 @@ extension OrdersAPIs: TargetType {
                           "visa_req_applicant_id": prm.applicantId,
                           "personal_doc": prm.personalDoc] as [String: Any]
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
+            
+        case let .updateHaveDonePayment(prm):
+            return .requestJSONEncodable(prm)
         }
     }
     

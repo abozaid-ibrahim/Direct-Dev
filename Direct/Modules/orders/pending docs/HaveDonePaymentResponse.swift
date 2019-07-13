@@ -1,8 +1,8 @@
 //
-//  UpdatePendingDocsREsponse.swift
+//  HaveDonePaymentResponse.swift
 //  Direct
 //
-//  Created by abuzeid on 7/9/19.
+//  Created by abuzeid on 7/12/19.
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
@@ -10,20 +10,20 @@ import Foundation
 import Foundation
 
 // MARK: - UpdatePendingDocsResponse
-public struct UpdatePendingDocsResponse: Codable {
-    public let updateMissingDocuments: UpdateMissingDocuments?
+public struct HaveDonePaymentResponse: Codable {
+    public let haveDonePayment: HaveDonePayment?
     
     enum CodingKeys: String, CodingKey {
-        case updateMissingDocuments = "Update Missing Documents"
+        case haveDonePayment = "Have Done Payment"
     }
     
-    public init(updateMissingDocuments: UpdateMissingDocuments?) {
-        self.updateMissingDocuments = updateMissingDocuments
+    public init(haveDonePayment: HaveDonePayment?) {
+        self.haveDonePayment = haveDonePayment
     }
 }
 
-// MARK: - UpdateMissingDocuments
-public struct UpdateMissingDocuments: Codable {
+// MARK: - HaveDonePayment
+public struct HaveDonePayment: Codable {
     public let status: String?
     public let success: String?
     
