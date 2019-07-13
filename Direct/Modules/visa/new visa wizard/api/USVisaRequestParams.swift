@@ -127,7 +127,7 @@ class VisaRequirementsParams: Encodable {
     
     // encoding helpers
     func encodeUs(_ encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CpersonalPhotoCopyountriesParamsFactory.USCodingKeys.self)
+        var container = encoder.container(keyedBy: CountriesParamsFactory.USCodingKeys.self)
         try container.encode(visaReqID, forKey: .visaReqId)
         try container.encode(visaReqApplicantID, forKey: .visaReqApplicantId)
         try container.encode(firstName, forKey: .firstName)

@@ -130,4 +130,9 @@ struct Str {
     }
     static var more:String{
         return "more_tab_item".localized}
+    
+    
+    static var uploadPendingDocsTitle:String{
+        return "Update Pending Docs"
+    }
 }

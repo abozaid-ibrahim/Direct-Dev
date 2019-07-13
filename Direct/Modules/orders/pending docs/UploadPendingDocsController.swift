@@ -32,7 +32,7 @@ class UploadPendingDocsController: UIViewController, StyledActionBar {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupActionBar(.withTitle("Update Pending Docs"))
+        setupActionBar(.withTitle(Str.uploadPendingDocsTitle))
         configureBinding()
     }
     
