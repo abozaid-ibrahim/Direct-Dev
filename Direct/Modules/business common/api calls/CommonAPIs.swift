@@ -17,7 +17,10 @@ public enum CommonAPIs {
     case userProfile(String)
     case userRepositories(String)
     case getAboutUs
-    case getBranches
+    case getBranches,
+        getFaqs,
+        submitContactUsForm(ContactUsFormParams),
+    contactUsPageData
 }
 
 // share base url cross all of the APIs∑
@@ -57,12 +60,18 @@ extension CommonAPIs: TargetType {
             return "get-about-page"
         case .getBranches:
             return "get-branch"
+        case .getFaqs:
+            return "get-faq-page"
+        case .submitContactUsForm:
+            return "contact-us"
+        case .contactUsPageData:
+            return "contact-page-data"
         }
     }
 
     public var method: Moya.Method {
         switch self {
-        case .getAllCountries, .biometricChoices, .relationsList, .getCities, .getAboutUs,.getBranches:
+        case .getAllCountries, .biometricChoices, .relationsList, .getCities, .getAboutUs, .getBranches, .submitContactUsForm,.contactUsPageData:
             return .post
 
         default:
@@ -74,6 +83,9 @@ extension CommonAPIs: TargetType {
         switch self {
         case let .getCities(cid):
             return .requestParameters(parameters: ["cid": cid, "key": tokenKeyValue, "lang": appLang], encoding: URLEncoding.default)
+        case let .submitContactUsForm(prm):
+            return .requestJSONEncodable(prm)
+
         default:
             return .requestParameters(parameters: ["key": tokenKeyValue, "lang": appLang], encoding: URLEncoding.default)
         }
@@ -98,12 +110,11 @@ extension CommonAPIs: TargetType {
     }
 
     public var headers: [String: String]? {
-        var header:[String:String] = [:]
+        var header: [String: String] = [:]
         header["Content-type"] = "application/x-www-form-urlencoded; charset=utf-8"
 //        header["Content-type"] = "application/json"
 //        header["Accept"] = "application/json"
         return header
-    
     }
 }
 

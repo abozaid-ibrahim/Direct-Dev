@@ -11,9 +11,14 @@ import UIKit
 class BankTableCell: UITableViewCell, TableCell {
     static var cellId: String = "BankTableCell"
 
-    func setCellData(_: String) {}
+    @IBOutlet private  weak var txtLbl: UILabel!
+    @IBOutlet private  weak var logoIV: UIImageView!
+    func setCellData(_ model: CellDataModel) {
+        txtLbl.text = model.paymentName
+//        logoIV.setImage(with: model.)
+    }
 
-    typealias CellDataModel = String
+    typealias CellDataModel = ChildPaymentMethod
 
     override func awakeFromNib() {
         super.awakeFromNib()

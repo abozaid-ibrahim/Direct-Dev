@@ -28,6 +28,7 @@ class BranchesController: UIViewController, StyledActionBar {
             }).disposed(by: disposeBag)
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.defaultSeperator()
     }
 }
 

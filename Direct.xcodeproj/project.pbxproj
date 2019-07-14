@@ -206,6 +206,12 @@
 		6C99796F22D1F67B003CE0FF /* TabItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C99796E22D1F67B003CE0FF /* TabItemController.swift */; };
 		6C99797122D1F6B2003CE0FF /* ReqTabsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C99797022D1F6B2003CE0FF /* ReqTabsController.swift */; };
 		6C99797322D2061C003CE0FF /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C99797222D2061C003CE0FF /* OrderModel.swift */; };
+		6C99D8BA22DB93240045F325 /* ContactUsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C99D8B922DB93240045F325 /* ContactUsResponse.swift */; };
+		6C99D8BC22DB9BDC0045F325 /* FAQSResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C99D8BB22DB9BDC0045F325 /* FAQSResponse.swift */; };
+		6C99D8C022DB9EC00045F325 /* BanksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C99D8BF22DB9EC00045F325 /* BanksViewModel.swift */; };
+		6C99D8C222DB9F230045F325 /* ContactUsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C99D8C122DB9F230045F325 /* ContactUsViewModel.swift */; };
+		6C99D8C522DBA13C0045F325 /* ContactUsFormParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C99D8C422DBA13C0045F325 /* ContactUsFormParams.swift */; };
+		6C99D8C722DBA3850045F325 /* ContactUsPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C99D8C622DBA3850045F325 /* ContactUsPageResponse.swift */; };
 		6CA040B62281BE0300619B6F /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA040B52281BE0300619B6F /* FloatingTextField.swift */; };
 		6CB1857522CEC811009485CD /* AddCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1857322CEC811009485CD /* AddCountryViewController.swift */; };
 		6CB1857622CEC811009485CD /* AddCountryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB1857422CEC811009485CD /* AddCountryViewController.xib */; };
@@ -540,6 +546,12 @@
 		6C99796E22D1F67B003CE0FF /* TabItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemController.swift; sourceTree = "<group>"; };
 		6C99797022D1F6B2003CE0FF /* ReqTabsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReqTabsController.swift; sourceTree = "<group>"; };
 		6C99797222D2061C003CE0FF /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
+		6C99D8B922DB93240045F325 /* ContactUsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsResponse.swift; sourceTree = "<group>"; };
+		6C99D8BB22DB9BDC0045F325 /* FAQSResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSResponse.swift; sourceTree = "<group>"; };
+		6C99D8BF22DB9EC00045F325 /* BanksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanksViewModel.swift; sourceTree = "<group>"; };
+		6C99D8C122DB9F230045F325 /* ContactUsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewModel.swift; sourceTree = "<group>"; };
+		6C99D8C422DBA13C0045F325 /* ContactUsFormParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsFormParams.swift; sourceTree = "<group>"; };
+		6C99D8C622DBA3850045F325 /* ContactUsPageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsPageResponse.swift; sourceTree = "<group>"; };
 		6CA040B52281BE0300619B6F /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
 		6CB1857322CEC811009485CD /* AddCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCountryViewController.swift; sourceTree = "<group>"; };
 		6CB1857422CEC811009485CD /* AddCountryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCountryViewController.xib; sourceTree = "<group>"; };
@@ -1194,15 +1206,6 @@
 			path = institute;
 			sourceTree = "<group>";
 		};
-		6C778286227C6EC9001926B2 /* contact us */ = {
-			isa = PBXGroup;
-			children = (
-				6C778287227C6EE6001926B2 /* ContactUsViewController.swift */,
-				6C90277B228F94CF00B41705 /* ContactUsViewController.xib */,
-			);
-			path = "contact us";
-			sourceTree = "<group>";
-		};
 		6C8503AF229DD11A004FE346 /* api */ = {
 			isa = PBXGroup;
 			children = (
@@ -1221,12 +1224,9 @@
 		6C87FACF2270C1D500AFE485 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				6C1C605B228E3D01006490CB /* about */,
 				6CC5149D227DC02900634B5D /* passangers */,
-				6C778286227C6EC9001926B2 /* contact us */,
 				6C778270227AA173001926B2 /* institute */,
 				6C778267227A9F4C001926B2 /* sponsers */,
-				6C778253227A36E4001926B2 /* help */,
 				6C2CFB9C22789DEA00D23CF4 /* payment */,
 				6C2CFB8A2277421B00D23CF4 /* packages */,
 				6C2CFB852277411700D23CF4 /* business common */,
@@ -1235,6 +1235,7 @@
 				6CE722E82274F9F700E095DC /* visa */,
 				6CF3E1BF2274B8CA007488BA /* fake data */,
 				6CF3E17B2271E6D4007488BA /* base */,
+				6C99D8B722DB930D0045F325 /* more screens */,
 				6C87FAD52270C6B700AFE485 /* style */,
 				6C87FAD22270C1E300AFE485 /* user */,
 				6CF3E1812271F49F007488BA /* Home */,
@@ -1247,7 +1248,6 @@
 			children = (
 				39EE2A8A22A097C500A9A501 /* Authentication */,
 				6C778258227A3AE4001926B2 /* my account */,
-				6CF3E17A2271E6B6007488BA /* ui */,
 				6CF3E1782271E6A1007488BA /* model */,
 				39EE2AD222A0B80900A9A501 /* Authentication.xcassets */,
 			);
@@ -1278,6 +1278,52 @@
 				6C99797022D1F6B2003CE0FF /* ReqTabsController.swift */,
 			);
 			path = tabs;
+			sourceTree = "<group>";
+		};
+		6C99D8B722DB930D0045F325 /* more screens */ = {
+			isa = PBXGroup;
+			children = (
+				6C99D8C322DBA09D0045F325 /* contactus */,
+				6C99D8BE22DB9EB30045F325 /* banks */,
+				6CF3E17A2271E6B6007488BA /* branches */,
+				6C1C605B228E3D01006490CB /* about */,
+				6C778253227A36E4001926B2 /* help */,
+			);
+			path = "more screens";
+			sourceTree = "<group>";
+		};
+		6C99D8B822DB93180045F325 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				6C99D8C422DBA13C0045F325 /* ContactUsFormParams.swift */,
+				6C99D8B922DB93240045F325 /* ContactUsResponse.swift */,
+				6C99D8C622DBA3850045F325 /* ContactUsPageResponse.swift */,
+				6C99D8BB22DB9BDC0045F325 /* FAQSResponse.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		6C99D8BE22DB9EB30045F325 /* banks */ = {
+			isa = PBXGroup;
+			children = (
+				6C99D8BF22DB9EC00045F325 /* BanksViewModel.swift */,
+				6C77825B227A3E23001926B2 /* BanksViewController.swift */,
+				6C90279C228F954000B41705 /* BanksViewController.xib */,
+				6C77825F227A3E3D001926B2 /* BankTableCell.swift */,
+				6C9027A5228F955800B41705 /* BankTableCell.xib */,
+			);
+			path = banks;
+			sourceTree = "<group>";
+		};
+		6C99D8C322DBA09D0045F325 /* contactus */ = {
+			isa = PBXGroup;
+			children = (
+				6C99D8B822DB93180045F325 /* model */,
+				6C778287227C6EE6001926B2 /* ContactUsViewController.swift */,
+				6C90277B228F94CF00B41705 /* ContactUsViewController.xib */,
+				6C99D8C122DB9F230045F325 /* ContactUsViewModel.swift */,
+			);
+			path = contactus;
 			sourceTree = "<group>";
 		};
 		6CB1857922CFAB92009485CD /* Seperate Components */ = {
@@ -1461,7 +1507,7 @@
 			path = model;
 			sourceTree = "<group>";
 		};
-		6CF3E17A2271E6B6007488BA /* ui */ = {
+		6CF3E17A2271E6B6007488BA /* branches */ = {
 			isa = PBXGroup;
 			children = (
 				6C3DA73F22DA4B27003B65DD /* BranchesViewModel.swift */,
@@ -1472,7 +1518,8 @@
 				6C3DA73B22DA49CF003B65DD /* BranchesDescTableCell.swift */,
 				6C3DA73C22DA49CF003B65DD /* BranchesDescTableCell.xib */,
 			);
-			path = ui;
+			name = branches;
+			path = ../branches;
 			sourceTree = "<group>";
 		};
 		6CF3E17B2271E6D4007488BA /* base */ = {
@@ -1551,14 +1598,10 @@
 			children = (
 				6C2CFB9D22789E0200D23CF4 /* PaymentViewController.swift */,
 				6C902799228F953A00B41705 /* PaymentViewController.xib */,
-				6C77825B227A3E23001926B2 /* BanksViewController.swift */,
-				6C90279C228F954000B41705 /* BanksViewController.xib */,
 				6C2CFBA122789F6100D23CF4 /* PaymentMethodTableCell.swift */,
 				6C90279F228F954C00B41705 /* PaymentMethodTableCell.xib */,
 				6C2CFBA52278A1C600D23CF4 /* PaymentBranchTableCell.swift */,
 				6C9027A2228F955200B41705 /* PaymentBranchTableCell.xib */,
-				6C77825F227A3E3D001926B2 /* BankTableCell.swift */,
-				6C9027A5228F955800B41705 /* BankTableCell.xib */,
 				6C1C6060228E46ED006490CB /* PaymentMethodsContainerController.swift */,
 				6C9027A8228F955F00B41705 /* PaymentMethodsContainerController.xib */,
 				6CF427FA22C7E603000A9646 /* CreditCardController.swift */,
@@ -1845,6 +1888,7 @@
 				6C8286EB228B9C96009FB5FF /* View+App.swift in Sources */,
 				3992B66722961B5F00BBB7F1 /* TagCollectionCell.swift in Sources */,
 				6CF2515322A660A000CDA47C /* PassangerFormController.swift in Sources */,
+				6C99D8C522DBA13C0045F325 /* ContactUsFormParams.swift in Sources */,
 				6CF9F5D722BECD2700E45E8A /* SponserFormController.swift in Sources */,
 				6CF0E3772285D78900149910 /* OrderDetailsController.swift in Sources */,
 				6C256CCC22C15DBE007A5C81 /* UIView +Any.swift in Sources */,
@@ -1853,6 +1897,7 @@
 				6C6EED6F22A24C680091B82F /* UpdatePaymentResponse.swift in Sources */,
 				6C778278227AA26F001926B2 /* InstituteDetailsController.swift in Sources */,
 				6C778261227A3E3D001926B2 /* BankTableCell.swift in Sources */,
+				6C99D8C722DBA3850045F325 /* ContactUsPageResponse.swift in Sources */,
 				6C33A5E322D0DD7100D2B611 /* OrderApis.swift in Sources */,
 				6CF703DD2286F7E800B1C387 /* InstituteDetailsTableCell.swift in Sources */,
 				6CF9F5DC22BEDB6800E45E8A /* SponsersAPI.swift in Sources */,
@@ -1873,6 +1918,7 @@
 				6CF3E1762271E598007488BA /* RootNavigationViewController.swift in Sources */,
 				6C3DA73022DA266A003B65DD /* UpdatePendingDocsParams.swift in Sources */,
 				6C99796F22D1F67B003CE0FF /* TabItemController.swift in Sources */,
+				6C99D8C222DB9F230045F325 /* ContactUsViewModel.swift in Sources */,
 				6CF703E22286FBD700B1C387 /* InstituteDetailsHeaderView.swift in Sources */,
 				6C77825A227A3AFF001926B2 /* MyAccountController.swift in Sources */,
 				6C6EED6922A248BA0091B82F /* PaymentAPIs.swift in Sources */,
@@ -1929,6 +1975,7 @@
 				39EE2AE022A3C8D900A9A501 /* AuthAPI.swift in Sources */,
 				6CF9F5DE22BEDCBE00E45E8A /* SponserFormParams.swift in Sources */,
 				6C2CFB932277902400D23CF4 /* NewDirectVisaController.swift in Sources */,
+				6C99D8C022DB9EC00045F325 /* BanksViewModel.swift in Sources */,
 				6C33A5F122D12BBC00D2B611 /* ViaRequirementsTabsViewModel.swift in Sources */,
 				6CF1C9B122A5DBEE0034DB39 /* PassangersInputViewViewController.swift in Sources */,
 				6CE8D26C22D4DB7800BD86D1 /* AboutUsViewModel.swift in Sources */,
@@ -1942,6 +1989,7 @@
 				6CF2514822A635E600CDA47C /* APIValues.swift in Sources */,
 				6CF2514A22A6374E00CDA47C /* DialogsBuilder.swift in Sources */,
 				6CB1857822CFA275009485CD /* User.swift in Sources */,
+				6C99D8BA22DB93240045F325 /* ContactUsResponse.swift in Sources */,
 				6C557557228BA52900BAE5E2 /* View+Colors.swift in Sources */,
 				6C33A5E922D0DF4900D2B611 /* OrdersHistoryViewModel.swift in Sources */,
 				6C5DE87A22872A1E00F900AE /* SuccessPackageController.swift in Sources */,
@@ -2043,6 +2091,7 @@
 				6C8503B3229DDB5F004FE346 /* VisaAPIs.swift in Sources */,
 				6C87FAD92270C6D800AFE485 /* UIColor+Additions.swift in Sources */,
 				6C778284227AA33D001926B2 /* InstituteTableCell.swift in Sources */,
+				6C99D8BC22DB9BDC0045F325 /* FAQSResponse.swift in Sources */,
 				39EE2AC822A09E6C00A9A501 /* CommandsCombiner.swift in Sources */,
 				6C2CFB8F2277446600D23CF4 /* SingleRowTableCell.swift in Sources */,
 				6C5964B422C0F219007D81C6 /* ImagePickerView.swift in Sources */,

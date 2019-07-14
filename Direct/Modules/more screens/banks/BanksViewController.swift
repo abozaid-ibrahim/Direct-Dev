@@ -9,6 +9,7 @@
 import PanModal
 import RxSwift
 import UIKit
+
 final class BanksViewController: UIViewController, PanModalPresentable {
     var panScrollable: UIScrollView? {
         return tableView
@@ -16,14 +17,15 @@ final class BanksViewController: UIViewController, PanModalPresentable {
 
     @IBOutlet private var tableView: UITableView!
     private let disposeBag = DisposeBag()
+    private let viewModel = BanksViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "البنوك"
-        tableView.registerNib(SingleRowTableCell.cellId)
-        Observable<[String]>.just(Array(dataList[0 ... 2]))
-            .bind(to: tableView.rx.items(cellIdentifier: SingleRowTableCell.cellId)) { _, model, cell in
-                let mycell = (cell as! SingleRowTableCell)
-                mycell.setCellData(model)
-            }.disposed(by: disposeBag)
+        viewModel.getBanksList()
+
+        tableView.registerNib(BankTableCell.cellId)
+        viewModel.banksList.bind(to: tableView.rx.items(cellIdentifier: BankTableCell.cellId, cellType: BankTableCell.self)) { _, model, cell in
+            cell.setCellData(model)
+        }.disposed(by: disposeBag)
     }
 }

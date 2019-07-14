@@ -12,6 +12,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactUsViewController" customModule="Direct" customModuleProvider="target">
             <connections>
+                <outlet property="chatLbl" destination="xCU-cH-oGx" id="kFL-I8-aev"/>
+                <outlet property="emailDesc1Lbl" destination="nBj-VW-YNl" id="vR7-ub-oKL"/>
+                <outlet property="emailDesc2Lbl" destination="jBP-G2-95Q" id="SJO-Fi-Jel"/>
+                <outlet property="emailDesc3Lbl" destination="QqJ-Po-dSC" id="qJf-EX-14Z"/>
+                <outlet property="emailTitle1Lbl" destination="I1U-xh-yxk" id="qFE-Jk-c9N"/>
+                <outlet property="emailTitle2Lbl" destination="Dzp-rV-O6Q" id="YKP-Fe-gi7"/>
+                <outlet property="emailTitle3Lbl" destination="Xyb-yX-nc6" id="vGT-ei-uvw"/>
+                <outlet property="phoneLbl" destination="RR3-ax-7Qc" id="ktS-NV-Kg7"/>
+                <outlet property="timingLbl" destination="86l-Tu-hkj" id="ge6-7p-Nrc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

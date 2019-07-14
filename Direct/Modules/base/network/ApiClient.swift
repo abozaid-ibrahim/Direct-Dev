@@ -44,21 +44,52 @@ extension ApiClientFacade {
         return Observable<AboutUsResponse>.create { (observer) -> Disposable in
             self.commonProvider.rx.request(.getAboutUs).subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
-                }.disposed(by: self.disposeBag)
+            }.disposed(by: self.disposeBag)
             return Disposables.create()
-            }
-            .share(replay: 0, scope: .whileConnected)
+        }
+        .share(replay: 0, scope: .whileConnected)
+    }
+
+    func getFaqs() -> Observable<FaqsResponse> {
+        return Observable<FaqsResponse>.create { (observer) -> Disposable in
+            self.commonProvider.rx.request(.getFaqs).subscribe { [weak self] event in
+                self?.parser.emitDataModelfromResponse(event: event, observer: observer)
+            }.disposed(by: self.disposeBag)
+            return Disposables.create()
+        }
+        .share(replay: 0, scope: .whileConnected)
+    }
+
+    func submitContactUs(prm: ContactUsFormParams) -> Observable<ContactUsFormResponse> {
+        return Observable<ContactUsFormResponse>.create { (observer) -> Disposable in
+            self.commonProvider.rx.request(.submitContactUsForm(prm)).subscribe { [weak self] event in
+                self?.parser.emitDataModelfromResponse(event: event, observer: observer)
+            }.disposed(by: self.disposeBag)
+            return Disposables.create()
+        }
+        .share(replay: 0, scope: .whileConnected)
+    }
+
+    func getContactUs() -> Observable<ContactUsPageDataResponse> {
+        return Observable<ContactUsPageDataResponse>.create { (observer) -> Disposable in
+            self.commonProvider.rx.request(.contactUsPageData).subscribe { [weak self] event in
+                self?.parser.emitDataModelfromResponse(event: event, observer: observer)
+            }.disposed(by: self.disposeBag)
+            return Disposables.create()
+        }
+        .share(replay: 0, scope: .whileConnected)
     }
 
     func getBranches() -> Observable<BranchesResponse> {
         return Observable<BranchesResponse>.create { (observer) -> Disposable in
             self.commonProvider.rx.request(.getBranches).subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
-                }.disposed(by: self.disposeBag)
+            }.disposed(by: self.disposeBag)
             return Disposables.create()
-            }
-            .share(replay: 0, scope: .whileConnected)
+        }
+        .share(replay: 0, scope: .whileConnected)
     }
+
     func getBiometricChoices() -> Observable<BioChoicesResponse> {
         return Observable<BioChoicesResponse>.create { (observer) -> Disposable in
             self.commonProvider.rx.request(.biometricChoices).subscribe { [weak self] event in

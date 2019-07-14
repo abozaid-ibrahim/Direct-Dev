@@ -57,9 +57,9 @@ enum MoreDataRep: CaseIterable {
         case .aboutUs:
             return AboutUsViewController(nibName: "AboutUsViewController", bundle: nil)
         case .callUs:
-            return ContactUsViewController(nibName: "ContactUsViewController", bundle: nil)
+            return ContactUsViewController()
         case .banks:
-            return BanksViewController(nibName: "BanksViewController", bundle: nil)
+            return BanksViewController()
         case .share:
             
             return SLComposeServiceViewController()
