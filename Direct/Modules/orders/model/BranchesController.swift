@@ -22,11 +22,12 @@ class BranchesController: UIViewController, StyledActionBar {
         tableView.registerNib(BranchesTableCell.cellId)
         viewModel.branches.map { $0?.branch }.filterNil()
             .subscribe(onNext: { [unowned self] value in
-                self.datalist = value.map { BranchesSection($0, shouldCollapse: false, hideAccessory: true) }
+                self.datalist = value.map { BranchesSection($0) }
+                self.datalist.first?.opened = true
                 self.tableView.reloadData()
             }).disposed(by: disposeBag)
         tableView.dataSource = self
-        tableView.dataSource = self
+        tableView.delegate = self
     }
 }
 
@@ -37,7 +38,7 @@ extension BranchesController: UITableViewDataSource {
 
     public func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
         if datalist[section].opened {
-            return 2 // 2
+            return 2
         }
         return 1
     }
@@ -63,9 +64,8 @@ extension BranchesController: UITableViewDataSource {
 
 extension BranchesController: UITableViewDelegate {
     public func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if datalist[indexPath.section].hideAccessory {
-            return
-        }
+       
+        
         if datalist[indexPath.section].opened {
             datalist[indexPath.section].opened = false
         } else {
@@ -77,14 +77,9 @@ extension BranchesController: UITableViewDelegate {
 }
 
 class BranchesSection {
-    var shouldCollapse = false
     var opened: Bool = false
     var data: Branch
-    var hideAccessory: Bool
-    init(_ req: Branch, shouldCollapse: Bool = false, hideAccessory: Bool = false) {
+    init(_ req: Branch) {
         data = req
-        opened = shouldCollapse ? false : true
-        self.shouldCollapse = shouldCollapse
-        self.hideAccessory = hideAccessory
     }
 }
