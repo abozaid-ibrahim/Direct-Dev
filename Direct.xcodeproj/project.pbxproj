@@ -1157,6 +1157,7 @@
 			isa = PBXGroup;
 			children = (
 				6C778256227A36F7001926B2 /* HelpViewController.swift */,
+				6C99D8BB22DB9BDC0045F325 /* FAQSResponse.swift */,
 				6C244FC9229212E600B205B9 /* HelpTableCell.swift */,
 				6C244FCA229212E600B205B9 /* HelpTableCell.xib */,
 			);
@@ -1169,7 +1170,6 @@
 				6C778259227A3AFF001926B2 /* MyAccountController.swift */,
 				6CB2A8BA228CAD8200A78541 /* AboutUsTableCell.swift */,
 				6C9027E1228F95D200B41705 /* AboutUsTableCell.xib */,
-				6C8C535222D3E66A00B5572B /* MoreDataRep.swift */,
 			);
 			path = "my account";
 			sourceTree = "<group>";
@@ -1283,6 +1283,7 @@
 		6C99D8B722DB930D0045F325 /* more screens */ = {
 			isa = PBXGroup;
 			children = (
+				6C8C535222D3E66A00B5572B /* MoreDataRep.swift */,
 				6C99D8C322DBA09D0045F325 /* contactus */,
 				6C99D8BE22DB9EB30045F325 /* banks */,
 				6CF3E17A2271E6B6007488BA /* branches */,
@@ -1298,7 +1299,6 @@
 				6C99D8C422DBA13C0045F325 /* ContactUsFormParams.swift */,
 				6C99D8B922DB93240045F325 /* ContactUsResponse.swift */,
 				6C99D8C622DBA3850045F325 /* ContactUsPageResponse.swift */,
-				6C99D8BB22DB9BDC0045F325 /* FAQSResponse.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";

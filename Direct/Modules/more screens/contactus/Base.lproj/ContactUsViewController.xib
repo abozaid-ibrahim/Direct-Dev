@@ -30,7 +30,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TXD-Wi-JtK">
-                    <rect key="frame" x="10" y="30" width="355" height="603.5"/>
+                    <rect key="frame" x="10" y="30" width="355" height="641"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xii-4D-7Mh" userLabel="header">
                             <rect key="frame" x="0.0" y="0.0" width="355" height="120"/>
@@ -119,10 +119,10 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rld-Sp-ZiI" userLabel="data section">
-                            <rect key="frame" x="0.0" y="130" width="355" height="473.5"/>
+                            <rect key="frame" x="0.0" y="130" width="355" height="511"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Xoc-6r-qQC">
-                                    <rect key="frame" x="12" y="12" width="331" height="449.5"/>
+                                    <rect key="frame" x="12" y="12" width="331" height="487"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ftD-7V-0tm" userLabel="daa">
                                             <rect key="frame" x="0.0" y="0.0" width="331" height="179.5"/>
@@ -187,28 +187,37 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xsU-qg-EnB" userLabel="tfs">
-                                            <rect key="frame" x="0.0" y="189.5" width="331" height="260"/>
+                                            <rect key="frame" x="0.0" y="189.5" width="331" height="297.5"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bDV-qR-QSY">
-                                                    <rect key="frame" x="0.0" y="0.0" width="331" height="30"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bDV-qR-QSY" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="331" height="42.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="الاسم"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uUZ-vh-fxv">
-                                                    <rect key="frame" x="0.0" y="40" width="331" height="30"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uUZ-vh-fxv" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="52.5" width="331" height="42.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="البريد الالكترونى"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ss4-Xo-5rr">
-                                                    <rect key="frame" x="0.0" y="80" width="331" height="30"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ss4-Xo-5rr" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="105" width="331" height="42.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="الجوال"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ecc-eD-yxK">
-                                                    <rect key="frame" x="0.0" y="120" width="331" height="100"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ecc-eD-yxK" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="157.5" width="331" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="f0o-1m-sNY"/>
                                                     </constraints>
@@ -217,7 +226,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rF-oY-x37">
-                                                    <rect key="frame" x="0.0" y="230" width="331" height="30"/>
+                                                    <rect key="frame" x="0.0" y="267.5" width="331" height="30"/>
                                                     <state key="normal" title="أرسل"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">

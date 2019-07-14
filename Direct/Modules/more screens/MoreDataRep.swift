@@ -61,10 +61,8 @@ enum MoreDataRep: CaseIterable {
         case .banks:
             return BanksViewController()
         case .share:
-            
             return SLComposeServiceViewController()
         case .branches:
-            
             return  BranchesController()
         default:
             return UIViewController()

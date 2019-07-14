@@ -10,14 +10,17 @@ import UIKit
 
 class HelpTableCell: UITableViewCell, TableCell {
     static var cellId: String = "HelpTableCell"
+    @IBOutlet private var titleLbl: UILabel!
 
-    func setCellData(_: String) {}
+    func setCellData(_ model: CellDataModel) {
+        titleLbl.text = model.category
+    }
 
-    typealias CellDataModel = String
+    typealias CellDataModel = FAQPage
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
