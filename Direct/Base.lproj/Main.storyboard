@@ -654,7 +654,7 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="about_direct_label"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G5x-ur-8pv">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="339" placeholderIntrinsicHeight="307.5" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G5x-ur-8pv" customClass="ContentSizedTableView" customModule="Direct" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="30.5" width="339" height="307.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
@@ -673,7 +673,6 @@
                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="CQQ-CL-987" firstAttribute="top" secondItem="meC-ap-Fkg" secondAttribute="top" id="9Ty-7C-5eS"/>
-                            <constraint firstItem="meC-ap-Fkg" firstAttribute="bottom" secondItem="TIm-lS-tNG" secondAttribute="bottom" constant="18" id="Hfe-7R-Xgz"/>
                             <constraint firstItem="TIm-lS-tNG" firstAttribute="leading" secondItem="meC-ap-Fkg" secondAttribute="leading" constant="18" id="ahg-Hs-YnF"/>
                             <constraint firstItem="CQQ-CL-987" firstAttribute="trailing" secondItem="meC-ap-Fkg" secondAttribute="trailing" id="lyE-0E-aqZ"/>
                             <constraint firstItem="TIm-lS-tNG" firstAttribute="top" secondItem="CQQ-CL-987" secondAttribute="bottom" constant="28" id="p5q-IE-Xeu"/>

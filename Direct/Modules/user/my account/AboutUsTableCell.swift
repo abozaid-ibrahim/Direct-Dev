@@ -9,10 +9,7 @@
 import UIKit
 
 class AboutUsTableCell: UITableViewCell {
-
     @IBOutlet var iconImage: UIImageView!
     @IBOutlet var cellTitleLabel: UILabel!
     @IBOutlet var extensionImage: UIImageView!
-    
-
 }

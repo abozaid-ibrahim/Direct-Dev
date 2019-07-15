@@ -17,7 +17,7 @@ enum MoreDataRep: CaseIterable {
     var title: String {
         switch self {
         case .aboutUs:
-            return "about_us_label"
+            return "about_us_label".localized
         case .banks:
             return "banks_label"
         case .branches:
@@ -64,6 +64,8 @@ enum MoreDataRep: CaseIterable {
             return getTextSharer(txt: "soe values to share.......") // SLComposeServiceViewController()
         case .branches:
             return BranchesController()
+        case .appLanguage:
+            return LanguagesViewController()
         case .logout:
             let alert = UIAlertController(title: Str.logout, message: "Sure you want to logout now?", preferredStyle: .alert)
 
@@ -75,10 +77,9 @@ enum MoreDataRep: CaseIterable {
             alert.addAction(cancel)
             alert.applyAppStyle()
             return alert
-        default:
-            return UIViewController()
         }
     }
+
     private func getTextSharer(txt: String) -> UIViewController {
         let text = "This is some text that I want to share."
         let textToShare = [text]
@@ -96,4 +97,3 @@ enum MoreDataRep: CaseIterable {
         }
     }
 }
-

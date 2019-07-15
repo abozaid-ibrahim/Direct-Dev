@@ -128,4 +128,21 @@
 "Sponsors Info" = "معلومات المتكفلين";
 //my orderx
 "Update Pending Docs" = "تحديث بيانات الحواله";
-
+"Sponsors Info" =  "معلومات المتكفلين";
+"Payment" = "الدفع";
+"Requirement Papers" = "الأوراق المطلوبة";
+"Visa Requirement" = "متطلبات الفيزا";
+"Request Visa" = "طلب تأشيرة";
+"Travel" = "السفر";
+"Choose country and travel year" = "اختر اسم الدولة وعام السفر";
+"Someone Else" = "شخص اخر";
+"Follow Order" = "تتبع طلبك";
+"Report Bank Transfer" = "الابلاغ عن حواله";
+"More" = "المزيد";
+"Update Pending Docs" = "تحديث الملفات";
+"Address" = "العنوان";
+"Working Time" = "وقت العمل";
+"Branches" = "الفروع";
+"Contact Us" = "اتصل بنا";
+"Logout" = "تسجيل خروج";
+"Language" = "اللغة";

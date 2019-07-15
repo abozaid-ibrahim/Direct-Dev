@@ -89,15 +89,15 @@ struct Str {
     }
 
     static var sponsorsInfo: String {
-        return "معلومات المتكفلين"
+        return "Sponsors Info".localized
     }
 
     static var payment: String {
-        return "الدفع"
+        return "Payment".localized
     }
 
     static var reqPapers: String {
-        return "الأوراق المطلوبة"
+        return "Requirement Papers".localized
     }
 
     static var visaRequirement: String {
@@ -105,49 +105,62 @@ struct Str {
     }
 
     static var requestingVisa: String {
-        return "طلب تأشيرة"
+        return "Request Visa".localized
     }
 
     static var travel: String {
-        return "Travel"
+        return "Travel".localized
     }
 
     static var study: String {
-        return "Study"
+        return "Study".localized
     }
 
     static var chooseCountryAndYear: String {
-        return "اختر اسم الدولة وعام السفر"
+        return "Choose country and travel year".localized
     }
-    static var someoneElse:String{
-        return "Someone Else"
+
+    static var someoneElse: String {
+        return "Someone Else".localized
     }
-    static var followOrder:String{
-        return "Follow Order"
+
+    static var followOrder: String {
+        return "Follow Order".localized
     }
-    static var reportBankTransfer:String{
-        return "Report Bank Transfer"
+
+    static var reportBankTransfer: String {
+        return "Report Bank Transfer".localized
     }
-    static var more:String{
-        return "more_tab_item".localized}
-    
-    
-    static var uploadPendingDocsTitle:String{
-        return "Update Pending Docs"
+
+    static var more: String {
+        return "More".localized
     }
-    static var address:String{
-        return "Address"
+
+    static var uploadPendingDocsTitle: String {
+        return "Update Pending Docs".localized
     }
-    static var workingTime:String{
-        return "Working Time"
+
+    static var address: String {
+        return "Address".localized
     }
-    static var branches:String{
-        return "Branches"
+
+    static var workingTime: String {
+        return "Working Time".localized
     }
-    static var contactUs:String{
-        return "Contact Us"
+
+    static var branches: String {
+        return "Branches".localized
     }
-    static var logout:String{
-        return "Logout"
+
+    static var contactUs: String {
+        return "Contact Us".localized
+    }
+
+    static var logout: String {
+        return "Logout".localized
+    }
+
+    static var language: String {
+        return "Language".localized
     }
 }
