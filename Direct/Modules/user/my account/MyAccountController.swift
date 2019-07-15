@@ -22,10 +22,10 @@ final class MyAccountController: UIViewController, StyledActionBar {
         tableView.tableFooterView = UIView()
         tabBarItem.image = #imageLiteral(resourceName: "More")
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupActionBar(.withTitle(Str.more))
-
     }
     
     @IBAction func login(_: Any) {
