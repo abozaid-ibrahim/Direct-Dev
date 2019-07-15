@@ -12,15 +12,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BankTableCell" rowHeight="119" id="KGk-i7-Jjw" customClass="BankTableCell" customModule="Direct" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="322" height="119"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BankTableCell" rowHeight="259" id="KGk-i7-Jjw" customClass="BankTableCell" customModule="Direct" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="322" height="259"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="322" height="118.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="322" height="258.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kIl-Kq-BMG">
-                        <rect key="frame" x="10" y="10" width="302" height="98.5"/>
+                        <rect key="frame" x="10" y="10" width="302" height="238.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="ZGE-Wx-uEl">
                                 <rect key="frame" x="11" y="11" width="151" height="50"/>
@@ -28,12 +28,20 @@
                                     <constraint firstAttribute="height" constant="50" id="col-xM-4LZ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L03-sc-eYK">
-                                <rect key="frame" x="11" y="69" width="280" height="18.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L03-sc-eYK">
+                                <rect key="frame" x="11" y="114.5" width="280" height="113"/>
                                 <string key="text">مكتب المسافر المباشر للسفر والسياحة
 رقم الحساب: 6534434465656554
 أيبان: SA18 0004 09888 7744 3333</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxz-Uu-GbY">
+                                <rect key="frame" x="11" y="72" width="280" height="31.5"/>
+                                <string key="text">مكتب المسافر المباشر للسفر والسياحة
+رقم الحساب: 653443446565</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -41,11 +49,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ZGE-Wx-uEl" firstAttribute="top" secondItem="kIl-Kq-BMG" secondAttribute="top" constant="11" id="1XB-kz-4fw"/>
+                            <constraint firstItem="yxz-Uu-GbY" firstAttribute="top" secondItem="ZGE-Wx-uEl" secondAttribute="bottom" constant="11" id="4Lf-Cc-KL3"/>
+                            <constraint firstItem="L03-sc-eYK" firstAttribute="top" secondItem="yxz-Uu-GbY" secondAttribute="bottom" constant="11" id="Hvu-Vh-r9c"/>
                             <constraint firstAttribute="bottom" secondItem="L03-sc-eYK" secondAttribute="bottom" constant="11" id="Nkb-u7-UyA"/>
+                            <constraint firstAttribute="trailing" secondItem="yxz-Uu-GbY" secondAttribute="trailing" constant="11" id="RJU-sl-EHs"/>
                             <constraint firstItem="ZGE-Wx-uEl" firstAttribute="width" secondItem="kIl-Kq-BMG" secondAttribute="width" multiplier="0.5" id="bHU-Q6-iIG"/>
                             <constraint firstItem="ZGE-Wx-uEl" firstAttribute="leading" secondItem="kIl-Kq-BMG" secondAttribute="leading" constant="11" id="rqN-d1-kDs"/>
-                            <constraint firstItem="L03-sc-eYK" firstAttribute="top" secondItem="ZGE-Wx-uEl" secondAttribute="bottom" constant="8" id="tuk-ZR-Uk9"/>
                             <constraint firstItem="L03-sc-eYK" firstAttribute="leading" secondItem="kIl-Kq-BMG" secondAttribute="leading" constant="11" id="ueE-lF-bd4"/>
+                            <constraint firstItem="yxz-Uu-GbY" firstAttribute="leading" secondItem="kIl-Kq-BMG" secondAttribute="leading" constant="11" id="wRA-Ue-PdS"/>
                             <constraint firstAttribute="trailing" secondItem="L03-sc-eYK" secondAttribute="trailing" constant="11" id="xSg-Kt-aZl"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -67,9 +78,10 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="logoIV" destination="ZGE-Wx-uEl" id="mWg-id-nsy"/>
+                <outlet property="titleLbl" destination="yxz-Uu-GbY" id="pLw-SL-UzQ"/>
                 <outlet property="txtLbl" destination="L03-sc-eYK" id="eEJ-ws-sek"/>
             </connections>
-            <point key="canvasLocation" x="139.19999999999999" y="187.55622188905548"/>
+            <point key="canvasLocation" x="139.19999999999999" y="250.52473763118442"/>
         </tableViewCell>
     </objects>
     <resources>

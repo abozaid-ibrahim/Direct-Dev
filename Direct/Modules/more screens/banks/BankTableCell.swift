@@ -10,10 +10,12 @@ import UIKit
 
 class BankTableCell: UITableViewCell, TableCell {
     static var cellId: String = "BankTableCell"
+    @IBOutlet private var titleLbl: UILabel!
 
     @IBOutlet private var txtLbl: UILabel!
     @IBOutlet private var logoIV: UIImageView!
     func setCellData(_ model: CellDataModel) {
+        titleLbl.text = model.paymentName
         txtLbl.text = model.paymentMethodDescription.html2String
         logoIV.setImage(with: model.logo ?? "")
     }
