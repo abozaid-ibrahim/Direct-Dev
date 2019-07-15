@@ -79,6 +79,13 @@ enum MoreDataRep: CaseIterable {
             return UIViewController()
         }
     }
+    private func getTextSharer(txt: String) -> UIViewController {
+        let text = "This is some text that I want to share."
+        let textToShare = [text]
+        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+        activityViewController.view.tintColor = .appPumpkinOrange
+        return activityViewController
+    }
 
     var presentationType: UIModalPresentationStyle {
         switch self {
@@ -90,16 +97,3 @@ enum MoreDataRep: CaseIterable {
     }
 }
 
-func getTextSharer(txt: String) -> UIViewController {
-    let text = "This is some text that I want to share."
-
-    // set up activity view controller
-    let textToShare = [text]
-    let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
-//    activityViewController.popoverPresentationController?.sourceView = view // so that iPads won't crash
-
-    // exclude some activity types from the list (optional)
-//    activityViewController.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivityType.postToFacebook]
-    return activityViewController
-    // present the view controller
-}
