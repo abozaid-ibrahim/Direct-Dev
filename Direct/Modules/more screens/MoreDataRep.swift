@@ -65,7 +65,7 @@ enum MoreDataRep: CaseIterable {
         case .branches:
             return BranchesController()
         case .logout:
-            let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+            let alert = UIAlertController(title: Str.logout, message: "Sure you want to logout now?", preferredStyle: .alert)
 
             let search = UIAlertAction(title: Str.logout, style: .default, handler: { _ in
 
@@ -73,6 +73,7 @@ enum MoreDataRep: CaseIterable {
             let cancel = UIAlertAction(title: Str.cancel, style: .cancel, handler: nil)
             alert.addAction(search)
             alert.addAction(cancel)
+            alert.applyAppStyle()
             return alert
         default:
             return UIViewController()
