@@ -61,7 +61,7 @@ enum MoreDataRep: CaseIterable {
         case .banks:
             return BanksViewController()
         case .share:
-            return SLComposeServiceViewController()
+            return getTextSharer(txt: "soe values to share.......") // SLComposeServiceViewController()
         case .branches:
             return BranchesController()
         case .logout:
@@ -82,10 +82,24 @@ enum MoreDataRep: CaseIterable {
 
     var presentationType: UIModalPresentationStyle {
         switch self {
-        case .logout:
+        case .logout, .share:
             return UIModalPresentationStyle.popover
         default:
             return UIModalPresentationStyle.fullScreen
         }
     }
+}
+
+func getTextSharer(txt: String) -> UIViewController {
+    let text = "This is some text that I want to share."
+
+    // set up activity view controller
+    let textToShare = [text]
+    let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+//    activityViewController.popoverPresentationController?.sourceView = view // so that iPads won't crash
+
+    // exclude some activity types from the list (optional)
+//    activityViewController.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivityType.postToFacebook]
+    return activityViewController
+    // present the view controller
 }
