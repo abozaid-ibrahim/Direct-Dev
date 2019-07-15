@@ -19,17 +19,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="322" height="118.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xgF-of-wwo">
-                        <rect key="frame" x="4" y="4" width="314" height="110.5"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kIl-Kq-BMG">
+                        <rect key="frame" x="10" y="10" width="302" height="98.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="ZGE-Wx-uEl">
-                                <rect key="frame" x="0.0" y="0.0" width="314" height="50"/>
+                                <rect key="frame" x="11" y="11" width="151" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="col-xM-4LZ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L03-sc-eYK">
-                                <rect key="frame" x="0.0" y="60" width="314" height="50.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L03-sc-eYK">
+                                <rect key="frame" x="11" y="69" width="280" height="18.5"/>
                                 <string key="text">مكتب المسافر المباشر للسفر والسياحة
 رقم الحساب: 6534434465656554
 أيبان: SA18 0004 09888 7744 3333</string>
@@ -38,16 +38,37 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                    </stackView>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZGE-Wx-uEl" firstAttribute="top" secondItem="kIl-Kq-BMG" secondAttribute="top" constant="11" id="1XB-kz-4fw"/>
+                            <constraint firstAttribute="bottom" secondItem="L03-sc-eYK" secondAttribute="bottom" constant="11" id="Nkb-u7-UyA"/>
+                            <constraint firstItem="ZGE-Wx-uEl" firstAttribute="width" secondItem="kIl-Kq-BMG" secondAttribute="width" multiplier="0.5" id="bHU-Q6-iIG"/>
+                            <constraint firstItem="ZGE-Wx-uEl" firstAttribute="leading" secondItem="kIl-Kq-BMG" secondAttribute="leading" constant="11" id="rqN-d1-kDs"/>
+                            <constraint firstItem="L03-sc-eYK" firstAttribute="top" secondItem="ZGE-Wx-uEl" secondAttribute="bottom" constant="8" id="tuk-ZR-Uk9"/>
+                            <constraint firstItem="L03-sc-eYK" firstAttribute="leading" secondItem="kIl-Kq-BMG" secondAttribute="leading" constant="11" id="ueE-lF-bd4"/>
+                            <constraint firstAttribute="trailing" secondItem="L03-sc-eYK" secondAttribute="trailing" constant="11" id="xSg-Kt-aZl"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="xgF-of-wwo" secondAttribute="trailing" constant="4" id="CVo-aw-3y6"/>
-                    <constraint firstItem="xgF-of-wwo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="PdV-gj-RLH"/>
-                    <constraint firstItem="xgF-of-wwo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="X79-WX-cjY"/>
-                    <constraint firstAttribute="bottom" secondItem="xgF-of-wwo" secondAttribute="bottom" constant="4" id="dg0-Al-wDw"/>
+                    <constraint firstItem="kIl-Kq-BMG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Pzm-Uj-pKX"/>
+                    <constraint firstAttribute="trailing" secondItem="kIl-Kq-BMG" secondAttribute="trailing" constant="10" id="e1r-Ho-wl2"/>
+                    <constraint firstItem="kIl-Kq-BMG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="qUV-Bv-xVT"/>
+                    <constraint firstAttribute="bottom" secondItem="kIl-Kq-BMG" secondAttribute="bottom" constant="10" id="vPh-VG-gEo"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="logoIV" destination="ZGE-Wx-uEl" id="mWg-id-nsy"/>
+                <outlet property="txtLbl" destination="L03-sc-eYK" id="eEJ-ws-sek"/>
+            </connections>
             <point key="canvasLocation" x="139.19999999999999" y="187.55622188905548"/>
         </tableViewCell>
     </objects>

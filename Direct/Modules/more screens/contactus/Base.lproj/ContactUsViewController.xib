@@ -16,10 +16,15 @@
                 <outlet property="emailDesc1Lbl" destination="nBj-VW-YNl" id="vR7-ub-oKL"/>
                 <outlet property="emailDesc2Lbl" destination="jBP-G2-95Q" id="SJO-Fi-Jel"/>
                 <outlet property="emailDesc3Lbl" destination="QqJ-Po-dSC" id="qJf-EX-14Z"/>
+                <outlet property="emailField" destination="uUZ-vh-fxv" id="GmS-FZ-2Tf"/>
                 <outlet property="emailTitle1Lbl" destination="I1U-xh-yxk" id="qFE-Jk-c9N"/>
                 <outlet property="emailTitle2Lbl" destination="Dzp-rV-O6Q" id="YKP-Fe-gi7"/>
                 <outlet property="emailTitle3Lbl" destination="Xyb-yX-nc6" id="vGT-ei-uvw"/>
+                <outlet property="nameField" destination="bDV-qR-QSY" id="mon-SC-73I"/>
+                <outlet property="phoneField" destination="ss4-Xo-5rr" id="WEI-yi-2Z0"/>
                 <outlet property="phoneLbl" destination="RR3-ax-7Qc" id="ktS-NV-Kg7"/>
+                <outlet property="subjectField" destination="ecc-eD-yxK" id="Z5r-Ep-cq7"/>
+                <outlet property="submitBtn" destination="6rF-oY-x37" id="Q2x-Z5-xi3"/>
                 <outlet property="timingLbl" destination="86l-Tu-hkj" id="ge6-7p-Nrc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

@@ -14,19 +14,16 @@ import UIKit
 
 class ContactUsViewController: UIViewController {
     private let viewModel = ContactUsViewModel()
+
     @IBOutlet private var phoneLbl: UILabel!
     @IBOutlet private var timingLbl: UILabel!
-
     @IBOutlet private var chatLbl: UILabel!
     @IBOutlet private var emailTitle1Lbl: UILabel!
     @IBOutlet private var emailDesc1Lbl: UILabel!
-
     @IBOutlet private var emailTitle2Lbl: UILabel!
     @IBOutlet private var emailDesc2Lbl: UILabel!
-
     @IBOutlet private var emailTitle3Lbl: UILabel!
     @IBOutlet private var emailDesc3Lbl: UILabel!
-
     @IBOutlet private var nameField: FloatingTextField!
     @IBOutlet private var emailField: FloatingTextField!
     @IBOutlet private var phoneField: FloatingTextField!
