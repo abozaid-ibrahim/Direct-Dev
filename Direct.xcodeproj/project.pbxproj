@@ -513,8 +513,6 @@
 		6C7BAE9722C40DE90011EE59 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/ContactUsViewController.strings; sourceTree = "<group>"; };
 		6C7BAE9922C40DF60011EE59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PassangersInputViewViewController.strings; sourceTree = "<group>"; };
 		6C7BAE9A22C40DF90011EE59 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/PassangersInputViewViewController.strings; sourceTree = "<group>"; };
-		6C7BAE9C22C40DFF0011EE59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AboutUsViewController.strings; sourceTree = "<group>"; };
-		6C7BAE9E22C40DFF0011EE59 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/AboutUsViewController.strings; sourceTree = "<group>"; };
 		6C7BAE9F22C40F5D0011EE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AboutUsTableCell.xib; sourceTree = "<group>"; };
 		6C7BAEA022C40F6C0011EE59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AboutUsTableCell.strings; sourceTree = "<group>"; };
 		6C7BAEA122C4112C0011EE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SuccessRequestInstituteController.xib; sourceTree = "<group>"; };
@@ -1306,9 +1304,9 @@
 		6C99D8B722DB930D0045F325 /* more screens */ = {
 			isa = PBXGroup;
 			children = (
+				6C8C535222D3E66A00B5572B /* MoreDataRep.swift */,
 				6C5AD37C22DCFF2000B5DF00 /* lang */,
 				6C1837D222DCA1B100F0C33B /* logout */,
-				6C8C535222D3E66A00B5572B /* MoreDataRep.swift */,
 				6C99D8C322DBA09D0045F325 /* contactus */,
 				6C99D8BE22DB9EB30045F325 /* banks */,
 				6CF3E17A2271E6B6007488BA /* branches */,
@@ -2204,8 +2202,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				6C902774228F94BF00B41705 /* Base */,
-				6C7BAE9C22C40DFF0011EE59 /* en */,
-				6C7BAE9E22C40DFF0011EE59 /* ar */,
 			);
 			name = AboutUsViewController.xib;
 			sourceTree = "<group>";

@@ -58,8 +58,7 @@ extension MyAccountController: UITableViewDelegate, UITableViewDataSource {
         if presentation == .popover {
             present(vc, animated: true, completion: nil)
         } else {
-            navigationController?.pushViewController(vc, completion: nil)
+            try! AppNavigator().push(vc)
         }
-        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

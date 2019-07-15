@@ -55,7 +55,7 @@ enum MoreDataRep: CaseIterable {
     var viewController: UIViewController {
         switch self {
         case .aboutUs:
-            return AboutUsViewController(nibName: "AboutUsViewController", bundle: nil)
+            return AboutUsViewController()
         case .callUs:
             return ContactUsViewController()
         case .banks:
