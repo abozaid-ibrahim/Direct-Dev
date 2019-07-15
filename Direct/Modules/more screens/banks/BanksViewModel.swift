@@ -18,7 +18,7 @@ class BanksViewModel: BaseViewModel {
     var banksList = PublishSubject<[ChildPaymentMethod]>()
     func getBanksList() {
         network.getChildPayment(method: PaymentMethodsIDs.bankTransfer.rawValue.string).subscribe(onNext: { [unowned self] value in
-            self.banksList.onNext(value.paymentMethods ?? [])
+            self.banksList.onNext(value.paymentMethods)
         }).disposed(by: disposeBag)
     }
 }

@@ -26,7 +26,6 @@ final class BanksViewController: UIViewController, PanModalPresentable {
         view.backgroundColor = .appVeryLightGray
         tableView.registerNib(BankTableCell.cellId)
         tableView.defaultSeperator()
-
         viewModel.banksList.bind(to: tableView.rx.items(cellIdentifier: BankTableCell.cellId, cellType: BankTableCell.self)) { _, model, cell in
             cell.setCellData(model)
         }.disposed(by: disposeBag)

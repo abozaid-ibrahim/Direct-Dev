@@ -11,17 +11,17 @@ import RxSwift
 import UIKit
 
 class AboutUsViewController: UIViewController {
-    private let viewModel = AboutUsViewModel()
+//    private lazy var viewModel = AboutUsViewModel()
     @IBOutlet private var txtLbl: UILabel!
     private let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "من نحن"
-        viewModel.aboutText
-            .filterNil()
-            .map { ($0.details ?? "").html2String }
-            .asDriver(onErrorJustReturn: "")
-            .drive(txtLbl.rx.text).disposed(by: disposeBag)
+//        viewModel.aboutText
+//            .filterNil()
+//            .map { ($0.details ?? "").html2String }
+//            .asDriver(onErrorJustReturn: "")
+//            .drive(txtLbl.rx.text).disposed(by: disposeBag)
     }
 }

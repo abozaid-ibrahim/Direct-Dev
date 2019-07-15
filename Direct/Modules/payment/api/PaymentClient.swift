@@ -14,7 +14,9 @@ import RxSwift
 extension ApiClientFacade {
     func getAllPaymentMethods() -> Observable<PaymentMethodsResponse> {
         return Observable<PaymentMethodsResponse>.create { (observer) -> Disposable in
-            self.paymentProvider.rx.request(PaymentAPIs.getAllParentPaymentMethod).subscribe { [weak self] event in
+            self.paymentProvider.rx.request(PaymentAPIs.getAllParentPaymentMethod)
+                .observeOn( ConcurrentDispatchQueueScheduler(qos: .background))
+                .subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
             }.disposed(by: self.disposeBag)
             return Disposables.create()
@@ -23,7 +25,9 @@ extension ApiClientFacade {
 
     func getChildPayment(method: String) -> Observable<PaymentChildsResponse> {
         return Observable<PaymentChildsResponse>.create { (observer) -> Disposable in
-            self.paymentProvider.rx.request(PaymentAPIs.getChildsOfPayment(cid: method)).subscribe { [weak self] event in
+            self.paymentProvider.rx.request(PaymentAPIs.getChildsOfPayment(cid: method))
+                .observeOn( ConcurrentDispatchQueueScheduler(qos: .background))
+                .subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
             }.disposed(by: self.disposeBag)
             return Disposables.create()
@@ -32,7 +36,9 @@ extension ApiClientFacade {
 
     func updatePaymentDetails(_ prm: SubmitPaymentParams) -> Observable<UpdatePaymentResponse> {
         return Observable<UpdatePaymentResponse>.create { (observer) -> Disposable in
-            self.paymentProvider.rx.request(PaymentAPIs.updatePaymentDetails(prm: prm)).subscribe { [weak self] event in
+            self.paymentProvider.rx.request(PaymentAPIs.updatePaymentDetails(prm: prm))
+                .observeOn( ConcurrentDispatchQueueScheduler(qos: .background))
+                .subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
             }.disposed(by: self.disposeBag)
             return Disposables.create()
