@@ -19,7 +19,9 @@ final class MyAccountController: UIViewController, StyledActionBar {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(nibWithCellClass: AboutUsTableCell.self)
-        tableView.tableFooterView = UIView()
+        tableView.backgroundColor = .clear
+        view.backgroundColor = .appVeryLightGray
+        tableView.noSeperator()
         tabBarItem.image = #imageLiteral(resourceName: "More")
     }
     
@@ -47,7 +49,7 @@ extension MyAccountController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 65
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

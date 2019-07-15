@@ -12,4 +12,9 @@ class AboutUsTableCell: UITableViewCell {
     @IBOutlet var iconImage: UIImageView!
     @IBOutlet var cellTitleLabel: UILabel!
     @IBOutlet var extensionImage: UIImageView!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        backgroundColor  = .appVeryLightGray
+        selectionStyle = .none
+    }
 }

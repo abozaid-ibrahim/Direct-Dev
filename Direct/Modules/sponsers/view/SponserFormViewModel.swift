@@ -21,9 +21,10 @@ class SponserFormViewModel: BaseViewModel {
         self.reqID = visaReqID
         params.visaReqID = visaReqID.int ?? 0
         params.sponserNo = index
+        self.params.userid = index
     }
 
-    lazy var params: SponserFormParams = SponserFormParams(userid: nil,
+    lazy var params: SponserFormParams = SponserFormParams(userid: self.index,
                                                            visaReqID: nil,
                                                            sponserNo: nil,
                                                            ownerOfBankStmt: nil,
@@ -43,6 +44,7 @@ class SponserFormViewModel: BaseViewModel {
     private let disposeBag = DisposeBag()
 
     func submitData() {
+        
         showProgress.onNext(true)
         network.uploadSponserInfo(params: params)
             .observeOn(MainScheduler.instance)

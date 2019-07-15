@@ -19,21 +19,19 @@ class VisaRequirementsParams: Encodable {
     var travelledBeforeHere, dateOfArrival, periodOfPreviousStay, martialStatus: String?
     var familyIDCopy, husbandOrWifeTravelWithYou: String?
     
- 
-    
     var have_driver_license: Int?
     var visa_cancelled_before: Int?
     var before_visa_cancelled_reason: String?
     var universityAcceptanceImage: String?
-
+    
     var dateOfIssuingPreviousVisa: String?
     var placeOfIssuingPreviousVisa: String?
     
     var any_relatives_here: Int?
     var relative_type: Int?
-
-    var visits: [Visit]?
     
+    var visits: [Visit]?
+    var userid: String?
     var country: CountriesIDs?
     
     // unimplemented before
@@ -41,7 +39,6 @@ class VisaRequirementsParams: Encodable {
     var mothersPlaceOfBirth: String?
     
     func encode(to encoder: Encoder) throws {
-        
         switch country! {
         case .US:
             try encodeUs(encoder)
@@ -59,8 +56,9 @@ class VisaRequirementsParams: Encodable {
             try encodeTR(encoder)
         }
     }
-
+    
     init() {
+        userid = nil
         visaReqID = nil
         visaReqApplicantID = nil
         firstName = nil
@@ -88,13 +86,14 @@ class VisaRequirementsParams: Encodable {
         relative_type = nil
         universityAcceptanceImage = nil
     }
-
+    
     init(key: String?, lang: String?, userid: String?, visaReqID: String?, visaReqApplicantID: String?, firstName: String?, familyName: String?, mothersFirstName: String?, mothersFamilyName: String?, nationality: String?, passportCopy: String?, personalPhotoCopy: String?, visaLetterCopy: String?, everIssuedVisaBefore: String?, previousVisaCopy: String?, typeOfPreviousVisa: String?, travelledBeforeHere: String?, dateOfArrival: String?, periodOfPreviousStay: String?, martialStatus: String?, familyIDCopy: String?, husbandOrWifeTravelWithYou: String?, visits: [Visit]?, have_driver_license: Int?,
          visa_cancelled_before: Int?,
          before_visa_cancelled_reason: String?,
          any_relatives_here: Int?,
          relative_type: Int?,
-         universityAcceptanceImage:String?) {
+         universityAcceptanceImage: String?) {
+        
         self.visaReqID = visaReqID
         self.visaReqApplicantID = visaReqApplicantID
         self.firstName = firstName
@@ -123,11 +122,10 @@ class VisaRequirementsParams: Encodable {
         self.universityAcceptanceImage = universityAcceptanceImage
     }
     
-    
-    
     // encoding helpers
     func encodeUs(_ encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CountriesParamsFactory.USCodingKeys.self)
+        
         try container.encode(visaReqID, forKey: .visaReqId)
         try container.encode(visaReqApplicantID, forKey: .visaReqApplicantId)
         try container.encode(firstName, forKey: .firstName)
@@ -154,9 +152,9 @@ class VisaRequirementsParams: Encodable {
         try container.encode(visits, forKey: .visits)
     }
     
-    
     func encodeGB(_ encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CountriesParamsFactory.GBCodingKeys.self)
+        
         try container.encode(visaReqID, forKey: .visaReqId)
         try container.encode(visaReqApplicantID, forKey: .visaReqApplicantId)
         try container.encode(firstName, forKey: .firstName)
@@ -181,6 +179,7 @@ class VisaRequirementsParams: Encodable {
     
     func encodeSGN(_ encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CountriesParamsFactory.SGNCodingKeys.self)
+        
         try container.encode(visaReqID, forKey: .visaReqId)
         try container.encode(visaReqApplicantID, forKey: .visaReqApplicantId)
         try container.encode(firstName, forKey: .firstName)
@@ -192,12 +191,11 @@ class VisaRequirementsParams: Encodable {
         try container.encode(previousVisaCopy, forKey: .previousVisaCopy)
         try container.encode(martialStatus, forKey: .socialStatus)
         try container.encode(familyIDCopy, forKey: .familyCardCopy)
-        
     }
-    
     
     func encodeCN(_ encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CountriesParamsFactory.ChainaCodingKeys.self)
+        
         try container.encode(visaReqID, forKey: .visaReqId)
         try container.encode(visaReqApplicantID, forKey: .visaReqApplicantId)
         try container.encode(firstName, forKey: .firstName)
@@ -212,11 +210,9 @@ class VisaRequirementsParams: Encodable {
         try container.encode(visits, forKey: .visits)
     }
     
-    
-    
-    
     func encodeJapan_Ireland(_ encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CountriesParamsFactory.Japan_IrelandCodingKeys.self)
+        
         try container.encode(visaReqID, forKey: .visaReqId)
         try container.encode(visaReqApplicantID, forKey: .visaReqApplicantId)
         try container.encode(firstName, forKey: .firstName)
@@ -229,10 +225,10 @@ class VisaRequirementsParams: Encodable {
         try container.encode(martialStatus, forKey: .martialStatus)
         try container.encode(familyIDCopy, forKey: .familyIdCopy)
     }
-
     
     func encodeIndia(_ encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CountriesParamsFactory.IndiaCodingKeys.self)
+        
         try container.encode(visaReqID, forKey: .visaReqId)
         try container.encode(visaReqApplicantID, forKey: .visaReqApplicantId)
         try container.encode(firstName, forKey: .firstName)
@@ -249,6 +245,7 @@ class VisaRequirementsParams: Encodable {
     
     func encodeTR(_ encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CountriesParamsFactory.TRCodingKeys.self)
+        
         try container.encode(visaReqID, forKey: .visaReqId)
         try container.encode(visaReqApplicantID, forKey: .visaReqApplicantId)
         try container.encode(firstName, forKey: .firstName)
@@ -257,14 +254,13 @@ class VisaRequirementsParams: Encodable {
         try container.encode(mothersFamilyName, forKey: .mothersFamilyName)
         try container.encode(passportCopy, forKey: .passportCopy)
     }
-    
-
 }
+
 // MARK: - Visit
 
 class Visit: Codable {
     let cname, year: String?
-
+    
     init(cname: String?, year: String?) {
         self.cname = cname
         self.year = year

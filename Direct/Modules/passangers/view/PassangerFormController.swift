@@ -50,7 +50,7 @@ class PassangerFormController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         params.visaReqID = visaReqID
-        params.visaReqApplicantID = "1"
+        params.visaReqApplicantID = index.string
         addPersonalInfoSction()
         addMotherInfoSection()
         addQuestionsSection()
@@ -195,6 +195,7 @@ class PassangerFormController: UIViewController {
                 return
             }
         }
+        
         params.country = formTypeValue
         sendDataToServer(formTypeValue)
     }

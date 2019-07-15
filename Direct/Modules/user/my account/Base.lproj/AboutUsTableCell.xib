@@ -12,43 +12,61 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AboutUsTableCell" id="KGk-i7-Jjw" customClass="AboutUsTableCell" customModule="Direct" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AboutUsTableCell" rowHeight="58" id="KGk-i7-Jjw" customClass="AboutUsTableCell" customModule="Direct" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="328" height="58"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="328" height="57.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hL1-Nq-CCO">
-                        <rect key="frame" x="8" y="8" width="304" height="24"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="799-Gt-uBl">
+                        <rect key="frame" x="12" y="8" width="304" height="40"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8Information" translatesAutoresizingMaskIntoConstraints="NO" id="GwO-8q-5cI">
-                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="TEj-Ik-Ftp"/>
-                                    <constraint firstAttribute="width" secondItem="GwO-8q-5cI" secondAttribute="height" id="y39-aD-cZF"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="الأسئلة المتداولة والشائعة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="um0-Si-17z">
-                                <rect key="frame" x="34" y="0.0" width="245" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cellArrow" translatesAutoresizingMaskIntoConstraints="NO" id="2WD-bu-w66">
-                                <rect key="frame" x="289" y="0.0" width="15" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="15" id="TzP-fy-fpo"/>
-                                </constraints>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hL1-Nq-CCO">
+                                <rect key="frame" x="8" y="8" width="288" height="24"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8Information" translatesAutoresizingMaskIntoConstraints="NO" id="GwO-8q-5cI">
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="TEj-Ik-Ftp"/>
+                                            <constraint firstAttribute="width" secondItem="GwO-8q-5cI" secondAttribute="height" id="y39-aD-cZF"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="الأسئلة المتداولة والشائعة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="um0-Si-17z">
+                                        <rect key="frame" x="34" y="0.0" width="229" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cellArrow" translatesAutoresizingMaskIntoConstraints="NO" id="2WD-bu-w66">
+                                        <rect key="frame" x="273" y="0.0" width="15" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="15" id="TzP-fy-fpo"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                    </stackView>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hL1-Nq-CCO" secondAttribute="trailing" constant="8" id="Vbe-r2-1Sd"/>
+                            <constraint firstItem="hL1-Nq-CCO" firstAttribute="top" secondItem="799-Gt-uBl" secondAttribute="top" constant="8" id="d3m-Ab-vdz"/>
+                            <constraint firstItem="hL1-Nq-CCO" firstAttribute="leading" secondItem="799-Gt-uBl" secondAttribute="leading" constant="8" id="fc2-GH-Y5C"/>
+                            <constraint firstAttribute="bottom" secondItem="hL1-Nq-CCO" secondAttribute="bottom" constant="8" id="uhy-lm-qtd"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="hL1-Nq-CCO" secondAttribute="bottom" constant="8" id="0Tf-kY-qs4"/>
-                    <constraint firstItem="hL1-Nq-CCO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="NSg-3n-9iL"/>
-                    <constraint firstAttribute="trailing" secondItem="hL1-Nq-CCO" secondAttribute="trailing" constant="8" id="iVQ-X8-KDS"/>
-                    <constraint firstItem="hL1-Nq-CCO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="ox8-z8-xlO"/>
+                    <constraint firstAttribute="bottom" secondItem="799-Gt-uBl" secondAttribute="bottom" constant="8" id="Utk-Q6-l4k"/>
+                    <constraint firstAttribute="trailing" secondItem="799-Gt-uBl" secondAttribute="trailing" constant="12" id="VRR-Mt-yz7"/>
+                    <constraint firstItem="799-Gt-uBl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="hfY-19-UTk"/>
+                    <constraint firstItem="799-Gt-uBl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="zRr-sR-Nry"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -57,6 +75,7 @@
                 <outlet property="extensionImage" destination="2WD-bu-w66" id="Gbb-kJ-IJ8"/>
                 <outlet property="iconImage" destination="GwO-8q-5cI" id="JI3-P0-NIQ"/>
             </connections>
+            <point key="canvasLocation" x="121.73913043478262" y="129.91071428571428"/>
         </tableViewCell>
     </objects>
     <resources>

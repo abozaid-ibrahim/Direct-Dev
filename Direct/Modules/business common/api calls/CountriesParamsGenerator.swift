@@ -8,8 +8,9 @@
 
 import Foundation
 
-struct CountriesParamsFactory{
+struct CountriesParamsFactory {
     enum USCodingKeys: String, CodingKey {
+        case userid
         case visaReqId = "visa_req_id"
         case visaReqApplicantId = "visa_req_applicant_id"
         case firstName = "first_name"
@@ -38,9 +39,8 @@ struct CountriesParamsFactory{
         case visits
     }
     
-    
-    
     enum GBCodingKeys: String, CodingKey {
+        case userid
         case visaReqId = "visa_req_id"
         case visaReqApplicantId = "visa_req_applicant_id"
         case firstName = "first_name"
@@ -63,8 +63,8 @@ struct CountriesParamsFactory{
         case visits
     }
     
-    
     enum SGNCodingKeys: String, CodingKey {
+        case userid
         case visaReqId = "visa_req_id"
         case visaReqApplicantId = "visa_req_applicant_id"
         case firstName = "first_name"
@@ -79,6 +79,7 @@ struct CountriesParamsFactory{
     }
     
     enum ChainaCodingKeys: String, CodingKey {
+        case userid
         case visaReqId = "visa_req_id"
         case visaReqApplicantId = "visa_req_applicant_id"
         case firstName = "first_name"
@@ -93,8 +94,8 @@ struct CountriesParamsFactory{
         case visits
     }
     
-    
     enum Japan_IrelandCodingKeys: String, CodingKey {
+        case userid
         case visaReqId = "visa_req_id"
         case visaReqApplicantId = "visa_req_applicant_id"
         case firstName = "first_name"
@@ -108,8 +109,8 @@ struct CountriesParamsFactory{
         case familyIdCopy = "family_id_copy"
     }
     
-    
     enum IndiaCodingKeys: String, CodingKey {
+        case userid
         case visaReqId = "visa_req_id"
         case visaReqApplicantId = "visa_req_applicant_id"
         case firstName = "first_name"
@@ -125,6 +126,7 @@ struct CountriesParamsFactory{
     }
     
     enum TRCodingKeys: String, CodingKey {
+        case userid
         case visaReqId = "visa_req_id"
         case visaReqApplicantId = "visa_req_applicant_id"
         case firstName = "first_name"

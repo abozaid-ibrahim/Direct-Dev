@@ -13,4 +13,9 @@ extension UITableView {
         separatorColor = UIColor.appVeryLightGray
         separatorStyle = .singleLine
     }
+     func noSeperator() {
+        tableFooterView = UIView()
+        separatorColor = UIColor.clear
+        separatorStyle = .none
+    }
 }
