@@ -47,7 +47,13 @@ extension MyAccountController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(MoreDataRep.allCases[indexPath.row].viewController, completion: nil)
+        let vc = MoreDataRep.allCases[indexPath.row].viewController
+        let presentation = MoreDataRep.allCases[indexPath.row].presentationType
+        if presentation == .popover {
+            present(vc, animated: true, completion: nil)
+        } else {
+            navigationController?.pushViewController(vc, completion: nil)
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

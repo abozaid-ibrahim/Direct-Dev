@@ -144,4 +144,10 @@ struct Str {
     static var branches:String{
         return "Branches"
     }
+    static var contactUs:String{
+        return "Contact Us"
+    }
+    static var logout:String{
+        return "Logout"
+    }
 }

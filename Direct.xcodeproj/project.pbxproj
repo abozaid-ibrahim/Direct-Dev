@@ -53,6 +53,7 @@
 		39EE2AE422A3D2EF00A9A501 /* DirectUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EE2AE322A3D2EF00A9A501 /* DirectUser.swift */; };
 		6530614424650A4028841976 /* Pods_Direct.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25185037101CA582CE39A627 /* Pods_Direct.framework */; };
 		6C06E81222BD392F006A48DD /* UIImage+ Resizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C06E81122BD392F006A48DD /* UIImage+ Resizing.swift */; };
+		6C1837D422DCA1C200F0C33B /* LogoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1837D322DCA1C200F0C33B /* LogoutController.swift */; };
 		6C1C6059228E38D8006490CB /* ReserveCourseInstitueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1C6057228E38D8006490CB /* ReserveCourseInstitueController.swift */; };
 		6C1C605E228E3D15006490CB /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1C605C228E3D15006490CB /* AboutUsViewController.swift */; };
 		6C1C6062228E46ED006490CB /* PaymentMethodsContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1C6060228E46ED006490CB /* PaymentMethodsContainerController.swift */; };
@@ -378,6 +379,7 @@
 		39EE2AE322A3D2EF00A9A501 /* DirectUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectUser.swift; sourceTree = "<group>"; };
 		51864FCE65244511A162A435 /* Pods-Direct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Direct.release.xcconfig"; path = "Pods/Target Support Files/Pods-Direct/Pods-Direct.release.xcconfig"; sourceTree = "<group>"; };
 		6C06E81122BD392F006A48DD /* UIImage+ Resizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ Resizing.swift"; sourceTree = "<group>"; };
+		6C1837D322DCA1C200F0C33B /* LogoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutController.swift; sourceTree = "<group>"; };
 		6C1C6057228E38D8006490CB /* ReserveCourseInstitueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveCourseInstitueController.swift; sourceTree = "<group>"; };
 		6C1C605C228E3D15006490CB /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		6C1C6060228E46ED006490CB /* PaymentMethodsContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodsContainerController.swift; sourceTree = "<group>"; };
@@ -884,6 +886,14 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		6C1837D222DCA1B100F0C33B /* logout */ = {
+			isa = PBXGroup;
+			children = (
+				6C1837D322DCA1C200F0C33B /* LogoutController.swift */,
+			);
+			path = logout;
+			sourceTree = "<group>";
+		};
 		6C1C605B228E3D01006490CB /* about */ = {
 			isa = PBXGroup;
 			children = (
@@ -1283,6 +1293,7 @@
 		6C99D8B722DB930D0045F325 /* more screens */ = {
 			isa = PBXGroup;
 			children = (
+				6C1837D222DCA1B100F0C33B /* logout */,
 				6C8C535222D3E66A00B5572B /* MoreDataRep.swift */,
 				6C99D8C322DBA09D0045F325 /* contactus */,
 				6C99D8BE22DB9EB30045F325 /* banks */,
@@ -2015,6 +2026,7 @@
 				6C2CFB84227734E700D23CF4 /* TableCell.swift in Sources */,
 				6C5DE7682275EC49001A9FB6 /* VisaRequirementTableCell.swift in Sources */,
 				39EE2A8C22A097DC00A9A501 /* AuthViewController.swift in Sources */,
+				6C1837D422DCA1C200F0C33B /* LogoutController.swift in Sources */,
 				39EE2AD122A0A1E600A9A501 /* UIButton+Localized.swift in Sources */,
 				39EE2AB422A09A0000A9A501 /* PhoneNumberCellController.swift in Sources */,
 				6CF3E19922724E23007488BA /* HomeViewModel.swift in Sources */,

@@ -12,7 +12,7 @@ import RxOptional
 import RxSwift
 import UIKit
 
-class ContactUsViewController: UIViewController {
+class ContactUsViewController: UIViewController,StyledActionBar {
     private let viewModel = ContactUsViewModel()
 
     @IBOutlet private var phoneLbl: UILabel!
@@ -30,10 +30,11 @@ class ContactUsViewController: UIViewController {
     @IBOutlet private var subjectField: FloatingTextField!
     @IBOutlet private var submitBtn: UIButton!
 
-    private let disposeBag = DisposeBag()
+    internal let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupActionBar(.withTitle(Str.contactUs))
         setupForm()
         bindData()
     }

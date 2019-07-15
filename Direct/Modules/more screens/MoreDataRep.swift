@@ -63,9 +63,28 @@ enum MoreDataRep: CaseIterable {
         case .share:
             return SLComposeServiceViewController()
         case .branches:
-            return  BranchesController()
+            return BranchesController()
+        case .logout:
+            let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+
+            let search = UIAlertAction(title: Str.logout, style: .default, handler: { _ in
+
+            })
+            let cancel = UIAlertAction(title: Str.cancel, style: .cancel, handler: nil)
+            alert.addAction(search)
+            alert.addAction(cancel)
+            return alert
         default:
             return UIViewController()
+        }
+    }
+
+    var presentationType: UIModalPresentationStyle {
+        switch self {
+        case .logout:
+            return UIModalPresentationStyle.popover
+        default:
+            return UIModalPresentationStyle.fullScreen
         }
     }
 }
