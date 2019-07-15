@@ -17,6 +17,8 @@ class BranchesController: UIViewController, StyledActionBar {
     fileprivate var datalist: [BranchesSection] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.backgroundColor = .appVeryLightGray
+        view.backgroundColor = .appVeryLightGray
         setupActionBar(.withTitle(Str.branches))
         tableView.registerNib(BranchesDescTableCell.cellId)
         tableView.registerNib(BranchesTableCell.cellId)

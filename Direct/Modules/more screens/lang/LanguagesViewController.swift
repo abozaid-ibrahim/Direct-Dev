@@ -12,12 +12,12 @@ import UIKit
 
 class LanguagesViewController: UIViewController, StyledActionBar {
     @IBOutlet private var tableView: UITableView!
-    private let disposeBag = DisposeBag()
+    internal let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupActionBar(.withTitle(Str.language))
+        view.backgroundColor = .appVeryLightGray
         setupTableData()
-        
     }
 
     private func setupTableData() {

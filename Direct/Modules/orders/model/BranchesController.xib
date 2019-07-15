@@ -22,16 +22,25 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x0y-KN-Oxs">
-                    <rect key="frame" x="12" y="56" width="390" height="794"/>
+                    <rect key="frame" x="12" y="92" width="390" height="758"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="فروعنا متاحة في خدمتكم" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZl-6V-f1b">
+                    <rect key="frame" x="8" y="56" width="398" height="24"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="x0y-KN-Oxs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="PPh-eY-yo0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="x0y-KN-Oxs" secondAttribute="bottom" constant="12" id="fhO-IZ-EjE"/>
                 <constraint firstItem="x0y-KN-Oxs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="gAD-1B-NZl"/>
+                <constraint firstItem="iZl-6V-f1b" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="h0o-hh-u7A"/>
+                <constraint firstItem="iZl-6V-f1b" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="hAi-TK-6R5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iZl-6V-f1b" secondAttribute="trailing" constant="8" id="jWa-TA-vUd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="x0y-KN-Oxs" secondAttribute="trailing" constant="12" id="tPS-rz-zLF"/>
+                <constraint firstItem="x0y-KN-Oxs" firstAttribute="top" secondItem="iZl-6V-f1b" secondAttribute="bottom" constant="12" id="tdx-jy-Pey"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

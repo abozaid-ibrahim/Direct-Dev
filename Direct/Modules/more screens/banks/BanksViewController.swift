@@ -23,6 +23,7 @@ final class BanksViewController: UIViewController, PanModalPresentable {
         title = "البنوك"
         viewModel.getBanksList()
         tableView.backgroundColor = .appVeryLightGray
+        view.backgroundColor = .appVeryLightGray
         tableView.registerNib(BankTableCell.cellId)
         tableView.defaultSeperator()
 
