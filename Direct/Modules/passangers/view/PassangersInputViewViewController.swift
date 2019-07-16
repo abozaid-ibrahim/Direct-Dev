@@ -64,6 +64,7 @@ class PassangersInputViewViewController: UIViewController {
         tabController.index = totalIndex
         tabController.visaReqID = info.requestID
         tabController.visaType = info.visatype
+        tabController.isChild = Str.child == placeholder
         let item = ViewPagerTab(title: "\(placeholder) \(1 + writingIndex)", image: #imageLiteral(resourceName: "rightGray"))
 
         tabController.successIndex

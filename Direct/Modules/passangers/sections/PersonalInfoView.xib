@@ -431,6 +431,7 @@
                 <outlet property="personalPhotoField" destination="DyA-wb-Oiy" id="44B-TK-psj"/>
                 <outlet property="personalPictureView" destination="83a-Ct-bFk" id="6Mr-kj-vBe"/>
                 <outlet property="statusPInfoField" destination="eFd-nH-Ymd" id="b8K-1F-SfA"/>
+                <outlet property="statusView" destination="xrN-zc-62G" id="u5i-If-iro"/>
                 <outlet property="titleLbl" destination="22T-DP-qyt" id="zOp-bi-Uj9"/>
             </connections>
             <point key="canvasLocation" x="131.15942028985509" y="44.866071428571423"/>

@@ -17,6 +17,7 @@ class PassangerFormController: UIViewController {
     var successIndex = PublishSubject<Int>()
     var visaType: String?
     var visaReqID: String?
+    var isChild: Bool = false
 
     // MARK: IBuilder ====================================>>
 
@@ -45,8 +46,7 @@ class PassangerFormController: UIViewController {
     var receivedImage = PublishSubject<(String?, UIImage?)>()
     private var params = VisaRequirementsParams()
     private let network = ApiClientFacade()
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         params.visaReqID = visaReqID
@@ -65,6 +65,7 @@ class PassangerFormController: UIViewController {
             personalInfoView.visaType = .torrerist
         }
         personalInfoView.params = params
+        personalInfoView.isChild =  isChild
         personalInfoView.formType = formTypeValue
         personalInfoContainer.addSubview(personalInfoView)
         personalInfoView.frame = personalInfoContainer.bounds
@@ -77,16 +78,14 @@ class PassangerFormController: UIViewController {
             motherView.params = params
             motherInfoContainer.addSubview(motherView)
             motherView.frame = motherInfoContainer.bounds
-            motherView.contentHeight.debug().bind(to: motherInfoHeight.rx.constant).disposed(by: disposeBag)
+            motherView.contentHeight.bind(to: motherInfoHeight.rx.constant).disposed(by: disposeBag)
         } else {
-            print("hide this section")
             motherInfoHeight.constant = 0
             motherInfoContainer.isHidden = true
         }
     }
 
     private func addQuestionsSection() {
-        print(formTypeValue)
         func add() {
             visaQuestionsView.params = params
             visaQuestionsContainer.addSubview(visaQuestionsView)
@@ -195,7 +194,7 @@ class PassangerFormController: UIViewController {
                 return
             }
         }
-        
+
         params.country = formTypeValue
         sendDataToServer(formTypeValue)
     }

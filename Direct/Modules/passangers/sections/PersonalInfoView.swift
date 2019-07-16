@@ -17,11 +17,13 @@ enum VisaType {
 class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     var params: VisaRequirementsParams?
     var visaType: VisaType?
+    var isChild = false
     // Family
     @IBOutlet var firstNamePInfoField: FloatingTextField!
     @IBOutlet var familyNamePInfoField: FloatingTextField!
     @IBOutlet var personalPhotoField: FloatingTextField!
     @IBOutlet var statusPInfoField: FloatingTextField!
+    @IBOutlet var statusView: UIView!
     @IBOutlet var isHusbandWillTravelView: UIView!
     @IBOutlet var husbundPInfoField: FloatingTextField!
     @IBOutlet var familyIDView: UIView!
@@ -116,9 +118,13 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
         } else {
             acceptanceVisaView.isHidden = true
         }
+        self.applyChildRules()
         contentHeight.onNext(neededHeight)
     }
-    
+    private func applyChildRules(){
+        isHusbandWillTravelView.isHidden = true
+        statusView.isHidden = true
+    }
     private func hideIsHusbendWillTravelWithYou() {
         isHusbandWillTravelView.isHidden = true
         contentHeight.onNext(neededHeight)
