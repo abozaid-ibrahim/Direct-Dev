@@ -58,7 +58,9 @@ extension MyAccountController: UITableViewDelegate, UITableViewDataSource {
         if presentation == .popover {
             present(vc, animated: true, completion: nil)
         } else {
-            navigationController?.pushViewController(vc)
+            DispatchQueue.main.async {
+                self.navigationController?.pushViewController(vc)
+            }
         }
     }
 }
