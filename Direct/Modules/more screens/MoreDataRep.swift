@@ -61,7 +61,7 @@ enum MoreDataRep: CaseIterable {
         case .banks:
             return BanksViewController()
         case .share:
-            return getTextSharer(txt: "soe values to share.......") // SLComposeServiceViewController()
+            return getTextSharer(txt: "soe values to share.......") 
         case .branches:
             return BranchesController()
         case .appLanguage:
@@ -85,6 +85,7 @@ enum MoreDataRep: CaseIterable {
         let textToShare = [text]
         let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
         activityViewController.view.tintColor = .appPumpkinOrange
+        activityViewController.view.tintColor = .appVeryLightGray
         return activityViewController
     }
 

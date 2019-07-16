@@ -15,8 +15,9 @@ enum VisaRequirementType {
     case asAtab(country: String)
     case mainView(VisaRequestParams)
 }
+
 enum OrderDetails {
-    case sourceA(trackNO:String)
+    case sourceA(trackNO: String)
     case mainView(VisaRequestParams)
 }
 
@@ -34,7 +35,7 @@ enum Destination {
         passangersInfoScreen(VisaRequestParams),
         successVisaReqScreen(trackNo: String?, thanksUrl: String?),
         MyOrders(trackNo: String?),
-    orderDetails(logs:[VisaStatusLog],id:String),
+        orderDetails(logs: [VisaStatusLog], id: String),
         institutesList,
         instituteDetails,
         packageDetails,

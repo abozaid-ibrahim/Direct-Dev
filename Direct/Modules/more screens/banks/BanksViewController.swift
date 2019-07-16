@@ -21,13 +21,16 @@ final class BanksViewController: UIViewController, PanModalPresentable {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "البنوك"
-        viewModel.getBanksList()
-        tableView.backgroundColor = .appVeryLightGray
-        view.backgroundColor = .appVeryLightGray
-        tableView.registerNib(BankTableCell.cellId)
-        tableView.defaultSeperator()
-        viewModel.banksList.bind(to: tableView.rx.items(cellIdentifier: BankTableCell.cellId, cellType: BankTableCell.self)) { _, model, cell in
-            cell.setCellData(model)
-        }.disposed(by: disposeBag)
+//        viewModel.getBanksList()
+//        tableView.backgroundColor = .appVeryLightGray
+//        view.backgroundColor = .appVeryLightGray
+//        tableView.registerNib(BankTableCell.cellId)
+//        tableView.defaultSeperator()
+//        viewModel.banksList.bind(to: tableView.rx.items(cellIdentifier: BankTableCell.cellId, cellType: BankTableCell.self)) { _, model, cell in
+//            cell.setCellData(model)
+//        }.disposed(by: disposeBag)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
 }
