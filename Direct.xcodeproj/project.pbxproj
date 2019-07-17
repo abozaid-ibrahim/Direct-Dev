@@ -2650,7 +2650,7 @@
 					"\"YALField\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mcc.directvisa;
+				PRODUCT_BUNDLE_IDENTIFIER = abdeen.labs.com.direct.visa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Direct/Direct-Bridging-Header.h";
