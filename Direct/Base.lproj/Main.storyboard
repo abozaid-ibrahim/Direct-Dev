@@ -588,7 +588,7 @@
             </objects>
             <point key="canvasLocation" x="-983" y="-116"/>
         </scene>
-        <!--More-->
+        <!--المزيد-->
         <scene sceneID="uTO-k8-XzA">
             <objects>
                 <viewController storyboardIdentifier="MyAccountController" id="n94-nm-Jaj" customClass="MyAccountController" customModule="Direct" customModuleProvider="target" sceneMemberID="viewController">
@@ -681,7 +681,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="meC-ap-Fkg"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="More" image="More" id="Dq0-us-giM"/>
+                    <tabBarItem key="tabBarItem" title="المزيد" image="More" id="Dq0-us-giM"/>
                     <navigationItem key="navigationItem" id="utt-4Y-cRj"/>
                     <connections>
                         <outlet property="tableView" destination="G5x-ur-8pv" id="sbZ-VS-qlY"/>
