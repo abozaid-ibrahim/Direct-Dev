@@ -500,8 +500,6 @@
 		6C778287227C6EE6001926B2 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		6C77828B227C715A001926B2 /* ImageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLabel.swift; sourceTree = "<group>"; };
 		6C79751F228BC82D000807D4 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
-		6C79C5BB22DE568B00DE8DDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		6C79C5BD22DE568C00DE8DDA /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		6C7BAE7922C409E00011EE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/HomeCollectionSectionWrapper.xib; sourceTree = "<group>"; };
 		6C7BAE7B22C40D4A0011EE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PackagesTableCell.xib; sourceTree = "<group>"; };
 		6C7BAE7D22C40D4E0011EE59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PackagesTableCell.strings; sourceTree = "<group>"; };
@@ -2187,8 +2185,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				6C5FDA512270816B00ABA39B /* Base */,
-				6C79C5BB22DE568B00DE8DDA /* en */,
-				6C79C5BD22DE568C00DE8DDA /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
