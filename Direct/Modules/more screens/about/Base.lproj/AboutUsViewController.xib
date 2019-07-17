@@ -22,10 +22,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LdT-k1-O22">
-                    <rect key="frame" x="16" y="16" width="382" height="8"/>
+                    <rect key="frame" x="16" y="8" width="382" height="24"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKo-s6-cZ3">
-                            <rect key="frame" x="4" y="4" width="374" height="0.0"/>
+                            <rect key="frame" x="12" y="12" width="358" height="0.0"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -33,18 +33,23 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="JKo-s6-cZ3" firstAttribute="leading" secondItem="LdT-k1-O22" secondAttribute="leading" constant="4" id="FcD-rF-lFc"/>
-                        <constraint firstItem="JKo-s6-cZ3" firstAttribute="top" secondItem="LdT-k1-O22" secondAttribute="top" constant="4" id="GXe-tw-dhM"/>
-                        <constraint firstAttribute="bottom" secondItem="JKo-s6-cZ3" secondAttribute="bottom" constant="4" id="K3l-ZP-GUZ"/>
-                        <constraint firstAttribute="trailing" secondItem="JKo-s6-cZ3" secondAttribute="trailing" constant="4" id="e1O-xY-2zH"/>
+                        <constraint firstItem="JKo-s6-cZ3" firstAttribute="leading" secondItem="LdT-k1-O22" secondAttribute="leading" constant="12" id="FcD-rF-lFc"/>
+                        <constraint firstItem="JKo-s6-cZ3" firstAttribute="top" secondItem="LdT-k1-O22" secondAttribute="top" constant="12" id="GXe-tw-dhM"/>
+                        <constraint firstAttribute="bottom" secondItem="JKo-s6-cZ3" secondAttribute="bottom" constant="12" id="K3l-ZP-GUZ"/>
+                        <constraint firstAttribute="trailing" secondItem="JKo-s6-cZ3" secondAttribute="trailing" constant="12" id="e1O-xY-2zH"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="LdT-k1-O22" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="3n0-25-YTJ"/>
                 <constraint firstAttribute="trailing" secondItem="LdT-k1-O22" secondAttribute="trailing" constant="16" id="XtI-hF-7j7"/>
-                <constraint firstItem="LdT-k1-O22" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="16" id="YzA-pj-qOc"/>
+                <constraint firstItem="LdT-k1-O22" firstAttribute="topMargin" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="YzA-pj-qOc"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

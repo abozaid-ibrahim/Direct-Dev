@@ -23,6 +23,7 @@ class BranchesController: UIViewController, StyledActionBar {
         tableView.registerNib(BranchesDescTableCell.cellId)
         tableView.registerNib(BranchesTableCell.cellId)
         viewModel.branches.map { $0?.branch }.filterNil()
+            .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] value in
                 self.datalist = value.map { BranchesSection($0) }
                 self.datalist.first?.opened = true

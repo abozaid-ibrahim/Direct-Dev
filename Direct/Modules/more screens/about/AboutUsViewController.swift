@@ -10,14 +10,14 @@ import RxOptional
 import RxSwift
 import UIKit
 
-class AboutUsViewController: UIViewController {
+class AboutUsViewController: UIViewController, StyledActionBar {
     private lazy var viewModel = AboutUsViewModel()
     @IBOutlet private var txtLbl: UILabel!
-    private let disposeBag = DisposeBag()
+    internal let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "من نحن"
+       self.setupActionBar(.withTitle("من نحن"))
         viewModel.aboutText
             .filterNil()
             .map { ($0.details ?? "").html2String }

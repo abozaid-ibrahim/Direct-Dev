@@ -10,17 +10,14 @@ import PanModal
 import RxSwift
 import UIKit
 
-final class BanksViewController: UIViewController, PanModalPresentable {
-    var panScrollable: UIScrollView? {
-        return tableView
-    }
+final class BanksViewController: UIViewController, StyledActionBar {
 
     @IBOutlet private var tableView: UITableView!
-    private let disposeBag = DisposeBag()
+    let disposeBag = DisposeBag()
     private let viewModel = BanksViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "البنوك"
+       setupActionBar(.withTitle( "البنوك"))
         viewModel.getBanksList()
         tableView.backgroundColor = .appVeryLightGray
         view.backgroundColor = .appVeryLightGray

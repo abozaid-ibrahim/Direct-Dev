@@ -15,7 +15,10 @@ import RxSwift
 extension ApiClientFacade {
     func sendVisaRequest(params: VisaRequestParams) -> Observable<VisaRequestResponse> {
         return Observable<VisaRequestResponse>.create { (observer) -> Disposable in
-            self.visaProvider.rx.request(VisaAPIs.visaRequest(prm: params)).subscribe { [weak self] event in
+            self.visaProvider.rx.request(VisaAPIs.visaRequest(prm: params))
+                .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+                .observeOn( ConcurrentDispatchQueueScheduler(qos: .background))
+                .subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
             }.disposed(by: self.disposeBag)
             return Disposables.create()
@@ -24,7 +27,10 @@ extension ApiClientFacade {
 
     func getVisaPrice(prm: VisaPriceParams) -> Observable<VisaPriceResponse> {
         return Observable<VisaPriceResponse>.create { (observer) -> Disposable in
-            self.visaProvider.rx.request(VisaAPIs.getVisaPrice(prm: prm)).subscribe { [weak self] event in
+            self.visaProvider.rx.request(VisaAPIs.getVisaPrice(prm: prm))
+                .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+                .observeOn( ConcurrentDispatchQueueScheduler(qos: .background))
+                .subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
             }.disposed(by: self.disposeBag)
             return Disposables.create()
@@ -68,7 +74,10 @@ extension ApiClientFacade {
     }
     func getDataOfJsonModel<T:Codable>() -> Observable<T> {
         return Observable<T>.create { (observer) -> Disposable in
-            self.visaProvider.rx.request(VisaAPIs.getVisaReqRelation).subscribe { [weak self] event in
+            self.visaProvider.rx.request(VisaAPIs.getVisaReqRelation)
+                .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+                .observeOn( ConcurrentDispatchQueueScheduler(qos: .background))
+                .subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
                 }.disposed(by: self.disposeBag)
             return Disposables.create()
@@ -78,7 +87,9 @@ extension ApiClientFacade {
 
     func applyToVisa(path:String,params: VisaRequirementsParams) -> Observable<USVvisaRequestJSONResponse> {
         return Observable<USVvisaRequestJSONResponse>.create { (observer) -> Disposable in
-            self.visaProvider.rx.request(VisaAPIs.applyToVisa(path: path, params)).observeOn( ConcurrentDispatchQueueScheduler(qos: .background)).subscribe { [weak self] event in
+            self.visaProvider.rx.request(VisaAPIs.applyToVisa(path: path, params))
+                .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+                .observeOn( ConcurrentDispatchQueueScheduler(qos: .background)).subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
             }.disposed(by: self.disposeBag)
             return Disposables.create()
@@ -87,7 +98,10 @@ extension ApiClientFacade {
 
     func getPreviousVisaType() -> Observable<PreviousVisaTypeJSONResponse> {
         return Observable<PreviousVisaTypeJSONResponse>.create { (observer) -> Disposable in
-            self.visaProvider.rx.request(VisaAPIs.getPreviousVisaType).subscribe { [weak self] event in
+            self.visaProvider.rx.request(VisaAPIs.getPreviousVisaType)
+                .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+                .observeOn( ConcurrentDispatchQueueScheduler(qos: .background))
+                .subscribe { [weak self] event in
                 self?.parser.emitDataModelfromResponse(event: event, observer: observer)
             }.disposed(by: self.disposeBag)
             return Disposables.create()
