@@ -35,6 +35,10 @@ class UploadPendingDocsController: UIViewController, StyledActionBar {
         setupActionBar(.withTitle(Str.uploadPendingDocsTitle))
         configureBinding()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupActionBar(.withTitle(Str.uploadPendingDocsTitle))
+    }
     
     private func configureBinding() {
         accountNameField.rx.text.bind(to: viewModel.nameValue).disposed(by: disposeBag)

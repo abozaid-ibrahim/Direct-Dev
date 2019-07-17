@@ -17,9 +17,12 @@ class SuccessPackageController: UIViewController, StyledActionBar {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupActionBar(.withX)
         addChild(vc)
         paymentMethodsContainer.addSubview(vc.view)
         vc.view.sameBoundsTo(parentView: paymentMethodsContainer)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupActionBar(.withX)
     }
 }

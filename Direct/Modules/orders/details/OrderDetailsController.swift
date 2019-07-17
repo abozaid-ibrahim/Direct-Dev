@@ -17,8 +17,11 @@ final class OrderDetailsController: UIViewController, StyledActionBar {
         super.viewDidLoad()
         view.backgroundColor = .appVeryLightGray
         tableView.defaultSeperator()
-        setupActionBar(.withTitle(id ?? ""))
         setupTableData()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupActionBar(.withTitle(id ?? ""))
     }
 
     private func setupTableData() {

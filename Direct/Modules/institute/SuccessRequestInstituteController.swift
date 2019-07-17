@@ -12,7 +12,10 @@ class SuccessRequestInstituteController: UIViewController, StyledActionBar {
     internal let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setupActionBar(.withX)
-        // Do any additional setup after loading the view.
     }
 }

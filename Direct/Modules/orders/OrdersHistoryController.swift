@@ -26,8 +26,11 @@ final class OrdersHistoryController: UIViewController, HaveLoading, StyledAction
         tableView.registerNib(OrderTableCell.cellId)
         subscribeToProgress(viewModel.showProgress)
 //        bindDataToTable()
-        setupActionBar(.withTitle("طلباتي"))
         setDatasource()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupActionBar(.withTitle("طلباتي"))
     }
 
     @IBAction func followStateAction(_: Any) {}

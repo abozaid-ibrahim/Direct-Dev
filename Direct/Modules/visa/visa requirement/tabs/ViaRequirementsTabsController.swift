@@ -22,7 +22,6 @@ class ViaRequirementsTabsController: UIViewController,StyledActionBar {
     }
     
     override func viewDidLoad() {
-       self.setupActionBar(.withTitle( Str.visaRequirement))
         viewModel.countriesList.subscribe(onNext: { [unowned self] value in
             let tb = value.map {
                 ReqTabItemViewController(itemInfo: IndicatorInfo(title: $0.countryName, image: nil, userInfo: $0.flag),
@@ -31,7 +30,10 @@ class ViaRequirementsTabsController: UIViewController,StyledActionBar {
             self.addTabsView(tabs: tb)
         }).disposed(by: disposeBag)
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setupActionBar(.withTitle( Str.visaRequirement))
+    }
     private func addTabsView(tabs: [ReqTabItemViewController]) {
         let vc = VisaTabsController(tabs: tabs)
         add(vc)

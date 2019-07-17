@@ -15,7 +15,9 @@ struct Str {
     static var before: String {
         return "Before".localized
     }
-
+    static var search: String {
+        return "Search".localized
+    }
     static var passangersInfo: String {
         return "Passangers Info".localized
     }

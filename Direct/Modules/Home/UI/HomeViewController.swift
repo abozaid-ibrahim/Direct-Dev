@@ -40,11 +40,13 @@ final class HomeViewController: UIViewController, StyledActionBar {
         collectionView.backgroundColor = UIColor.appVeryLightGray
         collectionView.delegate = self
         registerCollectionNibs()
-        setupActionBar(.withTitle("بحث"))
         getDataFromViewModel()
         homeViewModel.getAllData()
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupActionBar(.withTitle(Str.search))
+    }
     private func getDataFromViewModel() {
         homeViewModel.collectionSecions.asObservable()
             .observeOn(MainScheduler.instance)

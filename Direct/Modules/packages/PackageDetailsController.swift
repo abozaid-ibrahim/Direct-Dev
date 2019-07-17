@@ -13,9 +13,11 @@ class PackageDetailsController: UIViewController, StyledActionBar {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setupActionBar(.withX)
     }
-
     @IBAction func bookNowAction(_: Any) {
         try? AppNavigator().push(.successPackage)
     }

@@ -20,6 +20,10 @@ final class InstituteDetailsController: UIViewController, StyledActionBar {
         setupTableData()
         setupTabbar()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupActionBar(.withX)
+    }
 
     private func setupTableData() {
         tableView.registerNib(InstituteDetailsTableCell.cellId)
