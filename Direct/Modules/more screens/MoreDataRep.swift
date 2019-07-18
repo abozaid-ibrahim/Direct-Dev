@@ -12,7 +12,7 @@ import Social
 import UIKit
 
 enum MoreDataRep: CaseIterable {
-    case aboutUs, branches, banks, callUs, share, appLanguage, logout
+    case aboutUs, branches, banks, callUs, share
 
     var title: String {
         switch self {
@@ -26,10 +26,6 @@ enum MoreDataRep: CaseIterable {
             return "call_us_label"
         case .share:
             return "share_label"
-        case .appLanguage:
-            return "app_lang_label"
-        case .logout:
-            return "logout_label"
         }
     }
 
@@ -45,10 +41,7 @@ enum MoreDataRep: CaseIterable {
             return #imageLiteral(resourceName: "icons8Phone")
         case .share:
             return #imageLiteral(resourceName: "icons8Share")
-        case .logout:
-            return #imageLiteral(resourceName: "icons8Share")
-        case .appLanguage:
-            return #imageLiteral(resourceName: "icons8Geography")
+     
         }
     }
 
@@ -64,19 +57,7 @@ enum MoreDataRep: CaseIterable {
             return getTextSharer(txt: "soe values to share.......") 
         case .branches:
             return BranchesController()
-        case .appLanguage:
-            return LanguagesViewController()
-        case .logout:
-            let alert = UIAlertController(title: Str.logout, message: "Sure you want to logout now?", preferredStyle: .alert)
-
-            let search = UIAlertAction(title: Str.logout, style: .default, handler: { _ in
-
-            })
-            let cancel = UIAlertAction(title: Str.cancel, style: .cancel, handler: nil)
-            alert.addAction(search)
-            alert.addAction(cancel)
-            alert.applyAppStyle()
-            return alert
+      
         }
     }
 
@@ -91,7 +72,7 @@ enum MoreDataRep: CaseIterable {
 
     var presentationType: UIModalPresentationStyle {
         switch self {
-        case .logout, .share:
+        case  .share:
             return UIModalPresentationStyle.popover
         default:
             return UIModalPresentationStyle.fullScreen

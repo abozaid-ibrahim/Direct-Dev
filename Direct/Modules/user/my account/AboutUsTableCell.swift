@@ -14,7 +14,7 @@ class AboutUsTableCell: UITableViewCell {
     @IBOutlet var extensionImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        backgroundColor  = .appVeryLightGray
+//        backgroundColor  = .appVeryLightGray
         selectionStyle = .none
     }
 }
