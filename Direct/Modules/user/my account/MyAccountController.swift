@@ -45,6 +45,7 @@ final class MyAccountController: UIViewController, StyledActionBar {
         logoutBtn.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
                 let vc = LanguagesViewController()
+                vc.selectedLang.bind(to: self.langLbl.rx.text).disposed(by: self.disposeBag)
                 self.navigationController?.pushViewController(vc)
                 
             }).disposed(by: disposeBag)
