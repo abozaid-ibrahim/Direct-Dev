@@ -28,6 +28,16 @@ final class MyAccountController: UIViewController, StyledActionBar {
         tabBarItem.image = #imageLiteral(resourceName: "More")
         langView.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
+                let vc = LanguagesViewController()
+                vc.selectedLang.bind(to: self.langLbl.rx.text).disposed(by: self.disposeBag)
+                self.navigationController?.pushViewController(vc)
+                
+            }).disposed(by: disposeBag)
+        logoutBtn.localizedFont = .bold(15)
+        logoutBtn.setTitleColor(.appMango, for: .normal)
+        logoutBtn.rx.tapGesture().when(.recognized)
+            .subscribe(onNext: { _ in
+                
                 let alert = UIAlertController(title: Str.logout, message: "Sure you want to logout now?", preferredStyle: .alert)
                 
                 let search = UIAlertAction(title: Str.logout, style: .default, handler: { _ in
@@ -38,16 +48,6 @@ final class MyAccountController: UIViewController, StyledActionBar {
                 alert.addAction(cancel)
                 alert.applyAppStyle()
                 self.present(alert, animated: true, completion: nil)
-                
-            }).disposed(by: disposeBag)
-        logoutBtn.localizedFont = .bold(15)
-        logoutBtn.setTitleColor(.appMango, for: .normal)
-        logoutBtn.rx.tapGesture().when(.recognized)
-            .subscribe(onNext: { _ in
-                let vc = LanguagesViewController()
-                vc.selectedLang.bind(to: self.langLbl.rx.text).disposed(by: self.disposeBag)
-                self.navigationController?.pushViewController(vc)
-                
             }).disposed(by: disposeBag)
     }
     
