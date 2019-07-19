@@ -19,6 +19,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     var visaType: VisaType?
     var isChild = false
     // Family
+    @IBOutlet var personalIDInfoField: FloatingTextField!
     @IBOutlet var firstNamePInfoField: FloatingTextField!
     @IBOutlet var familyNamePInfoField: FloatingTextField!
     @IBOutlet var personalPhotoField: FloatingTextField!
@@ -31,7 +32,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     @IBOutlet var passportImageField: FloatingTextField!
     @IBOutlet var acceptanceImageField: FloatingTextField!
     @IBOutlet var titleLbl: UILabel!
-    
+    @IBOutlet var personalIDView: UIView!
     @IBOutlet var acceptanceVisaView: UIView!
     @IBOutlet var martialStateView: UIView!
     @IBOutlet var personalPictureView: UIView!
@@ -44,6 +45,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     private let passportImageID = 31
     private let visaImageID = 32
     private let personalPhotoID = 35
+    private let personalID = 37
     private let acceptanceUniversityID = 36
     
     var receivedImage = PublishSubject<(String?, UIImage?)>()
@@ -79,6 +81,8 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
         basic += passportView.isHidden ? 0 : unit
         basic += personalPictureView.isHidden ? 0 : unit
         basic += acceptanceVisaView.isHidden ? 0 : unit
+        basic += personalIDView.isHidden ? 0 : unit
+        
         return CGFloat(basic)
     }
     
@@ -118,13 +122,15 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
         } else {
             acceptanceVisaView.isHidden = true
         }
-        self.applyChildRules()
+        applyChildRules()
         contentHeight.onNext(neededHeight)
     }
-    private func applyChildRules(){
+    
+    private func applyChildRules() {
         isHusbandWillTravelView.isHidden = true
         statusView.isHidden = true
     }
+    
     private func hideIsHusbendWillTravelWithYou() {
         isHusbandWillTravelView.isHidden = true
         contentHeight.onNext(neededHeight)
@@ -188,6 +194,15 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
             statusPInfoField.setError.onNext(true)
             return false
         }
+        if !personalIDView.isHidden {
+            if personalIDInfoField.hasText {
+                personalIDInfoField.setError.onNext(false)
+                
+            } else {
+                personalIDInfoField.setError.onNext(false)
+                return false
+            }
+        }
         if !isHusbandWillTravelView.isHidden {
             if husbundPInfoField.text.isValidText {
                 husbundPInfoField.setError.onNext(false)
@@ -242,6 +257,12 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
         familyIDPInfoField.rx.tapGesture().when(.recognized)
             .subscribe { _ in
                 self.showImagePicker(id: self.familyImageID)
+            }.disposed(by: disposeBag)
+        
+        personalIDInfoField.neverShowKeypad()
+        personalIDInfoField.rx.tapGesture().when(.recognized)
+            .subscribe { _ in
+                self.showImagePicker(id: self.personalID)
             }.disposed(by: disposeBag)
         
         passportImageField.neverShowKeypad()
@@ -314,9 +335,11 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
             } else if self.currentImageID == self.acceptanceUniversityID {
                 self.params?.universityAcceptanceImage = img
                 self.acceptanceImageField.text = value.0
+            } else if self.currentImageID == self.personalID {
+//                self.params?.visaReqID = img
+                self.personalIDInfoField.text = value.0
             }
             
         }).disposed(by: disposeBag)
     }
 }
-
