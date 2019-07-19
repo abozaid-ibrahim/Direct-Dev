@@ -1,4 +1,4 @@
-app_identifier("com.mcc.directvisa") # The bundle identifier of your app
+app_identifier("abdeen.labs.com.direct.visa") # The bundle identifier of your app
 apple_id("apple@direct-trvl.com") # Your Apple email address
 
 itc_team_id("118614252") # App Store Connect Team ID
