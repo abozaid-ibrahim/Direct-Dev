@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITextField.appearance().substituteFontName = AppFonts.regularFont
         UILabel.appearance().substituteFontName = AppFonts.regularFont
 //        UILabel.appearance().substituteFontNameBold = AppFonts.boldFont
-
+        UIView.appearance().semanticContentAttribute = .forceRightToLeft
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: AppFonts.regularFont, size: 11)!, NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
     }
 
