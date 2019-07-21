@@ -34,7 +34,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enableAutoToolbar = false
     }
 
-    private func setLanguage() {}
+    private func setLanguage() {
+        Localize.setCurrentLanguage(Localize.currentLanguage())
+    }
 
     func setupGlobalAppearance() {
         window?.tintColor = UIColor.white

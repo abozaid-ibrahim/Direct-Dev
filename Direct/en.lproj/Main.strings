@@ -1,0 +1,54 @@
+
+/* Class = "UITabBarItem"; title = "Search"; ObjectID = "31F-ed-mth"; */
+"31F-ed-mth.title" = "Search";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "4Qt-uq-KFN"; */
+"4Qt-uq-KFN.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "5Kk-4m-T7n"; */
+"5Kk-4m-T7n.normalTitle" = "Logout";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "68g-c6-7Mg"; */
+"68g-c6-7Mg.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "BmK-0y-5j6"; */
+"BmK-0y-5j6.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "More"; ObjectID = "Dq0-us-giM"; */
+"Dq0-us-giM.title" = "More";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "Drt-8V-cx7"; */
+"Drt-8V-cx7.text" = "Welcome";
+
+/* Class = "UITabBarItem"; title = "Visa Requirement"; ObjectID = "It3-cK-2n6"; */
+"It3-cK-2n6.title" = "Visa Requirement";
+
+/* Class = "UILabel"; text = "Packages"; ObjectID = "Jyh-uK-bTQ"; */
+"Jyh-uK-bTQ.text" = "Packages";
+
+/* Class = "UITabBarItem"; title = "My orders"; ObjectID = "QVa-gB-goh"; */
+"QVa-gB-goh.title" = "My orders";
+
+/* Class = "UILabel"; text = "Travel to ...?"; ObjectID = "Zpc-oo-kAD"; */
+"Zpc-oo-kAD.text" = "Travel to ...?";
+
+/* Class = "UILabel"; text = "App Language"; ObjectID = "aCz-Ke-WBd"; */
+"aCz-Ke-WBd.text" = "App Language";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bOV-L1-szH"; */
+"bOV-L1-szH.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Login / Create User"; ObjectID = "eAv-WC-GJe"; */
+"eAv-WC-GJe.normalTitle" = "Login / Create User";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fUg-fc-CUz"; */
+"fUg-fc-CUz.text" = "Label";
+
+/* Class = "UILabel"; text = "Visa"; ObjectID = "qiM-uw-bq5"; */
+"qiM-uw-bq5.text" = "Visa";
+
+/* Class = "UILabel"; text = "Institute"; ObjectID = "vtD-K9-o1t"; */
+"vtD-K9-o1t.text" = "Institute";
+
+/* Class = "UITabBarItem"; title = "بحث"; ObjectID = "zDX-zY-UOx"; */
+"zDX-zY-UOx.title" = "Search";

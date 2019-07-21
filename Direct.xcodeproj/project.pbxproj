@@ -611,6 +611,8 @@
 		6CBA06F522D270A300F36353 /* PendingDocTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PendingDocTableCell.xib; sourceTree = "<group>"; };
 		6CBA06F822D2741100F36353 /* OrderDetailsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsTableCell.swift; sourceTree = "<group>"; };
 		6CBA06F922D2741100F36353 /* OrderDetailsTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailsTableCell.xib; sourceTree = "<group>"; };
+		6CBBDE5322E4B83500C50E8E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		6CBBDE5522E4B83B00C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		6CBD17DA228BCB7300144B6C /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		6CC94EDC228BE5BA002F3464 /* CommonAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAPIs.swift; sourceTree = "<group>"; };
 		6CC94EE1228BE7FC002F3464 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -920,6 +922,7 @@
 		6C2CFB8A2277421B00D23CF4 /* packages */ = {
 			isa = PBXGroup;
 			children = (
+				6C5DE771227732D4001A9FB6 /* search */,
 				6C2CFB8B2277422900D23CF4 /* PackagesViewController.swift */,
 				6CDEBBEA2284FDA000EC3E6F /* PackagesTableCell.swift */,
 				6C9027AB228F956600B41705 /* PackagesTableCell.xib */,
@@ -1251,7 +1254,6 @@
 				6C2CFB9C22789DEA00D23CF4 /* payment */,
 				6C2CFB8A2277421B00D23CF4 /* packages */,
 				6C2CFB852277411700D23CF4 /* business common */,
-				6C5DE771227732D4001A9FB6 /* search */,
 				6C5DE7582275C742001A9FB6 /* orders */,
 				6CE722E82274F9F700E095DC /* visa */,
 				6CF3E1BF2274B8CA007488BA /* fake data */,
@@ -2185,6 +2187,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				6C5FDA512270816B00ABA39B /* Base */,
+				6CBBDE5322E4B83500C50E8E /* ar */,
+				6CBBDE5522E4B83B00C50E8E /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
