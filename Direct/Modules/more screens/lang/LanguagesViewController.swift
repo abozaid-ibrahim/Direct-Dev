@@ -36,6 +36,9 @@ class LanguagesViewController: UIViewController, StyledActionBar {
     }
 
     private func setCurrentLang(lang: LangEntity) {
+        if Localize.currentLanguage() ==  lang.code{
+            return
+        }
         Localize.setCurrentLanguage(lang.code)
         AppDelegate.current.setRootController()
     }
