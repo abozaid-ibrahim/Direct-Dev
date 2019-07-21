@@ -525,7 +525,6 @@
 		6C7BAEAE22C411B30011EE59 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/DatePickerController.strings; sourceTree = "<group>"; };
 		6C7BAEAF22C411CB0011EE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/NewInstituteRequestController.xib; sourceTree = "<group>"; };
 		6C7BAEB122C411EC0011EE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/NewDirectVisaController.xib; sourceTree = "<group>"; };
-		6C7BAEB322C412050011EE59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/NewDirectVisaController.strings; sourceTree = "<group>"; };
 		6C7BAEB522C4120B0011EE59 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/NewDirectVisaController.strings; sourceTree = "<group>"; };
 		6C7BAEB622C4121C0011EE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PassangersCountController.xib; sourceTree = "<group>"; };
 		6C7BAEB822C412220011EE59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PassangersCountController.strings; sourceTree = "<group>"; };
@@ -569,8 +568,6 @@
 		6CB1858F22CFB28F009485CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TextTableCell.strings; sourceTree = "<group>"; };
 		6CB1859122CFB292009485CD /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/TextTableCell.strings; sourceTree = "<group>"; };
 		6CB1859222CFB318009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/VisaRequirementController.xib; sourceTree = "<group>"; };
-		6CB1859422CFB31F009485CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/VisaRequirementController.strings; sourceTree = "<group>"; };
-		6CB1859622CFB323009485CD /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/VisaRequirementController.strings; sourceTree = "<group>"; };
 		6CB1859722CFB341009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/VisaRequirementTableCell.xib; sourceTree = "<group>"; };
 		6CB1859922CFB35B009485CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/VisaRequirementTableCell.strings; sourceTree = "<group>"; };
 		6CB1859B22CFB35C009485CD /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/VisaRequirementTableCell.strings; sourceTree = "<group>"; };
@@ -613,6 +610,7 @@
 		6CBA06F922D2741100F36353 /* OrderDetailsTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailsTableCell.xib; sourceTree = "<group>"; };
 		6CBBDE5322E4B83500C50E8E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		6CBBDE5522E4B83B00C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		6CBBDE5B22E4DD0F00C50E8E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/VisaRequirementController.strings; sourceTree = "<group>"; };
 		6CBD17DA228BCB7300144B6C /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		6CC94EDC228BE5BA002F3464 /* CommonAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAPIs.swift; sourceTree = "<group>"; };
 		6CC94EE1228BE7FC002F3464 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -2444,8 +2442,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6CB1859222CFB318009485CD /* Base */,
-				6CB1859422CFB31F009485CD /* en */,
-				6CB1859622CFB323009485CD /* ar */,
+				6CBBDE5B22E4DD0F00C50E8E /* ar */,
 			);
 			name = VisaRequirementController.xib;
 			sourceTree = "<group>";
@@ -2464,7 +2461,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				6C7BAEB122C411EC0011EE59 /* Base */,
-				6C7BAEB322C412050011EE59 /* en */,
 				6C7BAEB522C4120B0011EE59 /* ar */,
 			);
 			name = NewDirectVisaController.xib;

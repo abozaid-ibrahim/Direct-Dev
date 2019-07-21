@@ -67,7 +67,7 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="icons8AroundTheGlobe"/>
                                                 <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="bottomArrow"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="hint" value="اختر الدولة"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="hint" value="Choose Country"/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dik-0S-Omr" customClass="SpinnerTextField" customModule="Direct" customModuleProvider="target">
@@ -79,7 +79,7 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="visaType"/>
                                                 <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="bottomArrow"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="hint" value="نوع التأشيرة"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="hint" value="Visa type"/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fnp-rV-BGk" customClass="SpinnerTextField" customModule="Direct" customModuleProvider="target">
@@ -91,7 +91,7 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="icons8Marker"/>
                                                 <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="bottomArrow"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="hint" value="مكان البصمة"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="hint" value="Bio Location"/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="E04-gK-AFm">
@@ -103,7 +103,7 @@
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="icons8Calendar1"/>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="bottomArrow"/>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="hint" value="تاريخ السفر "/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="hint" value="Travel Date"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ozc-3k-HT9" customClass="SpinnerTextField" customModule="Direct" customModuleProvider="target">
@@ -112,7 +112,7 @@
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="icons8Person"/>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="bottomArrow"/>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="hint" value="عدد المسافرين"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="hint" value="Passangers Count"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -129,7 +129,7 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="icons8Family"/>
                                                 <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="bottomArrow"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="hint" value="العلاقة بين المسافرين"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="hint" value="Relation between travelers"/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                     </subviews>
@@ -143,7 +143,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MzQ-hz-7Xb">
                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="25"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="إجمالي التكلفة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxB-2E-2Jb">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Total Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxB-2E-2Jb">
                                                             <rect key="frame" x="0.0" y="0.0" width="277" height="25"/>
                                                             <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -205,7 +205,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="Mzd-dA-axa">
                                                             <rect key="frame" x="6" y="6" width="323" height="38"/>
                                                             <subviews>
-                                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="أدخل كوبون الخصم" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="otR-yt-3sQ">
+                                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Cobon" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="otR-yt-3sQ">
                                                                     <rect key="frame" x="0.0" y="0.0" width="268" height="38"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="textColor"/>
@@ -215,7 +215,7 @@
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppj-2R-IpL">
                                                                     <rect key="frame" x="287" y="0.0" width="36" height="38"/>
                                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="14"/>
-                                                                    <state key="normal" title="إضافة">
+                                                                    <state key="normal" title="Add">
                                                                         <color key="titleColor" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </state>
                                                                     <connections>
@@ -245,7 +245,7 @@
                                                         <constraint firstAttribute="height" constant="50" id="KrG-Mc-amI"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <state key="normal" title="ابدأ الطلب"/>
+                                                    <state key="normal" title="Start Request"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">
                                                             <integer key="value" value="1"/>

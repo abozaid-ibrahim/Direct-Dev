@@ -77,7 +77,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyM-ZF-kPR">
                                     <rect key="frame" x="37.5" y="14" width="300" height="42"/>
                                     <color key="backgroundColor" red="0.99215686270000003" green="0.52941176469999995" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    <state key="normal" title="ابدأ طلب التأشيرة">
+                                    <state key="normal" title="Start visa request">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <userDefinedRuntimeAttributes>

@@ -5,8 +5,6 @@
  Created by Abdoelrhman Eaita on 5/31/19.
  Copyright © 2019 abuzeid. All rights reserved.
  */
-
-
 // LOGIN
 "login_title_label" = "تسجيل دخول";
 "email_tf_placeHolder" = "البريد الالكتروني";
@@ -23,8 +21,6 @@
 "login_error_message" = "رقم الجوال أو كلمة المرور غير صحيحة";
 "blocked_account_message" = "حسابك محجوب الرجاء التواصل مع الدعم الفني.";
 "login_activation_message" = "استخدم الكود الذي تم إرساله إليك عند التسجيل";
-
-
 
 // Signup
 "signup_title_label" = "إنشاء حساب";
