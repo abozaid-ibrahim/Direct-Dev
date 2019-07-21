@@ -15,6 +15,7 @@ import UIKit
 
 class NewDirectVisaController: UIViewController, SwipeUpDismissable {
     let disposeBag = DisposeBag()
+    
     var dismessed: PublishSubject<Bool> = PublishSubject()
     var initialTouchPoint: CGPoint = CGPoint(x: 0, y: 0)
     var defaultFrame: CGRect? {
@@ -25,8 +26,10 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
 
     // MARK: IBuilder ====================================>>
 
-    @IBOutlet var scrollView: UIScrollView!
-
+    @IBOutlet var scrollView: UIScrollView?
+//    var scrollView: UIScrollView?{
+//        return self.scrollView
+//    }
     @IBOutlet var doNotesLbl: UILabel!
     @IBOutlet var totalCostPlaceholder: UILabel!
 

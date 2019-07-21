@@ -20,7 +20,7 @@ class NewInstituteRequestController: UIViewController, SwipeUpDismissable {
             view.frame = defaultFrame ?? CGRect.zero
         }
     }
-
+    var scrollView: UIScrollView?
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var travelDateField: SpinnerTextField!
     @IBOutlet var studyPeriod: SpinnerTextField!

@@ -47,7 +47,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="657"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rll-J1-dFK">
-                            <rect key="frame" x="10" y="10" width="355" height="489"/>
+                            <rect key="frame" x="10" y="10" width="355" height="509"/>
                             <subviews>
                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="احصل على تأشيرة بسهولة" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCo-e0-D7e">
                                     <rect key="frame" x="0.0" y="0.0" width="355" height="0.0"/>
@@ -135,7 +135,7 @@
                                     </subviews>
                                 </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72P-rO-dCS">
-                                    <rect key="frame" x="0.0" y="290" width="355" height="199"/>
+                                    <rect key="frame" x="0.0" y="290" width="355" height="219"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="v4z-wv-SEo">
                                             <rect key="frame" x="10" y="10" width="335" height="179"/>
@@ -261,7 +261,7 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="v4z-wv-SEo" firstAttribute="leading" secondItem="72P-rO-dCS" secondAttribute="leading" constant="10" id="Fuv-bL-1gf"/>
-                                        <constraint firstAttribute="bottom" secondItem="v4z-wv-SEo" secondAttribute="bottom" constant="10" id="Q84-ic-Ems"/>
+                                        <constraint firstAttribute="bottom" secondItem="v4z-wv-SEo" secondAttribute="bottom" constant="20" id="Q84-ic-Ems"/>
                                         <constraint firstItem="v4z-wv-SEo" firstAttribute="top" secondItem="72P-rO-dCS" secondAttribute="top" constant="10" id="b5X-9d-1vq"/>
                                         <constraint firstAttribute="trailing" secondItem="v4z-wv-SEo" secondAttribute="trailing" constant="10" id="vYN-XM-edo"/>
                                     </constraints>

@@ -20,6 +20,10 @@ final class PackagesViewController: UIViewController, SwipeUpDismissable {
     }
 
     @IBOutlet var tableView: UITableView!
+    var scrollView: UIScrollView?{
+        return self.tableView
+    }
+
     var dismissable: Bool?
 
     override func viewDidLoad() {
