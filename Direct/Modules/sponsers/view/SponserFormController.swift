@@ -34,6 +34,9 @@ class SponserFormController: UIViewController, HaveLoading {
     private var enableSubmit = PublishSubject<Bool>()
     var formResult = PublishSubject<UploadSponserInfoResponse>()
 
+    private func setTextFieldsHints(){
+        accountOwnerField.placeholder = "Account Owner".localized()
+    }
     private lazy var viewModel = SponserFormViewModel(index: index!, type: relationType!, visaReqID: reqID!, cid: cid!)
 
     // MARK: dependencies

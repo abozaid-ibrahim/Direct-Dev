@@ -16,7 +16,9 @@ struct Str {
     static var before: String {
         return "Before"
     }
-
+    static var appName: String {
+        return "Direct Visa"
+    }
     static var search: String {
         return "Search"
     }

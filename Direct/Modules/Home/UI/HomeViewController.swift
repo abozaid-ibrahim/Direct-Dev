@@ -45,7 +45,7 @@ final class HomeViewController: UIViewController, StyledActionBar {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupActionBar(.withTitle(Str.search))
+        setupActionBar(.withTitle(Str.search.localized()))
     }
     private func getDataFromViewModel() {
         homeViewModel.collectionSecions.asObservable()

@@ -154,3 +154,7 @@
 //Langauage
 "Arabic" = "اللغة العربية";
 "English" = "اللغة الانجليزية";
+"Choose Country" = "اختر اللغة";
+"Visa type" = "نوع الفيزا";
+"Bio Location" = "مكان البصمة";
+"Travel Date" = "تاريخ السفر";

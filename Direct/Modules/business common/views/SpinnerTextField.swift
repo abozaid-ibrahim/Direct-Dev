@@ -30,7 +30,7 @@ class SpinnerTextField: UIView {
 
     @IBInspectable var hint: String? {
         didSet {
-            txtField.placeholder = hint ?? ""
+            txtField.placeholder = hint?.localized() ?? ""
         }
     }
 

@@ -52,7 +52,6 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
         titleLbl.textColor = UIColor.appBlack
         totalCostPlaceholder.font = UIFont(name: AppFonts.boldFont, size: 15)
         totalCostField.font = UIFont(name: AppFonts.boldFont, size: 15)
-        title = "دايركت فيزا"
         viewModel.showProgress.subscribe(onNext: { [weak self] value in
             self?.showProgress = value
         }).disposed(by: disposeBag)
@@ -60,7 +59,11 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
         setONClickViews()
         viewModel.viewDidLoad()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        title = Str.appName.localized()
 
+    }
     private func bindDataToUI() {
         relationsField.isHidden = true
         wrongNotesContainer.isHidden = true
