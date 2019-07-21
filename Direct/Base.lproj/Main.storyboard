@@ -34,7 +34,7 @@
             </objects>
             <point key="canvasLocation" x="-1788" y="-115"/>
         </scene>
-        <!--طلباتي-->
+        <!--My orders-->
         <scene sceneID="zJh-OH-16J">
             <objects>
                 <viewController storyboardIdentifier="OrdersHistoryController" id="De0-aQ-EfP" customClass="OrdersHistoryController" customModule="Direct" customModuleProvider="target" sceneMemberID="viewController">
@@ -64,7 +64,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cMs-lq-j8J"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="طلباتي" image="myordersImage" id="QVa-gB-goh"/>
+                    <tabBarItem key="tabBarItem" title="My orders" image="myordersImage" id="QVa-gB-goh"/>
                     <connections>
                         <outlet property="tableView" destination="vag-7t-pul" id="pRF-Jy-bhZ"/>
                     </connections>
@@ -131,7 +131,7 @@
             </objects>
             <point key="canvasLocation" x="204" y="-641"/>
         </scene>
-        <!--متطلبات التأشيرة-->
+        <!--Visa Requirement-->
         <scene sceneID="5wZ-wa-HQh">
             <objects>
                 <viewController storyboardIdentifier="ViaRequirementsTabsController" id="XfK-Hb-2tX" customClass="ViaRequirementsTabsController" customModule="Direct" customModuleProvider="target" sceneMemberID="viewController">
@@ -141,7 +141,7 @@
                         <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="mU3-qE-UHR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="متطلبات التأشيرة" image="visaReqTabImage" id="It3-cK-2n6"/>
+                    <tabBarItem key="tabBarItem" title="Visa Requirement" image="visaReqTabImage" id="It3-cK-2n6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Z9-zC-fdK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -158,7 +158,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZXL-Xo-LJx">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الى اين تود السفر" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zpc-oo-kAD">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Travel to ...?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zpc-oo-kAD">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="uew-40-RcL"/>
@@ -204,7 +204,7 @@
             </objects>
             <point key="canvasLocation" x="1049" y="727"/>
         </scene>
-        <!--بحث-->
+        <!--Search-->
         <scene sceneID="GFv-uH-MDV">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="mUF-MA-QtB" customClass="HomeViewController" customModule="Direct" customModuleProvider="target" sceneMemberID="viewController">
@@ -260,7 +260,7 @@
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8Passport" translatesAutoresizingMaskIntoConstraints="NO" id="kxT-cy-L1w">
                                                                         <rect key="frame" x="0.0" y="0.0" width="44.5" height="28"/>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تأشيرات" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="qiM-uw-bq5">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="qiM-uw-bq5">
                                                                         <rect key="frame" x="0.0" y="30" width="44.5" height="18"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="18" id="1mH-QC-yPn"/>
@@ -299,7 +299,7 @@
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8Mortarboard" translatesAutoresizingMaskIntoConstraints="NO" id="NXf-nk-8P5">
                                                                         <rect key="frame" x="0.0" y="0.0" width="44.5" height="28"/>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="معاهد" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="vtD-K9-o1t">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Institute" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="vtD-K9-o1t">
                                                                         <rect key="frame" x="0.0" y="30" width="44.5" height="18"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="18" id="0EY-uS-Ndo"/>
@@ -338,7 +338,7 @@
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8Mesh" translatesAutoresizingMaskIntoConstraints="NO" id="AfP-mg-nio">
                                                                         <rect key="frame" x="0.0" y="0.0" width="44.5" height="28"/>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بكجات" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="Jyh-uK-bTQ">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Packages" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="Jyh-uK-bTQ">
                                                                         <rect key="frame" x="0.0" y="30" width="44.5" height="18"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="18" id="78N-zh-2sO"/>
@@ -407,7 +407,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9or-ET-63b"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="بحث" image="saerchImage" id="31F-ed-mth"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="saerchImage" id="31F-ed-mth"/>
                     <connections>
                         <outlet property="collectionView" destination="iND-Dx-gCi" id="FtC-E7-u71"/>
                         <outlet property="containerView" destination="T3u-i3-Zv4" id="8lz-Z5-IM1"/>
@@ -588,7 +588,7 @@
             </objects>
             <point key="canvasLocation" x="-983" y="-116"/>
         </scene>
-        <!--المزيد-->
+        <!--More-->
         <scene sceneID="uTO-k8-XzA">
             <objects>
                 <viewController storyboardIdentifier="MyAccountController" id="n94-nm-Jaj" customClass="MyAccountController" customModule="Direct" customModuleProvider="target" sceneMemberID="viewController">
@@ -605,7 +605,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Fpl-zw-k5l">
                                         <rect key="frame" x="56.5" y="41.5" width="262.5" height="87"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اهلاً بك" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Drt-8V-cx7">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Drt-8V-cx7">
                                                 <rect key="frame" x="0.0" y="0.0" width="262.5" height="29"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -617,7 +617,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="A0i-Yq-ACs"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <state key="normal" title="سجل الدخول / انشئ حساب"/>
+                                                <state key="normal" title="Login / Create User"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">
                                                         <integer key="value" value="1"/>
@@ -683,7 +683,7 @@
                                                                     <constraint firstAttribute="width" secondItem="qtX-Iv-GIu" secondAttribute="height" id="sKf-Bt-kog"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="لغة التطبيق" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCz-Ke-WBd">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="App Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCz-Ke-WBd">
                                                                 <rect key="frame" x="30" y="0.0" width="192" height="20"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <nil key="textColor"/>
@@ -753,7 +753,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="meC-ap-Fkg"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="المزيد" image="More" id="Dq0-us-giM"/>
+                    <tabBarItem key="tabBarItem" title="More" image="More" id="Dq0-us-giM"/>
                     <navigationItem key="navigationItem" id="utt-4Y-cRj"/>
                     <connections>
                         <outlet property="langLbl" destination="h7D-LM-xzS" id="5Un-fN-CJO"/>
