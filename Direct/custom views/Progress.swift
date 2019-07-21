@@ -14,12 +14,13 @@ protocol Loader {
 }
 
 final class Progress: Loader {
-    private static let activityData = ActivityData(size: nil, message: nil, messageFont: nil, messageSpacing: nil, type: .ballRotate, color: UIColor.appMango, padding: nil, displayTimeThreshold: nil, minimumDisplayTime: 3, backgroundColor: nil, textColor: nil)
+    private static let activityData = ActivityData(size: nil, message: nil, messageFont: nil, messageSpacing: nil, type: .ballRotate, color: UIColor.appMango, padding: nil, displayTimeThreshold: nil, minimumDisplayTime: 3, backgroundColor: UIColor.clear, textColor: nil)
 
     static func show() {
         print("loader>> start")
 
         NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
+       
     }
 
     static func hide() {

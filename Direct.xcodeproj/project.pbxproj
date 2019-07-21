@@ -556,7 +556,6 @@
 		6CB1857B22CFABC7009485CD /* VideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
 		6CB1857F22CFB05A009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CheckoutBottomView.xib; sourceTree = "<group>"; };
 		6CB1858822CFB233009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SelectableTableSheet.xib; sourceTree = "<group>"; };
-		6CB1858A22CFB243009485CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SelectableTableSheet.strings; sourceTree = "<group>"; };
 		6CB1858C22CFB245009485CD /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/SelectableTableSheet.strings; sourceTree = "<group>"; };
 		6CB1858D22CFB285009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TextTableCell.xib; sourceTree = "<group>"; };
 		6CB1858F22CFB28F009485CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TextTableCell.strings; sourceTree = "<group>"; };
@@ -615,8 +614,6 @@
 		6CBBDE7322E4E0CF00C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BranchesController.strings; sourceTree = "<group>"; };
 		6CBBDE7522E4E0D800C50E8E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/BanksViewController.strings; sourceTree = "<group>"; };
 		6CBBDE7722E4E0F000C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BanksViewController.strings; sourceTree = "<group>"; };
-		6CBBDE7922E4E12600C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DatePickerController.strings; sourceTree = "<group>"; };
-		6CBBDE7B22E4E14D00C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PassangersCountController.strings; sourceTree = "<group>"; };
 		6CBBDE7D22E4E1EE00C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SuccessVisaRequestController.strings; sourceTree = "<group>"; };
 		6CBBDE7F22E4E1F700C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/VisaRequirementController.strings; sourceTree = "<group>"; };
 		6CBBDE8122E4E20900C50E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PendingDocTableCell.xib; sourceTree = "<group>"; };
@@ -624,6 +621,9 @@
 		6CBBDE8622E4E23500C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PaymentMethodsContainerController.strings; sourceTree = "<group>"; };
 		6CBBDE8822E4E25800C50E8E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/AddCountryViewController.strings; sourceTree = "<group>"; };
 		6CBBDE8A22E4E27B00C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AddCountryViewController.strings; sourceTree = "<group>"; };
+		6CBBDE8C22E4F30600C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SelectableTableSheet.strings; sourceTree = "<group>"; };
+		6CBBDE8E22E4F35B00C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PassangersCountController.strings; sourceTree = "<group>"; };
+		6CBBDE9022E4F5F300C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DatePickerController.strings; sourceTree = "<group>"; };
 		6CBD17DA228BCB7300144B6C /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		6CC94EDC228BE5BA002F3464 /* CommonAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAPIs.swift; sourceTree = "<group>"; };
 		6CC94EE1228BE7FC002F3464 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -2412,8 +2412,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				6CB1858822CFB233009485CD /* Base */,
-				6CB1858A22CFB243009485CD /* en */,
 				6CB1858C22CFB245009485CD /* ar */,
+				6CBBDE8C22E4F30600C50E8E /* en */,
 			);
 			name = SelectableTableSheet.xib;
 			sourceTree = "<group>";
@@ -2498,7 +2498,7 @@
 			children = (
 				6C7BAEB622C4121C0011EE59 /* Base */,
 				6C7BAEBA22C4122A0011EE59 /* ar */,
-				6CBBDE7B22E4E14D00C50E8E /* en */,
+				6CBBDE8E22E4F35B00C50E8E /* en */,
 			);
 			name = PassangersCountController.xib;
 			sourceTree = "<group>";
@@ -2508,7 +2508,7 @@
 			children = (
 				6C7BAE8A22C40DC90011EE59 /* Base */,
 				6C7BAEAE22C411B30011EE59 /* ar */,
-				6CBBDE7922E4E12600C50E8E /* en */,
+				6CBBDE9022E4F5F300C50E8E /* en */,
 			);
 			name = DatePickerController.xib;
 			sourceTree = "<group>";

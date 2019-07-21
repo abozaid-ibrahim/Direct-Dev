@@ -1,12 +1,12 @@
 
-/* Class = "UIButton"; normalTitle = "تأكيد"; ObjectID = "2qb-h2-ia9"; */
-"2qb-h2-ia9.normalTitle" = "تأكيد";
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "2qb-h2-ia9"; */
+"2qb-h2-ia9.normalTitle" = "Confirm";
 
 /* Class = "UILabel"; text = "عدد المسافرين : 3 أطفال ، 2 بالغين"; ObjectID = "4Yv-PW-gI9"; */
 "4Yv-PW-gI9.text" = "عدد المسافرين : 3 أطفال ، 2 بالغين";
 
-/* Class = "UILabel"; text = "عدد المسافرين"; ObjectID = "eho-MT-Z88"; */
-"eho-MT-Z88.text" = "عدد المسافرين";
+/* Class = "UILabel"; text = "Passangers Count"; ObjectID = "eho-MT-Z88"; */
+"eho-MT-Z88.text" = "Passangers Count";
 
 /* Class = "UILabel"; text = "0"; ObjectID = "fGj-V4-DQ4"; */
 "fGj-V4-DQ4.text" = "0";
@@ -14,8 +14,8 @@
 /* Class = "UILabel"; text = "SR 00.00"; ObjectID = "kBe-RC-Kkk"; */
 "kBe-RC-Kkk.text" = "SR 00.00";
 
-/* Class = "UILabel"; text = "الاطفال"; ObjectID = "qFi-SL-EXV"; */
-"qFi-SL-EXV.text" = "الاطفال";
+/* Class = "UILabel"; text = "Childrens"; ObjectID = "qFi-SL-EXV"; */
+"qFi-SL-EXV.text" = "Childrens";
 
 /* Class = "UILabel"; text = "SR 00.00"; ObjectID = "rAJ-7A-nx2"; */
 "rAJ-7A-nx2.text" = "SR 00.00";
@@ -23,5 +23,5 @@
 /* Class = "UILabel"; text = "0"; ObjectID = "yCT-az-A1k"; */
 "yCT-az-A1k.text" = "0";
 
-/* Class = "UILabel"; text = "البالغين"; ObjectID = "ytb-LW-yNG"; */
-"ytb-LW-yNG.text" = "البالغين";
+/* Class = "UILabel"; text = "Adults"; ObjectID = "ytb-LW-yNG"; */
+"ytb-LW-yNG.text" = "Adults";

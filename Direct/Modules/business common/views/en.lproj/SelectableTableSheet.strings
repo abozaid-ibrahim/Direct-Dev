@@ -1,6 +1,6 @@
 
 /* Class = "UILabel"; text = "مدة الدورة"; ObjectID = "8CR-Nv-RnW"; */
-"8CR-Nv-RnW.text" = "مدة الدورة";
+"8CR-Nv-RnW.text" = "Course Duration";
 
 /* Class = "UIButton"; normalTitle = "تأكيد"; ObjectID = "tTU-ni-uSD"; */
-"tTU-ni-uSD.normalTitle" = "تأكيد";
+"tTU-ni-uSD.normalTitle" = "Confirm";

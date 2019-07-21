@@ -145,7 +145,7 @@ class NewDirectVisaViewModel {
             return
         }
         let str = data.filter { $0.visaTypeName != nil }.map { $0.visaTypeName ?? "" }
-        let dest = Destination.selectableSheet(data: str, titleText: "نوع التأشيرة", style: .textCenter)
+        let dest = Destination.selectableSheet(data: str, titleText: "Visa type".localized(), style: .textCenter)
         let vc = dest.controller() as! SelectableTableSheet
         vc.selectedItem.subscribe(onNext: { [unowned self] value in
             let itms = data.filter { $0.visaTypeName ?? "" == value }
@@ -162,7 +162,7 @@ class NewDirectVisaViewModel {
     func showBiometricSpinner() {
         guard let locations = embassyLocations else { return }
         let cities = locations.map { $0.cityName }
-        let dest = Destination.selectableSheet(data: cities, titleText: "مكان البصمة", style: .textCenter)
+        let dest = Destination.selectableSheet(data: cities, titleText: "Bio Location".localized(), style: .textCenter)
         let vc = dest.controller() as! SelectableTableSheet
         vc.selectedItem.subscribe(onNext: { [unowned self] value in
             let locations = locations.filter { $0.cityName == value }
@@ -278,7 +278,7 @@ class NewDirectVisaViewModel {
     
     func showRelationsSpinner() {
         let bios = relativesList.map { $0.name ?? "" }
-        let dest = Destination.selectableSheet(data: bios, titleText: "العلاقة بين المسافرين", style: .textCenter)
+        let dest = Destination.selectableSheet(data: bios, titleText: "Relation between passangers".localized(), style: .textCenter)
         let vc = dest.controller() as! SelectableTableSheet
         vc.selectedItem.subscribe(onNext: { [unowned self] value in
             let bio = self.relativesList.filter { $0.name == value }

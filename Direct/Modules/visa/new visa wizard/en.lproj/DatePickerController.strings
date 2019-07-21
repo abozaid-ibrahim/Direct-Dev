@@ -1,9 +1,9 @@
 
-/* Class = "UIButton"; normalTitle = "تأكيد"; ObjectID = "BIE-4N-jxb"; */
-"BIE-4N-jxb.normalTitle" = "تأكيد";
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "BIE-4N-jxb"; */
+"BIE-4N-jxb.normalTitle" = "Confirm";
 
-/* Class = "UILabel"; text = "تاريخ السفر : الأربعاء ، 2019/4/6"; ObjectID = "GnT-2P-hab"; */
-"GnT-2P-hab.text" = "تاريخ السفر : الأربعاء ، 2019/4/6";
+/* Class = "UILabel"; text = "Travel date"; ObjectID = "GnT-2P-hab"; */
+"GnT-2P-hab.text" = "Travel date";
 
-/* Class = "UILabel"; text = "تاريخ السفر المتوقع"; ObjectID = "kfu-iw-Q79"; */
-"kfu-iw-Q79.text" = "تاريخ السفر المتوقع";
+/* Class = "UILabel"; text = "Travel Date"; ObjectID = "kfu-iw-Q79"; */
+"kfu-iw-Q79.text" = "Travel Date";

@@ -40,7 +40,8 @@ class LanguagesViewController: UIViewController, StyledActionBar {
             return
         }
         Localize.setCurrentLanguage(lang.code)
-        AppDelegate.current.setRootController()
+         let root = UIStoryboard.main.instantiateViewController(withIdentifier: StoryBoardIds.rootController.id) as! RootNavigationViewController
+        present(root, animated: true, completion: nil)
     }
 
     private func addfooter() {
