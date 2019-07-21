@@ -40,9 +40,9 @@ class VisaQuestionsView: UIView, ImagePicker {
     var params: VisaRequirementsParams?
     var countryName: String! {
         didSet {
-            previousVisaLbl.text = "هل سبق وحصلت على تأشيرة " + countryString + Str.before
-            relativeInCountryLbl.text = "هل لديك اى اقارب فى " + countryString + "؟"
-            visaCancelationLbl.text = "هل تم رفض دخولك أو الغاء تأشيرتك الى " + countryString + Str.before
+            previousVisaLbl.text = Str.everHadVisa + countryString + Str.before
+            relativeInCountryLbl.text = Str.hasRelatives + countryString + Str.questionMark
+            visaCancelationLbl.text = Str.visaCanceledBefore + countryString + Str.before
         }
     }
     

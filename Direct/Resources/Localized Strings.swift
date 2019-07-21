@@ -15,9 +15,11 @@ struct Str {
     static var before: String {
         return "Before".localized
     }
+
     static var search: String {
         return "Search".localized
     }
+
     static var passangersInfo: String {
         return "Passangers Info".localized
     }
@@ -165,4 +167,21 @@ struct Str {
     static var language: String {
         return "Language".localized
     }
+
+    static var everHadVisa: String {
+        return "Ever had a visa".localized
+    }
+    static var hasRelatives:String{
+        return "Has relatives"
+    }
+    static var visaCanceledBefore:String{
+        return "Visa canceled before"
+    }
+    static var questionMark: String{
+        return "?"
+    }
+    static var space: String{
+        return " "
+    }
+    
 }

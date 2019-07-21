@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Localize_Swift
 protocol NeedAuth: Codable {
     var lang: String { get set }
     var key: String { get set }
@@ -49,6 +50,13 @@ struct VisaPriceParams {
 
 class AppLanguage {
     static var langCode: String {
-        return "ar"
+        let x = Localize.currentLanguage()
+        print(x)
+        return x
+    }
+    
+    static var languages:[LangEntity]{
+        return [LangEntity(name: "Arabic", code: "ar", selected: true),
+                LangEntity(name: "English", code: "en", selected: false)]
     }
 }

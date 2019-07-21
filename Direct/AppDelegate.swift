@@ -7,12 +7,15 @@
 //
 
 import IQKeyboardManagerSwift
+import Localize_Swift
 import UIKit
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var navigator: Navigator!
+    static var current: AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setRootController()
@@ -31,10 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enableAutoToolbar = false
     }
 
-    private func setLanguage() {
-        UserDefaults.standard.set([AppLanguage.langCode], forKey: "AppleLanguages")
-        UserDefaults.standard.synchronize()
-    }
+    private func setLanguage() {}
 
     func setupGlobalAppearance() {
         window?.tintColor = UIColor.white
@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: AppFonts.regularFont, size: 11)!, NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
     }
 
-    private func setRootController() {
+     func setRootController() {
         let root = UIStoryboard.main.instantiateViewController(withIdentifier: StoryBoardIds.rootController.id) as! RootNavigationViewController
         window?.rootViewController = root
         window?.makeKeyAndVisible()

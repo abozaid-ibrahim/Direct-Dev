@@ -1,6 +1,8 @@
 platform :ios, '10.0'
 target 'Direct' do
   use_frameworks!
+  source 'https://github.com/CocoaPods/Specs.git'
+  pod 'Localize-Swift', '~> 2.0'
 
   pod 'PanModal'
 #  pod 'Hero'

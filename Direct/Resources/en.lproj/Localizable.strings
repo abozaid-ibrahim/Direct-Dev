@@ -131,3 +131,8 @@
 "Logout" = "Logout";
 "Language" = "Language";
 "Search" = "بحث";
+//VISA
+"Ever had a visa" =  "هل سبق وحصلت على تأشيرة ";
+"Has relatives" = "هل لديك اى اقارب فى ";
+"Visa canceled before" = "Visa canceled before";
+"?" = "?";
