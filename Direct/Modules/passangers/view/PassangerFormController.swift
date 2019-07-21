@@ -98,7 +98,7 @@ class PassangerFormController: UIViewController {
             visaQuestionsContainer.isHidden = true
         case .SGN:
             add()
-            visaQuestionsView.countryName = Str.schengen
+            visaQuestionsView.countryName = Str.schengen.localized()
         case .CN, .US, .GB, .IE, .JP:
             add()
             visaQuestionsView.countryName = countryString

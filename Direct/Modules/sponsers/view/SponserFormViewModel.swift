@@ -57,7 +57,7 @@ class SponserFormViewModel: BaseViewModel {
     }
 
     private var someoneElse: SponsorOwener {
-        return SponsorOwener(name: Str.someoneElse, id: "0", status: nil, success: nil)
+        return SponsorOwener(name: Str.someoneElse.localized(), id: "0", status: nil, success: nil)
     }
   
     func getSponsorOwners() {

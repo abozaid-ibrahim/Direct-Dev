@@ -24,7 +24,7 @@ class PassangersInputViewViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = Str.passangersInfo
+        title = Str.passangersInfo.localized()
         guard let info = visaInfo else { return }
         setHeader(info)
         headerLbl.setYellowGradient()

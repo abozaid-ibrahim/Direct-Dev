@@ -19,7 +19,7 @@ class AddCountryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = Str.chooseCountryAndYear 
+        title = Str.chooseCountryAndYear.localized()
         countryNameField.placeholder = "the_country".localized
         yearField.placeholder = "the_year".localized
         yearField.rx.tapGesture().when(.recognized)
@@ -31,7 +31,7 @@ class AddCountryViewController: UIViewController {
                 let calendar = Calendar.current
                 let x = calendar.component(.year, from: date)
                 let yearsArray = [x, x - 1, x - 2, x - 3, x - 4].map { "\($0)" }
-                let dest = Destination.selectableSheet(data: yearsArray, titleText: Str.choose, style: .textCenter)
+                let dest = Destination.selectableSheet(data: yearsArray, titleText: Str.choose.localized(), style: .textCenter)
                 let vc = dest.controller() as! SelectableTableSheet
                 vc.selectedItem.subscribe(onNext: { value in
                     self.yearField.text = value

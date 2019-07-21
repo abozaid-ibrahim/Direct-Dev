@@ -34,7 +34,7 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
     var thanksUrl:String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = Str.payment
+        title = Str.payment.localized()
         prm.reqid = requestId
         setupCheckoutFooter()
         getPaymentMethods()
@@ -196,7 +196,7 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
                                        let msg = result["response_message"] as? String,
                                        let code = result["response_code"] as? String,
                                        let fortId = result["fort_id"] as? String else {
-                                       self.showAlert(with: Str.technicalDifficults)
+                                       self.showAlert(with: Str.technicalDifficults.localized())
                                        return
                                    }
 
@@ -219,7 +219,7 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
     func showAlert(with msg: String) {
         let alert = UIAlertController(title: "Error", message: msg, preferredStyle: .alert)
 
-        let cancel = UIAlertAction(title: Str.cancel, style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: Str.cancel.localized(), style: .cancel, handler: nil)
         alert.addAction(cancel)
 
         present(alert, animated: true, completion: nil)

@@ -44,12 +44,12 @@ final class MyAccountController: UIViewController, StyledActionBar {
         logoutBtn.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
                 
-                let alert = UIAlertController(title: Str.logout, message: Str.sureToLogout, preferredStyle: .alert)
+                let alert = UIAlertController(title: Str.logout, message: Str.sureToLogout.localized(), preferredStyle: .alert)
                 
-                let search = UIAlertAction(title: Str.logout, style: .default, handler: { _ in
+                let search = UIAlertAction(title: Str.logout.localized(), style: .default, handler: { _ in
                     
                 })
-                let cancel = UIAlertAction(title: Str.cancel, style: .cancel, handler: nil)
+                let cancel = UIAlertAction(title: Str.cancel.localized(), style: .cancel, handler: nil)
                 alert.addAction(search)
                 alert.addAction(cancel)
                 alert.applyAppStyle()
@@ -58,7 +58,7 @@ final class MyAccountController: UIViewController, StyledActionBar {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupActionBar(.withTitle(Str.more))
+        setupActionBar(.withTitle(Str.more.localized()))
     }
     
     @IBAction func login(_: Any) {

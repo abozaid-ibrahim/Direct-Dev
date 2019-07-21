@@ -17,7 +17,7 @@ class VisaRequirementsViewModel {
     private let network = ApiClientFacade()
     private let disposeBag = DisposeBag()
     private var staticHeaderItem:ReqDataSection{
-        let info = ReqInformation(isInfo: nil, title: Str.reqPapers, icon: "icons8Documents", image: nil, desc: nil)
+        let info = ReqInformation(isInfo: nil, title: Str.reqPapers.localized(), icon: "icons8Documents", image: nil, desc: nil)
         return ReqDataSection(info, shouldCollapse: true,hideAccessory: true)
     }
     func getDataRemotely(for cid: String?) {

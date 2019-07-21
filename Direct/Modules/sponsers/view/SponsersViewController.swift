@@ -23,7 +23,7 @@ final class SponsersViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = Str.sponsorsInfo
+        title = Str.sponsorsInfo.localized()
         guard let info = visaInfo else { return }
         setupTabbar(info)
         setupPager()

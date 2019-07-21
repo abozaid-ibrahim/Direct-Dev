@@ -40,9 +40,9 @@ class VisaQuestionsView: UIView, ImagePicker {
     var params: VisaRequirementsParams?
     var countryName: String! {
         didSet {
-            previousVisaLbl.text = Str.everHadVisa + countryString + Str.before
-            relativeInCountryLbl.text = Str.hasRelatives + countryString + Str.questionMark
-            visaCancelationLbl.text = Str.visaCanceledBefore + countryString + Str.before
+            previousVisaLbl.text = Str.everHadVisa.localized() + countryString + Str.before.localized()
+            relativeInCountryLbl.text = Str.hasRelatives.localized() + countryString + Str.questionMark.localized()
+            visaCancelationLbl.text = Str.visaCanceledBefore.localized() + countryString + Str.before.localized()
         }
     }
     

@@ -32,7 +32,7 @@ class ViaRequirementsTabsController: UIViewController,StyledActionBar {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.setupActionBar(.withTitle( Str.visaRequirement))
+        self.setupActionBar(.withTitle( Str.visaRequirement.localized()))
     }
     private func addTabsView(tabs: [ReqTabItemViewController]) {
         let vc = VisaTabsController(tabs: tabs)

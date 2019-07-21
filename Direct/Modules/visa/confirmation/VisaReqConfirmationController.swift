@@ -75,7 +75,7 @@ class VisaReqConfirmationController: UIViewController {
     }
 
     private func setupUI() {
-        title = Str.requestingVisa
+        title = Str.requestingVisa.localized()
         relationlbl.applyStyle(.normalBoldText)
         pasangerCountLbl.applyStyle(.normalBoldText)
         view.backgroundColor = UIColor.appVeryLightGray
@@ -141,7 +141,7 @@ class VisaReqConfirmationController: UIViewController {
         datelbl.text = info.travel_date
         visaTypeLbl.text = info.visatypeText
         bioLocLbl.text = info.biometry_loc
-        pasangerCountLbl.text = info.no_of_adult + " " + Str.adult + ", " + info.no_of_child + " " + Str.child
+        pasangerCountLbl.text = info.no_of_adult + " " + Str.adult.localized() + ", " + info.no_of_child + " " + Str.child.localized()
         if info.relation_with_travelersText.isValidText {
             relationlbl.text = info.relation_with_travelersText
             relationlbl.alpha = 1.0

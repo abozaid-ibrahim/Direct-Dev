@@ -41,10 +41,10 @@ class VisaReqCofirmationViewModel {
     func loadPassangers(with info: VisaRequestParams) {
         var buffer: [ConfirmPassangerItem] = []
         for index in 0 ..< (info.no_of_adult ?? "0").intValue {
-            buffer.append(ConfirmPassangerItem(text: Str.adult, isFormFilled: false, index: index + 1, userType: .adult))
+            buffer.append(ConfirmPassangerItem(text: Str.adult.localized(), isFormFilled: false, index: index + 1, userType: .adult))
         }
         for index in 0 ..< (info.no_of_child ?? "0").intValue {
-            buffer.append(ConfirmPassangerItem(text: Str.child, isFormFilled: false, index: index + 1, userType: .child))
+            buffer.append(ConfirmPassangerItem(text: Str.child.localized(), isFormFilled: false, index: index + 1, userType: .child))
         }
         passangersBuffer = buffer
         tablePassangers.onNext(buffer)
@@ -67,7 +67,7 @@ class VisaReqCofirmationViewModel {
             .subscribe(onNext: { [unowned self] _, data in
                 
                 let names = data.map { $0.name }
-                let dest = Destination.selectableSheet(data: names, titleText: Str.choose, style: .textCenter)
+                let dest = Destination.selectableSheet(data: names, titleText: Str.choose.localized(), style: .textCenter)
                 let selectionController = dest.controller() as! SelectableTableSheet
                 selectionController.selectedItem.subscribe(onNext: { [unowned self] value in
                     

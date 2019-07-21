@@ -37,7 +37,7 @@ class VisaQuestionsViewModel {
     func showVisaTypes() {
         let data = visaTypesBuffer
         let str = data.filter { $0.name != nil }.map { $0.name ?? "" }
-        let dest = Destination.selectableSheet(data: str, titleText: Str.choose, style: .textCenter)
+        let dest = Destination.selectableSheet(data: str, titleText: Str.choose.localized(), style: .textCenter)
         let vc = dest.controller() as! SelectableTableSheet
         vc.selectedItem
             .map { value in data.filter { $0.name ?? "" == value } }

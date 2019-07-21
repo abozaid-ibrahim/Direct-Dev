@@ -44,7 +44,7 @@ class PassangersCountController: UIViewController, PanModalPresentable {
             menCount = Int(info.no_of_passport) ?? 0
             childCount = 0
             childViewContainer.forEach { $0.isHidden = true }
-            adultsPlaceholderLbl.text = Str.passportsCount
+            adultsPlaceholderLbl.text = Str.passportsCount.localized()
         }
     }
 
@@ -119,9 +119,9 @@ class PassangersCountController: UIViewController, PanModalPresentable {
         guard let info = self.info else { return }
         var str: String = ""
         if info.cid == APIConstants.TurkeyID {
-            str = Str.passportsCount + " : " + " \(men) " + Str.passangers
+            str = Str.passportsCount.localized() + " : " + " \(men) " + Str.passangers.localized()
         } else {
-            str = Str.passangersCount + " : " + " \(child) " + Str.childs + "," + " \(men) " + Str.adults
+            str = Str.passangersCount.localized() + " : " + " \(child) " + Str.childs + "," + " \(men) " + Str.adults.localized()
         }
         let attributedString = NSMutableAttributedString(string: str,
                                                          attributes: [

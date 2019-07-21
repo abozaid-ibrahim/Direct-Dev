@@ -196,7 +196,7 @@ class SponserFormController: UIViewController, HaveLoading {
     }
 
     func showAccountOwnerDialog(sponsers: [SponsorOwener]) {
-        let alert = UIAlertController(title: Str.choose, message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: Str.choose.localized(), message: nil, preferredStyle: .actionSheet)
         alert.applyAppStyle()
         guard sponsers.isNotEmpty else {
             return
@@ -209,7 +209,7 @@ class SponserFormController: UIViewController, HaveLoading {
 
             alert.addAction(search)
         }
-        let cancel = UIAlertAction(title: Str.cancel, style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: Str.cancel.localized(), style: .cancel, handler: nil)
         alert.addAction(cancel)
 
         present(alert, animated: true, completion: nil)
