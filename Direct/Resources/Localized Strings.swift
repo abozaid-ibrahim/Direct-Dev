@@ -13,163 +13,163 @@ struct Str {
     }
 
     static var before: String {
-        return "Before".localized
+        return "Before".localized()
     }
 
     static var search: String {
-        return "Search".localized
+        return "Search".localized()
     }
 
     static var passangersInfo: String {
-        return "Passangers Info".localized
+        return "Passangers Info".localized()
     }
 
     static var adult: String {
-        return "adult".localized
+        return "adult".localized()
     }
 
     static var adults: String {
-        return "adults".localized
+        return "adults".localized()
     }
 
     static var passangers: String {
-        return "Passangers".localized
+        return "Passangers".localized()
     }
 
     static var passangersCount: String {
-        return "Passangers Count".localized
+        return "Passangers Count".localized()
     }
 
     static var passportsCount: String {
-        return "Passport Count".localized
+        return "Passport Count".localized()
     }
 
     static var childs: String {
-        return "childs".localized
+        return "childs".localized()
     }
 
     static var passport: String {
-        return "Passport".localized
+        return "Passport".localized()
     }
 
     static var child: String {
-        return "child".localized
+        return "child".localized()
     }
 
     static var needBiometric: String {
-        return "Need Biometric".localized
+        return "Need Biometric".localized()
     }
 
     static var needBiometricDesc: String {
-        return "Need Biometric Desc".localized
+        return "Need Biometric Desc".localized()
     }
 
     static var timeTogetVisa: String {
-        return "time to get a visa".localized
+        return "time to get a visa".localized()
     }
 
     static var timeTogetVisaDesc: String {
-        return "time to get a visa desc".localized
+        return "time to get a visa desc".localized()
     }
 
     static var schengen: String {
-        return "Schengen".localized
+        return "Schengen".localized()
     }
 
     static var firstSponser: String {
-        return "First Sponser".localized
+        return "First Sponser".localized()
     }
 
     static var sponser: String {
-        return "Sponser".localized
+        return "Sponser".localized()
     }
 
     static var cancel: String {
-        return "Cancel".localized
+        return "Cancel".localized()
     }
 
     static var choose: String {
-        return "Choose".localized
+        return "Choose".localized()
     }
 
     static var sponsorsInfo: String {
-        return "Sponsors Info".localized
+        return "Sponsors Info".localized()
     }
 
     static var payment: String {
-        return "Payment".localized
+        return "Payment".localized()
     }
 
     static var reqPapers: String {
-        return "Requirement Papers".localized
+        return "Requirement Papers".localized()
     }
 
     static var visaRequirement: String {
-        return "Visa Requirement".localized
+        return "Visa Requirement".localized()
     }
 
     static var requestingVisa: String {
-        return "Request Visa".localized
+        return "Request Visa".localized()
     }
 
     static var travel: String {
-        return "Travel".localized
+        return "Travel".localized()
     }
 
     static var study: String {
-        return "Study".localized
+        return "Study".localized()
     }
 
     static var chooseCountryAndYear: String {
-        return "Choose country and travel year".localized
+        return "Choose country and travel year".localized()
     }
 
     static var someoneElse: String {
-        return "Someone Else".localized
+        return "Someone Else".localized()
     }
 
     static var followOrder: String {
-        return "Follow Order".localized
+        return "Follow Order".localized()
     }
 
     static var reportBankTransfer: String {
-        return "Report Bank Transfer".localized
+        return "Report Bank Transfer".localized()
     }
 
     static var more: String {
-        return "More".localized
+        return "More".localized()
     }
 
     static var uploadPendingDocsTitle: String {
-        return "Update Pending Docs".localized
+        return "Update Pending Docs".localized()
     }
 
     static var address: String {
-        return "Address".localized
+        return "Address".localized()
     }
 
     static var workingTime: String {
-        return "Working Time".localized
+        return "Working Time".localized()
     }
 
     static var branches: String {
-        return "Branches".localized
+        return "Branches".localized()
     }
 
     static var contactUs: String {
-        return "Contact Us".localized
+        return "Contact Us".localized()
     }
 
     static var logout: String {
-        return "Logout".localized
+        return "Logout".localized()
     }
 
     static var language: String {
-        return "Language".localized
+        return "Language".localized()
     }
 
     static var everHadVisa: String {
-        return "Ever had a visa".localized
+        return "Ever had a visa".localized()
     }
     static var hasRelatives:String{
         return "Has relatives"
@@ -182,6 +182,9 @@ struct Str {
     }
     static var space: String{
         return " "
+    }
+    static var sureToLogout:String{
+        return "Sure you want to logout now?".localized()
     }
     
 }

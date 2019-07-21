@@ -18,9 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        setLanguage()
         setRootController()
         setupGlobalAppearance()
-        setLanguage()
         setupKeyboardManager()
         return true
     }
@@ -35,7 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func setLanguage() {
-        Localize.setCurrentLanguage(Localize.currentLanguage())
+        AppLanguage.setCurrent(language: Localize.currentLanguage())
+        print(AppLanguage.langCode)
+        print(Locale.preferredLanguages[0].prefix(2))
+        print(Bundle.main.preferredLocalizations.first!)
     }
 
     func setupGlobalAppearance() {

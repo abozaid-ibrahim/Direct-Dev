@@ -11,11 +11,18 @@ import UIKit
 class SingleRowTableCell: UITableViewCell, TableCell {
     static var cellId: String = "SingleRowTableCell"
 
+    func setCellData(_ model: CellDataModel) {
+        txtLbl.text = model.name
+        if model.selected {
+            txtLbl.textColor = .appPumpkinOrange
+        } else {
+            txtLbl.textColor = .black
+        }
+    }
     func setCellData(_ model: String) {
         txtLbl.text = model
     }
-
-    typealias CellDataModel = String
+    typealias CellDataModel = LangEntity
 
     @IBOutlet private var txtLbl: UILabel!
     override func awakeFromNib() {

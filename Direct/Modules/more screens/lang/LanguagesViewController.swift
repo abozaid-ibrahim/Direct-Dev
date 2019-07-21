@@ -26,7 +26,7 @@ class LanguagesViewController: UIViewController, StyledActionBar {
         Observable<[LangEntity]>
             .just(AppLanguage.languages)
             .bind(to: tableView.rx.items(cellIdentifier: SingleRowTableCell.cellId, cellType: SingleRowTableCell.self)) { _, model, cell in
-                cell.setCellData(model.name)
+                cell.setCellData(model)
             }.disposed(by: disposeBag)
         tableView.rx.modelSelected(LangEntity.self).map { $0.name }.bind(to: selectedLang).disposed(by: disposeBag)
         tableView.rx.modelSelected(LangEntity.self).subscribe(onNext: { [unowned self] value in
@@ -61,8 +61,4 @@ class LanguagesViewController: UIViewController, StyledActionBar {
     }
 }
 
-struct LangEntity {
-    var name: String
-    var code: String
-    var selected: Bool
-}
+

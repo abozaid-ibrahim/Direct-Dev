@@ -26,6 +26,12 @@ final class MyAccountController: UIViewController, StyledActionBar {
         tableView.separatorColor = UIColor.appVeryLightGray
         tableView.separatorStyle = .singleLine
         tabBarItem.image = #imageLiteral(resourceName: "More")
+        setupFooter()
+      
+    }
+    private func setupFooter(){
+        langLbl.text = AppLanguage.currentLangName
+        langLbl.font = .appRegularFontWith(size: 13)
         langView.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
                 let vc = LanguagesViewController()
@@ -38,7 +44,7 @@ final class MyAccountController: UIViewController, StyledActionBar {
         logoutBtn.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
                 
-                let alert = UIAlertController(title: Str.logout, message: "Sure you want to logout now?", preferredStyle: .alert)
+                let alert = UIAlertController(title: Str.logout, message: Str.sureToLogout, preferredStyle: .alert)
                 
                 let search = UIAlertAction(title: Str.logout, style: .default, handler: { _ in
                     
@@ -50,7 +56,6 @@ final class MyAccountController: UIViewController, StyledActionBar {
                 self.present(alert, animated: true, completion: nil)
             }).disposed(by: disposeBag)
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupActionBar(.withTitle(Str.more))

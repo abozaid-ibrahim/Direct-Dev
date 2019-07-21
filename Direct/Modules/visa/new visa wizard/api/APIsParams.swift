@@ -32,10 +32,9 @@ class VisaRequestParams {
         biometry_loc: String?,
         visatypeText: String?,
         relation_with_travelersText: String?
-    var form_type:String?
-    var requestID:String?
-    var thankYouUrl:String?
-    
+    var form_type: String?
+    var requestID: String?
+    var thankYouUrl: String?
 }
 
 struct VisaPriceParams {
@@ -50,13 +49,31 @@ struct VisaPriceParams {
 
 class AppLanguage {
     static var langCode: String {
-        let x = Localize.currentLanguage()
-        print(x)
-        return x
+        return Localize.currentLanguage()
     }
-    
-    static var languages:[LangEntity]{
-        return [LangEntity(name: "Arabic", code: "ar", selected: true),
-                LangEntity(name: "English", code: "en", selected: false)]
+
+    static var languages: [LangEntity] {
+        return [LangEntity(name: "Arabic".localized(), code: "ar", selected: Localize.currentLanguage() == "ar"),
+                LangEntity(name: "English".localized(), code: "en", selected: Localize.currentLanguage() == "en")]
+    }
+
+    static var currentLangName: String {
+        return languages.filter { $0.selected }.first!
+            .name
+    }
+
+    static func setCurrent(language: String) {
+        Localize.setCurrentLanguage(language)
+        UserDefaults.standard.set([language], forKey: "AppleLanguages")
+        UserDefaults.standard.synchronize()
+    }
+}
+
+struct LangEntity {
+    var name: String
+    var code: String
+    var selected: Bool
+    mutating func did(select: Bool) {
+        selected = select
     }
 }
