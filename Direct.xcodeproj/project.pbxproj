@@ -91,7 +91,6 @@
 		6C3DA73022DA266A003B65DD /* UpdatePendingDocsParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3DA72F22DA266A003B65DD /* UpdatePendingDocsParams.swift */; };
 		6C3DA73222DA478A003B65DD /* BranchesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3DA73122DA478A003B65DD /* BranchesResponse.swift */; };
 		6C3DA73522DA47DE003B65DD /* BranchesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3DA73322DA47DE003B65DD /* BranchesController.swift */; };
-		6C3DA73622DA47DE003B65DD /* BranchesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3DA73422DA47DE003B65DD /* BranchesController.xib */; };
 		6C3DA73922DA49BE003B65DD /* BranchesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3DA73722DA49BE003B65DD /* BranchesTableCell.swift */; };
 		6C3DA73A22DA49BE003B65DD /* BranchesTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C3DA73822DA49BE003B65DD /* BranchesTableCell.xib */; };
 		6C3DA73D22DA49CF003B65DD /* BranchesDescTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3DA73B22DA49CF003B65DD /* BranchesDescTableCell.swift */; };
@@ -106,7 +105,6 @@
 		6C431DF922B51C0C00DD140D /* ViewPagerOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C431DF522B51C0C00DD140D /* ViewPagerOptions.swift */; };
 		6C431E0122B52DB500DD140D /* PassangerInputsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C431E0022B52DB500DD140D /* PassangerInputsSection.swift */; };
 		6C431E0322B52E8B00DD140D /* PersonalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C431E0222B52E8B00DD140D /* PersonalInfoView.swift */; };
-		6C431E0522B52E9D00DD140D /* PersonalInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C431E0422B52E9D00DD140D /* PersonalInfoView.xib */; };
 		6C431E0822B5807300DD140D /* MotherInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C431E0722B5807300DD140D /* MotherInfoView.swift */; };
 		6C431E0A22B5808900DD140D /* MotherInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C431E0922B5808900DD140D /* MotherInfoView.xib */; };
 		6C431E0C22B5A1F100DD140D /* VisaQuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C431E0B22B5A1F100DD140D /* VisaQuestionsView.swift */; };
@@ -217,16 +215,19 @@
 		6C99D8C722DBA3850045F325 /* ContactUsPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C99D8C622DBA3850045F325 /* ContactUsPageResponse.swift */; };
 		6CA040B62281BE0300619B6F /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA040B52281BE0300619B6F /* FloatingTextField.swift */; };
 		6CB1857522CEC811009485CD /* AddCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1857322CEC811009485CD /* AddCountryViewController.swift */; };
-		6CB1857622CEC811009485CD /* AddCountryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB1857422CEC811009485CD /* AddCountryViewController.xib */; };
 		6CB1857822CFA275009485CD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1857722CFA275009485CD /* User.swift */; };
 		6CB1857D22CFABC7009485CD /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1857B22CFABC7009485CD /* VideoController.swift */; };
 		6CB2A8BC228CAD8200A78541 /* AboutUsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB2A8BA228CAD8200A78541 /* AboutUsTableCell.swift */; };
 		6CB5E7C522D343BE00436596 /* ActionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB5E7C322D343BE00436596 /* ActionTableCell.swift */; };
 		6CB5E7C622D343BE00436596 /* ActionTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB5E7C422D343BE00436596 /* ActionTableCell.xib */; };
 		6CBA06F622D270A300F36353 /* PendingDocTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBA06F422D270A300F36353 /* PendingDocTableCell.swift */; };
-		6CBA06F722D270A300F36353 /* PendingDocTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CBA06F522D270A300F36353 /* PendingDocTableCell.xib */; };
 		6CBA06FA22D2741100F36353 /* OrderDetailsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBA06F822D2741100F36353 /* OrderDetailsTableCell.swift */; };
 		6CBA06FB22D2741100F36353 /* OrderDetailsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CBA06F922D2741100F36353 /* OrderDetailsTableCell.xib */; };
+		6CBBDE5C22E4DF8900C50E8E /* PersonalInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CBBDE5E22E4DF8900C50E8E /* PersonalInfoView.xib */; };
+		6CBBDE6322E4DFE200C50E8E /* AddCountryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CBBDE6522E4DFE200C50E8E /* AddCountryViewController.xib */; };
+		6CBBDE6622E4E00600C50E8E /* SponserFormController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CBBDE6822E4E00600C50E8E /* SponserFormController.xib */; };
+		6CBBDE6D22E4E0B500C50E8E /* BranchesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CBBDE6F22E4E0B500C50E8E /* BranchesController.xib */; };
+		6CBBDE8022E4E20900C50E8E /* PendingDocTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CBBDE8222E4E20900C50E8E /* PendingDocTableCell.xib */; };
 		6CBD17DB228BCB7300144B6C /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD17DA228BCB7300144B6C /* PaddingLabel.swift */; };
 		6CC94EDD228BE5BA002F3464 /* CommonAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC94EDC228BE5BA002F3464 /* CommonAPIs.swift */; };
 		6CC94EE2228BE7FC002F3464 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC94EE1228BE7FC002F3464 /* ApiClient.swift */; };
@@ -314,7 +315,6 @@
 		6CF703E22286FBD700B1C387 /* InstituteDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF703E12286FBD700B1C387 /* InstituteDetailsHeaderView.swift */; };
 		6CF75E9F228BD8C900009BAB /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF75E9E228BD8C900009BAB /* Progress.swift */; };
 		6CF9F5D722BECD2700E45E8A /* SponserFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF9F5D522BECD2700E45E8A /* SponserFormController.swift */; };
-		6CF9F5D822BECD2700E45E8A /* SponserFormController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF9F5D622BECD2700E45E8A /* SponserFormController.xib */; };
 		6CF9F5DC22BEDB6800E45E8A /* SponsersAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF9F5DB22BEDB6800E45E8A /* SponsersAPI.swift */; };
 		6CF9F5DE22BEDCBE00E45E8A /* SponserFormParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF9F5DD22BEDCBE00E45E8A /* SponserFormParams.swift */; };
 		6CF9F5E022BEDDC600E45E8A /* SponsersHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF9F5DF22BEDDC600E45E8A /* SponsersHttpClient.swift */; };
@@ -424,7 +424,6 @@
 		6C3DA72F22DA266A003B65DD /* UpdatePendingDocsParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePendingDocsParams.swift; sourceTree = "<group>"; };
 		6C3DA73122DA478A003B65DD /* BranchesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BranchesResponse.swift; path = Direct/Modules/orders/model/BranchesResponse.swift; sourceTree = SOURCE_ROOT; };
 		6C3DA73322DA47DE003B65DD /* BranchesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BranchesController.swift; path = Direct/Modules/orders/model/BranchesController.swift; sourceTree = SOURCE_ROOT; };
-		6C3DA73422DA47DE003B65DD /* BranchesController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BranchesController.xib; path = Direct/Modules/orders/model/BranchesController.xib; sourceTree = SOURCE_ROOT; };
 		6C3DA73722DA49BE003B65DD /* BranchesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BranchesTableCell.swift; path = Direct/Modules/orders/model/BranchesTableCell.swift; sourceTree = SOURCE_ROOT; };
 		6C3DA73822DA49BE003B65DD /* BranchesTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BranchesTableCell.xib; path = Direct/Modules/orders/model/BranchesTableCell.xib; sourceTree = SOURCE_ROOT; };
 		6C3DA73B22DA49CF003B65DD /* BranchesDescTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BranchesDescTableCell.swift; path = Direct/Modules/orders/model/BranchesDescTableCell.swift; sourceTree = SOURCE_ROOT; };
@@ -439,7 +438,6 @@
 		6C431DF522B51C0C00DD140D /* ViewPagerOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPagerOptions.swift; sourceTree = "<group>"; };
 		6C431E0022B52DB500DD140D /* PassangerInputsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangerInputsSection.swift; sourceTree = "<group>"; };
 		6C431E0222B52E8B00DD140D /* PersonalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoView.swift; sourceTree = "<group>"; };
-		6C431E0422B52E9D00DD140D /* PersonalInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalInfoView.xib; sourceTree = "<group>"; };
 		6C431E0722B5807300DD140D /* MotherInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherInfoView.swift; sourceTree = "<group>"; };
 		6C431E0922B5808900DD140D /* MotherInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MotherInfoView.xib; sourceTree = "<group>"; };
 		6C431E0B22B5A1F100DD140D /* VisaQuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaQuestionsView.swift; sourceTree = "<group>"; };
@@ -519,15 +517,12 @@
 		6C7BAEA322C411310011EE59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SuccessRequestInstituteController.strings; sourceTree = "<group>"; };
 		6C7BAEA422C4113C0011EE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SuccessPackageController.xib; sourceTree = "<group>"; };
 		6C7BAEA622C4113F0011EE59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SuccessPackageController.strings; sourceTree = "<group>"; };
-		6C7BAEA822C411820011EE59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SuccessVisaRequestController.strings; sourceTree = "<group>"; };
 		6C7BAEAA22C411870011EE59 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/SuccessVisaRequestController.strings; sourceTree = "<group>"; };
-		6C7BAEAC22C411B10011EE59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DatePickerController.strings; sourceTree = "<group>"; };
 		6C7BAEAE22C411B30011EE59 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/DatePickerController.strings; sourceTree = "<group>"; };
 		6C7BAEAF22C411CB0011EE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/NewInstituteRequestController.xib; sourceTree = "<group>"; };
 		6C7BAEB122C411EC0011EE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/NewDirectVisaController.xib; sourceTree = "<group>"; };
 		6C7BAEB522C4120B0011EE59 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/NewDirectVisaController.strings; sourceTree = "<group>"; };
 		6C7BAEB622C4121C0011EE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PassangersCountController.xib; sourceTree = "<group>"; };
-		6C7BAEB822C412220011EE59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PassangersCountController.strings; sourceTree = "<group>"; };
 		6C7BAEBA22C4122A0011EE59 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/PassangersCountController.strings; sourceTree = "<group>"; };
 		6C7BAEBC22C4124B0011EE59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/NewInstituteRequestController.strings; sourceTree = "<group>"; };
 		6C7BAEBE22C4124C0011EE59 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/NewInstituteRequestController.strings; sourceTree = "<group>"; };
@@ -557,7 +552,6 @@
 		6C99D8C622DBA3850045F325 /* ContactUsPageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsPageResponse.swift; sourceTree = "<group>"; };
 		6CA040B52281BE0300619B6F /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
 		6CB1857322CEC811009485CD /* AddCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCountryViewController.swift; sourceTree = "<group>"; };
-		6CB1857422CEC811009485CD /* AddCountryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCountryViewController.xib; sourceTree = "<group>"; };
 		6CB1857722CFA275009485CD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6CB1857B22CFABC7009485CD /* VideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
 		6CB1857F22CFB05A009485CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CheckoutBottomView.xib; sourceTree = "<group>"; };
@@ -605,12 +599,31 @@
 		6CB5E7C322D343BE00436596 /* ActionTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTableCell.swift; sourceTree = "<group>"; };
 		6CB5E7C422D343BE00436596 /* ActionTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionTableCell.xib; sourceTree = "<group>"; };
 		6CBA06F422D270A300F36353 /* PendingDocTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingDocTableCell.swift; sourceTree = "<group>"; };
-		6CBA06F522D270A300F36353 /* PendingDocTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PendingDocTableCell.xib; sourceTree = "<group>"; };
 		6CBA06F822D2741100F36353 /* OrderDetailsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsTableCell.swift; sourceTree = "<group>"; };
 		6CBA06F922D2741100F36353 /* OrderDetailsTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailsTableCell.xib; sourceTree = "<group>"; };
 		6CBBDE5322E4B83500C50E8E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		6CBBDE5522E4B83B00C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		6CBBDE5B22E4DD0F00C50E8E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/VisaRequirementController.strings; sourceTree = "<group>"; };
+		6CBBDE5D22E4DF8900C50E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PersonalInfoView.xib; sourceTree = "<group>"; };
+		6CBBDE6022E4DF9500C50E8E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/PersonalInfoView.strings; sourceTree = "<group>"; };
+		6CBBDE6422E4DFE200C50E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AddCountryViewController.xib; sourceTree = "<group>"; };
+		6CBBDE6722E4E00600C50E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SponserFormController.xib; sourceTree = "<group>"; };
+		6CBBDE6A22E4E04800C50E8E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/SponserFormController.strings; sourceTree = "<group>"; };
+		6CBBDE6C22E4E08A00C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SponserFormController.strings; sourceTree = "<group>"; };
+		6CBBDE6E22E4E0B500C50E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BranchesController.xib; sourceTree = "<group>"; };
+		6CBBDE7122E4E0BB00C50E8E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/BranchesController.strings; sourceTree = "<group>"; };
+		6CBBDE7322E4E0CF00C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BranchesController.strings; sourceTree = "<group>"; };
+		6CBBDE7522E4E0D800C50E8E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/BanksViewController.strings; sourceTree = "<group>"; };
+		6CBBDE7722E4E0F000C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BanksViewController.strings; sourceTree = "<group>"; };
+		6CBBDE7922E4E12600C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DatePickerController.strings; sourceTree = "<group>"; };
+		6CBBDE7B22E4E14D00C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PassangersCountController.strings; sourceTree = "<group>"; };
+		6CBBDE7D22E4E1EE00C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SuccessVisaRequestController.strings; sourceTree = "<group>"; };
+		6CBBDE7F22E4E1F700C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/VisaRequirementController.strings; sourceTree = "<group>"; };
+		6CBBDE8122E4E20900C50E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PendingDocTableCell.xib; sourceTree = "<group>"; };
+		6CBBDE8422E4E22A00C50E8E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/PaymentMethodsContainerController.strings; sourceTree = "<group>"; };
+		6CBBDE8622E4E23500C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PaymentMethodsContainerController.strings; sourceTree = "<group>"; };
+		6CBBDE8822E4E25800C50E8E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/AddCountryViewController.strings; sourceTree = "<group>"; };
+		6CBBDE8A22E4E27B00C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AddCountryViewController.strings; sourceTree = "<group>"; };
 		6CBD17DA228BCB7300144B6C /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		6CC94EDC228BE5BA002F3464 /* CommonAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAPIs.swift; sourceTree = "<group>"; };
 		6CC94EE1228BE7FC002F3464 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -700,7 +713,6 @@
 		6CF703E12286FBD700B1C387 /* InstituteDetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstituteDetailsHeaderView.swift; sourceTree = "<group>"; };
 		6CF75E9E228BD8C900009BAB /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		6CF9F5D522BECD2700E45E8A /* SponserFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponserFormController.swift; sourceTree = "<group>"; };
-		6CF9F5D622BECD2700E45E8A /* SponserFormController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SponserFormController.xib; sourceTree = "<group>"; };
 		6CF9F5DB22BEDB6800E45E8A /* SponsersAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsersAPI.swift; sourceTree = "<group>"; };
 		6CF9F5DD22BEDCBE00E45E8A /* SponserFormParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponserFormParams.swift; sourceTree = "<group>"; };
 		6CF9F5DF22BEDDC600E45E8A /* SponsersHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsersHttpClient.swift; sourceTree = "<group>"; };
@@ -1028,7 +1040,7 @@
 			isa = PBXGroup;
 			children = (
 				6C431E0222B52E8B00DD140D /* PersonalInfoView.swift */,
-				6C431E0422B52E9D00DD140D /* PersonalInfoView.xib */,
+				6CBBDE5E22E4DF8900C50E8E /* PersonalInfoView.xib */,
 				6C431E0722B5807300DD140D /* MotherInfoView.swift */,
 				6C431E0922B5808900DD140D /* MotherInfoView.xib */,
 				6C431E0B22B5A1F100DD140D /* VisaQuestionsView.swift */,
@@ -1092,7 +1104,7 @@
 				6C9027C9228F95A600B41705 /* OrderTableCell.xib */,
 				6C99797222D2061C003CE0FF /* OrderModel.swift */,
 				6CBA06F422D270A300F36353 /* PendingDocTableCell.swift */,
-				6CBA06F522D270A300F36353 /* PendingDocTableCell.xib */,
+				6CBBDE8222E4E20900C50E8E /* PendingDocTableCell.xib */,
 				6CB5E7C322D343BE00436596 /* ActionTableCell.swift */,
 				6CB5E7C422D343BE00436596 /* ActionTableCell.xib */,
 			);
@@ -1397,7 +1409,7 @@
 				6C06E80D22BC2ABF006A48DD /* view */,
 				6C431E0622B53A9B00DD140D /* sections */,
 				6CB1857322CEC811009485CD /* AddCountryViewController.swift */,
-				6CB1857422CEC811009485CD /* AddCountryViewController.xib */,
+				6CBBDE6522E4DFE200C50E8E /* AddCountryViewController.xib */,
 			);
 			path = passangers;
 			sourceTree = "<group>";
@@ -1535,7 +1547,7 @@
 			children = (
 				6C3DA73F22DA4B27003B65DD /* BranchesViewModel.swift */,
 				6C3DA73322DA47DE003B65DD /* BranchesController.swift */,
-				6C3DA73422DA47DE003B65DD /* BranchesController.xib */,
+				6CBBDE6F22E4E0B500C50E8E /* BranchesController.xib */,
 				6C3DA73722DA49BE003B65DD /* BranchesTableCell.swift */,
 				6C3DA73822DA49BE003B65DD /* BranchesTableCell.xib */,
 				6C3DA73B22DA49CF003B65DD /* BranchesDescTableCell.swift */,
@@ -1662,7 +1674,7 @@
 				6C778268227A9F64001926B2 /* SponsersViewController.swift */,
 				6C902796228F952500B41705 /* SponsersViewController.xib */,
 				6CF9F5D522BECD2700E45E8A /* SponserFormController.swift */,
-				6CF9F5D622BECD2700E45E8A /* SponserFormController.xib */,
+				6CBBDE6822E4E00600C50E8E /* SponserFormController.xib */,
 				6CF9F5E322BEDEE000E45E8A /* SponserFormViewModel.swift */,
 				6C5964B322C0F218007D81C6 /* ImagePickerView.swift */,
 			);
@@ -1780,19 +1792,19 @@
 				6C90278E228F951700B41705 /* InstituteDetailsHeaderView.xib in Resources */,
 				6C9027C4228F95A000B41705 /* OrderDetailsController.xib in Resources */,
 				6C902794228F952500B41705 /* SponsersViewController.xib in Resources */,
-				6C431E0522B52E9D00DD140D /* PersonalInfoView.xib in Resources */,
+				6CBBDE5C22E4DF8900C50E8E /* PersonalInfoView.xib in Resources */,
 				6C9027B8228F958600B41705 /* CheckoutBottomView.xib in Resources */,
 				6C6A0C1022AB81F800150FF6 /* Cairo-SemiBold.ttf in Resources */,
 				6C9027A9228F956600B41705 /* PackagesTableCell.xib in Resources */,
 				6C902782228F94FD00B41705 /* SuccessRequestInstituteController.xib in Resources */,
 				6C902788228F950A00B41705 /* InstituteTableCell.xib in Resources */,
-				6CB1857622CEC811009485CD /* AddCountryViewController.xib in Resources */,
+				6CBBDE6322E4DFE200C50E8E /* AddCountryViewController.xib in Resources */,
 				6C902773228F94BF00B41705 /* AboutUsViewController.xib in Resources */,
 				3992B66822961B5F00BBB7F1 /* TagCollectionCell.xib in Resources */,
 				6CF3E1A5227254A1007488BA /* InstituteCollectionViewCell.xib in Resources */,
 				39EE2AD622A0BD6700A9A501 /* Localizable.strings in Resources */,
 				6C90279D228F954C00B41705 /* PaymentMethodTableCell.xib in Resources */,
-				6C3DA73622DA47DE003B65DD /* BranchesController.xib in Resources */,
+				6CBBDE6D22E4E0B500C50E8E /* BranchesController.xib in Resources */,
 				6C9027CD228F95B100B41705 /* VisaRequirementTableCell.xib in Resources */,
 				6C9027D9228F95C800B41705 /* PassangersCountController.xib in Resources */,
 				6C90277C228F94D700B41705 /* NewInstituteRequestController.xib in Resources */,
@@ -1814,7 +1826,7 @@
 				6C902797228F953A00B41705 /* PaymentViewController.xib in Resources */,
 				6C244FCC229212E600B205B9 /* HelpTableCell.xib in Resources */,
 				6C431E0E22B5A1FF00DD140D /* VisaQuestionsView.xib in Resources */,
-				6CBA06F722D270A300F36353 /* PendingDocTableCell.xib in Resources */,
+				6CBBDE8022E4E20900C50E8E /* PendingDocTableCell.xib in Resources */,
 				6C90278B228F951000B41705 /* InstituteDetailsTableCell.xib in Resources */,
 				6C3DA73E22DA49CF003B65DD /* BranchesDescTableCell.xib in Resources */,
 				6C5FDA572270816C00ABA39B /* LaunchScreen.storyboard in Resources */,
@@ -1827,7 +1839,7 @@
 				6C6A0C1122AB81F800150FF6 /* Cairo-Bold.ttf in Resources */,
 				6CF3E19D22725430007488BA /* VisaCollectionViewCell.xib in Resources */,
 				6C902785228F950400B41705 /* InstitutesListController.xib in Resources */,
-				6CF9F5D822BECD2700E45E8A /* SponserFormController.xib in Resources */,
+				6CBBDE6622E4E00600C50E8E /* SponserFormController.xib in Resources */,
 				6C6A0C1E22ABF17E00150FF6 /* ReqDescTableCell.xib in Resources */,
 				6C9027C7228F95A600B41705 /* OrderTableCell.xib in Resources */,
 				6C6A0C0E22AB81F800150FF6 /* Cairo-Regular.ttf in Resources */,
@@ -2320,6 +2332,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				6CB185BB22CFB3EE009485CD /* Base */,
+				6CBBDE7522E4E0D800C50E8E /* ar */,
+				6CBBDE7722E4E0F000C50E8E /* en */,
 			);
 			name = BanksViewController.xib;
 			sourceTree = "<group>";
@@ -2352,6 +2366,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				6CB185C822CFB46E009485CD /* Base */,
+				6CBBDE8422E4E22A00C50E8E /* ar */,
+				6CBBDE8622E4E23500C50E8E /* en */,
 			);
 			name = PaymentMethodsContainerController.xib;
 			sourceTree = "<group>";
@@ -2443,6 +2459,7 @@
 			children = (
 				6CB1859222CFB318009485CD /* Base */,
 				6CBBDE5B22E4DD0F00C50E8E /* ar */,
+				6CBBDE7F22E4E1F700C50E8E /* en */,
 			);
 			name = VisaRequirementController.xib;
 			sourceTree = "<group>";
@@ -2470,8 +2487,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				6C7BAE8F22C40DD40011EE59 /* Base */,
-				6C7BAEA822C411820011EE59 /* en */,
 				6C7BAEAA22C411870011EE59 /* ar */,
+				6CBBDE7D22E4E1EE00C50E8E /* en */,
 			);
 			name = SuccessVisaRequestController.xib;
 			sourceTree = "<group>";
@@ -2480,8 +2497,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				6C7BAEB622C4121C0011EE59 /* Base */,
-				6C7BAEB822C412220011EE59 /* en */,
 				6C7BAEBA22C4122A0011EE59 /* ar */,
+				6CBBDE7B22E4E14D00C50E8E /* en */,
 			);
 			name = PassangersCountController.xib;
 			sourceTree = "<group>";
@@ -2490,8 +2507,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				6C7BAE8A22C40DC90011EE59 /* Base */,
-				6C7BAEAC22C411B10011EE59 /* en */,
 				6C7BAEAE22C411B30011EE59 /* ar */,
+				6CBBDE7922E4E12600C50E8E /* en */,
 			);
 			name = DatePickerController.xib;
 			sourceTree = "<group>";
@@ -2514,6 +2531,54 @@
 				6C7BAE8722C40DB00011EE59 /* ar */,
 			);
 			name = HomeCollectionSectionWrapper.xib;
+			sourceTree = "<group>";
+		};
+		6CBBDE5E22E4DF8900C50E8E /* PersonalInfoView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6CBBDE5D22E4DF8900C50E8E /* Base */,
+				6CBBDE6022E4DF9500C50E8E /* ar */,
+			);
+			name = PersonalInfoView.xib;
+			sourceTree = "<group>";
+		};
+		6CBBDE6522E4DFE200C50E8E /* AddCountryViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6CBBDE6422E4DFE200C50E8E /* Base */,
+				6CBBDE8822E4E25800C50E8E /* ar */,
+				6CBBDE8A22E4E27B00C50E8E /* en */,
+			);
+			name = AddCountryViewController.xib;
+			sourceTree = "<group>";
+		};
+		6CBBDE6822E4E00600C50E8E /* SponserFormController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6CBBDE6722E4E00600C50E8E /* Base */,
+				6CBBDE6A22E4E04800C50E8E /* ar */,
+				6CBBDE6C22E4E08A00C50E8E /* en */,
+			);
+			name = SponserFormController.xib;
+			sourceTree = "<group>";
+		};
+		6CBBDE6F22E4E0B500C50E8E /* BranchesController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6CBBDE6E22E4E0B500C50E8E /* Base */,
+				6CBBDE7122E4E0BB00C50E8E /* ar */,
+				6CBBDE7322E4E0CF00C50E8E /* en */,
+			);
+			name = BranchesController.xib;
+			path = Direct/Modules/orders/model;
+			sourceTree = SOURCE_ROOT;
+		};
+		6CBBDE8222E4E20900C50E8E /* PendingDocTableCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6CBBDE8122E4E20900C50E8E /* Base */,
+			);
+			name = PendingDocTableCell.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -1,0 +1,9 @@
+
+/* Class = "UITextField"; placeholder = "الدولة"; ObjectID = "PcD-uK-LxL"; */
+"PcD-uK-LxL.placeholder" = "الدولة";
+
+/* Class = "UITextField"; placeholder = "السنة"; ObjectID = "h7N-IE-CXC"; */
+"h7N-IE-CXC.placeholder" = "السنة";
+
+/* Class = "UIButton"; normalTitle = "تاكيد"; ObjectID = "wyM-t6-VOr"; */
+"wyM-t6-VOr.normalTitle" = "تاكيد";
