@@ -19,7 +19,7 @@ protocol SwipeUpDismissable: UIViewController {
     var defaultFrame: CGRect? { get }
     var disposeBag: DisposeBag { get }
     var dismessed: PublishSubject<Bool> { get set }
-    var scrollView: UIScrollView? {get}
+    var scrollView: UIScrollView? { get }
     func enableSwipeUpToDismiss()
     func swipeUpToDismiss(sender: UIPanGestureRecognizer, initialTouchPoint: inout CGPoint, defaultFrame: CGRect?)
     func dismissWithAnim()
@@ -27,11 +27,14 @@ protocol SwipeUpDismissable: UIViewController {
 
 extension SwipeUpDismissable {
     func enableSwipeUpToDismiss() {
-        let gestureHolder  = self.scrollView ?? view
-        gestureHolder?.rx.panGesture().subscribe { sender in
-            self.swipeUpToDismiss(sender: sender.element!, initialTouchPoint: &self.initialTouchPoint, defaultFrame: self.defaultFrame)
-        }.disposed(by: disposeBag)
-        addBottomLine()
+        let gestureHolder = self.scrollView ?? view
+        gestureHolder?.rx.panGesture(configuration: { _, delegate in
+            delegate.simultaneousRecognitionPolicy = .always
+        })
+            .subscribe { sender in
+                self.swipeUpToDismiss(sender: sender.element!, initialTouchPoint: &self.initialTouchPoint, defaultFrame: self.defaultFrame)
+            }.disposed(by: disposeBag)
+        self.addBottomLine()
     }
 
     func addBottomLine() {
