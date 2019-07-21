@@ -26,11 +26,21 @@ struct TextFieldConfigurator {
     var inputType: UITextContentType? {
         switch type {
         case .password, .confirmPass:
-            return .password
+            if #available(iOS 11.0, *) {
+                return .password
+            } else {
+                // Fallback on earlier versions
+                return nil
+            }
         case .address:
             return .addressCity
         case .email:
-            return .username
+            if #available(iOS 11.0, *) {
+                return .username
+            } else {
+                // Fallback on earlier versions
+                return nil
+            }
         case .fullname:
             return .name
         case .phoneConfirmNumber:

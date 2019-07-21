@@ -207,9 +207,17 @@ extension ImagePicker {
             pickedImageName = getDocumentsDirectory().appendingPathComponent(path)
             try? data.write(to: pickedImageName)
         }
-        let fileUrl = info[.imageURL] as? URL
-        let name = fileUrl?.lastPathComponent.attachName() ?? pickedImageName.lastPathComponent.attachName()
-        receivedImage.onNext((name, image?.apiSize()))
+        if #available(iOS 11.0, *) {
+            let fileUrl = info[.imageURL] as? URL
+            let name = fileUrl?.lastPathComponent.attachName() ?? pickedImageName.lastPathComponent.attachName()
+            receivedImage.onNext((name, image?.apiSize()))
+        } else {
+            // Fallback on earlier versions
+            let fileUrl = info[UIImagePickerController.InfoKey.editedImage] as? URL
+            let name = fileUrl?.lastPathComponent.attachName() ?? pickedImageName.lastPathComponent.attachName()
+            receivedImage.onNext((name, image?.apiSize()))
+        }
+        
         picker.dismiss(animated: true, completion: nil)
     }
     

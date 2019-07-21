@@ -13,7 +13,11 @@ import UIKit
 class AuthViewController: UIViewController {
     lazy var logoImageView: UIImageView = {
         let view = UIImageView(image: #imageLiteral(resourceName: "authlogo"))
-        view.adjustsImageSizeForAccessibilityContentSizeCategory = true
+        if #available(iOS 11.0, *) {
+            view.adjustsImageSizeForAccessibilityContentSizeCategory = true
+        } else {
+            // Fallback on earlier versions
+        }
         view.contentMode = .center
         return view
     }()
@@ -137,11 +141,21 @@ class AuthViewController: UIViewController {
         holderStack.snp.makeConstraints { make in
             make.top.equalTo(skipButton.snp.bottom)
             make.leading.trailing.equalToSuperview().inset(16)
-            make.bottom.equalTo(view.safeAreaLayoutGuide)
+            if #available(iOS 11.0, *) {
+                make.bottom.equalTo(view.safeAreaLayoutGuide)
+            } else {
+                // Fallback on earlier versions
+                make.bottom.equalTo(view)
+            }
         }
 
         skipButton.snp.makeConstraints { make in
-            make.leading.top.equalTo(view.safeAreaLayoutGuide).inset(20)
+            if #available(iOS 11.0, *) {
+                make.leading.top.equalTo(view.safeAreaLayoutGuide).inset(20)
+            } else {
+                // Fallback on earlier versions
+                make.leading.top.equalTo(view).inset(20)
+            }
             make.width.height.equalTo(40)
         }
 

@@ -39,9 +39,17 @@ class ViaRequirementsTabsController: UIViewController,StyledActionBar {
         add(vc)
         view.addSubview(vc.view)
         vc.view.translatesAutoresizingMaskIntoConstraints = false
-        vc.view.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        vc.view.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        vc.view.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        vc.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        if #available(iOS 11.0, *) {
+            vc.view.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+            vc.view.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+            vc.view.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+            vc.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        } else {
+            // Fallback on earlier versions
+            vc.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+            vc.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+            vc.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+            vc.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        }
     }
 }
