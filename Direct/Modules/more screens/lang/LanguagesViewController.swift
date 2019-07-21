@@ -40,6 +40,7 @@ class LanguagesViewController: UIViewController, StyledActionBar {
             return
         }
         Localize.setCurrentLanguage(lang.code)
+        self.navigationController?.popViewController()
     }
 
     private func addfooter() {
