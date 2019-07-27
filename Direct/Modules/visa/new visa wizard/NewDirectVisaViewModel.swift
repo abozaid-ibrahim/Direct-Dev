@@ -18,6 +18,8 @@ class NewDirectVisaViewModel {
     private var network: ApiClientFacade?
     var selectedCountry: NewVisaServices?
     var selectedCountryName = PublishSubject<String?>()
+    
+    
     private var priceNotes: [Price_notes]? {
         didSet {
             guard let value = priceNotes else { return }
@@ -39,6 +41,8 @@ class NewDirectVisaViewModel {
     var selectedRelation = PublishSubject<String?>()
     var totalCost = BehaviorSubject<String>(value: "0".priced)
     var embassyLocations: [DTEmbassyLocation]?
+    
+    
     var turkeyCountryId: String {
         return APIConstants.TurkeyID
     }
@@ -195,7 +199,7 @@ class NewDirectVisaViewModel {
     var countriesController: SearchViewController?
     private func initCountriesController() {
         guard countriesController == nil else { return }
-        countriesController = Destination.searchCountries.controller() as! SearchViewController
+        countriesController = Destination.searchCountries.controller() as? SearchViewController
         countriesController?.selectedItem.subscribe(onNext: { [unowned self] value in
             self.selectedCountry = value
             self.visaRequestData.form_type = value.form_type

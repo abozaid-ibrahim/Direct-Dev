@@ -137,11 +137,12 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     }
     
     private func hideAllExcepSelfIdentity() {
-        isHusbandWillTravelView.isHidden = true
         martialStateView.isHidden = false
+        passportView.isHidden = false
+
+        isHusbandWillTravelView.isHidden = true
         personalPictureView.isHidden = true
         familyIDView.isHidden = true
-        passportView.isHidden = false
         contentHeight.onNext(neededHeight)
     }
     

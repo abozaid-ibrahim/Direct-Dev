@@ -27,9 +27,13 @@ final class VisaRequirementController: UIViewController, PanModalPresentable, St
 
     private let viewModel = VisaRequirementsViewModel()
     private var datalist: [ReqDataSection] = []
+    
     var inputs: VisaRequirementType?
     var visaData: VisaRequestParams?
+    
     internal let disposeBag = DisposeBag()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         switch inputs! {

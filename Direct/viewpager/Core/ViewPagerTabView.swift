@@ -200,7 +200,8 @@ public final class ViewPagerTabView: UIView {
     
     fileprivate func buildImageView(withOptions options: ViewPagerOptions, image: UIImage?) {
         imageView = UIImageView()
-        imageView?.contentMode = .scaleAspectFit
+        imageView?.contentMode = .center
+        
         imageView?.image = image
     }
     

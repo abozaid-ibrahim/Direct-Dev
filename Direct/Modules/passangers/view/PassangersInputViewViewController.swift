@@ -84,11 +84,11 @@ class PassangersInputViewViewController: UIViewController {
         var globalIndex = -1
         for index in 0 ..< Int(info.no_of_adult)! {
             globalIndex += 1
-            addTabItemAndController(Str.adult, info, writingIndex: index, totalIndex: globalIndex)
+            addTabItemAndController(Str.adult.localized, info, writingIndex: index, totalIndex: globalIndex)
         }
         for index in 0 ..< Int(info.no_of_child)! {
             globalIndex += 1
-            addTabItemAndController(Str.child, info, writingIndex: index, totalIndex: globalIndex)
+            addTabItemAndController(Str.child.localized, info, writingIndex: index, totalIndex: globalIndex)
         }
     }
 

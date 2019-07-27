@@ -45,12 +45,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.tintColor = UIColor.white
         // global Appearance settings
         let customFont = UIFont.appRegularFontWith(size: 15)
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont], for: .normal)
+    UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont], for: .normal)
         UITextField.appearance().substituteFontName = AppFonts.regularFont
         UILabel.appearance().substituteFontName = AppFonts.regularFont
 //        UILabel.appearance().substituteFontNameBold = AppFonts.boldFont
-        UIView.appearance().semanticContentAttribute = .forceRightToLeft
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: AppFonts.regularFont, size: 11)!, NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
+        
+//        UIView.appearance().semanticContentAttribute = .forceRightToLeft
+        UITabBarItem.appearance().setTitleTextAttributes([.font: UIFont(name: AppFonts.regularFont, size: 11)!,
+            .foregroundColor: UIColor.gray], for: .normal)
     }
 
      func setRootController() {
