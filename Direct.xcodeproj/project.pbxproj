@@ -164,6 +164,7 @@
 		6C7B0F2822EF717300AB6E97 /* MotherInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C7B0F2A22EF717300AB6E97 /* MotherInfoView.xib */; };
 		6C7B0F2D22EF722600AB6E97 /* VisaQuestionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C7B0F2F22EF722600AB6E97 /* VisaQuestionsView.xib */; };
 		6C7B0F3422EF740000AB6E97 /* EverTraveledHereBeforeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C7B0F3622EF740000AB6E97 /* EverTraveledHereBeforeView.xib */; };
+		6C7B0F3F22EF790400AB6E97 /* PassangerFormController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C7B0F4122EF790400AB6E97 /* PassangerFormController.xib */; };
 		6C8286EB228B9C96009FB5FF /* View+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8286EA228B9C96009FB5FF /* View+App.swift */; };
 		6C8503B1229DDB38004FE346 /* VisaRequestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8503B0229DDB38004FE346 /* VisaRequestResponse.swift */; };
 		6C8503B3229DDB5F004FE346 /* VisaAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8503B2229DDB5F004FE346 /* VisaAPIs.swift */; };
@@ -276,7 +277,6 @@
 		6CF2514A22A6374E00CDA47C /* DialogsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514922A6374D00CDA47C /* DialogsBuilder.swift */; };
 		6CF2514F22A6496200CDA47C /* PreviousTraveledCountriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2514D22A6496200CDA47C /* PreviousTraveledCountriesController.swift */; };
 		6CF2515322A660A000CDA47C /* PassangerFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF2515122A660A000CDA47C /* PassangerFormController.swift */; };
-		6CF2515422A660A000CDA47C /* PassangerFormController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF2515222A660A000CDA47C /* PassangerFormController.xib */; };
 		6CF3E1722271E451007488BA /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1712271E451007488BA /* Navigator.swift */; };
 		6CF3E1762271E598007488BA /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E1752271E598007488BA /* RootNavigationViewController.swift */; };
 		6CF3E1802271F303007488BA /* ViewControllerActionBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E17F2271F303007488BA /* ViewControllerActionBarStyle.swift */; };
@@ -507,6 +507,10 @@
 		6C7B0F3822EF740900AB6E97 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/EverTraveledHereBeforeView.strings; sourceTree = "<group>"; };
 		6C7B0F3A22EF746400AB6E97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/EverTraveledHereBeforeView.strings; sourceTree = "<group>"; };
 		6C7B0F3C22EF771900AB6E97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SponserFormController.strings; sourceTree = "<group>"; };
+		6C7B0F3E22EF777100AB6E97 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/PaymentViewController.strings; sourceTree = "<group>"; };
+		6C7B0F4022EF790400AB6E97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PassangerFormController.xib; sourceTree = "<group>"; };
+		6C7B0F4322EF791100AB6E97 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/PassangerFormController.strings; sourceTree = "<group>"; };
+		6C7B0F4522EF791E00AB6E97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PassangerFormController.strings; sourceTree = "<group>"; };
 		6C7BAE7922C409E00011EE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/HomeCollectionSectionWrapper.xib; sourceTree = "<group>"; };
 		6C7BAE7B22C40D4A0011EE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PackagesTableCell.xib; sourceTree = "<group>"; };
 		6C7BAE7D22C40D4E0011EE59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PackagesTableCell.strings; sourceTree = "<group>"; };
@@ -680,7 +684,6 @@
 		6CF2514922A6374D00CDA47C /* DialogsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogsBuilder.swift; sourceTree = "<group>"; };
 		6CF2514D22A6496200CDA47C /* PreviousTraveledCountriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousTraveledCountriesController.swift; sourceTree = "<group>"; };
 		6CF2515122A660A000CDA47C /* PassangerFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassangerFormController.swift; sourceTree = "<group>"; };
-		6CF2515222A660A000CDA47C /* PassangerFormController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PassangerFormController.xib; sourceTree = "<group>"; };
 		6CF3E1712271E451007488BA /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		6CF3E1752271E598007488BA /* RootNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationViewController.swift; sourceTree = "<group>"; };
 		6CF3E17F2271F303007488BA /* ViewControllerActionBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerActionBarStyle.swift; sourceTree = "<group>"; };
@@ -891,7 +894,7 @@
 				6CF1C9AF22A5DBEE0034DB39 /* PassangersInputViewViewController.swift */,
 				6C431DDB22B3C90400DD140D /* PassangersInputViewViewController.xib */,
 				6CF2515122A660A000CDA47C /* PassangerFormController.swift */,
-				6CF2515222A660A000CDA47C /* PassangerFormController.xib */,
+				6C7B0F4122EF790400AB6E97 /* PassangerFormController.xib */,
 				6C431E0022B52DB500DD140D /* PassangerInputsSection.swift */,
 			);
 			path = view;
@@ -1827,7 +1830,7 @@
 				6C6A0C0C22AB81F800150FF6 /* Cairo-ExtraLight.ttf in Resources */,
 				6CF3E1A122725478007488BA /* OfferCollectionViewCell.xib in Resources */,
 				39EE2AD322A0B80900A9A501 /* Authentication.xcassets in Resources */,
-				6CF2515422A660A000CDA47C /* PassangerFormController.xib in Resources */,
+				6C7B0F3F22EF790400AB6E97 /* PassangerFormController.xib in Resources */,
 				6C6A0C0F22AB81F800150FF6 /* Cairo-Black.ttf in Resources */,
 				6C902779228F94CF00B41705 /* ContactUsViewController.xib in Resources */,
 				6C902797228F953A00B41705 /* PaymentViewController.xib in Resources */,
@@ -2258,6 +2261,16 @@
 			name = EverTraveledHereBeforeView.xib;
 			sourceTree = "<group>";
 		};
+		6C7B0F4122EF790400AB6E97 /* PassangerFormController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C7B0F4022EF790400AB6E97 /* Base */,
+				6C7B0F4322EF791100AB6E97 /* ar */,
+				6C7B0F4522EF791E00AB6E97 /* en */,
+			);
+			name = PassangerFormController.xib;
+			sourceTree = "<group>";
+		};
 		6C902775228F94BF00B41705 /* AboutUsViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2370,6 +2383,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6CB185BA22CFB3E3009485CD /* Base */,
+				6C7B0F3E22EF777100AB6E97 /* ar */,
 			);
 			name = PaymentViewController.xib;
 			sourceTree = "<group>";

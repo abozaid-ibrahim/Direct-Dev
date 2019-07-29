@@ -19,13 +19,13 @@ class CheckoutFooter: UIView {
 
     @IBInspectable var btnTitle: String? {
         didSet {
-            footer.actionBtn.setTitle(btnTitle ?? "", for: .normal)
+            footer.actionBtn.setTitle(btnTitle?.localized() ?? "", for: .normal)
         }
     }
 
     @IBInspectable var placeHolder: String? {
         didSet {
-            footer.hintLbl.text = placeHolder ?? ""
+            footer.hintLbl.text = placeHolder?.localized()
         }
     }
 

@@ -139,7 +139,7 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
     private func hideAllExcepSelfIdentity() {
         martialStateView.isHidden = false
         passportView.isHidden = false
-
+        
         isHusbandWillTravelView.isHidden = true
         personalPictureView.isHidden = true
         familyIDView.isHidden = true
@@ -189,11 +189,13 @@ class PersonalInfoView: UIView, PassangerInputsSection, ImagePicker {
         if !validateNameAndIdentity() {
             return false
         }
-        if params.martialStatus.isValidText {
-            statusPInfoField.setError.onNext(false)
-        } else {
-            statusPInfoField.setError.onNext(true)
-            return false
+        if !isChild {
+            if params.martialStatus.isValidText {
+                statusPInfoField.setError.onNext(false)
+            } else {
+                statusPInfoField.setError.onNext(true)
+                return false
+            }
         }
         if !personalIDView.isHidden {
             if personalIDInfoField.hasText {

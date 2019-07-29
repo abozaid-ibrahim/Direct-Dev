@@ -425,8 +425,8 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="btnTitle" value="متابعة للدفع"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="التكلفة الإجمالية"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="btnTitle" value="Continue"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Total Cost"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>

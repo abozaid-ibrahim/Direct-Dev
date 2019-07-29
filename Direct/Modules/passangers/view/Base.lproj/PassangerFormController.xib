@@ -131,7 +131,7 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="1L4-Ys-hfN"/>
                                     </constraints>
-                                    <state key="normal" title="تابع "/>
+                                    <state key="normal" title="Continue"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">
                                             <integer key="value" value="1"/>
