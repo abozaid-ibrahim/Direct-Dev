@@ -516,6 +516,8 @@
 		6C7B0F4D22EF7F2300AB6E97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PendingDocTableCell.strings; sourceTree = "<group>"; };
 		6C7B0F4F22EF7F3E00AB6E97 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/OrderTableCell.strings; sourceTree = "<group>"; };
 		6C7B0F5322EF7F5700AB6E97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/OrderTableCell.strings; sourceTree = "<group>"; };
+		6C7B0F5522EF7F9B00AB6E97 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/OrderDetailsController.strings; sourceTree = "<group>"; };
+		6C7B0F5922EF7FB500AB6E97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/OrderDetailsController.strings; sourceTree = "<group>"; };
 		6C7BAE7922C409E00011EE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/HomeCollectionSectionWrapper.xib; sourceTree = "<group>"; };
 		6C7BAE7B22C40D4A0011EE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PackagesTableCell.xib; sourceTree = "<group>"; };
 		6C7BAE7D22C40D4E0011EE59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PackagesTableCell.strings; sourceTree = "<group>"; };
@@ -2506,6 +2508,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				6CB185C022CFB43D009485CD /* Base */,
+				6C7B0F5522EF7F9B00AB6E97 /* ar */,
+				6C7B0F5922EF7FB500AB6E97 /* en */,
 			);
 			name = OrderDetailsController.xib;
 			sourceTree = "<group>";

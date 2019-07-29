@@ -28,7 +28,7 @@
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EnG-Bl-iVV">
                     <rect key="frame" x="12" y="820" width="390" height="30"/>
-                    <state key="normal" title="انهاء"/>
+                    <state key="normal" title="Complete"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">
                             <integer key="value" value="1"/>
