@@ -36,11 +36,13 @@ class LanguagesViewController: UIViewController, StyledActionBar {
     }
 
     private func setCurrentLang(lang: LangEntity) {
-        if Localize.currentLanguage() ==  lang.code{
+        if Localize.currentLanguage() == lang.code {
             return
         }
         Localize.setCurrentLanguage(lang.code)
-        self.navigationController?.popViewController()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+            AppDelegate.current.setRootController()
+        })
     }
 
     private func addfooter() {
@@ -60,5 +62,3 @@ class LanguagesViewController: UIViewController, StyledActionBar {
         tableView.tableFooterView = footer
     }
 }
-
-
