@@ -1,9 +1,6 @@
 platform :ios, '10.0'
 target 'Direct' do
   use_frameworks!
-  source 'https://github.com/CocoaPods/Specs.git'
-  pod 'Localize-Swift', '~> 2.0'
-
   pod 'PanModal'
 #  pod 'Hero'
   pod 'RxSwift',    '~> 4.0'
@@ -20,6 +17,7 @@ target 'Direct' do
   pod 'Kingfisher', '~> 5.0'
   pod 'JBDatePicker',  '~> 1.2.5'
   pod 'NVActivityIndicatorView'
+pod 'LanguageManager-iOS'
 
   pod 'GenericCellControllers'
   pod 'SnapKit'

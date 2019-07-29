@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Localize_Swift
 protocol NeedAuth: Codable {
     var lang: String { get set }
     var key: String { get set }
@@ -45,35 +44,4 @@ struct VisaPriceParams {
         no_of_passport: String,
         promo_code: String,
         visatype: String
-}
-
-class AppLanguage {
-    static var langCode: String {
-        return Localize.currentLanguage()
-    }
-
-    static var languages: [LangEntity] {
-        return [LangEntity(name: "Arabic".localized(), code: "ar", selected: Localize.currentLanguage() == "ar"),
-                LangEntity(name: "English".localized(), code: "en", selected: Localize.currentLanguage() == "en")]
-    }
-
-    static var currentLangName: String {
-        return languages.filter { $0.selected }.first!
-            .name
-    }
-
-    static func setCurrent(language: String) {
-        Localize.setCurrentLanguage(language)
-        UserDefaults.standard.set([language], forKey: "AppleLanguages")
-        UserDefaults.standard.synchronize()
-    }
-}
-
-struct LangEntity {
-    var name: String
-    var code: String
-    var selected: Bool
-    mutating func did(select: Bool) {
-        selected = select
-    }
 }

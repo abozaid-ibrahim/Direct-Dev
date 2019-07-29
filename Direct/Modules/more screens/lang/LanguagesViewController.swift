@@ -6,10 +6,10 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
-import Localize_Swift
 import RxCocoa
 import RxSwift
 import UIKit
+
 class LanguagesViewController: UIViewController, StyledActionBar {
     @IBOutlet private var tableView: UITableView!
     internal let disposeBag = DisposeBag()
@@ -36,13 +36,10 @@ class LanguagesViewController: UIViewController, StyledActionBar {
     }
 
     private func setCurrentLang(lang: LangEntity) {
-        if Localize.currentLanguage() == lang.code {
+        if AppLanguage.langCode == lang.code {
             return
         }
-        Localize.setCurrentLanguage(lang.code)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
-            AppDelegate.current.setRootController()
-        })
+        AppLanguage.setCurrent(language: lang.code)
     }
 
     private func addfooter() {

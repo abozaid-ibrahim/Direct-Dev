@@ -5,7 +5,7 @@ PODS:
   - IQKeyboardManagerSwift (6.4.0)
   - JBDatePicker (1.2.5)
   - Kingfisher (5.7.0)
-  - Localize-Swift (2.0.0)
+  - LanguageManager-iOS (1.1.4)
   - M13Checkbox (3.4.0)
   - Moya/Core (13.0.1):
     - Alamofire (~> 4.1)
@@ -64,7 +64,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - JBDatePicker (~> 1.2.5)
   - Kingfisher (~> 5.0)
-  - Localize-Swift (~> 2.0)
+  - LanguageManager-iOS
   - M13Checkbox
   - Moya/RxSwift (~> 13.0)
   - NVActivityIndicatorView
@@ -90,7 +90,7 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - JBDatePicker
     - Kingfisher
-    - Localize-Swift
+    - LanguageManager-iOS
     - M13Checkbox
     - Moya
     - NVActivityIndicatorView
@@ -116,7 +116,7 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: ed9b04ee0e3067ffba543283462d619f944b05e5
   JBDatePicker: 0e791c8a79c49b0d37decea28ba147515bf5cfca
   Kingfisher: c7d211b54f1f30d8060aadab177d52b4349c825b
-  Localize-Swift: c798ec9286494866f7068f85f7c71283ac5bdab4
+  LanguageManager-iOS: d443d95070471c050cad4e2877cbf22a39ea4991
   M13Checkbox: 6f59404540ac98ba83a3d1afac335895a40c6a5d
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
@@ -135,6 +135,6 @@ SPEC CHECKSUMS:
   YALField: f80f986de790bb13690264422437fa4e0593af0a
   YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
 
-PODFILE CHECKSUM: 761a69253797086ec23fde6203690f8d6a45a5eb
+PODFILE CHECKSUM: 2eedf53df36e66f1be02c30d6d03c3f2292c466d
 
 COCOAPODS: 1.7.2

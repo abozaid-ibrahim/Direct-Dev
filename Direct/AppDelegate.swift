@@ -7,7 +7,6 @@
 //
 
 import IQKeyboardManagerSwift
-import Localize_Swift
 import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        setLanguage()
         setRootController()
         setupGlobalAppearance()
         setupKeyboardManager()
@@ -34,28 +32,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enableAutoToolbar = false
     }
 
-    private func setLanguage() {
-        AppLanguage.setCurrent(language: Localize.currentLanguage())
-        print(AppLanguage.langCode)
-        print(Locale.preferredLanguages[0].prefix(2))
-        print(Bundle.main.preferredLocalizations.first!)
-    }
 
     func setupGlobalAppearance() {
         window?.tintColor = UIColor.white
         // global Appearance settings
         let customFont = UIFont.appRegularFontWith(size: 15)
-    UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont], for: .normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont], for: .normal)
         UITextField.appearance().substituteFontName = AppFonts.regularFont
         UILabel.appearance().substituteFontName = AppFonts.regularFont
 //        UILabel.appearance().substituteFontNameBold = AppFonts.boldFont
-        
+
 //        UIView.appearance().semanticContentAttribute = .forceRightToLeft
         UITabBarItem.appearance().setTitleTextAttributes([.font: UIFont(name: AppFonts.regularFont, size: 11)!,
-            .foregroundColor: UIColor.gray], for: .normal)
+                                                          .foregroundColor: UIColor.gray], for: .normal)
     }
 
-     func setRootController() {
+    func setRootController() {
+        print(AppLanguage.langCode)
+        print(Locale.preferredLanguages[0].prefix(2))
+        print(Bundle.main.preferredLocalizations.first!)
         let root = UIStoryboard.main.instantiateViewController(withIdentifier: StoryBoardIds.rootController.id) as! RootNavigationViewController
         window?.rootViewController = root
         window?.makeKeyAndVisible()
