@@ -186,7 +186,7 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
         request.setValue("PURCHASE", forKey: "command") // PURCHASE - AUTHORIZATION
         request.setValue("SAR", forKey: "currency")
         request.setValue("saeed@direct-trvl.com", forKey: "customer_email")
-        request.setValue("ar", forKey: "language")
+        request.setValue(AppLanguage.langCode, forKey: "language")
         request.setValue(order.id, forKey: "merchant_reference")
         request.setValue(token, forKey: "sdk_token")
         controller.callPayFort(withRequest: request,

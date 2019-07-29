@@ -30,7 +30,7 @@ final class OrdersHistoryController: UIViewController, HaveLoading, StyledAction
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupActionBar(.withTitle("طلباتي"))
+        setupActionBar(.withTitle(Str.myOrders.localized()))
     }
 
     @IBAction func followStateAction(_: Any) {}

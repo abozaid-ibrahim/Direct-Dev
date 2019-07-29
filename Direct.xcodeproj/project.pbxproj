@@ -511,6 +511,11 @@
 		6C7B0F4022EF790400AB6E97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PassangerFormController.xib; sourceTree = "<group>"; };
 		6C7B0F4322EF791100AB6E97 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/PassangerFormController.strings; sourceTree = "<group>"; };
 		6C7B0F4522EF791E00AB6E97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PassangerFormController.strings; sourceTree = "<group>"; };
+		6C7B0F4722EF7E8500AB6E97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SuccessVisaRequestController.strings; sourceTree = "<group>"; };
+		6C7B0F4922EF7EF700AB6E97 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/PendingDocTableCell.strings; sourceTree = "<group>"; };
+		6C7B0F4D22EF7F2300AB6E97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PendingDocTableCell.strings; sourceTree = "<group>"; };
+		6C7B0F4F22EF7F3E00AB6E97 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/OrderTableCell.strings; sourceTree = "<group>"; };
+		6C7B0F5322EF7F5700AB6E97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/OrderTableCell.strings; sourceTree = "<group>"; };
 		6C7BAE7922C409E00011EE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/HomeCollectionSectionWrapper.xib; sourceTree = "<group>"; };
 		6C7BAE7B22C40D4A0011EE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PackagesTableCell.xib; sourceTree = "<group>"; };
 		6C7BAE7D22C40D4E0011EE59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PackagesTableCell.strings; sourceTree = "<group>"; };
@@ -626,7 +631,6 @@
 		6CBBDE7322E4E0CF00C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BranchesController.strings; sourceTree = "<group>"; };
 		6CBBDE7522E4E0D800C50E8E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/BanksViewController.strings; sourceTree = "<group>"; };
 		6CBBDE7722E4E0F000C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BanksViewController.strings; sourceTree = "<group>"; };
-		6CBBDE7D22E4E1EE00C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SuccessVisaRequestController.strings; sourceTree = "<group>"; };
 		6CBBDE7F22E4E1F700C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/VisaRequirementController.strings; sourceTree = "<group>"; };
 		6CBBDE8122E4E20900C50E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PendingDocTableCell.xib; sourceTree = "<group>"; };
 		6CBBDE8422E4E22A00C50E8E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/PaymentMethodsContainerController.strings; sourceTree = "<group>"; };
@@ -2510,6 +2514,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				6CB185BF22CFB433009485CD /* Base */,
+				6C7B0F4F22EF7F3E00AB6E97 /* ar */,
+				6C7B0F5322EF7F5700AB6E97 /* en */,
 			);
 			name = OrderTableCell.xib;
 			sourceTree = "<group>";
@@ -2548,7 +2554,7 @@
 			children = (
 				6C7BAE8F22C40DD40011EE59 /* Base */,
 				6C7BAEAA22C411870011EE59 /* ar */,
-				6CBBDE7D22E4E1EE00C50E8E /* en */,
+				6C7B0F4722EF7E8500AB6E97 /* en */,
 			);
 			name = SuccessVisaRequestController.xib;
 			sourceTree = "<group>";
@@ -2637,6 +2643,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				6CBBDE8122E4E20900C50E8E /* Base */,
+				6C7B0F4922EF7EF700AB6E97 /* ar */,
+				6C7B0F4D22EF7F2300AB6E97 /* en */,
 			);
 			name = PendingDocTableCell.xib;
 			sourceTree = "<group>";

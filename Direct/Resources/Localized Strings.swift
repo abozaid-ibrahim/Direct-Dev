@@ -25,7 +25,9 @@ struct Str {
     static var search: String {
         return "Search"
     }
-
+    static var myOrders: String {
+        return "My Orders"
+    }
     static var passangersInfo: String {
         return "Passangers Info"
     }

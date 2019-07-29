@@ -1,21 +1,21 @@
 
-/* Class = "UILabel"; text = "شكرا لكم"; ObjectID = "4mQ-Hk-exG"; */
-"4mQ-Hk-exG.text" = "شكرا لكم";
+/* Class = "UILabel"; text = "Thank you"; ObjectID = "4mQ-Hk-exG"; */
+"4mQ-Hk-exG.text" = "Thank you";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Hco-a4-6na"; */
 "Hco-a4-6na.text" = "Label";
 
-/* Class = "UILabel"; text = "رقم الطلب\n529033"; ObjectID = "Ihu-4n-BxI"; */
-"Ihu-4n-BxI.text" = "رقم الطلب\n529033";
+/* Class = "UILabel"; text = "Order Number"; ObjectID = "Ihu-4n-BxI"; */
+"Ihu-4n-BxI.text" = "Order Number";
 
-/* Class = "UIButton"; normalTitle = "تتبع طلبى "; ObjectID = "Iwf-TL-XPF"; */
-"Iwf-TL-XPF.normalTitle" = "تتبع طلبى ";
+/* Class = "UIButton"; normalTitle = "Follow Order"; ObjectID = "Iwf-TL-XPF"; */
+"Iwf-TL-XPF.normalTitle" = "Follow Order";
 
-/* Class = "UILabel"; text = "ما هي الخطوة التالية؟"; ObjectID = "cdV-8q-4Y8"; */
-"cdV-8q-4Y8.text" = "ما هي الخطوة التالية؟";
+/* Class = "UILabel"; text = "What's next?"; ObjectID = "cdV-8q-4Y8"; */
+"cdV-8q-4Y8.text" = "What's next?";
 
-/* Class = "UILabel"; text = "حالة الطلب الحالية بانتظار الدفع , نرجو منكم إتمام عملية السداد في أقرب فرع باستخدام رقم الطلب بالأسفل حتى نبدأ في معالجة الطلب.\n"; ObjectID = "rAg-wa-kZf"; */
-"rAg-wa-kZf.text" = "حالة الطلب الحالية بانتظار الدفع , نرجو منكم إتمام عملية السداد في أقرب فرع باستخدام رقم الطلب بالأسفل حتى نبدأ في معالجة الطلب.\n";
+/* Class = "UILabel"; text = "current order status is waiting for your paymet, please complete the payment process to proceed with your request"; ObjectID = "rAg-wa-kZf"; */
+"rAg-wa-kZf.text" = "current order status is waiting for your paymet, please complete the payment process to proceed with your request";
 
-/* Class = "UILabel"; text = "تم تقديم طلب التأشيرة بنجاح"; ObjectID = "tdu-wv-DLI"; */
-"tdu-wv-DLI.text" = "تم تقديم طلب التأشيرة بنجاح";
+/* Class = "UILabel"; text = "Your ordered is success"; ObjectID = "tdu-wv-DLI"; */
+"tdu-wv-DLI.text" = "Your ordered is success";

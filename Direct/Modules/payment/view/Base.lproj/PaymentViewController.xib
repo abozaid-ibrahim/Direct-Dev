@@ -91,9 +91,9 @@
                                 <constraint firstAttribute="height" constant="80" id="H4m-H3-Eq2"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="التكلفة الإجمالية"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Total Cost"/>
                                 <userDefinedRuntimeAttribute type="string" keyPath="valueText" value="00.00 SR"/>
-                                <userDefinedRuntimeAttribute type="string" keyPath="btnTitle" value="تأكيد"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="btnTitle" value="Continue"/>
                             </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
