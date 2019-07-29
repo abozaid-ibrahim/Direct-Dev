@@ -11,6 +11,14 @@ import SkyFloatingLabelTextField
 import UIKit
 
 class FloatingTextField: SkyFloatingLabelTextField {
+    @IBInspectable
+    open var locHint: String? {
+        didSet {
+          self.placeholder = locHint?.localized()
+            self.title = locHint?.localized()
+
+        }
+    }
     var setError = PublishSubject<Bool>()
     private let disposeBag = DisposeBag()
     override init(frame: CGRect) {

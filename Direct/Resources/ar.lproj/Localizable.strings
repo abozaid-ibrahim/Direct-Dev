@@ -162,3 +162,12 @@
 "Visa type" = "نوع التاشيرة";
 "Bio Location" = "مكان البصمة";
 "Travel Date" = "تاريخ السفر";
+"First Name" = "الاسم الاول";
+"Last Name" = "الاسم الثانى";
+"Nationality" = "الجنسية";
+"Status" = "الحالة الاجتماعية";
+"Passport" = "جواز السفر";
+"University acceptance certificate (L_20)" = "صورة قبول المعهد  \ الجامعة (l_20)";
+"Personal Photo" = "الصورة الشخصية";
+"Family ID" = "بطاقة العائلة";
+"Is husband/wife going to travel with you?" = "هل الزوج / الزوجة مسافر معك ؟";

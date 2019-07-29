@@ -45,8 +45,6 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="الاسم الاول"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="الاسم الاول"/>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
                                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
@@ -56,6 +54,7 @@
                                                 <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
                                                     <real key="value" value="0.0"/>
                                                 </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="locHint" value="First Name"/>
                                             </userDefinedRuntimeAttributes>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CYR-DE-dAk" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
@@ -79,6 +78,7 @@
                                                 <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
                                                     <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="locHint" value="Family Name"/>
                                             </userDefinedRuntimeAttributes>
                                         </textField>
                                     </subviews>
@@ -96,8 +96,6 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="الحاله الاجتماعية"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="الاسم الاول"/>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
                                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
@@ -113,6 +111,7 @@
                                                 <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                                     <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="locHint" value="Status"/>
                                             </userDefinedRuntimeAttributes>
                                         </textField>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomArrow" translatesAutoresizingMaskIntoConstraints="NO" id="DqT-pf-mjB">
@@ -144,8 +143,6 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="هل الزوج / الزوجة مسافر معك ؟"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="هل الزوج / الزوجة مسافر معك ؟"/>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
                                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
@@ -161,6 +158,7 @@
                                                 <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                                     <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="locHint" value="Is husband/wife going to travel with you?"/>
                                             </userDefinedRuntimeAttributes>
                                         </textField>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomArrow" translatesAutoresizingMaskIntoConstraints="NO" id="OaM-3Y-COm">
@@ -192,8 +190,6 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="بطاقة العائلة"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="بطاقة العائلة"/>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
                                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
@@ -212,6 +208,7 @@
                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
                                                     <real key="value" value="1"/>
                                                 </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="locHint" value="Family ID"/>
                                             </userDefinedRuntimeAttributes>
                                         </textField>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_dots" translatesAutoresizingMaskIntoConstraints="NO" id="7iy-4u-YOu">
@@ -294,8 +291,6 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="صورة الباسبور"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="صورة الباسبور"/>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
                                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
@@ -314,6 +309,7 @@
                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
                                                     <real key="value" value="1"/>
                                                 </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="locHint" value="Passport"/>
                                             </userDefinedRuntimeAttributes>
                                         </textField>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_dots" translatesAutoresizingMaskIntoConstraints="NO" id="mAh-8w-ATj">
@@ -345,8 +341,6 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="الصورة الشخصية"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="الصورة الشخصية"/>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
                                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
@@ -365,6 +359,7 @@
                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
                                                     <real key="value" value="1"/>
                                                 </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="locHint" value="Personal Photo"/>
                                             </userDefinedRuntimeAttributes>
                                         </textField>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_dots" translatesAutoresizingMaskIntoConstraints="NO" id="zJy-sL-6Sk">
@@ -396,8 +391,6 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="صورة قبول المعهد  \ الجامعة (l_20)"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="صورة قبول المعهد  \ الجامعة (l_20)"/>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
                                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
@@ -416,6 +409,7 @@
                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
                                                     <real key="value" value="1"/>
                                                 </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="locHint" value="University acceptance certificate (L_20)"/>
                                             </userDefinedRuntimeAttributes>
                                         </textField>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_dots" translatesAutoresizingMaskIntoConstraints="NO" id="eyv-bq-Lg5">
