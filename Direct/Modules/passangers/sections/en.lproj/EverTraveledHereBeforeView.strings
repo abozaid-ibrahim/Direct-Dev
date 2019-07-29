@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "تاريخ الوصول"; ObjectID = "N9d-i7-pGe"; */
+"N9d-i7-pGe.text" = "تاريخ الوصول";
+
+/* Class = "UILabel"; text = "هل سافرت الى بريطانيا في العشر سنوات الاخيرة ؟"; ObjectID = "QsX-D7-pVx"; */
+"QsX-D7-pVx.text" = "هل سافرت الى بريطانيا في العشر سنوات الاخيرة ؟";
+
+/* Class = "UILabel"; text = "مـدة الاقـامة"; ObjectID = "dBe-YO-7tk"; */
+"dBe-YO-7tk.text" = "مـدة الاقـامة";
+
+/* Class = "UISegmentedControl"; jb0-CY-BGA.segmentTitles[0] = "لا"; ObjectID = "jb0-CY-BGA"; */
+"jb0-CY-BGA.segmentTitles[0]" = "لا";
+
+/* Class = "UISegmentedControl"; jb0-CY-BGA.segmentTitles[1] = "نعم "; ObjectID = "jb0-CY-BGA"; */
+"jb0-CY-BGA.segmentTitles[1]" = "نعم ";
+
+/* Class = "UILabel"; text = "هل لديك رخصة قيادة"; ObjectID = "x1A-cz-a3G"; */
+"x1A-cz-a3G.text" = "هل لديك رخصة قيادة";
+
+/* Class = "UISegmentedControl"; xB5-V6-UUH.segmentTitles[0] = "لا"; ObjectID = "xB5-V6-UUH"; */
+"xB5-V6-UUH.segmentTitles[0]" = "لا";
+
+/* Class = "UISegmentedControl"; xB5-V6-UUH.segmentTitles[1] = "نعم "; ObjectID = "xB5-V6-UUH"; */
+"xB5-V6-UUH.segmentTitles[1]" = "نعم ";

@@ -1,0 +1,30 @@
+
+/* Class = "UISegmentedControl"; 0dK-UQ-nKd.segmentTitles[0] = "لا"; ObjectID = "0dK-UQ-nKd"; */
+"0dK-UQ-nKd.segmentTitles[0]" = "لا";
+
+/* Class = "UISegmentedControl"; 0dK-UQ-nKd.segmentTitles[1] = "نعم "; ObjectID = "0dK-UQ-nKd"; */
+"0dK-UQ-nKd.segmentTitles[1]" = "نعم ";
+
+/* Class = "UILabel"; text = "الصورة غير متوفرة"; ObjectID = "1Hr-2w-1Rd"; */
+"1Hr-2w-1Rd.text" = "الصورة غير متوفرة";
+
+/* Class = "UILabel"; text = "هل تم رفض دخولك او الغاء تاشيرتك لامريكا من قبل"; ObjectID = "1Sk-fx-oCr"; */
+"1Sk-fx-oCr.text" = "هل تم رفض دخولك او الغاء تاشيرتك لامريكا من قبل";
+
+/* Class = "UILabel"; text = "هل سبق وحصلت على تاشيرة شنغن فى ل ٣ سنوات الاخيره"; ObjectID = "1b3-zf-WgR"; */
+"1b3-zf-WgR.text" = "هل سبق وحصلت على تاشيرة شنغن فى ل ٣ سنوات الاخيره";
+
+/* Class = "UILabel"; text = "هل لديك اى اقارب فى امريكا؟"; ObjectID = "9Kg-Ed-IbD"; */
+"9Kg-Ed-IbD.text" = "هل لديك اى اقارب فى امريكا؟";
+
+/* Class = "UISegmentedControl"; uJD-c6-MSC.segmentTitles[0] = "لا"; ObjectID = "uJD-c6-MSC"; */
+"uJD-c6-MSC.segmentTitles[0]" = "لا";
+
+/* Class = "UISegmentedControl"; uJD-c6-MSC.segmentTitles[1] = "نعم "; ObjectID = "uJD-c6-MSC"; */
+"uJD-c6-MSC.segmentTitles[1]" = "نعم ";
+
+/* Class = "UISegmentedControl"; zKI-GX-N8y.segmentTitles[0] = "لا"; ObjectID = "zKI-GX-N8y"; */
+"zKI-GX-N8y.segmentTitles[0]" = "لا";
+
+/* Class = "UISegmentedControl"; zKI-GX-N8y.segmentTitles[1] = "نعم "; ObjectID = "zKI-GX-N8y"; */
+"zKI-GX-N8y.segmentTitles[1]" = "نعم ";

@@ -31,7 +31,7 @@
             <rect key="frame" x="0.0" y="0.0" width="408" height="254"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="هل سافرت الى بريطانيا في العشر سنوات الاخيرة ؟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsX-D7-pVx">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="Ever  you traveled to here last 10 years?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsX-D7-pVx">
                     <rect key="frame" x="8" y="8" width="392" height="28.5"/>
                     <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
                     <nil key="textColor"/>
@@ -43,8 +43,8 @@
                         <constraint firstAttribute="height" constant="30" id="ab5-yX-PwX"/>
                     </constraints>
                     <segments>
-                        <segment title="لا"/>
-                        <segment title="نعم "/>
+                        <segment title="No"/>
+                        <segment title="Yes"/>
                     </segments>
                     <color key="tintColor" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
@@ -82,7 +82,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wlc-9T-Mit" userLabel="arrival date stack">
                                     <rect key="frame" x="0.0" y="0.0" width="376" height="40"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تاريخ الوصول" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9d-i7-pGe">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arrival Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9d-i7-pGe">
                                             <rect key="frame" x="0.0" y="10" width="100" height="20.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="100" id="0AK-kb-iBF"/>
@@ -92,7 +92,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oh6-DU-cxc" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
-                                            <rect key="frame" x="110" y="5" width="266" height="30"/>
+                                            <rect key="frame" x="110" y="0.0" width="266" height="40"/>
                                             <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -103,7 +103,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Nc6-mk-6wg" userLabel="duration stack">
                                     <rect key="frame" x="0.0" y="50" width="376" height="40"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مـدة الاقـامة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBe-YO-7tk">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stay period" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBe-YO-7tk">
                                             <rect key="frame" x="0.0" y="10" width="100" height="20.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="100" id="urX-Nz-mKV"/>
@@ -113,7 +113,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6oz-uI-A0S" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
-                                            <rect key="frame" x="110" y="5" width="266" height="30"/>
+                                            <rect key="frame" x="110" y="0.0" width="266" height="40"/>
                                             <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -126,7 +126,7 @@
                                 <constraint firstAttribute="height" constant="90" id="CCJ-Fb-o6A"/>
                             </constraints>
                         </stackView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="هل لديك رخصة قيادة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1A-cz-a3G">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="Had you have driving licence?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1A-cz-a3G">
                             <rect key="frame" x="8" y="98" width="376" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -138,8 +138,8 @@
                                 <constraint firstAttribute="height" constant="30" id="vmT-8N-b3U"/>
                             </constraints>
                             <segments>
-                                <segment title="لا"/>
-                                <segment title="نعم "/>
+                                <segment title="No"/>
+                                <segment title="Yes"/>
                             </segments>
                             <color key="tintColor" red="0.98823529409999999" green="0.50196078430000002" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </segmentedControl>

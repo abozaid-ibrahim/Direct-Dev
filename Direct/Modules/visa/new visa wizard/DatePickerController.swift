@@ -33,7 +33,7 @@ class DatePickerController: UIViewController, PanModalPresentable {
     private let disposeBag = DisposeBag()
     private func setDatetoHeaderLbl(date: Date) {
         
-        let str = Str.travelDate + ": " + date.displayFormat
+        let str = Str.travelDate.localized() + ": " + date.displayFormat
         let attributedString = NSMutableAttributedString(string: str, attributes: [
             .font: UIFont(name: AppFonts.regularFont, size: 14.0)!,
             .foregroundColor: UIColor(white: 61.0 / 255.0, alpha: 1.0),
@@ -99,14 +99,14 @@ extension DatePickerController: JBDatePickerViewDelegate {
 extension Date {
     var displayFormat: String {
         let outputFormatter = DateFormatter()
-        outputFormatter.locale = Locale(identifier: "ar")
+        outputFormatter.locale = Locale(identifier: AppLanguage.langCode)
         outputFormatter.dateFormat = "E, d MMM yyyy"
         return outputFormatter.string(from: self)
     }
 
     var apiFormat: String {
         let outputFormatter = DateFormatter()
-        outputFormatter.locale = Locale(identifier: "en")
+        outputFormatter.locale = Locale(identifier:  "en")
         outputFormatter.dateFormat = "dd-MM-yyyy"
         return outputFormatter.string(from: self)
     }
