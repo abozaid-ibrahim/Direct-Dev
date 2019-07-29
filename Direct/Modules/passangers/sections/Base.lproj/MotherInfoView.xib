@@ -80,7 +80,7 @@
                                 <userDefinedRuntimeAttribute type="color" keyPath="lineErrorColor">
                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="string" keyPath="locHint" value="Naionality"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="locHint" value="Nationality"/>
                             </userDefinedRuntimeAttributes>
                         </textField>
                     </subviews>

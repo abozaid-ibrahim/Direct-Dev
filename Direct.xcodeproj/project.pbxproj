@@ -506,6 +506,7 @@
 		6C7B0F3522EF740000AB6E97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EverTraveledHereBeforeView.xib; sourceTree = "<group>"; };
 		6C7B0F3822EF740900AB6E97 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/EverTraveledHereBeforeView.strings; sourceTree = "<group>"; };
 		6C7B0F3A22EF746400AB6E97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/EverTraveledHereBeforeView.strings; sourceTree = "<group>"; };
+		6C7B0F3C22EF771900AB6E97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SponserFormController.strings; sourceTree = "<group>"; };
 		6C7BAE7922C409E00011EE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/HomeCollectionSectionWrapper.xib; sourceTree = "<group>"; };
 		6C7BAE7B22C40D4A0011EE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PackagesTableCell.xib; sourceTree = "<group>"; };
 		6C7BAE7D22C40D4E0011EE59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PackagesTableCell.strings; sourceTree = "<group>"; };
@@ -616,7 +617,6 @@
 		6CBBDE6422E4DFE200C50E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AddCountryViewController.xib; sourceTree = "<group>"; };
 		6CBBDE6722E4E00600C50E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SponserFormController.xib; sourceTree = "<group>"; };
 		6CBBDE6A22E4E04800C50E8E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/SponserFormController.strings; sourceTree = "<group>"; };
-		6CBBDE6C22E4E08A00C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SponserFormController.strings; sourceTree = "<group>"; };
 		6CBBDE6E22E4E0B500C50E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BranchesController.xib; sourceTree = "<group>"; };
 		6CBBDE7122E4E0BB00C50E8E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/BranchesController.strings; sourceTree = "<group>"; };
 		6CBBDE7322E4E0CF00C50E8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BranchesController.strings; sourceTree = "<group>"; };
@@ -2603,7 +2603,7 @@
 			children = (
 				6CBBDE6722E4E00600C50E8E /* Base */,
 				6CBBDE6A22E4E04800C50E8E /* ar */,
-				6CBBDE6C22E4E08A00C50E8E /* en */,
+				6C7B0F3C22EF771900AB6E97 /* en */,
 			);
 			name = SponserFormController.xib;
 			sourceTree = "<group>";

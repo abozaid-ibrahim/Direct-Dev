@@ -6,10 +6,10 @@
 "6kS-yZ-mxF.text" = "I will do it later";
 
 /* Class = "UIButton"; normalTitle = "تابع "; ObjectID = "Gn8-yd-BGn"; */
-"Gn8-yd-BGn.normalTitle" = "تابع ";
+"Gn8-yd-BGn.normalTitle" = "Confirm";
 
-/* Class = "UILabel"; text = "صاحب كشف الحساب والتعريف بالراتب ليس بالضرورة أن يكون أحد المسافرين\n"; ObjectID = "H2d-UZ-aNh"; */
-"H2d-UZ-aNh.text" = "صاحب كشف الحساب والتعريف بالراتب ليس بالضرورة أن يكون أحد المسافرين\n";
+/* Class = "UILabel"; text = "The owner of the statement of account and the definition of salary does not necessarily have to be a traveler\n"; ObjectID = "H2d-UZ-aNh"; */
+"H2d-UZ-aNh.text" = "The owner of the statement of account and the definition of salary does not necessarily have to be a traveler\n";
 
 /* Class = "UILabel"; text = "I will do it later"; ObjectID = "qoV-bl-zOy"; */
 "qoV-bl-zOy.text" = "I will do it later";

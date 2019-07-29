@@ -38,18 +38,18 @@
                     <rect key="frame" x="8" y="44" width="398" height="810"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZ1-5D-x4J" userLabel="alert">
-                            <rect key="frame" x="12" y="12" width="374" height="73"/>
+                            <rect key="frame" x="12" y="12" width="374" height="93.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2d-UZ-aNh">
-                                    <rect key="frame" x="49" y="6" width="313" height="61"/>
-                                    <string key="text">صاحب كشف الحساب والتعريف بالراتب ليس بالضرورة أن يكون أحد المسافرين
+                                    <rect key="frame" x="49" y="6" width="313" height="81.5"/>
+                                    <string key="text">The owner of the statement of account and the definition of salary does not necessarily have to be a traveler
 </string>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alert" translatesAutoresizingMaskIntoConstraints="NO" id="0I5-Fu-06g">
-                                    <rect key="frame" x="12" y="24" width="25" height="25"/>
+                                    <rect key="frame" x="12" y="34.5" width="25" height="25"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="MSV-6S-rsl"/>
                                         <constraint firstAttribute="height" constant="25" id="k2i-fW-Xf8"/>
@@ -79,7 +79,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9V-b3-aRc">
-                            <rect key="frame" x="12" y="105" width="374" height="693"/>
+                            <rect key="frame" x="12" y="125.5" width="374" height="672.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uBh-3W-1Sd" userLabel="first spinner">
                                     <rect key="frame" x="12" y="12" width="350" height="77.5"/>
@@ -100,8 +100,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="من صاحب كشف الحساب والتعريف بالراتب ؟"/>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="من صاحب كشف الحساب والتعريف بالراتب ؟"/>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
                                                             <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </userDefinedRuntimeAttribute>
@@ -120,6 +118,7 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
                                                             <real key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="locHint" value="Statement of account and the letter of salary?"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomArrow" translatesAutoresizingMaskIntoConstraints="NO" id="N82-9j-oCQ">
@@ -159,8 +158,6 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="اختر النسبية"/>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="اختر النسبية"/>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
                                                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </userDefinedRuntimeAttribute>
@@ -179,6 +176,7 @@
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
                                                                     <real key="value" value="1"/>
                                                                 </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="locHint" value="Relativity"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </textField>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomArrow" translatesAutoresizingMaskIntoConstraints="NO" id="HG5-B9-CaD">
@@ -209,8 +207,6 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="جواز السفر"/>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="جواز السفر"/>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
                                                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </userDefinedRuntimeAttribute>
@@ -229,6 +225,7 @@
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
                                                                     <real key="value" value="1"/>
                                                                 </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="locHint" value="Passport"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </textField>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomArrow" translatesAutoresizingMaskIntoConstraints="NO" id="Ap8-Z0-kcf">
@@ -262,7 +259,7 @@
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gn8-yd-BGn">
-                                    <rect key="frame" x="12" y="651" width="350" height="30"/>
+                                    <rect key="frame" x="12" y="630.5" width="350" height="30"/>
                                     <state key="normal" title="تابع "/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">
@@ -286,8 +283,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="كشف الحساب (اخر صفحة من الكشف)"/>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="كشف الحساب (اخر صفحة من الكشف)"/>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
                                                             <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </userDefinedRuntimeAttribute>
@@ -306,6 +301,7 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
                                                             <real key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="locHint" value="Account Statement (last page)"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_dots" translatesAutoresizingMaskIntoConstraints="NO" id="yAk-nM-1ai">
@@ -361,8 +357,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="ارفق صورة التعريف بالراتب"/>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="ارفق صورة التعريف بالراتب"/>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
                                                             <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </userDefinedRuntimeAttribute>
@@ -381,6 +375,7 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
                                                             <real key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="locHint" value="Salary Letter"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uploadArrow" translatesAutoresizingMaskIntoConstraints="NO" id="FWY-WJ-5br">
