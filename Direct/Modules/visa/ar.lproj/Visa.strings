@@ -1,0 +1,63 @@
+
+/* Class = "UILabel"; text = "العلاقة بين المسافرين"; ObjectID = "5eF-pt-raM"; */
+"5eF-pt-raM.text" = "العلاقة بين المسافرين";
+
+/* Class = "UILabel"; text = "الدولة"; ObjectID = "8wU-zg-3MJ"; */
+"8wU-zg-3MJ.text" = "الدولة";
+
+/* Class = "UILabel"; text = "مكان البصمة"; ObjectID = "EXs-hn-WZA"; */
+"EXs-hn-WZA.text" = "مكان البصمة";
+
+/* Class = "UILabel"; text = "تاريخ السفر"; ObjectID = "Pgr-s7-yfA"; */
+"Pgr-s7-yfA.text" = "تاريخ السفر";
+
+/* Class = "UILabel"; text = "المتكفلون بالمصاريف"; ObjectID = "QMe-RP-DN6"; */
+"QMe-RP-DN6.text" = "المتكفلون بالمصاريف";
+
+/* Class = "UILabel"; text = "تحديد الموعد"; ObjectID = "SsY-RN-4BW"; */
+"SsY-RN-4BW.text" = "تحديد الموعد";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "a7T-le-4cT"; */
+"a7T-le-4cT.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "az2-DV-HbN"; */
+"az2-DV-HbN.text" = "Label";
+
+/* Class = "UILabel"; text = "نوع التاشيرة"; ObjectID = "d8b-Et-pAY"; */
+"d8b-Et-pAY.text" = "نوع التاشيرة";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "eXf-ie-qOy"; */
+"eXf-ie-qOy.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ejD-Hx-lWN"; */
+"ejD-Hx-lWN.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "eqL-hM-hBI"; */
+"eqL-hM-hBI.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "أدخل بيانات المسافرين"; ObjectID = "fFK-aU-6J7"; */
+"fFK-aU-6J7.normalTitle" = "أدخل بيانات المسافرين";
+
+/* Class = "UILabel"; text = "المعلومات الأساسية"; ObjectID = "nFJ-rr-6qH"; */
+"nFJ-rr-6qH.text" = "المعلومات الأساسية";
+
+/* Class = "UILabel"; text = "اذكر بعض الدول التي سافرت إليها اخر 5 سنوات"; ObjectID = "ocC-P9-gJ6"; */
+"ocC-P9-gJ6.text" = "اذكر بعض الدول التي سافرت إليها اخر 5 سنوات";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qDi-Ew-jwg"; */
+"qDi-Ew-jwg.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qcU-Kc-oSZ"; */
+"qcU-Kc-oSZ.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "t8H-mk-MHH"; */
+"t8H-mk-MHH.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = " + أضف"; ObjectID = "vdC-TN-SmQ"; */
+"vdC-TN-SmQ.normalTitle" = " + أضف";
+
+/* Class = "UILabel"; text = "أدخل بيانات المسافرين"; ObjectID = "xcw-bJ-45X"; */
+"xcw-bJ-45X.text" = "أدخل بيانات المسافرين";
+
+/* Class = "UILabel"; text = "عدد المسافرين"; ObjectID = "zPg-aM-EB4"; */
+"zPg-aM-EB4.text" = "عدد المسافرين";

@@ -163,6 +163,7 @@
 		6C778289227C6EE6001926B2 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C778287227C6EE6001926B2 /* ContactUsViewController.swift */; };
 		6C77828C227C715A001926B2 /* ImageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C77828B227C715A001926B2 /* ImageLabel.swift */; };
 		6C797520228BC82D000807D4 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C79751F228BC82D000807D4 /* UILabelExtension.swift */; };
+		6C7B0F1F22EF694100AB6E97 /* Visa.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C7B0F2122EF694100AB6E97 /* Visa.storyboard */; };
 		6C8286EB228B9C96009FB5FF /* View+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8286EA228B9C96009FB5FF /* View+App.swift */; };
 		6C8503B1229DDB38004FE346 /* VisaRequestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8503B0229DDB38004FE346 /* VisaRequestResponse.swift */; };
 		6C8503B3229DDB5F004FE346 /* VisaAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8503B2229DDB5F004FE346 /* VisaAPIs.swift */; };
@@ -257,7 +258,6 @@
 		6CDEBBEC2284FDA000EC3E6F /* PackagesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEBBEA2284FDA000EC3E6F /* PackagesTableCell.swift */; };
 		6CDEBBF02285012400EC3E6F /* PackageDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEBBEE2285012400EC3E6F /* PackageDetailsController.swift */; };
 		6CDEF77F22A11DDA00BF5F0B /* VisaReqConfirmationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEF77D22A11DDA00BF5F0B /* VisaReqConfirmationController.swift */; };
-		6CDEF78222A11EFC00BF5F0B /* Visa.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CDEF78122A11EFC00BF5F0B /* Visa.storyboard */; };
 		6CE722ED2274FA1B00E095DC /* VisaRequirementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */; };
 		6CE8D26A22D4DAD000BD86D1 /* AboutUsJsonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8D26922D4DAD000BD86D1 /* AboutUsJsonResponse.swift */; };
 		6CE8D26C22D4DB7800BD86D1 /* AboutUsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8D26B22D4DB7800BD86D1 /* AboutUsViewModel.swift */; };
@@ -498,6 +498,9 @@
 		6C778287227C6EE6001926B2 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		6C77828B227C715A001926B2 /* ImageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLabel.swift; sourceTree = "<group>"; };
 		6C79751F228BC82D000807D4 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		6C7B0F2022EF694100AB6E97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Visa.storyboard; sourceTree = "<group>"; };
+		6C7B0F2322EF694B00AB6E97 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Visa.strings; sourceTree = "<group>"; };
+		6C7B0F2722EF6A7500AB6E97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Visa.strings; sourceTree = "<group>"; };
 		6C7BAE7922C409E00011EE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/HomeCollectionSectionWrapper.xib; sourceTree = "<group>"; };
 		6C7BAE7B22C40D4A0011EE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PackagesTableCell.xib; sourceTree = "<group>"; };
 		6C7BAE7D22C40D4E0011EE59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PackagesTableCell.strings; sourceTree = "<group>"; };
@@ -654,7 +657,6 @@
 		6CDEBBEA2284FDA000EC3E6F /* PackagesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesTableCell.swift; sourceTree = "<group>"; };
 		6CDEBBEE2285012400EC3E6F /* PackageDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailsController.swift; sourceTree = "<group>"; };
 		6CDEF77D22A11DDA00BF5F0B /* VisaReqConfirmationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaReqConfirmationController.swift; sourceTree = "<group>"; };
-		6CDEF78122A11EFC00BF5F0B /* Visa.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Visa.storyboard; sourceTree = "<group>"; };
 		6CE722EB2274FA1B00E095DC /* VisaRequirementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaRequirementController.swift; sourceTree = "<group>"; };
 		6CE8D26922D4DAD000BD86D1 /* AboutUsJsonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsJsonResponse.swift; sourceTree = "<group>"; };
 		6CE8D26B22D4DB7800BD86D1 /* AboutUsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewModel.swift; sourceTree = "<group>"; };
@@ -1504,7 +1506,7 @@
 		6CE722E82274F9F700E095DC /* visa */ = {
 			isa = PBXGroup;
 			children = (
-				6CDEF78122A11EFC00BF5F0B /* Visa.storyboard */,
+				6C7B0F2122EF694100AB6E97 /* Visa.storyboard */,
 				6CF9F5D422BECCAE00E45E8A /* confirmation */,
 				6C3885C3229B1B4F00CA168A /* visa requirement */,
 				6C3885C2229B1B4100CA168A /* new visa wizard */,
@@ -1852,7 +1854,7 @@
 				6C9027AC228F956B00B41705 /* PackageDetailsController.xib in Resources */,
 				6CE8D27122D4E52600BD86D1 /* UploadPendingDocsController.xib in Resources */,
 				6C33A5EF22D1257D00D2B611 /* VisaRequirementTabCell.xib in Resources */,
-				6CDEF78222A11EFC00BF5F0B /* Visa.storyboard in Resources */,
+				6C7B0F1F22EF694100AB6E97 /* Visa.storyboard in Resources */,
 				6C9027CA228F95AC00B41705 /* VisaRequirementController.xib in Resources */,
 				6C9027BB228F958C00B41705 /* TextTableCell.xib in Resources */,
 				6C9027B2228F957700B41705 /* SingleRowTableCell.xib in Resources */,
@@ -2210,6 +2212,16 @@
 				6C902772228F93BE00B41705 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6C7B0F2122EF694100AB6E97 /* Visa.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C7B0F2022EF694100AB6E97 /* Base */,
+				6C7B0F2322EF694B00AB6E97 /* ar */,
+				6C7B0F2722EF6A7500AB6E97 /* en */,
+			);
+			name = Visa.storyboard;
 			sourceTree = "<group>";
 		};
 		6C902775228F94BF00B41705 /* AboutUsViewController.xib */ = {

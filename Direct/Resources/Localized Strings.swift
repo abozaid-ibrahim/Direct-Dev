@@ -19,6 +19,9 @@ struct Str {
     static var appName: String {
         return "Direct Visa"
     }
+    static var travelDate: String {
+        return "Travel Date"
+    }
     static var search: String {
         return "Search"
     }

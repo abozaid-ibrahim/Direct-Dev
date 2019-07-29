@@ -1,0 +1,63 @@
+
+/* Class = "UILabel"; text = "Relation between passangers"; ObjectID = "5eF-pt-raM"; */
+"5eF-pt-raM.text" = "Relation between passangers";
+
+/* Class = "UILabel"; text = "Country"; ObjectID = "8wU-zg-3MJ"; */
+"8wU-zg-3MJ.text" = "Country";
+
+/* Class = "UILabel"; text = "Bio Location"; ObjectID = "EXs-hn-WZA"; */
+"EXs-hn-WZA.text" = "Bio Location";
+
+/* Class = "UILabel"; text = "Travel date"; ObjectID = "Pgr-s7-yfA"; */
+"Pgr-s7-yfA.text" = "Travel date";
+
+/* Class = "UILabel"; text = "Cost sponsors"; ObjectID = "QMe-RP-DN6"; */
+"QMe-RP-DN6.text" = "Cost sponsors";
+
+/* Class = "UILabel"; text = "Pick a date"; ObjectID = "SsY-RN-4BW"; */
+"SsY-RN-4BW.text" = "Pick a date";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "a7T-le-4cT"; */
+"a7T-le-4cT.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "az2-DV-HbN"; */
+"az2-DV-HbN.text" = "Label";
+
+/* Class = "UILabel"; text = "Visa type"; ObjectID = "d8b-Et-pAY"; */
+"d8b-Et-pAY.text" = "Visa type";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "eXf-ie-qOy"; */
+"eXf-ie-qOy.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ejD-Hx-lWN"; */
+"ejD-Hx-lWN.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "eqL-hM-hBI"; */
+"eqL-hM-hBI.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Enter passangers info"; ObjectID = "fFK-aU-6J7"; */
+"fFK-aU-6J7.normalTitle" = "Enter passangers info";
+
+/* Class = "UILabel"; text = "Basic information"; ObjectID = "nFJ-rr-6qH"; */
+"nFJ-rr-6qH.text" = "Basic information";
+
+/* Class = "UILabel"; text = "Mention the countries you had visited last 5 years?"; ObjectID = "ocC-P9-gJ6"; */
+"ocC-P9-gJ6.text" = "Mention the countries you had visited last 5 years?";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qDi-Ew-jwg"; */
+"qDi-Ew-jwg.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qcU-Kc-oSZ"; */
+"qcU-Kc-oSZ.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "t8H-mk-MHH"; */
+"t8H-mk-MHH.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "+ Add"; ObjectID = "vdC-TN-SmQ"; */
+"vdC-TN-SmQ.normalTitle" = "+ Add";
+
+/* Class = "UILabel"; text = "Enter passangers info"; ObjectID = "xcw-bJ-45X"; */
+"xcw-bJ-45X.text" = "Enter passangers info";
+
+/* Class = "UILabel"; text = "Passangers count"; ObjectID = "zPg-aM-EB4"; */
+"zPg-aM-EB4.text" = "Passangers count";
