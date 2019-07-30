@@ -8,6 +8,8 @@
 
 import IQKeyboardManagerSwift
 import UIKit
+import LanguageManager_iOS
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
@@ -17,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        let newLang = AppLanguage.langCode == "ar" ? Languages.ar : Languages.en
+
+//        LanguageManager.shared.defaultLanguage = Languages.ar
+        L102Localizer.DoTheMagic()
+
         setRootController()
         setupGlobalAppearance()
         setupKeyboardManager()
@@ -48,9 +55,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func setRootController() {
-        print(AppLanguage.langCode)
-        print(Locale.preferredLanguages[0].prefix(2))
-        print(Bundle.main.preferredLocalizations.first!)
         let root = UIStoryboard.main.instantiateViewController(withIdentifier: StoryBoardIds.rootController.id) as! RootNavigationViewController
         window?.rootViewController = root
         window?.makeKeyAndVisible()
