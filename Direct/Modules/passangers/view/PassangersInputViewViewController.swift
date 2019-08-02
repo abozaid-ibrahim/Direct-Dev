@@ -56,7 +56,7 @@ class PassangersInputViewViewController: UIViewController {
         }
     }
 
-    private func addTabItemAndController(_ placeholder: String, _ info: VisaRequestParams, writingIndex: Int,totalIndex:Int) {
+    private func addTabItemAndController(_ placeholder: String, _ info: VisaRequestParams, writingIndex: Int,totalIndex:Int,isChild:Bool  = true) {
         let tabController = PassangerFormController()
         tabController.countryName = info.countryName
         tabController.countryId = info.country_id
@@ -64,7 +64,7 @@ class PassangersInputViewViewController: UIViewController {
         tabController.index = totalIndex
         tabController.visaReqID = info.requestID
         tabController.visaType = info.visatype
-        tabController.isChild = Str.child == placeholder
+        tabController.isChild = isChild
         let item = ViewPagerTab(title: "\(placeholder) \(1 + writingIndex)", image: #imageLiteral(resourceName: "rightGray"))
 
         tabController.successIndex
@@ -84,7 +84,7 @@ class PassangersInputViewViewController: UIViewController {
         var globalIndex = -1
         for index in 0 ..< Int(info.no_of_adult)! {
             globalIndex += 1
-            addTabItemAndController(Str.adult.localized, info, writingIndex: index, totalIndex: globalIndex)
+            addTabItemAndController(Str.adult.localized, info, writingIndex: index, totalIndex: globalIndex,isChild:  false)
         }
         for index in 0 ..< Int(info.no_of_child)! {
             globalIndex += 1
