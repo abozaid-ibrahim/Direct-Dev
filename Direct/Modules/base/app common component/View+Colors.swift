@@ -12,7 +12,11 @@ extension UIView {
     func setGradient(colors: UIColor...) {
         let gl = CAGradientLayer()
         gl.colors = colors
-        gl.locations = [0.0, 1.0]
-        layer.addSublayer(gl)
+        gl.startPoint = CGPoint(x: 0, y: 1)
+        gl.endPoint = CGPoint(x: 1, y: 1)
+
+        gl.frame = bounds
+        layer.insertSublayer(gl, at:    0)
+        
     }
 }
