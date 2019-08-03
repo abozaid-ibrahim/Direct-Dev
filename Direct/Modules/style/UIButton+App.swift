@@ -52,7 +52,7 @@ extension UIButton {
             titleLabel?.font = UIFont(name: AppFonts.boldFont, size: 14)
 
         case .whiteBtn:
-            backgroundColor = UIColor.appMango
+            backgroundColor = UIColor.appPumpkinOrange
             cornerRadiusV = 10
             layer.borderColor = UIColor.white.cgColor
             layer.borderWidth = 1

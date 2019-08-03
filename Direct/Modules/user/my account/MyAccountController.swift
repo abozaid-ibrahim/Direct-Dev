@@ -22,7 +22,7 @@ final class MyAccountController: UIViewController, StyledActionBar {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        self.view.backgroundColor = .appMango
+        self.view.backgroundColor = .appPumpkinOrange
         tableView.register(nibWithCellClass: AboutUsTableCell.self)
         tableView.backgroundColor = .clear
         containerView.backgroundColor = .appVeryLightGray
@@ -30,7 +30,7 @@ final class MyAccountController: UIViewController, StyledActionBar {
         tableView.separatorStyle = .singleLine
         tabBarItem.image = #imageLiteral(resourceName: "More")
         setupFooter()
-        headerView.backgroundColor = UIColor.appMango
+        headerView.backgroundColor = UIColor.appPumpkinOrange
         headerView.setYellowGradient()
     }
     
