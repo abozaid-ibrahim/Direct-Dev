@@ -37,15 +37,12 @@ final class MyAccountController: UIViewController, StyledActionBar {
                 let vc = LanguagesViewController()
                 vc.selectedLang.bind(to: self.langLbl.rx.text).disposed(by: self.disposeBag)
                 self.navigationController?.pushViewController(vc)
-                
             }).disposed(by: disposeBag)
         logoutBtn.localizedFont = .bold(15)
         logoutBtn.setTitleColor(.appMango, for: .normal)
         logoutBtn.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
-                
-                let alert = UIAlertController(title: Str.logout, message: Str.sureToLogout.localized(), preferredStyle: .alert)
-                
+                let alert = UIAlertController(title: Str.logout.localized(), message: Str.sureToLogout.localized(), preferredStyle: .alert)
                 let search = UIAlertAction(title: Str.logout.localized(), style: .default, handler: { _ in
                     
                 })
