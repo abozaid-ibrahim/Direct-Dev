@@ -17,9 +17,10 @@ final class MyAccountController: UIViewController, StyledActionBar {
     @IBOutlet private var langView: UIView!
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var langLbl: UILabel!
-    
+    @IBOutlet private var headerView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.register(nibWithCellClass: AboutUsTableCell.self)
         tableView.backgroundColor = .clear
         view.backgroundColor = .appVeryLightGray
@@ -27,9 +28,12 @@ final class MyAccountController: UIViewController, StyledActionBar {
         tableView.separatorStyle = .singleLine
         tabBarItem.image = #imageLiteral(resourceName: "More")
         setupFooter()
-      
+        headerView.backgroundColor = UIColor.appMango
+        headerView.setYellowGradient()
+
     }
-    private func setupFooter(){
+    
+    private func setupFooter() {
         langLbl.text = AppLanguage.currentLangName
         langLbl.font = .appRegularFontWith(size: 13)
         langView.rx.tapGesture().when(.recognized)
@@ -53,6 +57,7 @@ final class MyAccountController: UIViewController, StyledActionBar {
                 self.present(alert, animated: true, completion: nil)
             }).disposed(by: disposeBag)
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupActionBar(.withTitle(Str.more.localized()))
