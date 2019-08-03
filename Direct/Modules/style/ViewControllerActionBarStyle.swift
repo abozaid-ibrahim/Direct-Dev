@@ -9,7 +9,8 @@
 import RxSwift
 import UIKit
 enum ActionBarStyles {
-    case withTitle(String), withTitleAndX(String), withTitleAndBack(String), withX
+    case withTitle(String), withTitleAndX(String), withTitleAndBack(String), withX,
+        hidden
 }
 
 protocol StyledActionBar {
@@ -20,10 +21,10 @@ protocol StyledActionBar {
 extension StyledActionBar where Self: UIViewController {
     func setupActionBar(_ style: ActionBarStyles) {
         guard let navigationBar = navigationController?.navigationBar else {
-            addCustomNavigationBar(style)
+            self.addCustomNavigationBar(style)
             return
         }
-        navigationBar.isHidden = false
+
         // hide back button ttilel
         let BarButtonItemAppearance = UIBarButtonItem.appearance()
         BarButtonItemAppearance.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: .normal)
@@ -36,15 +37,20 @@ extension StyledActionBar where Self: UIViewController {
                                              .foregroundColor: UIColor.white]
         switch style {
         case let .withTitle(title):
+            navigationBar.isHidden = self.navigationController?.setNavigationBarHidden(false, animated: false)
+
             navigationBar.topItem?.title = title
             self.title = title
         case let .withTitleAndX(title):
+            self.navigationController?.setNavigationBarHidden(false, animated: false)
             navigationBar.topItem?.title = title
             self.title = title
         case let .withTitleAndBack(title):
+            self.navigationController?.setNavigationBarHidden(false, animated: false)
             navigationBar.topItem?.title = title
         case .withX:
-            navigationBar.isHidden = true
+
+            self.navigationController?.setNavigationBarHidden(true, animated: false)
             var backView = UIView()
             backView.backgroundColor = UIColor.black.withAlphaComponent(0.35)
             var back = UIImageView(image: #imageLiteral(resourceName: "group10"))
@@ -56,7 +62,9 @@ extension StyledActionBar where Self: UIViewController {
                     navigationBar.isHidden = false
                 }).disposed(by: disposeBag)
             view.addSubview(backView)
-            setConstrains(back: &back, backView: &backView, view: &view)
+            self.setConstrains(back: &back, backView: &backView, view: &view)
+        case .hidden:
+            self.navigationController?.setNavigationBarHidden(true, animated: false)
         }
     }
 

@@ -18,19 +18,20 @@ final class MyAccountController: UIViewController, StyledActionBar {
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var langLbl: UILabel!
     @IBOutlet private var headerView: UIView!
+    @IBOutlet private  weak var containerView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.view.backgroundColor = .appMango
         tableView.register(nibWithCellClass: AboutUsTableCell.self)
         tableView.backgroundColor = .clear
-        view.backgroundColor = .appVeryLightGray
+        containerView.backgroundColor = .appVeryLightGray
         tableView.separatorColor = UIColor.appVeryLightGray
         tableView.separatorStyle = .singleLine
         tabBarItem.image = #imageLiteral(resourceName: "More")
         setupFooter()
         headerView.backgroundColor = UIColor.appMango
         headerView.setYellowGradient()
-
     }
     
     private func setupFooter() {
@@ -60,7 +61,7 @@ final class MyAccountController: UIViewController, StyledActionBar {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupActionBar(.withTitle(Str.more.localized()))
+        setupActionBar(.hidden)
     }
     
     @IBAction func login(_: Any) {
