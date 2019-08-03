@@ -19,7 +19,7 @@ class NewDirectVisaViewModel {
     var selectedCountry: NewVisaServices?
     var selectedCountryName = PublishSubject<String?>()
     
-    
+    var showErrorMessage = PublishSubject<String?>()
     private var priceNotes: [Price_notes]? {
         didSet {
             guard let value = priceNotes else { return }
@@ -41,7 +41,6 @@ class NewDirectVisaViewModel {
     var selectedRelation = PublishSubject<String?>()
     var totalCost = BehaviorSubject<String>(value: "0".priced)
     var embassyLocations: [DTEmbassyLocation]?
-    
     
     var turkeyCountryId: String {
         return APIConstants.TurkeyID
@@ -138,7 +137,8 @@ class NewDirectVisaViewModel {
             }
             try! AppNavigator().push(.visaRequirement(.mainView(self.visaRequestData))
             )
-        }, onError: { _ in
+        }, onError: { err in
+            self.showErrorMessage.onNext(err.localizedDescription)
             self.showProgress.onNext(false)
         }).disposed(by: disposeBag)
     }

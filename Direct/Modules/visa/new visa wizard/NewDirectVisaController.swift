@@ -15,7 +15,7 @@ import UIKit
 
 class NewDirectVisaController: UIViewController, SwipeUpDismissable {
     let disposeBag = DisposeBag()
-    
+
     var dismessed: PublishSubject<Bool> = PublishSubject()
     var initialTouchPoint: CGPoint = CGPoint(x: 0, y: 0)
     var defaultFrame: CGRect? {
@@ -61,12 +61,18 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
         bindDataToUI()
         setONClickViews()
         viewModel.viewDidLoad()
+        viewModel.showErrorMessage.subscribe(onNext: { [unowned self] value in
+            let rowVC = TransientAlertViewController()
+            rowVC.msg = value
+            self.presentPanModal(rowVC)
+        }).disposed(by: disposeBag)
     }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         title = Str.appName.localized()
-
     }
+
     private func bindDataToUI() {
         relationsField.isHidden = true
         wrongNotesContainer.isHidden = true
@@ -145,5 +151,3 @@ class NewDirectVisaController: UIViewController, SwipeUpDismissable {
             }).disposed(by: disposeBag)
     }
 }
-
-
