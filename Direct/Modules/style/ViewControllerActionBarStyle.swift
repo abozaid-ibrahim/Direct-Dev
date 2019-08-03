@@ -37,7 +37,7 @@ extension StyledActionBar where Self: UIViewController {
                                              .foregroundColor: UIColor.white]
         switch style {
         case let .withTitle(title):
-            navigationBar.isHidden = self.navigationController?.setNavigationBarHidden(false, animated: false)
+            self.navigationController?.setNavigationBarHidden(false, animated: false)
 
             navigationBar.topItem?.title = title
             self.title = title
