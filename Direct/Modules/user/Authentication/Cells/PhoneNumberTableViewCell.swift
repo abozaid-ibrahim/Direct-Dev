@@ -9,7 +9,7 @@
 import UIKit
 
 class PhoneNumberTableViewCell: BaseTableViewCell {
-    lazy var backView: UIView = { [unowned self] in
+    lazy var backView: UIView = {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.9763646722, green: 0.9765316844, blue: 0.9763541818, alpha: 1)
         view.addSubview(self.textField)
@@ -18,15 +18,16 @@ class PhoneNumberTableViewCell: BaseTableViewCell {
         return view
     }()
 
-    lazy var textField: UITextField = { [unowned self] in
+    lazy var textField: UITextField = {
         let tf = UITextField()
         tf.localizedFont = .bold(12)
         return tf
     }()
 
     override func setupViews() {
+        super.setupViews()
         addSubview(backView)
-        selectionStyle = .none
+        
         backView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview().inset(8)
             make.leading.trailing.equalToSuperview().inset(16)

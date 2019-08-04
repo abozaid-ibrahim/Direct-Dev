@@ -9,6 +9,8 @@
 import SwifterSwift
 import UIKit
 
+typealias HandleResponse<T: Codable> = (Result<T, Error>) -> ()
+
 class AuthCoordinator {
     private weak var viewController: AuthTableViewController?
 
@@ -147,20 +149,35 @@ extension AuthCoordinator {
     func login(_ sender: LoadingButton) {
         viewController?.view.endEditing(true)
         sender.startAnimating()
-        let id = collectedData[AuthCellType.email.rawValue]
-        let pass = collectedData[AuthCellType.password.rawValue]
-        let command = LoginCommandsFactory.getLoginCommand(id: id ?? "", password: pass ?? "") { [weak self] _ in
-//            self?.handleServerLogin(response)
-            sender.stopAnimating()
-            self?.viewController?.dismiss(animated: true, completion: nil)
-        }
+       
         do {
+            let id = try collectedData[AuthCellType.email.rawValue].unwrapped(or: AuthenticationError.emailOrPhone)
+            let pass = try collectedData[AuthCellType.password.rawValue].unwrapped(or: AuthenticationError.password)
+            
+            let command = LoginCommandsFactory.getLoginCommand(id: id, password: pass) { [weak self] response in
+                sender.stopAnimating()
+                self?.loginResponse(response)
+            }
             try command.execute()
         } catch {
             sender.stopAnimating()
             showError(error)
         }
     }
+    
+    
+    var loginResponse: HandleResponse<DirectUser> {
+        return { [weak self] response in
+            self?.viewController?.dismiss(animated: true, completion: nil)
+            switch response {
+            case .success(let v):
+                break
+            default:
+                break
+            }
+        }
+    }
+    
 
     func showError(_ error: Error) {
         if let error = error as? LocalizedError {

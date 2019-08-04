@@ -22,7 +22,6 @@ struct LoginRequestCommand: Command {
     }
 
     func execute() throws {
-//        UserRequest.login(phone: id, password: password).send(DaleelUser.self, completion: completion)
         let provider = MoyaProvider<AuthAPI>()
         provider.request(.login(id: id, password: password)) { response in
             switch response {

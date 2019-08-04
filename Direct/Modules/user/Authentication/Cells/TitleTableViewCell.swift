@@ -10,12 +10,12 @@ import SnapKit
 import UIKit
 
 class TitleTableViewCell: BaseTableViewCell {
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    
+    override func setupViews() {
+        super.setupViews()
         textLabel?.textAlignment = .center
         textLabel?.localizedFont = .bold(16)
         textLabel?.textColor = #colorLiteral(red: 0.3234693706, green: 0.3234777451, blue: 0.3234732151, alpha: 1)
-        selectionStyle = .none
-        backgroundColor = .clear
+
     }
 }

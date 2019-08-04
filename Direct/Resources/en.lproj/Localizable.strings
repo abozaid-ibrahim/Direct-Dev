@@ -6,35 +6,35 @@
  Copyright © 2019 abuzeid. All rights reserved.
  */
 // LOGIN
-"login_title_label" = "تسجيل دخول";
-"email_tf_placeHolder" = "البريد الالكتروني";
-"email_phone_tf_placeHolder" = "البريد الإلكتروني أو رقم الجوال";
-"password_tf_placeHolder" = "كلمة المرور";
-"login_btn_label" = "تسجيل الدخول";
-"forget_password_label" = "نسيت كلمة المرور؟";
-"restore_btn_clicable" = " استعادة ";
-"create_new_account_label" = "ليس لديك حساب؟";
-"create_new_clicable" = " حساب جديد ";
-"auth_code_sent" = "سيتم إرسال كود التفعيل خلال دقائق";
-"auth_user_blocked" = "الحساب محظور، الرجاء التواصل مع الدعم الفني لتفعيل رقم الهاتف";
-"login_error_title" = "خطأ بتسجيل الدخول";
-"login_error_message" = "رقم الجوال أو كلمة المرور غير صحيحة";
-"blocked_account_message" = "حسابك محجوب الرجاء التواصل مع الدعم الفني.";
-"login_activation_message" = "استخدم الكود الذي تم إرساله إليك عند التسجيل";
+"login_title_label" = "Login";
+"email_tf_placeHolder" = "Email";
+"email_phone_tf_placeHolder" = "Email or phone number";
+"password_tf_placeHolder" = "Password";
+"login_btn_label" = "Login";
+"forget_password_label" = "Forget password?";
+"restore_btn_clicable" = "Restore password";
+"create_new_account_label" = "Do you've an account?";
+"create_new_clicable" = "New account";
+"auth_code_sent" = "We will send you a confirmation code on your mobile number";
+"auth_user_blocked" = "Your account is blocked";
+"login_error_title" = "Login error";
+"login_error_message" = "Username or password might be wrong!";
+"blocked_account_message" = "Your account is blocked!";
+"login_activation_message" = "Use the code you've recived";
 
 // Signup
-"signup_title_label" = "إنشاء حساب";
-"fullname_tf_placeholder" = "الاسم الكامل";
-"email_placeholder" = "البريد الإلكتروني";
-"phone_number_placeholder" = "رقم الجوال";
-"password_confirmation" = "تأكيد كلمة المرور";
-"confirm_password_error" = "كلمة السر غير متطابقة";
-"signup_btn_label" = "انشئ حساب";
-"phone_auth_message" = "سيتم إرسال كود تفعيل لرقم الجوال لتأكيد الرقم";
-"login_btn_segue_label" = "لديك حساب مسبقاً؟";
-"login_btn_clickable" = "تسجيل دخول  ";
-"auth_code_sent" = "سيتم إرسال كود التفعيل خلال دقائق";
-"signup_error_subtitle" = "لم نتمكن من تسجيلك كمستخدم جديد ";
+"signup_title_label" = "Sign up";
+"fullname_tf_placeholder" = "Full name";
+"email_placeholder" = "Email";
+"phone_number_placeholder" = "Mobile number";
+"password_confirmation" = "Password confirmation";
+"confirm_password_error" = "Unmatched password";
+"signup_btn_label" = "Create account";
+"phone_auth_message" = "We will send you a confirmation code on your mobile number";
+"login_btn_segue_label" = "Do you've an account?";
+"login_btn_clickable" = "Login";
+"auth_code_sent" = "You'll recive the code soon";
+"signup_error_subtitle" = "We couldn't register you as a new user";
 // ConfirmCode
 "confirm_title_label" = "كود التفعيل";
 "confirm_subtitle_label" = "نرجوا إدخال كود التفعيل الذي استلمته على الرقم المدخل من قبلكم";
