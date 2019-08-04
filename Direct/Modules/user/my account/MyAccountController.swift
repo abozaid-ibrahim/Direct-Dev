@@ -17,19 +17,24 @@ final class MyAccountController: UIViewController, StyledActionBar {
     @IBOutlet private var langView: UIView!
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var langLbl: UILabel!
-    
+    @IBOutlet private var headerView: UIView!
+    @IBOutlet private  weak var containerView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.view.backgroundColor = .appPumpkinOrange
         tableView.register(nibWithCellClass: AboutUsTableCell.self)
         tableView.backgroundColor = .clear
-        view.backgroundColor = .appVeryLightGray
+        containerView.backgroundColor = .appVeryLightGray
         tableView.separatorColor = UIColor.appVeryLightGray
         tableView.separatorStyle = .singleLine
         tabBarItem.image = #imageLiteral(resourceName: "More")
         setupFooter()
-      
+        headerView.backgroundColor = UIColor.appPumpkinOrange
+        headerView.setYellowGradient()
     }
-    private func setupFooter(){
+    
+    private func setupFooter() {
         langLbl.text = AppLanguage.currentLangName
         langLbl.font = .appRegularFontWith(size: 13)
         langView.rx.tapGesture().when(.recognized)
@@ -37,15 +42,12 @@ final class MyAccountController: UIViewController, StyledActionBar {
                 let vc = LanguagesViewController()
                 vc.selectedLang.bind(to: self.langLbl.rx.text).disposed(by: self.disposeBag)
                 self.navigationController?.pushViewController(vc)
-                
             }).disposed(by: disposeBag)
         logoutBtn.localizedFont = .bold(15)
         logoutBtn.setTitleColor(.appMango, for: .normal)
         logoutBtn.rx.tapGesture().when(.recognized)
             .subscribe(onNext: { _ in
-                
-                let alert = UIAlertController(title: Str.logout, message: Str.sureToLogout.localized(), preferredStyle: .alert)
-                
+                let alert = UIAlertController(title: Str.logout.localized(), message: Str.sureToLogout.localized(), preferredStyle: .alert)
                 let search = UIAlertAction(title: Str.logout.localized(), style: .default, handler: { _ in
                     
                 })
@@ -56,9 +58,10 @@ final class MyAccountController: UIViewController, StyledActionBar {
                 self.present(alert, animated: true, completion: nil)
             }).disposed(by: disposeBag)
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupActionBar(.withTitle(Str.more.localized()))
+        setupActionBar(.hidden)
     }
     
     @IBAction func login(_: Any) {

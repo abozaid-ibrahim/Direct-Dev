@@ -10,6 +10,7 @@ import UIKit
 enum ButtonStyles: Int {
     case primary = 1
     case secondary = 2
+    case whiteBtn = 3 // text, and border is white
 }
 
 @IBDesignable
@@ -28,14 +29,8 @@ extension UIButton {
         }
         set {
             objc_setAssociatedObject(self, &AssociatedKey.buttonStyle, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-
-            switch btnStyle {
-            case ButtonStyles.primary.rawValue:
-                applyStyle(.primary)
-            case ButtonStyles.secondary.rawValue:
-                applyStyle(.secondary)
-            default:
-                print("Not implemented yet")
+            if let style = ButtonStyles(rawValue: btnStyle) {
+                applyStyle(style)
             }
         }
     }
@@ -53,6 +48,15 @@ extension UIButton {
             layer.borderColor = UIColor.appPumpkinOrange.cgColor
             layer.borderWidth = 1
             setTitleColor(.appPumpkinOrange, for: .normal)
+
+            titleLabel?.font = UIFont(name: AppFonts.boldFont, size: 14)
+
+        case .whiteBtn:
+            backgroundColor = UIColor.appPumpkinOrange
+            cornerRadiusV = 10
+            layer.borderColor = UIColor.white.cgColor
+            layer.borderWidth = 1
+            setTitleColor(.white, for: .normal)
 
             titleLabel?.font = UIFont(name: AppFonts.boldFont, size: 14)
         }

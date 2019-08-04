@@ -17,15 +17,15 @@ enum MoreDataRep: CaseIterable {
     var title: String {
         switch self {
         case .aboutUs:
-            return "about_us_label".localized
+            return "About Us".localized
         case .banks:
-            return "banks_label"
+            return "Banks"
         case .branches:
-            return "branches_label"
+            return "Branches"
         case .callUs:
-            return "call_us_label"
+            return "Call Us"
         case .share:
-            return "share_label"
+            return "Share"
         }
     }
 

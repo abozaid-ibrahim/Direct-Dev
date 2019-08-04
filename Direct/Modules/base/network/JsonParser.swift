@@ -29,10 +29,9 @@ class JsonParser {
         }
     }
 }
-class Logger{
-    static func log(_ value:Any) {
-        DispatchQueue.global().async {
-            print(value)
-        }
+
+class Logger {
+    static func log(_ value: Any) {
+        print(value)
     }
 }

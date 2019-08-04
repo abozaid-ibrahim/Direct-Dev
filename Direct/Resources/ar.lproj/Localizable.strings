@@ -110,17 +110,17 @@
 
 // More screen
 
-"about_direct_label" = "عن دايركت فيرا";
-"more_tab_item" = "المزيد";
+"About Us" = "عن دايركت فيرا";
+"More" = "المزيد";
 
 // items
-"about_us_label" = "من نحن";
+"About Us" = "من نحن";
 "branches_label" = "الفروع";
-"banks_label" = "البنوك";
-"call_us_label" = "اتصل بنا";
-"share_label" = "مشاركة";
-"logout_label" = "تسجيل الخروح";
-"app_lang_label" = "لغة التطبيق";
+"Banks" = "البنوك";
+"Call Us" = "اتصل بنا";
+"Share" = "مشاركة";
+"Logout" = "تسجيل الخروح";
+"App Language" = "لغة التطبيق";
 "arabic_lang_label" = "العربية";
 "Schengen" = "شنغن";
 

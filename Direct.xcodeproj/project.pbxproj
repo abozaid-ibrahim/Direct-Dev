@@ -217,6 +217,8 @@
 		6C99D8C522DBA13C0045F325 /* ContactUsFormParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C99D8C422DBA13C0045F325 /* ContactUsFormParams.swift */; };
 		6C99D8C722DBA3850045F325 /* ContactUsPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C99D8C622DBA3850045F325 /* ContactUsPageResponse.swift */; };
 		6CA040B62281BE0300619B6F /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA040B52281BE0300619B6F /* FloatingTextField.swift */; };
+		6CA28E2222F623CC000E33F0 /* Toaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA28E2122F623CC000E33F0 /* Toaster.swift */; };
+		6CA28E2422F62424000E33F0 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA28E2322F62424000E33F0 /* AlertController.swift */; };
 		6CB1857522CEC811009485CD /* AddCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1857322CEC811009485CD /* AddCountryViewController.swift */; };
 		6CB1857822CFA275009485CD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1857722CFA275009485CD /* User.swift */; };
 		6CB1857D22CFABC7009485CD /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB1857B22CFABC7009485CD /* VideoController.swift */; };
@@ -573,6 +575,8 @@
 		6C99D8C422DBA13C0045F325 /* ContactUsFormParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsFormParams.swift; sourceTree = "<group>"; };
 		6C99D8C622DBA3850045F325 /* ContactUsPageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsPageResponse.swift; sourceTree = "<group>"; };
 		6CA040B52281BE0300619B6F /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
+		6CA28E2122F623CC000E33F0 /* Toaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toaster.swift; sourceTree = "<group>"; };
+		6CA28E2322F62424000E33F0 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		6CB1857322CEC811009485CD /* AddCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCountryViewController.swift; sourceTree = "<group>"; };
 		6CB1857722CFA275009485CD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6CB1857B22CFABC7009485CD /* VideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
@@ -1380,6 +1384,15 @@
 			path = contactus;
 			sourceTree = "<group>";
 		};
+		6CA28E2022F623B5000E33F0 /* alert */ = {
+			isa = PBXGroup;
+			children = (
+				6CA28E2122F623CC000E33F0 /* Toaster.swift */,
+				6CA28E2322F62424000E33F0 /* AlertController.swift */,
+			);
+			path = alert;
+			sourceTree = "<group>";
+		};
 		6CB1857922CFAB92009485CD /* Seperate Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -1579,6 +1592,7 @@
 		6CF3E17B2271E6D4007488BA /* base */ = {
 			isa = PBXGroup;
 			children = (
+				6CA28E2022F623B5000E33F0 /* alert */,
 				6CCE0329229C64FA003523FE /* app common component */,
 				6CCE0328229C64BB003523FE /* wrappers */,
 				6CCE0327229C64B0003523FE /* ui */,
@@ -2078,6 +2092,8 @@
 				6CF3E19922724E23007488BA /* HomeViewModel.swift in Sources */,
 				39EE2ACF22A0A1BB00A9A501 /* UITextField+Localized.swift in Sources */,
 				39EE2AB322A09A0000A9A501 /* TextLabelCellController.swift in Sources */,
+				6CA28E2222F623CC000E33F0 /* Toaster.swift in Sources */,
+				6CA28E2422F62424000E33F0 /* AlertController.swift in Sources */,
 				6CF3E1B1227255DC007488BA /* OffersSectionVM.swift in Sources */,
 				6C8503B1229DDB38004FE346 /* VisaRequestResponse.swift in Sources */,
 				6CF3E1A022725478007488BA /* OfferCollectionViewCell.swift in Sources */,

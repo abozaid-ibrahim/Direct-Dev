@@ -29,11 +29,10 @@ extension SwipeUpDismissable {
     func enableSwipeUpToDismiss() {
         let gestureHolder = self.scrollView ?? view
         gestureHolder?.rx.panGesture(configuration: { _, delegate in
-            delegate.simultaneousRecognitionPolicy = .always
-        })
-            .subscribe { sender in
-                self.swipeUpToDismiss(sender: sender.element!, initialTouchPoint: &self.initialTouchPoint, defaultFrame: self.defaultFrame)
-            }.disposed(by: disposeBag)
+            delegate.simultaneousRecognitionPolicy = .never
+        }).subscribe { sender in
+            self.swipeUpToDismiss(sender: sender.element!, initialTouchPoint: &self.initialTouchPoint, defaultFrame: self.defaultFrame)
+        }.disposed(by: disposeBag)
         self.addBottomLine()
     }
 
