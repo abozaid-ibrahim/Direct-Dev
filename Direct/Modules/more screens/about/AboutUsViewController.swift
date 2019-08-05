@@ -17,7 +17,7 @@ class AboutUsViewController: UIViewController, StyledActionBar {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       self.setupActionBar(.withTitle(Str.aboutUs.localiz()))
+       self.setupActionBar(.withTitle(Str.aboutUs.localized()))
         viewModel.aboutText
             .filterNil()
             .map { ($0.details ?? "").html2String }

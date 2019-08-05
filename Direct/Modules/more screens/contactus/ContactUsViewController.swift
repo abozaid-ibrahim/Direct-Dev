@@ -12,7 +12,7 @@ import RxOptional
 import RxSwift
 import UIKit
 
-class ContactUsViewController: UIViewController,StyledActionBar {
+class ContactUsViewController: UIViewController, StyledActionBar {
     private let viewModel = ContactUsViewModel()
 
     @IBOutlet private var phoneLbl: UILabel!
@@ -34,7 +34,7 @@ class ContactUsViewController: UIViewController,StyledActionBar {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupActionBar(.withTitle(Str.contactUs))
+        setupActionBar(.withTitle(Str.contactUs.localized()))
         setupForm()
         bindData()
     }
@@ -48,10 +48,10 @@ class ContactUsViewController: UIViewController,StyledActionBar {
         inputsValid.bind(to: submitBtn.rx.isEnabled).disposed(by: disposeBag)
         inputsValid.map { $0 ? UIColor.appPumpkinOrange : UIColor.disabledBtnBg }.bind(to: submitBtn.rx.backgroundColor).disposed(by: disposeBag)
 
-        Observable.combineLatest(submitBtn.rx.tapGesture().when(.recognized), inputs).subscribe(onNext: { [unowned self] _, prm in
-            self.viewModel.submit(name: prm.0!, email: prm.1!, phone: prm.2!, subject: prm.3!)
-
-        }).disposed(by: disposeBag)
+        Observable.combineLatest(submitBtn.rx.tapGesture().when(.recognized), inputs)
+            .subscribe(onNext: { [unowned self] _, prm in
+                self.viewModel.submit(name: prm.0!, email: prm.1!, phone: prm.2!, subject: prm.3!)
+            }).disposed(by: disposeBag)
     }
 
     private func bindData() {
