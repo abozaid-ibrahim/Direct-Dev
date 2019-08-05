@@ -85,7 +85,6 @@ extension SwipeUpDismissable {
 
         }, completion: { [weak self] _ in
             guard let self = self else { return }
-
             self.dismessed.onNext(true)
             self.removeFromParent()
         })

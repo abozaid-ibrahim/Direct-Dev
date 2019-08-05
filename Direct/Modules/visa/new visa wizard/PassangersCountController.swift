@@ -14,10 +14,11 @@ typealias PassangerCount = (Int, Int, String)
 class PassangersCountController: UIViewController, PanModalPresentable {
     var panScrollable: UIScrollView?
     var shortFormHeight: PanModalHeight = .contentHeight(300)
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+
     private let disposeBag = DisposeBag()
 
     // MARK: IBuilder ====================================>>
@@ -28,7 +29,7 @@ class PassangersCountController: UIViewController, PanModalPresentable {
     @IBOutlet private var adultTotalLbl: UILabel!
     @IBOutlet private var countLbl: UILabel!
     @IBOutlet private var childViewContainer: [UIView]!
-    @IBOutlet weak private var adultsPlaceholderLbl: UILabel!
+    @IBOutlet private var adultsPlaceholderLbl: UILabel!
 
     //===================================================<<
     private let network = ApiClientFacade()
@@ -59,7 +60,7 @@ class PassangersCountController: UIViewController, PanModalPresentable {
             getPrices()
         }
     }
-    
+
     var menCount: Int {
         get {
             return Int(adultCountLbl.text!)!
@@ -81,12 +82,17 @@ class PassangersCountController: UIViewController, PanModalPresentable {
         }
         params.no_of_adult = menCount.stringValue
         params.no_of_child = childCount.stringValue
-        network.getVisaPrice(prm: params).debug()
+        network.getVisaPrice(prm: params)
             .subscribe(onNext: { [weak self] pr in
                 self?.childTotalLbl.text = pr.visaPrice.first?.childPrice.priced
                 self?.adultTotalLbl.text = pr.visaPrice.first?.adultPrice.priced
                 self?.totolCost = PassangersCountController.totalPrice(from: pr)
             }).disposed(by: disposeBag)
+        //
+        if menCount == 0, childCount == 0 {
+            childTotalLbl.text = "0".priced
+            adultTotalLbl.text = "0".priced
+        }
     }
 
     @IBAction func childPlusAction(_: Any) {
@@ -122,7 +128,7 @@ class PassangersCountController: UIViewController, PanModalPresentable {
         if info.cid == APIConstants.TurkeyID {
             str = Str.passportsCount.localized() + " : " + " \(men) " + Str.passangers.localized()
         } else {
-            str = Str.passangersCount.localized() + " : " + " \(child) " + Str.childs.localiz() + "," + " \(men) " + Str.adults.localized()
+            str = Str.passangersCount.localized() + " : " + " \(child) " + Str.childs.localized() + "," + " \(men) " + Str.adults.localized()
         }
         let attributedString = NSMutableAttributedString(string: str,
                                                          attributes: [
