@@ -13,7 +13,6 @@ import UIKit
 private typealias HeaderObject = (UIImage, String)
 
 final class HomeViewController: UIViewController, StyledActionBar {
-    
     @IBOutlet var packageView: UIStackView!
     @IBOutlet var institueView: UIStackView!
     @IBOutlet var containerView: UIView!
@@ -21,15 +20,14 @@ final class HomeViewController: UIViewController, StyledActionBar {
     @IBOutlet private var headerView: UIView!
     @IBOutlet var headerActiveViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet var headerNoneActiveViewWidthConstraint: NSLayoutConstraint!
-    
-    
+
     private let homeViewModel = HomeViewModel()
     var disposeBag = DisposeBag()
-    
+
     private let sectionsHeaderData: [HeaderObject] = [(#imageLiteral(resourceName: "p"), "متطلبات التأشيرة"), (#imageLiteral(resourceName: "p"), "أفضل المعاهد "), (#imageLiteral(resourceName: "p"), "بكجات وعروض"), (#imageLiteral(resourceName: "p"), "أخبار ومعلومات"), (#imageLiteral(resourceName: "p"), "Visa")]
     private var collectionSecions: [HomeCollectionViewSection] = []
     private let sectionsCellSize: [CGSize] = [CGSize(width: 147, height: 113), CGSize(width: 292, height: 171), CGSize(width: 292, height: 226), CGSize(width: 292, height: 171)]
-    
+
     let visaReqVC = NewDirectVisaController()
     let newInstitue = NewInstituteRequestController()
     let packagesVC = UIStoryboard.main.instantiateViewController(withIdentifier: "PackagesViewController")
@@ -43,10 +41,12 @@ final class HomeViewController: UIViewController, StyledActionBar {
         getDataFromViewModel()
         homeViewModel.getAllData()
     }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupActionBar(.withTitle(Str.search.localized()))
     }
+
     private func getDataFromViewModel() {
         homeViewModel.collectionSecions.asObservable()
             .observeOn(MainScheduler.instance)
@@ -64,8 +64,21 @@ final class HomeViewController: UIViewController, StyledActionBar {
         collectionView.register(UINib(nibName: "HomeCollectionSectionHeader", bundle: bundle), forSupplementaryViewOfKind: "UICollectionElementKindSectionHeader", withReuseIdentifier: "HomeCollectionSectionHeader")
     }
 
+    private func dismissAnyChild() {
+        if children.contains(visaReqVC) {
+            visaReqVC.dismissWithAnim()
+        }
+        if children.contains(newInstitue) {
+            newInstitue.dismissWithAnim()
+        }
+        let packages = packagesVC as! PackagesViewController
+        if children.contains(packages) {
+            packages.dismissWithAnim()
+        }
+    }
 
     @IBAction func visaDidSelected(_: Any) {
+        dismissAnyChild()
         if children.contains(visaReqVC) {
             visaReqVC.dismissWithAnim()
         } else {
@@ -74,6 +87,7 @@ final class HomeViewController: UIViewController, StyledActionBar {
     }
 
     @IBAction func institureAction(_: Any) {
+        dismissAnyChild()
         if children.contains(newInstitue) {
             newInstitue.dismissWithAnim()
         } else {
@@ -82,6 +96,7 @@ final class HomeViewController: UIViewController, StyledActionBar {
     }
 
     @IBAction func packagesDidSelect(_: Any) {
+        dismissAnyChild()
         let packages = packagesVC as! PackagesViewController
         if children.contains(packages) {
             packages.dismissWithAnim()
