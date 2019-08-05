@@ -87,16 +87,16 @@ class AlertView: UIView {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Incoming Message"
-        label.font = UIFont(name: "Lato-Bold", size: 17.0)
-        label.textColor = #colorLiteral(red: 0.8196078431, green: 0.8235294118, blue: 0.8274509804, alpha: 1)
+        label.font = UIFont.appRegularFontWith(size: 14)
+        label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         return label
     }()
     
     let message: UILabel = {
         let label = UILabel()
         label.text = "This is an example alert..."
-        label.font = UIFont(name: "Lato-Regular", size: 13.0)
-        label.textColor = #colorLiteral(red: 0.7019607843, green: 0.7058823529, blue: 0.7137254902, alpha: 1)
+        label.font = UIFont.appRegularFontWith(size: 12)
+        label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         return label
     }()
     

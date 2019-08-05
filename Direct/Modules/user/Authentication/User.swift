@@ -10,9 +10,9 @@ import UIKit
 
 class User {
     static var id: String {
-        return "1563035716nbURc3ZwoOG4VJNqaiu1xtSC6TPWjQA9eXkEvY2h"
+        return "a809bcd620859458"
     }
     static var authKey:String{
-        return "bf930e30-8c28-42d6-bf8e-f4cbd0b83774"
+        return "15650453957nF8LigratZ3dcRCHl2ypeXUsM5BjVmPGvEQwux9"
     }
 }
