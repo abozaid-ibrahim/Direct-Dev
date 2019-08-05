@@ -13,6 +13,6 @@ class User {
         return "a809bcd620859458"
     }
     static var authKey:String{
-        return "15650453957nF8LigratZ3dcRCHl2ypeXUsM5BjVmPGvEQwux9"
+        return "bf930e30-8c28-42d6-bf8e-f4cbd0b83774"
     }
 }

@@ -22,8 +22,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kIl-Kq-BMG">
                         <rect key="frame" x="10" y="10" width="302" height="238.5"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="ZGE-Wx-uEl">
-                                <rect key="frame" x="11" y="11" width="151" height="50"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="ZGE-Wx-uEl">
+                                <rect key="frame" x="11" y="11" width="90.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="col-xM-4LZ"/>
                                 </constraints>
@@ -53,7 +53,7 @@
                             <constraint firstItem="L03-sc-eYK" firstAttribute="top" secondItem="yxz-Uu-GbY" secondAttribute="bottom" constant="11" id="Hvu-Vh-r9c"/>
                             <constraint firstAttribute="bottom" secondItem="L03-sc-eYK" secondAttribute="bottom" constant="11" id="Nkb-u7-UyA"/>
                             <constraint firstAttribute="trailing" secondItem="yxz-Uu-GbY" secondAttribute="trailing" constant="11" id="RJU-sl-EHs"/>
-                            <constraint firstItem="ZGE-Wx-uEl" firstAttribute="width" secondItem="kIl-Kq-BMG" secondAttribute="width" multiplier="0.5" id="bHU-Q6-iIG"/>
+                            <constraint firstItem="ZGE-Wx-uEl" firstAttribute="width" secondItem="kIl-Kq-BMG" secondAttribute="width" multiplier="0.3" id="bHU-Q6-iIG"/>
                             <constraint firstItem="ZGE-Wx-uEl" firstAttribute="leading" secondItem="kIl-Kq-BMG" secondAttribute="leading" constant="11" id="rqN-d1-kDs"/>
                             <constraint firstItem="L03-sc-eYK" firstAttribute="leading" secondItem="kIl-Kq-BMG" secondAttribute="leading" constant="11" id="ueE-lF-bd4"/>
                             <constraint firstItem="yxz-Uu-GbY" firstAttribute="leading" secondItem="kIl-Kq-BMG" secondAttribute="leading" constant="11" id="wRA-Ue-PdS"/>
