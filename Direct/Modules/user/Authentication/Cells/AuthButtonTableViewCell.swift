@@ -20,8 +20,9 @@ class AuthButtonTableViewCell: BaseTableViewCell {
     }()
 
     override func setupViews() {
+        super.setupViews()
+
         contentView.addSubview(button)
-        selectionStyle = .none
         button.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview().inset(6)
             make.leading.trailing.equalToSuperview().inset(16)

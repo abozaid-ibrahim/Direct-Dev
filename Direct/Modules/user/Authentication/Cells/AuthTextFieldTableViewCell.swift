@@ -12,7 +12,7 @@ import UIKit
 class AuthTextFieldTableViewCell: BaseTableViewCell {
     lazy var backView: UIView = { [unowned self] in
         let view = UIView()
-        view.backgroundColor = .clear
+        view.backgroundColor = #colorLiteral(red: 0.9763646722, green: 0.9765316844, blue: 0.9763541818, alpha: 1)
         view.addSubview(self.stackHolder)
         view.layer.cornerRadius = 10
         view.clipsToBounds = true
@@ -35,6 +35,7 @@ class AuthTextFieldTableViewCell: BaseTableViewCell {
         button.setImage(#imageLiteral(resourceName: "icons8Eye"), for: .normal)
         button.isHidden = true
         button.tintColor = .gray
+        button.backgroundColor = #colorLiteral(red: 0.9763646722, green: 0.9765316844, blue: 0.9763541818, alpha: 1)
         button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(showPassword(sender:)), for: .touchUpInside)
         return button
@@ -54,8 +55,10 @@ class AuthTextFieldTableViewCell: BaseTableViewCell {
     var textType: AuthCellType?
 
     override func setupViews() {
-        selectionStyle = .none
+        super.setupViews()
         contentView.addSubview(backView)
+
+        
         backView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview().inset(8)
             make.leading.trailing.equalToSuperview().inset(16)
@@ -65,6 +68,7 @@ class AuthTextFieldTableViewCell: BaseTableViewCell {
         stackHolder.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(10)
         }
+        
         passwordBtn.snp.makeConstraints { make in
             make.width.equalTo(35)
         }

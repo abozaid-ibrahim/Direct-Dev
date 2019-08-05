@@ -11,7 +11,6 @@ import UIKit
 class BaseTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        selectionStyle = .none
         setupViews()
     }
 
@@ -20,7 +19,9 @@ class BaseTableViewCell: UITableViewCell {
     }
 
     func setupViews() {
+        selectionStyle = .none
         separatorInset = .zero
-        contentView.backgroundColor = .clear
+        contentView.backgroundColor = nil
+        backgroundColor = nil
     }
 }
