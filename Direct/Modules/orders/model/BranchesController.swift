@@ -19,7 +19,7 @@ class BranchesController: UIViewController, StyledActionBar {
         super.viewDidLoad()
         tableView.backgroundColor = .appVeryLightGray
         view.backgroundColor = .appVeryLightGray
-        setupActionBar(.withTitle(Str.branches))
+        setupActionBar(.withTitle(Str.branches.localiz()))
         tableView.registerNib(BranchesDescTableCell.cellId)
         tableView.registerNib(BranchesTableCell.cellId)
         viewModel.branches.map { $0?.branch }.filterNil()

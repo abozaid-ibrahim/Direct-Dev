@@ -122,7 +122,7 @@ class PassangersCountController: UIViewController, PanModalPresentable {
         if info.cid == APIConstants.TurkeyID {
             str = Str.passportsCount.localized() + " : " + " \(men) " + Str.passangers.localized()
         } else {
-            str = Str.passangersCount.localized() + " : " + " \(child) " + Str.childs + "," + " \(men) " + Str.adults.localized()
+            str = Str.passangersCount.localized() + " : " + " \(child) " + Str.childs.localiz() + "," + " \(men) " + Str.adults.localized()
         }
         let attributedString = NSMutableAttributedString(string: str,
                                                          attributes: [

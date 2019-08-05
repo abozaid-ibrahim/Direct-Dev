@@ -120,7 +120,7 @@ class AlertView: UIView {
     // MARK: - Layout
     
     private func setupView() {
-        backgroundColor = #colorLiteral(red: 0.1019607843, green: 0.1137254902, blue: 0.1294117647, alpha: 1)
+        backgroundColor = #colorLiteral(red: 0.9882352941, green: 0.5019607843, blue: 0.01568627451, alpha: 1)
         layoutIcon()
         layoutStackView()
     }

@@ -194,5 +194,8 @@ struct Str {
     static var sureToLogout:String{
         return "Sure you want to logout now?"
     }
+    static var aboutUs:String{
+        return "About Us"
+    }
     
 }
