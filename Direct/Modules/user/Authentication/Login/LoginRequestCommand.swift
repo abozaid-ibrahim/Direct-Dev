@@ -36,8 +36,8 @@ struct LoginRequestCommand: Command {
                     self.completion?(.failure(APIError.decodeError))
                     return
                 }
-                ///save user to user objec t
-            User.saveUser(value.data)
+                /// save user to user objec t
+                User.saveUser(value.data)
                 self.completion?(.success(duser))
             }
         }
