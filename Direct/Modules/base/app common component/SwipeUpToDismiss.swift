@@ -68,6 +68,7 @@ extension SwipeUpDismissable {
 
                     self.dismessed.onNext(true)
                     self.removeFromParent()
+                    self.view.removeFromSuperview()
                 })
             } else {
                 UIView.animate(withDuration: 0.3, animations: { [weak self] in
@@ -79,14 +80,17 @@ extension SwipeUpDismissable {
     }
 
     func dismissWithAnim() {
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.25, animations: {
             let tempY = self.view.bounds.height
             self.view.frame = CGRect(x: 0, y: -tempY, width: self.view.frame.size.width, height: self.view.frame.size.height)
 
-        }, completion: { [weak self] _ in
+        }, completion: { [weak self] completed in
             guard let self = self else { return }
+            guard completed else { return }
             self.dismessed.onNext(true)
+            self.view.removeFromSuperview()
             self.removeFromParent()
+
         })
     }
 }

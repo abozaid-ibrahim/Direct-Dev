@@ -64,58 +64,6 @@ final class HomeViewController: UIViewController, StyledActionBar {
         collectionView.register(UINib(nibName: "HomeCollectionSectionHeader", bundle: bundle), forSupplementaryViewOfKind: "UICollectionElementKindSectionHeader", withReuseIdentifier: "HomeCollectionSectionHeader")
     }
 
-    private func dismissAnyChild() {
-        if children.contains(visaReqVC) {
-            visaReqVC.dismissWithAnim()
-        }
-        if children.contains(newInstitue) {
-            newInstitue.dismissWithAnim()
-        }
-        let packages = packagesVC as! PackagesViewController
-        if children.contains(packages) {
-            packages.dismissWithAnim()
-        }
-    }
-
-    @IBAction func visaDidSelected(_: Any) {
-        dismissAnyChild()
-        if children.contains(visaReqVC) {
-            visaReqVC.dismissWithAnim()
-        } else {
-            tabbarSelected(vc: visaReqVC)
-        }
-    }
-
-    @IBAction func institureAction(_: Any) {
-        dismissAnyChild()
-        if children.contains(newInstitue) {
-            newInstitue.dismissWithAnim()
-        } else {
-            tabbarSelected(vc: newInstitue)
-        }
-    }
-
-    @IBAction func packagesDidSelect(_: Any) {
-        dismissAnyChild()
-        let packages = packagesVC as! PackagesViewController
-        if children.contains(packages) {
-            packages.dismissWithAnim()
-        } else {
-            packages.dismissable = true
-            tabbarSelected(vc: packages)
-        }
-    }
-
-    private func tabbarSelected(vc: SwipeUpDismissable) {
-        addChild(vc)
-        containerView.addSubview(vc.view)
-        vc.dismessed.asObservable().subscribe(onNext: { [weak self] dismessed in
-            self?.collectionView.isHidden = !dismessed
-            self?.updateHeaderFrame(fullWidth: !dismessed)
-        }).disposed(by: disposeBag)
-        startViewsAnim(vc)
-    }
-
     private func startViewsAnim(_ vc: UIViewController) {
         let childFrame = containerView.frame
         vc.view.frame = CGRect(x: childFrame.minX, y: -childFrame.height, width: childFrame.width, height: childFrame.height)
@@ -172,5 +120,59 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         cell.cellWidth = sectionsCellSize[indexPath.section].width
         cell.cellId = cellID
         return cell
+    }
+}
+
+// MARK: tabbar selectino
+
+extension HomeViewController {
+    private func dismissAnyChild() {
+        if children.contains(visaReqVC) {
+            visaReqVC.dismissWithAnim()
+        }
+        if children.contains(newInstitue) {
+            newInstitue.dismissWithAnim()
+        }
+        let packages = packagesVC as! PackagesViewController
+        if children.contains(packages) {
+            packages.dismissWithAnim()
+        }
+    }
+
+    @IBAction func visaDidSelected(_: Any) {
+        dismissAnyChild()
+        if !children.contains(visaReqVC) {
+            tabbarSelected(vc: visaReqVC)
+        }
+    }
+
+    @IBAction func institureAction(_: Any) {
+        dismissAnyChild()
+        if !children.contains(newInstitue) {
+            tabbarSelected(vc: newInstitue)
+        }
+    }
+
+    @IBAction func packagesDidSelect(_: Any) {
+        dismissAnyChild()
+        let packages = packagesVC as! PackagesViewController
+        if !children.contains(packages) {
+            packages.dismissable = true
+            tabbarSelected(vc: packages)
+        }
+    }
+
+    private func tabbarSelected(vc: SwipeUpDismissable) {
+        // just wait for 3 milli second to present
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.27) {[weak self] in
+             guard let self = self else {return}
+            self.addChild(vc)
+            self.containerView.addSubview(vc.view)
+            vc.dismessed.asObservable().subscribe(onNext: { [weak self] dismessed in
+                self?.collectionView.isHidden = !dismessed
+                self?.updateHeaderFrame(fullWidth: !dismessed)
+            }).disposed(by: self.disposeBag)
+            self.startViewsAnim(vc)
+        }
     }
 }
