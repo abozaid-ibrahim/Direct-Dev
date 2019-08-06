@@ -22,6 +22,7 @@ class DatePickerController: UIViewController, PanModalPresentable {
     override func viewDidLoad() {
         super.viewDidLoad()
         datePicker.delegate = self
+    
         dateChanged.map { $0 > Date() }.bind(to: submitBtn.rx.isEnabled).disposed(by: disposeBag)
         dateChanged.map { $0 > Date() ? UIColor.appPumpkinOrange : UIColor.disabledBtnBg }.bind(to: submitBtn.rx.backgroundColor).disposed(by: disposeBag)
 
@@ -80,6 +81,7 @@ extension DatePickerController: JBDatePickerViewDelegate {
     var colorForSelectionCircleForOtherDate: UIColor { return UIColor.appMango }
     var colorForCurrentDay: UIColor { return UIColor.appMango }
     var colorForSelectionCircleForToday: UIColor { return UIColor.appMango }
+    var shouldLocalize: Bool { return true }
 
     func didSelectDay(_ dayView: JBDatePickerDayView) {
         if let date = dayView.date {
