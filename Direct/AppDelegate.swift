@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 //        LanguageManager.shared.defaultLanguage = Languages.ar
         L102Localizer.DoTheMagic()
-
         setRootController()
         setupGlobalAppearance()
         setupKeyboardManager()

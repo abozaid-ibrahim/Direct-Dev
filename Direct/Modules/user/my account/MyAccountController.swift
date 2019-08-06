@@ -39,6 +39,7 @@ final class MyAccountController: UIViewController, StyledActionBar {
     
     private func updateViewWithUserAuthState() {
         if User.shared.isUserLoggedIn {
+            
             logintBtn.setTitle(User.shared.userName, for: .normal)
         }
         logoutBtn.alpha = User.shared.isUserLoggedIn ? 1 : 0

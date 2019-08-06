@@ -763,6 +763,7 @@
                         <outlet property="headerView" destination="CQQ-CL-987" id="T9e-nx-cSW"/>
                         <outlet property="langLbl" destination="h7D-LM-xzS" id="5Un-fN-CJO"/>
                         <outlet property="langView" destination="zXz-BN-Y3I" id="ULQ-xE-SzF"/>
+                        <outlet property="logintBtn" destination="eAv-WC-GJe" id="Tqs-qZ-1f8"/>
                         <outlet property="logoutBtn" destination="5Kk-4m-T7n" id="UYn-ZB-tCM"/>
                         <outlet property="tableView" destination="G5x-ur-8pv" id="sbZ-VS-qlY"/>
                     </connections>
