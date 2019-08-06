@@ -49,7 +49,9 @@ class VisaReqCofirmationViewModel {
         passangersBuffer = buffer
         tablePassangers.onNext(buffer)
     }
-    
+    var isPassangersFilled:Bool{
+        return passangersBuffer.allSatisfy{$0.isFormFilled}
+    }
     func bindTableWithSuccessInputs() {
         successIndices.filterEmpty()
             .distinctUntilChanged()

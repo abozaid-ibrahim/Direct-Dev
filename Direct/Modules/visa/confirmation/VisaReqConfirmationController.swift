@@ -47,7 +47,7 @@ class VisaReqConfirmationController: UIViewController {
         setupCheckoutFooter()
         bindPassangersTable()
         fillUIWithData()
-       // setTablViewHeight()
+        // setTablViewHeight()
         setSponsorsView()
         setupPickingDate()
     }
@@ -62,7 +62,7 @@ class VisaReqConfirmationController: UIViewController {
 
     private func setTablViewHeight() {
         passangersTable.rx.observeWeakly(CGSize.self, contentSizeKey)
-            .subscribe(onNext: { [unowned self] value in
+            .subscribe(onNext: { [unowned self] _ in
                 let vertical = self.checkoutFooter.frame.minY - self.pickDateView.frame.maxY
                 if vertical <= 20 {
                     self.passangersTable.isScrollEnabled = true
@@ -111,8 +111,9 @@ class VisaReqConfirmationController: UIViewController {
             sponsersView.rx.tapGesture()
                 .when(.recognized)
                 .subscribe(onNext: { _ in
-                    try! AppNavigator().push(self.sponsorsConfrimation)
-
+                    if self.viewModel.isPassangersFilled {
+                        try! AppNavigator().push(self.sponsorsConfrimation)
+                    }
                 }).disposed(by: disposeBag)
         }
     }
