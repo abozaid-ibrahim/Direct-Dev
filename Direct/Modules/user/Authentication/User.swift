@@ -6,8 +6,8 @@
 //  Copyright © 2019 abuzeid. All rights reserved.
 //
 
-import UIKit
 import RxSwift
+import UIKit
 
 class User {
     private var currentUser: DirectUser?
@@ -21,7 +21,6 @@ class User {
     }
 
     var id: String {
-        print(currentUser?.userID ?? "")
         return currentUser?.userID ?? ""
     }
 
@@ -34,7 +33,7 @@ class User {
     }
 
     var userName: String {
-        return currentUser?.firstName ?? currentUser?.lastName ?? ""
+        return "\(currentUser?.firstName ?? "") \(currentUser?.lastName ?? "")"
     }
 
     func logout() {
