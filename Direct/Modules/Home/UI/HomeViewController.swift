@@ -164,7 +164,7 @@ extension HomeViewController {
 
     private func tabbarSelected(vc: SwipeUpDismissable) {
         // just wait for 3 milli second to present
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.27) {[weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {[weak self] in
              guard let self = self else {return}
             self.addChild(vc)
             self.containerView.addSubview(vc.view)

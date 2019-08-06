@@ -59,7 +59,7 @@ extension SwipeUpDismissable {
             }
         } else if sender.state == UIGestureRecognizer.State.ended || sender.state == UIGestureRecognizer.State.cancelled {
             if initialTouchPoint.y - touchPoint.y > 100 {
-                UIView.animate(withDuration: 0.3, animations: {
+                UIView.animate(withDuration: 0.25,delay: 0, options: .curveEaseIn, animations: {
                     let tempY = self.view.bounds.height
                     self.view.frame = CGRect(x: 0, y: -tempY, width: self.view.frame.size.width, height: self.view.frame.size.height)
 
@@ -71,7 +71,7 @@ extension SwipeUpDismissable {
                     self.view.removeFromSuperview()
                 })
             } else {
-                UIView.animate(withDuration: 0.3, animations: { [weak self] in
+                UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: { [weak self] in
                     guard let self = self, let frame = defaultFrame else { return }
                     self.view.frame = frame
                 })
@@ -80,7 +80,7 @@ extension SwipeUpDismissable {
     }
 
     func dismissWithAnim() {
-        UIView.animate(withDuration: 0.25, animations: {
+        UIView.animate(withDuration: 0.195, delay: 0, options: .curveEaseIn, animations: {
             let tempY = self.view.bounds.height
             self.view.frame = CGRect(x: 0, y: -tempY, width: self.view.frame.size.width, height: self.view.frame.size.height)
 
