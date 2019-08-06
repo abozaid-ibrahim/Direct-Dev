@@ -81,6 +81,7 @@ class AlertView: UIView {
         let icon = UIView()
         icon.backgroundColor = colors.randomElement()
         icon.layer.cornerRadius = 6.0
+        icon.isHidden = true
         return icon
     }()
     

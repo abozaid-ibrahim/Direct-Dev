@@ -128,6 +128,10 @@ class NewDirectVisaViewModel {
         guard validateInputs() else {
             return
         }
+        guard User.shared.isUserLoggedIn else{
+            showErrorMessage.onNext(Str.loginOrCreatAccount)
+            return
+        }
         visaRequestData.thankYouUrl = selectedCountry?.thank_you_video_url
         showProgress.onNext(true)
         visaRequestData.userid = User.shared.id

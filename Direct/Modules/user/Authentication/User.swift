@@ -32,7 +32,7 @@ class User {
     }
 
     var userName: String {
-        return currentUser?.username ?? ""
+        return currentUser?.firstName ?? currentUser?.lastName ?? ""
     }
 
     func logout() {

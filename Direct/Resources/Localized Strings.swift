@@ -12,7 +12,10 @@ struct Str {
     static var technicalDifficults: String {
         return "Sorry, we get a technical difficults!"
     }
-
+    static var loginOrCreatAccount: String{
+        return "Login / Create User"
+    }
+    
     static var before: String {
         return "Before"
     }

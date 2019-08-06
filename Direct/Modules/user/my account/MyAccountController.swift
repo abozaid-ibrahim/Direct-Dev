@@ -41,6 +41,9 @@ final class MyAccountController: UIViewController, StyledActionBar {
         if User.shared.isUserLoggedIn {
             
             logintBtn.setTitle(User.shared.userName, for: .normal)
+        } else{
+            logintBtn.setTitle(Str.loginOrCreatAccount, for: .normal)
+
         }
         logoutBtn.alpha = User.shared.isUserLoggedIn ? 1 : 0
         logoutBtn.isEnabled = User.shared.isUserLoggedIn
