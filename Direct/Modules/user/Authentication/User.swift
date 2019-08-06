@@ -9,8 +9,9 @@
 import UIKit
 
 class User {
+    private static var currentUser: DirectUser?
     static var id: String {
-        return "a809bcd620859458"
+        return currentUser?.userID ?? ""
     }
 
     static var authKey: String {
@@ -18,10 +19,29 @@ class User {
     }
 
     static var isUserLoggedIn: Bool {
-        return false
+        return currentUser != nil
     }
 
-   static var userName: String {
-        return "Abuzeid"
+    static var userName: String {
+        return currentUser?.username ?? ""
     }
+
+    static func logout() {
+        currentUser = nil
+        UserDefaults.standard.removeObject(forKey: userKey)
+        UserDefaults.standard.synchronize()
+    }
+
+    static func saveUser(_ data: Data) {
+        let decoder = JSONDecoder()
+        let user = try? decoder.decode(DirectUserResponse.self, from: data)
+        guard let duser = user?.userLogin?.first else {
+            return
+        }
+        currentUser = duser
+        UserDefaults.standard.set(object: duser, forKey: userKey)
+        UserDefaults.standard.synchronize()
+    }
+
+    private static let userKey = "asdfasdfsadfasdf"
 }
