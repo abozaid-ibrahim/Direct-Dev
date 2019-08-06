@@ -12,12 +12,15 @@ class User {
     private var currentUser: DirectUser?
     static let shared = User()
     private init() {
-        if let user = UserDefaults.standard.value(forKey: userKey) as? DirectUser {
-            currentUser = user
+        if let data = UserDefaults.standard.value(forKey: userKey) as? Data  {
+            let decoder = JSONDecoder()
+            currentUser = try? decoder.decode(DirectUser.self, from: data)
+
         }
     }
 
     var id: String {
+        print(currentUser?.userID ?? "")
         return currentUser?.userID ?? ""
     }
 
@@ -46,6 +49,7 @@ class User {
             return
         }
         currentUser = duser
+        print(duser.userID )
         UserDefaults.standard.set(object: duser, forKey: userKey)
         UserDefaults.standard.synchronize()
     }
