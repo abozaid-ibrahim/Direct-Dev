@@ -35,7 +35,7 @@ class ContactUsViewModel: BaseViewModel {
         }).disposed(by: self.disposeBag)
     }
     func submit(name:String,email:String,phone:String,subject:String){
-        let prm = ContactUsFormParams(key: User.authKey, lang: AppLanguage.langCode, name: name, email: email, mobile: phone, subjectID: 0, trackNo: "0", message: subject)
+        let prm = ContactUsFormParams(key: User.shared.authKey, lang: AppLanguage.langCode, name: name, email: email, mobile: phone, subjectID: 0, trackNo: "0", message: subject)
         showProgress.onNext(true)
         network.submitContactUs(prm: prm).subscribe(onNext: {[unowned self] value in
             self.showProgress.onNext(false)

@@ -61,7 +61,7 @@ class SponserFormViewModel: BaseViewModel {
     }
   
     func getSponsorOwners() {
-        network.getOwners(uid: User.id, reqid: reqID, cid: cid)
+        network.getOwners(uid: User.shared.id, reqid: reqID, cid: cid)
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] value in
                 var list = value.sponsorOweners?.filter { $0.name.isValidText } ?? []

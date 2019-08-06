@@ -31,7 +31,7 @@ extension TargetType {
     }
 
     var tokenKeyValue: String {
-        return User.authKey
+        return User.shared.authKey
     }
 
     var prmEncoder: JSONEncoder {

@@ -79,7 +79,7 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
     }
 
     private func validateAndSubmit() {
-        self.prm.userid = User.id
+        self.prm.userid = User.shared.id
         if prm.parent_payment_id == nil {
             return
         }

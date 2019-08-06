@@ -37,7 +37,7 @@ struct LoginRequestCommand: Command {
                     return
                 }
                 /// save user to user objec t
-                User.saveUser(value.data)
+                User.shared.saveUser(value.data)
                 self.completion?(.success(duser))
             }
         }

@@ -130,7 +130,7 @@ class NewDirectVisaViewModel {
         }
         visaRequestData.thankYouUrl = selectedCountry?.thank_you_video_url
         showProgress.onNext(true)
-        visaRequestData.userid = User.id
+        visaRequestData.userid = User.shared.id
         network?.sendVisaRequest(params: visaRequestData).subscribe(onNext: { [unowned self] res in
             if let req = res.visaServices.first?.requestID {
                 self.visaRequestData.requestID = req.stringValue

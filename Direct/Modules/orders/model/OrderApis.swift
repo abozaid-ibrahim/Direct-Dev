@@ -40,14 +40,14 @@ extension OrdersAPIs: TargetType {
         case let .getCompletedVisa(trNo):
             let prmDic = ["key": tokenKeyValue,
                           "lang": appLang,
-                          "userid": User.id,
+                          "userid": User.shared.id,
                           "track_no": trNo] as [String: Any]
             return .requestParameters(parameters: prmDic, encoding: URLEncoding.default)
             
         case let .updatePendingDoc(prm):
             let prmDic = ["key": tokenKeyValue,
                           "lang": appLang,
-                          "userid": User.id,
+                          "userid": User.shared.id,
                           "visa_req_id": prm.reqNo,
                           "vname": prm.vName,
                           "visa_req_applicant_id": prm.applicantId,

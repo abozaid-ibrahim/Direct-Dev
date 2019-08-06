@@ -58,7 +58,7 @@ class UploadAttachViewModel: BaseViewModel {
     }
     
     func submit(prm: CompletedVisa, name: String, amount: String, date: String, bank: String) {
-        let prm = UpdatePendingDocsParams(key: User.authKey, lang: AppLanguage.langCode, visaReqID: prm.visaReqID.intValue, userid: User.id, transDate: date, transBank: bank.int ?? 0, transAccName: name, transAmount: amount.int
+        let prm = UpdatePendingDocsParams(key: User.shared.authKey, lang: AppLanguage.langCode, visaReqID: prm.visaReqID.intValue, userid: User.shared.id, transDate: date, transBank: bank.int ?? 0, transAccName: name, transAmount: amount.int
             ?? 0)
         showProgress.onNext(true)
         network.updatePendingDocs(prm: prm).subscribe(onNext: { [unowned self] _ in
