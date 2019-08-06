@@ -80,9 +80,10 @@ class FloatingTextField: SkyFloatingLabelTextField {
     }
     
     open override func titleLabelRectForBounds(_ bounds: CGRect, editing: Bool) -> CGRect {
+        let margin = AppLanguage.langCode == "en" ? CGFloat(-8) : CGFloat(8)
         if editing {
-            return CGRect(x: -8, y: 0, width: bounds.size.width, height: titleHeight())
+            return CGRect(x: margin, y: 0, width: bounds.size.width, height: titleHeight())
         }
-        return CGRect(x: -8 ,y: titleHeight(), width: bounds.size.width, height: titleHeight())
+        return CGRect(x: margin ,y: titleHeight(), width: bounds.size.width, height: titleHeight())
     }
 }

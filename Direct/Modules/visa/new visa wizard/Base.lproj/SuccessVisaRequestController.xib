@@ -22,11 +22,11 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1kJ-Uz-8Gp">
-                    <rect key="frame" x="0.0" y="79" width="414" height="580.66666666666663"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1kJ-Uz-8Gp">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EDu-ab-YSd">
-                            <rect key="frame" x="12" y="45" width="390" height="544"/>
+                            <rect key="frame" x="12" y="45" width="390" height="557.33333333333337"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="successCircle" translatesAutoresizingMaskIntoConstraints="NO" id="fda-jY-bwc">
                                     <rect key="frame" x="155" y="0.0" width="80" height="80"/>
@@ -36,31 +36,40 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Thank you" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mQ-Hk-exG">
-                                    <rect key="frame" x="155.33333333333334" y="90" width="79.666666666666657" height="20.333333333333329"/>
+                                    <rect key="frame" x="155.33333333333334" y="90" width="79.666666666666657" height="22"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="22" id="Uy4-k3-gUd"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your ordered is success" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdu-wv-DLI">
-                                    <rect key="frame" x="103.66666666666669" y="120.33333333333333" width="183" height="20.333333333333329"/>
+                                    <rect key="frame" x="103.66666666666669" y="122" width="183" height="22"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="22" id="Cn0-QQ-kpW"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="current order status is waiting for your paymet, please complete the payment process to proceed with your request" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAg-wa-kZf">
-                                    <rect key="frame" x="3.6666666666666572" y="150.66666666666666" width="383" height="61"/>
+                                    <rect key="frame" x="3.6666666666666572" y="154" width="383" height="61"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="What's next?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdV-8q-4Y8">
-                                    <rect key="frame" x="145.66666666666666" y="221.66666666666669" width="98.666666666666657" height="20.333333333333343"/>
+                                    <rect key="frame" x="145.66666666666666" y="225" width="98.666666666666657" height="22"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="22" id="CK3-sF-ngS"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FdS-kZ-3RX">
-                                    <rect key="frame" x="25" y="252" width="340" height="191.33333333333337"/>
+                                    <rect key="frame" x="25" y="257" width="340" height="191.33333333333337"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="FdS-kZ-3RX" secondAttribute="height" multiplier="16:9" id="pX2-dy-a56"/>
@@ -72,19 +81,28 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihu-4n-BxI">
-                                    <rect key="frame" x="140" y="453.33333333333337" width="110.33333333333331" height="20.333333333333314"/>
+                                    <rect key="frame" x="140" y="458.33333333333337" width="110.33333333333331" height="22"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="22" id="2eg-Ni-BKd"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hco-a4-6na">
-                                    <rect key="frame" x="174.33333333333334" y="483.66666666666663" width="41.666666666666657" height="20.333333333333314"/>
+                                    <rect key="frame" x="174.33333333333334" y="490.33333333333337" width="41.666666666666657" height="22"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="22" id="VaL-qs-ATl"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iwf-TL-XPF">
-                                    <rect key="frame" x="151" y="514" width="88" height="30"/>
+                                    <rect key="frame" x="151" y="522.33333333333337" width="88" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="35" id="NYv-Vq-YfJ"/>
+                                    </constraints>
                                     <state key="normal" title="Follow Order"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="btnStyle">
@@ -107,6 +125,7 @@
                         <constraint firstAttribute="trailing" secondItem="EDu-ab-YSd" secondAttribute="trailing" constant="12" id="BcR-Af-a3L"/>
                         <constraint firstItem="EDu-ab-YSd" firstAttribute="width" secondItem="1kJ-Uz-8Gp" secondAttribute="width" constant="-24" id="WtX-VP-QjC"/>
                         <constraint firstItem="EDu-ab-YSd" firstAttribute="leading" secondItem="1kJ-Uz-8Gp" secondAttribute="leading" constant="12" id="ZG9-B7-hV0"/>
+                        <constraint firstAttribute="bottom" secondItem="EDu-ab-YSd" secondAttribute="bottom" constant="12" id="ebd-j8-dVa"/>
                     </constraints>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1D-Ps-2Tn">
