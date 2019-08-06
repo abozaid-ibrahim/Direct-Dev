@@ -60,7 +60,8 @@ final class MyAccountController: UIViewController, StyledActionBar {
             .subscribe(onNext: { _ in
                 let alert = UIAlertController(title: Str.logout.localized(), message: Str.sureToLogout.localized(), preferredStyle: .alert)
                 let search = UIAlertAction(title: Str.logout.localized(), style: .default, handler: { _ in
-                    
+                    User.shared.logout()
+                    self.updateViewWithUserAuthState()
                 })
                 let cancel = UIAlertAction(title: Str.cancel.localized(), style: .cancel, handler: nil)
                 alert.addAction(search)
