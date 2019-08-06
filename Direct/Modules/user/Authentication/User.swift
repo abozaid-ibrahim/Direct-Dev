@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import RxSwift
 
 class User {
     private var currentUser: DirectUser?
     static let shared = User()
+    var newUserData = PublishSubject<Bool>()
     private init() {
         if let data = UserDefaults.standard.value(forKey: userKey) as? Data {
             let decoder = JSONDecoder()
@@ -39,6 +41,7 @@ class User {
         currentUser = nil
         UserDefaults.standard.removeObject(forKey: userKey)
         UserDefaults.standard.synchronize()
+        newUserData.onNext(true)
     }
 
     func saveUser(_ data: Data) {
@@ -50,6 +53,7 @@ class User {
         currentUser = duser
         UserDefaults.standard.set(object: duser, forKey: userKey)
         UserDefaults.standard.synchronize()
+        newUserData.onNext(true)
     }
 
     private let userKey = "asdfasdfsadfasdf"

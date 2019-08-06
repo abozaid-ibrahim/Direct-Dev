@@ -34,16 +34,17 @@ final class MyAccountController: UIViewController, StyledActionBar {
         setupFooter()
         headerView.backgroundColor = UIColor.appPumpkinOrange
         headerView.setYellowGradient()
+        User.shared.newUserData.subscribe(onNext: { [unowned self] _ in
+            self.updateViewWithUserAuthState()
+        }).disposed(by: disposeBag)
         updateViewWithUserAuthState()
     }
     
     private func updateViewWithUserAuthState() {
         if User.shared.isUserLoggedIn {
-            
             logintBtn.setTitle(User.shared.userName, for: .normal)
-        } else{
+        } else {
             logintBtn.setTitle(Str.loginOrCreatAccount, for: .normal)
-
         }
         logoutBtn.alpha = User.shared.isUserLoggedIn ? 1 : 0
         logoutBtn.isEnabled = User.shared.isUserLoggedIn
