@@ -12,7 +12,16 @@ class User {
     static var id: String {
         return "a809bcd620859458"
     }
-    static var authKey:String{
+
+    static var authKey: String {
         return "bf930e30-8c28-42d6-bf8e-f4cbd0b83774"
+    }
+
+    static var isUserLoggedIn: Bool {
+        return false
+    }
+
+   static var userName: String {
+        return "Abuzeid"
     }
 }

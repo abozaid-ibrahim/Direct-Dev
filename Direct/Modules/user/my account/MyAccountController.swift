@@ -14,15 +14,17 @@ import UIKit
 final class MyAccountController: UIViewController, StyledActionBar {
     var disposeBag = DisposeBag()
     @IBOutlet private var logoutBtn: UIButton!
+    @IBOutlet private var logintBtn: UIButton!
+    
     @IBOutlet private var langView: UIView!
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var langLbl: UILabel!
     @IBOutlet private var headerView: UIView!
-    @IBOutlet private  weak var containerView: UIView!
+    @IBOutlet private var containerView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        self.view.backgroundColor = .appPumpkinOrange
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        view.backgroundColor = .appPumpkinOrange
         tableView.register(nibWithCellClass: AboutUsTableCell.self)
         tableView.backgroundColor = .clear
         containerView.backgroundColor = .appVeryLightGray
@@ -32,6 +34,15 @@ final class MyAccountController: UIViewController, StyledActionBar {
         setupFooter()
         headerView.backgroundColor = UIColor.appPumpkinOrange
         headerView.setYellowGradient()
+        updateViewWithUserAuthState()
+    }
+    
+    private func updateViewWithUserAuthState() {
+        if User.isUserLoggedIn {
+            logintBtn.setTitle(User.userName, for: .normal)
+        }
+        logoutBtn.alpha = User.isUserLoggedIn ? 1 : 0
+        logoutBtn.isEnabled = User.isUserLoggedIn
     }
     
     private func setupFooter() {
