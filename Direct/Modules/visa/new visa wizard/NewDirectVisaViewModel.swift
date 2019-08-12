@@ -129,7 +129,7 @@ class NewDirectVisaViewModel {
             return
         }
         guard User.shared.isUserLoggedIn else{
-            showErrorMessage.onNext(Str.loginOrCreatAccount)
+            try! AppNavigator().push(.loginView)
             return
         }
         visaRequestData.thankYouUrl = selectedCountry?.thank_you_video_url

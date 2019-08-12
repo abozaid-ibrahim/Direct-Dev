@@ -171,6 +171,7 @@ extension AuthCoordinator {
             self?.viewController?.dismiss(animated: true, completion: nil)
             switch response {
             case .success(let v):
+                try! AppNavigator().pop()
                 break
             default:
                 break

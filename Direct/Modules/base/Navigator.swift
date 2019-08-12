@@ -157,7 +157,9 @@ final class AppNavigator: Navigator {
     func push(_ dest: Destination) {
         AppNavigator.rootController.pushViewController(dest.controller(), animated: true)
     }
-
+    func pop() {
+        AppNavigator.rootController.popViewController()
+    }
     func push(_ vc: UIViewController) {
         AppNavigator.rootController.pushViewController(vc, animated: true)
     }
