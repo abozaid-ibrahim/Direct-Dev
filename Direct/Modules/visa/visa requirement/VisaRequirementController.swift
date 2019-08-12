@@ -45,7 +45,7 @@ final class VisaRequirementController: UIViewController, PanModalPresentable, St
             visaData = prm
             loadData(for: visaData?.country_id)
             submitHeight.constant = 70
-            setupActionBar(.withTitleAndX(Str.visaRequirement))
+            setupActionBar(.withTitleAndX(Str.visaRequirement.localized()))
 
         }
         countryNameLbl.font = UIFont.appBoldFontWith(size: 17)

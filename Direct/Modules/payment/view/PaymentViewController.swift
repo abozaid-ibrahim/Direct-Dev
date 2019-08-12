@@ -11,10 +11,10 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-final class PaymentViewController: UIViewController, PanModalPresentable {
+final class PaymentViewController: UIViewController, PanModalPresentable, StyledActionBar {
     // MARK: IBuilder ====================================>>
 
-    @IBOutlet weak var detailsView: UIView!
+    @IBOutlet var detailsView: UIView!
     @IBOutlet var branchsTable: UITableView!
     @IBOutlet var paymentMethodTable: UITableView!
     @IBOutlet var chooseBranchLbl: UILabel!
@@ -27,18 +27,22 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
     }
 
     private var prm = SubmitPaymentParams()
-    private let disposeBag = DisposeBag()
+    var disposeBag = DisposeBag()
     private let network = ApiClientFacade()
     var totalCost: String?
     var requestId: Int?
-    var thanksUrl:String?
+    var thanksUrl: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = Str.payment.localized()
         prm.reqid = requestId
         setupCheckoutFooter()
         getPaymentMethods()
         registerCells()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupActionBar(.withTitle(Str.payment.localized()))
     }
 
     var paymentType: PaymentMethodsIDs? {
@@ -79,7 +83,7 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
     }
 
     private func validateAndSubmit() {
-        self.prm.userid = User.shared.id
+        prm.userid = User.shared.id
         if prm.parent_payment_id == nil {
             return
         }
@@ -91,7 +95,7 @@ final class PaymentViewController: UIViewController, PanModalPresentable {
         Progress.show()
         network.updatePaymentDetails(prm).subscribe(onNext: { response in
             Progress.hide()
-            try! AppNavigator().push(.successVisaReqScreen(trackNo:response.updatePayment.first?.trackNo ?? "" ,thanksUrl:self.thanksUrl))
+            try! AppNavigator().push(.successVisaReqScreen(trackNo: response.updatePayment.first?.trackNo ?? "", thanksUrl: self.thanksUrl))
         }).disposed(by: disposeBag)
     }
 

@@ -270,8 +270,8 @@
                                         <action selector="checkoutNextAction:" destination="-1" eventType="touchUpInside" id="CAZ-Mr-W6L"/>
                                     </connections>
                                 </button>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Euy-2O-j3x">
-                                    <rect key="frame" x="12" y="209.5" width="350" height="172"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Euy-2O-j3x">
+                                    <rect key="frame" x="12" y="209.5" width="350" height="168"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9SA-dn-e6g" userLabel="ImagePickerView" customClass="ImagePickerView" customModule="Direct" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="46"/>
@@ -324,10 +324,10 @@
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="wtY-sJ-aaQ">
-                                            <rect key="frame" x="0.0" y="56" width="350" height="25"/>
+                                            <rect key="frame" x="0.0" y="58" width="350" height="20"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n9L-NT-4BI" customClass="M13Checkbox" customModule="M13Checkbox">
-                                                    <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="n9L-NT-4BI" secondAttribute="height" id="Zsy-Re-ZKb"/>
@@ -337,18 +337,18 @@
                                                     </connections>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I will do it later" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kS-yZ-mxF">
-                                                    <rect key="frame" x="39" y="0.0" width="311" height="25"/>
+                                                    <rect key="frame" x="34" y="0.0" width="316" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="25" id="wiD-yR-xr3"/>
+                                                <constraint firstAttribute="height" constant="20" id="wiD-yR-xr3"/>
                                             </constraints>
                                         </stackView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nzR-xf-PAE" userLabel="ImagePickerView" customClass="ImagePickerView" customModule="Direct" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="91" width="350" height="46"/>
+                                            <rect key="frame" x="0.0" y="90" width="350" height="46"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WaU-HG-VFm" customClass="FloatingTextField" customModule="Direct" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="350" height="46"/>
@@ -398,10 +398,10 @@
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="zZh-kb-1Vv">
-                                            <rect key="frame" x="0.0" y="147" width="350" height="25"/>
+                                            <rect key="frame" x="0.0" y="148" width="350" height="20"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46d-mc-lIH" customClass="M13Checkbox" customModule="M13Checkbox">
-                                                    <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="46d-mc-lIH" secondAttribute="height" id="NDW-bS-YE3"/>
@@ -411,14 +411,14 @@
                                                     </connections>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I will do it later" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qoV-bl-zOy">
-                                                    <rect key="frame" x="39" y="0.0" width="311" height="25"/>
+                                                    <rect key="frame" x="34" y="0.0" width="316" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="25" id="BWS-Eg-y8t"/>
+                                                <constraint firstAttribute="height" constant="20" id="BWS-Eg-y8t"/>
                                             </constraints>
                                         </stackView>
                                     </subviews>

@@ -102,7 +102,7 @@ extension OrdersHistoryController: UITableViewDataSource {
             return cell
         } else if lastRow {
             let cell = tableView.dequeueReusableCell(withIdentifier: ActionTableCell.cellId) as! ActionTableCell
-            cell.setCellData((Str.followOrder, style: .primary))
+            cell.setCellData((Str.followOrder.localized(), style: .primary))
             cell.submitBtn.rx.tapGesture().when(.recognized).subscribe(onNext: { [unowned self] _ in
                 let obj = self.datalist[indexPath.section]
                 try! AppNavigator().push(Destination.orderDetails(logs: obj.visaStatusLog ?? [], id: obj.visaReqID ?? ""))

@@ -24,10 +24,12 @@ class SuccessVisaRequestController: UIViewController, StyledActionBar {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setupActionBar(.withX)
         self.requestNumberLbl.text = self.trackNo
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupActionBar(.withX)
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.playFromYoutube()

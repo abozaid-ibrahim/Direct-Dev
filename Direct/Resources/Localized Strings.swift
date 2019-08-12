@@ -8,29 +8,38 @@
 
 import Foundation
 struct Str {
-    
     static var technicalDifficults: String {
         return "Sorry, we get a technical difficults!"
     }
-    static var loginOrCreatAccount: String{
+
+    static var loginOrCreatAccount: String {
         return "Login / Create User"
     }
-    
+
+    static var banks: String {
+        return "Banks"
+    }
+
     static var before: String {
         return "Before"
     }
+
     static var appName: String {
         return "Direct Visa"
     }
+
     static var travelDate: String {
         return "Travel Date"
     }
+
     static var search: String {
         return "Search"
     }
+
     static var myOrders: String {
         return "My Orders"
     }
+
     static var passangersInfo: String {
         return "Passangers Info"
     }
@@ -182,23 +191,28 @@ struct Str {
     static var everHadVisa: String {
         return "Ever had a visa"
     }
-    static var hasRelatives:String{
+
+    static var hasRelatives: String {
         return "Has relatives"
     }
-    static var visaCanceledBefore:String{
+
+    static var visaCanceledBefore: String {
         return "Visa canceled before"
     }
-    static var questionMark: String{
+
+    static var questionMark: String {
         return "?"
     }
-    static var space: String{
+
+    static var space: String {
         return " "
     }
-    static var sureToLogout:String{
+
+    static var sureToLogout: String {
         return "Sure you want to logout now?"
     }
-    static var aboutUs:String{
+
+    static var aboutUs: String {
         return "About Us"
     }
-    
 }

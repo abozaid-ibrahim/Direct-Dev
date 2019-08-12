@@ -11,13 +11,11 @@ import RxSwift
 import UIKit
 
 final class BanksViewController: UIViewController, StyledActionBar {
-
     @IBOutlet private var tableView: UITableView!
     let disposeBag = DisposeBag()
     private let viewModel = BanksViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-       setupActionBar(.withTitle( "البنوك"))
         viewModel.getBanksList()
         tableView.backgroundColor = .appVeryLightGray
         view.backgroundColor = .appVeryLightGray
@@ -27,6 +25,12 @@ final class BanksViewController: UIViewController, StyledActionBar {
             cell.setCellData(model)
         }.disposed(by: disposeBag)
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupActionBar(.withTitle(Str.banks.localized()))
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
